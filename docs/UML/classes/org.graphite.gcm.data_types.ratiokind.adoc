@@ -1,0 +1,22 @@
+=== RatioKind Enumeration
+
+[cols="^1,3,5"]
+|===
+h|*Enumeration*
+2+^h|*RatioKind*
+
+h|*Description*
+2+a|
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|
+|proportion
+a|Numerator and denominator may be any value.
+
+h|
+|rational_fraction
+a|Numerator and denominator are integral, and the presentation method uses a slash, e.g.  1/2 .
+|===

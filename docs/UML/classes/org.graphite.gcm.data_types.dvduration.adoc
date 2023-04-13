@@ -1,0 +1,22 @@
+=== DvDuration Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*DvDuration*
+
+h|*Description*
+2+a|
+
+h|*Inherit*
+2+|`<<_dvtemporal_class,DvTemporal>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1 +
+(redefined)*
+|*value*: `Duration`
+a|
+|===

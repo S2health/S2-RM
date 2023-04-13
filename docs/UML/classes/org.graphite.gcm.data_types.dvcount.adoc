@@ -1,0 +1,64 @@
+=== DvCount Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*DvCount*
+
+h|*Description*
+2+a|Countable quantities. Used for countable types such as pregnancies and steps (taken by a physiotherapy patient), number of cigarettes smoked in a day.
+
+Misuse: Not to be used for amounts of physical entities (which all have units).
+
+h|*Inherit*
+2+|`<<_dvquantified_class,DvQuantified>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1 +
+(redefined)*
+|*magnitude*: `Integer64`
+a|
+h|*Functions*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1 +
+(redefined)*
+|*add* __alias__ "+" ( +
+other: `<<_dvcount_class,DvCount>>[1]` +
+): `<<_dvcount_class,DvCount>>`
+a|Sum of this `DV_COUNT` and `_other_`.
+
+h|*1..1 +
+(redefined)*
+|*subtract* __alias__ "-" ( +
+other: `<<_dvcount_class,DvCount>>[1]` +
+): `<<_dvcount_class,DvCount>>`
+a|Difference of this `DV_COUNT` and `_other_`.
+
+h|*1..1 +
+(redefined)*
+|*multiply* __alias__ "&#42;" ( +
+factor: `Real[1]` +
+): `<<_dvcount_class,DvCount>>`
+a|Product of this `DV_COUNT` and `_factor_`.
+
+h|*1..1 +
+(effected)*
+|*less_than* __alias__ "<" ( +
+other: `<<_dvcount_class,DvCount>>[1]` +
+): `Boolean` +
+ +
+__Post_result__: `Result = magnitude < other.magnitude`
+a|True if this Quantified object is less than `_other_`, based on comparison of `_magnitude_`.
+
+h|*1..1 +
+(effected)*
+|*is_strictly_comparable_to* ( +
+other: `<<_dvordered_class,DvOrdered>>[1]` +
+): `Boolean`
+a|Return True.
+|===

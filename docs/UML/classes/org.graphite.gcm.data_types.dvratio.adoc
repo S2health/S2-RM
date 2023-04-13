@@ -1,0 +1,95 @@
+=== DvRatio Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*DvRatio*
+
+h|*Description*
+2+a|Models a ratio of values, i.e. where the numerator and denominator are both pure numbers. The `_valid_proportion_kind_` property of the `RatioKind` class is used to control the type attribute to be one of a defined set.
+
+Used for recording titers (e.g. 1:128), concentration ratios, e.g. Na:K (unitary denominator), albumin:creatinine ratio, and percentages, e.g. red cell distirbution width (RDW).
+
+Misuse: Should not be used to represent things like blood pressure which are often written using a  '/' character, giving the misleading impression that the item is a ratio, when in fact it is a structured value. Similarly, visual acuity, often written as (e.g.) "6/24" in clinical notes is not a ratio but an ordinal (which includes non-numeric symbols like CF = count fingers etc). Should not be used for formulations.
+
+h|*Inherit*
+2+|`<<_dvquantified_class,DvQuantified>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1*
+|*denominator*: `Real`
+a|Denominator of ratio.
+
+h|*1..1*
+|*type*: `<<_ratiokind_enumeration,RatioKind>>`
+a|Indicates semantic type of proportion, including percent, unitary etc.
+
+h|*1..1 +
+(redefined)*
+|*magnitude*: `Real`
+a|
+h|*Functions*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1*
+|*magnitude* (): `Real`
+a|Effective magnitude represented by ratio.
+
+h|*1..1*
+|*is_integral* (): `Boolean`
+a|True if the `_numerator_` and `_denominator_` values are integers, i.e. if `_precision_` is 0.
+
+h|*1..1 +
+(redefined)*
+|*add* __alias__ "+" ( +
+other: `<<_dvratio_class,DvRatio>>[1]` +
+): `<<_dvratio_class,DvRatio>>`
+a|Sum of two strictly comparable proportions.
+
+h|*1..1 +
+(redefined)*
+|*subtract* __alias__ "-" ( +
+other: `<<_dvratio_class,DvRatio>>[1]` +
+): `<<_dvratio_class,DvRatio>>`
+a|Difference between two strictly comparable proportions.
+
+h|*1..1 +
+(effected)*
+|*is_equal* ( +
+other: `<<_dvratio_class,DvRatio>>[1]` +
+): `Boolean`
+a|Return True if this `DV_AMOUNT` is considered equal to `_other_`.
+
+h|*1..1 +
+(redefined)*
+|*multiply* __alias__ "&#42;" ( +
+factor: `Real[1]` +
+): `<<_dvratio_class,DvRatio>>`
+a|Product of this Proportion and `_factor_`.
+
+h|*1..1 +
+(effected)*
+|*less_than* __alias__ "<" ( +
+other: `<<_dvratio_class,DvRatio>>[1]` +
+): `Boolean` +
+ +
+__Post_result__: `Result = magnitude < other.magnitude`
+a|True if this Proportion is less than  `_other_`. Only valid if `_is_strictly_comparable_to()_` is True.
+
+h|*1..1 +
+(effected)*
+|*is_strictly_comparable_to* ( +
+other: `<<_dvordered_class,DvOrdered>>[1]` +
+): `Boolean`
+a|Return True if the `_type_` of this proportion is the same as the `_type_` of `_other_`.
+
+h|*Invariants*
+2+a|__Fraction_validity__: `type = RatioKind.rational_fraction implies is_integral`
+
+h|
+2+a|__Valid_denominator__: `denominator /= 0.0`
+|===
