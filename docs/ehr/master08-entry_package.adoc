@@ -394,7 +394,7 @@ include::{uml_export_dir}/classes/{pkg}observationhistory.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}questionnaireresponse.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}assessment.adoc[]
+include::{uml_export_dir}/classes/{pkg}assertion.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}order.adoc[]
 

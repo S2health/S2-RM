@@ -16,7 +16,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*value*: `<<_dv_parsable_class,DV_PARSABLE>>`
+|*value*: `<<_dvparsable_class,DvParsable>>`
 a|The specification, in the HL7v3 syntax for `PIVL` or `EIVL` types.
 h|*Functions*
 ^h|*Signature*

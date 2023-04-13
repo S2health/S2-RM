@@ -183,7 +183,7 @@
 <li><a href="#_observation_class">7.3.5. Observation Class</a></li>
 <li><a href="#_observationhistory_class">7.3.6. ObservationHistory Class</a></li>
 <li><a href="#_questionnaireresponse_class">7.3.7. QuestionnaireResponse Class</a></li>
-<li><a href="#_assessment_class">7.3.8. Assessment Class</a></li>
+<li><a href="#_assertion_class">7.3.8. Assertion Class</a></li>
 <li><a href="#_order_class">7.3.9. Order Class</a></li>
 <li><a href="#_activity_class">7.3.10. Activity Class</a></li>
 <li><a href="#_action_class">7.3.11. Action Class</a></li>
@@ -1931,16 +1931,9 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>start_time</strong>: <code>@@</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>start_time</strong>: <code>Date_time</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Start time of the clinical session or other kind of event during which a provider performs a service of any kind for the patient.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>end_time</strong>: <code>@@</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional end time of the clinical session.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1955,6 +1948,13 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>setting</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dvcodedtext_class" target="_blank" rel="noopener">DvCodedText</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The setting in which the clinical session took place. Coded using the openEHR Terminology,  setting  group.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>end_time</strong>: <code>Date_time</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional end time of the clinical session.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3277,6 +3277,11 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>state</strong>: <code><a href="/releases/GCM/{gcm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>history</strong>: <code><a href="/releases/GCM/{gcm_release}/data_structures.html#_history_class" target="_blank" rel="noopener">History</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
@@ -3366,7 +3371,7 @@ The data of the Entry; modelled in archetypes.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_assessment_class"><a class="anchor" href="#_assessment_class"></a>7.3.8. Assessment Class</h4>
+<h4 id="_assertion_class"><a class="anchor" href="#_assertion_class"></a>7.3.8. Assertion Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3376,7 +3381,7 @@ The data of the Entry; modelled in archetypes.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Assessment</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Assertion</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -3453,7 +3458,7 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>wf_definition</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_parsable_class" target="_blank" rel="noopener">DV_PARSABLE</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>wf_definition</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dvparsable_class" target="_blank" rel="noopener">DvParsable</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional workflow engine executable expression of the Instruction.</p>
 </div></div></td>
@@ -3504,7 +3509,7 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>timing</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_parsable_class" target="_blank" rel="noopener">DV_PARSABLE</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>timing</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dvparsable_class" target="_blank" rel="noopener">DvParsable</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Timing of the activity, in the form of a parsable string. If used, the preferred syntax is ISO8601 'R' format, but other formats may be used including HL7 GTS.</p>
 </div>
