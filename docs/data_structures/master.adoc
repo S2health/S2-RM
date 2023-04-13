@@ -27,15 +27,27 @@ include::master00-amendment_record.adoc[leveloffset=+1]
 //
 == Acknowledgements
 
-The work reported in this paper has been funded in by the following organisations:
+=== Editor
 
-* University College London - Centre for Health Informatics and Multi-professional Education (CHIME);
-* Ocean Informatics; 
-* Distributed Systems Technology Centre (DSTC), under the Cooperative Research Centres Program through the Department of the Prime Minister and Cabinet of the Commonwealth Government of Australia.
+* Graphite Informatics group.
 
-Thanks to Grahame Grieve of Kestral Computing, Australia for general input and examples relating to History data.
+=== Contributors
 
-Special thanks to David Ingram, Emeritus Professor of Health Informatics at UCL, who provided a vision and collegial working environment ever since the days of GEHR (1992).
+This specification benefited from input from the wider health informatics community. The openEHR Foundation would like to recognise the following people for their contributions.
+
+* xxx
+
+=== Support
+
+The work reported in this paper has been funded in part by the following organisations:
+
+* xxx
+
+=== Trademarks
+
+* 'openEHR' is a trademark of the openEHR Foundation
+* 'Java' is a registered trademark of Oracle Corporation
+* 'Microsoft' and '.Net' are trademarks of the Microsoft Corporation
 
 //
 // --------------------------------------------- TOC -----------------------------------------------
@@ -54,9 +66,6 @@ endif::[]
 include::master01-preface.adoc[leveloffset=+1]
 include::master02-background.adoc[leveloffset=+1]
 include::master03-overview.adoc[leveloffset=+1]
-include::master04-item_structure_package.adoc[leveloffset=+1]
-include::master05-representation_package.adoc[leveloffset=+1]
-include::master06-history_package.adoc[leveloffset=+1]
 
 //
 // --------------------------------------------- REFERENCES -----------------------------------------------

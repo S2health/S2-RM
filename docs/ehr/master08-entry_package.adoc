@@ -1,4 +1,4 @@
-= Entry Package
+= Entry Types
 
 == Design Principles
 
@@ -94,7 +94,7 @@ The Entry model is defined by the `composition.content.entry package`, shown in 
 
 [.text-center]
 .rm.entry package
-image::{uml_diagrams_uri}/RM-composition.entry.svg[id=rm_entry, align="center"]
+image::{uml_diagrams_uri}/GCM-composition.entry.svg[id=rm_entry, align="center"]
 
 === The Entry class
 
@@ -279,7 +279,7 @@ The approach chosen here to support such functionality is to define a standard i
 
 [.text-center]
 .openEHR standard Instruction State Machine
-image::{uml_diagrams_uri}/RM-InstructionStateMachine.svg[id=instruction_state_machine, align="center"]
+image::{uml_diagrams_uri}/GCM-InstructionStateMachine.svg[id=instruction_state_machine, align="center"]
 
 This state machine is the result of long term experience with clinical workflows and act management systems. The states are as follows (Note: the SCHEDULED state was inspired by citenp:[Van_de_Velde_Degoulet2003], Fig 5.5).
 
@@ -382,11 +382,17 @@ The entire definition of a workflow is expressed as an optional parsable string,
 
 include::{uml_export_dir}/classes/{pkg}entry.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}admin_entry.adoc[]
+include::{uml_export_dir}/classes/{pkg}adminentry.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}care_entry.adoc[]
+include::{uml_export_dir}/classes/{pkg}careentry.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}goal.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}observation.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}observationhistory.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}questionnaireresponse.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}assessment.adoc[]
 
@@ -396,9 +402,9 @@ include::{uml_export_dir}/classes/{pkg}activity.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}action.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}instruction_details.adoc[]
+include::{uml_export_dir}/classes/{pkg}instructiondetails.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}ism_transition.adoc[]
+include::{uml_export_dir}/classes/{pkg}ismtransition.adoc[]
 
 == Instance Structures
 

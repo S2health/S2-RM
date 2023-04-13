@@ -37,23 +37,7 @@
 </li>
 <li><a href="#_background">2. Background</a>
 <ul class="sectlevel2">
-<li><a href="#_requirements">2.1. Requirements</a>
-<ul class="sectlevel3">
-<li><a href="#_original_gehr_requirements">2.1.1. Original GEHR Requirements</a></li>
-<li><a href="#_gehr_australia_requirements">2.1.2. GEHR Australia Requirements</a></li>
-<li><a href="#_european_synapses_and_synex_project_requirements">2.1.3. European Synapses and SynEx Project Requirements</a></li>
-<li><a href="#_european_ehcr_support_action_requirements">2.1.4. European EHCR Support Action Requirements</a></li>
-<li><a href="#_iso_ehr_requirements">2.1.5. ISO EHR Requirements</a></li>
-<li><a href="#_openehr_requirements">2.1.6. openEHR Requirements</a></li>
-</ul>
-</li>
-<li><a href="#_relationship_to_other_health_information_models">2.2. Relationship to other Health Information Models</a>
-<ul class="sectlevel3">
-<li><a href="#_iso_13606">2.2.1. ISO 13606</a></li>
-<li><a href="#_hl7_version_3">2.2.2. HL7 Version 3</a></li>
-<li><a href="#_omg_hdtf">2.2.3. OMG HDTF</a></li>
-</ul>
-</li>
+<li><a href="#_requirements">2.1. Requirements</a></li>
 </ul>
 </li>
 <li><a href="#_the_ehr_information_model">3. The EHR Information Model</a>
@@ -138,98 +122,93 @@
 <li><a href="#_content_package">6. Content Package</a>
 <ul class="sectlevel2">
 <li><a href="#_overview_6">6.1. Overview</a></li>
-<li><a href="#_class_descriptions_3">6.2. Class Descriptions</a>
+<li><a href="#_sections">6.2. Sections</a></li>
+<li><a href="#_class_descriptions_3">6.3. Class Descriptions</a>
 <ul class="sectlevel3">
-<li><a href="#_content_item_class">6.2.1. CONTENT_ITEM Class</a></li>
+<li><a href="#_contentitem_class">6.3.1. ContentItem Class</a></li>
+<li><a href="#_section_class">6.3.2. Section Class</a></li>
+</ul>
+</li>
+<li><a href="#_section_instance_structures">6.4. Section Instance Structures</a>
+<ul class="sectlevel3">
+<li><a href="#_problemsoap_headings">6.4.1. Problem/SOAP Headings</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_navigation_package">7. Navigation Package</a>
+<li><a href="#_entry_types">7. Entry Types</a>
 <ul class="sectlevel2">
-<li><a href="#_overview_7">7.1. Overview</a></li>
-<li><a href="#_class_descriptions_4">7.2. Class Descriptions</a>
+<li><a href="#_design_principles">7.1. Design Principles</a>
 <ul class="sectlevel3">
-<li><a href="#_section_class">7.2.1. SECTION Class</a></li>
+<li><a href="#_information_ontology">7.1.1. Information Ontology</a></li>
+<li><a href="#_clinical_statement_status_and_negation">7.1.2. Clinical Statement Status and Negation</a></li>
+<li><a href="#_standard_clinical_types_of_data">7.1.3. Standard Clinical Types of Data</a></li>
+<li><a href="#_demographic_data_in_the_ehr">7.1.4. Demographic Data in the EHR</a></li>
 </ul>
 </li>
-<li><a href="#_section_instance_structures">7.3. Section Instance Structures</a>
+<li><a href="#_entry_and_its_subtypes">7.2. Entry and its Subtypes</a>
 <ul class="sectlevel3">
-<li><a href="#_problemsoap_headings">7.3.1. Problem/SOAP Headings</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#_entry_package">8. Entry Package</a>
-<ul class="sectlevel2">
-<li><a href="#_design_principles">8.1. Design Principles</a>
-<ul class="sectlevel3">
-<li><a href="#_information_ontology">8.1.1. Information Ontology</a></li>
-<li><a href="#_clinical_statement_status_and_negation">8.1.2. Clinical Statement Status and Negation</a></li>
-<li><a href="#_standard_clinical_types_of_data">8.1.3. Standard Clinical Types of Data</a></li>
-<li><a href="#_demographic_data_in_the_ehr">8.1.4. Demographic Data in the EHR</a></li>
-</ul>
-</li>
-<li><a href="#_entry_and_its_subtypes">8.2. Entry and its Subtypes</a>
-<ul class="sectlevel3">
-<li><a href="#_the_entry_class">8.2.1. The Entry class</a></li>
-<li><a href="#_care_entry_and_admin_entry">8.2.2. Care_entry and Admin_entry</a></li>
-<li><a href="#_observation">8.2.3. Observation</a>
+<li><a href="#_the_entry_class">7.2.1. The Entry class</a></li>
+<li><a href="#_care_entry_and_admin_entry">7.2.2. Care_entry and Admin_entry</a></li>
+<li><a href="#_observation">7.2.3. Observation</a>
 <ul class="sectlevel4">
-<li><a href="#_timing_in_observations">8.2.3.1. Timing in Observations</a></li>
-<li><a href="#_valid_contents_of_a_history">8.2.3.2. Valid Contents of a History</a></li>
-<li><a href="#_clinical_semantics_of_event_time">8.2.3.3. Clinical Semantics of Event Time</a></li>
-<li><a href="#_two_ways_of_recording_state">8.2.3.4. Two ways of Recording State</a></li>
+<li><a href="#_timing_in_observations">7.2.3.1. Timing in Observations</a></li>
+<li><a href="#_valid_contents_of_a_history">7.2.3.2. Valid Contents of a History</a></li>
+<li><a href="#_clinical_semantics_of_event_time">7.2.3.3. Clinical Semantics of Event Time</a></li>
+<li><a href="#_two_ways_of_recording_state">7.2.3.4. Two ways of Recording State</a></li>
 </ul>
 </li>
-<li><a href="#_evaluation">8.2.4. Evaluation</a></li>
-<li><a href="#_instruction_and_action">8.2.5. Instruction and Action</a>
+<li><a href="#_evaluation">7.2.4. Evaluation</a></li>
+<li><a href="#_instruction_and_action">7.2.5. Instruction and Action</a>
 <ul class="sectlevel4">
-<li><a href="#_requirements_2">8.2.5.1. Requirements</a></li>
-<li><a href="#_design_principles_2">8.2.5.2. Design Principles</a></li>
-<li><a href="#_model_overview">8.2.5.3. Model Overview</a></li>
-<li><a href="#_instruction_activity_timing">8.2.5.4. Instruction Activity Timing</a></li>
-<li><a href="#_the_standard_instruction_state_machine_ism">8.2.5.5. The Standard Instruction State Machine (ISM)</a></li>
-<li><a href="#_instruction_aggregate_state">8.2.5.6. Instruction Aggregate State</a></li>
-<li><a href="#_careflow_process_to_state_machine_mapping">8.2.5.7. Careflow Process to State Machine Mapping</a></li>
-<li><a href="#_relationship_to_archetypes">8.2.5.8. Relationship to Archetypes</a></li>
+<li><a href="#_requirements_2">7.2.5.1. Requirements</a></li>
+<li><a href="#_design_principles_2">7.2.5.2. Design Principles</a></li>
+<li><a href="#_model_overview">7.2.5.3. Model Overview</a></li>
+<li><a href="#_instruction_activity_timing">7.2.5.4. Instruction Activity Timing</a></li>
+<li><a href="#_the_standard_instruction_state_machine_ism">7.2.5.5. The Standard Instruction State Machine (ISM)</a></li>
+<li><a href="#_instruction_aggregate_state">7.2.5.6. Instruction Aggregate State</a></li>
+<li><a href="#_careflow_process_to_state_machine_mapping">7.2.5.7. Careflow Process to State Machine Mapping</a></li>
+<li><a href="#_relationship_to_archetypes">7.2.5.8. Relationship to Archetypes</a></li>
 </ul>
 </li>
-<li><a href="#_clinical_workflow_definition">8.2.6. Clinical Workflow Definition</a></li>
+<li><a href="#_clinical_workflow_definition">7.2.6. Clinical Workflow Definition</a></li>
 </ul>
 </li>
-<li><a href="#_class_descriptions_5">8.3. Class Descriptions</a>
+<li><a href="#_class_descriptions_4">7.3. Class Descriptions</a>
 <ul class="sectlevel3">
-<li><a href="#_entry_class">8.3.1. ENTRY Class</a></li>
-<li><a href="#_admin_entry_class">8.3.2. ADMIN_ENTRY Class</a></li>
-<li><a href="#_care_entry_class">8.3.3. CARE_ENTRY Class</a></li>
-<li><a href="#_observation_class">8.3.4. Observation Class</a></li>
-<li><a href="#_assessment_class">8.3.5. Assessment Class</a></li>
-<li><a href="#_order_class">8.3.6. Order Class</a></li>
-<li><a href="#_activity_class">8.3.7. ACTIVITY Class</a></li>
-<li><a href="#_action_class">8.3.8. Action Class</a></li>
-<li><a href="#_instruction_details_class">8.3.9. INSTRUCTION_DETAILS Class</a></li>
-<li><a href="#_ism_transition_class">8.3.10. ISM_TRANSITION Class</a></li>
+<li><a href="#_entry_class">7.3.1. Entry Class</a></li>
+<li><a href="#_adminentry_class">7.3.2. AdminEntry Class</a></li>
+<li><a href="#_careentry_class">7.3.3. CareEntry Class</a></li>
+<li><a href="#_goal_class">7.3.4. Goal Class</a></li>
+<li><a href="#_observation_class">7.3.5. Observation Class</a></li>
+<li><a href="#_observationhistory_class">7.3.6. ObservationHistory Class</a></li>
+<li><a href="#_questionnaireresponse_class">7.3.7. QuestionnaireResponse Class</a></li>
+<li><a href="#_assessment_class">7.3.8. Assessment Class</a></li>
+<li><a href="#_order_class">7.3.9. Order Class</a></li>
+<li><a href="#_activity_class">7.3.10. Activity Class</a></li>
+<li><a href="#_action_class">7.3.11. Action Class</a></li>
+<li><a href="#_instructiondetails_class">7.3.12. InstructionDetails Class</a></li>
+<li><a href="#_ismtransition_class">7.3.13. IsmTransition Class</a></li>
 </ul>
 </li>
-<li><a href="#_instance_structures">8.4. Instance Structures</a>
+<li><a href="#_instance_structures">7.4. Instance Structures</a>
 <ul class="sectlevel3">
-<li><a href="#_observation_2">8.4.1. OBSERVATION</a>
+<li><a href="#_observation_2">7.4.1. OBSERVATION</a>
 <ul class="sectlevel4">
-<li><a href="#_heartrate_measurement_series">8.4.1.1. Heartrate Measurement Series</a></li>
-<li><a href="#_blood_pressure_with_protocol">8.4.1.2. Blood Pressure with Protocol</a></li>
-<li><a href="#_glucose_tolerance_test">8.4.1.3. Glucose Tolerance Test</a></li>
+<li><a href="#_heartrate_measurement_series">7.4.1.1. Heartrate Measurement Series</a></li>
+<li><a href="#_blood_pressure_with_protocol">7.4.1.2. Blood Pressure with Protocol</a></li>
+<li><a href="#_glucose_tolerance_test">7.4.1.3. Glucose Tolerance Test</a></li>
 </ul>
 </li>
-<li><a href="#_evaluation_2">8.4.2. EVALUATION</a>
+<li><a href="#_evaluation_2">7.4.2. EVALUATION</a>
 <ul class="sectlevel4">
-<li><a href="#_partial_asthma_management_plan">8.4.2.1. Partial Asthma Management Plan</a></li>
+<li><a href="#_partial_asthma_management_plan">7.4.2.1. Partial Asthma Management Plan</a></li>
 </ul>
 </li>
-<li><a href="#_instruction">8.4.3. INSTRUCTION</a>
+<li><a href="#_instruction">7.4.3. INSTRUCTION</a>
 <ul class="sectlevel4">
-<li><a href="#_chained_medication_order">8.4.3.1. Chained Medication Order</a></li>
-<li><a href="#_multi_drug_therapy">8.4.3.2. Multi-drug Therapy</a></li>
+<li><a href="#_chained_medication_order">7.4.3.1. Chained Medication Order</a></li>
+<li><a href="#_multi_drug_therapy">7.4.3.2. Multi-drug Therapy</a></li>
 </ul>
 </li>
 </ul>
@@ -263,7 +242,7 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="https://www.openehr.org/programs/specification" target="_blank" rel="noopener">openEHR Specification Program</a></th>
+<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="https://www.openehr.org/programs/specification" target="_blank" rel="noopener">Graphite Platform Publishing</a></th>
 </tr>
 </thead>
 <tbody>
@@ -287,12 +266,12 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2">&#169; 2003 - 2023 The openEHR Foundation</th>
+<th class="tableblock halign-center valign-top" colspan="2">&#169; 2003 - 2023 Graphite Platform Publishing</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="https://www.openehr.org" target="_blank" rel="noopener">The openEHR Foundation</a> is an independent, non-profit foundation, facilitating the sharing of health records by consumers and clinicians via open specifications, clinical models and open platform implementations.</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="https://www.openehr.org" target="_blank" rel="noopener">Graphite Platforms</a> is an independent, non-profit foundation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Licence</strong></p></td>
@@ -327,784 +306,10 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>5.2.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-87" target="_blank" rel="noopener">SPECRM-87</a>: Support tags; updated EHR model (<a href="#rm_ehr">Figure 4</a>); added <a href="#tags">Section 4.2.6</a> (Addresses <a href="https://specifications.openehr.org/tickets/SPECPR-265" target="_blank" rel="noopener">SPECPR-265</a>).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Iancu,<br>
-B Næss,<br>
-M Polajnar</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>17 Nov 2022</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-107" target="_blank" rel="noopener">SPECRM-107</a>: Add <code>inactive</code> and <code>abandoned</code> states to Version lifecycle (fixes <a href="https://specifications.openehr.org/tickets/SPECPR-383" target="_blank" rel="noopener">SPECPR-383</a>).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">J Holslag,<br>
- Jelte Zeilstra,<br>
- Bas Janssen</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12 Aug 2022</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-100" target="_blank" rel="noopener">SPECRM-100</a>. Facilitate <code>ACTION</code> with unknown date. Document use of <code>ACTION.<em>time</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">P Pazos,<br>
- S Iancu,<br>
- I McNicoll,<br>
- H Frankel</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">24 May 2022</p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>RM Release 1.1.0</strong></p></th>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.2.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-55" target="_blank" rel="noopener">SPECRM-55</a>. Add <code><em>folders</em>:LIST&lt;OBJECT_REF&gt;</code> on <code>EHR</code>; make <code><em>directory</em></code> refer to first member of <code><em>folders</em></code>. See <a href="#_folders">Section 4.2.5</a>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">B Naess,<br>
- S Iancu</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">23 Sep 2020</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECPUB-7" target="_blank" rel="noopener">SPECPUB-7</a>: Convert citations to bibtex form.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.1.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Initial Writing: based on openEHR EHR Information Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">15 Dec 2019</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-92" target="_blank" rel="noopener">SPECRM-92</a>. Correct numerous minor typographical and formatting errors.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">J Mewes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">09 Nov 2019</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-89" target="_blank" rel="noopener">SPECRM-89</a>. Add 'episodic' type to <code>COMPOSITION.<em>category</em></code>. Update text and diagrams in sections 4.2.4, 4.3.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">P Pazos,<br>
- I McNicoll</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">01 Nov 2019</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-56" target="_blank" rel="noopener">SPECRM-56</a>. Add archetypable details meta-data to <code>FOLDER</code>. (addresses <a href="https://specifications.openehr.org/tickets/SPECPR-85" target="_blank" rel="noopener">SPECPR-85</a>).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">B Naess,<br>
- S Iancu,<br>
- P Pazos,<br>
- I McNicoll,<br>
- T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">08 Oct 2019</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-88" target="_blank" rel="noopener">SPECRM-88</a>. Improve documentation relating to use of <code><em>uid</em></code> in versioning and <code>LOCATABLE</code> descendants in <code>change_control</code> package; improve advice on setting <code><em>uid</em></code> in <code>COMPOSITION</code>, <code>EHR_STATUS</code> and <code>EHR_ACCESS</code>. (Addresses <a href="https://specifications.openehr.org/tickets/SPECPR-322" target="_blank" rel="noopener">SPECPR-322</a>).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">P Pazos,<br>
- M Polajnar,<br>
- S Arikan,<br>
- T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">29 Sep 2019</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-85" target="_blank" rel="noopener">SPECRM-85</a>. Correct typographical errors: 'planned_step' should be 'plan_step' in section 8.2.5.7. Careflow Process to State Machine Mapping (see <a href="https://specifications.openehr.org/tickets/SPECPR-204" target="_blank" rel="noopener">SPECPR-204</a>).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">P Pazos</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">22 May 2019</p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>RM Release 1.0.4</strong></p></th>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.1.3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-84" target="_blank" rel="noopener">SPECRM-84</a>. Improve documentation of <code>EHR_STATUS.<em>is_modifiable</em></code> and EHR active status (see <a href="https://specifications.openehr.org/tickets/SPECPR-284" target="_blank" rel="noopener">SPECPR-284</a>).<br>
- Added new sub-section "EHR Active Status" in section 4.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M Asgari,<br>
- I McNicoll,<br>
- T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">28 Dec 2018</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-71" target="_blank" rel="noopener">SPECRM-71</a>. Make <code>ACTIVITY.<em>timing</em></code> optional.<br>
- <a href="https://specifications.openehr.org/tickets/SPECRM-68" target="_blank" rel="noopener">SPECRM-68</a>. Improve guidance on use of <code>ACTIVITY.<em>timing</em></code> (Fixes <a href="https://specifications.openehr.org/tickets/SPECPR-242" target="_blank" rel="noopener">SPECPR-242</a>.<br>
- <a href="https://specifications.openehr.org/tickets/SPECRM-69" target="_blank" rel="noopener">SPECRM-69</a>. Add missing ISM transitions and improve documentation of states (Fixes <a href="https://specifications.openehr.org/tickets/SPECPR-203" target="_blank" rel="noopener">SPECPR-203</a>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">P Pazos</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">26 Nov 2018</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-80" target="_blank" rel="noopener">SPECRM-80</a>. Improve description of <code><em>system_id</em></code> field in <code>EHR</code>, <code>AUDIT_DETAILS</code> and <code>FEEDER_AUDIT_DETAILS</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">H Frankel,<br>
- T Beale</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-59" target="_blank" rel="noopener">SPECRM-59</a>. Add identifier recommendations to EHR spec(s).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">B Lah</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">23 Apr 2018</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-52" target="_blank" rel="noopener">SPECRM-52</a>. Remove <code>COMPOSITION</code> invariant preventing context for persistent Compositions. (Fixes <a href="https://specifications.openehr.org/tickets/SPECPR-78" target="_blank" rel="noopener">SPECPR-78</a>)<br>
- Update Clinical Investigator Recording Process diagram.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">H Frankel,<br>
- S Heard</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">07 Feb 2017</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECPUB-3" target="_blank" rel="noopener">SPECPUB-3</a>. Re-instate inheritance from descendants of <code>VERSIONED_OBJECT&lt;T&gt;</code> to <code>VERSIONED_OBJECT</code> from Release 1.0.2 (lost in original UML conversion).<br>
- Correct <code>EVENT_CONTEXT.<em>health_care_facility</em></code> and <code><em>participations</em></code> links that were mangled in initial UML conversion.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">07 Jun 2016</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-46" target="_blank" rel="noopener">SPECRM-46</a>. Fix RM Release 1.0.3 typos and minor documentary errors. Correct <code>ACTION.<em>description</em></code> text to past tense. (<a href="https://specifications.openehr.org/tickets/SPECPR-77" target="_blank" rel="noopener">SPECPR-77</a>).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">P Pazos</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">04 Apr 2016</p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>RM Release 1.0.3</strong></p></th>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.1.2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-28" target="_blank" rel="noopener">SPECRM-28</a>. Corrections to EHR and Common IM documentation.<br>
- Improve explanation in section 4.4.2 (EHR Creation) of <code>EHR_STATUS</code>.<code><em>is_modifiable</em></code> (<a href="https://specifications.openehr.org/tickets/SPECPR-28" target="_blank" rel="noopener">SPECPR-28</a>).<br>
- Fix description of <code>CARE_ENTRY</code>.<code><em>guideline_id</em></code> (<a href="https://specifications.openehr.org/tickets/SPECPR-75" target="_blank" rel="noopener">SPECPR-75</a>).<br>
- Fix typo in EHR IM in section 'Standard Clinical Types of Data' (<a href="https://specifications.openehr.org/tickets/SPECPR-87" target="_blank" rel="noopener">SPECPR-87</a>).<br>
- EHR IM missing example in section 'Care_entry and Admin_entry'. (<a href="https://specifications.openehr.org/tickets/SPECPR-89" target="_blank" rel="noopener">SPECPR-89</a>).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">C Ma,<br>
- P Pazos</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10 Oct 2015</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-37" target="_blank" rel="noopener">SPECRM-37</a>: Add optional <code><em>reason</em>: List&lt;DV_TEXT&gt;</code> attribute to <code>ISM_TRANSITION</code> class (<a href="https://specifications.openehr.org/tickets/SPECPR-58" target="_blank" rel="noopener">SPECPR-58</a>).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-43" target="_blank" rel="noopener">SPECRM-43</a>: Improve documentation of <code>EHR.<em>system_id</em></code> in clone/copy scenario (<a href="https://specifications.openehr.org/tickets/SPECPR-5128" target="_blank" rel="noopener">SPECPR-128</a>).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>Release 1.0.2</strong></p></th>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.1.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-274" target="_blank" rel="noopener">SPEC-274</a>. Observation should be Evaluation in problem/SOAP structure figure.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">R Chen</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">16 Aug 2008</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-275" target="_blank" rel="noopener">SPEC-275</a>: Update Entry package design principles in EHR IM.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-253" target="_blank" rel="noopener">SPEC-253</a>: Clarify explanation of Instruction/Action model in EHR IM to indicate state machine per Activity.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>Release 1.0.1</strong></p></th>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.1.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-200" target="_blank" rel="noopener">SPEC-200</a>: Correct Release 1.0 typographical errors. Correct <code>INSTRUCTION_DETAILS</code>.<code><em>instruction_id</em></code> type to <code>LOCATABLE_REF</code>. Correct inheritance of <code>CONTENT_ITEM</code> to <code>LOCATABLE</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard<br>
- M Forss<br>
- C Ma</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">08 Apr 2007</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-201" target="_blank" rel="noopener">SPEC-201</a>: Add archetype ids to Instruction <code>ACTIVITY</code> class.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-203" target="_blank" rel="noopener">SPEC-203</a>: Release 1.0 explanatory text improvements. Minor changes to Entry section. Improved section on "time in the EHR".</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-210" target="_blank" rel="noopener">SPEC-210</a>: Remove <code>LOCATABLE</code> inheritance from <code>ISM_TRANSITION</code> and <code>INSTRUCTION_DETAILS</code> classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-130" target="_blank" rel="noopener">SPEC-130</a>: Correct security details in <code>LOCATABLE</code> and <code>ARCHETYPED</code> classes. Add <code>EHR_ACCESS</code> class.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-218" target="_blank" rel="noopener">SPEC-218</a>: Add <code><em>language</em></code> attribute to <code>COMPOSITION</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">G Grieve</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-219" target="_blank" rel="noopener">SPEC-219</a>: Use constants instead of literals to refer to terminology in RM.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">R Chen</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-244" target="_blank" rel="noopener">SPEC-244</a>: Separate <code>LOCATABLE</code> path functions into <code>PATHABLE</code> class.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale<br>
- H Frankel</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-246" target="_blank" rel="noopener">SPEC-246</a>: Correct openEHR terminology rubrics.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">B Verhees<br>
- M Forss</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>Release 1.0</strong></p></th>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-14" target="_blank" rel="noopener">SPEC-14</a>: Adjust <code>HISTORY</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">25 Jan 2006</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-140" target="_blank" rel="noopener">SPEC-140</a>. Redevelop Instruction, based on workflow principles.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard<br>
- T Beale</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-147" target="_blank" rel="noopener">SPEC-147</a>. Make <code>DIRECTORY</code> Re-usable.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">R Chen</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-162" target="_blank" rel="noopener">SPEC-162</a>. Allow party identifiers when no demographic data. Changes to <code>EHR</code>, <code>EVENT_CONTEXT</code>, and <code>ENTRY</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard<br>
- T Beale</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-164" target="_blank" rel="noopener">SPEC-164</a>. Improve description of use of times in <code>OBSERVATION</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard<br>
- H Frankel</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-174" target="_blank" rel="noopener">SPEC-174</a>. Add <code>ADMIN_ENTRY</code> subtype.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard<br>
- T Beale</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-175" target="_blank" rel="noopener">SPEC-175</a>. Make <code>ENTRY</code>.<code>provider</code> optional.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-177" target="_blank" rel="noopener">SPEC-177</a>. Make <code>COMPOSITION</code>.<code><em>content</em></code> a <code>CONTENT_ITEM</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard,<br>
- D Kalra</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-180" target="_blank" rel="noopener">SPEC-180</a>. Move <code>EVENT_CONTEXT</code>.<code><em>composer</em></code> to <code>COMPOSITION</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale<br>
- S Heard</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-181" target="_blank" rel="noopener">SPEC-181</a>: Change <code>ENTRY</code>.<code><em>provider</em></code> to <code>PARTY_PROXY</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-182" target="_blank" rel="noopener">SPEC-182</a>: Rationalise <code>VERSION</code>.<code><em>lifecycle_state</em></code> and <code>ATTESTATION</code>.<code><em>status</em></code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">C Ma<br>
- D Kalra</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-187" target="_blank" rel="noopener">SPEC-187</a>: Correct modelling errors in <code>DIRECTORY</code> class and rename.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-188" target="_blank" rel="noopener">SPEC-188</a>: Add <code><em>generating_type</em></code> function to <code>ANY</code> for use in invariants.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-189" target="_blank" rel="noopener">SPEC-189</a>. Add <code>LOCATABLE</code>.<code><em>parent</em></code>. New invariants in EHR and <code>COMPOSITION</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-190" target="_blank" rel="noopener">SPEC-190</a>. Rename <code>VERSION_REPOSITORY</code> to <code>VERSIONED_OBJECT</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-191" target="_blank" rel="noopener">SPEC-191</a>: Add <code>EHR_STATUS</code> class to <code>ehr</code> package.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">H Frankel</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-194" target="_blank" rel="noopener">SPEC-194</a>: Correct anomalies with <code>LOCATABLE</code>.<code><em>uid</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">H Frankel<br>
- T Beale</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-195" target="_blank" rel="noopener">SPEC-195</a>: Rename <code>EHR</code>.<code><em>all_compositions</em></code> to <code><em>compositions</em></code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-161" target="_blank" rel="noopener">SPEC-161</a>. Support distributed versioning. Correct identifier types in <code>EHR</code>, <code>ACTION</code> classes.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale<br>
- H Frankel</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>Release 0.96</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>Release 0.95</strong></p></th>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-108" target="_blank" rel="noopener">SPEC-108</a>. Minor changes to change_control package.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10 Dec 2004</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-24" target="_blank" rel="noopener">SPEC-24</a>. Revert meaning to <code>STRING</code> and rename as <code><em>archetype_node_id</em></code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard,<br>
- T Beale</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-98" target="_blank" rel="noopener">SPEC-98</a>. <code>EVENT_CONTEXT</code>.<code><em>time</em></code> should allow optional end time.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard,<br>
- DSTC</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-109" target="_blank" rel="noopener">SPEC-109</a>. Add <code><em>act_status</em></code> to <code>ENTRY</code>, as in CEN prEN13606.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A Goodchild</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-116" target="_blank" rel="noopener">SPEC-116</a>. Add <code>PARTICIPATION</code>.<code><em>function</em></code> vocabulary and invariant.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-118" target="_blank" rel="noopener">SPEC-118</a>. Make package names lower case.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-64" target="_blank" rel="noopener">SPEC-64</a>. Re-evaluate <code>COMPOSITION</code>.<code><em>is_persistent</em></code> attribute.  Converted is_persistent to a function; added category attribute.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">D Kalra</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-102" target="_blank" rel="noopener">SPEC-102</a>. Make <code>DV_TEXT</code> <code><em>language</em></code> and <code><em>charset</em></code> optional.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DSTC</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>Release 0.9</strong></p></th>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.4.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-96" target="_blank" rel="noopener">SPEC-96</a>. Allow 0..* <code>SECTIONs</code> as <code>COMPOSITION</code> content.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DSTC</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">11 Mar 2004</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-19" target="_blank" rel="noopener">SPEC-19</a>. Add <code>HISTORY</code> &amp; <code>STRUCTURE</code> supertype.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">06 Mar 2004</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-28" target="_blank" rel="noopener">SPEC-28</a>. Change name of <code>STRUCTURE</code> class to avoid clashes.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">H Frankel</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-87" target="_blank" rel="noopener">SPEC-87</a>. <code>EVENT_CONTEXT</code>.<code><em>location</em></code> should be optional.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DSTC</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-88" target="_blank" rel="noopener">SPEC-88</a>. Move <code>INSTRUCTION</code>.<code><em>guideline_id</em></code> to <code>ENTRY</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
- D Kalra</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-92" target="_blank" rel="noopener">SPEC-92</a>. Improve <code>EVENT_CONTEXT</code> modelling. Rename <code><em>author</em></code> to <code><em>composer</em></code>.<br>
- Formally validated using ISE Eiffel 5.4.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.3.10</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-44" target="_blank" rel="noopener">SPEC-44</a>. Add reverse ref from <code>VERSION_REPOSITORY&lt;T&gt;</code> to owner object. Add invariants to <code>DIRECTORY</code> and <code>VERSIONED_COMPOSITION</code> classes.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">D Lloyd</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">25 Feb 2004</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-46" target="_blank" rel="noopener">SPEC-46</a>. Rename <code>COORDINATED_TERM</code> and <code>DV_CODED_TEXT</code>.<code><em>definition</em></code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.3.9</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-21" target="_blank" rel="noopener">SPEC-21</a>. Rename <code>CLINICAL_CONTEXT</code>.<code><em>practice_setting</em></code> to <code><em>setting</em></code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A Goodchild</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10 Feb 2004</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.3.8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-57" target="_blank" rel="noopener">SPEC-57</a>. Environmental information needs to be included in the EHR.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">02 Nov 2003</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.3.7</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-48" target="_blank" rel="noopener">SPEC-48</a>. Pre-release review of documents.<br>
- <a href="https://specifications.openehr.org/tickets/SPEC-49" target="_blank" rel="noopener">SPEC-49</a>. Correct reference types in <code>EHR</code>, <code>DIRECTORY</code> classes. <code>EHR</code>.<code><em>contributions</em></code>, <code><em>all_compositions</em></code>, <code>FOLDER</code>.<code><em>compositions</em></code> attributes and invariants corrected.<br>
- <a href="https://specifications.openehr.org/tickets/SPEC-50" target="_blank" rel="noopener">SPEC-50</a>. Update Path syntax reference model to ADL specification.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
- D Lloyd</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">25 Oct 2003</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.3.6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-41" target="_blank" rel="noopener">SPEC-41</a>. Visually differentiate primitive types in openEHR documents.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">D Lloyd</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">04 Oct 2003</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.3.5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-13" target="_blank" rel="noopener">SPEC-13</a>. Rename key classes, according to CEN ENV 13606.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard,<br>
- D Kalra,<br>
- T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">15 Sep 2003</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.3.4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-11" target="_blank" rel="noopener">SPEC-11</a>. Add author attribute to <code>EVENT_CONTEXT</code>.<br>
- <a href="https://specifications.openehr.org/tickets/SPEC-27" target="_blank" rel="noopener">SPEC-27</a>. Move feeder_audit to <code>LOCATABLE</code> to be compatible with CEN 13606 revision.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard,<br>
- D Kalra</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">20 Jun 2003</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.3.3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-20" target="_blank" rel="noopener">SPEC-20</a>. Move <code>VERSION.<em>territory</em></code> to <code>TRANSACTION</code>.<br>
- <a href="https://specifications.openehr.org/tickets/SPEC-18" target="_blank" rel="noopener">SPEC-18</a>. Add <code>DIRECTORY</code> class to <code>rm.ehr</code> Package.
- <a href="https://specifications.openehr.org/tickets/SPEC-5" target="_blank" rel="noopener">SPEC-5</a>. Rename <code>CLINICAL_CONTEXT</code> to <code>EVENT_CONTEXT</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A Goodchild</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10 Jun 2003</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.3.2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-6" target="_blank" rel="noopener">SPEC-6</a>. Make <code>ENTRY</code>.<code><em>provider</em></code> a <code>PARTICIPATION</code>.<br>
- <a href="https://specifications.openehr.org/tickets/SPEC-7" target="_blank" rel="noopener">SPEC-7</a>. Replace <code>ENTRY</code>.<code><em>subject</em></code> and <code><em>subject_relationship</em></code> with <code>RELATED_PARTY</code>.<br>
- <a href="https://specifications.openehr.org/tickets/SPEC-8" target="_blank" rel="noopener">SPEC-8</a>. Remove <code><em>confidence</em></code> and <code><em>is_exceptional</em></code> attributes from <code>ENTRY</code>.
- <a href="https://specifications.openehr.org/tickets/SPEC-9" target="_blank" rel="noopener">SPEC-9</a>. Merge <code>ENTRY</code> <code><em>protocol</em></code> and <code><em>reasoning</em></code> attributes.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S Heard,<br>
- T Beale,
- D Kalra,
- D Lloyd</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">11 Apr 2003</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.3.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DSTC review - typos corrected.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A Goodchild</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">08 Apr 2003</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-3" target="_blank" rel="noopener">SPEC-3</a>, <a href="https://specifications.openehr.org/tickets/SPEC-4" target="_blank" rel="noopener">SPEC-4</a>. Removed <code>ORGANISER_TREE</code>.  <code>CLINICAL_CONTEXT</code> and <code>FEEDER_AUDIT</code> inherit from <code>LOCATABLE</code>.  Changes to path syntax. Improved definitions of <code>ENTRY</code> subtypes. Improved instance diagrams. DSTC detailed review.<br>
- (Formally validated).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
- Z Tun,<br>
- A Goodchild</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">18 Mar 2003</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Formally validated using ISE Eiffel 5.2. Moved <code>VERSIONED_TRANSACTION</code> class to <code>ehr</code> Package, to correspond better with serialised formalisms like XML.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
- A Goodchild</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">25 Feb 2003</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Changes post CEN WG meeting Rome Feb 2003. Moved <code>TRANSACTION</code>.<code><em>version_id</em></code> postcondition to an invariant. Moved feeder_audit back to <code>TRANSACTION</code>. Added <code>ENTRY</code>.<code><em>act_id</em></code>.  <code>VERSION_AUDIT</code>.<code><em>attestations</em></code> moved to new <code>ATTESTATIONS</code> class attached to <code>VERSIONED&lt;T&gt;</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
- S Heard,<br>
- D Kalra,<br>
- D Lloyd</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8 Feb 2003</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.0.2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Various corrections and DSTC change requests. Reverted <code>OBSERVATION</code>.<code><em>items</em></code>: <code>LIST&lt;HISTORY&lt;T&gt;&gt;</code> to <code><em>data</em></code>: <code>HISTORY&lt;T&gt;</code> and <code>EVALUATION</code>.<code><em>items</em></code>: <code>LIST&lt;STRUCTURE&lt;T&gt;&gt;</code> to <code><em>data</em></code>: <code>STRUCTURE&lt;T&gt;</code>. Changed <code>CLINICAL_CONTEXT</code>.<code><em>other_context</em></code> to a <code>STRUCTURE</code>. Added <code>ENTRY</code>.<code><em>other_participations</em></code>; Added <code>CLINICAL_CONTEXT</code>.<code><em>participations</em></code>; removed <code><em>hcp_legally_responsible</em></code> (to be archetyped). Replaced <code>EVENT_TRANSACTION</code> and <code>PERSISTENT_TRANSACTION</code> with <code>TRANSACTION</code> and a boolean attribute <code><em>is_persistent</em></code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3 Feb 2003</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.0.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Detailed corrections to diagrams and class text from DSTC.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Z Tun</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8 Jan 2003</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Moved <code>HISTORY</code> classes to Data Structures RM. No semantic changes.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">18 Dec 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.8.2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Corrections on 3.8.1. No semantic changes.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">D Lloyd</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">11 Nov 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.8.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Removed <code>SUB_FOLDER</code> class. Now folder structure can be nested separately archetyped folder structures, same as for <code>ORGANISERs</code>. Removed <code>AUTHORED_TA</code> and <code>ACQUISITION_TA</code> classes; simplified versioning.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
- D Kalra,<br>
- D Lloyd<br>
- A Goodchild</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">28 Oct 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Added practice_setting attribute to <code>CLINICAL_CONTEXT</code>, inspired from HL7v3/ANSI CDA standard Release 2.0.  Changed <code>DV_PLAIN_TEXT</code> to <code>DV_TEXT</code>. Removed <code><em>hca_coauthorising</em></code>; renamed <code><em>hca_recording</em></code>; adjusted all instances of <code>*<em>ID</code>; converted <code>CLINICAL_CONTEXT</code>.<code>_start_time</em></code>, <code><em>end_time</em></code> to an interval.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
- S Heard,<br>
- D Kalra,<br>
- M Darlison</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">22 Oct 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.7</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Removed Spatial package to Common RM document.  Renamed <code>ACTION</code> back to <code>ACTION_SPECIFICATION</code>. Removed the class <code>NAVIGABLE_STRUCTURE</code>. Renamed <code>SPATIAL</code> to <code>STRUCTURE</code>.  Removed classes <code>STATE_HISTORY</code>, <code>STATE</code>, <code>SINGLE_STATE</code>. Removed Communication (<code>EHR_EXTRACT</code>) section to own document.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">22 Sep 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Removed Common and Demographic packages to their own documents.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">28 Aug 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.5.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Altered syntax of <code>EXTERNAL_ID</code> identifiers.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
- Z Tun</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">20 Aug 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Rewrote Demographic and Ehr_extract packages.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">18 Aug 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.3.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Simplified <code>EHR_EXTRACT</code> model, numerous small changes from DSTC review.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
- Z Tun</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">15 Aug 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Rewrite of contributions, version control semantics.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
- D Lloyd,<br>
- D Kalra,<br>
- S Heard</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">01 Aug 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DSTC comments. Various minor errors/omissions. Changed inheritance of <code>SINGLE_EVENT</code> and <code>SINGLE_STATE</code>.  Included <code>STRUCTURE</code> subtype methods from GEHR. ehr_id added to VT. Altered <code>EHR</code>/<code>FOLDER</code> attrs. Added <code>EXTERNAL_ID</code>.<code><em>version</em></code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
- Z Tun</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">25 Jun 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.1.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minor corrections.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">20 May 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Reworking of Structure section, <code>ACTION</code> class, <code>INSTRUCTION</code> class.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
- S Heard</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">16 May 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Plans, actions updated.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
- S Heard</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10 May 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.9</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Additions from HL7v3 coded term model, alterations to quantity model, added explanation sections.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5 May 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.8.2a</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Interim version with various review modifications</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">28 Apr 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.8.2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Error corrections to <code>EHR_EXTRACT</code> package. P Schloeffel comments on 2.7.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
- P Schloeffel</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">25 Apr 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.8.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Further minor changes from UCL on v2.7.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">24 Apr 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Dipak Kalra (UCL) comments on v2.6 incorporated. Added External Package. Minor changes elsewhere.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
- D Kalra</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">23 Apr 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.7</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final development of initial draft, including <code>EHR_EXTRACT</code>, related models</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">20 Apr 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Further development of path syntax, incorporation of Dipak Kalra’s comments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
- D Kalra</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">15 Apr 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Further development of clinical and record management clusters.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10 Apr 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Included David Lloyd’s rev 2.3 comments.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
- D Lloyd</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4 Apr 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Improved context analysis.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4 Mar 2002</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Added path syntax.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">19 Nov 2001</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minor organisational changes, some content additions.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">18 Nov 2001</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Rewrite of large sections post-Eurorec 2001 conference, Aix-en-Provence. Added folder, contribution concepts.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">15 Nov 2001</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Major additions to introduction, design philosophy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1 Nov 2001</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Major changes to diagrams; STILL UNREVIEWED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">13 Oct 2001</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Based on GEHR Object Model</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">22 Sep 2001</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>10 Apr 2023</p></td>
 </tr>
 </tbody>
 </table>
@@ -1118,7 +323,7 @@ M Polajnar</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>Thomas Beale, Ars Semantica (UK); openEHR Foundation Management Board.</p>
+<p>Graphite Informatics group.</p>
 </li>
 </ul>
 </div>
@@ -1126,75 +331,12 @@ M Polajnar</p></td>
 <div class="sect2">
 <h3 id="_contributors"><a class="anchor" href="#_contributors"></a>Contributors</h3>
 <div class="paragraph">
-<p>This specification benefited from wide formal and informal input from the openEHR and wider health informatics community. The openEHR Foundation would like to recognise the following people for their contributions.</p>
+<p>This specification benefited from input from the wider health informatics community. The openEHR Foundation would like to recognise the following people for their contributions.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Rong Chen MD, PhD, Cambio Healthcare Systems, Sweden</p>
-</li>
-<li>
-<p>Linda Bird, PhD, DSTC, Australia</p>
-</li>
-<li>
-<p>Matthew Darlinson, PhD, CHIME, UCL, UK</p>
-</li>
-<li>
-<p>Heath Frankel, CTO Ocean Informatics, Australia</p>
-</li>
-<li>
-<p>Matias Forss, Aalborg University, Denmark</p>
-</li>
-<li>
-<p>Andrew Goodchild, PhD, senior research scientist DSTC, Australia</p>
-</li>
-<li>
-<p>Grahame Grieve, Kestral Systems, Australia</p>
-</li>
-<li>
-<p>Sam Heard MD, Ocean Informatics, Australia</p>
-</li>
-<li>
-<p>Joost Holslag MD, Netherlands</p>
-</li>
-<li>
-<p>David Ingram PhD, Emeritus Professor of Health Informatics, UCL, UK</p>
-</li>
-<li>
-<p>Bas Janssen, Nedap, Netherlands</p>
-</li>
-<li>
-<p>Dipak Kalra MD, PhD, Professor Health Informatics, CHIME, UCL, UK</p>
-</li>
-<li>
-<p>Bostjan Lah, Architect, Marand, Slovenia</p>
-</li>
-<li>
-<p>David Lloyd (ret), CHIME, UCL, UK</p>
-</li>
-<li>
-<p>Chunlan Ma PhD, MD, Ocean Informatics, Australia</p>
-</li>
-<li>
-<p>Jan Mewes, KS-plus.org, India/Germany</p>
-</li>
-<li>
-<p>Pablo Pazos Gutierrez, CaboLabs, Uruguay</p>
-</li>
-<li>
-<p>Matija Polajnar PhD, Senior developer, Marand, Slovenia</p>
-</li>
-<li>
-<p>Peter Schloeffel MD, Ocean Informatics, Australia</p>
-</li>
-<li>
-<p>Zar zar Tun, DSTC, Australia</p>
-</li>
-<li>
-<p>Bert Verhees, ROSA Software, The Netherlands</p>
-</li>
-<li>
-<p>Jelte Zeilstra, Nedap, Netherlands</p>
+<p>xxx</p>
 </li>
 </ul>
 </div>
@@ -1207,18 +349,9 @@ M Polajnar</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>University College London - Centre for Health Informatics and Multi-professional Education (CHIME);</p>
-</li>
-<li>
-<p>Ocean Informatics;</p>
-</li>
-<li>
-<p>Distributed Systems Technology Centre (DSTC), under the Cooperative Research Centres Program through the Department of the Prime Minister and Cabinet of the Commonwealth Government of Australia.</p>
+<p>xxx</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>Special thanks to David Ingram, Emeritus Professor of Health Informatics at UCL, who provided a vision and collegial working environment ever since the days of GEHR (1992).</p>
 </div>
 </div>
 <div class="sect2">
@@ -1234,9 +367,6 @@ M Polajnar</p></td>
 <li>
 <p>'Microsoft' and '.Net' are trademarks of the Microsoft Corporation</p>
 </li>
-<li>
-<p>'CORBA' is a trademark of the Object Management Group</p>
-</li>
 </ul>
 </div>
 </div>
@@ -1248,7 +378,7 @@ M Polajnar</p></td>
 <div class="sect2">
 <h3 id="_purpose"><a class="anchor" href="#_purpose"></a>1.1. Purpose</h3>
 <div class="paragraph">
-<p>This document describes the openEHR EHR Information Model, which is a model of an interoperable EHR in the ISO RM/ODP information viewpoint. This model defines a logical EHR information architecture rather than just an architecture for communication of EHR extracts or documents between EHR systems. The openEHR definition of the EHR Extract is given in the openEHR EHR_EXTRACT Information Model.</p>
+<p>This document describes the Graphite Canonical Model, which is a model of an interoperable EHR in the ISO RM/ODP information viewpoint. This model defines a logical EHR information architecture rather than just an architecture for communication of EHR extracts or documents between EHR systems. The openEHR definition of the EHR Extract is given in the openEHR EHR_EXTRACT Information Model.</p>
 </div>
 <div class="paragraph">
 <p>The intended audience includes:</p>
@@ -1323,7 +453,7 @@ M Polajnar</p></td>
 <div class="sect2">
 <h3 id="_feedback"><a class="anchor" href="#_feedback"></a>1.4. Feedback</h3>
 <div class="paragraph">
-<p>Feedback may be provided on the <a href="https://discourse.openehr.org/c/specifications/rm" target="_blank" rel="noopener">openEHR RM specifications forum</a>.</p>
+<p>Feedback may be provided on the <a href="https://discourse.openehr.org/c/specifications/rm" target="_blank" rel="noopener">Graphite specifications forum</a>.</p>
 </div>
 <div class="paragraph">
 <p>Issues may be raised on the <a href="https://specifications.openehr.org/components/GCM/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
@@ -1335,7 +465,7 @@ M Polajnar</p></td>
 <div class="sect2">
 <h3 id="_conformance"><a class="anchor" href="#_conformance"></a>1.5. Conformance</h3>
 <div class="paragraph">
-<p>Conformance of a data or software artifact to an openEHR specification is determined by a formal test of that artifact against the relevant openEHR Implementation Technology Specification(s) (ITSs), such as an IDL interface or an XML-schema. Since ITSs are formal derivations from underlying models, ITS conformance indicates model conformance.</p>
+<p>Conformance of a data or software artifact to a Graphite specification is determined by a formal test of that artifact against the relevant openEHR Implementation Technology Specification(s) (ITSs), such as an IDL interface or an XML-schema. Since ITSs are formal derivations from underlying models, ITS conformance indicates model conformance.</p>
 </div>
 </div>
 </div>
@@ -1349,12 +479,7 @@ M Polajnar</p></td>
 <div class="sect2">
 <h3 id="_requirements"><a class="anchor" href="#_requirements"></a>2.1. Requirements</h3>
 <div class="paragraph">
-<p>There are broadly three sets of requirements which inform this model, as described in the following subsections.</p>
-</div>
-<div class="sect3">
-<h4 id="_original_gehr_requirements"><a class="anchor" href="#_original_gehr_requirements"></a>2.1.1. Original GEHR Requirements</h4>
-<div class="paragraph">
-<p>From the European GEHR project 1992-5 (<a href="#Ingram1995">Ingram&#44; 1995</a>), the following broad requirements areas were identified:</p>
+<p>Requirements informing this specification:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1384,152 +509,6 @@ M Polajnar</p></td>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>The original deliverables can be reviewed in detail at the GEHR page at CHIME, UCL.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_gehr_australia_requirements"><a class="anchor" href="#_gehr_australia_requirements"></a>2.1.2. GEHR Australia Requirements</h4>
-<div class="paragraph">
-<p>The GEHR Australia project (1997-2001; <a href="#GeHR_Aus_GPCG">Heard (2001)</a>, <a href="#GeHR_Aus2001">Beale &amp; Heard (2000)</a>) introduced further requirements, including:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>support for clinical data structures: lists, tables, time-series etc;</p>
-</li>
-<li>
-<p>safer information model than the original (European) GEHR: context attributes only in valid places (but still similar style);</p>
-</li>
-<li>
-<p>separate groups for "persistent", "demographic" and "event" information in EHR, which corresponds closely to real clinical querying patterns;</p>
-</li>
-<li>
-<p>introduction of formally specified archetypes, and archetype-enabled information model;</p>
-</li>
-<li>
-<p>interoperability at the knowledge level, i.e. level of domain definitions of information such as "discharge summary" and "biochemistry result";</p>
-</li>
-<li>
-<p>XML-enabled;</p>
-</li>
-<li>
-<p>consider compatibility with <a href="https://www.iso.org/standard/40784.html" target="_blank" rel="noopener">ISO 13606</a>, <a href="https://www.omg.org/spec/COAS/" target="_blank" rel="noopener">OMG Corbamed</a>, <a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=186" target="_blank" rel="noopener">HL7v3</a>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>GEHR Australia produced a proof of concept implementation in which clinical archetypes were developed and used. See <a href="#Beale2000">Beale (2000)</a> for a technical description of archetypes.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_european_synapses_and_synex_project_requirements"><a class="anchor" href="#_european_synapses_and_synex_project_requirements"></a>2.1.3. European Synapses and SynEx Project Requirements</h4>
-<div class="paragraph">
-<p>Following the original Good European Health Record project the EU-funded Synapses (1996-8; <a href="#Synapses_Req_B">Grimson &amp; Groth (1996)</a>) and SynEx (1998-2000; <a href="#Sottile1999">Sottile Ferrara Grimson Kalra &amp; Scherrer (1999)</a>) projects extended the original requirements basis of GEHR to include further requirements, as follows:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>the requirements of a federation approach to unifying disparate clinical databases and EPR systems: the federated health record (FHR) (<a href="#Synapses_Req_A">Kalra&#44; 1996</a>);</p>
-</li>
-<li>
-<p>the need to separate a generic and domain independent high-level model for the federated health record from the (closely related) model of the meta-data which defines the domain specific health record characteristics of any given clinical specialty and any given federation of database schemata;</p>
-</li>
-<li>
-<p>a formalism to define and communicate (share) knowledge about the semantic hierarchical organisation of an FHR, the permitted data values associated with each leaf node in a record hierarchy and any constraints on values that leaf nodes may take (the Synapses Object Dictionary, <a href="#Synapses_ODP">Kalra (1998)</a>);</p>
-</li>
-<li>
-<p>the core technical requirements of and interfaces for a federation middleware service (<a href="#Synapses_Req_B">Grimson &amp; Groth&#44; 1996</a>).</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_european_ehcr_support_action_requirements"><a class="anchor" href="#_european_ehcr_support_action_requirements"></a>2.1.4. European EHCR Support Action Requirements</h4>
-<div class="paragraph">
-<p>This EU Support Action project ('SupA'; <a href="#EHCR_supA1998">Dixon Grubb Lloyd &amp; Kalra (1998)</a>, <a href="#EHCR_supA2000a">Dixon Grubb &amp; Lloyd (2000)</a>, <a href="#EHCR_supA2000b">Dixon Grubb &amp; Lloyd (2000)</a>) consolidated the requirements published by a wide range of European projects and national health informatics organisations as a Consolidated List of Requirements (<a href="#EHCR_supA2001">Dixon&#44; Grubb&#44; Lloyd&#44; &amp; Kalra&#44; 2001</a>).</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_iso_ehr_requirements"><a class="anchor" href="#_iso_ehr_requirements"></a>2.1.5. ISO EHR Requirements</h4>
-<div class="paragraph">
-<p>The above requirements publications and the recent experience of openEHR feed into the definition of a set of EHR requirements authored by ISO Technical Committee 215 (Health Informatics) - <a href="https://www.iso.org/standard/52823.html" target="_blank" rel="noopener">ISO 18308</a>. This has been reviewed and a <a href="https://specifications.openehr.org/releases/1.0.2/architecture/requirements/iso18308_conformance.pdf" target="_blank" rel="noopener">mapping to openEHR</a> developed.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_openehr_requirements"><a class="anchor" href="#_openehr_requirements"></a>2.1.6. openEHR Requirements</h4>
-<div class="paragraph">
-<p>New requirements generated during the development of openEHR included the following:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>major improvements in information models from the point of view of reducing progammer errors and ambiguity;</p>
-</li>
-<li>
-<p>better modelling of time and context (temporal/spatial approach);</p>
-</li>
-<li>
-<p>better understanding of legacy system / federation problem;</p>
-</li>
-<li>
-<p>workflow modelling;</p>
-</li>
-<li>
-<p>harmonise with ISO 13606;</p>
-</li>
-<li>
-<p>integration with HL7v2 and other messaging systems;</p>
-</li>
-<li>
-<p>numerous specific clinical requirements.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_relationship_to_other_health_information_models"><a class="anchor" href="#_relationship_to_other_health_information_models"></a>2.2. Relationship to other Health Information Models</h3>
-<div class="paragraph">
-<p>Where relevant, the correspondences to other information models have been documented in this specification. Correspondences to the GEHR Australia and EU Synapses/SynEx models are shown, since these are the models on which the openEHR EHR information model is primarily based. The following sections summarise the other models and standards with which correspondences are shown.</p>
-</div>
-<div class="sect3">
-<h4 id="_iso_13606"><a class="anchor" href="#_iso_13606"></a>2.2.1. ISO 13606</h4>
-<div class="paragraph">
-<p>These models have been influenced by and have also influenced the models in ISO 13606 (2005 revision); accordingly, relationships to 13606 have been documented fairly precisely. Particular areas of openEHR which have been changed due to this process include:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>change of major class names (<code>TRANSACTION</code> &#8594; <code>COMPOSITION</code> etc; see CR-000013);</p>
-</li>
-<li>
-<p>improved model of <code>ATTESTATION</code> (see CR-000025);</p>
-</li>
-<li>
-<p>improved model of feeder audits (see CR-000027).</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Implementation experience with Release 0.9 and 0.95 of openEHR has further improved these areas significantly. Nevertheless, openEHR is not a copy of CEN, for two reasons. Firstly, its scope includes systems, while ISO 13606 defines an EHR Extract; secondly, ISO 13606 suffers somewhat from 'design by committee", and has no formal validation mechanism for its models.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_hl7_version_3"><a class="anchor" href="#_hl7_version_3"></a>2.2.2. HL7 Version 3</h4>
-<div class="paragraph">
-<p>Correspondences to some parts of HL7 version 3 (ballot 5, July 2003) are also documented where possible, however, it should be understood that there are a number of difficulties with this. Firstly, while the HL7v3 Reference Information Model (RIM) - the closest HL7 artifact to an information model - provides similar data types and some related semantics, it is not intended to be a model of the EHR. In fact, it differs from the information model presented here (and for that matter most published information models) in two basic respects: a) it is an amalgam of semantics from many systems which would exist in a distributed health information environment, rather than a model of just one (the EHR); b) it is also not a model of data, but a combination of "analysis patterns" in the sense of <a href="#Fowler1997">Fowler (1997)</a> from which further specific models - subschemas - are developed by a custom process of "refinement by restriction", in order to arrive at message definitions. As a consequence, data in messages are not instances of HL7v3 RIM classes, as would be the case in other systems based on information models of the kind presented here.</p>
-</div>
-<div class="paragraph">
-<p>Despite the differences, there are some areas that appear to be candidates for mapping, specifically the data types and terminology use, and the correspondence between openEHR Compositions and parts of the <a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=7" target="_blank" rel="noopener">HL7 Clinical Document Architecture (CDA)</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_omg_hdtf"><a class="anchor" href="#_omg_hdtf"></a>2.2.3. OMG HDTF</h4>
-<div class="paragraph">
-<p>In general, the openEHR information models represent a more recent analysis of the required semantics of EHR and related information than can be found in the information viewpoint of the OMG HDTF specifications (particularly <a href="https://www.omg.org/spec/PIDS/">OMG PIDS</a> and <a href="https://www.omg.org/spec/COAS/">OMG COAS</a>. However, the computational viewpoint (i.e. functional service interface definitions) is one of the inputs to the openEHR service model development activity.</p>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1543,7 +522,7 @@ M Polajnar</p></td>
 </div>
 <div id="ehr_packages" class="imageblock text-center text-center">
 <div class="content">
-<img src="UML/diagrams/RM-ehr-packages.svg" alt="RM ehr packages">
+<img src="UML/diagrams/GCM-ehr-packages.svg" alt="GCM ehr packages">
 </div>
 <div class="title">Figure 1. EHR Packages</div>
 </div>
@@ -1559,14 +538,14 @@ M Polajnar</p></td>
 <p><code>composition</code>: the Composition is the EHR’s top level "data container", and is described by the <code>COMPOSITION</code> class.</p>
 </li>
 <li>
-<p><code>content</code>: this package contains the Navigation and Entry packages, whose classes describe the structure and semantics of the contents of Compositions in the health record.</p>
+<p><code>content</code>: this package contains the Navigation and Entry packages, whose classes describe the structure and semantics of the contents of Compositions in the health record, including the following classes:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>navigation</code>: the <code>SECTION</code> class provides a navigational structure to the record, similar to "headings" in the paper record. <code>ENTRYs</code> and other <code>SECTIONs</code> can appear under <code>SECTIONs</code>.</p>
+<p>the <code>SECTION</code> class provides a navigational structure to the record, similar to "headings" in the paper record. <code>ENTRYs</code> and other <code>SECTIONs</code> can appear under <code>SECTIONs</code>.</p>
 </li>
 <li>
-<p><code>entry</code>: This package contains the generic structures for recording clinical statements. Entry types include <code>ADMIN_ENTRY</code>, <code>OBSERVATION</code> (for all observed phenomena, including mechanically or manually measured, and responses in interview), <code>EVALUATION</code> (for assessments, diagnoses, plans), <code>INSTRUCTION</code> (actionable statements such as medication orders, recalls, monitoring, reviews), and <code>ACTION</code> (information recorded as a result of performing Instructions).</p>
+<p>generic structures for recording clinical statements. Entry types include <code>ADMIN_ENTRY</code>, <code>OBSERVATION</code> (for all observed phenomena, including mechanically or manually measured, and responses in interview), <code>EVALUATION</code> (for assessments, diagnoses, plans), <code>INSTRUCTION</code> (actionable statements such as medication orders, recalls, monitoring, reviews), and <code>ACTION</code> (information recorded as a result of performing Instructions).</p>
 </li>
 </ul>
 </div>
@@ -1629,7 +608,7 @@ M Polajnar</p></td>
 </div>
 <div id="rm_ehr" class="imageblock text-center text-center">
 <div class="content">
-<img src="UML/diagrams/RM-ehr.svg" alt="RM ehr">
+<img src="UML/diagrams/GCM-ehr.svg" alt="GCM ehr">
 </div>
 <div class="title">Figure 4. rm.ehr package</div>
 </div>
@@ -2598,7 +1577,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 </div>
 <div id="rm_composition" class="imageblock text-center text-center">
 <div class="content">
-<img src="UML/diagrams/RM-composition.svg" alt="RM composition">
+<img src="UML/diagrams/GCM-composition.svg" alt="GCM composition">
 </div>
 <div class="title">Figure 14. rm.composition package</div>
 </div>
@@ -2872,7 +1851,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>content</strong>: <code>List&lt;<a href="#_content_item_class">CONTENT_ITEM</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>content</strong>: <code>List&lt;<a href="#_contentitem_class">ContentItem</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The content of this Composition.</p>
 </div></div></td>
@@ -3029,13 +2008,37 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 <div class="sect2">
 <h3 id="_overview_6"><a class="anchor" href="#_overview_6"></a>6.1. Overview</h3>
 <div class="paragraph">
-<p>The <code>content</code> package contains the <code>CONTENT_ITEM</code> class, ancestor class of all content types, and the navigation and entry packages, which contain <code>SECTION</code>, <code>ENTRY</code> and related types.</p>
+<p>The <code>content</code> package contains the <code>ContentItem</code> class, ancestor class of all content types, including <code>Section</code>, <code>Entry</code> and related types.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_descriptions_3"><a class="anchor" href="#_class_descriptions_3"></a>6.2. Class Descriptions</h3>
+<h3 id="_sections"><a class="anchor" href="#_sections"></a>6.2. Sections</h3>
+<div class="paragraph">
+<p>The <code>Section</code> class enables a hierarchical heading structure, in which all individual headings are considered to belong to a "tree of headings". Each heading is an instance of the class <code>Section</code>, visible in the lower left side of <a href="#rm_composition">Figure 14</a>.</p>
+</div>
+<div class="paragraph">
+<p>Sections provide both a logical structure for the author to arrange Entries, and a navigational structure for readers of the record, whether they be human or machine. Sections are archetyped in trees with each tree containing a root Section, one or more sub-sections, and any number of Entries at each node. Section trees that are separately archetyped, such as the SOAP headings, or the heading structure for a physical examination, can be combined at runtime by type to form one large heading structure, as shown in the figure below.</p>
+</div>
+<div id="ehr_with_sections" class="imageblock text-center text-center">
+<div class="content">
+<img src="ehr/diagrams/ehr_with_sections.svg" alt="ehr with sections" width="50%">
+</div>
+<div class="title">Figure 17. Section View of a General Practice Contact Composition</div>
+</div>
+<div class="paragraph">
+<p>In terms of understanding of clinical data, Section structures are not essential in a Composition - they can always be removed or ignored (typically in machine processing such as querying) without losing the meaning of the Entries in the Composition. While Sections are often used to group Entries according to status, e.g. 'family history', 'problems', 'observations', it is the Entries themselves that indicate the definitive category of information contained therein. This principle is explained in more detail in <a href="#_entry_and_its_subtypes">Section 7.2</a>.</p>
+</div>
+<div class="paragraph">
+<p>Despite the above, Section structures do not have to be regarded as ad hoc or unreliable structures. On the contrary, as they are archetyped, their structures can be relied upon in the same way as any other structure in the record can be relied on to conform to its archetype. Accordingly, solid assumptions can be made about Sections, based on their archetypes, for the purposes of querying. In fact, the main benefit of Sections is that they may provide significant performance benefits to querying, whether by interactive application or by automated systems.</p>
+</div>
+<div class="paragraph">
+<p>One potentially confusing aspect of any Section structure is that while the root Section in a tree is logically a Section, it does not appear in a display or printed form as a visible section. This is due to the fact that humans don’t usually write down top-level headings for anything, since there is always a containing structure acting as a top-level organising context (such as the piece of paper one is writing on). For example, consider the way a clinician writes down the problem/SOAP headings on paper. She writes the name of the first problem, then under that, the S/O/A/P headings, then repeats the process for further problems. But she doesn’t write down a heading above the level of the problems, even though there must be one from a data structure point of view.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_class_descriptions_3"><a class="anchor" href="#_class_descriptions_3"></a>6.3. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_content_item_class"><a class="anchor" href="#_content_item_class"></a>6.2.1. CONTENT_ITEM Class</h4>
+<h4 id="_contentitem_class"><a class="anchor" href="#_contentitem_class"></a>6.3.1. ContentItem Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3045,7 +2048,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>CONTENT_ITEM (abstract)</em></strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>ContentItem (abstract)</em></strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -3060,40 +2063,8 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 </tbody>
 </table>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_navigation_package"><a class="anchor" href="#_navigation_package"></a>7. Navigation Package</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_overview_7"><a class="anchor" href="#_overview_7"></a>7.1. Overview</h3>
-<div class="paragraph">
-<p>The <code>navigation</code> Package defines a hierachical heading structure, in which all individual headings are considered to belong to a "tree of headings". Each heading is an instance of the class <code>SECTION</code>, visible in the lower left side of <a href="#rm_composition">Figure 14</a>.</p>
-</div>
-<div class="paragraph">
-<p>Sections provide both a logical structure for the author to arrange Entries, and a navigational structure for readers of the record, whether they be human or machine. Sections are archetyped in trees with each tree containing a root Section, one or more sub-sections, and any number of Entries at each node. Section trees that are separately archetyped, such as the SOAP headings, or the heading structure for a physical examination, can be combined at runtime by type to form one large heading structure, as shown in the figure below.</p>
-</div>
-<div id="ehr_with_sections" class="imageblock text-center text-center">
-<div class="content">
-<img src="ehr/diagrams/ehr_with_sections.svg" alt="ehr with sections" width="50%">
-</div>
-<div class="title">Figure 17. Section View of a General Practice Contact Composition</div>
-</div>
-<div class="paragraph">
-<p>In terms of understanding of clinical data, Section structures are not essential in a Composition - they can always be removed or ignored (typically in machine processing such as querying) without losing the meaning of the Entries in the Composition. While Sections are often used to group Entries according to status, e.g. 'family history', 'problems', 'observations', it is the Entries themselves that indicate the definitive category of information contained therein. This principle is explained in more detail in <a href="#_entry_and_its_subtypes">Section 8.2</a>.</p>
-</div>
-<div class="paragraph">
-<p>Despite the above, Section structures do not have to be regarded as ad hoc or unreliable structures. On the contrary, as they are archetyped, their structures can be relied upon in the same way as any other structure in the record can be relied on to conform to its archetype. Accordingly, solid assumptions can be made about Sections, based on their archetypes, for the purposes of querying. In fact, the main benefit of Sections is that they may provide significant performance benefits to querying, whether by interactive application or by automated systems.</p>
-</div>
-<div class="paragraph">
-<p>One potentially confusing aspect of any Section structure is that while the root Section in a tree is logically a Section, it does not appear in a display or printed form as a visible section. This is due to the fact that humans don’t usually write down top-level headings for anything, since there is always a containing structure acting as a top-level organising context (such as the piece of paper one is writing on). For example, consider the way a clinician writes down the problem/SOAP headings on paper. She writes the name of the first problem, then under that, the S/O/A/P headings, then repeats the process for further problems. But she doesn’t write down a heading above the level of the problems, even though there must be one from a data structure point of view.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_class_descriptions_4"><a class="anchor" href="#_class_descriptions_4"></a>7.2. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_section_class"><a class="anchor" href="#_section_class"></a>7.2.1. SECTION Class</h4>
+<h4 id="_section_class"><a class="anchor" href="#_section_class"></a>6.3.2. Section Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3103,7 +2074,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>SECTION</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Section</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -3113,7 +2084,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_content_item_class">CONTENT_ITEM</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_contentitem_class">ContentItem</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -3122,7 +2093,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>items</strong>: <code>List&lt;<a href="#_content_item_class">CONTENT_ITEM</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>items</strong>: <code>List&lt;<a href="#_contentitem_class">ContentItem</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Ordered list of content items under this section, which may include:</p>
 </div>
@@ -3148,9 +2119,9 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 </div>
 </div>
 <div class="sect2">
-<h3 id="_section_instance_structures"><a class="anchor" href="#_section_instance_structures"></a>7.3. Section Instance Structures</h3>
+<h3 id="_section_instance_structures"><a class="anchor" href="#_section_instance_structures"></a>6.4. Section Instance Structures</h3>
 <div class="sect3">
-<h4 id="_problemsoap_headings"><a class="anchor" href="#_problemsoap_headings"></a>7.3.1. Problem/SOAP Headings</h4>
+<h4 id="_problemsoap_headings"><a class="anchor" href="#_problemsoap_headings"></a>6.4.1. Problem/SOAP Headings</h4>
 <div class="paragraph">
 <p>An example of an section tree representing the problem/SOAP heading structure is shown below.</p>
 </div>
@@ -3165,12 +2136,12 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 </div>
 </div>
 <div class="sect1">
-<h2 id="_entry_package"><a class="anchor" href="#_entry_package"></a>8. Entry Package</h2>
+<h2 id="_entry_types"><a class="anchor" href="#_entry_types"></a>7. Entry Types</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_design_principles"><a class="anchor" href="#_design_principles"></a>8.1. Design Principles</h3>
+<h3 id="_design_principles"><a class="anchor" href="#_design_principles"></a>7.1. Design Principles</h3>
 <div class="sect3">
-<h4 id="_information_ontology"><a class="anchor" href="#_information_ontology"></a>8.1.1. Information Ontology</h4>
+<h4 id="_information_ontology"><a class="anchor" href="#_information_ontology"></a>7.1.1. Information Ontology</h4>
 <div class="paragraph">
 <p>All information which is created in the openEHR health record is expressed as an instance of a class in the entry package, containing the <code>ENTRY</code> class and a number of descendants. An <code>ENTRY</code> instance is logically a single 'clinical statement', and may be a single short narrative phrase, but may also contain a significant amount of data, e.g. a microbiology result, a psychiatric examination, a complex prescription. In terms of clinical content, the Entry classes are the most important in the openEHR EHR Information Model, since they define the semantics of all the 'hard' information in the record. They are intended to be archetyped, and in fact, archetypes for Entries make up the vast majority of important clinical archetypes defined.</p>
 </div>
@@ -3206,7 +2177,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 </div>
 </div>
 <div class="sect3">
-<h4 id="_clinical_statement_status_and_negation"><a class="anchor" href="#_clinical_statement_status_and_negation"></a>8.1.2. Clinical Statement Status and Negation</h4>
+<h4 id="_clinical_statement_status_and_negation"><a class="anchor" href="#_clinical_statement_status_and_negation"></a>7.1.2. Clinical Statement Status and Negation</h4>
 <div class="paragraph">
 <p>A well-known problem in clinical information recording is the problem of assigning "status", including variants like "actual value of P" (P stands for some phenomenon), "family history of P", "risk of P", "fear of P", as well as negation of any of these, i.e. "not/no P", "no history of P" etc. A proper analysis of these so called statuses [4] shows that they are not "statuses" at all, but different categories of information as per the ontology. The common statement types mentioned here are mapped as follows:</p>
 </div>
@@ -3265,7 +2236,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 </div>
 </div>
 <div class="sect3">
-<h4 id="_standard_clinical_types_of_data"><a class="anchor" href="#_standard_clinical_types_of_data"></a>8.1.3. Standard Clinical Types of Data</h4>
+<h4 id="_standard_clinical_types_of_data"><a class="anchor" href="#_standard_clinical_types_of_data"></a>7.1.3. Standard Clinical Types of Data</h4>
 <div class="paragraph">
 <p>Commonly used types of clinical information are directly representable using the openEHR Entry types. As described in <a href="#_compositions">Section 4.2.4</a>, two kinds of Composition are identified: persistent and event. The persistent kind corresponds to information that characterises the patient in the long term, and is maintained by clinicians - it can be thought of as a proxy "model of the patient". Most of the following are examples of Entry level data belonging inside persistent Compositions:</p>
 </div>
@@ -3341,7 +2312,7 @@ and includes the following:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_demographic_data_in_the_ehr"><a class="anchor" href="#_demographic_data_in_the_ehr"></a>8.1.4. Demographic Data in the EHR</h4>
+<h4 id="_demographic_data_in_the_ehr"><a class="anchor" href="#_demographic_data_in_the_ehr"></a>7.1.4. Demographic Data in the EHR</h4>
 <div class="paragraph">
 <p>The general approach of openEHR is to enable the complete separation of demographic (particularly patient-identification information) from health records, both in the interests of privacy (in some cases required by national legislation) and separated data management. The Demographic IM therefore defines demographic information. However, there is nothing to prevent certain demographic information occurring in the EHR, and in some cases this is desirable. The two main cases for this are:</p>
 </div>
@@ -3361,18 +2332,18 @@ and includes the following:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_entry_and_its_subtypes"><a class="anchor" href="#_entry_and_its_subtypes"></a>8.2. Entry and its Subtypes</h3>
+<h3 id="_entry_and_its_subtypes"><a class="anchor" href="#_entry_and_its_subtypes"></a>7.2. Entry and its Subtypes</h3>
 <div class="paragraph">
 <p>The Entry model is defined by the <code>composition.content.entry package</code>, shown in the UML diagram below. The choice of subtypes of <code>ENTRY</code> is based on the ontology shown in <a href="#CIR_ontology">Figure 20</a> and its associated model. The names do not coincide exactly however, for a number of reasons. Firstly, the category names in the hierarchy were chosen based on a philosophical/scientific model of investigation, and reflecting linguistic norms for the meanings of the terms, whereas the class names used here reflect common health computing and clinical usage of these terms (i.e. names which will make sense to software developers in the health arena). Names in these two cultures do not always coincide. Additionally, for categories such as Opinion and Instruction, the subcategories shown in the ontology (e.g. Assessment, Goal and Plan) are too variable to safely be subtyped in software, and are distinguished only at the archetype level. Only a single class for each of these ontological groups is used in the formal model. The use of different names and a slightly simplified mapping has not however prevented the faithful implementation of the semantics of the model. The model classes are described in the following subsections.</p>
 </div>
 <div id="rm_entry" class="imageblock text-center text-center">
 <div class="content">
-<img src="UML/diagrams/RM-composition.entry.svg" alt="RM composition.entry">
+<img src="UML/diagrams/GCM-composition.entry.svg" alt="GCM composition.entry">
 </div>
 <div class="title">Figure 21. rm.entry package</div>
 </div>
 <div class="sect3">
-<h4 id="_the_entry_class"><a class="anchor" href="#_the_entry_class"></a>8.2.1. The Entry class</h4>
+<h4 id="_the_entry_class"><a class="anchor" href="#_the_entry_class"></a>7.2.1. The Entry class</h4>
 <div class="paragraph">
 <p>All Entries have a number of attributes in common. The language and encoding attributes indicate how all text data within the Entry are to be interpreted linguistically and at the character set level. Normally, the language will be the same throughout the entire Entry (if not Composition), but in cases where it is not, the optional language attribute of <code>DV_TEXT</code> can be used to override the value in the enclosing <code>ENTRY</code> (or other enclosing structure, if a <code>DV_TEXT</code> is being used in some other context). Character encoding can be overridden in the same fashion by the encoding attribute within <code>DV_TEXT</code>.</p>
 </div>
@@ -3416,7 +2387,7 @@ and includes the following:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_care_entry_and_admin_entry"><a class="anchor" href="#_care_entry_and_admin_entry"></a>8.2.2. Care_entry and Admin_entry</h4>
+<h4 id="_care_entry_and_admin_entry"><a class="anchor" href="#_care_entry_and_admin_entry"></a>7.2.2. Care_entry and Admin_entry</h4>
 <div class="paragraph">
 <p>A basic division occurs between clinical and non-clinical information. The <code>CARE_ENTRY</code> class is an abstract precursor of classes that express information of any clinical activity in the care process around the patient, while <code>ADMIN_ENTRY</code> is used to capture administrative information. The division may occasionally seem ambiguous at a theoretical level, but at a practical level, it is almost always clear. Administrative information has the following characteristics:</p>
 </div>
@@ -3441,7 +2412,7 @@ and includes the following:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_observation"><a class="anchor" href="#_observation"></a>8.2.3. Observation</h4>
+<h4 id="_observation"><a class="anchor" href="#_observation"></a>7.2.3. Observation</h4>
 <div class="paragraph">
 <p>Instances of the <code>OBSERVATION</code> class record the observation of any phenomenon or state of interest to do with the patient, including pathology results, blood pressure readings, the family history and social circumstances as told by the patient to the doctor, patient answers to physician questions during a physical examination, and responses to a psychological assessment questionnaire. Observations are distinguished from Actions in that Actions are interventions whereas Observations record only information relating to the situation of the patient, not what is done to him/her.</p>
 </div>
@@ -3479,13 +2450,13 @@ and includes the following:</p>
 <p>The detailed semantics of Observation data are described in the following subsections.</p>
 </div>
 <div class="sect4">
-<h5 id="_timing_in_observations"><a class="anchor" href="#_timing_in_observations"></a>8.2.3.1. Timing in Observations</h5>
+<h5 id="_timing_in_observations"><a class="anchor" href="#_timing_in_observations"></a>7.2.3.1. Timing in Observations</h5>
 <div class="paragraph">
 <p>Many health information models express observation time as one or more attributes with names like 'observation_time', 'activity_time' and so on. The openEHR model departs from this by modelling historical time inside a History/Event structure defined in the <code>data_structures.history</code> package. In short, this package defines the <code>HISTORY</code> class with an origin attribute, and a series of <code>EVENT</code> instances each containing a time attribute. Instantaneous and interval events are distinguished via the <code>EVENT</code> subtypes <code>POINT_EVENT</code> and <code>INTERVAL_EVENT</code>; interval events have the width attribute is set to the duration of the interval.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_valid_contents_of_a_history"><a class="anchor" href="#_valid_contents_of_a_history"></a>8.2.3.2. Valid Contents of a History</h5>
+<h5 id="_valid_contents_of_a_history"><a class="anchor" href="#_valid_contents_of_a_history"></a>7.2.3.2. Valid Contents of a History</h5>
 <div class="paragraph">
 <p>One of the aims of the model of Observation described here is to represent in the same way single sample and multi-sample time-based data for which measurement protocol is invariant. It is not intended for measurements in "coarse" time taken by different people, different instruments, or with any other difference in data-gathering technique. In these cases, separate, usually single-sample histories are used, usually occurring in distinct container objects (e.g. distinct Compositions, in the EHR).</p>
 </div>
@@ -3507,7 +2478,7 @@ and includes the following:</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_clinical_semantics_of_event_time"><a class="anchor" href="#_clinical_semantics_of_event_time"></a>8.2.3.3. Clinical Semantics of Event Time</h5>
+<h5 id="_clinical_semantics_of_event_time"><a class="anchor" href="#_clinical_semantics_of_event_time"></a>7.2.3.3. Clinical Semantics of Event Time</h5>
 <div class="paragraph">
 <p>In most cases, the times recorded in a History (<code>HISTORY</code>.<code><em>origin</em></code> and <code>EVENT</code>.<code><em>time</em></code>, <code><em>width</em></code>) can be thought of as "the times when the observed phenomena were true". For example, if a pulse of 88bpm is recorded for 12/feb/2005 12:44:00, this is the time at which the heartrate (for which pulse is a surrogate) existed. In such cases, the sample time, and the measuring time are one and the same.</p>
 </div>
@@ -3525,7 +2496,7 @@ and includes the following:</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_two_ways_of_recording_state"><a class="anchor" href="#_two_ways_of_recording_state"></a>8.2.3.4. Two ways of Recording State</h5>
+<h5 id="_two_ways_of_recording_state"><a class="anchor" href="#_two_ways_of_recording_state"></a>7.2.3.4. Two ways of Recording State</h5>
 <div class="paragraph">
 <p>State information is optional, and is not needed if the data are meaningful on their own. If it is recorded, it can either be as a History of its own (i.e. using the <code>OBSERVATION</code>.<code><em>state</em></code> atttribute described above), or else as state values within the <code>EVENT</code> instances in the <code>OBSERVATION</code>.<code><em>data</em></code> History. Both methods are useful in different circumstances. A separate state history is more likely to be used in a correlation study such as a sports medicine study on heartrate with respect to specific types of exercise. In this method, the state information is a History of Events whose times and widths need not match those of the History in the data attribute. The state data under this approach generally express the condition of the subject in absolute terms, i.e. they are standalone statements about the subject&#8217;s state at certain points in time, such as "walking on treadmill 10km/h, 10<sup>o</sup> incline".</p>
 </div>
@@ -3541,7 +2512,7 @@ and includes the following:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_evaluation"><a class="anchor" href="#_evaluation"></a>8.2.4. Evaluation</h4>
+<h4 id="_evaluation"><a class="anchor" href="#_evaluation"></a>7.2.4. Evaluation</h4>
 <div class="paragraph">
 <p>According to the ontology described in <a href="#Beale_Heard2007">Beale &amp; Heard (2007)</a>, the Opinion category covers a number of concrete concepts, as follows.</p>
 </div>
@@ -3575,7 +2546,7 @@ and includes the following:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_instruction_and_action"><a class="anchor" href="#_instruction_and_action"></a>8.2.5. Instruction and Action</h4>
+<h4 id="_instruction_and_action"><a class="anchor" href="#_instruction_and_action"></a>7.2.5. Instruction and Action</h4>
 <div class="paragraph">
 <p>Instructions in openEHR specify actions to be performed in the future. They differ from information in the Proposal sub-category of Opinion in the ontology (i.e. instances of Evaluation in the class model) in that they are specified in sufficient detail to be directly enacted without further clinical decision-making related to the design of the Instruction, e.g they can be performed by the patient or a nurse. Any decisions that could be made during the performance of an Instruction are either constrained by the Instruction itself (e.g. dose range; suspend if adverse reaction) or else are assumed knowledge of the expected performer. For example, an Evaluation may say that "oral cortico-steroids are indicated at a peak flow of 200 l/m". A corresponding Instruction would indicate the actual drug, route, dose, frequency, and so on. The informed patient might be reasonably expected to be able to vary the dosage on his or her own within a dosage guideline explained by his/her GP.</p>
 </div>
@@ -3586,7 +2557,7 @@ and includes the following:</p>
 <p>The following subsections describe Instruction and Action in some detail.</p>
 </div>
 <div class="sect4">
-<h5 id="_requirements_2"><a class="anchor" href="#_requirements_2"></a>8.2.5.1. Requirements</h5>
+<h5 id="_requirements_2"><a class="anchor" href="#_requirements_2"></a>7.2.5.1. Requirements</h5>
 <div class="paragraph">
 <p>The Instruction and Action classes are designed to satisfy the following requirements:</p>
 </div>
@@ -3623,7 +2594,7 @@ and includes the following:</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_design_principles_2"><a class="anchor" href="#_design_principles_2"></a>8.2.5.2. Design Principles</h5>
+<h5 id="_design_principles_2"><a class="anchor" href="#_design_principles_2"></a>7.2.5.2. Design Principles</h5>
 <div class="paragraph">
 <p>The design approach is based on four principles. The first is that the <em>specification</em> of an Instruction as one or more Activities is distinguished from the information representing actions performed as a result. This makes the model and resulting information instances clear to software designers and data users. It also enables workflow engines to determine which parts of the specification have already been executed, and allows for Actions actually performed to differ from those specified. The separation is realised in terms of the <code>INSTRUCTION</code> and <code>ACTION</code> classes and their helpers. Instances of the former specify an Instruction, while instances of the latter describe steps which have actually been performed.</p>
 </div>
@@ -3638,7 +2609,7 @@ and includes the following:</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_model_overview"><a class="anchor" href="#_model_overview"></a>8.2.5.3. Model Overview</h5>
+<h5 id="_model_overview"><a class="anchor" href="#_model_overview"></a>7.2.5.3. Model Overview</h5>
 <div class="paragraph">
 <p>Instruction definitions are modelled in terms of the <code>INSTRUCTION</code> and <code>ACTIVITY</code> classes, with optional workflow attributes. These two classes carry the basic information relating to an Instruction, with all formal workflow definition expressed in parsable syntax in the <code>INSTRUCTION.<em>wf_definition</em></code> attribute. An <code>INSTRUCTION</code> instance includes the narrative description of the Instruction, and a list of <code>ACTIVITY</code> instances. It also includes all the attributes inherited from the <code>CARE_ENTRY</code> class, including subject, participations and so on.</p>
 </div>
@@ -3677,7 +2648,7 @@ and includes the following:</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_instruction_activity_timing"><a class="anchor" href="#_instruction_activity_timing"></a>8.2.5.4. Instruction Activity Timing</h5>
+<h5 id="_instruction_activity_timing"><a class="anchor" href="#_instruction_activity_timing"></a>7.2.5.4. Instruction Activity Timing</h5>
 <div class="paragraph">
 <p>Timing information may be minimal and simplistic, or highly specified. As a consequence, there is no one method of representation that suits all purposes. The simplest expression of timing information is as informal narrative, as found in a prescription for antibiotics, such as "take 3 times a day, for 7 days, with meals". This may be represented using a text value in <code>INSTRUCTION.<em>narrative</em></code>.</p>
 </div>
@@ -3695,7 +2666,7 @@ and includes the following:</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_the_standard_instruction_state_machine_ism"><a class="anchor" href="#_the_standard_instruction_state_machine_ism"></a>8.2.5.5. The Standard Instruction State Machine (ISM)</h5>
+<h5 id="_the_standard_instruction_state_machine_ism"><a class="anchor" href="#_the_standard_instruction_state_machine_ism"></a>7.2.5.5. The Standard Instruction State Machine (ISM)</h5>
 <div class="paragraph">
 <p>When an intervention defined by an Activity is unfolding in a clinical context, EHR users want to know things such as the following:</p>
 </div>
@@ -3720,7 +2691,7 @@ and includes the following:</p>
 </div>
 <div id="instruction_state_machine" class="imageblock text-center text-center">
 <div class="content">
-<img src="UML/diagrams/RM-InstructionStateMachine.svg" alt="RM InstructionStateMachine">
+<img src="UML/diagrams/GCM-InstructionStateMachine.svg" alt="GCM InstructionStateMachine">
 </div>
 <div class="title">Figure 26. openEHR standard Instruction State Machine</div>
 </div>
@@ -3825,7 +2796,7 @@ EXPIRED
 </div>
 </div>
 <div class="sect4">
-<h5 id="_instruction_aggregate_state"><a class="anchor" href="#_instruction_aggregate_state"></a>8.2.5.6. Instruction Aggregate State</h5>
+<h5 id="_instruction_aggregate_state"><a class="anchor" href="#_instruction_aggregate_state"></a>7.2.5.6. Instruction Aggregate State</h5>
 <div class="paragraph">
 <p>Each Activity within an Instruction constitutes a clinically identifiable medication or therapy of some kind, while the Instruction usually corresponds to a grouping or combination of therapies designed to treat an overall problem. Accordingly, the Instruction can be seen as having an aggregate state derived from the states of the Activities, as shown in the figure below. The rules for entering each aggregate state are indicated in terms of the states of the constituent Activities.</p>
 </div>
@@ -3840,7 +2811,7 @@ EXPIRED
 </div>
 </div>
 <div class="sect4">
-<h5 id="_careflow_process_to_state_machine_mapping"><a class="anchor" href="#_careflow_process_to_state_machine_mapping"></a>8.2.5.7. Careflow Process to State Machine Mapping</h5>
+<h5 id="_careflow_process_to_state_machine_mapping"><a class="anchor" href="#_careflow_process_to_state_machine_mapping"></a>7.2.5.7. Careflow Process to State Machine Mapping</h5>
 <div class="paragraph">
 <p>From a health professional&#8217;s point of view, a healthcare workflow, or 'careflow', consists of steps and events designed to meet one or more goals. The steps are highly dependent on the particular kind of workflow, and will usually be named in terms familiar to the relevant kinds of clinical professionals, such as "prescribe", "book", "suspend" and so on (note that some of these names may be the same as ISM transitions, but may or may not indicate the same thing). However, the need of users of health information is to know what state the execution of an Instruction is in, regardless of which particular careflow step might have just been executed. This is achieved by defining the mapping between the steps of a particular careflow to the states of the ISM in an Action archetype. When each Action corresponding to a particular Instruction Activity is performed, it will be known both which careflow step it corresponds to and which ISM state the Activity is now in. The following table provides an example of the mapping for a UK GP medication order workflow.</p>
 </div>
@@ -3906,7 +2877,7 @@ EXPIRED
 </div>
 </div>
 <div class="sect4">
-<h5 id="_relationship_to_archetypes"><a class="anchor" href="#_relationship_to_archetypes"></a>8.2.5.8. Relationship to Archetypes</h5>
+<h5 id="_relationship_to_archetypes"><a class="anchor" href="#_relationship_to_archetypes"></a>7.2.5.8. Relationship to Archetypes</h5>
 <div class="paragraph">
 <p>Much of the semantics of particular Instructions and Actions derive from archetypes. Currently, archetypes are used to define two groups of Instruction semantics. The first is the descriptions of activities that are defined in Instructions (<code>ACTIVITY</code>.<code><em>description</em></code>) and executed in Actions (<code>ACTION</code>.<code><em>description</em></code>). These descriptions are always of the same form for any given Instruction, and it is highly desirable to have the same archetype component for both. An example is where the description is of a medication, commonly consisting of a tree or list of ten or more elements describing the drug, its name, form, dose, route and so on. The same information structure is needed in the Instruction, where it defines what is to be administered, and in the Action, where it describes what has been administered. In any particular instance, there may be small differences in what was administered (e.g. dose or route are modified) even though the archetype model will be the same for both.</p>
 </div>
@@ -3928,7 +2899,7 @@ EXPIRED
 </div>
 </div>
 <div class="sect3">
-<h4 id="_clinical_workflow_definition"><a class="anchor" href="#_clinical_workflow_definition"></a>8.2.6. Clinical Workflow Definition</h4>
+<h4 id="_clinical_workflow_definition"><a class="anchor" href="#_clinical_workflow_definition"></a>7.2.6. Clinical Workflow Definition</h4>
 <div class="paragraph">
 <p>Clinical workflows exist at multiple hierarchical levels, from the health system level (reduce diabetes costs; manage obesity) to the fine-grained (asthmatic medication prescription for a particular patient). At all levels, there are goals, actors and tasks designed to satisfy the goals. At a coarse-grained business process level, workflows may be enacted by more than one actor, and may encompass the whole cycle of Observation, Diagnosis, Instruction and Action. For example a workflow describing the steps "prescribe", "dispense", "administer", "repeat", "review" and so on, around a medication order might include GP, pharmacist, patient as actors. At the finer level of an actual drug or therapy administration, there is usually a single agent or group that performs a specific task, usually within one provider institution, or at home. The correspondence between workflows at these different levels and particular patients, rather than just categories of patients (e.g. all insulin-dependent diabetics), typically increases at finer levels of granularity. Thus from the point of view of automation, it is likely to be fine-grained workflows that have patient-specific definitions which would reasonably appear in the EHR. Most typical medication administrations are in this category. How automated workflow definitions at higher levels of organisational hierarchy are represented and coordinated with lower-level automated workflows is known to be a difficult problem generally, and given that health computing is generally more complex than most domains, implementation of distributed, coordinated (or "orchestrated" or "choreographed", to use the terms of the workflow community) clinical workflows is likely to be some years off.</p>
 </div>
@@ -3979,9 +2950,9 @@ EXPIRED
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_descriptions_5"><a class="anchor" href="#_class_descriptions_5"></a>8.3. Class Descriptions</h3>
+<h3 id="_class_descriptions_4"><a class="anchor" href="#_class_descriptions_4"></a>7.3. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_entry_class"><a class="anchor" href="#_entry_class"></a>8.3.1. ENTRY Class</h4>
+<h4 id="_entry_class"><a class="anchor" href="#_entry_class"></a>7.3.1. Entry Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3991,7 +2962,7 @@ EXPIRED
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>ENTRY (abstract)</em></strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Entry (abstract)</em></strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -4004,7 +2975,7 @@ EXPIRED
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_content_item_class">CONTENT_ITEM</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_contentitem_class">ContentItem</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -4136,7 +3107,7 @@ EXPIRED
 </table>
 </div>
 <div class="sect3">
-<h4 id="_admin_entry_class"><a class="anchor" href="#_admin_entry_class"></a>8.3.2. ADMIN_ENTRY Class</h4>
+<h4 id="_adminentry_class"><a class="anchor" href="#_adminentry_class"></a>7.3.2. AdminEntry Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4146,7 +3117,7 @@ EXPIRED
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>ADMIN_ENTRY</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>AdminEntry</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -4162,7 +3133,7 @@ EXPIRED
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_entry_class">ENTRY</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_entry_class">Entry</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -4181,7 +3152,7 @@ The data of the Entry; modelled in archetypes.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_care_entry_class"><a class="anchor" href="#_care_entry_class"></a>8.3.3. CARE_ENTRY Class</h4>
+<h4 id="_careentry_class"><a class="anchor" href="#_careentry_class"></a>7.3.3. CareEntry Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4191,7 +3162,7 @@ The data of the Entry; modelled in archetypes.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>CARE_ENTRY (abstract)</em></strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>CareEntry (abstract)</em></strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -4201,7 +3172,7 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_entry_class">ENTRY</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_entry_class">Entry</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -4226,7 +3197,48 @@ The data of the Entry; modelled in archetypes.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_observation_class"><a class="anchor" href="#_observation_class"></a>8.3.4. Observation Class</h4>
+<h4 id="_goal_class"><a class="anchor" href="#_goal_class"></a>7.3.4. Goal Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Goal</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_careentry_class">CareEntry</a></code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code><a href="/releases/GCM/{gcm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Description of the goal, in the form of an archetyped structure.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>targets</strong>: <code>List&lt;<a href="#_target_class">Target</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_observation_class"><a class="anchor" href="#_observation_class"></a>7.3.5. Observation Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4244,12 +3256,19 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_care_entry_class">CARE_ENTRY</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_careentry_class">CareEntry</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code>Date_time</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Time of the event or state the Observation records.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
@@ -4265,7 +3284,89 @@ The data of the Entry; modelled in archetypes.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_assessment_class"><a class="anchor" href="#_assessment_class"></a>8.3.5. Assessment Class</h4>
+<h4 id="_observationhistory_class"><a class="anchor" href="#_observationhistory_class"></a>7.3.6. ObservationHistory Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>ObservationHistory</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Entry subtype for all clinical data in the past or present, i.e. which (by the time it is recorded) has already occurred. <code>OBSERVATION</code> data is expressed using the class <code>HISTORY&lt;T&gt;</code>, which guarantees that it is situated in time. <code>OBSERVATION</code> is used for all notionally objective (i.e. measured in some way) observations of phenomena, and patient-reported phenomena, e.g. pain.</p>
+</div>
+<div class="paragraph">
+<p>Not to be used for recording opinion or future statements of any kind, including instructions, intentions, plans etc.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_careentry_class">CareEntry</a></code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code><a href="/releases/GCM/{gcm_release}/data_structures.html#_history_class" target="_blank" rel="noopener">History</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The data of this observation, in the form of a history of values which may be of any complexity.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>state</strong>: <code><a href="/releases/GCM/{gcm_release}/data_structures.html#_history_class" target="_blank" rel="noopener">History</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional recording of the state of subject of this observation during the observation process, in the form of a separate history of values which may be of any complexity. State may also be recorded within the History of the data attribute.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_questionnaireresponse_class"><a class="anchor" href="#_questionnaireresponse_class"></a>7.3.7. QuestionnaireResponse Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>QuestionnaireResponse</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_careentry_class">CareEntry</a></code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>questions</strong>: <code><a href="#_questionresponse_class">QuestionResponse</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_assessment_class"><a class="anchor" href="#_assessment_class"></a>7.3.8. Assessment Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4288,7 +3389,7 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_care_entry_class">CARE_ENTRY</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_careentry_class">CareEntry</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -4306,7 +3407,7 @@ The data of the Entry; modelled in archetypes.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_order_class"><a class="anchor" href="#_order_class"></a>8.3.6. Order Class</h4>
+<h4 id="_order_class"><a class="anchor" href="#_order_class"></a>7.3.9. Order Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4329,7 +3430,7 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_care_entry_class">CARE_ENTRY</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_careentry_class">CareEntry</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -4345,7 +3446,7 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>expiry_time</strong>: <code>@@</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>expiry_time</strong>: <code>Date_time</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional expiry date/time to assist determination of when an Instruction can be assumed to have expired. This helps prevent false listing of Instructions as Active when they clearly must have been terminated in some way or other.</p>
 </div></div></td>
@@ -4359,7 +3460,7 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>activities</strong>: <code>List&lt;<a href="#_activity_class">ACTIVITY</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>activities</strong>: <code>List&lt;<a href="#_activity_class">Activity</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>List of all activities in Instruction.</p>
 </div></div></td>
@@ -4374,7 +3475,7 @@ The data of the Entry; modelled in archetypes.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_activity_class"><a class="anchor" href="#_activity_class"></a>8.3.7. ACTIVITY Class</h4>
+<h4 id="_activity_class"><a class="anchor" href="#_activity_class"></a>7.3.10. Activity Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4384,7 +3485,7 @@ The data of the Entry; modelled in archetypes.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>ACTIVITY</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Activity</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -4448,7 +3549,7 @@ The data of the Entry; modelled in archetypes.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_action_class"><a class="anchor" href="#_action_class"></a>8.3.8. Action Class</h4>
+<h4 id="_action_class"><a class="anchor" href="#_action_class"></a>7.3.11. Action Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4468,7 +3569,7 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_care_entry_class">CARE_ENTRY</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_careentry_class">CareEntry</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -4477,21 +3578,21 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code>@@</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code>Date_time</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Point in time at which this action completed. To indicate an unknown time, use a <code>DV_DATE_TIME</code> instance with <code><em>value</em></code> set to the time of creation (or some other known time before which the Action is known to have occurred, e.g. data accession timestamp from integration engine), and <code><em>magnitude_status</em></code> set to <code>&lt;</code>.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ism_transition</strong>: <code><a href="#_ism_transition_class">ISM_TRANSITION</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ism_transition</strong>: <code><a href="#_ismtransition_class">IsmTransition</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Details of transition in the Instruction state machine caused by this Action.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>instruction_details</strong>: <code><a href="#_instruction_details_class">INSTRUCTION_DETAILS</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>instruction_details</strong>: <code><a href="#_instructiondetails_class">InstructionDetails</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Details of the Instruction that caused this Action to be performed, if there was one.</p>
 </div></div></td>
@@ -4507,7 +3608,7 @@ The data of the Entry; modelled in archetypes.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_instruction_details_class"><a class="anchor" href="#_instruction_details_class"></a>8.3.9. INSTRUCTION_DETAILS Class</h4>
+<h4 id="_instructiondetails_class"><a class="anchor" href="#_instructiondetails_class"></a>7.3.12. InstructionDetails Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4517,7 +3618,7 @@ The data of the Entry; modelled in archetypes.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>INSTRUCTION_DETAILS</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>InstructionDetails</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -4581,7 +3682,7 @@ The data of the Entry; modelled in archetypes.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_ism_transition_class"><a class="anchor" href="#_ism_transition_class"></a>8.3.10. ISM_TRANSITION Class</h4>
+<h4 id="_ismtransition_class"><a class="anchor" href="#_ismtransition_class"></a>7.3.13. IsmTransition Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4591,7 +3692,7 @@ The data of the Entry; modelled in archetypes.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>ISM_TRANSITION</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>IsmTransition</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -4654,14 +3755,14 @@ has_code_for_group_id (Group_id_instruction_transitions, transition.defining_cod
 </div>
 </div>
 <div class="sect2">
-<h3 id="_instance_structures"><a class="anchor" href="#_instance_structures"></a>8.4. Instance Structures</h3>
+<h3 id="_instance_structures"><a class="anchor" href="#_instance_structures"></a>7.4. Instance Structures</h3>
 <div class="paragraph">
 <p>The following subsections illustrate typical Entry instance structures. For guidance on how to best model particular clinical statements, see the archetype part of the <a href="https://www.openehr.org/ckm" target="_blank" rel="noopener">openEHR Clinical Knowledge Manager repository</a>.</p>
 </div>
 <div class="sect3">
-<h4 id="_observation_2"><a class="anchor" href="#_observation_2"></a>8.4.1. OBSERVATION</h4>
+<h4 id="_observation_2"><a class="anchor" href="#_observation_2"></a>7.4.1. OBSERVATION</h4>
 <div class="sect4">
-<h5 id="_heartrate_measurement_series"><a class="anchor" href="#_heartrate_measurement_series"></a>8.4.1.1. Heartrate Measurement Series</h5>
+<h5 id="_heartrate_measurement_series"><a class="anchor" href="#_heartrate_measurement_series"></a>7.4.1.1. Heartrate Measurement Series</h5>
 <div class="paragraph">
 <p>The following figure illustrates three heartrate measurements over 10 minutes.</p>
 </div>
@@ -4673,7 +3774,7 @@ has_code_for_group_id (Group_id_instruction_transitions, transition.defining_cod
 </div>
 </div>
 <div class="sect4">
-<h5 id="_blood_pressure_with_protocol"><a class="anchor" href="#_blood_pressure_with_protocol"></a>8.4.1.2. Blood Pressure with Protocol</h5>
+<h5 id="_blood_pressure_with_protocol"><a class="anchor" href="#_blood_pressure_with_protocol"></a>7.4.1.2. Blood Pressure with Protocol</h5>
 <div class="paragraph">
 <p>The following figure illustrates a blood pressure observation with protocol.</p>
 </div>
@@ -4685,7 +3786,7 @@ has_code_for_group_id (Group_id_instruction_transitions, transition.defining_cod
 </div>
 </div>
 <div class="sect4">
-<h5 id="_glucose_tolerance_test"><a class="anchor" href="#_glucose_tolerance_test"></a>8.4.1.3. Glucose Tolerance Test</h5>
+<h5 id="_glucose_tolerance_test"><a class="anchor" href="#_glucose_tolerance_test"></a>7.4.1.3. Glucose Tolerance Test</h5>
 <div class="paragraph">
 <p>An oral glucose tolerance test takes the following form, although the number and timing of the blood sugar levels may be slightly different in practice:</p>
 </div>
@@ -4720,9 +3821,9 @@ has_code_for_group_id (Group_id_instruction_transitions, transition.defining_cod
 </div>
 </div>
 <div class="sect3">
-<h4 id="_evaluation_2"><a class="anchor" href="#_evaluation_2"></a>8.4.2. EVALUATION</h4>
+<h4 id="_evaluation_2"><a class="anchor" href="#_evaluation_2"></a>7.4.2. EVALUATION</h4>
 <div class="sect4">
-<h5 id="_partial_asthma_management_plan"><a class="anchor" href="#_partial_asthma_management_plan"></a>8.4.2.1. Partial Asthma Management Plan</h5>
+<h5 id="_partial_asthma_management_plan"><a class="anchor" href="#_partial_asthma_management_plan"></a>7.4.2.1. Partial Asthma Management Plan</h5>
 <div class="paragraph">
 <p>The following figure illustrates a partial asthma management plan in which monitoring (peak flow) with dependent actions (review and admission to ER) and therapy (bronchodilator) are shown. In a complete plan, symptom monitoring and other medications might be shown. The parts of the plan are linked to the root <code>EVALUATION</code> node via the <code><em>links</em></code>: <code>Set&lt;LINK&gt;</code> attribute inherited from the <code>LOCATABLE</code> class.</p>
 </div>
@@ -4735,9 +3836,9 @@ has_code_for_group_id (Group_id_instruction_transitions, transition.defining_cod
 </div>
 </div>
 <div class="sect3">
-<h4 id="_instruction"><a class="anchor" href="#_instruction"></a>8.4.3. INSTRUCTION</h4>
+<h4 id="_instruction"><a class="anchor" href="#_instruction"></a>7.4.3. INSTRUCTION</h4>
 <div class="sect4">
-<h5 id="_chained_medication_order"><a class="anchor" href="#_chained_medication_order"></a>8.4.3.1. Chained Medication Order</h5>
+<h5 id="_chained_medication_order"><a class="anchor" href="#_chained_medication_order"></a>7.4.3.1. Chained Medication Order</h5>
 <div class="paragraph">
 <p>Often, a medication order for one drug consists of segments in which one or more of the administration details of route, form, frequency, dose etc is changed. In hospitals, intravenous antibiotics and pain relief drugs may be followed by a tablet form of the same drug to be taken orally. Other examples are common in general practice, such as the following order:</p>
 </div>
@@ -4759,7 +3860,7 @@ has_code_for_group_id (Group_id_instruction_transitions, transition.defining_cod
 </div>
 </div>
 <div class="sect4">
-<h5 id="_multi_drug_therapy"><a class="anchor" href="#_multi_drug_therapy"></a>8.4.3.2. Multi-drug Therapy</h5>
+<h5 id="_multi_drug_therapy"><a class="anchor" href="#_multi_drug_therapy"></a>7.4.3.2. Multi-drug Therapy</h5>
 <div class="paragraph">
 <p>A common regime for treating duodenal ulcer and related complaints is using Losec with other drugs, such as in the following combination:</p>
 </div>
@@ -4870,12 +3971,6 @@ has_code_for_group_id (Group_id_instruction_transitions, transition.defining_cod
 <p><a id="Barretto2005"></a>Barretto, S. (2005). <em>Designing Guideline-based Workflow-Integrated Electronic Health Records</em> (PhD thesis). University of South Australia, Adelaide. Retrieved from <a href="https://wwww.openehr.org/publications/workflow/Barretto_PhD_Thesis_2005.zip" class="bare">https://wwww.openehr.org/publications/workflow/Barretto_PhD_Thesis_2005.zip</a></p>
 </div>
 <div class="paragraph">
-<p><a id="Beale2000"></a>Beale, T. (2000). Archetypes: Constraint-based Domain Models for Future-proof Information Systems. Retrieved from <a href="https://www.openehr.org/publications/archetypes/archetypes_beale_web_2000.pdf" class="bare">https://www.openehr.org/publications/archetypes/archetypes_beale_web_2000.pdf</a></p>
-</div>
-<div class="paragraph">
-<p><a id="GeHR_Aus2001"></a>Beale, T., &amp; Heard, S. (2000). <em>GEHR Technical Requirements</em>. Australia: GEHR Foundation. Retrieved from <a href="https://www.openehr.org/resources/related_projects/gehr_requirements.pdf" class="bare">https://www.openehr.org/resources/related_projects/gehr_requirements.pdf</a></p>
-</div>
-<div class="paragraph">
 <p><a id="Beale_Heard2007"></a>Beale, T., &amp; Heard, S. (2007). An Ontology-based Model of Clinical Information. In K. K. et al. (Ed.), <em>Proceedings MedInfo 2007</em> (pp. 760–764). IOS Publishing. Retrieved from <a href="http://www.openehr.org/publications/health_ict/MedInfo2007-BealeHeard.pdf" class="bare">http://www.openehr.org/publications/health_ict/MedInfo2007-BealeHeard.pdf</a></p>
 </div>
 <div class="paragraph">
@@ -4885,46 +3980,16 @@ has_code_for_group_id (Group_id_instruction_transitions, transition.defining_cod
 <p><a id="Browne2005"></a>Browne, E. (2005, January). <em>Workflow Modelling of Coordinated Inter-Health-Provider Care Plans</em> (PhD thesis). School of Computer and Information Science, University of South Australia, Adelaide. Retrieved from <a href="https://wwww.openehr.org/publications/workflow/Eric_Browne_WF_thesis_2005.pdf" class="bare">https://wwww.openehr.org/publications/workflow/Eric_Browne_WF_thesis_2005.pdf</a></p>
 </div>
 <div class="paragraph">
-<p><a id="EHCR_supA2000a"></a>Dixon, R., Grubb, P. A., &amp; Lloyd, D. (2000). <em>EHCR Support Action Deliverable 3.5: ’Final Recommendations to CEN for future work.’</em> Brussels: European Commission DGXIII.</p>
-</div>
-<div class="paragraph">
-<p><a id="EHCR_supA2000b"></a>Dixon, R., Grubb, P. A., &amp; Lloyd, D. (2000). <em>EHCR Support Action Deliverable 2.4 ’Guidelines on Interpretation and implementation of CEN EHCRA.’</em> Brussels: European Commission DGXIII.</p>
-</div>
-<div class="paragraph">
-<p><a id="EHCR_supA1998"></a>Dixon, R., Grubb, P. A., Lloyd, D., &amp; Kalra, D. (1998). <em>EHCR Support Action Deliverable 3.1, 3.2 ’Interim Report to CEN.’</em> Brussels: European Commission DGXIII.</p>
-</div>
-<div class="paragraph">
-<p><a id="EHCR_supA2001"></a>Dixon, R., Grubb, P. A., Lloyd, D., &amp; Kalra, D. (2001). <em>Consolidated List of Requirements. EHCR Support Action Deliverable 1.4.</em> Brussels: European Commission DGXIII. Retrieved from <a href="https://discovery.ucl.ac.uk/id/eprint/1603/1/R5.pdf" class="bare">https://discovery.ucl.ac.uk/id/eprint/1603/1/R5.pdf</a></p>
-</div>
-<div class="paragraph">
 <p><a id="Elstein_Schwarz2002"></a>Elstein, A. S., &amp; Schwarz, A. (2002). Clinical problem solving and diagnostic decision making: selective review of the cognitive literature. <em>BMJ</em>, <em>324</em>, 729–732.</p>
 </div>
 <div class="paragraph">
 <p><a id="Elstein1978"></a>Elstein, A. S., Shulman, L. S., &amp; Sprafka, S. A. (1978). <em>Medical problem solving: an analysis of clinical reasoning.</em> Cambridge, MA: Harvard University Press.</p>
 </div>
 <div class="paragraph">
-<p><a id="Fowler1997"></a>Fowler, M. (1997). <em>Analysis Patterns: Reusable Object Models</em>. Addison Wesley.</p>
-</div>
-<div class="paragraph">
 <p><a id="Gray_Reuter1993"></a>Gray, J., &amp; Reuter, A. (1993). <em>Transaction Processing Concepts and Techniques</em>. Morgan Kaufmann.</p>
 </div>
 <div class="paragraph">
-<p><a id="Synapses_Req_B"></a>Grimson, W., &amp; Groth, T. (1996). <em>The Synapses User Requirements and Functional Specification (Part B)</em>. Brussels: EU Telematics Application Programme.</p>
-</div>
-<div class="paragraph">
-<p><a id="GeHR_Aus_GPCG"></a>Heard, S. (2001). <em>GEHR Project Australia, GPCG Trial</em>. Australia: GEHR Foundation. Retrieved from <a href="https://www.openehr.org/resources/related_projects" class="bare">https://www.openehr.org/resources/related_projects</a></p>
-</div>
-<div class="paragraph">
 <p><a id="GEHR_Del_8"></a>Heard, S., Kalra, D., &amp; Ingram, D. (1994). <em>Deliverable 8: Ethical and legal Requirements of GEHR Architecture and Systems</em>. Brussels: European Commission AIM. Retrieved from <a href="https://www.openehr.org/resources/related_projects/gehr_deliverable-8.pdf" class="bare">https://www.openehr.org/resources/related_projects/gehr_deliverable-8.pdf</a></p>
-</div>
-<div class="paragraph">
-<p><a id="Ingram1995"></a>Ingram, D. (1995). The Good European Health Record Project. In M. F. Laires, M. J. Laderia, &amp; J. P. Christensen (Eds.), . Amsterdam: IOS Press.</p>
-</div>
-<div class="paragraph">
-<p><a id="Synapses_Req_A"></a>Kalra, D. (1996). <em>The Synapses User Requirements and Functional Specification (Part A)</em>. Brussels: EU Telematics Application Programme.</p>
-</div>
-<div class="paragraph">
-<p><a id="Synapses_ODP"></a>Kalra, D. (1998). <em>Synapses ODP Information Viewpoint</em>. Brussels: EU Telematics Application Programme. Retrieved from <a href="http://discovery.ucl.ac.uk/66235/" class="bare">http://discovery.ucl.ac.uk/66235/</a></p>
 </div>
 <div class="paragraph">
 <p><a id="GEHR_Del_4"></a>Lloyd, D. (1992). <em>Deliverable 4: GEHR Requirements for Clinical Comprehensiveness</em>. Brussels: European Commission AIM. Retrieved from <a href="https://www.openehr.org/resources/related_projects/gehr_deliverable-4.pdf" class="bare">https://www.openehr.org/resources/related_projects/gehr_deliverable-4.pdf</a></p>
@@ -4934,9 +3999,6 @@ has_code_for_group_id (Group_id_instruction_transitions, transition.defining_cod
 </div>
 <div class="paragraph">
 <p><a id="Müller2003"></a>Müller, R. (2003, January). <em>Event-Oriented Dynamic Adaptation of Workflows: Model, Architecture, Implementation</em> (PhD thesis). Fakultät für Mathematik und Informatik at the Universität Leipzig, Leipzig. Retrieved from <a href="https://dbs.uni-leipzig.de/de/publication/title/event_oriented_dynamic_adaptation_of_workflows_model_architecture_and_implementation" class="bare">https://dbs.uni-leipzig.de/de/publication/title/event_oriented_dynamic_adaptation_of_workflows_model_architecture_and_implementation</a></p>
-</div>
-<div class="paragraph">
-<p><a id="Sottile1999"></a>Sottile, P. A., Ferrara, F. M., Grimson, W., Kalra, D., &amp; Scherrer, J. R. (1999). The holistic healthcare information system. In <em>Toward an Electronic Health Record Europe</em> (pp. 259–266). TEHRE.</p>
 </div>
 <div class="paragraph">
 <p><a id="Sowa2000"></a>Sowa, J. F. (2000). <em>Knowledge Representation: Logical, philosophical and Computational Foundations</em>. California: Brooks/Cole.</p>
@@ -4952,7 +4014,7 @@ has_code_for_group_id (Group_id_instruction_transitions, transition.defining_cod
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-04-12 17:04:56 -0600
+Last updated 2023-04-13 07:16:06 -0600
 </div>
 </div>
 </body>

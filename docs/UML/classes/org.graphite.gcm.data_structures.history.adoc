@@ -3,7 +3,7 @@
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*History<>*
+2+^h|*History*
 
 h|*Description*
 2+a|Root object of a linear history, i.e. time series structure. This is a generic class whose type parameter must be a descendant of `ITEM_STRUCTURE`, ensuring that each Event in the `_events_` of a given instance is of the same structural type, i.e. `ITEM_TREE`, `ITEM_LIST` etc.
@@ -18,15 +18,15 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*origin*: `@@`
+|*origin*: `Date_time`
 a|Time origin of this event history. The first event is not necessarily at the origin point.
 
 h|*0..1*
-|*period*: `@@`
+|*period*: `Duration`
 a|Period between samples in this segment if periodic.
 
 h|*0..1*
-|*duration*: `@@`
+|*total_duration*: `Duration`
 a|Duration of the entire History; either corresponds to the duration of all the events, and/or the duration represented by the summary, if it exists.
 
 h|*0..1*

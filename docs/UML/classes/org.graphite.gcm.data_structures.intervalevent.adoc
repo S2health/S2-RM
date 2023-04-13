@@ -16,7 +16,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*width*: `@@`
+|*width*: `Duration`
 a|Duration of the time interval during which the values recorded under `data` are true and, if set, the values recorded under `state` are true. Void if an instantaneous event.
 
 h|*0..1*
@@ -31,7 +31,7 @@ h|*Functions*
 ^h|*Meaning*
 
 h|*1..1*
-|*interval_start_time* ()
+|*interval_start_time* (): `Date_time`
 a|Start time of the interval of this event.
 
 h|*Invariants*
