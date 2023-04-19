@@ -1,73 +1,62 @@
-=== DV_MULTIMEDIA Class
+=== Dv_multimedia Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*DV_MULTIMEDIA*
+2+^h|*Dv_multimedia*
 
 h|*Description*
 2+a|A specialisation of `DV_ENCAPSULATED` for audiovisual and bio-signal types. Includes further metadata relating to multimedia types which are not applicable to other subtypes of `DV_ENCAPSULATED`.
 
 h|*Inherit*
-2+|`<<_dv_encapsulated_class,DV_ENCAPSULATED>>`
+2+|`<<_dv_encapsulated_class,Dv_encapsulated>>`
 
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*0..1*
-|*alternate_text*: `String`
+|*alternate_text*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
 a|Text to display in lieu of multimedia display/replay.
 
 h|*0..1*
-|*uri*: `<<_dv_uri_class,DV_URI>>`
+|*uri*: `link:/releases/BASE/{base_release}/foundation_types.html#_uri_class[Uri^]`
 a|URI reference to electronic information stored outside the record as a file, database entry etc, if supplied as a reference.
 
 h|*0..1*
-|*data*: `List<Byte>`
+|*data*: `List<link:/releases/BASE/{base_release}/foundation_types.html#_byte_class[Byte^]>`
 a|The actual data found at `_uri_`, if supplied inline.
 
 h|*1..1*
-|*media_type*: `Terminology_code`
+|*media_type*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]`
 a|Data media type coded from openEHR code set  media types  (interface for the IANA MIME types code set).
+Example: image/jpeg; text/json.
 
 h|*0..1*
-|*compression_algorithm*: `Terminology_code`
-a|Compression type, a coded value from the openEHR Integrity check code set. Void means no compression.
+|*hash*: `String`
+a|SHA-1 integrity checksum as a Base64 string.
 
 h|*0..1*
-|*integrity_check*: `List<Byte>`
-a|Binary cryptographic integrity checksum.
-
-h|*0..1*
-|*integrity_check_algorithm*: `Terminology_code`
-a|Type of integrity check, a coded value from the openEHR `Integrity check` code set.
-
-h|*0..1*
-|*thumbnail*: `<<_dv_multimedia_class,DV_MULTIMEDIA>>`
+|*thumbnail*: `<<_dv_multimedia_class,Dv_multimedia>>`
 a|The thumbnail for this item, if one exists; mainly for graphics formats.
 
 h|*1..1*
-|*size*: `Integer`
+|*size*: `link:/releases/BASE/{base_release}/foundation_types.html#_integer_class[Integer^]`
 a|Original size in bytes of unencoded encapsulated data. I.e. encodings such as base64, hexadecimal etc do not change the value of this attribute.
 h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*1..1*
-|*is_external* (): `Boolean`
+|*is_external* (): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
 a|Computed from the value of the `_uri_` attribute: True if  the data is stored externally to the record, as indicated by `_uri_`. A copy may also be stored internally, in which case `_is_expanded_` is also true.
 
 h|*1..1*
-|*is_inline* (): `Boolean`
+|*is_inline* (): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
 a|Computed from the value of the data attribute. True if  the  data is stored  in  expanded  form, ie within the EHR itself.
 
 h|*1..1*
-|*is_compressed* (): `Boolean`
-a|Computed from the value of the `_compression_algorithm_` attribute: True if  the  data is stored in compressed form.
-
-h|*1..1*
-|*has_integrity_check* (): `Boolean`
+|*has_integrity_check* (): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
 a|Computed from the value of the `_integrity_check_algorithm_` attribute: True if an integrity check has been computed.
 
 h|*Invariants*

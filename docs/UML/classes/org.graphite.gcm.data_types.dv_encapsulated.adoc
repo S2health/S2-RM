@@ -1,26 +1,26 @@
-=== DV_ENCAPSULATED Class
+=== Dv_encapsulated Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*__DV_ENCAPSULATED (abstract)__*
+2+^h|*__Dv_encapsulated (abstract)__*
 
 h|*Description*
 2+a|Abstract class defining the common meta-data of all types of encapsulated data.
 
 h|*Inherit*
-2+|`<<_datavalue_class,DataValue>>`
+2+|`<<_data_value_class,Data_value>>`
 
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*0..1*
-|*charset*: `Terminology_code`
+|*charset*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]`
 a|Name of character encoding scheme in which this value is encoded. Coded from openEHR Code Set  character sets . Unicode is the default assumption in openEHR, with UTF-8 being the assumed encoding. This attribute allows for variations from these assumptions.
 
 h|*0..1*
-|*language*: `Terminology_code`
+|*language*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]`
 a|Optional indicator of the localised language in which the data is written, if relevant. Coded from openEHR Code Set `languages`.
 
 h|*Invariants*

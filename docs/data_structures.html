@@ -462,8 +462,8 @@ lists, tables, trees, and history.</p>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>has_element_path</strong> (<br>
-a_path: <code>String[1]</code><br>
-): <code>Boolean</code></p></td>
+a_path: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a>[1]</code><br>
+): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>True if path  a_path' is a valid leaf path.</p>
 </div></div></td>
@@ -471,7 +471,7 @@ a_path: <code>String[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>element_at_path</strong> (<br>
-a_path: <code>String[1]</code><br>
+a_path: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a>[1]</code><br>
 ): <code><a href="#_element_class">Element</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Return the leaf element at the path  a_path'.</p>
@@ -510,21 +510,21 @@ a_path: <code>String[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>null_flavour</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dvcodedtext_class" target="_blank" rel="noopener">DvCodedText</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>null_flavour</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Flavour of null value, e.g. <code>253&#124;unknown&#124;</code>, <code>271&#124;no information&#124;</code>, <code>272&#124;masked&#124;</code>, and <code>273&#124;not applicable&#124;</code>.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_datavalue_class" target="_blank" rel="noopener">DataValue</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_data_value_class" target="_blank" rel="noopener">Data_value</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Property representing leaf value object of <code>ELEMENT</code>. In real data, any concrete subtype of <code>DATA_VALUE</code> can be used.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>null_reason</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dvtext_class" target="_blank" rel="noopener">DvText</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>null_reason</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional specific reason for null value; if set, <code><em>null_flavour</em></code> must be set. Null reason may apply only to a minority of clinical data, commonly needed in reporting contexts.</p>
 </div></div></td>
@@ -536,7 +536,7 @@ a_path: <code>String[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_null</strong> (): <code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_null</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>True if value logically not known, e.g. if indeterminate, not asked etc.</p>
 </div></div></td>
@@ -880,21 +880,21 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>DV_
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>origin</strong>: <code>Date_time</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>origin</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Time origin of this event history. The first event is not necessarily at the origin point.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>period</strong>: <code>Duration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>period</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Period between samples in this segment if periodic.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>total_duration</strong>: <code>Duration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>total_duration</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Duration of the entire History; either corresponds to the duration of all the events, and/or the duration represented by the summary, if it exists.</p>
 </div></div></td>
@@ -920,7 +920,7 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>DV_
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_periodic</strong> (): <code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_periodic</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Indicates whether history is periodic.</p>
 </div></div></td>
@@ -957,7 +957,7 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>DV_
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Event&lt;&gt; (abstract)</em></strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Event (abstract)</em></strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -976,7 +976,7 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>DV_
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code>Date_time</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Time of this event. If the width is non-zero, it is the time point of the trailing edge of the event.</p>
 </div></div></td>
@@ -1002,7 +1002,7 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>DV_
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>offset</strong> (): <code>Duration</code><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>offset</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code><br>
 <br>
 <em>Post_condition</em>: <code>Result = time.diff(parent.origin)</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1029,7 +1029,7 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>DV_
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>PointEvent&lt;&gt;</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>PointEvent</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -1055,7 +1055,7 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>DV_
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>IntervalEvent&lt;&gt;</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>IntervalEvent</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -1074,21 +1074,21 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>DV_
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>width</strong>: <code>Duration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>width</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Duration of the time interval during which the values recorded under <code>data</code> are true and, if set, the values recorded under <code>state</code> are true. Void if an instantaneous event.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>sample_count</strong>: <code>Integer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>sample_count</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_integer_class" target="_blank" rel="noopener">Integer</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional count of original samples to which this event corresponds.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>math_function</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dvcodedtext_class" target="_blank" rel="noopener">DvCodedText</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>math_function</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Mathematical function of the data of this event, e.g.  maximum, mean etc. Coded using <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml">openEHR vocabulary <code>event math function</code></a>. Default value <code>640&#124;actual&#124;</code>, meaning 'actual value'.</p>
 </div></div></td>
@@ -1100,7 +1100,7 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>DV_
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>interval_start_time</strong> (): <code>Date_time</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>interval_start_time</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Start time of the interval of this event.</p>
 </div></div></td>

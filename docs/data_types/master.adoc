@@ -71,12 +71,10 @@ include::master03-introduction.adoc[leveloffset=+1]
 include::master04-basic_package.adoc[leveloffset=+1]
 include::master05-text_package.adoc[leveloffset=+1]
 include::master06-quantity_package.adoc[leveloffset=+1]
-include::master07-date_time_package.adoc[leveloffset=+1]
 include::master08-time_specification_package.adoc[leveloffset=+1]
 include::master09-encapsulated_package.adoc[leveloffset=+1]
 include::master10-uri_package.adoc[leveloffset=+1]
 include::master11-implem_strategies.adoc[leveloffset=+1]
-include::masterAppA-comparison_HL7.adoc[leveloffset=+1]
 
 
 //

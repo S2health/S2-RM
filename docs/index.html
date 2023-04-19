@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.16">
+<meta name="description" content="openEHR Reference Model Component">
+<meta name="keywords" content="reference model, openehr">
+<title>Reference Model (RM) Component - latest</title>
+<link rel="stylesheet" href="https://specifications.openehr.org/styles/openehr.css">
+</head>
+<body class="book">
+<div id="header">
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock text-center">
+<div class="content">
+<img src="https://uploads-ssl.webflow.com/63570cd7d4eda80d654ccf14/64027a592d749e7df28c6248_primary-graphite.svg" alt="openEHR logo">
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="openehr_block_diagram.svg" alt="openEHR components" width="60%">
+</div>
+</div>
+</div>
+</div>
+<h1 id="_reference_model_rm_component_latest" class="sect0"><a class="anchor" href="#_reference_model_rm_component_latest"></a>Reference Model (RM) Component - latest</h1>
+<div class="openblock partintro title-para">
+<div class="content">
+<a href="https://specifications.openehr.org/components/GCM/open_issues" target="_blank" rel="noopener">Open Issues</a> | <a href="https://specifications.openehr.org/components/GCM/roadmap" target="_blank" rel="noopener">Roadmap</a> | <a href="https://specifications.openehr.org/components/GCM/history" target="_blank" rel="noopener">Previous Releases</a>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_specifications"><a class="anchor" href="#_specifications"></a>Specifications</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Specification</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/ehr.html">EHR IM</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The information model of the openEHR EHR.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/demographic.html">Demographic IM</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The openEHR demographics information model.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/common.html">Common IM</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information model containing common concepts, including the archetype-enabling <code>LOCATABLE</code> class, party references, audits and attestations, change control, and authored resources.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/data_structures.html">Data Structures IM</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information model of data structures, incuding a powerful model of time-series data.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/data_types.html">Data Types IM</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information model of data types, including quantities, date/times, plain and coded text, time specification, multimedia and URIs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/support.html">Support IM</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Support model defining identifiers, assumed types, and terminology interface specification used in the rest of the IMs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/integration.html">Integration IM</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information model for representing legacy data is a free-form Entry type for implementing integration solutions.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/ehr_extract.html">EHR Extract IM</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The information model of the EHR Extract, which is a serilialisation of content from an EHR.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_computable_expressions"><a class="anchor" href="#_computable_expressions"></a>Computable Expressions</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 71.4286%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Resource</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/UML/openEHR_UML-RM.mdzip">openEHR_UML-RM.mdzip</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UML file for MagicDraw 19 for RM model. Contains UML 2.5 standard XMI file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/BASE/latest/UML/openEHR_UML-Base.mdzip">openEHR_UML-Base.mdzip</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UML file for MagicDraw 19 for BASE model (included by RM). Contains UML 2.5 standard XMI file.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_class_index"><a class="anchor" href="#_class_index"></a>Class Index</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_component_gcm"><a class="anchor" href="#_component_gcm"></a>Component GCM</h3>
+<div class="sect3">
+<h4 id="_model_org_graphite_gcm"><a class="anchor" href="#_model_org_graphite_gcm"></a>Model org.graphite.gcm</h4>
+<div class="sect4">
+<h5 id="_package_common"><a class="anchor" href="#_package_common"></a>Package common</h5>
+<div class="ulist xcode">
+<ul>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/common.html#_archetyped_class" target="_blank" rel="noopener">ARCHETYPED</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/common.html#_feeder_audit_class" target="_blank" rel="noopener">FEEDER_AUDIT</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/common.html#_feeder_audit_details_class" target="_blank" rel="noopener">FEEDER_AUDIT_DETAILS</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/common.html#_folder_class" target="_blank" rel="noopener">FOLDER</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/common.html#_item_tag_class" target="_blank" rel="noopener">ITEM_TAG</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/common.html#_link_class" target="_blank" rel="noopener">LINK</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/common.html#_locatable_class" target="_blank" rel="noopener">LOCATABLE</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/common.html#_pathable_class" target="_blank" rel="noopener">PATHABLE</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/common.html#_versioned_folder_class" target="_blank" rel="noopener">VERSIONED_FOLDER</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_package_composition"><a class="anchor" href="#_package_composition"></a>Package composition</h5>
+<div class="ulist xcode">
+<ul>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_action_class" target="_blank" rel="noopener">Action</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_activity_class" target="_blank" rel="noopener">Activity</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_admin_entry_class" target="_blank" rel="noopener">Admin_entry</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_assertion_class" target="_blank" rel="noopener">Assertion</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_care_entry_class" target="_blank" rel="noopener">Care_entry</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_composition_class" target="_blank" rel="noopener">Composition</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_content_item_class" target="_blank" rel="noopener">Content_item</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_entry_class" target="_blank" rel="noopener">Entry</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_event_context_class" target="_blank" rel="noopener">Event_context</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_instruction_details_class" target="_blank" rel="noopener">Instruction_details</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_ism_transition_class" target="_blank" rel="noopener">Ism_transition</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_observation_class" target="_blank" rel="noopener">Observation</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_order_class" target="_blank" rel="noopener">Order</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_questionnaire_response_class" target="_blank" rel="noopener">Questionnaire_response</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_section_class" target="_blank" rel="noopener">Section</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_package_data_structures"><a class="anchor" href="#_package_data_structures"></a>Package data_structures</h5>
+<div class="ulist xcode">
+<ul>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_structures.html#_element_class" target="_blank" rel="noopener">Element</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_structures.html#_event_class" target="_blank" rel="noopener">Event</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_structures.html#_history_class" target="_blank" rel="noopener">History</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_structures.html#_intervalevent_class" target="_blank" rel="noopener">IntervalEvent</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_structures.html#_pointevent_class" target="_blank" rel="noopener">PointEvent</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_package_data_types"><a class="anchor" href="#_package_data_types"></a>Package data_types</h5>
+<div class="ulist xcode">
+<ul>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_ehr_uri_class" target="_blank" rel="noopener">DV_EHR_URI</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_general_time_specification_class" target="_blank" rel="noopener">DV_GENERAL_TIME_SPECIFICATION</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_periodic_time_specification_class" target="_blank" rel="noopener">DV_PERIODIC_TIME_SPECIFICATION</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_time_specification_class" target="_blank" rel="noopener">DV_TIME_SPECIFICATION</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_uri_class" target="_blank" rel="noopener">DV_URI</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_data_value_class" target="_blank" rel="noopener">Data_value</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_boolean_class" target="_blank" rel="noopener">Dv_boolean</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_coded_text_class" target="_blank" rel="noopener">Dv_coded_text</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_count_class" target="_blank" rel="noopener">Dv_count</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_date_class" target="_blank" rel="noopener">Dv_date</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_date_time_class" target="_blank" rel="noopener">Dv_date_tIme</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_duration_class" target="_blank" rel="noopener">Dv_duration</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_encapsulated_class" target="_blank" rel="noopener">Dv_encapsulated</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_identifier_class" target="_blank" rel="noopener">Dv_identifier</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_interval_class" target="_blank" rel="noopener">Dv_interval</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_measured_class" target="_blank" rel="noopener">Dv_measured</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_multimedia_class" target="_blank" rel="noopener">Dv_multimedia</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_ordered_class" target="_blank" rel="noopener">Dv_ordered</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_ordinal_class" target="_blank" rel="noopener">Dv_ordinal</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_parsable_class" target="_blank" rel="noopener">Dv_parsable</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_plain_text_class" target="_blank" rel="noopener">Dv_plain_text</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_quantified_class" target="_blank" rel="noopener">Dv_quantified</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_quantity_class" target="_blank" rel="noopener">Dv_quantity</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_ratio_class" target="_blank" rel="noopener">Dv_ratio</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_temporal_class" target="_blank" rel="noopener">Dv_temporal</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_text_class" target="_blank" rel="noopener">Dv_text</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_time_class" target="_blank" rel="noopener">Dv_time</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_ratio_kind_enumeration" target="_blank" rel="noopener">Ratio_kind</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_reference_range_class" target="_blank" rel="noopener">Reference_range</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_term_mapping_class" target="_blank" rel="noopener">Term_mapping</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/data_types.html#_text_format_types_enumeration" target="_blank" rel="noopener">Text_format_types</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_package_ehr"><a class="anchor" href="#_package_ehr"></a>Package ehr</h5>
+<div class="ulist xcode">
+<ul>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_access_control_settings_class" target="_blank" rel="noopener">ACCESS_CONTROL_SETTINGS</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_ehr_class" target="_blank" rel="noopener">EHR</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_ehr_access_class" target="_blank" rel="noopener">EHR_ACCESS</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_ehr_status_class" target="_blank" rel="noopener">EHR_STATUS</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_versioned_composition_class" target="_blank" rel="noopener">VERSIONED_COMPOSITION</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_versioned_ehr_access_class" target="_blank" rel="noopener">VERSIONED_EHR_ACCESS</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/ehr.html#_versioned_ehr_status_class" target="_blank" rel="noopener">VERSIONED_EHR_STATUS</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_package_entity"><a class="anchor" href="#_package_entity"></a>Package entity</h5>
+<div class="ulist xcode">
+<ul>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_accountability_class" target="_blank" rel="noopener">ACCOUNTABILITY</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_address_class" target="_blank" rel="noopener">ADDRESS</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_agent_class" target="_blank" rel="noopener">AGENT</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_aggregate_agent_class" target="_blank" rel="noopener">AGGREGATE_AGENT</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_artefact_class" target="_blank" rel="noopener">ARTEFACT</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_asset_class" target="_blank" rel="noopener">ASSET</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_automaton_class" target="_blank" rel="noopener">AUTOMATON</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_biological_entity_class" target="_blank" rel="noopener">BIOLOGICAL_ENTITY</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_capability_class" target="_blank" rel="noopener">CAPABILITY</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_consumable_class" target="_blank" rel="noopener">CONSUMABLE</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_consumable_use_class" target="_blank" rel="noopener">CONSUMABLE_USE</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_contact_class" target="_blank" rel="noopener">CONTACT</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_entity_class" target="_blank" rel="noopener">ENTITY</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_entity_relationship_class" target="_blank" rel="noopener">ENTITY_RELATIONSHIP</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_equipment_class" target="_blank" rel="noopener">EQUIPMENT</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_facility_class" target="_blank" rel="noopener">FACILITY</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_geographical_site_class" target="_blank" rel="noopener">GEOGRAPHICAL_SITE</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_immaterial_entity_class" target="_blank" rel="noopener">IMMATERIAL_ENTITY</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_independent_object_class" target="_blank" rel="noopener">INDEPENDENT_OBJECT</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_individual_agent_class" target="_blank" rel="noopener">INDIVIDUAL_AGENT</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_material_entity_class" target="_blank" rel="noopener">MATERIAL_ENTITY</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_object_aggregate_class" target="_blank" rel="noopener">OBJECT_AGGREGATE</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_organisation_class" target="_blank" rel="noopener">ORGANISATION</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_org_entity_class" target="_blank" rel="noopener">ORG_ENTITY</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_org_unit_class" target="_blank" rel="noopener">ORG_UNIT</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_party_class" target="_blank" rel="noopener">PARTY</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_party_identity_class" target="_blank" rel="noopener">PARTY_IDENTITY</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_party_relationship_class" target="_blank" rel="noopener">PARTY_RELATIONSHIP</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_person_class" target="_blank" rel="noopener">PERSON</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_persona_class" target="_blank" rel="noopener">PERSONA</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_physical_entity_class" target="_blank" rel="noopener">PHYSICAL_ENTITY</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_property_class" target="_blank" rel="noopener">PROPERTY</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_registry_class" target="_blank" rel="noopener">REGISTRY</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_relationship_group_class" target="_blank" rel="noopener">RELATIONSHIP_GROUP</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_resource_class" target="_blank" rel="noopener">RESOURCE</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_resource_item_class" target="_blank" rel="noopener">RESOURCE_ITEM</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_resource_package_class" target="_blank" rel="noopener">RESOURCE_PACKAGE</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_resource_use_class" target="_blank" rel="noopener">RESOURCE_USE</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_service_class" target="_blank" rel="noopener">SERVICE</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_service_use_class" target="_blank" rel="noopener">SERVICE_USE</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_site_class" target="_blank" rel="noopener">SITE</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_social_entity_class" target="_blank" rel="noopener">SOCIAL_ENTITY</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_substance_class" target="_blank" rel="noopener">SUBSTANCE</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_team_class" target="_blank" rel="noopener">TEAM</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_versioned_asset_class" target="_blank" rel="noopener">VERSIONED_ASSET</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_versioned_entity_class" target="_blank" rel="noopener">VERSIONED_ENTITY</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_versioned_material_entity_class" target="_blank" rel="noopener">VERSIONED_MATERIAL_ENTITY</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_versioned_party_class" target="_blank" rel="noopener">VERSIONED_PARTY</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_versioned_resource_item_class" target="_blank" rel="noopener">VERSIONED_RESOURCE_ITEM</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/entity.html#_versioned_resource_use_class" target="_blank" rel="noopener">VERSIONED_RESOURCE_USE</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_package_integration"><a class="anchor" href="#_package_integration"></a>Package integration</h5>
+<div class="ulist xcode">
+<ul>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/integration.html#_generic_entry_class" target="_blank" rel="noopener">GENERIC_ENTRY</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_package_support"><a class="anchor" href="#_package_support"></a>Package support</h5>
+<div class="ulist xcode">
+<ul>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/support.html#_code_set_access_interface" target="_blank" rel="noopener">CODE_SET_ACCESS</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/support.html#_external_environment_access_class" target="_blank" rel="noopener">EXTERNAL_ENVIRONMENT_ACCESS</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/support.html#_measurement_service_class" target="_blank" rel="noopener">MEASUREMENT_SERVICE</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/support.html#_openehr_code_set_identifiers_class" target="_blank" rel="noopener">OPENEHR_CODE_SET_IDENTIFIERS</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/support.html#_openehr_terminology_group_identifiers_class" target="_blank" rel="noopener">OPENEHR_TERMINOLOGY_GROUP_IDENTIFIERS</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/support.html#_terminology_access_interface" target="_blank" rel="noopener">TERMINOLOGY_ACCESS</a></p>
+</li>
+<li>
+<p><a href="/releases/GCM/{gcm_release}/support.html#_terminology_service_class" target="_blank" rel="noopener">TERMINOLOGY_SERVICE</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2023-04-05 09:45:02 -0600
+</div>
+</div>
+</body>
+</html>

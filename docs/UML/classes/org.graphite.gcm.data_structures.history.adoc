@@ -18,15 +18,15 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*origin*: `Date_time`
+|*origin*: `link:/releases/BASE/{base_release}/foundation_types.html#_date_time_class[Date_time^]`
 a|Time origin of this event history. The first event is not necessarily at the origin point.
 
 h|*0..1*
-|*period*: `Duration`
+|*period*: `link:/releases/BASE/{base_release}/foundation_types.html#_duration_class[Duration^]`
 a|Period between samples in this segment if periodic.
 
 h|*0..1*
-|*total_duration*: `Duration`
+|*total_duration*: `link:/releases/BASE/{base_release}/foundation_types.html#_duration_class[Duration^]`
 a|Duration of the entire History; either corresponds to the duration of all the events, and/or the duration represented by the summary, if it exists.
 
 h|*0..1*
@@ -41,7 +41,7 @@ h|*Functions*
 ^h|*Meaning*
 
 h|*1..1*
-|*is_periodic* (): `Boolean`
+|*is_periodic* (): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
 a|Indicates whether history is periodic.
 
 h|*Invariants*

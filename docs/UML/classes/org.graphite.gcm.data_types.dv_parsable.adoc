@@ -1,33 +1,33 @@
-=== DV_PARSABLE Class
+=== Dv_parsable Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*DV_PARSABLE*
+2+^h|*Dv_parsable*
 
 h|*Description*
 2+a|Encapsulated data expressed as a parsable String. The internal model of the data item is not described in the openEHR model in common with other encapsulated types, but in this case, the form of the data is assumed to be plaintext, rather than compressed or other types of large binary data.
 
 h|*Inherit*
-2+|`<<_dv_encapsulated_class,DV_ENCAPSULATED>>`
+2+|`<<_dv_encapsulated_class,Dv_encapsulated>>`
 
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*1..1*
-|*value*: `String`
+|*value*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
 a|The string, which may validly be empty in some syntaxes.
 
 h|*1..1*
-|*formalism*: `String`
+|*formalism*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
 a|Name of the formalism, e.g.  GLIF 1.0 ,  Proforma  etc.
 h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*1..1*
-|*size* (): `Integer`
+|*size* (): `link:/releases/BASE/{base_release}/foundation_types.html#_integer_class[Integer^]`
 a|Size in bytes of value.
 
 h|*Invariants*

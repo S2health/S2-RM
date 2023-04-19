@@ -405,11 +405,11 @@ In a concrete instance of `DV_CODED_TEXT`, the following are the likely usages o
 
 == Class Descriptions
 
-include::{uml_export_dir}/classes/{pkg}dvtext.adoc[]
+include::{uml_export_dir}/classes/{pkg}dv_text.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}termmapping.adoc[]
+include::{uml_export_dir}/classes/{pkg}term_mapping.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}dvplaintext.adoc[]
+include::{uml_export_dir}/classes/{pkg}dv_plain_text.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}dvcodedtext.adoc[]
+include::{uml_export_dir}/classes/{pkg}dv_coded_text.adoc[]
 

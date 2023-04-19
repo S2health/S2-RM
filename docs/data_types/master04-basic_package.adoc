@@ -2,7 +2,7 @@
 
 == Overview
 
-The `data_types.basic` package, illustrated below, contains types for the concepts of bistate,
+The `data_types.basic` package, illustrated below, contains types for the concepts of bi-state,
 state (in a state machine) and real-world entity identifiers (see the openEHR Common IM for a
 discussion on identifier types).
 
@@ -17,20 +17,6 @@ One of the most basic types of data is boolean or bi-state data. The need here i
 includes a boolean value, and which inherits from the type `DATA_VALUE`, enabling it to be used as an
 `ELEMENT`.`_value_`.
 
-==== State Machine States
-
-A type is required to represent state values of a state machine. In a simple system of data types, a simple
-integer would appear sufficient to perform this job. However, in an archetyped framework, a distinct
-type is required, so that it can be archetyped not by the constraints used for integers, but by a
-state machine definition instead. The type `DV_STATE` is provided for this purpose. An example of a
-state machine which models the lifecycle of a medication order is illustrated in the figure below. This definition
-would appear in an archetype; the values of a `DV_STATE` object are then restricted to the values
-of the states in the definition.
-
-[.text-center]
-.Example State Machine for Medication Orders
-image::{diagrams_uri}/state_machine.png[id=state_machine_med_order, align="center", width=80%]
-
 ==== Real-world Entity Identification
 
 Real world entities (RWEs) such as people, car engines, invoices, and appointments may all be
@@ -39,7 +25,7 @@ space, they are often not, due to data entry errors, bad design (ids which are t
 some non-unique characteristic of the identified entities), bad process (e.g. non-synchronised id issuing
 points); identity theft (e.g. via theft of documents of proof or hacking). In general, while some real
 world identifiers (RWIs) are 'nearly unique', none can be guaranteed so. Therefore, from a strict
-computatoinal point of view, RWIs are not treated as reliable identifiers, but as attributes of their
+computational point of view, RWIs are not treated as reliable identifiers, but as attributes of their
 owning objects, in the same ways as names and addresses for example.
 
 Examples of RWE identifiers which are intended to be unique within the space of the issuing authority
@@ -77,8 +63,8 @@ See the {openehr_rm_support}#_identification_package[Support IM specification^] 
 
 == Class Descriptions
 
-include::{uml_export_dir}/classes/{pkg}datavalue.adoc[]
+include::{uml_export_dir}/classes/{pkg}data_value.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}dvboolean.adoc[]
+include::{uml_export_dir}/classes/{pkg}dv_boolean.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}dvidentifier.adoc[]
+include::{uml_export_dir}/classes/{pkg}dv_identifier.adoc[]
