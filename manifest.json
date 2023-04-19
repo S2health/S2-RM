@@ -1,5 +1,5 @@
 {
-    "id": "RM",
+    "id": "GCM",
     "title": "Canonical Model",
     "description": "Graphite Canonical Model Component",
     "keywords": "reference model, openehr",
@@ -24,25 +24,6 @@
             "copyright_year": "2003",
             "spec_status": "STABLE",
             "keywords": "EHR, EMR, reference model, openehr"
-        },
-        {
-            "id": "demographic",
-            "title": "Demographic Information Model",
-            "title_short": "Demographic",
-            "description": "openEHR Demographic Information Model specification",
-            "micro_summary": "Top-level demographics info model",
-            "summary": "The openEHR demographics information model.",
-            "classes": [
-                "PARTY",
-                "PARTY_RELATIONSHIP",
-                "ACTOR",
-                "ROLE",
-                "CONTACT",
-                "ADDRESS"
-            ],
-            "copyright_year": "2003",
-            "spec_status": "STABLE",
-            "keywords": "EHR, demographics, reference model, openehr"
         },
         {
             "id": "common",
@@ -149,13 +130,13 @@
     ],
     "expressions": [
         {
-            "id": "openEHR_UML-RM.mdzip",
+            "id": "Graphite_UML-GCM.mdzip",
             "type": "uml",
-            "title": "RM UML",
+            "title": "GCM UML",
             "description": "UML file for MagicDraw 19 for RM model. Contains UML 2.5 standard XMI file."
         },
         {
-            "id": "openEHR_UML-BASE.mdzip",
+            "id": "Graphite_UML-BASE.mdzip",
             "dependency": {
                 "component": "BASE",
                 "release": "latest"
@@ -173,30 +154,6 @@
             "jira": {
                 "crs": "SPECRM/versions/12516",
                 "prs": "SPECPR/versions/10061"
-            }
-        },
-        {
-            "id": "1.0.4",
-            "date": "2019-01-04",
-            "jira": {
-                "crs": "SPECRM/versions/11074",
-                "prs": "SPECPR/versions/10861"
-            }
-        },
-        {
-            "id": "1.0.3",
-            "date": "2015-12-15",
-            "jira": {
-                "crs": "SPECRM/versions/10860",
-                "prs": "SPECPR/versions/10060"
-            }
-        },
-        {
-            "id": "1.0.2",
-            "date": "2008-12-31",
-            "jira": {
-                "crs": "SPEC/versions/10030",
-                "prs": "SPECPR/versions/10040"
             }
         }
     ]
