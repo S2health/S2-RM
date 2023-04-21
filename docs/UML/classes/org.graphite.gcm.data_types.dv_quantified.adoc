@@ -15,18 +15,33 @@ h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
-h|*1..1*
-|*magnitude*: `link:/releases/BASE/{base_release}/foundation_types.html#_ordered_numeric_class[Ordered_Numeric^]`
+h|*1..1 +
+(redefined)*
+|*value*: `link:/releases/BASE/{base_release}/foundation_types.html#_comparable_numeric_class[Comparable_Numeric^]`
 a|
 h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*
 
-h|*1..1*
-|*valid_percentage* ( +
-number: `link:/releases/BASE/{base_release}/foundation_types.html#_ordered_numeric_class[Ordered_Numeric^][1]` +
+h|*1..1 +
+(effected)*
+|*is_equal* ( +
+other: `<<_dv_quantified_class,Dv_quantified>>[1]` +
 ): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
-a|Test whether a number is a valid percentage, i.e. between 0 and 100.
+a|Value equality: return True if `this` and `_other_` are attached to objects considered to be equal in value.
+
+.Parameters +
+[horizontal]
+`_other_`:: Other object for comparison.
+
+h|*1..1 +
+(abstract)*
+|*less_than* __alias__ "<" ( +
+other: `<<_dv_quantified_class,Dv_quantified>>[1]` +
+): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
+a|Arithmetic value comparison. Returns True if current object is less than `_other_`. This operator is effected and/or redefined in descendants to provide the appropriate ordering semantics for concrete types.
+
+In conjunction with `=`, enables the definition of the related functions `_greater_than_()` etc.
 
 h|*1..1*
 |*add* __alias__ "+" ( +
@@ -54,13 +69,6 @@ a|Difference of this amount and another. The value of `_accuracy_` in the result
 
 If the `_accuracy_` value is a percentage in one operand and not in the other, the form in the result is that of the larger operand.
 
-h|*1..1 +
-(effected)*
-|*is_equal* ( +
-other: `<<_dv_quantified_class,Dv_quantified>>[1]` +
-): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
-a|Return True if this `DV_AMOUNT` is considered equal to `_other_`.
-
 h|*1..1*
 |*multiply* __alias__ "&#42;" ( +
 factor: `link:/releases/BASE/{base_release}/foundation_types.html#_real_class[Real^][1]` +
@@ -70,20 +78,4 @@ a|Product of this Amount and `_factor_`.
 h|*1..1*
 |*negative* __alias__ "-" (): `<<_dv_quantified_class,Dv_quantified>>`
 a|Negated version of current object, such as used for representing a difference, e.g. a weight loss.
-
-h|*1..1 +
-(effected)*
-|*less_than* __alias__ "<" ( +
-other: `<<_dv_quantified_class,Dv_quantified>>[1]` +
-): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]` +
- +
-__Post_result__: `Result = magnitude < other.magnitude`
-a|True if this object is less than `_other_`. Based on comparison of `_magnitude_`.
-
-h|*1..1 +
-(effected)*
-|*is_equal* ( +
-other +
-): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
-a|Return True if this `DV_QUANTIFIED` is considered equal to `_other_`.
 |===

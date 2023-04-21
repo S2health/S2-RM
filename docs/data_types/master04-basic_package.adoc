@@ -63,8 +63,6 @@ See the {openehr_rm_support}#_identification_package[Support IM specification^] 
 
 == Class Descriptions
 
-include::{uml_export_dir}/classes/{pkg}data_value.adoc[]
-
 include::{uml_export_dir}/classes/{pkg}dv_boolean.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}dv_identifier.adoc[]

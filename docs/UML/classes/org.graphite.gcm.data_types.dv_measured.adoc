@@ -6,7 +6,7 @@ h|*Class*
 2+^h|*Dv_measured<V>*
 
 h|*Description*
-2+a|
+2+a|Measured form of Dv_quantified, with optional accuracy, normal range and other reference ranges.
 
 h|*Inherit*
 2+|`<<_dv_ordered_class,Dv_ordered>>`
@@ -16,15 +16,12 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*accuracy*: `link:/releases/BASE/{base_release}/foundation_types.html#_any_class[Any^]`
-a|Accuracy of measurement. A value of zero means no accuracy recorded.
+|*precision*: `link:/releases/BASE/{base_release}/foundation_types.html#_integer_class[Integer^]`
+a|Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.
+The value -1 implies no limit, i.e. any number of decimal places.
 
 h|*0..1*
-|*accuracy_is_percent*: `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
-a|If `True`, indicates that when this object was created, `_accuracy_` was recorded as a percent value; if `False`, as an absolute quantity value.
-
-h|*0..1*
-|*value_status*: `link:/releases/BASE/{base_release}/base_types.html#_comparisonoperator_enumeration[ComparisonOperator^]`
+|*value_status*: `<<_comparison_operator_enumeration,Comparison_operator>>`
 a|Optional status of magnitude with respect to real-world value:
 
 * `"="`   : magnitude is a point value
@@ -35,35 +32,26 @@ a|Optional status of magnitude with respect to real-world value:
 
 If not present, assumed meaning is  `"="` .
 
-h|*1..1*
-|*value*: `V`
-a|
+TODO: could also do using Dv_rnage, but lose 'measured' info.
 
 h|*0..1*
-|*normal_range*: `Interval<<<_dv_quantified_class,Dv_quantified>>>`
+|*accuracy*: `link:/releases/BASE/{base_release}/foundation_types.html#_any_class[Any^]`
+a|Accuracy of measurement. A value of zero means no accuracy recorded.
+
+h|*0..1*
+|*accuracy_is_percent*: `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
+a|If `True`, indicates that when this object was created, `_accuracy_` was recorded as a percent value; if `False`, as an absolute quantity value.
+
+h|*0..1*
+|*normal_range*: `@@`
 a|Optional normal range.
-
-h|*0..1*
-|*precision*: `link:/releases/BASE/{base_release}/foundation_types.html#_integer_class[Integer^]`
-a|Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.
-The value -1 implies no limit, i.e. any number of decimal places.
 
 h|*0..1*
 |*other_reference_ranges*: `List<<<_reference_range_class,Reference_range>>>`
 a|Optional tagged other reference ranges for this value in its particular measurement context.
-h|*Functions*
-^h|*Signature*
-^h|*Meaning*
 
-h|*1..1*
-|*valid_magnitude_status* (): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]` +
- +
-__Post__: `Result = s in {"=", "<", ">", "\<=", ">=", "~"}`
-a|Test whether a string value is one of the valid values for the magnitude_status attribute.
-
-h|*Invariants*
-2+a|__Accuracy_is_percent_validity__: `accuracy = 0 implies not accuracy_is_percent`
-
-h|
-2+a|__Accuracy_validity__: `accuracy_is_percent implies valid_percentage (accuracy)`
+h|*1..1 +
+(redefined)*
+|*value*: `V`
+a|
 |===

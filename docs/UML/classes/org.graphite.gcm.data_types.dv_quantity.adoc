@@ -43,7 +43,7 @@ NOTE: The display name may be language-dependent for various older and non-syste
 
 h|*1..1 +
 (redefined)*
-|*magnitude*: `link:/releases/BASE/{base_release}/foundation_types.html#_real_class[Real^]`
+|*value*: `Real`
 a|
 h|*Functions*
 ^h|*Signature*
@@ -72,17 +72,21 @@ a|Product of this `DV_QUANTITY` and `_factor_`.
 
 h|*1..1 +
 (effected)*
-|*less_than* __alias__ "<" ( +
+|*is_equal* ( +
 other: `<<_dv_quantity_class,Dv_quantity>>[1]` +
-): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]` +
- +
-__Post_result__: `Result = magnitude < other.magnitude`
-a|True if this Quantity object is less than `_other_`, based on comparison of `_magnitude_`. Only valid if `_is_strictly_comparable_to()_` is True.
+): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
+a|Value equality: return True if `this` and `_other_` are attached to objects considered to be equal in value.
+
+.Parameters +
+[horizontal]
+`_other_`:: Other object for comparison.
 
 h|*1..1 +
 (effected)*
-|*is_strictly_comparable_to* ( +
-other: `<<_dv_ordered_class,Dv_ordered>>[1]` +
+|*less_than* __alias__ "<" ( +
+other: `<<_dv_quantity_class,Dv_quantity>>[1]` +
 ): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
-a|True if this quantity and `_other_` have the same `_units_` and also `_units_system_` if it exists.
+a|Arithmetic value comparison. Returns True if current object is less than `_other_`. This operator is effected and/or redefined in descendants to provide the appropriate ordering semantics for concrete types.
+
+In conjunction with `=`, enables the definition of the related functions `_greater_than_()` etc.
 |===

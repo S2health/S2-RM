@@ -108,9 +108,6 @@ The attribute `CODE_PHRASE._code_string_` records a term code or code expression
 
 The model of `DV_CODED_TEXT` is designed to capture the _actual_ term chosen by the user or software at runtime, i.e. preferred term or synonym (for terminologies supporting synonyms), or a post-coordination of underlying distinct terms if an expression was chosen as the term (such as an expression supported by SNOMED CT). A `DV_CODED_TEXT` instance is used if the final textual value chosen by the user is the exact term text (preferred or other) returned by the terminology service for the key (i.e. `_code_string_` value). If the user makes even the slightest modification during data entry, a mapping (see <<Mappings>>) to a `DV_TEXT` should be used instead.
 
-[.deprecated]
-*Deprecated*: The type `DV_PARAGRAPH` was used to represent larger tracts of text built from lists of `DV_TEXT` instances, i.e. instances of `DV_TEXT` and `DV_CODED_TEXT`. Such text is now represented as plain text with new lines or markdown text, <<_formatting_and_hyperlinking,as described below>>.
-
 === Qualification
 
 Qualification is the process of making a term more specific through the post-coordination of additional
@@ -311,13 +308,9 @@ indicate the language of the text item.
 
 === Formatting and Hyperlinking
 
-Formatted text is represented by `DV_TEXT` and `DV_CODED_TEXT` instances. In versions _prior to RM Release 1.0.4_, `DV_PARAGRAPH` was provided as a way to represent larger tracts of text containing newlines and formatting of sub-sections, with each subsection being represented by one `DV_TEXT` or `DV_CODED_TEXT`.
-
-WARNING: `DV_PARAGRAPH` is now deprecated, and all text should be represented using the `DV_TEXT` or `DV_CODED_TEXT`. For legacy reasons, `DV_PARAGRAPH` remains legal, and should be supported in at least a basic way.
+Formatted text is represented by `DV_TEXT` and `DV_CODED_TEXT` instances.
 
 Formatting of the text in the `_value_` field of `DV_TEXT` and `DV_CODED_TEXT` instances may be indicated via the optional `_formatting_` attribute. How this attribute is used has changed from initial versions of the openEHR Reference Model.
-
-WARNING: Additionally, the `_value_` field was assumed to contain no newlines. This assumption is no longer made starting from RM Release 1.0.4, since `DV_PARAGRAPH` is no longer use to represent paragraphs.
 
 A common model of text processing is of a processing pipeline that consumes readable text containing markings, which is then rendered into HTML, PDF or some other rendering format, and then displayed by a tool such as a web browser that consumes the latter format. Historical approaches to marking text were known as 'markup', such as nroff, troff, Latek, and then more recently, numerous formats whose base syntax is XML. These formats all have the disadvantages of poor human readability in raw form, and being specific to particular rendering engines, and are starting to fall out of favour for uses involving human reading of the raw text. Another common approach to formatting text is to use the _output format_, usually HTML, to express e.g. fonts, bolding etc. This is also problematic for human readability, being complicated by the use of CSS classes in tags, which then need to be defined.
 
@@ -349,32 +342,28 @@ Not all CommonMark features are allowed in the `_value_` field, if it contains m
 
 In a concrete instance of `DV_TEXT`, the following are the likely usages of the `_value_` and `_formatting_` attributes. The `_hyperlink_` is assumed to be Void in all non-legacy cases.
 
-[cols="2,1,1,3", options="header"]
+[cols="2,1,1", options="header"]
 |===
-|Requirement|`_value_` attribute|`_formatting_` attribute|Legacy form
+|Requirement|`_value_` attribute|`_formatting_` attribute
 
 |Plain text 'atom' +
  (no formatting, no newlines)
 |plain text string
 |`Void` or `"plain_no_newlines"`
-|(same)
 
 |Plain text 'atom' with a hyperlink +
  (no formatting, no newlines)
 |text string of form `[text](uri)` or other CommonMark link variant
 |`"markdown"`
-|`_value_` = plain text; `_hyperlink_` = URI/URL
 
 |Plain text paragraphs, +
  no other formatting
 |plain text string with newlines
 |`Void` or `"plain"`
-|`DV_PARAGRAPH` instance(s) containing plain legacy text atom form `DV_TEXTs`
 
 |Formatted text with paragraphs, bolding, italics, bullet lists, links etc
 |CommonMark text string
 |`"markdown"`
-|`DV_PARAGRAPH` instance(s) containing legacy form `DV_TEXTs` with CSS formatting and/or values in `_hyperlink_`
 
 |===
 
@@ -382,24 +371,21 @@ In a concrete instance of `DV_TEXT`, the following are the likely usages of the 
 
 In a concrete instance of `DV_CODED_TEXT`, the following are the likely usages of the `_value_` and `_formatting_` attributes.
 
-[cols="2,1,1,3", options="header"]
+[cols="2,1,1", options="header"]
 |===
-|Requirement|`_value_` attribute|`_formatting_` attribute|Legacy form
+|Requirement|`_value_` attribute|`_formatting_` attribute
 
 |Plain text of coded term
 |plain text string
 |`Void`
-|(same)
 
 |Plain text of coded term with a hyperlink
 |text string of form `[text](uri)` or other CommonMark link variant
 |`"markdown"`
-|`_value_` = plain text; `_hyperlink_` = URI/URL
 
 |Plain text of coded term or other text, containing newlines
 |Plain formatted text
 |Void or `"plain"`
-|(not applicable)
 
 |===
 
@@ -407,9 +393,9 @@ In a concrete instance of `DV_CODED_TEXT`, the following are the likely usages o
 
 include::{uml_export_dir}/classes/{pkg}dv_text.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}term_mapping.adoc[]
-
 include::{uml_export_dir}/classes/{pkg}dv_plain_text.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}dv_coded_text.adoc[]
+
+include::{uml_export_dir}/classes/{pkg}term_mapping.adoc[]
 

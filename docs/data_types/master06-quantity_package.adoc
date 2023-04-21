@@ -326,12 +326,6 @@ NOTE: it is strongly recommended that where possible, the _extended_ form of the
 
 == Class Descriptions
 
-include::{uml_export_dir}/classes/{pkg}dv_ordered.adoc[]
-
-include::{uml_export_dir}/classes/{pkg}dv_interval.adoc[]
-
-include::{uml_export_dir}/classes/{pkg}reference_range.adoc[]
-
 include::{uml_export_dir}/classes/{pkg}dv_ordinal.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}dv_quantified.adoc[]
@@ -346,15 +340,11 @@ include::{uml_export_dir}/classes/{pkg}ratio_kind.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}dv_measured.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}dv_temporal.adoc[]
+include::{uml_export_dir}/classes/{pkg}reference_range.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}dv_date.adoc[]
+include::{uml_export_dir}/classes/{pkg}comparison_operator.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}dv_time.adoc[]
-
-include::{uml_export_dir}/classes/{pkg}dv_date_time.adoc[]
-
-include::{uml_export_dir}/classes/{pkg}dv_duration.adoc[]
+include::{uml_export_dir}/classes/{pkg}dv_range.adoc[]
 
 
 == Syntaxes
@@ -380,7 +370,7 @@ SIGN = '+' | '-' ;
 Integer = ? [0-9]+ ?;          (* regex *)
 --------
 
-This proposal is comprehensive, covering all useful unit systems, including SI, various imperial, customary mesaures, and some obscure measures, as well as clinically specific additions. Metric prefixes, meaning-changing textual suffixes (e.g. "[Hg]" in "mm[Hg]") and non-meaning-changing annotations (e.g. "kg {total}") are recognised. With this syntax, units can be simply expressed in strings such as:
+This proposal is comprehensive, covering all useful unit systems, including SI, various imperial, customary measures, and some obscure measures, as well as clinically specific additions. Metric prefixes, meaning-changing textual suffixes (e.g. "[Hg]" in "mm[Hg]") and non-meaning-changing annotations (e.g. "kg {total}") are recognised. With this syntax, units can be simply expressed in strings such as:
 
 ```
 "kg/m^2", "m.s^-1", "km/h", "mm[Hg]"

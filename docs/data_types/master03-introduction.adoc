@@ -27,3 +27,6 @@ The package structure of the openEHR data types is illustrated below.
 .rm.data_types packages
 image::{uml_diagrams_uri}/GCM-data_types-packages.svg[id=rm_data_types_packages, align="center"]
 
+== Class Descriptions
+
+include::{uml_export_dir}/classes/{pkg}data_value.adoc[]

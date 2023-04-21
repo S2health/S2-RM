@@ -13,10 +13,10 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|
-|proportion
-a|Numerator and denominator may be any value.
+|rational_fraction
+a|Numerator and denominator are both integers, and value is displayed in form of a fraction, e.g. 1/3, 2 1/4.
 
 h|
-|rational_fraction
-a|Numerator and denominator are integral, and the presentation method uses a slash, e.g.  1/2 .
+|ratio
+a|
 |===

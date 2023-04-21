@@ -20,6 +20,6 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*defining_code*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]`
+|*concept*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]`
 a|The term of which the  `_value_` attribute is the textual rendition (i.e. rubric).
 |===

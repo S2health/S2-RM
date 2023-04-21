@@ -1,9 +1,9 @@
-=== DV_URI Class
+=== Dv_uri Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*DV_URI*
+2+^h|*Dv_uri*
 
 h|*Description*
 2+a|A reference to an object which structurally conforms to the Universal Resource Identifier (URI) RFC-3986 standard. The reference is contained in the `_value_` attribute, which is a `String`. So-called 'plain-text URIs' that contain RFC-3986 forbidden characters such as spaces etc, are allowed on the basis that they need to be RFC-3986 encoded prior to use in e.g. REST APIs or other contexts relying on machine-level conformance.

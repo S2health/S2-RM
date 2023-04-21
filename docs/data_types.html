@@ -47,6 +47,11 @@
 <ul class="sectlevel2">
 <li><a href="#_overview">3.1. Overview</a></li>
 <li><a href="#_package_structure">3.2. Package Structure</a></li>
+<li><a href="#_class_descriptions">3.3. Class Descriptions</a>
+<ul class="sectlevel3">
+<li><a href="#_data_value_class">3.3.1. Data_value Class</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_basic_package">4. Basic Package</a>
@@ -62,11 +67,10 @@
 <li><a href="#_design">4.1.2. Design</a></li>
 </ul>
 </li>
-<li><a href="#_class_descriptions">4.2. Class Descriptions</a>
+<li><a href="#_class_descriptions_2">4.2. Class Descriptions</a>
 <ul class="sectlevel3">
-<li><a href="#_data_value_class">4.2.1. Data_value Class</a></li>
-<li><a href="#_dv_boolean_class">4.2.2. Dv_boolean Class</a></li>
-<li><a href="#_dv_identifier_class">4.2.3. Dv_identifier Class</a></li>
+<li><a href="#_dv_boolean_class">4.2.1. Dv_boolean Class</a></li>
+<li><a href="#_dv_identifier_class">4.2.2. Dv_identifier Class</a></li>
 </ul>
 </li>
 </ul>
@@ -111,12 +115,12 @@
 </li>
 </ul>
 </li>
-<li><a href="#_class_descriptions_2">5.2. Class Descriptions</a>
+<li><a href="#_class_descriptions_3">5.2. Class Descriptions</a>
 <ul class="sectlevel3">
 <li><a href="#_dv_text_class">5.2.1. Dv_text Class</a></li>
-<li><a href="#_term_mapping_class">5.2.2. Term_mapping Class</a></li>
-<li><a href="#_dv_plain_text_class">5.2.3. Dv_plain_text Class</a></li>
-<li><a href="#_dv_coded_text_class">5.2.4. Dv_coded_text Class</a></li>
+<li><a href="#_dv_plain_text_class">5.2.2. Dv_plain_text Class</a></li>
+<li><a href="#_dv_coded_text_class">5.2.3. Dv_coded_text Class</a></li>
+<li><a href="#_term_mapping_class">5.2.4. Term_mapping Class</a></li>
 </ul>
 </li>
 </ul>
@@ -167,23 +171,18 @@
 </li>
 </ul>
 </li>
-<li><a href="#_class_descriptions_3">6.3. Class Descriptions</a>
+<li><a href="#_class_descriptions_4">6.3. Class Descriptions</a>
 <ul class="sectlevel3">
-<li><a href="#_dv_ordered_class">6.3.1. Dv_ordered Class</a></li>
-<li><a href="#_dv_interval_class">6.3.2. Dv_interval Class</a></li>
-<li><a href="#_reference_range_class">6.3.3. Reference_range Class</a></li>
-<li><a href="#_dv_ordinal_class">6.3.4. Dv_ordinal Class</a></li>
-<li><a href="#_dv_quantified_class">6.3.5. Dv_quantified Class</a></li>
-<li><a href="#_dv_quantity_class">6.3.6. Dv_quantity Class</a></li>
-<li><a href="#_dv_count_class">6.3.7. Dv_count Class</a></li>
-<li><a href="#_dv_ratio_class">6.3.8. Dv_ratio Class</a></li>
-<li><a href="#_ratio_kind_enumeration">6.3.9. Ratio_kind Enumeration</a></li>
-<li><a href="#_dv_measured_class">6.3.10. Dv_measured Class</a></li>
-<li><a href="#_dv_temporal_class">6.3.11. Dv_temporal Class</a></li>
-<li><a href="#_dv_date_class">6.3.12. Dv_date Class</a></li>
-<li><a href="#_dv_time_class">6.3.13. Dv_time Class</a></li>
-<li><a href="#_dv_date_time_class">6.3.14. Dv_date_tIme Class</a></li>
-<li><a href="#_dv_duration_class">6.3.15. Dv_duration Class</a></li>
+<li><a href="#_dv_ordinal_class">6.3.1. Dv_ordinal Class</a></li>
+<li><a href="#_dv_quantified_class">6.3.2. Dv_quantified Class</a></li>
+<li><a href="#_dv_quantity_class">6.3.3. Dv_quantity Class</a></li>
+<li><a href="#_dv_count_class">6.3.4. Dv_count Class</a></li>
+<li><a href="#_dv_ratio_class">6.3.5. Dv_ratio Class</a></li>
+<li><a href="#_ratio_kind_enumeration">6.3.6. Ratio_kind Enumeration</a></li>
+<li><a href="#_dv_measured_class">6.3.7. Dv_measured Class</a></li>
+<li><a href="#_reference_range_class">6.3.8. Reference_range Class</a></li>
+<li><a href="#_comparison_operator_enumeration">6.3.9. Comparison_operator Enumeration</a></li>
+<li><a href="#_dv_range_class">6.3.10. Dv_range Class</a></li>
 </ul>
 </li>
 <li><a href="#_syntaxes">6.4. Syntaxes</a>
@@ -193,76 +192,103 @@
 </li>
 </ul>
 </li>
-<li><a href="#_time_specification_package">7. Time_specification Package</a>
+<li><a href="#_date_time_package_2">7. Date Time Package</a>
 <ul class="sectlevel2">
-<li><a href="#_overview_5">7.1. Overview</a>
+<li><a href="#_requirements_5">7.1. Requirements</a>
 <ul class="sectlevel3">
-<li><a href="#_requirements_5">7.1.1. Requirements</a></li>
-<li><a href="#_design_5">7.1.2. Design</a></li>
+<li><a href="#_standard_datetimes_2">7.1.1. Standard Date/Times</a></li>
+<li><a href="#_partial_datetimes_3">7.1.2. Partial Date/Times</a></li>
 </ul>
 </li>
-<li><a href="#_class_descriptions_4">7.2. Class Descriptions</a>
+<li><a href="#_design_5">7.2. Design</a>
 <ul class="sectlevel3">
-<li><a href="#_dv_time_specification_class">7.2.1. DV_TIME_SPECIFICATION Class</a></li>
-<li><a href="#_dv_periodic_time_specification_class">7.2.2. DV_PERIODIC_TIME_SPECIFICATION Class</a></li>
-<li><a href="#_dv_general_time_specification_class">7.2.3. DV_GENERAL_TIME_SPECIFICATION Class</a></li>
+<li><a href="#_general_approach_2">7.2.1. General Approach</a></li>
+<li><a href="#_partial_datetimes_4">7.2.2. Partial Date/Times</a></li>
+<li><a href="#_calendars_2">7.2.3. Calendars</a></li>
+<li><a href="#_representation_2">7.2.4. Representation</a></li>
 </ul>
 </li>
-<li><a href="#_syntaxes_2">7.3. Syntaxes</a>
+<li><a href="#_class_descriptions_5">7.3. Class Descriptions</a>
 <ul class="sectlevel3">
-<li><a href="#_phase_linked_time_specification_syntax">7.3.1. Phase-linked Time Specification Syntax</a></li>
-<li><a href="#_event_linked_periodic_time_specification_syntax">7.3.2. Event-linked Periodic Time Specification Syntax</a></li>
-<li><a href="#_general_time_specification_syntax">7.3.3. General Time Specification Syntax</a></li>
+<li><a href="#_dv_temporal_class">7.3.1. Dv_temporal Class</a></li>
+<li><a href="#_dv_date_class">7.3.2. Dv_date Class</a></li>
+<li><a href="#_dv_time_class">7.3.3. Dv_time Class</a></li>
+<li><a href="#_dv_date_time_class">7.3.4. Dv_date_time Class</a></li>
+<li><a href="#_dv_duration_class">7.3.5. Dv_duration Class</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_encapsulated_package">8. Encapsulated Package</a>
+<li><a href="#_time_specification_package">8. Time_specification Package</a>
 <ul class="sectlevel2">
-<li><a href="#_overview_6">8.1. Overview</a>
+<li><a href="#_overview_5">8.1. Overview</a>
 <ul class="sectlevel3">
 <li><a href="#_requirements_6">8.1.1. Requirements</a></li>
 <li><a href="#_design_6">8.1.2. Design</a></li>
-<li><a href="#_examples">8.1.3. Examples</a></li>
 </ul>
 </li>
-<li><a href="#_class_descriptions_5">8.2. Class Descriptions</a>
+<li><a href="#_class_descriptions_6">8.2. Class Descriptions</a>
 <ul class="sectlevel3">
-<li><a href="#_dv_encapsulated_class">8.2.1. Dv_encapsulated Class</a></li>
-<li><a href="#_dv_multimedia_class">8.2.2. Dv_multimedia Class</a></li>
-<li><a href="#_dv_parsable_class">8.2.3. Dv_parsable Class</a></li>
+<li><a href="#_dv_time_specification_class">8.2.1. DV_TIME_SPECIFICATION Class</a></li>
+<li><a href="#_dv_periodic_time_specification_class">8.2.2. DV_PERIODIC_TIME_SPECIFICATION Class</a></li>
+<li><a href="#_dv_general_time_specification_class">8.2.3. DV_GENERAL_TIME_SPECIFICATION Class</a></li>
+</ul>
+</li>
+<li><a href="#_syntaxes_2">8.3. Syntaxes</a>
+<ul class="sectlevel3">
+<li><a href="#_phase_linked_time_specification_syntax">8.3.1. Phase-linked Time Specification Syntax</a></li>
+<li><a href="#_event_linked_periodic_time_specification_syntax">8.3.2. Event-linked Periodic Time Specification Syntax</a></li>
+<li><a href="#_general_time_specification_syntax">8.3.3. General Time Specification Syntax</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_uri_package">9. Uri Package</a>
+<li><a href="#_encapsulated_package">9. Encapsulated Package</a>
 <ul class="sectlevel2">
-<li><a href="#_overview_7">9.1. Overview</a>
+<li><a href="#_overview_6">9.1. Overview</a>
 <ul class="sectlevel3">
 <li><a href="#_requirements_7">9.1.1. Requirements</a></li>
 <li><a href="#_design_7">9.1.2. Design</a></li>
+<li><a href="#_examples">9.1.3. Examples</a></li>
 </ul>
 </li>
-<li><a href="#_definitions">9.2. Definitions</a></li>
-<li><a href="#_class_descriptions_6">9.3. Class Descriptions</a>
+<li><a href="#_class_descriptions_7">9.2. Class Descriptions</a>
 <ul class="sectlevel3">
-<li><a href="#_dv_uri_class">9.3.1. DV_URI Class</a></li>
-<li><a href="#_dv_ehr_uri_class">9.3.2. DV_EHR_URI Class</a></li>
-</ul>
-</li>
-<li><a href="#_syntaxes_3">9.4. Syntaxes</a>
-<ul class="sectlevel3">
-<li><a href="#_dv_ehr_uri_syntax">9.4.1. DV_EHR_URI Syntax</a></li>
+<li><a href="#_dv_encapsulated_class">9.2.1. Dv_encapsulated Class</a></li>
+<li><a href="#_dv_multimedia_class">9.2.2. Dv_multimedia Class</a></li>
+<li><a href="#_dv_parsable_class">9.2.3. Dv_parsable Class</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_implementation_strategies">10. Implementation Strategies</a>
+<li><a href="#_uri_package">10. Uri Package</a>
 <ul class="sectlevel2">
-<li><a href="#_overview_8">10.1. Overview</a></li>
-<li><a href="#_quantities_and_ordered_numeric">10.2. Quantities and Ordered_numeric</a></li>
-<li><a href="#_unicode">10.3. Unicode</a></li>
-<li><a href="#_dates_and_times">10.4. Dates and Times</a></li>
+<li><a href="#_overview_7">10.1. Overview</a>
+<ul class="sectlevel3">
+<li><a href="#_requirements_8">10.1.1. Requirements</a></li>
+<li><a href="#_design_8">10.1.2. Design</a></li>
+</ul>
+</li>
+<li><a href="#_definitions">10.2. Definitions</a></li>
+<li><a href="#_class_descriptions_8">10.3. Class Descriptions</a>
+<ul class="sectlevel3">
+<li><a href="#_dv_uri_class">10.3.1. Dv_uri Class</a></li>
+<li><a href="#_dv_ehr_uri_class">10.3.2. Dv_ehr_uri Class</a></li>
+</ul>
+</li>
+<li><a href="#_syntaxes_3">10.4. Syntaxes</a>
+<ul class="sectlevel3">
+<li><a href="#_dv_ehr_uri_syntax">10.4.1. DV_EHR_URI Syntax</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_implementation_strategies">11. Implementation Strategies</a>
+<ul class="sectlevel2">
+<li><a href="#_overview_8">11.1. Overview</a></li>
+<li><a href="#_quantities_and_ordered_numeric">11.2. Quantities and Ordered_numeric</a></li>
+<li><a href="#_unicode">11.3. Unicode</a></li>
+<li><a href="#_dates_and_times">11.4. Dates and Times</a></li>
 </ul>
 </li>
 <li><a href="#_references">References</a></li>
@@ -636,6 +662,38 @@ assumed set of basic types.</p>
 <div class="title">Figure 1. rm.data_types packages</div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_class_descriptions"><a class="anchor" href="#_class_descriptions"></a>3.3. Class Descriptions</h3>
+<div class="sect3">
+<h4 id="_data_value_class"><a class="anchor" href="#_data_value_class"></a>3.3.1. Data_value Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Data_value (abstract)</em></strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Abstract parent of all <code>DV_</code> data value types.</p>
+</div>
+<div class="paragraph">
+<p>TODO: could be done</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="/releases/BASE/latest/foundation_types.html#_any_class" target="_blank" rel="noopener">Any</a></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -741,39 +799,9 @@ such as names or addresses.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_descriptions"><a class="anchor" href="#_class_descriptions"></a>4.2. Class Descriptions</h3>
+<h3 id="_class_descriptions_2"><a class="anchor" href="#_class_descriptions_2"></a>4.2. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_data_value_class"><a class="anchor" href="#_data_value_class"></a>4.2.1. Data_value Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Data_value (abstract)</em></strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Abstract parent of all <code>DV_</code> data value types.</p>
-</div>
-<div class="paragraph">
-<p>TODO: could be done
-Serves as a common ancestor of all data value types in openEHR models.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="/releases/BASE/latest/base_types.html#_openehr_definitions_class" target="_blank" rel="noopener">OPENEHR_DEFINITIONS</a></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_dv_boolean_class"><a class="anchor" href="#_dv_boolean_class"></a>4.2.2. Dv_boolean Class</h4>
+<h4 id="_dv_boolean_class"><a class="anchor" href="#_dv_boolean_class"></a>4.2.1. Dv_boolean Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -814,7 +842,7 @@ Serves as a common ancestor of all data value types in openEHR models.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_identifier_class"><a class="anchor" href="#_dv_identifier_class"></a>4.2.3. Dv_identifier Class</h4>
+<h4 id="_dv_identifier_class"><a class="anchor" href="#_dv_identifier_class"></a>4.2.2. Dv_identifier Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1526,7 +1554,7 @@ Additionally, the <code><em>value</em></code> field was assumed to contain no ne
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_descriptions_2"><a class="anchor" href="#_class_descriptions_2"></a>5.2. Class Descriptions</h3>
+<h3 id="_class_descriptions_3"><a class="anchor" href="#_class_descriptions_3"></a>5.2. Class Descriptions</h3>
 <div class="sect3">
 <h4 id="_dv_text_class"><a class="anchor" href="#_dv_text_class"></a>5.2.1. Dv_text Class</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -1650,7 +1678,77 @@ Additionally, the <code><em>value</em></code> field was assumed to contain no ne
 </table>
 </div>
 <div class="sect3">
-<h4 id="_term_mapping_class"><a class="anchor" href="#_term_mapping_class"></a>5.2.2. Term_mapping Class</h4>
+<h4 id="_dv_plain_text_class"><a class="anchor" href="#_dv_plain_text_class"></a>5.2.2. Dv_plain_text Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_plain_text</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Plain text.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_dv_text_class">Dv_text</a></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_dv_coded_text_class"><a class="anchor" href="#_dv_coded_text_class"></a>5.2.3. Dv_coded_text Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_coded_text</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>A text item whose value must be the rubric from a controlled terminology, the key (i.e. the 'code') of which is the <code><em>defining_code</em></code> attribute. In other words: a <code>DV_CODED_TEXT</code> is a combination of a <code>CODE_PHRASE</code> (effectively a code) and the rubric of that term, from a terminology service, in the language in which the data were authored.</p>
+</div>
+<div class="paragraph">
+<p>Since <code>DV_CODED_TEXT</code> is a subtype of <code>DV_TEXT</code>, it can be used in place of it, effectively allowing the type <code>DV_TEXT</code> to mean  a text item, which may optionally be coded.</p>
+</div>
+<div class="paragraph">
+<p>Misuse: If the intention is to represent a term code attached in some way to a fragment of plain text, <code>DV_CODED_TEXT</code> should not be used; instead use a <code>DV_TEXT</code> and a <code>TERM_MAPPING</code> to a <code>CODE_PHRASE</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_dv_text_class">Dv_text</a></code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>concept</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_code_class" target="_blank" rel="noopener">Terminology_code</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The term of which the  <code><em>value</em></code> attribute is the textual rendition (i.e. rubric).</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_term_mapping_class"><a class="anchor" href="#_term_mapping_class"></a>5.2.4. Term_mapping Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1711,7 +1809,7 @@ Additionally, the <code><em>value</em></code> field was assumed to contain no ne
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>target</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_code_class" target="_blank" rel="noopener">Terminology_code</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>target</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The target term of the mapping.</p>
 </div></div></td>
@@ -1776,76 +1874,6 @@ c: <code><a href="/releases/BASE/latest/foundation_types.html#_character_class" 
 <th class="tableblock halign-center valign-top"></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
 <p><em>Match_valid</em>: <code>is_valid_match_code (match)</code></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_dv_plain_text_class"><a class="anchor" href="#_dv_plain_text_class"></a>5.2.3. Dv_plain_text Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_plain_text</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Plain text.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_dv_text_class">Dv_text</a></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_dv_coded_text_class"><a class="anchor" href="#_dv_coded_text_class"></a>5.2.4. Dv_coded_text Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_coded_text</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>A text item whose value must be the rubric from a controlled terminology, the key (i.e. the 'code') of which is the <code><em>defining_code</em></code> attribute. In other words: a <code>DV_CODED_TEXT</code> is a combination of a <code>CODE_PHRASE</code> (effectively a code) and the rubric of that term, from a terminology service, in the language in which the data were authored.</p>
-</div>
-<div class="paragraph">
-<p>Since <code>DV_CODED_TEXT</code> is a subtype of <code>DV_TEXT</code>, it can be used in place of it, effectively allowing the type <code>DV_TEXT</code> to mean  a text item, which may optionally be coded.</p>
-</div>
-<div class="paragraph">
-<p>Misuse: If the intention is to represent a term code attached in some way to a fragment of plain text, <code>DV_CODED_TEXT</code> should not be used; instead use a <code>DV_TEXT</code> and a <code>TERM_MAPPING</code> to a <code>CODE_PHRASE</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_dv_text_class">Dv_text</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>defining_code</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_code_class" target="_blank" rel="noopener">Terminology_code</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The term of which the  <code><em>value</em></code> attribute is the textual rendition (i.e. rubric).</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2480,205 +2508,9 @@ it is strongly recommended that where possible, the <em>extended</em> form of th
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_descriptions_3"><a class="anchor" href="#_class_descriptions_3"></a>6.3. Class Descriptions</h3>
+<h3 id="_class_descriptions_4"><a class="anchor" href="#_class_descriptions_4"></a>6.3. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_dv_ordered_class"><a class="anchor" href="#_dv_ordered_class"></a>6.3.1. Dv_ordered Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Dv_ordered (abstract)</em></strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Abstract class defining the concept of ordered values, which includes ordinals as well as true quantities. It defines the functions  <code>&lt;</code> and <code><em>is_strictly_comparable_to()</em></code>, the latter of which must evaluate to <code>True</code> for instances being compared with the  <code>&lt;</code> function, or used as limits in the <code>DV_INTERVAL&lt;T&gt;</code> class.</p>
-</div>
-<div class="paragraph">
-<p>Data value types which are to be used as limits in the <code>DV_INTERVAL&lt;T&gt;</code> class must inherit from this class, and implement the function <code><em>is_strictly_comparable_to()</em></code> to ensure that instances compare meaningfully. For example, instances of <code>DV_QUANTITY</code> can only be compared if they measure the same kind of physical quantity.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_data_value_class">Data_value</a></code>, <code><a href="/releases/BASE/latest/foundation_types.html#_ordered_class" target="_blank" rel="noopener">Ordered</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(abstract)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_strictly_comparable_to</strong> (<br>
-other: <code><a href="#_dv_ordered_class">Dv_ordered</a>[1]</code><br>
-): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Test if two instances are strictly comparable. Effected in descendants.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_simple</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>True if this quantity has no reference ranges.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>less_than</strong> <em>alias</em> "&lt;" (<br>
-other: <code><a href="#_dv_ordered_class">Dv_ordered</a>[1]</code><br>
-): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code><br>
-<br>
-<em>Pre_comparable</em>: <code>is_strictly_comparable_to (other)</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>True if this Ordered object is less than <code><em>other</em></code>. Redefined in descendants.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Other_reference_ranges_validity</em>: <code>other_reference_ranges /= Void implies not other_reference_ranges.is_empty</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Is_simple_validity</em>: <code>(normal_range = Void and other_reference_ranges = Void) implies is_simple</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Normal_status_validity</em>: <code>normal_status /= Void implies code_set (Code_set_id_normal_statuses).has_code (normal_status)</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Normal_range_and_status_consistency</em>: <code>(normal_range /= Void and normal_status /= Void) implies (normal_status.code_string.is_equal (“N”) xor not normal_range.has (self))</code></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_dv_interval_class"><a class="anchor" href="#_dv_interval_class"></a>6.3.2. Dv_interval Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_interval&lt;T&gt;</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Generic class defining an interval (i.e. range) of a comparable type. An interval is a contiguous subrange of a comparable base type. Used to define intervals of dates, times, quantities (whose units match) and so on. The type parameter, <code>T</code>, must be a descendant of the type <code>DV_ORDERED</code>, which is necessary (but not sufficient) for instances to be compared (<code><em>strictly_comparable</em></code> is also needed).</p>
-</div>
-<div class="paragraph">
-<p>Without the <code>DV_INTERVAL</code> class, quite a few more <code>DV_</code> classes would be needed to express logical intervals, namely interval versions of all the date/time classes, and of quantity classes. Further, it allows the semantics of intervals to be stated in one place unequivocally, including the conditions for strict comparison.</p>
-</div>
-<div class="paragraph">
-<p>The basic semantics are derived from the class <code>Interval&lt;T&gt;</code>, described in the support RM.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_data_value_class">Data_value</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code>Interval&lt;<a href="#_dv_ordered_class">Dv_ordered</a>&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Limits_consistent</em>: <code>(not upper_unbounded and not lower_unbounded) implies (lower.is_strictly_comparable_to(upper) and lower &lt;= upper)</code></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_reference_range_class"><a class="anchor" href="#_reference_range_class"></a>6.3.3. Reference_range Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Reference_range&lt;T&gt;</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Defines a named range to be associated with any <code>DV_ORDERED</code> datum. Each such range is particular to the patient and context, e.g. sex, age, and any other factor which affects ranges. May be used to represent normal, therapeutic, dangerous, critical etc ranges.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>meaning</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Term whose value indicates the meaning of this range, e.g.  normal,  critical,  therapeutic  etc.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>range</strong>: <code>Interval&lt;<a href="#_dv_quantified_class">Dv_quantified</a>&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The data range for this meaning, e.g. critical  etc.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_in_range</strong> (<br>
-v: <code><a href="#_dv_ordered_class">Dv_ordered</a>[1]</code><br>
-): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Indicates if the value  <code><em>v</em></code> is inside the range.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Range_is_simple</em>: <code>(range.lower_unbounded or else range.lower.is_simple) and (range.upper_unbounded or else range.upper.is_simple)</code></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_dv_ordinal_class"><a class="anchor" href="#_dv_ordinal_class"></a>6.3.4. Dv_ordinal Class</h4>
+<h4 id="_dv_ordinal_class"><a class="anchor" href="#_dv_ordinal_class"></a>6.3.1. Dv_ordinal Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2699,7 +2531,7 @@ v: <code><a href="#_dv_ordered_class">Dv_ordered</a>[1]</code><br>
 <p>a) implied ordering,
 b) no implication that the distance between each value is constant, and
 c) the total number of values is finite;
-d) integer values only.</p>
+d) Integer values normally used but Real values are accommodated.</p>
 </div>
 <div class="paragraph">
 <p>Note that although the term 'ordinal' in mathematics means natural numbers only, here any integer is allowed, since negative and zero values are often used by medical professionals for values around a neutral point. Examples of sets of ordinal values:</p>
@@ -2716,9 +2548,6 @@ d) integer values only.</p>
 </div>
 <div class="paragraph">
 <p>This class is used for recording any clinical datum which is customarily recorded using symbolic values. Example: the results on a urinalysis strip, e.g. <code>{neg, trace, +, , +}</code> are used for leucocytes, protein, nitrites etc; for non-haemolysed blood <code>{neg, trace, moderate}</code>; for haemolysed blood <code>{small, moderate, large}</code>.</p>
-</div>
-<div class="paragraph">
-<p>For scores or scales that include Real numbers (or might in the future, i.e. not fixed for all time, such as Apgar), use <code>DV_SCALE</code>. <code>DV_SCALE</code> may also be used in future for representing purely Integer-based scales, however, the <code>DV_ORDINAL</code> type should continue to be supported in software implementations in order to accommodate existing data that are instances of this type.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2738,10 +2567,11 @@ d) integer values only.</p>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" target="_blank" rel="noopener">Real</a></code></p></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(redefined)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code>Real</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Value in ordered enumeration of values. Any integer value can be used.</p>
+<p>Value in ordered enumeration of values.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2750,8 +2580,7 @@ d) integer values only.</p>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>less_than</strong> <em>alias</em> "&lt;" (<br>
 other: <code><a href="#_dv_ordinal_class">Dv_ordinal</a>[1]</code><br>
 ): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code><br>
@@ -2761,21 +2590,11 @@ other: <code><a href="#_dv_ordinal_class">Dv_ordinal</a>[1]</code><br>
 <p>True if this Ordinal value is less than <code><em>other</em></code>.</p>
 </div></div></td>
 </tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_strictly_comparable_to</strong> (<br>
-other: <code><a href="#_dv_ordinal_class">Dv_ordinal</a>[1]</code><br>
-): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Test if this Ordinal is strictly comparable to <code><em>other</em></code>.</p>
-</div></div></td>
-</tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_quantified_class"><a class="anchor" href="#_dv_quantified_class"></a>6.3.5. Dv_quantified Class</h4>
+<h4 id="_dv_quantified_class"><a class="anchor" href="#_dv_quantified_class"></a>6.3.2. Dv_quantified Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2803,8 +2622,9 @@ other: <code><a href="#_dv_ordinal_class">Dv_ordinal</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_ordered_numeric_class" target="_blank" rel="noopener">Ordered_Numeric</a></code></p></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(redefined)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_comparable_numeric_class" target="_blank" rel="noopener">Comparable_Numeric</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
@@ -2813,12 +2633,39 @@ other: <code><a href="#_dv_ordinal_class">Dv_ordinal</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>valid_percentage</strong> (<br>
-number: <code><a href="/releases/BASE/latest/foundation_types.html#_ordered_numeric_class" target="_blank" rel="noopener">Ordered_Numeric</a>[1]</code><br>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(effected)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_equal</strong> (<br>
+other: <code><a href="#_dv_quantified_class">Dv_quantified</a>[1]</code><br>
 ): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Test whether a number is a valid percentage, i.e. between 0 and 100.</p>
+<p>Value equality: return True if <code>this</code> and <code><em>other</em></code> are attached to objects considered to be equal in value.</p>
+</div>
+<div class="hdlist">
+<div class="title">Parameters<br></div>
+<table>
+<tr>
+<td class="hdlist1">
+<code><em>other</em></code>
+</td>
+<td class="hdlist2">
+<p>Other object for comparison.</p>
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(abstract)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>less_than</strong> <em>alias</em> "&lt;" (<br>
+other: <code><a href="#_dv_quantified_class">Dv_quantified</a>[1]</code><br>
+): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Arithmetic value comparison. Returns True if current object is less than <code><em>other</em></code>. This operator is effected and/or redefined in descendants to provide the appropriate ordering semantics for concrete types.</p>
+</div>
+<div class="paragraph">
+<p>In conjunction with <code>=</code>, enables the definition of the related functions <code><em>greater_than</em>()</code> etc.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2870,16 +2717,6 @@ other: <code><a href="#_dv_quantified_class">Dv_quantified</a>[1]</code><br>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_equal</strong> (<br>
-other: <code><a href="#_dv_quantified_class">Dv_quantified</a>[1]</code><br>
-): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Return True if this <code>DV_AMOUNT</code> is considered equal to <code><em>other</em></code>.</p>
-</div></div></td>
-</tr>
-<tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>multiply</strong> <em>alias</em> "&#42;" (<br>
 factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" target="_blank" rel="noopener">Real</a>[1]</code><br>
@@ -2895,33 +2732,11 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 <p>Negated version of current object, such as used for representing a difference, e.g. a weight loss.</p>
 </div></div></td>
 </tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>less_than</strong> <em>alias</em> "&lt;" (<br>
-other: <code><a href="#_dv_quantified_class">Dv_quantified</a>[1]</code><br>
-): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code><br>
-<br>
-<em>Post_result</em>: <code>Result = magnitude &lt; other.magnitude</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>True if this object is less than <code><em>other</em></code>. Based on comparison of <code><em>magnitude</em></code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_equal</strong> (<br>
-other<br>
-): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Return True if this <code>DV_QUANTIFIED</code> is considered equal to <code><em>other</em></code>.</p>
-</div></div></td>
-</tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_quantity_class"><a class="anchor" href="#_dv_quantity_class"></a>6.3.6. Dv_quantity Class</h4>
+<h4 id="_dv_quantity_class"><a class="anchor" href="#_dv_quantity_class"></a>6.3.3. Dv_quantity Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3002,7 +2817,7 @@ The display name may be language-dependent for various older and non-systematic 
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
 (redefined)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" target="_blank" rel="noopener">Real</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code>Real</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
@@ -3043,30 +2858,44 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
 (effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>less_than</strong> <em>alias</em> "&lt;" (<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_equal</strong> (<br>
 other: <code><a href="#_dv_quantity_class">Dv_quantity</a>[1]</code><br>
-): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code><br>
-<br>
-<em>Post_result</em>: <code>Result = magnitude &lt; other.magnitude</code></p></td>
+): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>True if this Quantity object is less than <code><em>other</em></code>, based on comparison of <code><em>magnitude</em></code>. Only valid if <code><em>is_strictly_comparable_to()</em></code> is True.</p>
+<p>Value equality: return True if <code>this</code> and <code><em>other</em></code> are attached to objects considered to be equal in value.</p>
+</div>
+<div class="hdlist">
+<div class="title">Parameters<br></div>
+<table>
+<tr>
+<td class="hdlist1">
+<code><em>other</em></code>
+</td>
+<td class="hdlist2">
+<p>Other object for comparison.</p>
+</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
 (effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_strictly_comparable_to</strong> (<br>
-other: <code><a href="#_dv_ordered_class">Dv_ordered</a>[1]</code><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>less_than</strong> <em>alias</em> "&lt;" (<br>
+other: <code><a href="#_dv_quantity_class">Dv_quantity</a>[1]</code><br>
 ): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>True if this quantity and <code><em>other</em></code> have the same <code><em>units</em></code> and also <code><em>units_system</em></code> if it exists.</p>
+<p>Arithmetic value comparison. Returns True if current object is less than <code><em>other</em></code>. This operator is effected and/or redefined in descendants to provide the appropriate ordering semantics for concrete types.</p>
+</div>
+<div class="paragraph">
+<p>In conjunction with <code>=</code>, enables the definition of the related functions <code><em>greater_than</em>()</code> etc.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_count_class"><a class="anchor" href="#_dv_count_class"></a>6.3.7. Dv_count Class</h4>
+<h4 id="_dv_count_class"><a class="anchor" href="#_dv_count_class"></a>6.3.4. Dv_count Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3080,12 +2909,7 @@ other: <code><a href="#_dv_ordered_class">Dv_ordered</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Countable quantities. Used for countable types such as pregnancies and steps (taken by a physiotherapy patient), number of cigarettes smoked in a day.</p>
-</div>
-<div class="paragraph">
-<p>Misuse: Not to be used for amounts of physical entities (which all have units).</p>
-</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
@@ -3099,71 +2923,14 @@ other: <code><a href="#_dv_ordered_class">Dv_ordered</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
 (redefined)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_integer64_class" target="_blank" rel="noopener">Integer64</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_integer_class" target="_blank" rel="noopener">Integer</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>add</strong> <em>alias</em> "+" (<br>
-other: <code><a href="#_dv_count_class">Dv_count</a>[1]</code><br>
-): <code><a href="#_dv_count_class">Dv_count</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Sum of this <code>DV_COUNT</code> and <code><em>other</em></code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>subtract</strong> <em>alias</em> "-" (<br>
-other: <code><a href="#_dv_count_class">Dv_count</a>[1]</code><br>
-): <code><a href="#_dv_count_class">Dv_count</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Difference of this <code>DV_COUNT</code> and <code><em>other</em></code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>multiply</strong> <em>alias</em> "&#42;" (<br>
-factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" target="_blank" rel="noopener">Real</a>[1]</code><br>
-): <code><a href="#_dv_count_class">Dv_count</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Product of this <code>DV_COUNT</code> and <code><em>factor</em></code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>less_than</strong> <em>alias</em> "&lt;" (<br>
-other: <code><a href="#_dv_count_class">Dv_count</a>[1]</code><br>
-): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code><br>
-<br>
-<em>Post_result</em>: <code>Result = magnitude &lt; other.magnitude</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>True if this Quantified object is less than <code><em>other</em></code>, based on comparison of <code><em>magnitude</em></code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_strictly_comparable_to</strong> (<br>
-other: <code><a href="#_dv_ordered_class">Dv_ordered</a>[1]</code><br>
-): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Return True.</p>
-</div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_ratio_class"><a class="anchor" href="#_dv_ratio_class"></a>6.3.8. Dv_ratio Class</h4>
+<h4 id="_dv_ratio_class"><a class="anchor" href="#_dv_ratio_class"></a>6.3.5. Dv_ratio Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3198,6 +2965,13 @@ other: <code><a href="#_dv_ordered_class">Dv_ordered</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>numerator</strong>: <code>Real</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>TODO: possibly needs to be a Quantified?</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>denominator</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" target="_blank" rel="noopener">Real</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Denominator of ratio.</p>
@@ -3206,15 +2980,15 @@ other: <code><a href="#_dv_ordered_class">Dv_ordered</a>[1]</code><br>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>type</strong>: <code><a href="#_ratio_kind_enumeration">Ratio_kind</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Indicates semantic type of proportion, including percent, unitary etc.</p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
 (redefined)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" target="_blank" rel="noopener">Real</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code>Real</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Computed value of numerator / denominator.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
@@ -3222,17 +2996,39 @@ other: <code><a href="#_dv_ordered_class">Dv_ordered</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>magnitude</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" target="_blank" rel="noopener">Real</a></code></p></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(effected)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_equal</strong> (<br>
+other: <code><a href="#_dv_ratio_class">Dv_ratio</a>[1]</code><br>
+): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Effective magnitude represented by ratio.</p>
+<p>Value equality: return True if <code>this</code> and <code><em>other</em></code> are attached to objects considered to be equal in value.</p>
+</div>
+<div class="hdlist">
+<div class="title">Parameters<br></div>
+<table>
+<tr>
+<td class="hdlist1">
+<code><em>other</em></code>
+</td>
+<td class="hdlist2">
+<p>Other object for comparison.</p>
+</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_integral</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(effected)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>less_than</strong> <em>alias</em> "&lt;" (<br>
+other: <code><a href="#_dv_ratio_class">Dv_ratio</a>[1]</code><br>
+): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>True if the <code><em>numerator</em></code> and <code><em>denominator</em></code> values are integers, i.e. if <code><em>precision</em></code> is 0.</p>
+<p>Arithmetic value comparison. Returns True if current object is less than <code><em>other</em></code>. This operator is effected and/or redefined in descendants to provide the appropriate ordering semantics for concrete types.</p>
+</div>
+<div class="paragraph">
+<p>In conjunction with <code>=</code>, enables the definition of the related functions <code><em>greater_than</em>()</code> etc.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3257,16 +3053,6 @@ other: <code><a href="#_dv_ratio_class">Dv_ratio</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_equal</strong> (<br>
-other: <code><a href="#_dv_ratio_class">Dv_ratio</a>[1]</code><br>
-): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Return True if this <code>DV_AMOUNT</code> is considered equal to <code><em>other</em></code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
 (redefined)</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>multiply</strong> <em>alias</em> "&#42;" (<br>
 factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" target="_blank" rel="noopener">Real</a>[1]</code><br>
@@ -3275,45 +3061,11 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 <p>Product of this Proportion and <code><em>factor</em></code>.</p>
 </div></div></td>
 </tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>less_than</strong> <em>alias</em> "&lt;" (<br>
-other: <code><a href="#_dv_ratio_class">Dv_ratio</a>[1]</code><br>
-): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code><br>
-<br>
-<em>Post_result</em>: <code>Result = magnitude &lt; other.magnitude</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>True if this Proportion is less than  <code><em>other</em></code>. Only valid if <code><em>is_strictly_comparable_to()</em></code> is True.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_strictly_comparable_to</strong> (<br>
-other: <code><a href="#_dv_ordered_class">Dv_ordered</a>[1]</code><br>
-): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Return True if the <code><em>type</em></code> of this proportion is the same as the <code><em>type</em></code> of <code><em>other</em></code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Fraction_validity</em>: <code>type = RatioKind.rational_fraction implies is_integral</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Valid_denominator</em>: <code>denominator /= 0.0</code></p>
-</div></div></td>
-</tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_ratio_kind_enumeration"><a class="anchor" href="#_ratio_kind_enumeration"></a>6.3.9. Ratio_kind Enumeration</h4>
+<h4 id="_ratio_kind_enumeration"><a class="anchor" href="#_ratio_kind_enumeration"></a>6.3.6. Ratio_kind Enumeration</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3336,23 +3088,21 @@ other: <code><a href="#_dv_ordered_class">Dv_ordered</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">proportion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rational_fraction</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Numerator and denominator may be any value.</p>
+<p>Numerator and denominator are both integers, and value is displayed in form of a fraction, e.g. 1/3, 2 1/4.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rational_fraction</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Numerator and denominator are integral, and the presentation method uses a slash, e.g.  1/2 .</p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ratio</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_measured_class"><a class="anchor" href="#_dv_measured_class"></a>6.3.10. Dv_measured Class</h4>
+<h4 id="_dv_measured_class"><a class="anchor" href="#_dv_measured_class"></a>6.3.7. Dv_measured Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3366,7 +3116,9 @@ other: <code><a href="#_dv_ordered_class">Dv_ordered</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Measured form of Dv_quantified, with optional accuracy, normal range and other reference ranges.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
@@ -3379,21 +3131,15 @@ other: <code><a href="#_dv_ordered_class">Dv_ordered</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>accuracy</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_any_class" target="_blank" rel="noopener">Any</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>precision</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_integer_class" target="_blank" rel="noopener">Integer</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Accuracy of measurement. A value of zero means no accuracy recorded.</p>
+<p>Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.
+The value -1 implies no limit, i.e. any number of decimal places.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>accuracy_is_percent</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>If <code>True</code>, indicates that when this object was created, <code><em>accuracy</em></code> was recorded as a percent value; if <code>False</code>, as an absolute quantity value.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value_status</strong>: <code><a href="/releases/BASE/latest/base_types.html#_comparisonoperator_enumeration" target="_blank" rel="noopener">ComparisonOperator</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value_status</strong>: <code><a href="#_comparison_operator_enumeration">Comparison_operator</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional status of magnitude with respect to real-world value:</p>
 </div>
@@ -3418,26 +3164,30 @@ other: <code><a href="#_dv_ordered_class">Dv_ordered</a>[1]</code><br>
 </div>
 <div class="paragraph">
 <p>If not present, assumed meaning is  <code>"="</code> .</p>
+</div>
+<div class="paragraph">
+<p>TODO: could also do using Dv_rnage, but lose 'measured' info.</p>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code>V</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>accuracy</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_any_class" target="_blank" rel="noopener">Any</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Accuracy of measurement. A value of zero means no accuracy recorded.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>normal_range</strong>: <code>Interval&lt;<a href="#_dv_quantified_class">Dv_quantified</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>accuracy_is_percent</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If <code>True</code>, indicates that when this object was created, <code><em>accuracy</em></code> was recorded as a percent value; if <code>False</code>, as an absolute quantity value.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>normal_range</strong>: <code>@@</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional normal range.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>precision</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_integer_class" target="_blank" rel="noopener">Integer</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.
-The value -1 implies no limit, i.e. any number of decimal places.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3448,241 +3198,154 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(redefined)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code>V</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_reference_range_class"><a class="anchor" href="#_reference_range_class"></a>6.3.8. Reference_range Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Reference_range&lt;V&gt;</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Defines a named range to be associated with any <code>DV_ORDERED</code> datum. Each such range is particular to the patient and context, e.g. sex, age, and any other factor which affects ranges. May be used to represent normal, therapeutic, dangerous, critical etc ranges.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>valid_magnitude_status</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code><br>
-<br>
-<em>Post</em>: <code>Result = s in {"=", "&lt;", "&gt;", "&lt;=", "&gt;=", "~"}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>meaning</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Test whether a string value is one of the valid values for the magnitude_status attribute.</p>
+<p>Term whose value indicates the meaning of this range, e.g.  normal,  critical,  therapeutic  etc.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>range</strong>: <code><a href="#_dv_range_class">Dv_range</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The data range for this meaning, e.g. critical  etc.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Accuracy_is_percent_validity</em>: <code>accuracy = 0 implies not accuracy_is_percent</code></p>
+<p><em>Range_is_simple</em>: <code>(range.lower_unbounded or else range.lower.is_simple) and (range.upper_unbounded or else range.upper.is_simple)</code></p>
 </div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_comparison_operator_enumeration"><a class="anchor" href="#_comparison_operator_enumeration"></a>6.3.9. Comparison_operator Enumeration</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Enumeration</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Comparison_operator</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>TODO: should be covered by Range</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8656;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;=</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">=</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_dv_range_class"><a class="anchor" href="#_dv_range_class"></a>6.3.10. Dv_range Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_range&lt;V&gt;</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_data_value_class">Data_value</a></code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>lower</strong>: <code>V</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>upper</strong>: <code>V</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Accuracy_validity</em>: <code>accuracy_is_percent implies valid_percentage (accuracy)</code></p>
+<p><em>Ordering</em>:</p>
 </div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_dv_temporal_class"><a class="anchor" href="#_dv_temporal_class"></a>6.3.11. Dv_temporal Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Dv_temporal (abstract)</em></strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Specialised temporal variant of <code>DV_ABSOLUTE_QUANTITY</code> whose diff type is <code>DV_DURATION</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_dv_ordered_class">Dv_ordered</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_temporal_class" target="_blank" rel="noopener">Temporal</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(abstract)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>add</strong> <em>alias</em> "+" (<br>
-a_diff<br>
-): <code><a href="#_dv_temporal_class">Dv_temporal</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Addition of a Duration to this temporal entity.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(abstract)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>subtract</strong> <em>alias</em> "-" (<br>
-a_diff<br>
-): <code><a href="#_dv_temporal_class">Dv_temporal</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Subtract a Duration from this temporal entity.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(abstract)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>diff</strong> <em>alias</em> "-" (<br>
-other: <code><a href="#_dv_temporal_class">Dv_temporal</a>[1]</code><br>
-)</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Difference between this temporal entity and <code><em>other</em></code>.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_dv_date_class"><a class="anchor" href="#_dv_date_class"></a>6.3.12. Dv_date Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_date</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_dv_temporal_class">Dv_temporal</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_date_class" target="_blank" rel="noopener">Date</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_dv_time_class"><a class="anchor" href="#_dv_time_class"></a>6.3.13. Dv_time Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_time</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_dv_temporal_class">Dv_temporal</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_time_class" target="_blank" rel="noopener">Time</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_dv_date_time_class"><a class="anchor" href="#_dv_date_time_class"></a>6.3.14. Dv_date_tIme Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_date_tIme</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_dv_temporal_class">Dv_temporal</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_dv_duration_class"><a class="anchor" href="#_dv_duration_class"></a>6.3.15. Dv_duration Class</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_duration</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_dv_temporal_class">Dv_temporal</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -3713,7 +3376,7 @@ other: <code><a href="#_dv_temporal_class">Dv_temporal</a>[1]</code><br>
 </div>
 </div>
 <div class="paragraph">
-<p>This proposal is comprehensive, covering all useful unit systems, including SI, various imperial, customary mesaures, and some obscure measures, as well as clinically specific additions. Metric prefixes, meaning-changing textual suffixes (e.g. "[Hg]" in "mm[Hg]") and non-meaning-changing annotations (e.g. "kg {total}") are recognised. With this syntax, units can be simply expressed in strings such as:</p>
+<p>This proposal is comprehensive, covering all useful unit systems, including SI, various imperial, customary measures, and some obscure measures, as well as clinically specific additions. Metric prefixes, meaning-changing textual suffixes (e.g. "[Hg]" in "mm[Hg]") and non-meaning-changing annotations (e.g. "kg {total}") are recognised. With this syntax, units can be simply expressed in strings such as:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3728,10 +3391,375 @@ other: <code><a href="#_dv_temporal_class">Dv_temporal</a>[1]</code><br>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_time_specification_package"><a class="anchor" href="#_time_specification_package"></a>7. Time_specification Package</h2>
+<h2 id="_date_time_package_2"><a class="anchor" href="#_date_time_package_2"></a>7. Date Time Package</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_overview_5"><a class="anchor" href="#_overview_5"></a>7.1. Overview</h3>
+<h3 id="_requirements_5"><a class="anchor" href="#_requirements_5"></a>7.1. Requirements</h3>
+<div class="sect3">
+<h4 id="_standard_datetimes_2"><a class="anchor" href="#_standard_datetimes_2"></a>7.1.1. Standard Date/Times</h4>
+<div class="paragraph">
+<p>The basic requirement is for types which represent the following concepts.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Date</em>: a type which records year, month and day in month. Examples include date of birth, date of onset of a problem.</p>
+</li>
+<li>
+<p><em>Time</em>: a type which records hour, minute, second, and timezone. Examples include time of meal, time of day when a problem recurs. Timezone is required in a shared EHR repository so that times of clinical events which occurred in different timezones are comparable; this includes specialised pathology tests which might be done in another country.</p>
+</li>
+<li>
+<p><em>Date_time</em>: a type which records year, month, day, hour, minute, second, and timezone. Examples include date &amp; time of death, timestamp of any observation. Timezone is required for the same reason as in Time.</p>
+</li>
+<li>
+<p><em>Duration</em>: a type which records duration of an event or (in)activity, as days, hours, minutes, and seconds. A duration is understood as being relative to an unstated origin point (such as birth), and may take a negative value, indicating prior to the origin.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_partial_datetimes_3"><a class="anchor" href="#_partial_datetimes_3"></a>7.1.2. Partial Date/Times</h4>
+<div class="paragraph">
+<p>Partial or uncertain date/times have to be supported in clinical medicine. It is common for patients to
+be unsure about dates and durations. Requirements for partial date/times include the following.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For dates, one of the following rules applies to any instance:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>only the year is known</p>
+</li>
+<li>
+<p>only the year and month are known</p>
+</li>
+<li>
+<p>If not even the year is known, then the date is obviously extremely approximate and it would
+probably be unsafe to represent it computationally. However, if computatable representation
+was needed in this case, a date interval can be used. A pedantic example which breaks these
+rules is someone who claims to be born on "a Monday at the start of May in 1934" (i.e. day
+but not date unknown). Either the clinician determines what date the first Monday in May
+1934 actually was and record that (assuming the patient&#8217;s way of accurately remembering
+just happens to be via day rather than date), or else records a partial date of the form "May
+1934" (in ISO 8601 form, <code>"1934-05"</code>) if they determine that the patient really is unsure.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Sometimes incomplete times are recorded, which follow the same rule that either the hours
+or both the hours and minutes are present. Examples:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>recordings by instruments which only generate hh:mm values (i.e. no seconds);</p>
+</li>
+<li>
+<p>recordings by patients who report approximate times of events;</p>
+</li>
+<li>
+<p>recordings by clinicians who use approximate times in administrations, e.g. "take insulin at 8am" really means something like 8 am +/- 30 mins.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Imprecise durations such as '2 - 3 hrs' need to be recordable in a computable form.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To satisfy the faithfulness requirement for health record recording it should always be possible to
+record the narrative form of the datum provided by the patient as well as the formal form.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_design_5"><a class="anchor" href="#_design_5"></a>7.2. Design</h3>
+<div class="sect3">
+<h4 id="_general_approach_2"><a class="anchor" href="#_general_approach_2"></a>7.2.1. General Approach</h4>
+<div class="paragraph">
+<p>Date/time values are somewhat special in the realm of data types in that they are expressed in their
+'customary' form, in which the standard structure of <code>{value, unit}</code> and metric relationships between
+orders of magnitude do not hold. The customary form is what we are used to using in the social time
+domain, such as births, deaths, ages, and times and durations of events which we remember. In all
+these cases it is expressed using the familiar year/month/date/hour/minute/second system, in which
+the relationships between each successive unit of time is non-metric. The customary form can be converted
+to a magnitude since an origin point, and many date/time libraries do this in order to implement
+various operations, particularly comparison.</p>
+</div>
+<div class="paragraph">
+<p>The date/time types fall into two categories: <em>absolute</em> and <em>relative</em>. The absolute category comprises
+the Date, Date/time and Time concepts, each of which measure time from a known origin. Date and
+Date/time measure calendrical time from the date <code>0001-01-01</code>, while Time measures clock time from
+midnight. Both Date/time and Time can include timezone information, ensuring that their instances
+are correctly situated on the same timeline. All absolute time types inherit from the <code>DV_TEMPORAL</code>
+type, which provides the appropriate signature for the <code><em>diff()</em></code> function.</p>
+</div>
+<div class="paragraph">
+<p>The relative category contains only the Duration concept, which expresses elapsed time between two
+time points. The <code>DV_DURATION</code> class is used for expressing durations of clinical phenomena and differences
+between absolute times.</p>
+</div>
+<div class="paragraph">
+<p>With two exceptions, all four concepts conform to the <a href="https://www.iso.org/iso-8601-date-and-time-format.html" target="_blank" rel="noopener">ISO 8601:2019 standard</a>, which is accordingly used as the primary definitional basis of the openEHR date/time types. The two exceptions are as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a negative sign may be used before a Duration, for example '-P10D', meaning '10 days before [origin]', where the 'origin' is a timepoint understood as the origin for the duration;</p>
+</li>
+<li>
+<p>the  W' designator may be mixed with other designators.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The first exception allows the expression of negative durations, indicating an elapsed time prior to an origin point. An example from clinical medicine is the notion of 'adjusted age', whereby the true developmental age of a very premature newborn is computed with respect to the origin point of birth after a nominal gestation period (usually 9 months). A baby born at 6 months would therefore have an adjusted age of '-3 months', or '-P3M' in the format used by the <code>DV_DURATION</code> type. The use of the negative enables correctly computed developmental age comparisons of newborns, regardless of prematurity. Negation for ISO 8601 durations is also supported by <a href="https://www.w3.org/XML/Schema" target="_blank" rel="noopener">W3C XML-schema</a> and various programming languages.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html#_time_types" target="_blank" rel="noopener">Time Types section in the openEHR Foundation Types specification</a> for conformance details.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_partial_datetimes_4"><a class="anchor" href="#_partial_datetimes_4"></a>7.2.2. Partial Date/Times</h4>
+<div class="paragraph">
+<p>The types defined in this specification support the notion of partially specified dates and times. The
+modelling approach used here takes into account the known needs for representing partial date/time
+data, while balancing that with the need to avoid incomprehensibly complex types whose generality
+would only apply to a tiny percent of difficult cases. Thus, the basis for modelling incomplete
+date/times is as follows.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The modelling problem relates only to date/time quantities that need to be computable. For extremely imprecise date/times, if the clinician feels the need, she can record it as narrative text.</p>
+</li>
+<li>
+<p>For imprecise durations, an interval should be used, i.e. <code>DV_INTERVAL&lt;DV_DURATION&gt;</code>. In this way durations like '2 - 3 hrs' can be represented, and still be computable.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Based on the above considerations, the requirements for partial types are satisfied by the semantics of
+ISO 8601:2004 for 'reduced accuracy' date/times, in which parts of a date, time or date/time can be
+missing from the right hand end of the string. This models the reasonable situation where e.g. day
+may be unknown in a date, but a date cannot have month unknown and day known.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_calendars_2"><a class="anchor" href="#_calendars_2"></a>7.2.3. Calendars</h4>
+<div class="paragraph">
+<p>A comment on calendars is in order. In this specification, all date/time types currently modelled are
+Gregorian calendar based. This is the same assumption made by ISO 8601, and most technical
+computing systems today in many parts of the world. At first glance this may seem like a culturally
+insensitive approach, but in fact it makes sense in computational terms, for both users of the Gregorian and other calendars, e.g. Julian, Islamic, Baha&#8217;i, etc. Arguments against trying to use the
+date/time classes defined here to represent date/times from any calendar include the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Almost all dates on computer systems, including in regions such as the Indian sub-continent,
+Turkey and the middle east, where alternate calendars are in use, are in the Gregorian system.
+This is likely to be the case for some time, and may always be the case, regardless of
+the continued use of other calendars for religious or other purposes (outside of health);</p>
+</li>
+<li>
+<p>If a calendar indicator were used in date quantities, all software, to be correct, would have to
+check the value to verify that it is in the expected calendar system, and to do something special
+if it is not - an added cost which is a possible source of bugs and which would rarely be
+used. The reality is that most software produced in the western world, India etc (possibly
+excepting open source software) would automatically assume the Gregorian calendar, and
+would be in error if ever it did receive EHR data containing dates from alternate calendars.</p>
+</li>
+<li>
+<p>If/when other calendars are used in EHR or related systems, the users of those calendars will
+be aware of it, and include the appropriate conversion logic between Gregorian dates and
+their own, limiting the extra software work and quality issues to those users who actually
+need alternate calendars. If EHRs from such places are sent to a health care facility where
+Gregorian is the default, nothing special is needed to ensure that those records will contain
+dates comprehensible to the receiver.</p>
+</li>
+<li>
+<p>The detailed model of date/times in some other calendars is not the same as in the Gregorian
+calendar, so they would require different classes anyway - the classes defined here would
+not necessarily function correctly simply by adding a calendar field.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For users requiring non-Gregorian dates in EHR and other health systems there are two approaches.
+One is to treat non-Gregorian dates as a localisation issue, to be handled inside the application and
+GUI environment. The other is to actually add further sibling packages to the openEHR date/time
+package, for each new calendar or calendar group required. Conversion algorithms would most likely
+be needed in and out of the Gregorian types to enable interoperability of information drawn from different
+applications or sources. This approach may require a substantial modelling effort.</p>
+</div>
+<div class="paragraph">
+<p>Algorithms for conversion between the Egyptian, Armenian, Khwarizmian, Persian, Ethiopian, Coptic,
+Republican, Macedonian, Syrian, Julian Roman, Gregorian, Islamic A, Islamic B, Baha&#8217;i and
+Saka calendars are described by (<a href="#Richards1998">Richards&#44; 1998</a>) and are based on the work of D. A. Hatcher (1986).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_representation_2"><a class="anchor" href="#_representation_2"></a>7.2.4. Representation</h4>
+<div class="paragraph">
+<p>All of the date/time classes described here are defined so as to have an attribute called value of type
+String, in the form of an <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601:2019</a> string, with the two above-described deviations allowed. ISO 8601 is convenient for this purpose, as it is a simple
+syntax, and covers not only all four variants of fully-specified date/time described here, but also
+the partial varieties. The deviations support common use cases in healthcare, without compromising the semantics. Using a single string attribute significantly simplifies persistence as well as mapping
+to XML-based formalisms, which use a mostly ISO 8601 compliant date/time representation.
+The ISO 8601 semantics assumed by EHR are defined in classes found in the classes
+<code>Iso8601_date</code>, <code>Iso8601_time</code>, <code>Iso8601_date_time</code>, <code>Iso8601_duration</code>, from the
+<a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html#_time_types"><code>base.foundation_types.time</code> package</a>. These classes are inherited into the corresponding classes
+defined below.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+it is strongly recommended that where possible, the <em>extended</em> form of the ISO 8601 date/time syntax is used, i.e. the use of dashes in dates (e.g. <code>2018-03-14</code> rather than <code>20180314</code>) and colons for times (i.e. <code>14:24:00</code> instead of <code>142400</code>). This greatly aids human readability, and reduces the need for special date/time display rendering.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_class_descriptions_5"><a class="anchor" href="#_class_descriptions_5"></a>7.3. Class Descriptions</h3>
+<div class="sect3">
+<h4 id="_dv_temporal_class"><a class="anchor" href="#_dv_temporal_class"></a>7.3.1. Dv_temporal Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Dv_temporal&lt;T&gt; (abstract)</em></strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_data_value_class">Data_value</a></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_dv_date_class"><a class="anchor" href="#_dv_date_class"></a>7.3.2. Dv_date Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_date</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_dv_temporal_class">Dv_temporal</a></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_dv_time_class"><a class="anchor" href="#_dv_time_class"></a>7.3.3. Dv_time Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_time</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_dv_temporal_class">Dv_temporal</a></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_dv_date_time_class"><a class="anchor" href="#_dv_date_time_class"></a>7.3.4. Dv_date_time Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_date_time</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_dv_temporal_class">Dv_temporal</a></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_dv_duration_class"><a class="anchor" href="#_dv_duration_class"></a>7.3.5. Dv_duration Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_duration</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_dv_temporal_class">Dv_temporal</a></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_time_specification_package"><a class="anchor" href="#_time_specification_package"></a>8. Time_specification Package</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_overview_5"><a class="anchor" href="#_overview_5"></a>8.1. Overview</h3>
 <div class="paragraph">
 <p>Time specification is about potentiality rather than actuality, and needs its own types. The openEHR
 <code>data_types.time_specification</code> package provides such types, based on the HL7 types of the
@@ -3744,7 +3772,7 @@ same names, and is illustrated below.</p>
 <div class="title">Figure 6. rm.data_types.time_specification package</div>
 </div>
 <div class="sect3">
-<h4 id="_requirements_5"><a class="anchor" href="#_requirements_5"></a>7.1.1. Requirements</h4>
+<h4 id="_requirements_6"><a class="anchor" href="#_requirements_6"></a>8.1.1. Requirements</h4>
 <div class="paragraph">
 <p>One of the difficulties with time is expressing future times, since potential occurrences, durations,
 repetitions cannot be expressed in the same way as actual time. Complicating the problem is the fact
@@ -3792,7 +3820,7 @@ is quite challenging.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_design_5"><a class="anchor" href="#_design_5"></a>7.1.2. Design</h4>
+<h4 id="_design_6"><a class="anchor" href="#_design_6"></a>8.1.2. Design</h4>
 <div class="paragraph">
 <p>The HL7 version 3 data types for time specification appear to allow for all of the required possibilities.
 The syntax is based on the <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener">ISO 8601 standard</a>. It provides types which express:</p>
@@ -3819,9 +3847,9 @@ using a syntax which is equivalet to a series of <code>IVL&lt;TS&gt;</code> (i.e
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_descriptions_4"><a class="anchor" href="#_class_descriptions_4"></a>7.2. Class Descriptions</h3>
+<h3 id="_class_descriptions_6"><a class="anchor" href="#_class_descriptions_6"></a>8.2. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_dv_time_specification_class"><a class="anchor" href="#_dv_time_specification_class"></a>7.2.1. DV_TIME_SPECIFICATION Class</h4>
+<h4 id="_dv_time_specification_class"><a class="anchor" href="#_dv_time_specification_class"></a>8.2.1. DV_TIME_SPECIFICATION Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3888,7 +3916,7 @@ using a syntax which is equivalet to a series of <code>IVL&lt;TS&gt;</code> (i.e
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_periodic_time_specification_class"><a class="anchor" href="#_dv_periodic_time_specification_class"></a>7.2.2. DV_PERIODIC_TIME_SPECIFICATION Class</h4>
+<h4 id="_dv_periodic_time_specification_class"><a class="anchor" href="#_dv_periodic_time_specification_class"></a>8.2.2. DV_PERIODIC_TIME_SPECIFICATION Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3959,7 +3987,7 @@ using a syntax which is equivalet to a series of <code>IVL&lt;TS&gt;</code> (i.e
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_general_time_specification_class"><a class="anchor" href="#_dv_general_time_specification_class"></a>7.2.3. DV_GENERAL_TIME_SPECIFICATION Class</h4>
+<h4 id="_dv_general_time_specification_class"><a class="anchor" href="#_dv_general_time_specification_class"></a>8.2.3. DV_GENERAL_TIME_SPECIFICATION Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4015,9 +4043,9 @@ using a syntax which is equivalet to a series of <code>IVL&lt;TS&gt;</code> (i.e
 </div>
 </div>
 <div class="sect2">
-<h3 id="_syntaxes_2"><a class="anchor" href="#_syntaxes_2"></a>7.3. Syntaxes</h3>
+<h3 id="_syntaxes_2"><a class="anchor" href="#_syntaxes_2"></a>8.3. Syntaxes</h3>
 <div class="sect3">
-<h4 id="_phase_linked_time_specification_syntax"><a class="anchor" href="#_phase_linked_time_specification_syntax"></a>7.3.1. Phase-linked Time Specification Syntax</h4>
+<h4 id="_phase_linked_time_specification_syntax"><a class="anchor" href="#_phase_linked_time_specification_syntax"></a>8.3.1. Phase-linked Time Specification Syntax</h4>
 <div class="paragraph">
 <p>The syntactic form of phase-linked periodic time specifications (derived from the <code>PIVL&lt;T&gt;</code> spec
 HL7v3 ballot) is as follows.</p>
@@ -4053,7 +4081,7 @@ HL7v3 ballot) is as follows.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_event_linked_periodic_time_specification_syntax"><a class="anchor" href="#_event_linked_periodic_time_specification_syntax"></a>7.3.2. Event-linked Periodic Time Specification Syntax</h4>
+<h4 id="_event_linked_periodic_time_specification_syntax"><a class="anchor" href="#_event_linked_periodic_time_specification_syntax"></a>8.3.2. Event-linked Periodic Time Specification Syntax</h4>
 <div class="paragraph">
 <p>Examples of event-linked periodic time specifications include:</p>
 </div>
@@ -4080,7 +4108,7 @@ HL7v3 ballot) is as follows.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_general_time_specification_syntax"><a class="anchor" href="#_general_time_specification_syntax"></a>7.3.3. General Time Specification Syntax</h4>
+<h4 id="_general_time_specification_syntax"><a class="anchor" href="#_general_time_specification_syntax"></a>8.3.3. General Time Specification Syntax</h4>
 <div class="paragraph">
 <p>The class is the same structurally as the <code>DV_TIME_SPECIFICATION</code> parent. The syntax is the HL7
 GTS syntax, defined by the following parse specification:</p>
@@ -4100,10 +4128,10 @@ GTS syntax, defined by the following parse specification:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_encapsulated_package"><a class="anchor" href="#_encapsulated_package"></a>8. Encapsulated Package</h2>
+<h2 id="_encapsulated_package"><a class="anchor" href="#_encapsulated_package"></a>9. Encapsulated Package</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_overview_6"><a class="anchor" href="#_overview_6"></a>8.1. Overview</h3>
+<h3 id="_overview_6"><a class="anchor" href="#_overview_6"></a>9.1. Overview</h3>
 <div class="paragraph">
 <p>The <code>data_types.encapsulated</code> package contains classes representing data values whose internal
 structure is defined outside the EHR model, such as multimedia and parsable data. It is illustrated below.</p>
@@ -4115,7 +4143,7 @@ structure is defined outside the EHR model, such as multimedia and parsable data
 <div class="title">Figure 7. rm.data_types.encapsulated package</div>
 </div>
 <div class="sect3">
-<h4 id="_requirements_6"><a class="anchor" href="#_requirements_6"></a>8.1.1. Requirements</h4>
+<h4 id="_requirements_7"><a class="anchor" href="#_requirements_7"></a>9.1.1. Requirements</h4>
 <div class="paragraph">
 <p>There is a need to be able to include content in the EHR whose interior structure is not modelled in
 the EHR reference model, but instead documented by sufficient meta-data attributes for specific tools
@@ -4170,7 +4198,7 @@ system generates checksums to improve the quality of its internal data transmiss
 </div>
 </div>
 <div class="sect3">
-<h4 id="_design_6"><a class="anchor" href="#_design_6"></a>8.1.2. Design</h4>
+<h4 id="_design_7"><a class="anchor" href="#_design_7"></a>9.1.2. Design</h4>
 <div class="paragraph">
 <p>The design approach used here is based on the following analysis.</p>
 </div>
@@ -4221,7 +4249,7 @@ ED type from the HL7v3 data types specification.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_examples"><a class="anchor" href="#_examples"></a>8.1.3. Examples</h4>
+<h4 id="_examples"><a class="anchor" href="#_examples"></a>9.1.3. Examples</h4>
 <div class="paragraph">
 <p>The following examples show how to use the classes to represent some common encapsulated data types.</p>
 </div>
@@ -4289,9 +4317,9 @@ ED type from the HL7v3 data types specification.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_descriptions_5"><a class="anchor" href="#_class_descriptions_5"></a>8.2. Class Descriptions</h3>
+<h3 id="_class_descriptions_7"><a class="anchor" href="#_class_descriptions_7"></a>9.2. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_dv_encapsulated_class"><a class="anchor" href="#_dv_encapsulated_class"></a>8.2.1. Dv_encapsulated Class</h4>
+<h4 id="_dv_encapsulated_class"><a class="anchor" href="#_dv_encapsulated_class"></a>9.2.1. Dv_encapsulated Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4348,7 +4376,7 @@ ED type from the HL7v3 data types specification.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_multimedia_class"><a class="anchor" href="#_dv_multimedia_class"></a>8.2.2. Dv_multimedia Class</h4>
+<h4 id="_dv_multimedia_class"><a class="anchor" href="#_dv_multimedia_class"></a>9.2.2. Dv_multimedia Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4491,7 +4519,7 @@ Example: image/jpeg; text/json.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_parsable_class"><a class="anchor" href="#_dv_parsable_class"></a>8.2.3. Dv_parsable Class</h4>
+<h4 id="_dv_parsable_class"><a class="anchor" href="#_dv_parsable_class"></a>9.2.3. Dv_parsable Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4563,10 +4591,10 @@ Example: image/jpeg; text/json.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_uri_package"><a class="anchor" href="#_uri_package"></a>9. Uri Package</h2>
+<h2 id="_uri_package"><a class="anchor" href="#_uri_package"></a>10. Uri Package</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_overview_7"><a class="anchor" href="#_overview_7"></a>9.1. Overview</h3>
+<h3 id="_overview_7"><a class="anchor" href="#_overview_7"></a>10.1. Overview</h3>
 <div class="paragraph">
 <p>The <code>data_types.uri</code> package includes two types used for referring to information resources. The
 <code>DV_URI</code> type allows data values which are references to objects on the world wide web to be created.
@@ -4584,7 +4612,7 @@ below.</p>
 <div class="title">Figure 8. rm.data_types.uri package</div>
 </div>
 <div class="sect3">
-<h4 id="_requirements_7"><a class="anchor" href="#_requirements_7"></a>9.1.1. Requirements</h4>
+<h4 id="_requirements_8"><a class="anchor" href="#_requirements_8"></a>10.1.1. Requirements</h4>
 <div class="paragraph">
 <p>This package meets the requirement for a <code>DATA_VALUE</code> subtype which represents a W3C Uniform
 Resource Identifier (URI). A common example of where this might be used is to represent a reference
@@ -4603,7 +4631,7 @@ in the EHR and between EHRs.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_design_7"><a class="anchor" href="#_design_7"></a>9.1.2. Design</h4>
+<h4 id="_design_8"><a class="anchor" href="#_design_8"></a>10.1.2. Design</h4>
 <div class="paragraph">
 <p>A simple design approach is used whereby a URI is represented as a String, and appropriate functions are defined to extract the various parts according to the syntax of URIs defined by Tim Berners-Lee (<a href="https://tools.ietf.org/html/rfc3986" target="_blank" rel="noopener">IETF RFC 3986</a>). An EHR specific subtype is defined, whose scheme is 'ehr', and which contains further attributes enabling the instances of the type to record what kind of object they are referring to.</p>
 </div>
@@ -4613,7 +4641,7 @@ in the EHR and between EHRs.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_definitions"><a class="anchor" href="#_definitions"></a>9.2. Definitions</h3>
+<h3 id="_definitions"><a class="anchor" href="#_definitions"></a>10.2. Definitions</h3>
 <div class="paragraph">
 <p>The following symbolic definitions are used in the classes below.</p>
 </div>
@@ -4626,9 +4654,9 @@ in the EHR and between EHRs.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_descriptions_6"><a class="anchor" href="#_class_descriptions_6"></a>9.3. Class Descriptions</h3>
+<h3 id="_class_descriptions_8"><a class="anchor" href="#_class_descriptions_8"></a>10.3. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_dv_uri_class"><a class="anchor" href="#_dv_uri_class"></a>9.3.1. DV_URI Class</h4>
+<h4 id="_dv_uri_class"><a class="anchor" href="#_dv_uri_class"></a>10.3.1. Dv_uri Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4638,7 +4666,7 @@ in the EHR and between EHRs.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>DV_URI</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_uri</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -4705,7 +4733,7 @@ in the EHR and between EHRs.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_ehr_uri_class"><a class="anchor" href="#_dv_ehr_uri_class"></a>9.3.2. DV_EHR_URI Class</h4>
+<h4 id="_dv_ehr_uri_class"><a class="anchor" href="#_dv_ehr_uri_class"></a>10.3.2. Dv_ehr_uri Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4715,7 +4743,7 @@ in the EHR and between EHRs.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>DV_EHR_URI</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_ehr_uri</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -4728,7 +4756,7 @@ in the EHR and between EHRs.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_dv_uri_class">DV_URI</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_dv_uri_class">Dv_uri</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
@@ -4741,9 +4769,9 @@ in the EHR and between EHRs.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_syntaxes_3"><a class="anchor" href="#_syntaxes_3"></a>9.4. Syntaxes</h3>
+<h3 id="_syntaxes_3"><a class="anchor" href="#_syntaxes_3"></a>10.4. Syntaxes</h3>
 <div class="sect3">
-<h4 id="_dv_ehr_uri_syntax"><a class="anchor" href="#_dv_ehr_uri_syntax"></a>9.4.1. DV_EHR_URI Syntax</h4>
+<h4 id="_dv_ehr_uri_syntax"><a class="anchor" href="#_dv_ehr_uri_syntax"></a>10.4.1. DV_EHR_URI Syntax</h4>
 <div class="paragraph">
 <p>The syntax of a <code>DV_EHR_URI</code> is an openEHR path, inside the 'ehr' URI scheme-space, and is one of the forms:</p>
 </div>
@@ -4763,10 +4791,10 @@ ehr:/ehr_id/top_level_structure_locator/path_inside_top_level_structure</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_implementation_strategies"><a class="anchor" href="#_implementation_strategies"></a>10. Implementation Strategies</h2>
+<h2 id="_implementation_strategies"><a class="anchor" href="#_implementation_strategies"></a>11. Implementation Strategies</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_overview_8"><a class="anchor" href="#_overview_8"></a>10.1. Overview</h3>
+<h3 id="_overview_8"><a class="anchor" href="#_overview_8"></a>11.1. Overview</h3>
 <div class="paragraph">
 <p>This section notes a few of the general challenges for mapping the openEHR data types to implementation
 technologies such as programming languages and XML. For specific guidelines, Implementation
@@ -4774,7 +4802,7 @@ Technology Specification (ITS) document for each target formalism should be cons
 </div>
 </div>
 <div class="sect2">
-<h3 id="_quantities_and_ordered_numeric"><a class="anchor" href="#_quantities_and_ordered_numeric"></a>10.2. Quantities and Ordered_numeric</h3>
+<h3 id="_quantities_and_ordered_numeric"><a class="anchor" href="#_quantities_and_ordered_numeric"></a>11.2. Quantities and Ordered_numeric</h3>
 <div class="paragraph">
 <p>In the quantity package, the type <code>DV_QUANTIFIED</code> is shown having an abstract property of type
 Ordered_numeric. This is intended to indicate that the type <code>DV_QUANTIFIED</code> is distinguished by
@@ -4805,7 +4833,7 @@ statistical application processing <code>DV_QUANTITY</code> and <code>DV_COUNT</
 </div>
 </div>
 <div class="sect2">
-<h3 id="_unicode"><a class="anchor" href="#_unicode"></a>10.3. Unicode</h3>
+<h3 id="_unicode"><a class="anchor" href="#_unicode"></a>11.3. Unicode</h3>
 <div class="paragraph">
 <p>Unicode is supported in various ways in different languages. In Java, since JDK 1.1, unicode support
 is implicit in the base classes. From the documentation:</p>
@@ -4834,7 +4862,7 @@ Eiffel.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_dates_and_times"><a class="anchor" href="#_dates_and_times"></a>10.4. Dates and Times</h3>
+<h3 id="_dates_and_times"><a class="anchor" href="#_dates_and_times"></a>11.4. Dates and Times</h3>
 <div class="paragraph">
 <p>In some formalisms, dates and times are represented using a single calendar-like class. This is not
 considered to be good practice from the point of specification, since it is more difficult to state proper
@@ -4867,7 +4895,7 @@ wrapper for example, for serialising and deserialising in and out of XML.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-04-18 16:35:07 -0600
+Last updated 2023-04-21 11:02:55 -0600
 </div>
 </div>
 </body>
