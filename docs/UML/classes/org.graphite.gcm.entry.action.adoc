@@ -24,7 +24,7 @@ h|*1..1*
 a|Details of transition in the Instruction state machine caused by this Action.
 
 h|*0..1*
-|*instruction_details*: `<<_instruction_details_class,Instruction_details>>`
+|*instruction_details*: `<<_order_details_class,Order_details>>`
 a|Details of the Instruction that caused this Action to be performed, if there was one.
 
 h|*1..1*

@@ -1,15 +1,16 @@
-= Quantity Package
+= Ordered Package: Quantities
 
 == Overview
+
 The `data_types.quantity` package is illustrated below. Dates and Times are found in the next section.
 
 [.text-center]
-.rm.data_types.quantity package
-image::{uml_diagrams_uri}/GCM-data_types.quantity.svg[id=rm_data_types_quantity, align="center"]
+.gcm.data_types.ordered package - quantities
+image::{uml_diagrams_uri}/GCM-data_types.ordered-quantity.svg[id=rm_data_types_quantity, align="center"]
 
-=== Requirements
+== Requirements
 
-==== Scores and Scales
+=== Scores and Scales
 
 Medicine is a domain in which symbols representing relative magnitudes are commonly used, without exact values being used. The main purpose is usually to classify patients into groups for which different decisions might be made. Such classifications are typically known as _scores_ or _scales_. For example the characterisation of pain as 'mild', 'medium', 'severe', or the reflex response to tendon percussion as pass:["-", "+/-", "+", "++", "+++", "++++"]. Many scores such as the Apgar Score, Glasgow Coma Scale (GCS), and Barthel Index are globally known and used.
 
@@ -27,7 +28,7 @@ A second requirement for score and scale values is that in many cases there is a
 
 NOTE: an argument sometimes put forward for recording all ordinals in a more precise way is that comparisons might want to be made between the values quoted by two laboratories for the same symbol (e.g. 'moderate'). There are a number of counter-arguments. Firstly, such comparisons are a poor attempt at normalisation, an activity which is the business of pathologists, not EHR users. Secondly, the symbolic values are often arrived at by the tester making a judgement of colour on a strip, which while an adequate (and cost-effective) approach for classifying, is not a valid means of quantifying a value. Lastly, in most cases, if a quantified point value or range is desired, or available, then it will be used - meaning that the appropriate quantitative data type can be used, rather than an the ordinal type.
 
-==== Countable Things
+=== Countable Things
 
 A common kind of data value in medicine is the dimensionless countable quantity, e.g.
 
@@ -39,7 +40,7 @@ Values of this type are always integral. Countable values need to be convertible
 
 Some countable entities such as tablets are divisible into major fractions, typically halves and occasionally quarters.
 
-==== Dimensioned Quantities
+=== Dimensioned Quantities
 
 The most common kind of quantity is a measured, dimensioned quantity. Anything which is measurable
 (rather than countable) involves a number of data aspects, namely:
@@ -56,7 +57,7 @@ Examples of dimensioned quantities include:
 * rate of asthma attacks: 7 /week
 * weight loss: 2.5 kg
 
-==== Ratios and Proportions
+=== Ratios and Proportions
 
 A common quantitative type in science and medicine is the proportion, or ratio, which is used in situations like the following:
 
@@ -67,7 +68,7 @@ A common quantitative type in science and medicine is the proportion, or ratio, 
 
 In general ratios have real number values, even if many examples appear to be integer ratios. Proportions with unitary denominator and % (denominator = 100) are common.
 
-==== Formulations
+=== Formulations
 
 A concept superficially similar to proportions and ratios is formulations of materials, such as a solid in a liquid e.g.:
 
@@ -75,7 +76,7 @@ A concept superficially similar to proportions and ratios is formulations of mat
 
 Although a single solute/single solvent formulation appears to have the same form as a ratio, the general form is for any number of substances to be mixed together, usually according to a particular procedure. Formulations are therefore not candidates for direct modelling as fine-grained quantities, but instead are constructed by archetyping a higher-level structure, each leaf element of which contains the required kind of Quantity.
 
-==== Quantity Ranges
+=== Quantity Ranges
 
 Quantity ranges are ubiquitous in science and medicine, and may be defined for any kind of measured
 phenomenon. Examples include:
@@ -83,7 +84,7 @@ phenomenon. Examples include:
 * healthy weight range, e.g. 48kg - 60kg
 * normal range for urinalysis in pregnancy - protein, e.g. "nil" - "trace"
 
-==== Reference Ranges
+=== Reference Ranges
 
 A reference range is a quantity range attached to a measured value, and is common for laboratory
 result values. The typical form of a reference range found in a pathology result indicates what is considered
@@ -102,13 +103,13 @@ Various examples occur in which multiple ranges may be stated, including the fol
 
 Where there are multiple ranges, the important question is: _which range information is relevant to the actual data being recorded for the patient?_ In theory, only the range corresponding to the particular patient situation should be used, i.e. the range which applies after taking into account sex, age, smoking status, "professional athlete", organ transplanted, etc. In most cases, this is a single "normal" range, or a pair of ranges, typically "therapeutic" and "critical". However, practical factors complicate things. Firstly, data is sometimes supplied from pathology labs along with some or all of the applicable reference ranges, even though only some could possibly apply. This is particularly the case if the laboratory has no other data on the patient, and cannot evaluate which range applies. The requirement for faithfulness of recording might be extended to reference data supplied by laboratories, regardless of how irrelevant or arbitrarily chosen the reference data is, meaning that such data has to be stored in the record anyway. Secondly, there may be circumstances in which physicians want a number of reference ranges, even while knowing that only one range is applicable to the datum. Ranges above and below the relevant one might be useful to a physician wishing to determine how far out of range the datum is.
 
-==== Normal Range and Status in Laboratory data
+=== Normal Range and Status in Laboratory data
 
 It is quite common for laboratories to include a normal range with each measured value, and/or a normal 'status', which indicates where the value lies with respect to the normal range. The latter will commonly take the form of markers like "HHH" (critically high), HH (abnormally high), H (borderline high), L, LL, LLL in HL7v2 messaging, although other schemes are undoubtedly used.
 
-=== Design
+== Design
 
-==== Basic Semantics
+=== Basic Semantics
 
 In order to make sense of the requirements in a systematic way, a proper typology for quantities is needed. The most basic characteristic of all values typically called 'quantities' is that they are ordered, meaning that the operator "<" (less-than) is defined between any two values in the domain. An ancestor class for all quantities called `DV_ORDERED` is accordingly defined. This type is subtyped into ordinals, scales and true quantities, represented by the classes `DV_ORDINAL`, `DV_SCALE` and `DV_QUANTIFIED` respectively.
 
@@ -140,7 +141,7 @@ A valid units string always implies a measured _property_, such as force or pres
 
 NOTE: while these semantics will allow comparison of e.g. two pressures recorded in `mbar and mmHg, or even two accelerations whose units are `"m.s^-2"` and `"m/s^2"`, they provide no guarantee that this is a sensible thing to do in terms of domain semantics: comparing a blood pressure to an atmospheric pressure for example may or may not make any sense. It is not within the scope of the quantity package to express such semantics - this is up to application software which uses Quantities found in specific places in the data.
 
-==== Accuracy and Uncertainty
+=== Accuracy and Uncertainty
 
 Theoretically it might be argued that accuracy should not be included in a model for quantified values, because it is an artifact of a measuring process and/or device, not of a quantity itself. For example, a weight of "82 kg &#177;5%" can be represented in two parts. The "82 kg" is represented as a `DV_QUANTITY`, while the "&#177;5%" could be included in the protocol description of the weighing instrument, since this is where the error comes from. For practical purposes however, (in)accuracy in a measured quantity corresponds to a range of possible values. In realistic computing in health, it is quite likely that the accuracy will be required in computations on quantities, especially for statistical population queries in which measurement error must be disambiguated from true correlation.
 
@@ -157,11 +158,11 @@ When two compatible quantities are added or subtracted using the + or - operator
 
 The related notion of 'uncertainty' is understood as a subjective judgement made by the clinician, indicating that he/she is not certain of a particular statement. It is not the same as accuracy: uncertainty may apply to non-quantified values, such as subjective statements, and it is not an aspect of objective measurement processes, but of human confidence. Where the uncertainty is due to subjective memory e.g. "I think my grandfather was 56 when he died", the uncertainty is simply recorded as another value, along with the main data item being recorded. Uncertainty is therefore not directly modelled in the openEHR data types, but appears instead in particular archetypes.
 
-==== Quantity Ranges
+=== Quantity Ranges
 
 Ranges are modelled by the generic type `DV_INTERVAL<T:DV_ORDERED>` which enables a range of any of the other quantity types (except ratio) to be constructed. This allows any subtype of `DV_ORDERED` to occur as a range as well.
 
-==== Proportions
+=== Proportions
 
 The `DV_PROPORTION` type is provided for representing true ratios, i.e. relative values, and consists of numerator and denominator Real values, and a magnitude function which is computed as the result of the numerator/denominator division. The type attribute is used to indicate the logical type of the proportion. Supported types include:
 
@@ -173,21 +174,21 @@ The `DV_PROPORTION` type is provided for representing true ratios, i.e. relative
 
 Lastly, the `_is_integral_` function indicates that the numerator and denominator are both integer values; this is used for fractions (the fraction and integer_fraction types above) and other commonly occurring ratios where both parts are always integer values.
 
-==== Normal and Reference Ranges
+=== Normal and Reference Ranges
 
 Normal range for any of the quantity types (i.e. any instance of a subtype of `DV_ORDERED`) can be included via the attribute `DV_ORDERED`.`_normal_range_`, of type `REFERENCE_RANGE`. Other reference ranges (e.g. sub-critical, critical etc) can be included via the attribute `DV_ORDERED`.`_other_reference_ranges_`. The separation of normal and other reference range attributes is used because the former constitute the vast majority of ranges quoted for quantitative data.
 
 Normal status can be included via the attribute `DV_ORDERED`.`_normal_status_`, which takes the form of a `DV_ORDINAL`, whose symbol attribute is coded according to the openEHR terminology group "normal status", and takes values "HHH" (critically high), "HH" (abnormally high), "H" (borderline high)", "N" (normal), "L" ... "LLL".
 
-==== Recording Time
+=== Recording Time
 
 Time can be recorded in two ways. Absolute times in the social time domain, such as dates and time of day are recorded using the types in the date_time package. Fine-grained 'time', which is a duration rather than a time, is recorded using a `DV_QUANTITY` with units = 's' or another temporal unit ('h', 'ms', 'ns' etc).
 
-== Date Time Package
+= Date Time Package
 
-=== Requirements
+== Requirements
 
-==== Standard Date/Times
+=== Standard Date/Times
 
 The basic requirement is for types which represent the following concepts.
 
@@ -196,7 +197,7 @@ The basic requirement is for types which represent the following concepts.
 * _Date_time_: a type which records year, month, day, hour, minute, second, and timezone. Examples include date & time of death, timestamp of any observation. Timezone is required for the same reason as in Time.
 * _Duration_: a type which records duration of an event or (in)activity, as days, hours, minutes, and seconds. A duration is understood as being relative to an unstated origin point (such as birth), and may take a negative value, indicating prior to the origin.
 
-==== Partial Date/Times
+=== Partial Date/Times
 
 Partial or uncertain date/times have to be supported in clinical medicine. It is common for patients to
 be unsure about dates and durations. Requirements for partial date/times include the following.
@@ -222,9 +223,9 @@ or both the hours and minutes are present. Examples:
 To satisfy the faithfulness requirement for health record recording it should always be possible to
 record the narrative form of the datum provided by the patient as well as the formal form.
 
-=== Design
+== Design
 
-==== General Approach
+=== General Approach
 
 Date/time values are somewhat special in the realm of data types in that they are expressed in their
 'customary' form, in which the standard structure of `{value, unit}` and metric relationships between
@@ -255,7 +256,7 @@ The first exception allows the expression of negative durations, indicating an e
 
 See the {openehr_foundation_types}#_time_types[Time Types section in the openEHR Foundation Types specification^] for conformance details.
 
-==== Partial Date/Times
+=== Partial Date/Times
 
 The types defined in this specification support the notion of partially specified dates and times. The
 modelling approach used here takes into account the known needs for representing partial date/time
@@ -271,7 +272,7 @@ ISO 8601:2004 for 'reduced accuracy' date/times, in which parts of a date, time 
 missing from the right hand end of the string. This models the reasonable situation where e.g. day
 may be unknown in a date, but a date cannot have month unknown and day known.
 
-==== Calendars
+=== Calendars
 
 A comment on calendars is in order. In this specification, all date/time types currently modelled are
 Gregorian calendar based. This is the same assumption made by ISO 8601, and most technical
@@ -310,7 +311,7 @@ Algorithms for conversion between the Egyptian, Armenian, Khwarizmian, Persian, 
 Republican, Macedonian, Syrian, Julian Roman, Gregorian, Islamic A, Islamic B, Baha'i and
 Saka calendars are described by cite:[Richards1998] and are based on the work of D. A. Hatcher (1986).
 
-==== Representation
+=== Representation
 
 All of the date/time classes described here are defined so as to have an attribute called value of type
 String, in the form of an {iso_8601_official}[ISO 8601:2019] string, with the two above-described deviations allowed. ISO 8601 is convenient for this purpose, as it is a simple
@@ -345,7 +346,6 @@ include::{uml_export_dir}/classes/{pkg}reference_range.adoc[]
 include::{uml_export_dir}/classes/{pkg}comparison_operator.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}dv_range.adoc[]
-
 
 == Syntaxes
 

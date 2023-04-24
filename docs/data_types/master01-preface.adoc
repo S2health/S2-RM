@@ -2,12 +2,11 @@
 
 == Purpose
 
-This document defines the openEHR Data Types Information Model, used throughout the openEHR Reference Model.
+This document defines the Graphite Data Types Model.
 
 The intended audience includes:
 
 * Standards bodies producing health informatics standards;
-* Academic groups using openEHR;
 * The open source healthcare community;
 * Solution vendors;
 * Medical informaticians and clinicians interested in health information.

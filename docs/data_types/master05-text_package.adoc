@@ -5,7 +5,7 @@
 The `rm.data_types.text` package contains classes for representing all textual values in the health record, including plain text, coded terms, and narrative text. It is illustrated below.
 
 [.text-center]
-.rm.data_types.text package
+.gcm.data_types.text package
 image::{uml_diagrams_uri}/GCM-data_types.text.svg[id=rm_data_types_text, align="center"]
 
 === Requirements
@@ -43,7 +43,7 @@ from simple queries to decision support. Reasons for using terminology include t
 
 * To guarantee interoperability of meaning. For instance, if the term "cold" is recorded in plain text, it could be interpreted as "feeling cold", "C.O.L.D" (chronic obstructive lung disease), "rhinorrhoea", "coryza" or "U.R.T.I. (upper respiriatory tract infection), among others. If, however, it is coded from a terminology such as {who_icd}[ICD10^] or {snomed_ct}[SNOMED CT^], any party reading the data (including software) knows the intention, since the meaning of the code in the terminology is unambiguous.
 * To standardise textual renderings of terms and avoid informal shorthand. For example, practitioners wanting to write "systolic blood pressure" write things like "systolic BP", "systolic bp", "sys. BP." and so on; use of coded terms ensures that such abbreviations are either avoided, or associated with an unambiguous meaning.
-* For unambiguous naming of problems, medications or diagnoses for support of knowledgebased tools such as prescribing packages and other decision support applications.
+* For unambiguous naming of problems, medications or diagnoses for support of knowledge-based tools such as prescribing packages and other decision support applications.
 * For standardised names of things in the record e.g. a heading of "Physical examination" or an entry such as "Differential diagnosis".
 * For finite sets of values ('value sets'), e.g. Blood Group = 'A|B|AB|O'.
 * For classifying other data for the purpose of statistical studies, e.g. by putting ICD disease group classifiers on actual disease names entered in health records.
@@ -314,9 +314,6 @@ Formatting of the text in the `_value_` field of `DV_TEXT` and `DV_CODED_TEXT` i
 
 A common model of text processing is of a processing pipeline that consumes readable text containing markings, which is then rendered into HTML, PDF or some other rendering format, and then displayed by a tool such as a web browser that consumes the latter format. Historical approaches to marking text were known as 'markup', such as nroff, troff, Latek, and then more recently, numerous formats whose base syntax is XML. These formats all have the disadvantages of poor human readability in raw form, and being specific to particular rendering engines, and are starting to fall out of favour for uses involving human reading of the raw text. Another common approach to formatting text is to use the _output format_, usually HTML, to express e.g. fonts, bolding etc. This is also problematic for human readability, being complicated by the use of CSS classes in tags, which then need to be defined.
 
-[.deprecated]
-*Deprecated*: This was the original approach assumed for the `DV_TEXT._formatting_` attribute in openEHR, which was defined in versions _prior to RM Release 1.0.4_ as containing CSS font strings to apply to the whole of the `DV_TEXT._value_`. This usage is now deprecated, while remaining legal in order to allow for legacy systems and data.
-
 The current trend (emerging mainly for documentation in software) is to use 'markdown', which consists of markings in the text that visually indicate the intention: literal newlines, bolding via asterisks etc. No explicit CSS classes are needed, and conversion to rendering form is assumed to be done by an industry-standard markdown-to-HTML or other such converter. This is the approach taken by this specification, and is applied as follows.
 
 The `_formatting_` attribute may contain one of the following values, with the associated meaning.
@@ -329,9 +326,6 @@ The `_formatting_` attribute may contain one of the following values, with the a
 
 Related to the question of formatting, a second optional attribute, `DV_TEXT._hyperlink_` of type `DV_URI`, exists to specify a web link associated with the whole text represented by the `DV_TEXT` instance. Similarly to the case of formatting, the more modern markdown approach to using the `_value_` field is also more flexible with regards to links, since multiple instances of the latter may be used within a single text.
 
-[.deprecated]
-*Deprecated*: Starting at RM Release 1.0.4, the use of the `_hyperlink_` field is deprecated in favour of inline link(s) in the `_value_` field, represented using markdown; in CommonMark, the basic form of a link is `[text](uri)`.
-
 Not all CommonMark features are allowed in the `_value_` field, if it contains markdown. The following should not be used:
 
 * HTML 'blocks';
@@ -340,7 +334,7 @@ Not all CommonMark features are allowed in the `_value_` field, if it contains m
 
 ==== Usage in DV_TEXT Instances
 
-In a concrete instance of `DV_TEXT`, the following are the likely usages of the `_value_` and `_formatting_` attributes. The `_hyperlink_` is assumed to be Void in all non-legacy cases.
+In a concrete instance of `DV_TEXT`, the following are the likely usages of the `_value_` and `_formatting_` attributes.
 
 [cols="2,1,1", options="header"]
 |===

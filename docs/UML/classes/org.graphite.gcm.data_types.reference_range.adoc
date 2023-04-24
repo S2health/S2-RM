@@ -17,7 +17,7 @@ h|*1..1*
 a|Term whose value indicates the meaning of this range, e.g.  normal,  critical,  therapeutic  etc.
 
 h|*1..1*
-|*range*: `<<_dv_range_class,Dv_range>>`
+|*range*: `<<_dv_range_class,Dv_range>><<<_dv_quantified_class,Dv_quantified>>>`
 a|The data range for this meaning, e.g. critical  etc.
 
 h|*Invariants*

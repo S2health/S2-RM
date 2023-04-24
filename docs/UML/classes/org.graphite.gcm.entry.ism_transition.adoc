@@ -9,7 +9,7 @@ h|*Description*
 2+a|Model of a transition in the Instruction State Machine, caused by a careflow step. The attributes document the careflow step as well as the ISM transition.
 
 h|*Inherit*
-2+|`link:/releases/GCM/{gcm_release}/common.html#_pathable_class[PATHABLE^]`
+2+|`link:/releases/BASE/{base_release}/base_types.html#_locatable_class[Locatable^]`
 
 h|*Attributes*
 ^h|*Signature*

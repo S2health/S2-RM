@@ -8,7 +8,7 @@ The Composition is the primary 'data container' in the openEHR EHR and is the ro
 .rm.composition package
 image::{uml_diagrams_uri}/GCM-composition.svg[id=rm_composition, align="center"]
 
-== Context Model of Recording
+== Composition Context
 
 === Overview
 
@@ -31,8 +31,6 @@ In the situation of patient-entered data, the special "self" `PARTY_PROXY` insta
 
 === Event Context
 
-==== Overview
-
 The optional `_event_context_` attribute in the `COMPOSITION` class is used to document the healthcare event causing new or changed content in the record. Here, 'healthcare event' means 'a (generally billable) business activity of the healthcare system with, for or on behalf of the patient'. Generally this will an encounter involving the subject of care and physician, but is variable in a hospital environment. In this sense, a visit to a GP is a single care event, but so is an episode in a hospital, which may encompass multiple encounters. The information recorded in Event context includes start and (optional) end time of the event, health care facility, setting (e.g. primary care, aged care, hospital), participating healthcare professionals, and optional further details defined by an archetype.
 
 Healthcare events that require an `EVENT_CONTEXT` instance in their recorded information include the following.
@@ -50,7 +48,7 @@ Situations in which Event context is not used include:
 
 Ultimately, the use of Event context will be controlled by Composition-level archetypes.
 
-==== Occurrence in Data
+=== Occurrence in Data
 
 For situations requiring an `EVENT_CONTEXT` object to be recorded, it is worth clarifying which Compositions carry such objects. Consider the example shown in <<event_context>>. In this example, a Contribution is made to the EHR, consisting of one or more Compositions that were each created or modified due to some clinical activity. Within such a set, there will usually be one Composition relating directly to the event, such as the patient contact - this is the Composition containing the doctor's observations, nurses' activities etc, during the visit, and is therefore the one which contains the `EVENT_CONTEXT` instance. Other Compositions changed during the same event (e.g. updates to medication list, family history and so on) do not require an Event context, since they are part of the same Contribution, and the event context of the primary Composition can always be retrieved if desired. Contributions A, B and C in the figure illustrate this case.
 
@@ -62,19 +60,19 @@ In cases where Contributions are made to the record with no event context, the E
 
 NOTE: Persistent Compositions may optionally have an Event context. In openEHR releases up to 1.0.3, Persistent Compositions had no Event context. This was relaxed in subsequent releases, to allow the inclusion of context information (e.g. encounter data) for changes to Persistent Compositions where no Event Composition was created.
 
-==== Time
+=== Time
 
 The times recorded in the Event context represent the time of an encounter or other activity undertaken by a health provider to/for/on behalf of the patient. The time is represented as a mandatory start time and optional end time. It is assumed that where there is a clinical session (i.e. an `EVENT_CONTEXT` object does exist), the start time is known or can be reasonably approximated. It is quite common that the end time of a consultation or encounter is not recorded, but rather inferred from e.g. average consult times, or the start time of the next consult for the same physician. 
 
 Event context is used as described above even if the additions are made to the EHR long after the event took place, such as happens when a doctor writes his/her notes into the record system at night, after all patients have been seen. In such cases, the versioned Composition audit trail records the context of when the data were entered, as distinct from the context of when the clinical interaction took place.
 
-==== Participations
+=== Participations
 
 Is part of the Event context, the participations attribute can be used to describe who participated, and how. Each participation object describes the "mode" of participation as well, such as direct presence, video-conference and so on. In many cases such information is of no interest, since the subject of any Entry is known (`ENTRY`.`_subject_`) and the clinician will be known (`COMPOSITION`.`_composer_`), and the mode of communication is assumed to be a personal encounter. The participations attribute is therefore used when it is desired to record further details of how the patient and or physician interacted (e.g. over the internet), and/or other participants, such as family, nurses, specialists etc.
 
 There are no general rules about who is included as a participant. For example, while there will be a patient participation during a GP visit, there will be no such participation recorded when the clinical event is a tissue test in a laboratory. Conversely, a patient might record some observations and drug self-administration in the record, in which case the composer will be the patient, and there will be no clinician participation. Consequently, the use of participations will mostly be archetype-driven.
 
-==== Healthcare Facility, Location and Setting
+=== Healthcare Facility, Location and Setting
 
 The `_health_care_facility_` (HCF) attribute is used to record the health care facility in whose care the event took place. This is the most specific identifiable (i.e. having a provider id within the health system) workgroup or care delivery unit within a care delivery enterprise which was involved in the care event. The identification of the HCF can be used to ensure medico-legal accountability. Often, the HCF is also where the encounter physically took place, but not in the case of patient home visits, internet contacts or emergency care; the HCF should not be thought of as a physical place, but as a care delivery management unit. The physical place of care can be separately recorded in `EVENT_CONTEXT`.`_location_`. The health_care_facility attribute is optional to allow for cases where the clinical event did not involve any care delivery enterprise, e.g. self-care at home by the patient, emergency revival by a non-professional (e.g. CPR by lifeguard on a beach), care by a professional acting in an unofficial capacity (doctor on a plane asked to aid a passenger in difficulty). In all other cases, it is mandatory. Archetypes are used to control this.
 
@@ -96,9 +94,41 @@ The data in a Composition is stored in the `_content_` attribute. There are four
 
 The actual structures used in a Composition at runtime are controlled by a template, which in turn controls the particular combination of archetypes used.
 
-== Class Descriptions
+=== Class Descriptions
 
-include::{uml_export_dir}/classes/{pkg}composition.adoc[]
+include::{uml_export_dir}/classes/{pkg}composition.adoc[leveloffset=+1]
 
-include::{uml_export_dir}/classes/{pkg}event_context.adoc[]
+include::{uml_export_dir}/classes/{pkg}event_context.adoc[leveloffset=+1]
+
+include::{uml_export_dir}/classes/{pkg}content_item.adoc[leveloffset=+1]
+
+== Sections
+
+The `Section` class enables a hierarchical heading structure, in which all individual headings are considered to belong to a "tree of headings". Each heading is an instance of the class `Section`, visible in the lower left side of <<rm_composition>>.
+
+Sections provide both a logical structure for the author to arrange Entries, and a navigational structure for readers of the record, whether they be human or machine. Sections are archetyped in trees with each tree containing a root Section, one or more sub-sections, and any number of Entries at each node. Section trees that are separately archetyped, such as the SOAP headings, or the heading structure for a physical examination, can be combined at runtime by type to form one large heading structure, as shown in the figure below.
+
+[.text-center]
+.Section View of a General Practice Contact Composition
+image::{diagrams_uri}/ehr_with_sections.svg[id=ehr_with_sections, align="center", width=50%]
+
+In terms of understanding of clinical data, Section structures are not essential in a Composition - they can always be removed or ignored (typically in machine processing such as querying) without losing the meaning of the Entries in the Composition. While Sections are often used to group Entries according to status, e.g. 'family history', 'problems', 'observations', it is the Entries themselves that indicate the definitive category of information contained therein. This principle is explained in more detail in <<Entry and its Subtypes>>.
+
+Despite the above, Section structures do not have to be regarded as ad hoc or unreliable structures. On the contrary, as they are archetyped, their structures can be relied upon in the same way as any other structure in the record can be relied on to conform to its archetype. Accordingly, solid assumptions can be made about Sections, based on their archetypes, for the purposes of querying. In fact, the main benefit of Sections is that they may provide significant performance benefits to querying, whether by interactive application or by automated systems.
+
+One potentially confusing aspect of any Section structure is that while the root Section in a tree is logically a Section, it does not appear in a display or printed form as a visible section. This is due to the fact that humans don’t usually write down top-level headings for anything, since there is always a containing structure acting as a top-level organising context (such as the piece of paper one is writing on). For example, consider the way a clinician writes down the problem/SOAP headings on paper. She writes the name of the first problem, then under that, the S/O/A/P headings, then repeats the process for further problems. But she doesn’t write down a heading above the level of the problems, even though there must be one from a data structure point of view.
+
+=== Class Descriptions
+
+include::{uml_export_dir}/classes/{pkg}section.adoc[leveloffset=+1]
+
+=== Instance Structures
+
+==== Problem/SOAP Headings
+
+An example of an section tree representing the problem/SOAP heading structure is shown below.
+
+[.text-center]
+."problem/SOAP" Section Structure
+image::{diagrams_uri}/Composition_with_sections.svg[id=SOAP_section_structure, align="center"]
 

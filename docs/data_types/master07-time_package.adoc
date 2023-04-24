@@ -1,4 +1,12 @@
-= Date Time Package
+= Ordered Package: Temporal
+
+== Overview
+
+The `data_types.quantity` package is illustrated below. Dates and Times are found in the next section.
+
+[.text-center]
+.gcm.data_types.ordered package - temporal types
+image::{uml_diagrams_uri}/GCM-data_types.ordered-time.svg[id=rm_data_types_time, align="center"]
 
 == Requirements
 

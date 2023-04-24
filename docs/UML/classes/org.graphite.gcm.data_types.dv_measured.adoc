@@ -3,22 +3,18 @@
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*Dv_measured<V>*
+2+^h|*Dv_measured*
 
 h|*Description*
-2+a|Measured form of Dv_quantified, with optional accuracy, normal range and other reference ranges.
-
-h|*Inherit*
-2+|`<<_dv_ordered_class,Dv_ordered>>`
+2+a|Additional data that may be recorded for measured form of a quantified item, including with optional accuracy, normal range and other reference ranges.
 
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*0..1*
-|*precision*: `link:/releases/BASE/{base_release}/foundation_types.html#_integer_class[Integer^]`
-a|Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.
-The value -1 implies no limit, i.e. any number of decimal places.
+|*normal_range*: `<<_dv_range_class,Dv_range>><<<_dv_quantified_class,Dv_quantified>>>`
+a|Optional normal range.
 
 h|*0..1*
 |*value_status*: `<<_comparison_operator_enumeration,Comparison_operator>>`
@@ -35,7 +31,12 @@ If not present, assumed meaning is  `"="` .
 TODO: could also do using Dv_rnage, but lose 'measured' info.
 
 h|*0..1*
-|*accuracy*: `link:/releases/BASE/{base_release}/foundation_types.html#_any_class[Any^]`
+|*precision*: `link:/releases/BASE/{base_release}/foundation_types.html#_integer_class[Integer^]`
+a|Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.
+The value -1 implies no limit, i.e. any number of decimal places.
+
+h|*0..1*
+|*accuracy*: `link:/releases/BASE/{base_release}/foundation_types.html#_comparable_class[Comparable^]`
 a|Accuracy of measurement. A value of zero means no accuracy recorded.
 
 h|*0..1*
@@ -43,15 +44,6 @@ h|*0..1*
 a|If `True`, indicates that when this object was created, `_accuracy_` was recorded as a percent value; if `False`, as an absolute quantity value.
 
 h|*0..1*
-|*normal_range*: `@@`
-a|Optional normal range.
-
-h|*0..1*
 |*other_reference_ranges*: `List<<<_reference_range_class,Reference_range>>>`
 a|Optional tagged other reference ranges for this value in its particular measurement context.
-
-h|*1..1 +
-(redefined)*
-|*value*: `V`
-a|
 |===

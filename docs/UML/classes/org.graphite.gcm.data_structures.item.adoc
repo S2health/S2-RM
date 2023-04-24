@@ -9,6 +9,6 @@ h|*Description*
 2+a|The abstract parent of `CLUSTER` and `ELEMENT` representation classes.
 
 h|*Inherit*
-2+|`link:/releases/GCM/{gcm_release}/common.html#_locatable_class[LOCATABLE^]`
+2+|`link:/releases/BASE/{base_release}/base_types.html#_locatable_class[Locatable^]`
 
 |===

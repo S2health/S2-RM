@@ -11,7 +11,7 @@ h|*Description*
 For a periodic series of events, period will be set, and the time of each Event in the History must correspond; i.e. the `EVENT._offset_` must be a multiple of period for each Event. Missing events in a period History are however allowed.
 
 h|*Inherit*
-2+|`link:/releases/GCM/{gcm_release}/common.html#_locatable_class[LOCATABLE^]`
+2+|`link:/releases/BASE/{base_release}/base_types.html#_locatable_class[Locatable^]`
 
 h|*Attributes*
 ^h|*Signature*

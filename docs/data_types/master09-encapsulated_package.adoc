@@ -5,7 +5,7 @@ The `data_types.encapsulated` package contains classes representing data values 
 structure is defined outside the EHR model, such as multimedia and parsable data. It is illustrated below.
 
 [.text-center]
-.rm.data_types.encapsulated package
+.gcm.data_types.encapsulated package
 image::{uml_diagrams_uri}/GCM-data_types.encapsulated.svg[id=rm_data_types_encapsulated, align="center"]
 
 === Requirements

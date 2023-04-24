@@ -6,9 +6,24 @@ h|*Class*
 2+^h|*__Dv_temporal<T> (abstract)__*
 
 h|*Description*
-2+a|
+2+a|Parent of Data value types based on the primitive Temporal types. Uses a direct String representation and a function to generate the relevant Temporal instance.
 
 h|*Inherit*
-2+|`<<_data_value_class,Data_value>>`
+2+|`<<_dv_ordered_class,Dv_ordered>>`
 
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1 +
+(redefined)*
+|*value*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
+a|
+h|*Functions*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1*
+|*as_temporal* (): `T`
+a|
 |===

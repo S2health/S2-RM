@@ -20,11 +20,11 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*numerator*: `Real`
+|*numerator*: `<<_dv_quantity_class,Dv_quantity>>`
 a|TODO: possibly needs to be a Quantified?
 
 h|*1..1*
-|*denominator*: `link:/releases/BASE/{base_release}/foundation_types.html#_real_class[Real^]`
+|*denominator*: `<<_dv_quantity_class,Dv_quantity>>`
 a|Denominator of ratio.
 
 h|*1..1*

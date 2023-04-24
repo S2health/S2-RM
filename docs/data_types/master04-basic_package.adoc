@@ -7,7 +7,7 @@ state (in a state machine) and real-world entity identifiers (see the openEHR Co
 discussion on identifier types).
 
 [.text-center]
-.rm.data_types.basic package
+.gcm.data_types.basic package
 image::{uml_diagrams_uri}/GCM-data_types.basic.svg[id=rm_data_types_basic, align="center"]
 
 === Requirements

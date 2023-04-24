@@ -1,0 +1,43 @@
+= Assertion
+
+== Overview
+
+The following UML diagram shows the Assertion class and related sub-structure.
+
+[.text-center]
+.Assertion
+image::{uml_diagrams_uri}/GCM-entry-assertion.svg[id=entry_assertion, align="center"]
+
+== Semantics
+
+According to the ontology described in citenp:[Beale_Heard2007], the Opinion category covers a number of concrete concepts, as follows.
+
+* _problem/diagnosis_: the assignment of a known diagnosis or problem label to a set of observed signs and symptoms in the patient, for the purpose of determining and managing treatment. The physician will usually include a date of initial onset, date clinically recognised, date of last occurrence, date of resolution of last occurrence and possibly other timing information.
+* _risk assessment_: an evaluation of the likelihood and timing of a certain event occurring or condition appearing.
+* _scenario_: an opinion about the outcome if a certain intervention is proceeded with.
+* _goal_: statement of a target, and a time at which it should be reached. 
+* _recommendation_: a description in general terms of a suggested care approach for the patient, based on diagnosis; includes various times or time-periods for activities, such as monitoring, taking of medications, and review.
+
+The approach taken to modelling these concepts in openEHR is heavily based upon the development of archetypes for assessments such as "diagnosis" (various kinds), "goal", "adverse reactions", "alert", "exclusion", "clinical synopsis", "risk based on family history" and so on. Experience has shown that the Opinion category is too variable for safely modelling its sub-categories directly in the reference model. Instead, a single class `Assertion` is used for all instances of the Opinion category. (The name Evaluation has been present in openEHR for some years, and is retained for reasons of continuity).
+
+The design of the `Assertion` class is very simple. In addition to the attributes inherited from `ENTRY` and `CARE_ENTRY`, it has only one attribute, `_data_`: `ITEM_STRUCTURE`. This structure is intended to be archetyped so as to model all the details of any particular clinical information in the Opinion category. No timing attributes are included, since there is no time associated with creation or capturing of Evaluation information as such, only times included in the information. The only times of generic significance are (potentially) the time of a patient consultation during which the Evaluation was created (recorded in `COMPOSITION._event_context_._start_time_` and `_end_time_`) and the time of committal to the EHR system (recorded in `VERSION._commit_audit_` attribute).
+
+The general meaning of the inherited attributes is as for all Entries. In Evaluations, the provider is almost always the physician, while the protocol may be used to indicate how a particular assessment was made. The `_other_participations_` attribute is not as likely to be used for Evaluations representing diagnoses, since a diagnosis is usually the result of thinking on the part of the physician; an exception to this would be a case conference or if an expert system were used. However, Plans for complex patients may well be constructed by multiple physicians.
+
+
+== Class Descriptions
+
+include::{uml_export_dir}/classes/{pkg}assertion.adoc[]
+
+== Instance Structures
+
+The following subsections illustrate Assertion instance structures. For guidance on how to best model particular clinical statements, see the archetype part of the {openehr_CKM}[openEHR Clinical Knowledge Manager repository^].
+
+=== Partial Asthma Management Plan
+
+The following figure illustrates a partial asthma management plan in which monitoring (peak flow) with dependent actions (review and admission to ER) and therapy (bronchodilator) are shown. In a complete plan, symptom monitoring and other medications might be shown. The parts of the plan are linked to the root `Assertion` node via the `_links_`: `Set<LINK>` attribute inherited from the `LOCATABLE` class.
+
+[.text-center]
+.Partial Asthma Management Plan
+image::{diagrams_uri}/partial_asthma_plan.png[id=partial_asthma_plan, align="center", width=80%]
+

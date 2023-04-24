@@ -1,5 +1,5 @@
 :spec_title: Common Information Model
-:copyright_year: 2003
-:spec_status: STABLE
-:keywords: common, EHR, reference model, openehr
-:description: openEHR Common Information Model specification
+:copyright_year: 2023
+:spec_status: TRIAL
+:keywords: common, canonical model, Graphite
+:description: Graphite Common Information Model specification

@@ -1,0 +1,8 @@
+= Overview
+
+== Design Principles
+
+THe design principles of the Entry model are described in the {openehr_rm_ehr}[openEHR EHR Specification^].
+
+[.tbd]
+TBD

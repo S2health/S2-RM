@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
-<meta name="description" content="openEHR Data Types Information Model specification">
-<meta name="keywords" content="EHR, clinical, data types, openehr">
-<title>Data Types Information Model</title>
+<meta name="description" content="Graphite Data Types Model">
+<meta name="keywords" content="EHR, clinical, data types, Graphite">
+<title>Data Types Model</title>
 <link rel="stylesheet" href="https://specifications.openehr.org/styles/openehr.css">
 <link rel="stylesheet" href="https://specifications.openehr.org/styles/pygments-default.css">
 </head>
@@ -16,7 +16,7 @@
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel0">
-<li><a href="#_data_types_information_model">Data Types Information Model</a>
+<li><a href="#_data_types_model">Data Types Model</a>
 <ul class="sectlevel1">
 <li><a href="#_amendment_record">Amendment Record</a></li>
 <li><a href="#_acknowledgements">Acknowledgements</a>
@@ -40,7 +40,6 @@
 <ul class="sectlevel2">
 <li><a href="#_scope">2.1. Scope</a></li>
 <li><a href="#_design_criteria">2.2. Design Criteria</a></li>
-<li><a href="#_prior_work">2.3. Prior Work</a></li>
 </ul>
 </li>
 <li><a href="#_introduction">3. Introduction</a>
@@ -125,170 +124,168 @@
 </li>
 </ul>
 </li>
-<li><a href="#_quantity_package">6. Quantity Package</a>
+<li><a href="#_ordered_package_quantities">6. Ordered Package: Quantities</a>
 <ul class="sectlevel2">
-<li><a href="#_overview_4">6.1. Overview</a>
+<li><a href="#_overview_4">6.1. Overview</a></li>
+<li><a href="#_requirements_3">6.2. Requirements</a>
 <ul class="sectlevel3">
-<li><a href="#_requirements_3">6.1.1. Requirements</a>
-<ul class="sectlevel4">
-<li><a href="#_scores_and_scales">6.1.1.1. Scores and Scales</a></li>
-<li><a href="#_countable_things">6.1.1.2. Countable Things</a></li>
-<li><a href="#_dimensioned_quantities">6.1.1.3. Dimensioned Quantities</a></li>
-<li><a href="#_ratios_and_proportions">6.1.1.4. Ratios and Proportions</a></li>
-<li><a href="#_formulations">6.1.1.5. Formulations</a></li>
-<li><a href="#_quantity_ranges">6.1.1.6. Quantity Ranges</a></li>
-<li><a href="#_reference_ranges">6.1.1.7. Reference Ranges</a></li>
-<li><a href="#_normal_range_and_status_in_laboratory_data">6.1.1.8. Normal Range and Status in Laboratory data</a></li>
+<li><a href="#_scores_and_scales">6.2.1. Scores and Scales</a></li>
+<li><a href="#_countable_things">6.2.2. Countable Things</a></li>
+<li><a href="#_dimensioned_quantities">6.2.3. Dimensioned Quantities</a></li>
+<li><a href="#_ratios_and_proportions">6.2.4. Ratios and Proportions</a></li>
+<li><a href="#_formulations">6.2.5. Formulations</a></li>
+<li><a href="#_quantity_ranges">6.2.6. Quantity Ranges</a></li>
+<li><a href="#_reference_ranges">6.2.7. Reference Ranges</a></li>
+<li><a href="#_normal_range_and_status_in_laboratory_data">6.2.8. Normal Range and Status in Laboratory data</a></li>
 </ul>
 </li>
-<li><a href="#_design_3">6.1.2. Design</a>
-<ul class="sectlevel4">
-<li><a href="#_basic_semantics">6.1.2.1. Basic Semantics</a></li>
-<li><a href="#_accuracy_and_uncertainty">6.1.2.2. Accuracy and Uncertainty</a></li>
-<li><a href="#_quantity_ranges_2">6.1.2.3. Quantity Ranges</a></li>
-<li><a href="#_proportions">6.1.2.4. Proportions</a></li>
-<li><a href="#_normal_and_reference_ranges">6.1.2.5. Normal and Reference Ranges</a></li>
-<li><a href="#_recording_time">6.1.2.6. Recording Time</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#_date_time_package">6.2. Date Time Package</a>
+<li><a href="#_design_3">6.3. Design</a>
 <ul class="sectlevel3">
-<li><a href="#_requirements_4">6.2.1. Requirements</a>
-<ul class="sectlevel4">
-<li><a href="#_standard_datetimes">6.2.1.1. Standard Date/Times</a></li>
-<li><a href="#_partial_datetimes">6.2.1.2. Partial Date/Times</a></li>
-</ul>
-</li>
-<li><a href="#_design_4">6.2.2. Design</a>
-<ul class="sectlevel4">
-<li><a href="#_general_approach">6.2.2.1. General Approach</a></li>
-<li><a href="#_partial_datetimes_2">6.2.2.2. Partial Date/Times</a></li>
-<li><a href="#_calendars">6.2.2.3. Calendars</a></li>
-<li><a href="#_representation">6.2.2.4. Representation</a></li>
+<li><a href="#_basic_semantics">6.3.1. Basic Semantics</a></li>
+<li><a href="#_accuracy_and_uncertainty">6.3.2. Accuracy and Uncertainty</a></li>
+<li><a href="#_quantity_ranges_2">6.3.3. Quantity Ranges</a></li>
+<li><a href="#_proportions">6.3.4. Proportions</a></li>
+<li><a href="#_normal_and_reference_ranges">6.3.5. Normal and Reference Ranges</a></li>
+<li><a href="#_recording_time">6.3.6. Recording Time</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_class_descriptions_4">6.3. Class Descriptions</a>
-<ul class="sectlevel3">
-<li><a href="#_dv_ordinal_class">6.3.1. Dv_ordinal Class</a></li>
-<li><a href="#_dv_quantified_class">6.3.2. Dv_quantified Class</a></li>
-<li><a href="#_dv_quantity_class">6.3.3. Dv_quantity Class</a></li>
-<li><a href="#_dv_count_class">6.3.4. Dv_count Class</a></li>
-<li><a href="#_dv_ratio_class">6.3.5. Dv_ratio Class</a></li>
-<li><a href="#_ratio_kind_enumeration">6.3.6. Ratio_kind Enumeration</a></li>
-<li><a href="#_dv_measured_class">6.3.7. Dv_measured Class</a></li>
-<li><a href="#_reference_range_class">6.3.8. Reference_range Class</a></li>
-<li><a href="#_comparison_operator_enumeration">6.3.9. Comparison_operator Enumeration</a></li>
-<li><a href="#_dv_range_class">6.3.10. Dv_range Class</a></li>
-</ul>
-</li>
-<li><a href="#_syntaxes">6.4. Syntaxes</a>
-<ul class="sectlevel3">
-<li><a href="#_units_syntax">6.4.1. Units Syntax</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#_date_time_package_2">7. Date Time Package</a>
+<li><a href="#_date_time_package">7. Date Time Package</a>
 <ul class="sectlevel2">
-<li><a href="#_requirements_5">7.1. Requirements</a>
+<li><a href="#_requirements_4">7.1. Requirements</a>
 <ul class="sectlevel3">
-<li><a href="#_standard_datetimes_2">7.1.1. Standard Date/Times</a></li>
-<li><a href="#_partial_datetimes_3">7.1.2. Partial Date/Times</a></li>
+<li><a href="#_standard_datetimes">7.1.1. Standard Date/Times</a></li>
+<li><a href="#_partial_datetimes">7.1.2. Partial Date/Times</a></li>
 </ul>
 </li>
-<li><a href="#_design_5">7.2. Design</a>
+<li><a href="#_design_4">7.2. Design</a>
 <ul class="sectlevel3">
-<li><a href="#_general_approach_2">7.2.1. General Approach</a></li>
-<li><a href="#_partial_datetimes_4">7.2.2. Partial Date/Times</a></li>
-<li><a href="#_calendars_2">7.2.3. Calendars</a></li>
-<li><a href="#_representation_2">7.2.4. Representation</a></li>
+<li><a href="#_general_approach">7.2.1. General Approach</a></li>
+<li><a href="#_partial_datetimes_2">7.2.2. Partial Date/Times</a></li>
+<li><a href="#_calendars">7.2.3. Calendars</a></li>
+<li><a href="#_representation">7.2.4. Representation</a></li>
 </ul>
 </li>
-<li><a href="#_class_descriptions_5">7.3. Class Descriptions</a>
+<li><a href="#_class_descriptions_4">7.3. Class Descriptions</a>
 <ul class="sectlevel3">
-<li><a href="#_dv_temporal_class">7.3.1. Dv_temporal Class</a></li>
-<li><a href="#_dv_date_class">7.3.2. Dv_date Class</a></li>
-<li><a href="#_dv_time_class">7.3.3. Dv_time Class</a></li>
-<li><a href="#_dv_date_time_class">7.3.4. Dv_date_time Class</a></li>
-<li><a href="#_dv_duration_class">7.3.5. Dv_duration Class</a></li>
+<li><a href="#_dv_ordinal_class">7.3.1. Dv_ordinal Class</a></li>
+<li><a href="#_dv_quantified_class">7.3.2. Dv_quantified Class</a></li>
+<li><a href="#_dv_quantity_class">7.3.3. Dv_quantity Class</a></li>
+<li><a href="#_dv_count_class">7.3.4. Dv_count Class</a></li>
+<li><a href="#_dv_ratio_class">7.3.5. Dv_ratio Class</a></li>
+<li><a href="#_ratio_kind_enumeration">7.3.6. Ratio_kind Enumeration</a></li>
+<li><a href="#_dv_measured_class">7.3.7. Dv_measured Class</a></li>
+<li><a href="#_reference_range_class">7.3.8. Reference_range Class</a></li>
+<li><a href="#_comparison_operator_enumeration">7.3.9. Comparison_operator Enumeration</a></li>
+<li><a href="#_dv_range_class">7.3.10. Dv_range Class</a></li>
+</ul>
+</li>
+<li><a href="#_syntaxes">7.4. Syntaxes</a>
+<ul class="sectlevel3">
+<li><a href="#_units_syntax">7.4.1. Units Syntax</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_time_specification_package">8. Time_specification Package</a>
+<li><a href="#_ordered_package_temporal">8. Ordered Package: Temporal</a>
 <ul class="sectlevel2">
-<li><a href="#_overview_5">8.1. Overview</a>
+<li><a href="#_overview_5">8.1. Overview</a></li>
+<li><a href="#_requirements_5">8.2. Requirements</a>
 <ul class="sectlevel3">
-<li><a href="#_requirements_6">8.1.1. Requirements</a></li>
-<li><a href="#_design_6">8.1.2. Design</a></li>
+<li><a href="#_standard_datetimes_2">8.2.1. Standard Date/Times</a></li>
+<li><a href="#_partial_datetimes_3">8.2.2. Partial Date/Times</a></li>
 </ul>
 </li>
-<li><a href="#_class_descriptions_6">8.2. Class Descriptions</a>
+<li><a href="#_design_5">8.3. Design</a>
 <ul class="sectlevel3">
-<li><a href="#_dv_time_specification_class">8.2.1. DV_TIME_SPECIFICATION Class</a></li>
-<li><a href="#_dv_periodic_time_specification_class">8.2.2. DV_PERIODIC_TIME_SPECIFICATION Class</a></li>
-<li><a href="#_dv_general_time_specification_class">8.2.3. DV_GENERAL_TIME_SPECIFICATION Class</a></li>
+<li><a href="#_general_approach_2">8.3.1. General Approach</a></li>
+<li><a href="#_partial_datetimes_4">8.3.2. Partial Date/Times</a></li>
+<li><a href="#_calendars_2">8.3.3. Calendars</a></li>
+<li><a href="#_representation_2">8.3.4. Representation</a></li>
 </ul>
 </li>
-<li><a href="#_syntaxes_2">8.3. Syntaxes</a>
+<li><a href="#_class_descriptions_5">8.4. Class Descriptions</a>
 <ul class="sectlevel3">
-<li><a href="#_phase_linked_time_specification_syntax">8.3.1. Phase-linked Time Specification Syntax</a></li>
-<li><a href="#_event_linked_periodic_time_specification_syntax">8.3.2. Event-linked Periodic Time Specification Syntax</a></li>
-<li><a href="#_general_time_specification_syntax">8.3.3. General Time Specification Syntax</a></li>
+<li><a href="#_dv_temporal_class">8.4.1. Dv_temporal Class</a></li>
+<li><a href="#_dv_date_class">8.4.2. Dv_date Class</a></li>
+<li><a href="#_dv_time_class">8.4.3. Dv_time Class</a></li>
+<li><a href="#_dv_date_time_class">8.4.4. Dv_date_time Class</a></li>
+<li><a href="#_dv_duration_class">8.4.5. Dv_duration Class</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_encapsulated_package">9. Encapsulated Package</a>
+<li><a href="#_time_specification_package">9. Time_specification Package</a>
 <ul class="sectlevel2">
 <li><a href="#_overview_6">9.1. Overview</a>
 <ul class="sectlevel3">
-<li><a href="#_requirements_7">9.1.1. Requirements</a></li>
-<li><a href="#_design_7">9.1.2. Design</a></li>
-<li><a href="#_examples">9.1.3. Examples</a></li>
+<li><a href="#_requirements_6">9.1.1. Requirements</a></li>
+<li><a href="#_design_6">9.1.2. Design</a></li>
 </ul>
 </li>
-<li><a href="#_class_descriptions_7">9.2. Class Descriptions</a>
+<li><a href="#_class_descriptions_6">9.2. Class Descriptions</a>
 <ul class="sectlevel3">
-<li><a href="#_dv_encapsulated_class">9.2.1. Dv_encapsulated Class</a></li>
-<li><a href="#_dv_multimedia_class">9.2.2. Dv_multimedia Class</a></li>
-<li><a href="#_dv_parsable_class">9.2.3. Dv_parsable Class</a></li>
+<li><a href="#_dv_time_specification_class">9.2.1. DV_TIME_SPECIFICATION Class</a></li>
+<li><a href="#_dv_periodic_time_specification_class">9.2.2. DV_PERIODIC_TIME_SPECIFICATION Class</a></li>
+<li><a href="#_dv_general_time_specification_class">9.2.3. DV_GENERAL_TIME_SPECIFICATION Class</a></li>
+</ul>
+</li>
+<li><a href="#_syntaxes_2">9.3. Syntaxes</a>
+<ul class="sectlevel3">
+<li><a href="#_phase_linked_time_specification_syntax">9.3.1. Phase-linked Time Specification Syntax</a></li>
+<li><a href="#_event_linked_periodic_time_specification_syntax">9.3.2. Event-linked Periodic Time Specification Syntax</a></li>
+<li><a href="#_general_time_specification_syntax">9.3.3. General Time Specification Syntax</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_uri_package">10. Uri Package</a>
+<li><a href="#_encapsulated_package">10. Encapsulated Package</a>
 <ul class="sectlevel2">
 <li><a href="#_overview_7">10.1. Overview</a>
 <ul class="sectlevel3">
-<li><a href="#_requirements_8">10.1.1. Requirements</a></li>
-<li><a href="#_design_8">10.1.2. Design</a></li>
+<li><a href="#_requirements_7">10.1.1. Requirements</a></li>
+<li><a href="#_design_7">10.1.2. Design</a></li>
+<li><a href="#_examples">10.1.3. Examples</a></li>
 </ul>
 </li>
-<li><a href="#_definitions">10.2. Definitions</a></li>
-<li><a href="#_class_descriptions_8">10.3. Class Descriptions</a>
+<li><a href="#_class_descriptions_7">10.2. Class Descriptions</a>
 <ul class="sectlevel3">
-<li><a href="#_dv_uri_class">10.3.1. Dv_uri Class</a></li>
-<li><a href="#_dv_ehr_uri_class">10.3.2. Dv_ehr_uri Class</a></li>
-</ul>
-</li>
-<li><a href="#_syntaxes_3">10.4. Syntaxes</a>
-<ul class="sectlevel3">
-<li><a href="#_dv_ehr_uri_syntax">10.4.1. DV_EHR_URI Syntax</a></li>
+<li><a href="#_dv_encapsulated_class">10.2.1. Dv_encapsulated Class</a></li>
+<li><a href="#_dv_multimedia_class">10.2.2. Dv_multimedia Class</a></li>
+<li><a href="#_dv_parsable_class">10.2.3. Dv_parsable Class</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_implementation_strategies">11. Implementation Strategies</a>
+<li><a href="#_uri_package">11. Uri Package</a>
 <ul class="sectlevel2">
-<li><a href="#_overview_8">11.1. Overview</a></li>
-<li><a href="#_quantities_and_ordered_numeric">11.2. Quantities and Ordered_numeric</a></li>
-<li><a href="#_unicode">11.3. Unicode</a></li>
-<li><a href="#_dates_and_times">11.4. Dates and Times</a></li>
+<li><a href="#_overview_8">11.1. Overview</a>
+<ul class="sectlevel3">
+<li><a href="#_requirements_8">11.1.1. Requirements</a></li>
+<li><a href="#_design_8">11.1.2. Design</a></li>
+</ul>
+</li>
+<li><a href="#_definitions">11.2. Definitions</a></li>
+<li><a href="#_class_descriptions_8">11.3. Class Descriptions</a>
+<ul class="sectlevel3">
+<li><a href="#_dv_uri_class">11.3.1. Dv_uri Class</a></li>
+<li><a href="#_dv_ehr_uri_class">11.3.2. Dv_ehr_uri Class</a></li>
+</ul>
+</li>
+<li><a href="#_syntaxes_3">11.4. Syntaxes</a>
+<ul class="sectlevel3">
+<li><a href="#_dv_ehr_uri_syntax">11.4.1. DV_EHR_URI Syntax</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_implementation_strategies">12. Implementation Strategies</a>
+<ul class="sectlevel2">
+<li><a href="#_overview_9">12.1. Overview</a></li>
+<li><a href="#_quantities_and_ordered_numeric">12.2. Quantities and Ordered_numeric</a></li>
+<li><a href="#_unicode">12.3. Unicode</a></li>
+<li><a href="#_dates_and_times">12.4. Dates and Times</a></li>
 </ul>
 </li>
 <li><a href="#_references">References</a></li>
@@ -307,7 +304,7 @@
 </div>
 </div>
 </div>
-<h1 id="_data_types_information_model" class="sect0"><a class="anchor" href="#_data_types_information_model"></a>Data Types Information Model</h1>
+<h1 id="_data_types_model" class="sect0"><a class="anchor" href="#_data_types_model"></a>Data Types Model</h1>
 <div class="openblock partintro">
 <div class="content">
 <table class="tableblock frame-all grid-all fit-content spread">
@@ -317,20 +314,20 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="https://www.openehr.org/programs/specification" target="_blank" rel="noopener">Graphite Platform Publishing</a></th>
+<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="http://graphitehealth.io" target="_blank" rel="noopener">Graphite Platform Community</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: GCM latest</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong>: STABLE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong>: TRIAL</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Revision</strong>: <a href="#latest_issue">[latest_issue]</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date</strong>: <a href="#latest_issue_date">[latest_issue_date]</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: EHR, clinical, data types, openehr</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: EHR, clinical, data types, Graphite</p></td>
 </tr>
 </tbody>
 </table>
@@ -341,12 +338,12 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2">&#169; 2003 - 2023 Graphite Platform Publishing</th>
+<th class="tableblock halign-center valign-top" colspan="2">&#169; 2023 - 2023 Graphite Platform Publishing</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="https://www.openehr.org" target="_blank" rel="noopener">Graphite Platforms</a> is an independent, non-profit foundation.</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="http://graphitehealth.io" target="_blank" rel="noopener">Graphite Platforms</a> is an independent, non-profit foundation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Licence</strong></p></td>
@@ -354,8 +351,8 @@
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Support</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Issues: <a href="https://specifications.openehr.org/components/GCM/open_issues" target="_blank" rel="noopener">Problem Reports</a><br>
- Web: <a href="https://specifications.openehr.org" target="_blank" rel="noopener">specifications.openEHR.org</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issues: <a href="https://specifications.graphitehealth.io/components/GCM/open_issues" target="_blank" rel="noopener">Report an Issue</a><br>
+ Web: <a href="https://specifications.graphitehealth.io" target="_blank" rel="noopener">specifications.GraphiteHealth.io</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -453,7 +450,7 @@
 <div class="sect2">
 <h3 id="_purpose"><a class="anchor" href="#_purpose"></a>1.1. Purpose</h3>
 <div class="paragraph">
-<p>This document defines the openEHR Data Types Information Model, used throughout the openEHR Reference Model.</p>
+<p>This document defines the Graphite Data Types Model.</p>
 </div>
 <div class="paragraph">
 <p>The intended audience includes:</p>
@@ -462,9 +459,6 @@
 <ul>
 <li>
 <p>Standards bodies producing health informatics standards;</p>
-</li>
-<li>
-<p>Academic groups using openEHR;</p>
 </li>
 <li>
 <p>The open source healthcare community;</p>
@@ -500,7 +494,7 @@
 <div class="sect2">
 <h3 id="_status"><a class="anchor" href="#_status"></a>1.3. Status</h3>
 <div class="paragraph">
-<p>This specification is in the STABLE state. The development version of this document can be found at <a href="https://specifications.openehr.org/releases/RM/latest/data_types.html" target="_blank" rel="noopener">https://specifications.openehr.org/releases/RM/latest/data_types.html</a>.</p>
+<p>This specification is in the TRIAL state. The development version of this document can be found at <a href="https://specifications.openehr.org/releases/RM/latest/data_types.html" target="_blank" rel="noopener">https://specifications.openehr.org/releases/RM/latest/data_types.html</a>.</p>
 </div>
 <div class="paragraph">
 <p>Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:</p>
@@ -515,10 +509,10 @@
 <p>Feedback may be provided on the <a href="https://discourse.openehr.org/c/specifications/rm" target="_blank" rel="noopener">openEHR RM specifications forum</a>.</p>
 </div>
 <div class="paragraph">
-<p>Issues may be raised on the <a href="https://specifications.openehr.org/components/GCM/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
+<p>Issues may be raised on the <a href="https://specifications.graphitehealth.io/components/GCM/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
 </div>
 <div class="paragraph">
-<p>To see changes made due to previously reported issues, see the <a href="https://specifications.openehr.org/components/GCM/history" target="_blank" rel="noopener">GCM component Change Request tracker</a>.</p>
+<p>To see changes made due to previously reported issues, see the <a href="https://specifications.graphitehealth.io/components/GCM/history" target="_blank" rel="noopener">GCM component Change Request tracker</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -535,16 +529,10 @@
 <div class="sect2">
 <h3 id="_scope"><a class="anchor" href="#_scope"></a>2.1. Scope</h3>
 <div class="paragraph">
-<p>The data type specification presented here defines the clinical/scientific data types which are used in
-other openEHR models. Harmonisation of data types between information models used by related
-services in a health information infrastructure is essential to reducing the conversion work and potential
-for errors between these services. Accordingly, the openEHR data type specification is intended to
-work not only for the EHR, but also for other models defined by openEHR, such as the openEHR
-demographic and terminological models.</p>
+<p>The data type specification presented here defines the clinical/scientific data types which are used in the Graphite Canonical Model.</p>
 </div>
 <div class="paragraph">
-<p>The types described here have been derived from data types used in Good Electronic Health Record (<a href="#GeHR_Aus2001">Beale &amp; Heard&#44; 2000</a>), the Synapses project
-(<a href="#Synapses_Req_A">Kalra&#44; 1996</a>), and various standards <a href="https://www.iso.org/standard/40784.html" target="_blank" rel="noopener">ISO 13606-1</a>, <a href="https://www.iso.org/standard/50120.html" target="_blank" rel="noopener">ISO 13606-3</a> and <a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=264" target="_blank" rel="noopener">HL7v3 Data Types</a>.</p>
+<p>The types described here have been primarily derived from the <a href="https://specifications.openehr.org/releases/RM/latest/data_types.html" target="_blank" rel="noopener">openEHR Data Types</a> and the <a href="http://build.fhir.org/datatypes.html" target="_blank" rel="noopener">HL7 FHIR Data Types</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -566,61 +554,8 @@ driven the design of the openEHR data types:</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>The first of these has led to models which try to clearly convey the semantics of types required by the
-clinical domain. The use of constraints (pre- and post-conditions and class invariants) and a comprehensible
-class structure ensures formal self-consistency, correct type-substitutability and implementability
-in object-oriented formalisms. Types have been designed so as not to clash with norms of
-object-oriented languages and libraries, in particular, class names and the inbuilt types. Accordingly,
-all types presented here have a logical name commencing with <code>DV_</code>, ensuring that there is no clash
-with a type in the implementation formalism, hence the type <code>DV_DATE</code> presented here will not be confused
-with the type <code>DATE</code> which appears in many programming languages or libraries.</p>
-</div>
-<div class="paragraph">
-<p>Object-oriented languages which have been considered include IDL, C++, Java, C#, Eiffel, Delphi
-and Python. Each of these languages obeys some variant of the well-known semantics of classes,
-encapsulation, typing and inheritance. The data types described here follow the tenets of object-orientation
-defined in UML most closely, while being careful not to invalidate their implementation in
-any language. The models have all been validated by implementation in the Eiffel language, the closest
-available semantic fit for UML, and currently the most powerful of mainstream object-oriented
-formalisms.</p>
-</div>
-<div class="paragraph">
-<p>Implementability in XML-schema has also been an important design criterion, and the current data
-types remove many of the problems which the GEHR and CEN data types presented for XMLschema.
-There has been no attempt to support XML-DTD, since it has no type system, and cannot
-reliably be reasoned about in an object-oriented way.</p>
-</div>
-<div class="paragraph">
-<p>To simplify implementation in all object-oriented formalisms, including IDL, programming languages
-and XML-schema, multiple inheritance has generally been avoided (where it is used, only one
-branch corresponds to substitutability). Generic classes have been used, since they significantly clarify
-the model. Type genericity is available in Java, C#, Eiffel, C++, and some other languages. For
-languages not having it, there is a well-known transformation from models containing generic classes
-to classes for non-generic types systems.</p>
-</div>
-<div class="paragraph">
-<p>Implementability in relational databases has also been considered, and appears relatively straightforward,
-since only the data view of the types needs to be represented. Many implementations are likely
-to use only a single String or XML string to represent each entire data instance, which significantly
-simplifies things.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_prior_work"><a class="anchor" href="#_prior_work"></a>2.3. Prior Work</h3>
-<div class="paragraph">
-<p>Four other type systems for clinical data, namely the GEHR data types, the HL7 v3 data types, the
-<a href="https://www.iso.org/standard/40784.html" target="_blank" rel="noopener">ISO 13606-1</a> data item types, and the <a href="https://www.omg.org/spec/COAS/" target="_blank" rel="noopener">OMG Corbamed</a> data types were carefully scrutinised in order to
-ensure a) that all needed types were covered in the openEHR specification, and b) that data conversion
-will be possible. Concepts from all three are cross-referenced throughout this specification where
-possible.</p>
-</div>
-<div class="paragraph">
-<p>Because the <a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=264" target="_blank" rel="noopener">HL7v3 data type specification</a> is a widely available and comprehensive specification for
-clinican data types, particular attention has been paid to incorporating its semantics, as well as fixing
-errors or shortcomings. While there are differences both in design approach and in detail, a significant
-debt must be recognised to the authors of this work, from which many ideas in the present specification
-were drawn. A detailed discussion is found in <a href="#Comparison with HL7v3 Types">[Comparison with HL7v3 Types]</a>.</p>
+<div class="paragraph tbd">
+<p>TBD</p>
 </div>
 </div>
 </div>
@@ -643,7 +578,7 @@ IM.</p>
 <p>The data types described here are named with the class prefix <code>DV_</code>, and inherit from the class
 <code>DATA_VALUE</code>. They have two distinct uses in reference models. Firstly, they may be used as 'data
 values' in reference model structures wherever the <code>DATA_VALUE</code> class appears, for example, in the
-EHR Reference Model via the <code>ELEMENT</code>.<code><em>value</em></code> attribute. Additionally, specific subtypes of the data
+EHR Reference Model via the <code>ELEMENT.<em>value</em></code> attribute. Additionally, specific subtypes of the data
 types described here can also be used as attribute types in other classes in reference models, such as
 date/times, coded terms and so on. The difference is that in the former case, only subtypes of
 <code>DATA_VALUE</code> may be used, whilst in the latter case, other types may be used as well, from the
@@ -710,7 +645,7 @@ discussion on identifier types).</p>
 <div class="content">
 <img src="UML/diagrams/GCM-data_types.basic.svg" alt="GCM data types.basic">
 </div>
-<div class="title">Figure 2. rm.data_types.basic package</div>
+<div class="title">Figure 2. gcm.data_types.basic package</div>
 </div>
 <div class="sect3">
 <h4 id="_requirements"><a class="anchor" href="#_requirements"></a>4.1.1. Requirements</h4>
@@ -927,7 +862,7 @@ such as names or addresses.</p>
 <div class="content">
 <img src="UML/diagrams/GCM-data_types.text.svg" alt="GCM data types.text">
 </div>
-<div class="title">Figure 3. rm.data_types.text package</div>
+<div class="title">Figure 3. gcm.data_types.text package</div>
 </div>
 <div class="sect3">
 <h4 id="_requirements_2"><a class="anchor" href="#_requirements_2"></a>5.1.1. Requirements</h4>
@@ -1008,7 +943,7 @@ from simple queries to decision support. Reasons for using terminology include t
 <p>To standardise textual renderings of terms and avoid informal shorthand. For example, practitioners wanting to write "systolic blood pressure" write things like "systolic BP", "systolic bp", "sys. BP." and so on; use of coded terms ensures that such abbreviations are either avoided, or associated with an unambiguous meaning.</p>
 </li>
 <li>
-<p>For unambiguous naming of problems, medications or diagnoses for support of knowledgebased tools such as prescribing packages and other decision support applications.</p>
+<p>For unambiguous naming of problems, medications or diagnoses for support of knowledge-based tools such as prescribing packages and other decision support applications.</p>
 </li>
 <li>
 <p>For standardised names of things in the record e.g. a heading of "Physical examination" or an entry such as "Differential diagnosis".</p>
@@ -1103,9 +1038,6 @@ equivalents, classifiers, or something in between. The section below on Mappings
 </div>
 <div class="paragraph">
 <p>The model of <code>DV_CODED_TEXT</code> is designed to capture the <em>actual</em> term chosen by the user or software at runtime, i.e. preferred term or synonym (for terminologies supporting synonyms), or a post-coordination of underlying distinct terms if an expression was chosen as the term (such as an expression supported by SNOMED CT). A <code>DV_CODED_TEXT</code> instance is used if the final textual value chosen by the user is the exact term text (preferred or other) returned by the terminology service for the key (i.e. <code><em>code_string</em></code> value). If the user makes even the slightest modification during data entry, a mapping (see <a href="#_mappings">Section 5.1.5</a>) to a <code>DV_TEXT</code> should be used instead.</p>
-</div>
-<div class="paragraph deprecated">
-<p><strong>Deprecated</strong>: The type <code>DV_PARAGRAPH</code> was used to represent larger tracts of text built from lists of <code>DV_TEXT</code> instances, i.e. instances of <code>DV_TEXT</code> and <code>DV_CODED_TEXT</code>. Such text is now represented as plain text with new lines or markdown text, <a href="#_formatting_and_hyperlinking">as described below</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1376,40 +1308,13 @@ indicate the language of the text item.</p>
 <div class="sect3">
 <h4 id="_formatting_and_hyperlinking"><a class="anchor" href="#_formatting_and_hyperlinking"></a>5.1.7. Formatting and Hyperlinking</h4>
 <div class="paragraph">
-<p>Formatted text is represented by <code>DV_TEXT</code> and <code>DV_CODED_TEXT</code> instances. In versions <em>prior to RM Release 1.0.4</em>, <code>DV_PARAGRAPH</code> was provided as a way to represent larger tracts of text containing newlines and formatting of sub-sections, with each subsection being represented by one <code>DV_TEXT</code> or <code>DV_CODED_TEXT</code>.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">
-<code>DV_PARAGRAPH</code> is now deprecated, and all text should be represented using the <code>DV_TEXT</code> or <code>DV_CODED_TEXT</code>. For legacy reasons, <code>DV_PARAGRAPH</code> remains legal, and should be supported in at least a basic way.
-</td>
-</tr>
-</table>
+<p>Formatted text is represented by <code>DV_TEXT</code> and <code>DV_CODED_TEXT</code> instances.</p>
 </div>
 <div class="paragraph">
 <p>Formatting of the text in the <code><em>value</em></code> field of <code>DV_TEXT</code> and <code>DV_CODED_TEXT</code> instances may be indicated via the optional <code><em>formatting</em></code> attribute. How this attribute is used has changed from initial versions of the openEHR Reference Model.</p>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">
-Additionally, the <code><em>value</em></code> field was assumed to contain no newlines. This assumption is no longer made starting from RM Release 1.0.4, since <code>DV_PARAGRAPH</code> is no longer use to represent paragraphs.
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>A common model of text processing is of a processing pipeline that consumes readable text containing markings, which is then rendered into HTML, PDF or some other rendering format, and then displayed by a tool such as a web browser that consumes the latter format. Historical approaches to marking text were known as 'markup', such as nroff, troff, Latek, and then more recently, numerous formats whose base syntax is XML. These formats all have the disadvantages of poor human readability in raw form, and being specific to particular rendering engines, and are starting to fall out of favour for uses involving human reading of the raw text. Another common approach to formatting text is to use the <em>output format</em>, usually HTML, to express e.g. fonts, bolding etc. This is also problematic for human readability, being complicated by the use of CSS classes in tags, which then need to be defined.</p>
-</div>
-<div class="paragraph deprecated">
-<p><strong>Deprecated</strong>: This was the original approach assumed for the <code>DV_TEXT.<em>formatting</em></code> attribute in openEHR, which was defined in versions <em>prior to RM Release 1.0.4</em> as containing CSS font strings to apply to the whole of the <code>DV_TEXT.<em>value</em></code>. This usage is now deprecated, while remaining legal in order to allow for legacy systems and data.</p>
 </div>
 <div class="paragraph">
 <p>The current trend (emerging mainly for documentation in software) is to use 'markdown', which consists of markings in the text that visually indicate the intention: literal newlines, bolding via asterisks etc. No explicit CSS classes are needed, and conversion to rendering form is assumed to be done by an industry-standard markdown-to-HTML or other such converter. This is the approach taken by this specification, and is applied as follows.</p>
@@ -1439,9 +1344,6 @@ Additionally, the <code><em>value</em></code> field was assumed to contain no ne
 <div class="paragraph">
 <p>Related to the question of formatting, a second optional attribute, <code>DV_TEXT.<em>hyperlink</em></code> of type <code>DV_URI</code>, exists to specify a web link associated with the whole text represented by the <code>DV_TEXT</code> instance. Similarly to the case of formatting, the more modern markdown approach to using the <code><em>value</em></code> field is also more flexible with regards to links, since multiple instances of the latter may be used within a single text.</p>
 </div>
-<div class="paragraph deprecated">
-<p><strong>Deprecated</strong>: Starting at RM Release 1.0.4, the use of the <code><em>hyperlink</em></code> field is deprecated in favour of inline link(s) in the <code><em>value</em></code> field, represented using markdown; in CommonMark, the basic form of a link is <code>[text](uri)</code>.</p>
-</div>
 <div class="paragraph">
 <p>Not all CommonMark features are allowed in the <code><em>value</em></code> field, if it contains markdown. The following should not be used:</p>
 </div>
@@ -1461,21 +1363,19 @@ Additionally, the <code><em>value</em></code> field was assumed to contain no ne
 <div class="sect4">
 <h5 id="_usage_in_dv_text_instances"><a class="anchor" href="#_usage_in_dv_text_instances"></a>5.1.7.1. Usage in DV_TEXT Instances</h5>
 <div class="paragraph">
-<p>In a concrete instance of <code>DV_TEXT</code>, the following are the likely usages of the <code><em>value</em></code> and <code><em>formatting</em></code> attributes. The <code><em>hyperlink</em></code> is assumed to be Void in all non-legacy cases.</p>
+<p>In a concrete instance of <code>DV_TEXT</code>, the following are the likely usages of the <code><em>value</em></code> and <code><em>formatting</em></code> attributes.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 42.8572%;">
+<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Requirement</th>
 <th class="tableblock halign-left valign-top"><code><em>value</em></code> attribute</th>
 <th class="tableblock halign-left valign-top"><code><em>formatting</em></code> attribute</th>
-<th class="tableblock halign-left valign-top">Legacy form</th>
 </tr>
 </thead>
 <tbody>
@@ -1484,27 +1384,23 @@ Additionally, the <code><em>value</em></code> field was assumed to contain no ne
  (no formatting, no newlines)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plain text string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Void</code> or <code>"plain_no_newlines"</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(same)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Plain text 'atom' with a hyperlink<br>
  (no formatting, no newlines)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">text string of form <code>[text](uri)</code> or other CommonMark link variant</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>"markdown"</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>value</em></code> = plain text; <code><em>hyperlink</em></code> = URI/URL</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Plain text paragraphs,<br>
  no other formatting</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plain text string with newlines</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Void</code> or <code>"plain"</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DV_PARAGRAPH</code> instance(s) containing plain legacy text atom form <code>DV_TEXTs</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Formatted text with paragraphs, bolding, italics, bullet lists, links etc</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CommonMark text string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>"markdown"</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DV_PARAGRAPH</code> instance(s) containing legacy form <code>DV_TEXTs</code> with CSS formatting and/or values in <code><em>hyperlink</em></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -1516,17 +1412,15 @@ Additionally, the <code><em>value</em></code> field was assumed to contain no ne
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 42.8572%;">
+<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Requirement</th>
 <th class="tableblock halign-left valign-top"><code><em>value</em></code> attribute</th>
 <th class="tableblock halign-left valign-top"><code><em>formatting</em></code> attribute</th>
-<th class="tableblock halign-left valign-top">Legacy form</th>
 </tr>
 </thead>
 <tbody>
@@ -1534,19 +1428,16 @@ Additionally, the <code><em>value</em></code> field was assumed to contain no ne
 <td class="tableblock halign-left valign-top"><p class="tableblock">Plain text of coded term</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plain text string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Void</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(same)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Plain text of coded term with a hyperlink</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">text string of form <code>[text](uri)</code> or other CommonMark link variant</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>"markdown"</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>value</em></code> = plain text; <code><em>hyperlink</em></code> = URI/URL</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Plain text of coded term or other text, containing newlines</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Plain formatted text</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Void or <code>"plain"</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(not applicable)</p></td>
 </tr>
 </tbody>
 </table>
@@ -1883,7 +1774,7 @@ c: <code><a href="/releases/BASE/latest/foundation_types.html#_character_class" 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_quantity_package"><a class="anchor" href="#_quantity_package"></a>6. Quantity Package</h2>
+<h2 id="_ordered_package_quantities"><a class="anchor" href="#_ordered_package_quantities"></a>6. Ordered Package: Quantities</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_overview_4"><a class="anchor" href="#_overview_4"></a>6.1. Overview</h3>
@@ -1892,14 +1783,15 @@ c: <code><a href="/releases/BASE/latest/foundation_types.html#_character_class" 
 </div>
 <div id="rm_data_types_quantity" class="imageblock text-center text-center">
 <div class="content">
-<img src="UML/diagrams/GCM-data_types.quantity.svg" alt="GCM data types.quantity">
+<img src="UML/diagrams/GCM-data_types.ordered-quantity.svg" alt="GCM data types.ordered quantity">
 </div>
-<div class="title">Figure 5. rm.data_types.quantity package</div>
+<div class="title">Figure 5. gcm.data_types.ordered package - quantities</div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_requirements_3"><a class="anchor" href="#_requirements_3"></a>6.2. Requirements</h3>
 <div class="sect3">
-<h4 id="_requirements_3"><a class="anchor" href="#_requirements_3"></a>6.1.1. Requirements</h4>
-<div class="sect4">
-<h5 id="_scores_and_scales"><a class="anchor" href="#_scores_and_scales"></a>6.1.1.1. Scores and Scales</h5>
+<h4 id="_scores_and_scales"><a class="anchor" href="#_scores_and_scales"></a>6.2.1. Scores and Scales</h4>
 <div class="paragraph">
 <p>Medicine is a domain in which symbols representing relative magnitudes are commonly used, without exact values being used. The main purpose is usually to classify patients into groups for which different decisions might be made. Such classifications are typically known as <em>scores</em> or <em>scales</em>. For example the characterisation of pain as 'mild', 'medium', 'severe', or the reflex response to tendon percussion as "-", "+/-", "+", "++", "+++", "++++". Many scores such as the Apgar Score, Glasgow Coma Scale (GCS), and Barthel Index are globally known and used.</p>
 </div>
@@ -1942,8 +1834,8 @@ an argument sometimes put forward for recording all ordinals in a more precise w
 </table>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_countable_things"><a class="anchor" href="#_countable_things"></a>6.1.1.2. Countable Things</h5>
+<div class="sect3">
+<h4 id="_countable_things"><a class="anchor" href="#_countable_things"></a>6.2.2. Countable Things</h4>
 <div class="paragraph">
 <p>A common kind of data value in medicine is the dimensionless countable quantity, e.g.</p>
 </div>
@@ -1967,8 +1859,8 @@ an argument sometimes put forward for recording all ordinals in a more precise w
 <p>Some countable entities such as tablets are divisible into major fractions, typically halves and occasionally quarters.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_dimensioned_quantities"><a class="anchor" href="#_dimensioned_quantities"></a>6.1.1.3. Dimensioned Quantities</h5>
+<div class="sect3">
+<h4 id="_dimensioned_quantities"><a class="anchor" href="#_dimensioned_quantities"></a>6.2.3. Dimensioned Quantities</h4>
 <div class="paragraph">
 <p>The most common kind of quantity is a measured, dimensioned quantity. Anything which is measurable
 (rather than countable) involves a number of data aspects, namely:</p>
@@ -2009,8 +1901,8 @@ an argument sometimes put forward for recording all ordinals in a more precise w
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_ratios_and_proportions"><a class="anchor" href="#_ratios_and_proportions"></a>6.1.1.4. Ratios and Proportions</h5>
+<div class="sect3">
+<h4 id="_ratios_and_proportions"><a class="anchor" href="#_ratios_and_proportions"></a>6.2.4. Ratios and Proportions</h4>
 <div class="paragraph">
 <p>A common quantitative type in science and medicine is the proportion, or ratio, which is used in situations like the following:</p>
 </div>
@@ -2034,8 +1926,8 @@ an argument sometimes put forward for recording all ordinals in a more precise w
 <p>In general ratios have real number values, even if many examples appear to be integer ratios. Proportions with unitary denominator and % (denominator = 100) are common.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_formulations"><a class="anchor" href="#_formulations"></a>6.1.1.5. Formulations</h5>
+<div class="sect3">
+<h4 id="_formulations"><a class="anchor" href="#_formulations"></a>6.2.5. Formulations</h4>
 <div class="paragraph">
 <p>A concept superficially similar to proportions and ratios is formulations of materials, such as a solid in a liquid e.g.:</p>
 </div>
@@ -2050,8 +1942,8 @@ an argument sometimes put forward for recording all ordinals in a more precise w
 <p>Although a single solute/single solvent formulation appears to have the same form as a ratio, the general form is for any number of substances to be mixed together, usually according to a particular procedure. Formulations are therefore not candidates for direct modelling as fine-grained quantities, but instead are constructed by archetyping a higher-level structure, each leaf element of which contains the required kind of Quantity.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_quantity_ranges"><a class="anchor" href="#_quantity_ranges"></a>6.1.1.6. Quantity Ranges</h5>
+<div class="sect3">
+<h4 id="_quantity_ranges"><a class="anchor" href="#_quantity_ranges"></a>6.2.6. Quantity Ranges</h4>
 <div class="paragraph">
 <p>Quantity ranges are ubiquitous in science and medicine, and may be defined for any kind of measured
 phenomenon. Examples include:</p>
@@ -2067,8 +1959,8 @@ phenomenon. Examples include:</p>
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_reference_ranges"><a class="anchor" href="#_reference_ranges"></a>6.1.1.7. Reference Ranges</h5>
+<div class="sect3">
+<h4 id="_reference_ranges"><a class="anchor" href="#_reference_ranges"></a>6.2.7. Reference Ranges</h4>
 <div class="paragraph">
 <p>A reference range is a quantity range attached to a measured value, and is common for laboratory
 result values. The typical form of a reference range found in a pathology result indicates what is considered
@@ -2107,17 +1999,17 @@ the 'normal' range for a measured value. Examples of reference ranges:</p>
 <p>Where there are multiple ranges, the important question is: <em>which range information is relevant to the actual data being recorded for the patient?</em> In theory, only the range corresponding to the particular patient situation should be used, i.e. the range which applies after taking into account sex, age, smoking status, "professional athlete", organ transplanted, etc. In most cases, this is a single "normal" range, or a pair of ranges, typically "therapeutic" and "critical". However, practical factors complicate things. Firstly, data is sometimes supplied from pathology labs along with some or all of the applicable reference ranges, even though only some could possibly apply. This is particularly the case if the laboratory has no other data on the patient, and cannot evaluate which range applies. The requirement for faithfulness of recording might be extended to reference data supplied by laboratories, regardless of how irrelevant or arbitrarily chosen the reference data is, meaning that such data has to be stored in the record anyway. Secondly, there may be circumstances in which physicians want a number of reference ranges, even while knowing that only one range is applicable to the datum. Ranges above and below the relevant one might be useful to a physician wishing to determine how far out of range the datum is.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_normal_range_and_status_in_laboratory_data"><a class="anchor" href="#_normal_range_and_status_in_laboratory_data"></a>6.1.1.8. Normal Range and Status in Laboratory data</h5>
+<div class="sect3">
+<h4 id="_normal_range_and_status_in_laboratory_data"><a class="anchor" href="#_normal_range_and_status_in_laboratory_data"></a>6.2.8. Normal Range and Status in Laboratory data</h4>
 <div class="paragraph">
 <p>It is quite common for laboratories to include a normal range with each measured value, and/or a normal 'status', which indicates where the value lies with respect to the normal range. The latter will commonly take the form of markers like "HHH" (critically high), HH (abnormally high), H (borderline high), L, LL, LLL in HL7v2 messaging, although other schemes are undoubtedly used.</p>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_design_3"><a class="anchor" href="#_design_3"></a>6.3. Design</h3>
 <div class="sect3">
-<h4 id="_design_3"><a class="anchor" href="#_design_3"></a>6.1.2. Design</h4>
-<div class="sect4">
-<h5 id="_basic_semantics"><a class="anchor" href="#_basic_semantics"></a>6.1.2.1. Basic Semantics</h5>
+<h4 id="_basic_semantics"><a class="anchor" href="#_basic_semantics"></a>6.3.1. Basic Semantics</h4>
 <div class="paragraph">
 <p>In order to make sense of the requirements in a systematic way, a proper typology for quantities is needed. The most basic characteristic of all values typically called 'quantities' is that they are ordered, meaning that the operator "&lt;" (less-than) is defined between any two values in the domain. An ancestor class for all quantities called <code>DV_ORDERED</code> is accordingly defined. This type is subtyped into ordinals, scales and true quantities, represented by the classes <code>DV_ORDINAL</code>, <code>DV_SCALE</code> and <code>DV_QUANTIFIED</code> respectively.</p>
 </div>
@@ -2159,7 +2051,7 @@ the 'normal' range for a measured value. Examples of reference ranges:</p>
 <p>The <code>DV_QUANTIFIED</code> class has two subtypes: <code>DV_AMOUNT</code> and <code>DV_ABSOLUTE_QUANTITY</code>. The former corresponds to relative 'amounts' of something, either a physical property (such as mass) or items (e.g. cigarettes). Mathematically, the <code>+</code> and <code>-</code> operators (as well as <code>*</code> and <code>/</code>) are defined in the same way as for the real numbers (or any other mathematical 'field'), with the semantics that adding two relative quantities measuring the same thing (i.e. with the same units) produces another relative quantity of the same kind; while the semantics of subtraction are that one relative quantity subtracted from another generates a third.</p>
 </div>
 <div class="paragraph">
-<p>The second subtype of <code>DV_QUANTIFIED</code>, <code>DV_ABSOLUTE_QUANTITY</code>, models quantities whose values are absolute along a line having a defined origin. The main example of absolute quantities are the temporal concepts date, time and date/time. These are distinguished from relative quantities in that the normal addition and subtraction operations don&#8217;t apply. Instead, the semantics of such operators are based on the idea of the difference between absolute values being a relative amount. For example, two dates can be subtracted, but the result is a duration, not another date. For this reason, the operations <code><em>add</em></code>, <code><em>subtract</em></code> and <code><em>diff</em></code> are defined rather than <code>+</code> or <code>-</code>. Date/time types, as well as the relative concept duration, are defined in <a href="#_date_time_package">Section 6.2</a>.</p>
+<p>The second subtype of <code>DV_QUANTIFIED</code>, <code>DV_ABSOLUTE_QUANTITY</code>, models quantities whose values are absolute along a line having a defined origin. The main example of absolute quantities are the temporal concepts date, time and date/time. These are distinguished from relative quantities in that the normal addition and subtraction operations don&#8217;t apply. Instead, the semantics of such operators are based on the idea of the difference between absolute values being a relative amount. For example, two dates can be subtracted, but the result is a duration, not another date. For this reason, the operations <code><em>add</em></code>, <code><em>subtract</em></code> and <code><em>diff</em></code> are defined rather than <code>+</code> or <code>-</code>. Date/time types, as well as the relative concept duration, are defined in <a href="#_date_time_package">Section 7</a>.</p>
 </div>
 <div class="paragraph">
 <p>Subtypes of <code>DV_AMOUNT</code> are <code>DV_PROPORTION</code>, <code>DV_QUANTITY</code>, <code>DV_COUNT</code>, and <code>DV_DURATION</code> (see date_time package). The type <code>DV_COUNT</code> has an integer magnitude and is used to record naturally countable things such as number of previous pregnancies, number of steps taken by a recovering stroke victim and so on. There are no units or precision in a <code>DV_COUNT</code>. Countable quantities can be used to create instances of <code>DV_QUANTITY</code>, such as during a statistical study which average tobacco
@@ -2184,8 +2076,8 @@ while these semantics will allow comparison of e.g. two pressures recorded in <c
 </table>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_accuracy_and_uncertainty"><a class="anchor" href="#_accuracy_and_uncertainty"></a>6.1.2.2. Accuracy and Uncertainty</h5>
+<div class="sect3">
+<h4 id="_accuracy_and_uncertainty"><a class="anchor" href="#_accuracy_and_uncertainty"></a>6.3.2. Accuracy and Uncertainty</h4>
 <div class="paragraph">
 <p>Theoretically it might be argued that accuracy should not be included in a model for quantified values, because it is an artifact of a measuring process and/or device, not of a quantity itself. For example, a weight of "82 kg &#177;5%" can be represented in two parts. The "82 kg" is represented as a <code>DV_QUANTITY</code>, while the "&#177;5%" could be included in the protocol description of the weighing instrument, since this is where the error comes from. For practical purposes however, (in)accuracy in a measured quantity corresponds to a range of possible values. In realistic computing in health, it is quite likely that the accuracy will be required in computations on quantities, especially for statistical population queries in which measurement error must be disambiguated from true correlation.</p>
 </div>
@@ -2216,14 +2108,14 @@ is used for this purpose, and the constant unknown_accuracy_value = -1 is provid
 <p>The related notion of 'uncertainty' is understood as a subjective judgement made by the clinician, indicating that he/she is not certain of a particular statement. It is not the same as accuracy: uncertainty may apply to non-quantified values, such as subjective statements, and it is not an aspect of objective measurement processes, but of human confidence. Where the uncertainty is due to subjective memory e.g. "I think my grandfather was 56 when he died", the uncertainty is simply recorded as another value, along with the main data item being recorded. Uncertainty is therefore not directly modelled in the openEHR data types, but appears instead in particular archetypes.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_quantity_ranges_2"><a class="anchor" href="#_quantity_ranges_2"></a>6.1.2.3. Quantity Ranges</h5>
+<div class="sect3">
+<h4 id="_quantity_ranges_2"><a class="anchor" href="#_quantity_ranges_2"></a>6.3.3. Quantity Ranges</h4>
 <div class="paragraph">
 <p>Ranges are modelled by the generic type <code>DV_INTERVAL&lt;T:DV_ORDERED&gt;</code> which enables a range of any of the other quantity types (except ratio) to be constructed. This allows any subtype of <code>DV_ORDERED</code> to occur as a range as well.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_proportions"><a class="anchor" href="#_proportions"></a>6.1.2.4. Proportions</h5>
+<div class="sect3">
+<h4 id="_proportions"><a class="anchor" href="#_proportions"></a>6.3.4. Proportions</h4>
 <div class="paragraph">
 <p>The <code>DV_PROPORTION</code> type is provided for representing true ratios, i.e. relative values, and consists of numerator and denominator Real values, and a magnitude function which is computed as the result of the numerator/denominator division. The type attribute is used to indicate the logical type of the proportion. Supported types include:</p>
 </div>
@@ -2250,8 +2142,8 @@ is used for this purpose, and the constant unknown_accuracy_value = -1 is provid
 <p>Lastly, the <code><em>is_integral</em></code> function indicates that the numerator and denominator are both integer values; this is used for fractions (the fraction and integer_fraction types above) and other commonly occurring ratios where both parts are always integer values.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_normal_and_reference_ranges"><a class="anchor" href="#_normal_and_reference_ranges"></a>6.1.2.5. Normal and Reference Ranges</h5>
+<div class="sect3">
+<h4 id="_normal_and_reference_ranges"><a class="anchor" href="#_normal_and_reference_ranges"></a>6.3.5. Normal and Reference Ranges</h4>
 <div class="paragraph">
 <p>Normal range for any of the quantity types (i.e. any instance of a subtype of <code>DV_ORDERED</code>) can be included via the attribute <code>DV_ORDERED</code>.<code><em>normal_range</em></code>, of type <code>REFERENCE_RANGE</code>. Other reference ranges (e.g. sub-critical, critical etc) can be included via the attribute <code>DV_ORDERED</code>.<code><em>other_reference_ranges</em></code>. The separation of normal and other reference range attributes is used because the former constitute the vast majority of ranges quoted for quantitative data.</p>
 </div>
@@ -2259,20 +2151,22 @@ is used for this purpose, and the constant unknown_accuracy_value = -1 is provid
 <p>Normal status can be included via the attribute <code>DV_ORDERED</code>.<code><em>normal_status</em></code>, which takes the form of a <code>DV_ORDINAL</code>, whose symbol attribute is coded according to the openEHR terminology group "normal status", and takes values "HHH" (critically high), "HH" (abnormally high), "H" (borderline high)", "N" (normal), "L" &#8230;&#8203; "LLL".</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_recording_time"><a class="anchor" href="#_recording_time"></a>6.1.2.6. Recording Time</h5>
+<div class="sect3">
+<h4 id="_recording_time"><a class="anchor" href="#_recording_time"></a>6.3.6. Recording Time</h4>
 <div class="paragraph">
 <p>Time can be recorded in two ways. Absolute times in the social time domain, such as dates and time of day are recorded using the types in the date_time package. Fine-grained 'time', which is a duration rather than a time, is recorded using a <code>DV_QUANTITY</code> with units = 's' or another temporal unit ('h', 'ms', 'ns' etc).</p>
 </div>
 </div>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_date_time_package"><a class="anchor" href="#_date_time_package"></a>7. Date Time Package</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_date_time_package"><a class="anchor" href="#_date_time_package"></a>6.2. Date Time Package</h3>
+<h3 id="_requirements_4"><a class="anchor" href="#_requirements_4"></a>7.1. Requirements</h3>
 <div class="sect3">
-<h4 id="_requirements_4"><a class="anchor" href="#_requirements_4"></a>6.2.1. Requirements</h4>
-<div class="sect4">
-<h5 id="_standard_datetimes"><a class="anchor" href="#_standard_datetimes"></a>6.2.1.1. Standard Date/Times</h5>
+<h4 id="_standard_datetimes"><a class="anchor" href="#_standard_datetimes"></a>7.1.1. Standard Date/Times</h4>
 <div class="paragraph">
 <p>The basic requirement is for types which represent the following concepts.</p>
 </div>
@@ -2293,8 +2187,8 @@ is used for this purpose, and the constant unknown_accuracy_value = -1 is provid
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_partial_datetimes"><a class="anchor" href="#_partial_datetimes"></a>6.2.1.2. Partial Date/Times</h5>
+<div class="sect3">
+<h4 id="_partial_datetimes"><a class="anchor" href="#_partial_datetimes"></a>7.1.2. Partial Date/Times</h4>
 <div class="paragraph">
 <p>Partial or uncertain date/times have to be supported in clinical medicine. It is common for patients to
 be unsure about dates and durations. Requirements for partial date/times include the following.</p>
@@ -2352,10 +2246,10 @@ record the narrative form of the datum provided by the patient as well as the fo
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_design_4"><a class="anchor" href="#_design_4"></a>7.2. Design</h3>
 <div class="sect3">
-<h4 id="_design_4"><a class="anchor" href="#_design_4"></a>6.2.2. Design</h4>
-<div class="sect4">
-<h5 id="_general_approach"><a class="anchor" href="#_general_approach"></a>6.2.2.1. General Approach</h5>
+<h4 id="_general_approach"><a class="anchor" href="#_general_approach"></a>7.2.1. General Approach</h4>
 <div class="paragraph">
 <p>Date/time values are somewhat special in the realm of data types in that they are expressed in their
 'customary' form, in which the standard structure of <code>{value, unit}</code> and metric relationships between
@@ -2399,8 +2293,8 @@ between absolute times.</p>
 <p>See the <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html#_time_types" target="_blank" rel="noopener">Time Types section in the openEHR Foundation Types specification</a> for conformance details.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_partial_datetimes_2"><a class="anchor" href="#_partial_datetimes_2"></a>6.2.2.2. Partial Date/Times</h5>
+<div class="sect3">
+<h4 id="_partial_datetimes_2"><a class="anchor" href="#_partial_datetimes_2"></a>7.2.2. Partial Date/Times</h4>
 <div class="paragraph">
 <p>The types defined in this specification support the notion of partially specified dates and times. The
 modelling approach used here takes into account the known needs for representing partial date/time
@@ -2425,8 +2319,8 @@ missing from the right hand end of the string. This models the reasonable situat
 may be unknown in a date, but a date cannot have month unknown and day known.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_calendars"><a class="anchor" href="#_calendars"></a>6.2.2.3. Calendars</h5>
+<div class="sect3">
+<h4 id="_calendars"><a class="anchor" href="#_calendars"></a>7.2.3. Calendars</h4>
 <div class="paragraph">
 <p>A comment on calendars is in order. In this specification, all date/time types currently modelled are
 Gregorian calendar based. This is the same assumption made by ISO 8601, and most technical
@@ -2479,8 +2373,8 @@ Republican, Macedonian, Syrian, Julian Roman, Gregorian, Islamic A, Islamic B, B
 Saka calendars are described by (<a href="#Richards1998">Richards&#44; 1998</a>) and are based on the work of D. A. Hatcher (1986).</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_representation"><a class="anchor" href="#_representation"></a>6.2.2.4. Representation</h5>
+<div class="sect3">
+<h4 id="_representation"><a class="anchor" href="#_representation"></a>7.2.4. Representation</h4>
 <div class="paragraph">
 <p>All of the date/time classes described here are defined so as to have an attribute called value of type
 String, in the form of an <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601:2019</a> string, with the two above-described deviations allowed. ISO 8601 is convenient for this purpose, as it is a simple
@@ -2506,11 +2400,10 @@ it is strongly recommended that where possible, the <em>extended</em> form of th
 </div>
 </div>
 </div>
-</div>
 <div class="sect2">
-<h3 id="_class_descriptions_4"><a class="anchor" href="#_class_descriptions_4"></a>6.3. Class Descriptions</h3>
+<h3 id="_class_descriptions_4"><a class="anchor" href="#_class_descriptions_4"></a>7.3. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_dv_ordinal_class"><a class="anchor" href="#_dv_ordinal_class"></a>6.3.1. Dv_ordinal Class</h4>
+<h4 id="_dv_ordinal_class"><a class="anchor" href="#_dv_ordinal_class"></a>7.3.1. Dv_ordinal Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2594,7 +2487,7 @@ other: <code><a href="#_dv_ordinal_class">Dv_ordinal</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_quantified_class"><a class="anchor" href="#_dv_quantified_class"></a>6.3.2. Dv_quantified Class</h4>
+<h4 id="_dv_quantified_class"><a class="anchor" href="#_dv_quantified_class"></a>7.3.2. Dv_quantified Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2620,6 +2513,11 @@ other: <code><a href="#_dv_ordinal_class">Dv_ordinal</a>[1]</code><br>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>measured</strong>: <code><a href="#_dv_measured_class">Dv_measured</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
@@ -2736,7 +2634,7 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_quantity_class"><a class="anchor" href="#_dv_quantity_class"></a>6.3.3. Dv_quantity Class</h4>
+<h4 id="_dv_quantity_class"><a class="anchor" href="#_dv_quantity_class"></a>7.3.3. Dv_quantity Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2895,7 +2793,7 @@ other: <code><a href="#_dv_quantity_class">Dv_quantity</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_count_class"><a class="anchor" href="#_dv_count_class"></a>6.3.4. Dv_count Class</h4>
+<h4 id="_dv_count_class"><a class="anchor" href="#_dv_count_class"></a>7.3.4. Dv_count Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2930,7 +2828,7 @@ other: <code><a href="#_dv_quantity_class">Dv_quantity</a>[1]</code><br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_ratio_class"><a class="anchor" href="#_dv_ratio_class"></a>6.3.5. Dv_ratio Class</h4>
+<h4 id="_dv_ratio_class"><a class="anchor" href="#_dv_ratio_class"></a>7.3.5. Dv_ratio Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2965,14 +2863,14 @@ other: <code><a href="#_dv_quantity_class">Dv_quantity</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>numerator</strong>: <code>Real</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>numerator</strong>: <code><a href="#_dv_quantity_class">Dv_quantity</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>TODO: possibly needs to be a Quantified?</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>denominator</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" target="_blank" rel="noopener">Real</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>denominator</strong>: <code><a href="#_dv_quantity_class">Dv_quantity</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Denominator of ratio.</p>
 </div></div></td>
@@ -3065,7 +2963,7 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_ratio_kind_enumeration"><a class="anchor" href="#_ratio_kind_enumeration"></a>6.3.6. Ratio_kind Enumeration</h4>
+<h4 id="_ratio_kind_enumeration"><a class="anchor" href="#_ratio_kind_enumeration"></a>7.3.6. Ratio_kind Enumeration</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3102,7 +3000,7 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_measured_class"><a class="anchor" href="#_dv_measured_class"></a>6.3.7. Dv_measured Class</h4>
+<h4 id="_dv_measured_class"><a class="anchor" href="#_dv_measured_class"></a>7.3.7. Dv_measured Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3112,17 +3010,13 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_measured&lt;V&gt;</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_measured</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Measured form of Dv_quantified, with optional accuracy, normal range and other reference ranges.</p>
+<p>Additional data that may be recorded for measured form of a quantified item, including with optional accuracy, normal range and other reference ranges.</p>
 </div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_dv_ordered_class">Dv_ordered</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -3131,10 +3025,9 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>precision</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_integer_class" target="_blank" rel="noopener">Integer</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>normal_range</strong>: <code><a href="#_dv_range_class">Dv_range</a>&lt;<a href="#_dv_quantified_class">Dv_quantified</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.
-The value -1 implies no limit, i.e. any number of decimal places.</p>
+<p>Optional normal range.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3171,7 +3064,15 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>accuracy</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_any_class" target="_blank" rel="noopener">Any</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>precision</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_integer_class" target="_blank" rel="noopener">Integer</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Precision to which the value of the quantity is expressed, in terms of number of decimal places. The value 0 implies an integral quantity.
+The value -1 implies no limit, i.e. any number of decimal places.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>accuracy</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_comparable_class" target="_blank" rel="noopener">Comparable</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Accuracy of measurement. A value of zero means no accuracy recorded.</p>
 </div></div></td>
@@ -3185,29 +3086,16 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>normal_range</strong>: <code>@@</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional normal range.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>other_reference_ranges</strong>: <code>List&lt;<a href="#_reference_range_class">Reference_range</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional tagged other reference ranges for this value in its particular measurement context.</p>
 </div></div></td>
 </tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(redefined)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code>V</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_reference_range_class"><a class="anchor" href="#_reference_range_class"></a>6.3.8. Reference_range Class</h4>
+<h4 id="_reference_range_class"><a class="anchor" href="#_reference_range_class"></a>7.3.8. Reference_range Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3239,7 +3127,7 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>range</strong>: <code><a href="#_dv_range_class">Dv_range</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>range</strong>: <code><a href="#_dv_range_class">Dv_range</a>&lt;<a href="#_dv_quantified_class">Dv_quantified</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The data range for this meaning, e.g. critical  etc.</p>
 </div></div></td>
@@ -3254,7 +3142,7 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_comparison_operator_enumeration"><a class="anchor" href="#_comparison_operator_enumeration"></a>6.3.9. Comparison_operator Enumeration</h4>
+<h4 id="_comparison_operator_enumeration"><a class="anchor" href="#_comparison_operator_enumeration"></a>7.3.9. Comparison_operator Enumeration</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3306,7 +3194,7 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_range_class"><a class="anchor" href="#_dv_range_class"></a>6.3.10. Dv_range Class</h4>
+<h4 id="_dv_range_class"><a class="anchor" href="#_dv_range_class"></a>7.3.10. Dv_range Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3352,9 +3240,9 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_syntaxes"><a class="anchor" href="#_syntaxes"></a>6.4. Syntaxes</h3>
+<h3 id="_syntaxes"><a class="anchor" href="#_syntaxes"></a>7.4. Syntaxes</h3>
 <div class="sect3">
-<h4 id="_units_syntax"><a class="anchor" href="#_units_syntax"></a>6.4.1. Units Syntax</h4>
+<h4 id="_units_syntax"><a class="anchor" href="#_units_syntax"></a>7.4.1. Units Syntax</h4>
 <div class="paragraph">
 <p>The BNF syntax specification of the units string, adapted from <a href="http://unitsofmeasure.org/ucum.html" target="_blank" rel="noopener">UCUM</a> (case-sensitive form) is as follows:</p>
 </div>
@@ -3391,12 +3279,24 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_date_time_package_2"><a class="anchor" href="#_date_time_package_2"></a>7. Date Time Package</h2>
+<h2 id="_ordered_package_temporal"><a class="anchor" href="#_ordered_package_temporal"></a>8. Ordered Package: Temporal</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_requirements_5"><a class="anchor" href="#_requirements_5"></a>7.1. Requirements</h3>
+<h3 id="_overview_5"><a class="anchor" href="#_overview_5"></a>8.1. Overview</h3>
+<div class="paragraph">
+<p>The <code>data_types.quantity</code> package is illustrated below. Dates and Times are found in the next section.</p>
+</div>
+<div id="rm_data_types_time" class="imageblock text-center text-center">
+<div class="content">
+<img src="UML/diagrams/GCM-data_types.ordered-time.svg" alt="GCM data types.ordered time">
+</div>
+<div class="title">Figure 6. gcm.data_types.ordered package - temporal types</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_requirements_5"><a class="anchor" href="#_requirements_5"></a>8.2. Requirements</h3>
 <div class="sect3">
-<h4 id="_standard_datetimes_2"><a class="anchor" href="#_standard_datetimes_2"></a>7.1.1. Standard Date/Times</h4>
+<h4 id="_standard_datetimes_2"><a class="anchor" href="#_standard_datetimes_2"></a>8.2.1. Standard Date/Times</h4>
 <div class="paragraph">
 <p>The basic requirement is for types which represent the following concepts.</p>
 </div>
@@ -3418,7 +3318,7 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_partial_datetimes_3"><a class="anchor" href="#_partial_datetimes_3"></a>7.1.2. Partial Date/Times</h4>
+<h4 id="_partial_datetimes_3"><a class="anchor" href="#_partial_datetimes_3"></a>8.2.2. Partial Date/Times</h4>
 <div class="paragraph">
 <p>Partial or uncertain date/times have to be supported in clinical medicine. It is common for patients to
 be unsure about dates and durations. Requirements for partial date/times include the following.</p>
@@ -3477,9 +3377,9 @@ record the narrative form of the datum provided by the patient as well as the fo
 </div>
 </div>
 <div class="sect2">
-<h3 id="_design_5"><a class="anchor" href="#_design_5"></a>7.2. Design</h3>
+<h3 id="_design_5"><a class="anchor" href="#_design_5"></a>8.3. Design</h3>
 <div class="sect3">
-<h4 id="_general_approach_2"><a class="anchor" href="#_general_approach_2"></a>7.2.1. General Approach</h4>
+<h4 id="_general_approach_2"><a class="anchor" href="#_general_approach_2"></a>8.3.1. General Approach</h4>
 <div class="paragraph">
 <p>Date/time values are somewhat special in the realm of data types in that they are expressed in their
 'customary' form, in which the standard structure of <code>{value, unit}</code> and metric relationships between
@@ -3524,7 +3424,7 @@ between absolute times.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_partial_datetimes_4"><a class="anchor" href="#_partial_datetimes_4"></a>7.2.2. Partial Date/Times</h4>
+<h4 id="_partial_datetimes_4"><a class="anchor" href="#_partial_datetimes_4"></a>8.3.2. Partial Date/Times</h4>
 <div class="paragraph">
 <p>The types defined in this specification support the notion of partially specified dates and times. The
 modelling approach used here takes into account the known needs for representing partial date/time
@@ -3550,7 +3450,7 @@ may be unknown in a date, but a date cannot have month unknown and day known.</p
 </div>
 </div>
 <div class="sect3">
-<h4 id="_calendars_2"><a class="anchor" href="#_calendars_2"></a>7.2.3. Calendars</h4>
+<h4 id="_calendars_2"><a class="anchor" href="#_calendars_2"></a>8.3.3. Calendars</h4>
 <div class="paragraph">
 <p>A comment on calendars is in order. In this specification, all date/time types currently modelled are
 Gregorian calendar based. This is the same assumption made by ISO 8601, and most technical
@@ -3604,7 +3504,7 @@ Saka calendars are described by (<a href="#Richards1998">Richards&#44; 1998</a>)
 </div>
 </div>
 <div class="sect3">
-<h4 id="_representation_2"><a class="anchor" href="#_representation_2"></a>7.2.4. Representation</h4>
+<h4 id="_representation_2"><a class="anchor" href="#_representation_2"></a>8.3.4. Representation</h4>
 <div class="paragraph">
 <p>All of the date/time classes described here are defined so as to have an attribute called value of type
 String, in the form of an <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601:2019</a> string, with the two above-described deviations allowed. ISO 8601 is convenient for this purpose, as it is a simple
@@ -3631,9 +3531,9 @@ it is strongly recommended that where possible, the <em>extended</em> form of th
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_descriptions_5"><a class="anchor" href="#_class_descriptions_5"></a>7.3. Class Descriptions</h3>
+<h3 id="_class_descriptions_5"><a class="anchor" href="#_class_descriptions_5"></a>8.4. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_dv_temporal_class"><a class="anchor" href="#_dv_temporal_class"></a>7.3.1. Dv_temporal Class</h4>
+<h4 id="_dv_temporal_class"><a class="anchor" href="#_dv_temporal_class"></a>8.4.1. Dv_temporal Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3647,17 +3547,40 @@ it is strongly recommended that where possible, the <em>extended</em> form of th
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Parent of Data value types based on the primitive Temporal types. Uses a direct String representation and a function to generate the relevant Temporal instance.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_data_value_class">Data_value</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_dv_ordered_class">Dv_ordered</a></code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(redefined)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>as_temporal</strong> (): <code>T</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_date_class"><a class="anchor" href="#_dv_date_class"></a>7.3.2. Dv_date Class</h4>
+<h4 id="_dv_date_class"><a class="anchor" href="#_dv_date_class"></a>8.4.2. Dv_date Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3681,7 +3604,7 @@ it is strongly recommended that where possible, the <em>extended</em> form of th
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_time_class"><a class="anchor" href="#_dv_time_class"></a>7.3.3. Dv_time Class</h4>
+<h4 id="_dv_time_class"><a class="anchor" href="#_dv_time_class"></a>8.4.3. Dv_time Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3705,7 +3628,7 @@ it is strongly recommended that where possible, the <em>extended</em> form of th
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_date_time_class"><a class="anchor" href="#_dv_date_time_class"></a>7.3.4. Dv_date_time Class</h4>
+<h4 id="_dv_date_time_class"><a class="anchor" href="#_dv_date_time_class"></a>8.4.4. Dv_date_time Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3729,7 +3652,7 @@ it is strongly recommended that where possible, the <em>extended</em> form of th
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_duration_class"><a class="anchor" href="#_dv_duration_class"></a>7.3.5. Dv_duration Class</h4>
+<h4 id="_dv_duration_class"><a class="anchor" href="#_dv_duration_class"></a>8.4.5. Dv_duration Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3756,10 +3679,10 @@ it is strongly recommended that where possible, the <em>extended</em> form of th
 </div>
 </div>
 <div class="sect1">
-<h2 id="_time_specification_package"><a class="anchor" href="#_time_specification_package"></a>8. Time_specification Package</h2>
+<h2 id="_time_specification_package"><a class="anchor" href="#_time_specification_package"></a>9. Time_specification Package</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_overview_5"><a class="anchor" href="#_overview_5"></a>8.1. Overview</h3>
+<h3 id="_overview_6"><a class="anchor" href="#_overview_6"></a>9.1. Overview</h3>
 <div class="paragraph">
 <p>Time specification is about potentiality rather than actuality, and needs its own types. The openEHR
 <code>data_types.time_specification</code> package provides such types, based on the HL7 types of the
@@ -3769,10 +3692,10 @@ same names, and is illustrated below.</p>
 <div class="content">
 <img src="UML/diagrams/GCM-data_types.time_specification.svg" alt="GCM data types.time specification">
 </div>
-<div class="title">Figure 6. rm.data_types.time_specification package</div>
+<div class="title">Figure 7. rm.data_types.time_specification package</div>
 </div>
 <div class="sect3">
-<h4 id="_requirements_6"><a class="anchor" href="#_requirements_6"></a>8.1.1. Requirements</h4>
+<h4 id="_requirements_6"><a class="anchor" href="#_requirements_6"></a>9.1.1. Requirements</h4>
 <div class="paragraph">
 <p>One of the difficulties with time is expressing future times, since potential occurrences, durations,
 repetitions cannot be expressed in the same way as actual time. Complicating the problem is the fact
@@ -3820,7 +3743,7 @@ is quite challenging.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_design_6"><a class="anchor" href="#_design_6"></a>8.1.2. Design</h4>
+<h4 id="_design_6"><a class="anchor" href="#_design_6"></a>9.1.2. Design</h4>
 <div class="paragraph">
 <p>The HL7 version 3 data types for time specification appear to allow for all of the required possibilities.
 The syntax is based on the <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener">ISO 8601 standard</a>. It provides types which express:</p>
@@ -3847,9 +3770,9 @@ using a syntax which is equivalet to a series of <code>IVL&lt;TS&gt;</code> (i.e
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_descriptions_6"><a class="anchor" href="#_class_descriptions_6"></a>8.2. Class Descriptions</h3>
+<h3 id="_class_descriptions_6"><a class="anchor" href="#_class_descriptions_6"></a>9.2. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_dv_time_specification_class"><a class="anchor" href="#_dv_time_specification_class"></a>8.2.1. DV_TIME_SPECIFICATION Class</h4>
+<h4 id="_dv_time_specification_class"><a class="anchor" href="#_dv_time_specification_class"></a>9.2.1. DV_TIME_SPECIFICATION Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3916,7 +3839,7 @@ using a syntax which is equivalet to a series of <code>IVL&lt;TS&gt;</code> (i.e
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_periodic_time_specification_class"><a class="anchor" href="#_dv_periodic_time_specification_class"></a>8.2.2. DV_PERIODIC_TIME_SPECIFICATION Class</h4>
+<h4 id="_dv_periodic_time_specification_class"><a class="anchor" href="#_dv_periodic_time_specification_class"></a>9.2.2. DV_PERIODIC_TIME_SPECIFICATION Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3987,7 +3910,7 @@ using a syntax which is equivalet to a series of <code>IVL&lt;TS&gt;</code> (i.e
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_general_time_specification_class"><a class="anchor" href="#_dv_general_time_specification_class"></a>8.2.3. DV_GENERAL_TIME_SPECIFICATION Class</h4>
+<h4 id="_dv_general_time_specification_class"><a class="anchor" href="#_dv_general_time_specification_class"></a>9.2.3. DV_GENERAL_TIME_SPECIFICATION Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4043,9 +3966,9 @@ using a syntax which is equivalet to a series of <code>IVL&lt;TS&gt;</code> (i.e
 </div>
 </div>
 <div class="sect2">
-<h3 id="_syntaxes_2"><a class="anchor" href="#_syntaxes_2"></a>8.3. Syntaxes</h3>
+<h3 id="_syntaxes_2"><a class="anchor" href="#_syntaxes_2"></a>9.3. Syntaxes</h3>
 <div class="sect3">
-<h4 id="_phase_linked_time_specification_syntax"><a class="anchor" href="#_phase_linked_time_specification_syntax"></a>8.3.1. Phase-linked Time Specification Syntax</h4>
+<h4 id="_phase_linked_time_specification_syntax"><a class="anchor" href="#_phase_linked_time_specification_syntax"></a>9.3.1. Phase-linked Time Specification Syntax</h4>
 <div class="paragraph">
 <p>The syntactic form of phase-linked periodic time specifications (derived from the <code>PIVL&lt;T&gt;</code> spec
 HL7v3 ballot) is as follows.</p>
@@ -4081,7 +4004,7 @@ HL7v3 ballot) is as follows.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_event_linked_periodic_time_specification_syntax"><a class="anchor" href="#_event_linked_periodic_time_specification_syntax"></a>8.3.2. Event-linked Periodic Time Specification Syntax</h4>
+<h4 id="_event_linked_periodic_time_specification_syntax"><a class="anchor" href="#_event_linked_periodic_time_specification_syntax"></a>9.3.2. Event-linked Periodic Time Specification Syntax</h4>
 <div class="paragraph">
 <p>Examples of event-linked periodic time specifications include:</p>
 </div>
@@ -4108,7 +4031,7 @@ HL7v3 ballot) is as follows.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_general_time_specification_syntax"><a class="anchor" href="#_general_time_specification_syntax"></a>8.3.3. General Time Specification Syntax</h4>
+<h4 id="_general_time_specification_syntax"><a class="anchor" href="#_general_time_specification_syntax"></a>9.3.3. General Time Specification Syntax</h4>
 <div class="paragraph">
 <p>The class is the same structurally as the <code>DV_TIME_SPECIFICATION</code> parent. The syntax is the HL7
 GTS syntax, defined by the following parse specification:</p>
@@ -4128,10 +4051,10 @@ GTS syntax, defined by the following parse specification:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_encapsulated_package"><a class="anchor" href="#_encapsulated_package"></a>9. Encapsulated Package</h2>
+<h2 id="_encapsulated_package"><a class="anchor" href="#_encapsulated_package"></a>10. Encapsulated Package</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_overview_6"><a class="anchor" href="#_overview_6"></a>9.1. Overview</h3>
+<h3 id="_overview_7"><a class="anchor" href="#_overview_7"></a>10.1. Overview</h3>
 <div class="paragraph">
 <p>The <code>data_types.encapsulated</code> package contains classes representing data values whose internal
 structure is defined outside the EHR model, such as multimedia and parsable data. It is illustrated below.</p>
@@ -4140,10 +4063,10 @@ structure is defined outside the EHR model, such as multimedia and parsable data
 <div class="content">
 <img src="UML/diagrams/GCM-data_types.encapsulated.svg" alt="GCM data types.encapsulated">
 </div>
-<div class="title">Figure 7. rm.data_types.encapsulated package</div>
+<div class="title">Figure 8. gcm.data_types.encapsulated package</div>
 </div>
 <div class="sect3">
-<h4 id="_requirements_7"><a class="anchor" href="#_requirements_7"></a>9.1.1. Requirements</h4>
+<h4 id="_requirements_7"><a class="anchor" href="#_requirements_7"></a>10.1.1. Requirements</h4>
 <div class="paragraph">
 <p>There is a need to be able to include content in the EHR whose interior structure is not modelled in
 the EHR reference model, but instead documented by sufficient meta-data attributes for specific tools
@@ -4198,7 +4121,7 @@ system generates checksums to improve the quality of its internal data transmiss
 </div>
 </div>
 <div class="sect3">
-<h4 id="_design_7"><a class="anchor" href="#_design_7"></a>9.1.2. Design</h4>
+<h4 id="_design_7"><a class="anchor" href="#_design_7"></a>10.1.2. Design</h4>
 <div class="paragraph">
 <p>The design approach used here is based on the following analysis.</p>
 </div>
@@ -4249,7 +4172,7 @@ ED type from the HL7v3 data types specification.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_examples"><a class="anchor" href="#_examples"></a>9.1.3. Examples</h4>
+<h4 id="_examples"><a class="anchor" href="#_examples"></a>10.1.3. Examples</h4>
 <div class="paragraph">
 <p>The following examples show how to use the classes to represent some common encapsulated data types.</p>
 </div>
@@ -4317,9 +4240,9 @@ ED type from the HL7v3 data types specification.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_descriptions_7"><a class="anchor" href="#_class_descriptions_7"></a>9.2. Class Descriptions</h3>
+<h3 id="_class_descriptions_7"><a class="anchor" href="#_class_descriptions_7"></a>10.2. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_dv_encapsulated_class"><a class="anchor" href="#_dv_encapsulated_class"></a>9.2.1. Dv_encapsulated Class</h4>
+<h4 id="_dv_encapsulated_class"><a class="anchor" href="#_dv_encapsulated_class"></a>10.2.1. Dv_encapsulated Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4376,7 +4299,7 @@ ED type from the HL7v3 data types specification.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_multimedia_class"><a class="anchor" href="#_dv_multimedia_class"></a>9.2.2. Dv_multimedia Class</h4>
+<h4 id="_dv_multimedia_class"><a class="anchor" href="#_dv_multimedia_class"></a>10.2.2. Dv_multimedia Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4519,7 +4442,7 @@ Example: image/jpeg; text/json.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_parsable_class"><a class="anchor" href="#_dv_parsable_class"></a>9.2.3. Dv_parsable Class</h4>
+<h4 id="_dv_parsable_class"><a class="anchor" href="#_dv_parsable_class"></a>10.2.3. Dv_parsable Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4591,10 +4514,10 @@ Example: image/jpeg; text/json.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_uri_package"><a class="anchor" href="#_uri_package"></a>10. Uri Package</h2>
+<h2 id="_uri_package"><a class="anchor" href="#_uri_package"></a>11. Uri Package</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_overview_7"><a class="anchor" href="#_overview_7"></a>10.1. Overview</h3>
+<h3 id="_overview_8"><a class="anchor" href="#_overview_8"></a>11.1. Overview</h3>
 <div class="paragraph">
 <p>The <code>data_types.uri</code> package includes two types used for referring to information resources. The
 <code>DV_URI</code> type allows data values which are references to objects on the world wide web to be created.
@@ -4609,10 +4532,10 @@ below.</p>
 <div class="content">
 <img src="UML/diagrams/GCM-data_types.uri.svg" alt="GCM data types.uri">
 </div>
-<div class="title">Figure 8. rm.data_types.uri package</div>
+<div class="title">Figure 9. gcm.data_types.uri package</div>
 </div>
 <div class="sect3">
-<h4 id="_requirements_8"><a class="anchor" href="#_requirements_8"></a>10.1.1. Requirements</h4>
+<h4 id="_requirements_8"><a class="anchor" href="#_requirements_8"></a>11.1.1. Requirements</h4>
 <div class="paragraph">
 <p>This package meets the requirement for a <code>DATA_VALUE</code> subtype which represents a W3C Uniform
 Resource Identifier (URI). A common example of where this might be used is to represent a reference
@@ -4631,7 +4554,7 @@ in the EHR and between EHRs.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_design_8"><a class="anchor" href="#_design_8"></a>10.1.2. Design</h4>
+<h4 id="_design_8"><a class="anchor" href="#_design_8"></a>11.1.2. Design</h4>
 <div class="paragraph">
 <p>A simple design approach is used whereby a URI is represented as a String, and appropriate functions are defined to extract the various parts according to the syntax of URIs defined by Tim Berners-Lee (<a href="https://tools.ietf.org/html/rfc3986" target="_blank" rel="noopener">IETF RFC 3986</a>). An EHR specific subtype is defined, whose scheme is 'ehr', and which contains further attributes enabling the instances of the type to record what kind of object they are referring to.</p>
 </div>
@@ -4641,7 +4564,7 @@ in the EHR and between EHRs.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_definitions"><a class="anchor" href="#_definitions"></a>10.2. Definitions</h3>
+<h3 id="_definitions"><a class="anchor" href="#_definitions"></a>11.2. Definitions</h3>
 <div class="paragraph">
 <p>The following symbolic definitions are used in the classes below.</p>
 </div>
@@ -4654,9 +4577,9 @@ in the EHR and between EHRs.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_descriptions_8"><a class="anchor" href="#_class_descriptions_8"></a>10.3. Class Descriptions</h3>
+<h3 id="_class_descriptions_8"><a class="anchor" href="#_class_descriptions_8"></a>11.3. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_dv_uri_class"><a class="anchor" href="#_dv_uri_class"></a>10.3.1. Dv_uri Class</h4>
+<h4 id="_dv_uri_class"><a class="anchor" href="#_dv_uri_class"></a>11.3.1. Dv_uri Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4733,7 +4656,7 @@ in the EHR and between EHRs.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_ehr_uri_class"><a class="anchor" href="#_dv_ehr_uri_class"></a>10.3.2. Dv_ehr_uri Class</h4>
+<h4 id="_dv_ehr_uri_class"><a class="anchor" href="#_dv_ehr_uri_class"></a>11.3.2. Dv_ehr_uri Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -4769,9 +4692,9 @@ in the EHR and between EHRs.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_syntaxes_3"><a class="anchor" href="#_syntaxes_3"></a>10.4. Syntaxes</h3>
+<h3 id="_syntaxes_3"><a class="anchor" href="#_syntaxes_3"></a>11.4. Syntaxes</h3>
 <div class="sect3">
-<h4 id="_dv_ehr_uri_syntax"><a class="anchor" href="#_dv_ehr_uri_syntax"></a>10.4.1. DV_EHR_URI Syntax</h4>
+<h4 id="_dv_ehr_uri_syntax"><a class="anchor" href="#_dv_ehr_uri_syntax"></a>11.4.1. DV_EHR_URI Syntax</h4>
 <div class="paragraph">
 <p>The syntax of a <code>DV_EHR_URI</code> is an openEHR path, inside the 'ehr' URI scheme-space, and is one of the forms:</p>
 </div>
@@ -4791,10 +4714,10 @@ ehr:/ehr_id/top_level_structure_locator/path_inside_top_level_structure</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_implementation_strategies"><a class="anchor" href="#_implementation_strategies"></a>11. Implementation Strategies</h2>
+<h2 id="_implementation_strategies"><a class="anchor" href="#_implementation_strategies"></a>12. Implementation Strategies</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_overview_8"><a class="anchor" href="#_overview_8"></a>11.1. Overview</h3>
+<h3 id="_overview_9"><a class="anchor" href="#_overview_9"></a>12.1. Overview</h3>
 <div class="paragraph">
 <p>This section notes a few of the general challenges for mapping the openEHR data types to implementation
 technologies such as programming languages and XML. For specific guidelines, Implementation
@@ -4802,7 +4725,7 @@ Technology Specification (ITS) document for each target formalism should be cons
 </div>
 </div>
 <div class="sect2">
-<h3 id="_quantities_and_ordered_numeric"><a class="anchor" href="#_quantities_and_ordered_numeric"></a>11.2. Quantities and Ordered_numeric</h3>
+<h3 id="_quantities_and_ordered_numeric"><a class="anchor" href="#_quantities_and_ordered_numeric"></a>12.2. Quantities and Ordered_numeric</h3>
 <div class="paragraph">
 <p>In the quantity package, the type <code>DV_QUANTIFIED</code> is shown having an abstract property of type
 Ordered_numeric. This is intended to indicate that the type <code>DV_QUANTIFIED</code> is distinguished by
@@ -4833,7 +4756,7 @@ statistical application processing <code>DV_QUANTITY</code> and <code>DV_COUNT</
 </div>
 </div>
 <div class="sect2">
-<h3 id="_unicode"><a class="anchor" href="#_unicode"></a>11.3. Unicode</h3>
+<h3 id="_unicode"><a class="anchor" href="#_unicode"></a>12.3. Unicode</h3>
 <div class="paragraph">
 <p>Unicode is supported in various ways in different languages. In Java, since JDK 1.1, unicode support
 is implicit in the base classes. From the documentation:</p>
@@ -4862,7 +4785,7 @@ Eiffel.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_dates_and_times"><a class="anchor" href="#_dates_and_times"></a>11.4. Dates and Times</h3>
+<h3 id="_dates_and_times"><a class="anchor" href="#_dates_and_times"></a>12.4. Dates and Times</h3>
 <div class="paragraph">
 <p>In some formalisms, dates and times are represented using a single calendar-like class. This is not
 considered to be good practice from the point of specification, since it is more difficult to state proper
@@ -4883,9 +4806,6 @@ wrapper for example, for serialising and deserialising in and out of XML.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p><a id="GeHR_Aus2001"></a>Beale, T., &amp; Heard, S. (2000). <em>GEHR Technical Requirements</em>. Australia: GEHR Foundation. Retrieved from <a href="https://www.openehr.org/resources/related_projects/gehr_requirements.pdf" class="bare">https://www.openehr.org/resources/related_projects/gehr_requirements.pdf</a></p>
-</div>
-<div class="paragraph">
-<p><a id="Synapses_Req_A"></a>Kalra, D. (1996). <em>The Synapses User Requirements and Functional Specification (Part A)</em>. Brussels: EU Telematics Application Programme.</p>
 </div>
 <div class="paragraph">
 <p><a id="Richards1998"></a>Richards, E. G. (1998). <em>Mapping Time - The Calendar and its History</em>. Oxford University Press.</p>

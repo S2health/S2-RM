@@ -12,7 +12,7 @@ unique. `DV_EHR_URIs` are used to express all runtime paths in the EHR. The `uri
 below.
 
 [.text-center]
-.rm.data_types.uri package
+.gcm.data_types.uri package
 image::{uml_diagrams_uri}/GCM-data_types.uri.svg[id=rm_data_types_uri, align="center"]
 
 === Requirements

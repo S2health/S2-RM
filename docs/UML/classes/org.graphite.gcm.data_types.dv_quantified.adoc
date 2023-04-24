@@ -15,6 +15,10 @@ h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
+h|*0..1*
+|*measured*: `<<_dv_measured_class,Dv_measured>>`
+a|
+
 h|*1..1 +
 (redefined)*
 |*value*: `link:/releases/BASE/{base_release}/foundation_types.html#_comparable_numeric_class[Comparable_Numeric^]`

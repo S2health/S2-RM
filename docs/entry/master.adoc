@@ -14,18 +14,17 @@ image::{openehr_logo}["openEHR logo",align="center"]
 = {spec_title}
 
 include::{ref_dir}/docs/boilerplate/full_front_block.adoc[]
+include::{ref_dir}/docs/references/reference_definitions.adoc[]
 
 //
 // ============================================= Asciidoc BODY ===============================================
 //
-include::{ref_dir}/docs/references/reference_definitions.adoc[]
 
 include::master00-amendment_record.adoc[leveloffset=+1]
 
 //
 // --------------------------------------------- Preface -----------------------------------------------
 //
-
 == Acknowledgements
 
 === Editor
@@ -52,18 +51,26 @@ The work reported in this paper has been funded in part by the following organis
 
 
 //
+// --------------------------------------------- TOC -----------------------------------------------
+//
+//toc::[left]
+
+//
 // --------------------------------------------- CHAPTERS -----------------------------------------------
 //
 :sectnums:
 
 ifdef::package_qualifiers[]
-:pkg: org.graphite.gcm.common.
+:pkg: org.graphite.gcm.entry.
 endif::[]
 
 include::master01-preface.adoc[leveloffset=+1]
 include::master02-overview.adoc[leveloffset=+1]
-include::master05-directory_package.adoc[leveloffset=+1]
-include::master07-tags.adoc[leveloffset=+1]
+include::master03-entry.adoc[leveloffset=+1]
+include::master04-observation.adoc[leveloffset=+1]
+include::master05-questionnaire.adoc[leveloffset=+1]
+include::master06-assertion.adoc[leveloffset=+1]
+include::master07-order_and_action.adoc[leveloffset=+1]
 
 
 //

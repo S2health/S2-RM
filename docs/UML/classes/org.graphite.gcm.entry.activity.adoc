@@ -11,7 +11,7 @@ h|*Description*
 TODO: probably remove possibility of multiple ACTIVITY
 
 h|*Inherit*
-2+|`link:/releases/GCM/{gcm_release}/common.html#_locatable_class[LOCATABLE^]`
+2+|`link:/releases/BASE/{base_release}/base_types.html#_locatable_class[Locatable^]`
 
 h|*Attributes*
 ^h|*Signature*

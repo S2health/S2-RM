@@ -11,7 +11,7 @@ h|*Description*
 An `ENTRY` is also the minimal unit of information any query should return, since a whole `ENTRY` (including subparts) records spatial structure, timing information, and contextual information, as well as the subject and generator of the information.
 
 h|*Inherit*
-2+|`<<_content_item_class,Content_item>>`
+2+|`link:/releases/GCM/{gcm_release}/ehr.html#_content_item_class[Content_item^]`
 
 h|*Attributes*
 ^h|*Signature*
