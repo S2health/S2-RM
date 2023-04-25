@@ -17,7 +17,7 @@ image::{openehr_logo}["openEHR logo",align="center"]
 //image::openehr_block_diagram.svg["openEHR components",align="center",width="60%"]
 
 :numbered!:
-= Reference Model (RM) Component - {rm_release}
+= Graphite Canonical Model - {rm_release}
 
 // Use the following version for 'latest'
 ifeval::["{rm_release}" == "latest"]
