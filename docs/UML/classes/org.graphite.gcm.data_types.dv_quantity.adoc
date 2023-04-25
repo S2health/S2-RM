@@ -10,6 +10,8 @@ h|*Description*
 
 Can also be used for time durations, where it is more convenient to treat these as simply a number of seconds rather than days, months, years (in the latter case, `DV_DURATION` may be used).
 
+TODO: do we want to have an original_units field.
+
 h|*Inherit*
 2+|`<<_dv_quantified_class,Dv_quantified>>`
 
@@ -18,28 +20,18 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*unit_code*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
-a|Quantity units, expressed as a code or syntax string from either UCUM (the default) or the units system specified in `_unit_system_`, when set.
+|*unit_code*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
+a|Quantity units, expressed as a code from either UCUM or the units system specified in `_unit_system_`, when set.
 
 In either case, the value is the code or syntax - normally formed of standard ASCII - which is in principal not the same as the display string, although in simple cases such as 'm' (for meters) it will be.
 
-If the `_units_display_` field is set, this may be used for display. If not, the implementations must effect the resolution of the `_unit_` value to a display form locally, e.g. by lookup of reference tables, request to a terminology service etc.
+Code system is a URI identifying a terminology containing units concepts from the  (https://www.hl7.org/fhir/terminologies-systems.html[HL7 FHIR terminologies list]).
+
+`Terminology_term.text` field contains the displayable form of the unit, e.g. `'°C'`.
 
 Example values from UCUM: "kg/m^2", “mm[Hg]", "ms-1", "km/h".
 
-h|*0..1*
-|*unit_system*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
-a|Optional field used to specify a units system from which codes in `_unit_` are defined. Value is a URI identifying a terminology containing units concepts from the  (https://www.hl7.org/fhir/terminologies-systems.html[HL7 FHIR terminologies list]).
-
-If not set, the UCUM standard (case-sensitive codes) is assumed as the unit system.
-
-h|*0..1*
-|*unit_display*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
-a|Optional field containing the displayable form of the `_unit_` field, e.g. `'°C'`.
-
-If not set, the application environment needs to determine the displayable form.
-
-NOTE: The display name may be language-dependent for various older and non-systematic units. For this reason, it is not recommended to add unit display names to archetypes, only to templates (for localisation purposes).
+TODO: review; status of UCUM in GCM (Stan)
 
 h|*1..1 +
 (redefined)*

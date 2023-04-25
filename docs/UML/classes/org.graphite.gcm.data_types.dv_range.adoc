@@ -22,7 +22,4 @@ a|
 h|*0..1*
 |*upper*: `V`
 a|
-
-h|*Invariants*
-2+a|__Ordering__:
 |===

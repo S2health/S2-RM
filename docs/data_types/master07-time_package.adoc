@@ -2,7 +2,7 @@
 
 == Overview
 
-The `data_types.quantity` package is illustrated below. Dates and Times are found in the next section.
+The temporal types from the `data_types.quantity` package are illustrated below.
 
 [.text-center]
 .gcm.data_types.ordered package - temporal types

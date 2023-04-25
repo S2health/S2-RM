@@ -3,7 +3,7 @@
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*Dv_measured*
+2+^h|*Dv_measured<V>*
 
 h|*Description*
 2+a|Additional data that may be recorded for measured form of a quantified item, including with optional accuracy, normal range and other reference ranges.
@@ -13,22 +13,20 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*normal_range*: `<<_dv_range_class,Dv_range>><<<_dv_quantified_class,Dv_quantified>>>`
+|*normal_range*: `<<_dv_range_class,Dv_range>>`
 a|Optional normal range.
 
 h|*0..1*
 |*value_status*: `<<_comparison_operator_enumeration,Comparison_operator>>`
 a|Optional status of magnitude with respect to real-world value:
 
-* `"="`   : magnitude is a point value
-* `"<"`   : value is < magnitude
-* `">"`   : value is > magnitude
-* `"\<="` : value is \<= magnitude
-* `">="` : value is >= magnitude
+* `"="`   : real value is equal to recorded value
+* `"<"`   : real value is < recorded value
+* `">"`   : real value is > recorded value
+* `"\<="` : real value is \<= recorded value
+* `">="` : real value is >= recorded value
 
 If not present, assumed meaning is  `"="` .
-
-TODO: could also do using Dv_rnage, but lose 'measured' info.
 
 h|*0..1*
 |*precision*: `link:/releases/BASE/{base_release}/foundation_types.html#_integer_class[Integer^]`

@@ -10,14 +10,14 @@ discussion on identifier types).
 .gcm.data_types.basic package
 image::{uml_diagrams_uri}/GCM-data_types.basic.svg[id=rm_data_types_basic, align="center"]
 
-=== Requirements
+== Requirements
 
-==== Bi-state Values
+=== Bi-state Values
 One of the most basic types of data is boolean or bi-state data. The need here is for a type which both
 includes a boolean value, and which inherits from the type `DATA_VALUE`, enabling it to be used as an
 `ELEMENT`.`_value_`.
 
-==== Real-world Entity Identification
+=== Real-world Entity Identification
 
 Real world entities (RWEs) such as people, car engines, invoices, and appointments may all be
 assigned identifiers. Although many of these are designed to be unique within a jurisdiction or issuing
@@ -47,7 +47,7 @@ are generally not assigned by the computing infrastructure that uses them - that
 computing system, such identifiers are no different from other characteristics of the entity,
 such as names or addresses.
 
-=== Design
+== Design
 
 The model defined here in the `DV_IDENTIFIER` class allows the recording of three things as part of identifying an item of interest:
 

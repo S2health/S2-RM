@@ -8,7 +8,7 @@ The `rm.data_types.text` package contains classes for representing all textual v
 .gcm.data_types.text package
 image::{uml_diagrams_uri}/GCM-data_types.text.svg[id=rm_data_types_text, align="center"]
 
-=== Requirements
+== Requirements
 
 The sections below describe the requirements of text data types. Two overriding principles should be noted at the outset with regard to text.
 
@@ -22,7 +22,7 @@ Terminology Ids are likely to be of various types.
 . The variant Terminology Id = `"[authority]:[Domain value set]"` could also be supported, although it should not generally be necessary, since all codes should be unique within a given issuing authority. Examples might be `"openehr:event math function"`, `"hl7:gender"`;
 . Terminology Id = `"SNOMED-CT"`, `"ICD10AM"`, etc. Idemtifiers of this kind must be unique values in an accepted set of terminologies from an authoritative source. These MUST be universally known. In openEHR, names from the US National Library of Medicine's UMLS terminology name list are used. See the `terminology` package in the {openehr_rm_support}#_terminology_package[Support IM specification^] for details.
 
-==== Narrative Text
+=== Narrative Text
 
 Narrative text items are used in the EHR in a number of cases, including:
 
@@ -36,7 +36,7 @@ While narrative text items themselves are not themselves coded, they may have co
 with them, as described below under Mappings, and may be mixed within a paragraph with
 coded items.
 
-==== Terminological Entities
+=== Terminological Entities
 
 Textual entities available in a terminology service are used in the health record to enable processing,
 from simple queries to decision support. Reasons for using terminology include the following.
@@ -85,19 +85,19 @@ types are assumed to be managed by the terminology service.
 Coded terms may also be mapped to terms from other terminologies, which may be intended as
 equivalents, classifiers, or something in between. The section below on Mappings deals with these.
 
-==== Integration Scenarios
+=== Integration Scenarios
 
 In cases where openEHR data is used to represent data originally represented in other formats, one common requirement is to be able to represent both the term chosen by the user at data capture time, and also the corresponding preferred term, where the two are different. This allows both the user's specific choice and the 'standard term' to be captured.
 
 Secondly, where term mappings are represented it is useful to be able to capture not just the code or code-phrase of the mapped term, but the preferred term or expression text, in order to make the mapped term self-standing in the data.
 
-==== Text Formatting
+=== Text Formatting
 
 In modern information systems in all industries, the ability to visually format text exists. EHR systems are no different, and authors of narrative text parts of the health record expect to be able to create longer tracts of text that include paragraphs, bolding, bullet lists and other typical structures, as well as simple atoms of text. Generally speaking, the text associated with a coded term is a simple string, devoid of formatting or newlines, and if the text is a direct copy of the rubric (i.e. term) from a terminology, this will almost always be the case. However there is no guarantee that this will not change in the future, with perhaps newlines and e.g. bolding being used in 'rich text' rubrics.
 
 Clinicians need the freedom to maximise clarity of any text they write, and therefore should be able to include a reasonable level of formatting in text.
 
-=== Design
+== Semantics
 
 All atomic text items are either instances of the type `DV_TEXT` or of `DV_CODED_TEXT`. The type `DV_TEXT` should be used wherever a coded or non-coded text item is allowed, while the type `DV_CODED_TEXT` should be used wherever a text item must be coded. The former allows the representation of text (`_value_` attribute) with optional formatting and hyperlinking (see <<_formatting_and_hyperlinking>> below). The latter class `DV_CODED_TEXT` captures the association of two things:
 
