@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
-<meta name="description" content="openEHR Reference Model Component">
-<meta name="keywords" content="reference model, openehr">
+<meta name="description" content="Graphite Canonical Model">
+<meta name="keywords" content="reference model, openehr, graphite">
 <title>Reference Model (RM) Component - latest</title>
 <link rel="stylesheet" href="https://specifications.openehr.org/styles/openehr.css">
 </head>
@@ -19,11 +19,6 @@
 <div class="imageblock text-center">
 <div class="content">
 <img src="https://uploads-ssl.webflow.com/63570cd7d4eda80d654ccf14/64027a592d749e7df28c6248_primary-graphite.svg" alt="openEHR logo">
-</div>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="openehr_block_diagram.svg" alt="openEHR components" width="60%">
 </div>
 </div>
 </div>
@@ -50,36 +45,24 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/ehr.html">EHR IM</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The information model of the openEHR EHR.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ehr.html">EHR</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The information model of the Graphite EHR.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/demographic.html">Demographic IM</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The openEHR demographics information model.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="entry.html">Entry</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information model of clinical statements (Entries).</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/common.html">Common IM</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Information model containing common concepts, including the archetype-enabling <code>LOCATABLE</code> class, party references, audits and attestations, change control, and authored resources.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="common.html">Common</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information model containing common concepts.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/data_structures.html">Data Structures IM</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Information model of data structures, incuding a powerful model of time-series data.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data_structures.html">Data Structures</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information model of data structures, including time-series data.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/data_types.html">Data Types IM</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data_types.html">Data Types IM</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Information model of data types, including quantities, date/times, plain and coded text, time specification, multimedia and URIs.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/support.html">Support IM</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Support model defining identifiers, assumed types, and terminology interface specification used in the rest of the IMs.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/integration.html">Integration IM</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Information model for representing legacy data is a free-form Entry type for implementing integration solutions.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/ehr_extract.html">EHR Extract IM</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The information model of the EHR Extract, which is a serilialisation of content from an EHR.</p></td>
 </tr>
 </tbody>
 </table>
@@ -101,12 +84,8 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/RM/latest/UML/openEHR_UML-RM.mdzip">openEHR_UML-RM.mdzip</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/UML/Graphite_UML-GCM.mdzip">Graphite_UML-GCM.mdzip</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">UML file for MagicDraw 19 for RM model. Contains UML 2.5 standard XMI file.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/BASE/latest/UML/openEHR_UML-Base.mdzip">openEHR_UML-Base.mdzip</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UML file for MagicDraw 19 for BASE model (included by RM). Contains UML 2.5 standard XMI file.</p></td>
 </tr>
 </tbody>
 </table>
@@ -360,7 +339,7 @@
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-04-05 09:45:02 -0600
+Last updated 2023-04-25 13:50:25 -0600
 </div>
 </div>
 </body>

@@ -3,8 +3,8 @@
 //
 include::{ref_dir}/docs/boilerplate/basic_style_settings.adoc[]
 
-:keywords: reference model, openehr
-:description: openEHR Reference Model Component
+:keywords: reference model, openehr, graphite
+:description: Graphite Canonical Model
 
 include::{ref_dir}/docs/boilerplate/global_vars.adoc[]
 
@@ -14,7 +14,7 @@ include::{ref_dir}/docs/boilerplate/global_vars.adoc[]
 
 image::{openehr_logo}["openEHR logo",align="center"]
 
-image::openehr_block_diagram.svg["openEHR components",align="center",width="60%"]
+//image::openehr_block_diagram.svg["openEHR components",align="center",width="60%"]
 
 :numbered!:
 = Reference Model (RM) Component - {rm_release}
@@ -40,29 +40,21 @@ endif::[]
 |===
 h|Specification h|Description
 
-|link:/releases/RM/{rm_release}/ehr.html[EHR IM]
-|The information model of the openEHR EHR.
+//|link:/releases/RM/{rm_release}/ehr.html[EHR IM]
+|link:ehr.html[EHR]
+|The information model of the Graphite EHR.
 
-|link:/releases/RM/{rm_release}/demographic.html[Demographic IM]
-|The openEHR demographics information model.
+|link:entry.html[Entry]
+|Information model of clinical statements (Entries).
 
-|link:/releases/RM/{rm_release}/common.html[Common IM]
-|Information model containing common concepts, including the archetype-enabling `LOCATABLE` class, party references, audits and attestations, change control, and authored resources.
+|link:common.html[Common]
+|Information model containing common concepts.
 
-|link:/releases/RM/{rm_release}/data_structures.html[Data Structures IM]
-|Information model of data structures, incuding a powerful model of time-series data.
+|link:data_structures.html[Data Structures]
+|Information model of data structures, including time-series data.
 
-|link:/releases/RM/{rm_release}/data_types.html[Data Types IM]
+|link:data_types.html[Data Types IM]
 |Information model of data types, including quantities, date/times, plain and coded text, time specification, multimedia and URIs.
-
-|link:/releases/RM/{rm_release}/support.html[Support IM]
-|Support model defining identifiers, assumed types, and terminology interface specification used in the rest of the IMs.
-
-|link:/releases/RM/{rm_release}/integration.html[Integration IM]
-|Information model for representing legacy data is a free-form Entry type for implementing integration solutions.
-
-|link:/releases/RM/{rm_release}/ehr_extract.html[EHR Extract IM]
-|The information model of the EHR Extract, which is a serilialisation of content from an EHR.
 
 |===
 
@@ -72,11 +64,8 @@ h|Specification h|Description
 |===
 |Resource |Description
 
-|link:/releases/RM/{rm_release}/UML/openEHR_UML-RM.mdzip[openEHR_UML-RM.mdzip]
+|link:/UML/Graphite_UML-GCM.mdzip[Graphite_UML-GCM.mdzip]
 |UML file for MagicDraw 19 for RM model. Contains UML 2.5 standard XMI file.
-
-|link:/releases/BASE/{base_release}/UML/openEHR_UML-Base.mdzip[openEHR_UML-Base.mdzip]
-|UML file for MagicDraw 19 for BASE model (included by RM). Contains UML 2.5 standard XMI file.
 
 |===
 
