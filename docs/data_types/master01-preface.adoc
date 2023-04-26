@@ -4,13 +4,7 @@
 
 This document defines the Graphite Data Types Model.
 
-The intended audience includes:
-
-* Standards bodies producing health informatics standards;
-* The open source healthcare community;
-* Solution vendors;
-* Medical informaticians and clinicians interested in health information.
-* Health data managers.
+The intended audience includes implementers, integrators and health data managers.
 
 == Related Documents
 

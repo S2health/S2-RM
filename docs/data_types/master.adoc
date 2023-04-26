@@ -66,7 +66,6 @@ ifdef::package_qualifiers[]
 endif::[]
 
 include::master01-preface.adoc[leveloffset=+1]
-include::master02-background.adoc[leveloffset=+1]
 include::master03-introduction.adoc[leveloffset=+1]
 include::master04-basic_package.adoc[leveloffset=+1]
 include::master05-text_package.adoc[leveloffset=+1]

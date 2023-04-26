@@ -20,7 +20,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*unit_code*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
+|*units*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Quantity units, expressed as a code from either UCUM or the units system specified in `_unit_system_`, when set.
 
 In either case, the value is the code or syntax - normally formed of standard ASCII - which is in principal not the same as the display string, although in simple cases such as 'm' (for meters) it will be.
