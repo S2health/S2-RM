@@ -1,11 +1,5 @@
 = Miscellaneous Types
 
-TBD
-
-[.text-center]
-.gcm.data_types package
-image::{uml_diagrams_uri}/GCM-data_types.svg[id=data_types, align="center"]
-
 == Boolean Values
 
 One of the most basic types of data is boolean data.

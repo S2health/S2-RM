@@ -6,9 +6,7 @@ h|*Class*
 2+^h|*__Data_value (abstract)__*
 
 h|*Description*
-2+a|Abstract parent of all `DV_` data value types.
-
-TODO: could be done
+2+a|Abstract parent of all `Dv_` data value types.
 
 h|*Inherit*
 2+|`link:/releases/BASE/{base_release}/foundation_types.html#_any_class[Any^]`

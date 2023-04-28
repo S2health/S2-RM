@@ -39,10 +39,9 @@
 <li><a href="#_introduction">2. Introduction</a>
 <ul class="sectlevel2">
 <li><a href="#_overview">2.1. Overview</a></li>
-<li><a href="#_package_structure">2.2. Package Structure</a></li>
-<li><a href="#_class_descriptions">2.3. Class Descriptions</a>
+<li><a href="#_class_descriptions">2.2. Class Descriptions</a>
 <ul class="sectlevel3">
-<li><a href="#_data_value_class">2.3.1. Data_value Class</a></li>
+<li><a href="#_data_value_class">2.2.1. Data_value Class</a></li>
 </ul>
 </li>
 </ul>
@@ -498,23 +497,20 @@
 <div class="paragraph">
 <p>Accordingly, the types defined here have been derived from the <a href="https://specifications.openehr.org/releases/RM/latest/data_types.html" target="_blank" rel="noopener">openEHR Data Types</a> and the <a href="http://build.fhir.org/datatypes.html" target="_blank" rel="noopener">HL7 FHIR Data Types</a>.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_package_structure"><a class="anchor" href="#_package_structure"></a>2.2. Package Structure</h3>
 <div class="paragraph">
-<p>The package structure of the Graphite data types is illustrated below.</p>
+<p>The <code>data_types</code> package is illustrated below.</p>
 </div>
-<div id="rm_data_types_packages" class="imageblock text-center text-center">
+<div id="data_types" class="imageblock text-center text-center">
 <div class="content">
-<img src="UML/diagrams/GCM-data_types-packages.svg" alt="GCM data types packages">
+<img src="UML/diagrams/GCM-data_types.svg" alt="GCM data types">
 </div>
-<div class="title">Figure 1. rm.data_types packages</div>
+<div class="title">Figure 1. gcm.data_types package</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_descriptions"><a class="anchor" href="#_class_descriptions"></a>2.3. Class Descriptions</h3>
+<h3 id="_class_descriptions"><a class="anchor" href="#_class_descriptions"></a>2.2. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_data_value_class"><a class="anchor" href="#_data_value_class"></a>2.3.1. Data_value Class</h4>
+<h4 id="_data_value_class"><a class="anchor" href="#_data_value_class"></a>2.2.1. Data_value Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -529,10 +525,7 @@
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Abstract parent of all <code>DV_</code> data value types.</p>
-</div>
-<div class="paragraph">
-<p>TODO: could be done</p>
+<p>Abstract parent of all <code>Dv_</code> data value types.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -548,15 +541,6 @@
 <div class="sect1">
 <h2 id="_miscellaneous_types"><a class="anchor" href="#_miscellaneous_types"></a>3. Miscellaneous Types</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>TBD</p>
-</div>
-<div id="data_types" class="imageblock text-center text-center">
-<div class="content">
-<img src="UML/diagrams/GCM-data_types.svg" alt="GCM data types">
-</div>
-<div class="title">Figure 2. gcm.data_types package</div>
-</div>
 <div class="sect2">
 <h3 id="_boolean_values"><a class="anchor" href="#_boolean_values"></a>3.1. Boolean Values</h3>
 <div class="paragraph">
@@ -583,10 +567,10 @@
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Items which are truly boolean data, such as true/false or yes/no answers. For such data, it is important to devise the meanings (usually questions in subjective data)  carefully, so that the only allowed results are in fact true or false.</p>
+<p>Items which are truly boolean data, such as true/false or yes/no answers.</p>
 </div>
 <div class="paragraph">
-<p>Misuse: The DV_BOOLEAN class should not be used as a replacement for naively modelled enumerated types such as male/female etc. Such values should be coded, and in any case the enumeration often has more than two values.</p>
+<p>Misuse: <code>Dv_boolean</code> should not be used as a replacement for naively modelled enumerated types such as male/female etc. Such values should be coded, and in any case the enumeration often has more than two values.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -805,7 +789,7 @@
 <div class="content">
 <img src="UML/diagrams/GCM-data_types.text.svg" alt="GCM data types.text">
 </div>
-<div class="title">Figure 3. gcm.data_types.text package</div>
+<div class="title">Figure 2. gcm.data_types.text package</div>
 </div>
 </div>
 <div class="sect2">
@@ -1130,7 +1114,7 @@ In data terms, classification mapping can be visualised as illustrated below.</p
 <div class="content">
 <img src="data_types/diagrams/coded_text_mappings.png" alt="coded text mappings" width="70%">
 </div>
-<div class="title">Figure 4. Plain Text and Coded Text with Classifier(s)</div>
+<div class="title">Figure 3. Plain Text and Coded Text with Classifier(s)</div>
 </div>
 <div class="paragraph">
 <p>Classifying mappings are represented by adding a term to the mappings list of the original term. Each
@@ -1731,7 +1715,7 @@ c: <code><a href="/releases/BASE/latest/foundation_types.html#_character_class" 
 <div class="content">
 <img src="UML/diagrams/GCM-data_types.ordered-quantity.svg" alt="GCM data types.ordered quantity">
 </div>
-<div class="title">Figure 5. gcm.data_types.ordered package - quantities</div>
+<div class="title">Figure 4. gcm.data_types.ordered package - quantities</div>
 </div>
 </div>
 <div class="sect2">
@@ -3001,7 +2985,7 @@ The value -1 implies no limit, i.e. any number of decimal places.</p>
 <div class="content">
 <img src="UML/diagrams/GCM-data_types.ordered-time.svg" alt="GCM data types.ordered time">
 </div>
-<div class="title">Figure 6. gcm.data_types.ordered package - temporal types</div>
+<div class="title">Figure 5. gcm.data_types.ordered package - temporal types</div>
 </div>
 </div>
 <div class="sect2">
@@ -3402,7 +3386,7 @@ structure is defined outside the EHR model, such as multimedia and parsable data
 <div class="content">
 <img src="UML/diagrams/GCM-data_types.encapsulated.svg" alt="GCM data types.encapsulated">
 </div>
-<div class="title">Figure 7. gcm.data_types.encapsulated package</div>
+<div class="title">Figure 6. gcm.data_types.encapsulated package</div>
 </div>
 <div class="sect3">
 <h4 id="_requirements_5"><a class="anchor" href="#_requirements_5"></a>7.1.1. Requirements</h4>
@@ -3871,7 +3855,7 @@ below.</p>
 <div class="content">
 <img src="UML/diagrams/GCM-data_types.uri.svg" alt="GCM data types.uri">
 </div>
-<div class="title">Figure 8. gcm.data_types.uri package</div>
+<div class="title">Figure 7. gcm.data_types.uri package</div>
 </div>
 <div class="sect3">
 <h4 id="_requirements_6"><a class="anchor" href="#_requirements_6"></a>8.1.1. Requirements</h4>
