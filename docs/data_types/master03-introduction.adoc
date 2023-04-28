@@ -25,3 +25,4 @@ image::{uml_diagrams_uri}/GCM-data_types-packages.svg[id=rm_data_types_packages,
 == Class Descriptions
 
 include::{uml_export_dir}/classes/{pkg}data_value.adoc[]
+

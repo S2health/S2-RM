@@ -97,7 +97,7 @@ Ranges can also be quoted for drug administrations, in which case they are usual
 
 Various examples occur in which multiple ranges may be stated, including the following.
 
-* The administration recomendations for drugs which depend on the particular patient state. For example, the therapeutic range of Cyclosporin (an immunosuppresant) is a function of time post-transplant for the affected organ, e.g. kidney: < 6 months: 250 - 350 &#956;g/L, > 6 months: 100 - 200 &#956;g/L.
+* The administration recommendations for drugs which depend on the particular patient state. For example, the therapeutic range of Cyclosporin (an immunosuppressant) is a function of time post-transplant for the affected organ, e.g. kidney: < 6 months: 250 - 350 &#956;g/L, > 6 months: 100 - 200 &#956;g/L.
 * Normal ranges for blood IgG, IgA, IgM which vary significantly with the age in months from birth.
 * Progesterone and pituitary hormones have ranges which are different for different phases of the menstrual cycle and for menopause. This may result in 4 or 5 ranges given for one result. Only one will apply to any particular patient - but the exact phase of the cycle may be unknown - so the ranges may need to be associated with the value with no 'normal' range.
 
@@ -111,7 +111,7 @@ It is quite common for laboratories to include a normal range with each measured
 
 === Basic Semantics
 
-In order to make sense of the requirements in a systematic way, a proper typology for quantities is needed. The most basic characteristic of all values typically called 'quantities' is that they are ordered, meaning that the operator "<" (less-than) is defined between any two values in the domain. An ancestor class for all quantities called `DV_ORDERED` is accordingly defined. This type is subtyped into ordinals, scales and true quantities, represented by the classes `DV_ORDINAL`, `DV_SCALE` and `DV_QUANTIFIED` respectively.
+In order to make sense of the requirements in a systematic way, a proper typology for quantities is needed. The most basic characteristic of all values typically called 'quantities' is that they are ordered, meaning that the operator "<" (less-than) is defined between any two values in the domain. An ancestor class for all quantities called `DV_ORDERED` is accordingly defined. This type is sub-typed into ordinals, scales and true quantities, represented by the classes `DV_ORDINAL`, `DV_SCALE` and `DV_QUANTIFIED` respectively.
 
 `DV_ORDINAL` and `DV_SCALE` are used for scores and scales as described in the requirements above. `DV_ORDINAL` represents data values whose values are Integers, and which have symbolic or text names instead, such as pass:["+", "++", "+++"], or `"mild"`, `"medium"`, `"severe"`. Each symbol can be assigned any Integer value, providing a basis for computable comparison. Typical uses for `DV_ORDINAL` include representing values from the Apgar and Glasgow Coma Scales, e.g. `0｜heart rate absent｜`, `4｜withdraws from pain｜`. `DV_SCALE` is similar to `DV_ORDINAL`, and was introduced to support scales / scores containing Real values as well as Integers.
 
