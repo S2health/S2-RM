@@ -1626,6 +1626,9 @@ indicate the language of the text item.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>purpose</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Purpose of the mapping e.g. 'automated data mining', 'billing', 'interoperability'.</p>
+</div>
+<div class="paragraph">
+<p>TODO: any vocabulary?</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3594,7 +3597,7 @@ ED type from the HL7v3 data types specification.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>charset</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_code_class" target="_blank" rel="noopener">Terminology_code</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>encoding</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_code_class" target="_blank" rel="noopener">Terminology_code</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Name of character encoding scheme in which this value is encoded. Coded from openEHR Code Set  character sets . Unicode is the default assumption in openEHR, with UTF-8 being the assumed encoding. This attribute allows for variations from these assumptions.</p>
 </div></div></td>
@@ -3637,7 +3640,7 @@ ED type from the HL7v3 data types specification.</p>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>A specialisation of <code>DV_ENCAPSULATED</code> for audiovisual and bio-signal types. Includes further metadata relating to multimedia types which are not applicable to other subtypes of <code>DV_ENCAPSULATED</code>.</p>
+<p>A specialisation of <code>Dv_encapsulated</code> for audiovisual and bio-signal types. Includes further metadata relating to multimedia types which are not applicable to other subtypes of <code>Dv_encapsulated</code>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3667,7 +3670,7 @@ ED type from the HL7v3 data types specification.</p>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code>List&lt;<a href="/releases/BASE/latest/foundation_types.html#_byte_class" target="_blank" rel="noopener">Byte</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The actual data found at <code><em>uri</em></code>, if supplied inline.</p>
+<p>The actual data found at <code><em>uri</em></code>, if supplied inline, base64 encoded.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3696,7 +3699,7 @@ Example: image/jpeg; text/json.</p>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>size</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_integer_class" target="_blank" rel="noopener">Integer</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Original size in bytes of unencoded encapsulated data. I.e. encodings such as base64, hexadecimal etc do not change the value of this attribute.</p>
+<p>Original size in bytes of unencoded encapsulated data. I.e. coding in base64, hexadecimal etc. do not change the value of this attribute.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3716,13 +3719,6 @@ Example: image/jpeg; text/json.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_inline</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Computed from the value of the data attribute. True if  the  data is stored  in  expanded  form, ie within the EHR itself.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>has_integrity_check</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Computed from the value of the <code><em>integrity_check_algorithm</em></code> attribute: True if an integrity check has been computed.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3780,7 +3776,7 @@ Example: image/jpeg; text/json.</p>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Encapsulated data expressed as a parsable String. The internal model of the data item is not described in the openEHR model in common with other encapsulated types, but in this case, the form of the data is assumed to be plaintext, rather than compressed or other types of large binary data.</p>
+<p>Encapsulated data expressed as a parsable String, such as HTML5, a programming language source file etc.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3794,16 +3790,16 @@ Example: image/jpeg; text/json.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>formalism</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The string, which may validly be empty in some syntaxes.</p>
+<p>Name of the formalism, e.g.  GLIF 1.0 ,  Proforma  etc.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>formalism</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Name of the formalism, e.g.  GLIF 1.0 ,  Proforma  etc.</p>
+<p>The string, which may validly be empty in some syntaxes.</p>
 </div></div></td>
 </tr>
 <tr>

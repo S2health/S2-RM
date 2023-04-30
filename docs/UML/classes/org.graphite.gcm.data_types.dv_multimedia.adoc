@@ -6,7 +6,7 @@ h|*Class*
 2+^h|*Dv_multimedia*
 
 h|*Description*
-2+a|A specialisation of `DV_ENCAPSULATED` for audiovisual and bio-signal types. Includes further metadata relating to multimedia types which are not applicable to other subtypes of `DV_ENCAPSULATED`.
+2+a|A specialisation of `Dv_encapsulated` for audiovisual and bio-signal types. Includes further metadata relating to multimedia types which are not applicable to other subtypes of `Dv_encapsulated`.
 
 h|*Inherit*
 2+|`<<_dv_encapsulated_class,Dv_encapsulated>>`
@@ -25,7 +25,7 @@ a|URI reference to electronic information stored outside the record as a file, d
 
 h|*0..1*
 |*data*: `List<link:/releases/BASE/{base_release}/foundation_types.html#_byte_class[Byte^]>`
-a|The actual data found at `_uri_`, if supplied inline.
+a|The actual data found at `_uri_`, if supplied inline, base64 encoded.
 
 h|*1..1*
 |*media_type*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]`
@@ -42,7 +42,7 @@ a|The thumbnail for this item, if one exists; mainly for graphics formats.
 
 h|*1..1*
 |*size*: `link:/releases/BASE/{base_release}/foundation_types.html#_integer_class[Integer^]`
-a|Original size in bytes of unencoded encapsulated data. I.e. encodings such as base64, hexadecimal etc do not change the value of this attribute.
+a|Original size in bytes of unencoded encapsulated data. I.e. coding in base64, hexadecimal etc. do not change the value of this attribute.
 h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*
@@ -54,10 +54,6 @@ a|Computed from the value of the `_uri_` attribute: True if  the data is stored 
 h|*1..1*
 |*is_inline* (): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
 a|Computed from the value of the data attribute. True if  the  data is stored  in  expanded  form, ie within the EHR itself.
-
-h|*1..1*
-|*has_integrity_check* (): `link:/releases/BASE/{base_release}/foundation_types.html#_boolean_class[Boolean^]`
-a|Computed from the value of the `_integrity_check_algorithm_` attribute: True if an integrity check has been computed.
 
 h|*Invariants*
 2+a|__Not_empty__: `is_inline or is_external`
