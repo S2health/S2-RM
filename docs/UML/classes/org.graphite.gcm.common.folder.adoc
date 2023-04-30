@@ -19,7 +19,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*items*: `List<link:/releases/BASE/{base_release}/base_types.html#_object_ref_class[OBJECT_REF^]>`
+|*items*: `List<link:/releases/BASE/{base_release}/base_types.html#_object_ref_class[Object_ref^]>`
 a|The list of references to other (usually) versioned objects logically in this folder.
 
 h|*0..1*

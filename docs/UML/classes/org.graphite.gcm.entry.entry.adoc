@@ -30,7 +30,7 @@ h|*0..1*
 a|Other participations at `ENTRY` level.
 
 h|*0..1*
-|*workflow_id*: `link:/releases/BASE/{base_release}/base_types.html#_object_ref_class[OBJECT_REF^]`
+|*workflow_id*: `link:/releases/BASE/{base_release}/base_types.html#_object_ref_class[Object_ref^]`
 a|Identifier of externally held workflow engine data for this workflow execution, for this subject of care.
 
 h|*1..1*

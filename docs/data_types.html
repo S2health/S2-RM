@@ -473,7 +473,7 @@
 <div class="sect2">
 <h3 id="_overview"><a class="anchor" href="#_overview"></a>2.1. Overview</h3>
 <div class="paragraph">
-<p>This specification describes a set of types suitable for use in scientific, clinical and related kinds of data. In order for such types to be defined, a set of primitive types is assumed, namely <code>Integer</code>, <code>Real</code>, <code>Boolean</code>, <code>Character</code>, <code>Octet</code>, <code>String</code>, <code>List&lt;T&gt;</code>, <code>Set&lt;T&gt;</code>, and <code>Array&lt;T&gt;</code>. These have standard definitions in the UML meta-model and in the type systems of most programming languages. The exact assumptions are described in the <a href="https://specifications.graphitehealth.io/releases/BASE/latest/foundation_types.html" target="_blank" rel="noopener">Graphite Foundation Types</a>.</p>
+<p>This specification describes a set of types suitable for use in scientific, clinical and related kinds of data. In order for such types to be defined, a set of primitive types is assumed, namely <code>Integer</code>, <code>Real</code>, <code>Boolean</code>, <code>Character</code>, <code>Octet</code>, <code>String</code>, <code>List&lt;T&gt;</code>, <code>Set&lt;T&gt;</code>, and <code>Array&lt;T&gt;</code>. These have standard definitions in the UML meta-model and in the type systems of most programming languages. The exact assumptions are described in the {graphite_foundation_types}[Graphite Foundation Types^].</p>
 </div>
 <div class="paragraph">
 <p>The data types described here are named with the class prefix <code>DV_</code>, and inherit from the class <code>DATA_VALUE</code>. They have two distinct uses in reference models. Firstly, they may be used as 'data values' in reference model structures wherever the <code>DATA_VALUE</code> class appears, for example, in the Entry Model via the <code>ELEMENT.<em>value</em></code> attribute. Additionally, specific subtypes of the data types described here can also be used as attribute types in other classes in reference models, such as date/times, coded terms and so on. The difference is that in the former case, only subtypes of <code>DATA_VALUE</code> may be used, whilst in the latter case, other types may be used as well, from the assumed set of basic types.</p>
@@ -599,10 +599,10 @@
 <div class="sect3">
 <h4 id="_requirements"><a class="anchor" href="#_requirements"></a>3.2.1. Requirements</h4>
 <div class="paragraph">
-<p>Real world entities (RWEs) such as people, car engines, invoices, and appointments may all be assigned identifiers. Although many of these are designed to be unique within a jurisdiction or issuing space, they are often not, due to data entry errors, bad design (ids which are too small or incorporate some non-unique characteristic of the identified entities), bad process (e.g. non-synchronised id issuing points); identity theft (e.g. via theft of documents of proof or hacking). In general, while some real world identifiers (RWIs) are 'nearly unique', none can be guaranteed so. Therefore, from a strict computational point of view, RWIs are not treated as reliable identifiers, but as attributes of their owning objects, in the same ways as names and addresses for example.</p>
+<p>Real world entities (RWEs) such as people, car engines, invoices, and appointments may all be assigned identifiers. Although many of these are designed to be unique within a jurisdiction or issuing space, they are often not, due to data entry errors, bad design (ids which are too small or incorporate some non-unique characteristic of the identified entities), bad process (e.g. non-synchronised id issuing points); identity theft (e.g. via theft of documents of proof or hacking). In general, while some real world identifiers (RWIs) are 1:1 with their referent entities, none can be guaranteed so. Therefore, from a strict computational point of view, RWIs are not treated as reliable identifiers, but as attributes of their owning objects, in the same ways as names and addresses for example.</p>
 </div>
 <div class="paragraph">
-<p>Examples of RWE identifiers which are intended to be unique within the space of the issuing authority or organisation include:</p>
+<p>Examples of RWE identifiers that are intended to be unique within the space of the issuing authority or organisation include:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -621,10 +621,10 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>The defining logical characteristic of RWE ids is that they continue to identify the entities in question, regardless of how they change in time; for example a social security number does not change when someone changes their hair colour or even their gender (both of which attributes may be recorded in the database). In general it should be the case that if two RWE ids are equal, they refer to the same RWE.</p>
+<p>The defining logical characteristic of RWIs is that they continue to identify the entities in question, regardless of how the latter change in time; for example a social security number does not change when someone changes his or her hair colour or address. In general it should be the case that if two RWIs are equal, they refer to the same RWE.</p>
 </div>
 <div class="paragraph">
-<p>At a practical level, RWE identifiers differ from information entity (IE) identifiers in that the former are generally not assigned by the computing infrastructure that uses them - that is to say, in the production computing system, such identifiers are no different from other characteristics of the entity, such as names or addresses.</p>
+<p>At a practical level, RWIs differ from information entity (IE) identifiers in that the former are generally not assigned by the computing infrastructure that uses them - that is to say, in the production computing system, such identifiers are no different from other characteristics of the entity, such as names or addresses.</p>
 </div>
 </div>
 <div class="sect3">
