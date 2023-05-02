@@ -14,7 +14,7 @@ include::{uml_export_dir}/classes/{pkg}dv_boolean.adoc[leveloffset=+1]
 
 === Requirements
 
-Real world entities (RWEs) such as people, car engines, invoices, and appointments may all be assigned identifiers. Although many of these are designed to be unique within a jurisdiction or issuing space, they are often not, due to data entry errors, bad design (ids which are too small or incorporate some non-unique characteristic of the identified entities), bad process (e.g. non-synchronised id issuing points); identity theft (e.g. via theft of documents of proof or hacking). In general, while some real world identifiers (RWIs) are 1:1 with their referent entities, none can be guaranteed so. Therefore, from a strict computational point of view, RWIs are not treated as reliable identifiers, but as attributes of their owning objects, in the same ways as names and addresses for example.
+Real world entities (RWEs) such as people, car engines, invoices, and appointments may all be assigned identifiers. In general, while some real world identifiers (RWIs) are 1:1 with their referent entities, none can be guaranteed so. Therefore, from a strict computational point of view, RWIs are not treated as reliable identifiers, but as _attributes_ of their owning objects, in the same ways as names and addresses for example.
 
 Examples of RWE identifiers that are intended to be unique within the space of the issuing authority or organisation include:
 
@@ -25,11 +25,9 @@ Examples of RWE identifiers that are intended to be unique within the space of t
 
 The defining logical characteristic of RWIs is that they continue to identify the entities in question, regardless of how the latter change in time; for example a social security number does not change when someone changes his or her hair colour or address. In general it should be the case that if two RWIs are equal, they refer to the same RWE.
 
-At a practical level, RWIs differ from information entity (IE) identifiers in that the former are generally not assigned by the computing infrastructure that uses them - that is to say, in the production computing system, such identifiers are no different from other characteristics of the entity, such as names or addresses.
-
 === Semantics
 
-The model defined here in the `DV_IDENTIFIER` class allows the recording of three things as part of identifying an item of interest:
+The model defined in the `DV_IDENTIFIER` class allows the recording of three things as part of identifying an item of interest:
 
 * the identifier given to the item of interest (mandatory).
 * the issuing authority of the kind of id used (e.g. it might be the federal department of health) (optional);

@@ -137,6 +137,8 @@
 [.xcode]
 * link:/releases/GCM/{gcm_release}/entry.html#_ism_transition_class[Ism_transition^]
 [.xcode]
+* link:/releases/GCM/{gcm_release}/entry.html#_lab_result_class[Lab_result^]
+[.xcode]
 * link:/releases/GCM/{gcm_release}/entry.html#_observation_class[Observation^]
 [.xcode]
 * link:/releases/GCM/{gcm_release}/entry.html#_order_class[Order^]

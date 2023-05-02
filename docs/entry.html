@@ -64,6 +64,7 @@
 <li><a href="#_class_descriptions_2">4.7. Class Descriptions</a>
 <ul class="sectlevel3">
 <li><a href="#_observation_class">4.7.1. Observation Class</a></li>
+<li><a href="#_lab_result_class">4.7.2. Lab_result Class</a></li>
 </ul>
 </li>
 <li><a href="#_instance_structures">4.8. Instance Structures</a>
@@ -894,6 +895,57 @@ The data of the Entry; modelled in archetypes.</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional recording of the state of subject of this observation during the observation process, in the form of a separate history of values which may be of any complexity. State may also be recorded within the History of the data attribute.</p>
 </div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_lab_result_class"><a class="anchor" href="#_lab_result_class"></a>4.7.2. Lab_result Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Lab_result</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Result from laboratory testing of a specimen taken from the subject.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_care_entry_class">Care_entry</a></code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code><a href="/releases/GCM/{gcm_release}/data_structures.html#_pointevent_class" target="_blank" rel="noopener">PointEvent</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>specimen</strong>: <code><a href="/releases/GCM/{gcm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>interpretation</strong>: <code><a href="/releases/GCM/{gcm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>laboratory</strong>: <code><a href="/releases/GCM/{gcm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -1787,7 +1839,7 @@ EXPIRED
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>order_id</strong>: <code><a href="/releases/BASE/latest/base_types.html#_locatable_ref_class" target="_blank" rel="noopener">Locatable_ref</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>order_ref</strong>: <code><a href="/releases/BASE/latest/base_types.html#_locatable_ref_class" target="_blank" rel="noopener">Locatable_ref</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Reference to causing Instruction.</p>
 </div></div></td>

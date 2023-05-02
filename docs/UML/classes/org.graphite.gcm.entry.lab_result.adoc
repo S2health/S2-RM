@@ -1,0 +1,33 @@
+=== Lab_result Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Lab_result*
+
+h|*Description*
+2+a|Result from laboratory testing of a specimen taken from the subject.
+
+h|*Inherit*
+2+|`<<_care_entry_class,Care_entry>>`
+
+h|*Attributes*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1*
+|*data*: `link:/releases/GCM/{gcm_release}/data_structures.html#_pointevent_class[PointEvent^]`
+a|
+
+h|*0..1*
+|*specimen*: `link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]`
+a|
+
+h|*0..1*
+|*interpretation*: `link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]`
+a|
+
+h|*0..1*
+|*laboratory*: `link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]`
+a|
+|===

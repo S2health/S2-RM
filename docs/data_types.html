@@ -599,7 +599,7 @@
 <div class="sect3">
 <h4 id="_requirements"><a class="anchor" href="#_requirements"></a>3.2.1. Requirements</h4>
 <div class="paragraph">
-<p>Real world entities (RWEs) such as people, car engines, invoices, and appointments may all be assigned identifiers. Although many of these are designed to be unique within a jurisdiction or issuing space, they are often not, due to data entry errors, bad design (ids which are too small or incorporate some non-unique characteristic of the identified entities), bad process (e.g. non-synchronised id issuing points); identity theft (e.g. via theft of documents of proof or hacking). In general, while some real world identifiers (RWIs) are 1:1 with their referent entities, none can be guaranteed so. Therefore, from a strict computational point of view, RWIs are not treated as reliable identifiers, but as attributes of their owning objects, in the same ways as names and addresses for example.</p>
+<p>Real world entities (RWEs) such as people, car engines, invoices, and appointments may all be assigned identifiers. In general, while some real world identifiers (RWIs) are 1:1 with their referent entities, none can be guaranteed so. Therefore, from a strict computational point of view, RWIs are not treated as reliable identifiers, but as <em>attributes</em> of their owning objects, in the same ways as names and addresses for example.</p>
 </div>
 <div class="paragraph">
 <p>Examples of RWE identifiers that are intended to be unique within the space of the issuing authority or organisation include:</p>
@@ -623,14 +623,11 @@
 <div class="paragraph">
 <p>The defining logical characteristic of RWIs is that they continue to identify the entities in question, regardless of how the latter change in time; for example a social security number does not change when someone changes his or her hair colour or address. In general it should be the case that if two RWIs are equal, they refer to the same RWE.</p>
 </div>
-<div class="paragraph">
-<p>At a practical level, RWIs differ from information entity (IE) identifiers in that the former are generally not assigned by the computing infrastructure that uses them - that is to say, in the production computing system, such identifiers are no different from other characteristics of the entity, such as names or addresses.</p>
-</div>
 </div>
 <div class="sect3">
 <h4 id="_semantics"><a class="anchor" href="#_semantics"></a>3.2.2. Semantics</h4>
 <div class="paragraph">
-<p>The model defined here in the <code>DV_IDENTIFIER</code> class allows the recording of three things as part of identifying an item of interest:</p>
+<p>The model defined in the <code>DV_IDENTIFIER</code> class allows the recording of three things as part of identifying an item of interest:</p>
 </div>
 <div class="ulist">
 <ul>

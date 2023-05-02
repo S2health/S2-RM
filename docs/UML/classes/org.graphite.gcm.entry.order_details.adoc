@@ -16,7 +16,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*order_id*: `link:/releases/BASE/{base_release}/base_types.html#_locatable_ref_class[Locatable_ref^]`
+|*order_ref*: `link:/releases/BASE/{base_release}/base_types.html#_locatable_ref_class[Locatable_ref^]`
 a|Reference to causing Instruction.
 
 h|*1..1*
