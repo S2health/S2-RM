@@ -41,7 +41,7 @@ system generates checksums to improve the quality of its internal data transmiss
 === Design
 The design approach used here is based on the following analysis.
 
-. Any encapsulated data item may be in some particular language, even if it is an image or other graphic form such as a biosignal with axis markings in a particular language;
+. Any encapsulated data item may be in some particular language, even if it is an image or other graphic form such as a bio-signal with axis markings in a particular language;
 . The general structure of encapsulated content data items includes a block of bytes or characters representing the content, and various meta-data as appropriate, including:
 ** size
 ** character encoding
@@ -50,15 +50,15 @@ The design approach used here is based on the following analysis.
 . For encapsulated items that have a counterpart in another system, the standard means of portable address is the W3C URI;
 . For items may that have an associated integrity checksum, the checksum is itself a series of bytes, and the type of checksum must also be specified, e.g. "md5".
 
-These observations lead naturally to an abstract `DV_ENCAPSULATED` class, with two subtypes,
-`DV_PARSABLE`, for all content which is syntactic in nature, and `DV_MULTIMEDIA` for everything else.
+These observations lead naturally to an abstract `Dv_encapsulated` class, with two subtypes,
+`Dv_parsable`, for all content which is syntactic in nature, and `Dv_multimedia` for everything else.
 Note that it is possible to imagine parsable content items which are large, stored in compressed form,
 and are themselves a summary of another item elsewhere on the web; such items can for practical
-purposes be represented as instances of `DV_MULTIMEDIA`, rather than `DV_PARSABLE`. The vast
+purposes be represented as instances of `Dv_multimedia`, rather than `Dv_parsable`. The vast
 majority of parsable encapsulated data are expected to be short and stored in native textual form, e.g.
 fragments of XML or HTML.
 
-The formal model of the classes `DV_ENCAPSULATED` and `DV_MULTIMEDIA` are closely based on the
+The formal model of the classes `Dv_encapsulated` and `Dv_multimedia` are closely based on the
 ED type from the HL7v3 data types specification.
 
 === Examples
@@ -69,28 +69,28 @@ The following examples show how to use the classes to represent some common enca
 |===
 |Data format            |Class              |Attributes
 
-|inline JSON            |`DV_PARSABLE`      |`_value_` = JSON string +
+|inline JSON            |`Dv_parsable`      |`_value_` = JSON string +
                                              `_formalism_ = "json"`
 
 |inline JSON, minified +
- (white space removed)  |`DV_PARSABLE`      |`_value_` = minified JSON string +
+ (white space removed)  |`Dv_parsable`      |`_value_` = minified JSON string +
                                              `_formalism_ = "json"`
  
-|JSON document          |`DV_MULTIMEDIA`    |`_uri_` = URI at which document is located +
+|JSON document          |`Dv_multimedia`    |`_uri_` = URI at which document is located +
                                              `_media_type_ = "IANA::application/json"` +
                                              `_size_` = Integer indicating number of bytes of target.
 
-|inline JPG             |`DV_MULTIMEDIA`    |`_data_` = byte array carrying JPG +
+|inline JPG             |`Dv_multimedia`    |`_data_` = byte array carrying JPG +
                                              `_media_type_ = "IANA::image/jpeg"` +
                                              `_size_` = Integer indicating number of bytes of `_data_`.
 
 |inline JPG, Base64 +
- encoded                |`DV_MULTIMEDIA`    |`_data_` = byte array carrying Base64 string of JPG +
+ encoded                |`Dv_multimedia`    |`_data_` = byte array carrying Base64 string of JPG +
                                              `_media_type_ = "IANA::image/jpeg;base64"` +
                                              `_size_` = Integer indicating number of bytes of `_data_`.
 
 |inline JPG with +
- SHA-2 hash             |`DV_MULTIMEDIA`    |`_data_` = byte array carrying JPG +
+ SHA-2 hash             |`Dv_multimedia`    |`_data_` = byte array carrying JPG +
                                              `_media_type_ = "IANA::image/jpeg"` +
                                              `_integrity_check_` = byte array containing SHA-2 hash +
                                              `_integrity_check_algorithm_ = "openehr::SHA-2"` +

@@ -449,20 +449,20 @@
 <div class="ulist">
 <ul>
 <li>
-<p><code>ehr</code>: this package contains the top level structure, the EHR, which consists of an <code>EHR_ACCESS</code> object, an <code>EHR_STATUS</code> object, versioned data containers in the form of <code>VERSIONED_COMPOSITIONs</code>, optionally indexed by one or more hierarchical <code>FOLDER</code> structures. A collection of <code>CONTRIBUTIONs</code> which document the changes to the EHR over time is also included.</p>
+<p><code>ehr</code>: this package contains the top level structure, the EHR, which consists of an <code>EHR_ACCESS</code> object, an <code>EHR_STATUS</code> object, versioned data containers in the form of <code>VERSIONED_Compositions</code>, optionally indexed by one or more hierarchical <code>FOLDER</code> structures. A collection of <code>CONTRIBUTIONs</code> which document the changes to the EHR over time is also included.</p>
 </li>
 <li>
-<p><code>composition</code>: the Composition is the EHR’s top level "data container", and is described by the <code>COMPOSITION</code> class.</p>
+<p><code>composition</code>: the Composition is the EHR’s top level "data container", and is described by the <code>Composition</code> class.</p>
 </li>
 <li>
 <p><code>content</code>: this package contains the Navigation and Entry packages, whose classes describe the structure and semantics of the contents of Compositions in the health record, including the following classes:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>the <code>SECTION</code> class provides a navigational structure to the record, similar to "headings" in the paper record. <code>ENTRYs</code> and other <code>SECTIONs</code> can appear under <code>SECTIONs</code>.</p>
+<p>the <code>SECTION</code> class provides a navigational structure to the record, similar to "headings" in the paper record. <code>Entries</code> and other <code>SECTIONs</code> can appear under <code>SECTIONs</code>.</p>
 </li>
 <li>
-<p>generic structures for recording clinical statements. Entry types include <code>ADMIN_ENTRY</code>, <code>OBSERVATION</code> (for all observed phenomena, including mechanically or manually measured, and responses in interview), <code>EVALUATION</code> (for assessments, diagnoses, plans), <code>INSTRUCTION</code> (actionable statements such as medication orders, recalls, monitoring, reviews), and <code>ACTION</code> (information recorded as a result of performing Instructions).</p>
+<p>generic structures for recording clinical statements. Entry types include <code>Admin_entry</code>, <code>Observation</code> (for all observed phenomena, including mechanically or manually measured, and responses in interview), <code>Assertion</code> (for assessments, diagnoses, plans), <code>Order</code> (actionable statements such as medication orders, recalls, monitoring, reviews), and <code>ACTION</code> (information recorded as a result of performing Instructions).</p>
 </li>
 </ul>
 </div>
@@ -521,7 +521,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>The <code>ehr</code> package is illustrated in <a href="#rm_ehr">Figure 4</a> below. The classes have a more or less one-to-one correspondence with the objects shown in <a href="#high_level_ehr_structure">Figure 3</a>. Each versioned object of type <code>X</code> is defined by a class <code>VERSIONED_X</code>, which is a binding of the type <code>X</code> to the generic type paremeter <code>T</code> in the generic type <code>VERSIONED_COMPOSITION</code> (while such bindings do not strictly require classes of their own, they facilitate implementation in languages lacking genericity).</p>
+<p>The <code>ehr</code> package is illustrated in <a href="#rm_ehr">Figure 4</a> below. The classes have a more or less one-to-one correspondence with the objects shown in <a href="#high_level_ehr_structure">Figure 3</a>. Each versioned object of type <code>X</code> is defined by a class <code>VERSIONED_X</code>, which is a binding of the type <code>X</code> to the generic type paremeter <code>T</code> in the generic type <code>VERSIONED_Composition</code> (while such bindings do not strictly require classes of their own, they facilitate implementation in languages lacking genericity).</p>
 </div>
 <div id="rm_ehr" class="imageblock text-center text-center">
 <div class="content">
@@ -556,7 +556,7 @@
 <div class="sect3">
 <h4 id="_ehr_status"><a class="anchor" href="#_ehr_status"></a>4.2.3. EHR Status</h4>
 <div class="paragraph">
-<p>The <code>EHR_STATUS</code> object contains a small number of hard-wired attributes, and an archetyped <code><em>other_details</em></code> part. The former are used to indicate who is (currently understood to be) the subject of the record, and whether the EHR is actively in use, inactive, and whether it should be considered queryable. As for elsewhere in the openEHR EHR, the subject is represented by a <code>PARTY_SELF</code> object, enabling it to be made completely anonymous, or alternatively to include a patient identifier. The subject is included in the EHR Status object because it can change, due to errors being discovered in the allocation of records to patients. If the anonymous form is used, the change will be made elsewhere in a cross-reference table; otherwise the EHR Status object will be updated. Because it is versioned, all such changes are audit-trailed, and the change history can be reconstructed.</p>
+<p>The <code>EHR_STATUS</code> object contains a small number of hard-wired attributes, and an archetyped <code><em>other_details</em></code> part. The former are used to indicate who is (currently understood to be) the subject of the record, and whether the EHR is actively in use, inactive, and whether it should be considered queryable. As for elsewhere in the openEHR EHR, the subject is represented by a <code>Party_self</code> object, enabling it to be made completely anonymous, or alternatively to include a patient identifier. The subject is included in the EHR Status object because it can change, due to errors being discovered in the allocation of records to patients. If the anonymous form is used, the change will be made elsewhere in a cross-reference table; otherwise the EHR Status object will be updated. Because it is versioned, all such changes are audit-trailed, and the change history can be reconstructed.</p>
 </div>
 <div class="paragraph">
 <p>Other EHR-wide meta-data may be recorded in the archetyped part of this object, including runtime environment settings, software application names and version ids, identification and versions of data resources such as terminologies and possibly even actual software tools, configuration files, keys and so on. Such information is commonly versioned in software configuration management systems, in order to enable the reconstruction of earlier versions of software with the correct tools. One reason to store such information at all is that it adds to medico-legal support when clinicians have to justify a seemingly bad decision: if it can be shown that the version of software in use at the time was faulty, they are protected, but to do this requires that such information be recorded in the first place.</p>
@@ -565,7 +565,7 @@
 <div class="sect3">
 <h4 id="_compositions"><a class="anchor" href="#_compositions"></a>4.2.4. Compositions</h4>
 <div class="paragraph">
-<p>The main data of the EHR is found in its Compositions, i.e. instances of the <code>COMPOSITION</code> class in the RM. Composition is based on the notion of a unit of information resulting from the interaction of a healthcare agent (subject or healthcare professional) with the EHR. It is designed to satisfy the following needs, which include the well-known ACID characteristics of transactions (<a href="#Gray_Reuter1993">Gray &amp; Reuter&#44; 1993</a>).</p>
+<p>The main data of the EHR is found in its Compositions, i.e. instances of the <code>Composition</code> class in the RM. Composition is based on the notion of a unit of information resulting from the interaction of a healthcare agent (subject or healthcare professional) with the EHR. It is designed to satisfy the following needs, which include the well-known ACID characteristics of transactions (<a href="#Gray_Reuter1993">Gray &amp; Reuter&#44; 1993</a>).</p>
 </div>
 <div class="ulist">
 <ul>
@@ -596,7 +596,7 @@
 <p>The Composition concept originated from the 'Transaction' concept of the GEHR project (<a href="#GEHR_Del_4">Lloyd&#44; 1992</a>), (<a href="#GEHR_Del_7">Lloyd&#44; 1993</a>), (<a href="#GEHR_Del_8">Heard&#44; Kalra&#44; &amp; Ingram&#44; 1994</a>), (<a href="#GEHR1995">Beale&#44; Lloyd&#44; Heard&#44; Kalra&#44; &amp; Ingram&#44; 1995</a>). In openEHR, it was renamed to 'Composition' (the name of the equivalent concept in <a href="https://www.iso.org/standard/40784.html" target="_blank" rel="noopener">ISO 13606-1</a>), and it has been expanded and more formally defined in openEHR in two ways. Firstly, the idea of a unit of committal has been formalised by the openEHR model of change control (see the <a href="https://specifications.openehr.org/releases/RM/latest/common.html">openEHR Common Information Model</a>); how this applies to the EHR and Compositions is described below.</p>
 </div>
 <div class="paragraph">
-<p>Secondly, the informational purpose of a Composition is not just to capture data from a passing clinical event such as a patient contact, but also to track longitudinal significant patient state, such as problems, allergies and medications. Accordingly, openEHR Compositions are temporally classified using a small number of broad categories recorded in the <code>COMPOSITION.<em>category</em></code> attribute. Categories include <em>event</em>, <em>episodic</em> and <em>persistent</em>. From a scientific realist ontological point of view, the kind of information recorded in a persistent Composition approximates a description of some <em>continuant</em> aspect of the patient (see <a href="#BFO_Arp_Smith_Spear">Arp Smith &amp; Spear (2015)</a>, <a href="#Sowa2000">Sowa (2000)</a>). This is in contrast with event Compositions, which record <em>occurrents</em>, i.e. events or states that occurred or were true at some moment in time. The episodic category corresponds to information that is relevant for the period of time of a care episode.</p>
+<p>Secondly, the informational purpose of a Composition is not just to capture data from a passing clinical event such as a patient contact, but also to track longitudinal significant patient state, such as problems, allergies and medications. Accordingly, openEHR Compositions are temporally classified using a small number of broad categories recorded in the <code>Composition.<em>category</em></code> attribute. Categories include <em>event</em>, <em>episodic</em> and <em>persistent</em>. From a scientific realist ontological point of view, the kind of information recorded in a persistent Composition approximates a description of some <em>continuant</em> aspect of the patient (see <a href="#BFO_Arp_Smith_Spear">Arp Smith &amp; Spear (2015)</a>, <a href="#Sowa2000">Sowa (2000)</a>). This is in contrast with event Compositions, which record <em>occurrents</em>, i.e. events or states that occurred or were true at some moment in time. The episodic category corresponds to information that is relevant for the period of time of a care episode.</p>
 </div>
 <div id="event_persistent_ehr" class="imageblock text-center text-center">
 <div class="content">
@@ -685,7 +685,7 @@
 <p>As Compositions accumulate over time in the EHR, they form a long-term patient history. The <code><em>folders</em></code> structures can be used in the EHR to index Compositions using one or more versioned hierarchies of <code>FOLDER</code> objects. In the openEHR model, <strong>Folder structures do not contain Compositions, only references to them</strong>. <em>More than one Folder can therefore refer to the same Composition</em> or other target object. If <code><em>folders</em></code> is not Void, the <code><em>directory</em></code> attribute always contains a reference to the first member, for backward compatibility with pre-Release 1.1.0 systems.</p>
 </div>
 <div class="paragraph">
-<p>Structurally, each reference in <code><em>folders</em></code> points to a logical tree of <code>FOLDER</code> objects each potentially containing references to <code>COMPOSITIONs</code>, or possibly just more <code>FOLDERS</code>. <strong>Each such tree is versioned</strong>, i.e. each version of one folder tree contains a modified version of the previous state of the tree. Folder trees consist of <code>FOLDER</code> objects, which inherit from the <code>LOCATABALE</code>, enabling archetypes to be used to define specific folder tree structures. Within a Folder archetype, the <code><em>details</em></code> attribute may be configured to contain meta-data specific to the purpose of the Folder (tree).</p>
+<p>Structurally, each reference in <code><em>folders</em></code> points to a logical tree of <code>FOLDER</code> objects each potentially containing references to <code>Compositions</code>, or possibly just more <code>FOLDERS</code>. <strong>Each such tree is versioned</strong>, i.e. each version of one folder tree contains a modified version of the previous state of the tree. Folder trees consist of <code>FOLDER</code> objects, which inherit from the <code>LOCATABALE</code>, enabling archetypes to be used to define specific folder tree structures. Within a Folder archetype, the <code><em>details</em></code> attribute may be configured to contain meta-data specific to the purpose of the Folder (tree).</p>
 </div>
 <div class="paragraph">
 <p>The <code><em>directory</em></code> reference may be considered <em>by convention</em> as referring to a folder hierarchy that is <em>shared by all users of the EHR</em> to which it is attached, e.g. all medical specialities, departments or settings. It might thus be used to represent episodes. In this case, the other Folder hierarchies referred to by <code><em>folders</em></code> might be created, maintained and used by different departments, specialities etc. However, completely different usage of the folder structures is possible. Use of Folder archetypes should be considered for communicating the intended usage in a particular system.</p>
@@ -837,10 +837,10 @@
 <div class="sect3">
 <h4 id="_versioning_of_compositions"><a class="anchor" href="#_versioning_of_compositions"></a>4.3.1. Versioning of Compositions</h4>
 <div class="paragraph">
-<p>Versioning of Compositions is achieved with the <code>VERSIONED_OBJECT&lt;T&gt;</code> type from the <a href="https://specifications.openehr.org/releases/RM/latest/common.html#_change_control_package">Common IM <code>change_control package</code></a>, which in the <code>composition</code> package is explicitly bound to the <code>COMPOSITION</code> class, via the class <code>VERSIONED_COMPOSITION</code> which inherits from the type <code>VERSIONED&lt;COMPOSITION&gt;</code>.</p>
+<p>Versioning of Compositions is achieved with the <code>VERSIONED_OBJECT&lt;T&gt;</code> type from the <a href="https://specifications.openehr.org/releases/RM/latest/common.html#_change_control_package">Common IM <code>change_control package</code></a>, which in the <code>composition</code> package is explicitly bound to the <code>Composition</code> class, via the class <code>VERSIONED_Composition</code> which inherits from the type <code>VERSIONED&lt;Composition&gt;</code>.</p>
 </div>
 <div class="paragraph">
-<p>The effect of version control on Compositions is visualised in the figure below. The versions (each version being an <code>ORIGINAL_VERSION&lt;COMPOSITION&gt;</code>) shown here in a <code>VERSIONED_COMPOSITION</code> are the same versions shown along each vertical line in <a href="#ehr_contributions">Figure 8</a>, this time shown with their associated audit items. The set of versions are understood as a set of successive modifications of the same data in time.</p>
+<p>The effect of version control on Compositions is visualised in the figure below. The versions (each version being an <code>ORIGINAL_VERSION&lt;Composition&gt;</code>) shown here in a <code>VERSIONED_Composition</code> are the same versions shown along each vertical line in <a href="#ehr_contributions">Figure 8</a>, this time shown with their associated audit items. The set of versions are understood as a set of successive modifications of the same data in time.</p>
 </div>
 <div id="versioned_compositions" class="imageblock text-center text-center">
 <div class="content">
@@ -849,13 +849,13 @@
 <div class="title">Figure 9. Versioned Compositions</div>
 </div>
 <div class="paragraph">
-<p>The <code>VERSIONED_COMPOSITION</code> can be thought of as a smart repository: how it stores successive versions in time is an implementation concern (there are a number of intelligent algorithms available for this), but what is important is that its functional interface enables any version to be retrieved, whether it be the latest, the first, or any in between.</p>
+<p>The <code>VERSIONED_Composition</code> can be thought of as a smart repository: how it stores successive versions in time is an implementation concern (there are a number of intelligent algorithms available for this), but what is important is that its functional interface enables any version to be retrieved, whether it be the latest, the first, or any in between.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_versioning_scenarios"><a class="anchor" href="#_versioning_scenarios"></a>4.3.2. Versioning Scenarios</h4>
 <div class="paragraph">
-<p>The following scenarios for creating new <code>COMPOSITION</code> versions have been identified as follows.</p>
+<p>The following scenarios for creating new <code>Composition</code> versions have been identified as follows.</p>
 </div>
 <div class="hdlist">
 <table>
@@ -864,7 +864,7 @@
 Case 0
 </td>
 <td class="hdlist2">
-<p>information is authored locally, causing the creation of a new <code>ORIGINAL_VERSION&lt;COMPOSITION&gt;</code>. If this is the first version, a new <code>VERSIONED_COMPOSITION</code> will be created first.</p>
+<p>information is authored locally, causing the creation of a new <code>ORIGINAL_VERSION&lt;Composition&gt;</code>. If this is the first version, a new <code>VERSIONED_Composition</code> will be created first.</p>
 </td>
 </tr>
 <tr>
@@ -872,7 +872,7 @@ Case 0
 Case 1
 </td>
 <td class="hdlist2">
-<p>information is modified locally, such as for the correction of a wrongly entered datum in a composition. This causes the creation of a new <code>ORIGINAL_VERSION&lt;COMPOSITION&gt;</code> in an existing <code>VERSIONED_COMPOSITION</code>, in which the <code>AUDIT_DETAILS.<em>change_type</em></code> is set to <code>"correction"</code>.</p>
+<p>information is modified locally, such as for the correction of a wrongly entered datum in a composition. This causes the creation of a new <code>ORIGINAL_VERSION&lt;Composition&gt;</code> in an existing <code>VERSIONED_Composition</code>, in which the <code>AUDIT_DETAILS.<em>change_type</em></code> is set to <code>"correction"</code>.</p>
 </td>
 </tr>
 <tr>
@@ -880,7 +880,7 @@ Case 1
 Case 2
 </td>
 <td class="hdlist2">
-<p>information received from a feeder system, e.g. a test result, which will be converted and used to create a new <code>IMPORTED_VERSION&lt;COMPOSITION&gt;</code> and <code>ORIGINAL_VERSION&lt;COMPOSITION&gt;</code> pair. This kind of acquisition could be done automatically. If the receiver system needs to store a copy of the original feeder system audit details, it writes it into the <code>COMPOSITION.<em>feeder_audit</em></code>.</p>
+<p>information received from a feeder system, e.g. a test result, which will be converted and used to create a new <code>IMPORTED_VERSION&lt;Composition&gt;</code> and <code>ORIGINAL_VERSION&lt;Composition&gt;</code> pair. This kind of acquisition could be done automatically. If the receiver system needs to store a copy of the original feeder system audit details, it writes it into the <code>Composition.<em>feeder_audit</em></code>.</p>
 </td>
 </tr>
 <tr>
@@ -888,13 +888,13 @@ Case 2
 Case 3
 </td>
 <td class="hdlist2">
-<p>an <code>ORIGINAL_VERSION&lt;COMPOSITION&gt;</code> (such as a family history) received as part of an <code>EHR_EXTRACT</code> from another openEHR system, which will be used by a local author to manually create a new <code>COMPOSITION</code> that includes <em>some content chosen from the received item</em>. Consequently, the new version is a locally authored one (i.e. an <code>ORIGINAL_VERSION&lt;COMPOSITION&gt;</code>). If it is the first version, a <code>VERSIONED_COMPOSITION</code> is first created. The <code>AUDIT_DETAILS</code> documents the committal of this content, and the clinician may choose to record some details about it in the audit <code><em>description</em></code>.</p>
+<p>an <code>ORIGINAL_VERSION&lt;Composition&gt;</code> (such as a family history) received as part of an <code>EHR_EXTRACT</code> from another openEHR system, which will be used by a local author to manually create a new <code>Composition</code> that includes <em>some content chosen from the received item</em>. Consequently, the new version is a locally authored one (i.e. an <code>ORIGINAL_VERSION&lt;Composition&gt;</code>). If it is the first version, a <code>VERSIONED_Composition</code> is first created. The <code>AUDIT_DETAILS</code> documents the committal of this content, and the clinician may choose to record some details about it in the audit <code><em>description</em></code>.</p>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>In summary, the <code>AUDIT_DETAILS</code> is always used to document the addition of information locally, regardless of where it has come from. If there is a need to record original audit details (via the <code>COMPOSITION.<em>feeder_audit</em></code>), they become part of the content of the versioned object.</p>
+<p>In summary, the <code>AUDIT_DETAILS</code> is always used to document the addition of information locally, regardless of where it has come from. If there is a need to record original audit details (via the <code>Composition.<em>feeder_audit</em></code>), they become part of the content of the versioned object.</p>
 </div>
 </div>
 </div>
@@ -926,7 +926,7 @@ Case 3
 <p><code><em>ehr_id</em></code> - the unique identifier of this EHR;</p>
 </li>
 <li>
-<p><code><em>subject_id</em></code> - optional; the use of <code>PARTY_SELF</code> allows completely anonymous EHRs;</p>
+<p><code><em>subject_id</em></code> - optional; the use of <code>Party_self</code> allows completely anonymous EHRs;</p>
 </li>
 <li>
 <p><code><em>is_queryable</em></code> flag;</p>
@@ -1045,7 +1045,7 @@ is is strongly recommended that a UUID always be used for the <code><em>ehr_id</
 <div class="sect2">
 <h3 id="_historical_views_of_the_record"><a class="anchor" href="#_historical_views_of_the_record"></a>4.7. Historical Views of the Record</h3>
 <div class="paragraph">
-<p>It is important to understand that the <code>COMPOSITION</code> versions at a previous point in time represent a previously available <em>informational state</em> of the EHR, at a particular EHR node. Such previous state include only those Compositions from other sources as have been acquired by that point in time, <em>regardless of whether the acquired information pertains to clinical information recorded earlier</em>. A previous historical state of the EHR thus corresponds to what users of a system could see at a particular moment of time. It is important to differentiate this from previous clinical states of the patient: previous informational states of the EHR might include acquired information which is significantly older than the point in time when merging occurred. A previous clinical state of the patient would be a derivable view of the EHRs in all locations for the patient - what is sometimes called the virtual EHR - at a given point in time, minus acquired Compositions, since these constitute (usually out-ofdate) copies of Compositions primarily available elsewhere.</p>
+<p>It is important to understand that the <code>Composition</code> versions at a previous point in time represent a previously available <em>informational state</em> of the EHR, at a particular EHR node. Such previous state include only those Compositions from other sources as have been acquired by that point in time, <em>regardless of whether the acquired information pertains to clinical information recorded earlier</em>. A previous historical state of the EHR thus corresponds to what users of a system could see at a particular moment of time. It is important to differentiate this from previous clinical states of the patient: previous informational states of the EHR might include acquired information which is significantly older than the point in time when merging occurred. A previous clinical state of the patient would be a derivable view of the EHRs in all locations for the patient - what is sometimes called the virtual EHR - at a given point in time, minus acquired Compositions, since these constitute (usually out-ofdate) copies of Compositions primarily available elsewhere.</p>
 </div>
 <div class="paragraph">
 <p>It is previous informational states with which we are concerned for medico-legal purposes, since they represent the information actually available to clinicians at a health-care facility, at a point in time. But previous clinical views may be useful for reconstructing an actual sequence of events as experienced by the patient.</p>
@@ -1490,7 +1490,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 <div class="sect2">
 <h3 id="_overview_3"><a class="anchor" href="#_overview_3"></a>5.1. Overview</h3>
 <div class="paragraph">
-<p>The Composition is the primary 'data container' in the openEHR EHR and is the root point of clinical content. Instances of the <code>COMPOSITION</code> class can be considered as self-standing data aggregations, or documents in a document-oriented system. The key information in a <code>COMPOSITION</code> is found in its <code><em>content</em></code>, <code><em>context</em></code>, and <code><em>composer</em></code> attributes. The UML diagram below illustrates the <code>composition</code> package.</p>
+<p>The Composition is the primary 'data container' in the openEHR EHR and is the root point of clinical content. Instances of the <code>Composition</code> class can be considered as self-standing data aggregations, or documents in a document-oriented system. The key information in a <code>Composition</code> is found in its <code><em>content</em></code>, <code><em>context</em></code>, and <code><em>composer</em></code> attributes. The UML diagram below illustrates the <code>composition</code> package.</p>
 </div>
 <div id="rm_composition" class="imageblock text-center text-center">
 <div class="content">
@@ -1522,20 +1522,20 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 <p>The composer is the person who was primarily responsible for the content of the Composition. This is the identifier that should appear on the screen. It could be a junior doctor who did all the work, even if not legally responsible, or it could be a nurse, even if later attested by a more senior clinician; it will be the patient in the case of patient-entered data. It may or may not be the person who entered and committed the data. it may also be a software agent. This attribute is mandatory, since all content must be been created by some person or agent.</p>
 </div>
 <div class="paragraph">
-<p>Since in many cases Compositions will be composed and committed by the same person, it might seem that two identifiers <code>COMPOSITION</code>.<code><em>composer</em></code> and <code>VERSION</code>.<code><em>audit</em></code>.<code><em>committer</em></code> (which are both of type <code>PARTY_PROXY</code>) will be identical. In fact, this will probably not be the case, because the kind of identifier to represent the composer will be a demographic identifier, e.g. "RN Jane Williams", "RN
+<p>Since in many cases Compositions will be composed and committed by the same person, it might seem that two identifiers <code>Composition</code>.<code><em>composer</em></code> and <code>VERSION</code>.<code><em>audit</em></code>.<code><em>committer</em></code> (which are both of type <code>Party_proxy</code>) will be identical. In fact, this will probably not be the case, because the kind of identifier to represent the composer will be a demographic identifier, e.g. "RN Jane Williams", "RN
 12345678", whereas the identifier in the audit details will usually be a computer system user identifier, e.g. "<a href="mailto:jane.williams@westmead.health.au">jane.williams@westmead.health.au</a>". This difference highlights the different purposes of these attributes: the first exists to identify the clinical agent who created the information, while the second exists to identify the logged-in user who committed it to the system.</p>
 </div>
 <div class="paragraph">
-<p>In the situation of patient-entered data, the special "self" <code>PARTY_PROXY</code> instance (see Common IM generic package) is used for both <code>COMPOSITION</code>.<code><em>composer</em></code> and <code>VERSION</code>.<code><em>audit</em></code>.<code><em>committer</em></code>.</p>
+<p>In the situation of patient-entered data, the special "self" <code>Party_proxy</code> instance (see Common IM generic package) is used for both <code>Composition</code>.<code><em>composer</em></code> and <code>VERSION</code>.<code><em>audit</em></code>.<code><em>committer</em></code>.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_event_context"><a class="anchor" href="#_event_context"></a>5.2.3. Event Context</h4>
 <div class="paragraph">
-<p>The optional <code><em>event_context</em></code> attribute in the <code>COMPOSITION</code> class is used to document the healthcare event causing new or changed content in the record. Here, 'healthcare event' means 'a (generally billable) business activity of the healthcare system with, for or on behalf of the patient'. Generally this will an encounter involving the subject of care and physician, but is variable in a hospital environment. In this sense, a visit to a GP is a single care event, but so is an episode in a hospital, which may encompass multiple encounters. The information recorded in Event context includes start and (optional) end time of the event, health care facility, setting (e.g. primary care, aged care, hospital), participating healthcare professionals, and optional further details defined by an archetype.</p>
+<p>The optional <code><em>event_context</em></code> attribute in the <code>Composition</code> class is used to document the healthcare event causing new or changed content in the record. Here, 'healthcare event' means 'a (generally billable) business activity of the healthcare system with, for or on behalf of the patient'. Generally this will an encounter involving the subject of care and physician, but is variable in a hospital environment. In this sense, a visit to a GP is a single care event, but so is an episode in a hospital, which may encompass multiple encounters. The information recorded in Event context includes start and (optional) end time of the event, health care facility, setting (e.g. primary care, aged care, hospital), participating healthcare professionals, and optional further details defined by an archetype.</p>
 </div>
 <div class="paragraph">
-<p>Healthcare events that require an <code>EVENT_CONTEXT</code> instance in their recorded information include the following.</p>
+<p>Healthcare events that require an <code>Event_context</code> instance in their recorded information include the following.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1552,7 +1552,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 <p>Data resulting from care in the home provided by health professional(s) (often allied health care workers). Situations in which Event context is optional include the following.</p>
 </li>
 <li>
-<p>Nurse interactions with patients in hospital, including checking vital signs, adjusting medication or other aspects of bed situation for the patient. Each instance of a nurse&#8217;s observations are generally not considered to be a separate 'care event', rather they are seen as the continuation of the general activities of monitoring. In such situations, the overall context is given by <code>ADMIN_ENTRY</code> instances in the record indicating date/time and place of admission and discharge.</p>
+<p>Nurse interactions with patients in hospital, including checking vital signs, adjusting medication or other aspects of bed situation for the patient. Each instance of a nurse&#8217;s observations are generally not considered to be a separate 'care event', rather they are seen as the continuation of the general activities of monitoring. In such situations, the overall context is given by <code>Admin_entry</code> instances in the record indicating date/time and place of admission and discharge.</p>
 </li>
 </ul>
 </div>
@@ -1576,7 +1576,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 <div class="sect3">
 <h4 id="_occurrence_in_data"><a class="anchor" href="#_occurrence_in_data"></a>5.2.4. Occurrence in Data</h4>
 <div class="paragraph">
-<p>For situations requiring an <code>EVENT_CONTEXT</code> object to be recorded, it is worth clarifying which Compositions carry such objects. Consider the example shown in <a href="#event_context">Figure 16</a>. In this example, a Contribution is made to the EHR, consisting of one or more Compositions that were each created or modified due to some clinical activity. Within such a set, there will usually be one Composition relating directly to the event, such as the patient contact - this is the Composition containing the doctor&#8217;s observations, nurses' activities etc, during the visit, and is therefore the one which contains the <code>EVENT_CONTEXT</code> instance. Other Compositions changed during the same event (e.g. updates to medication list, family history and so on) do not require an Event context, since they are part of the same Contribution, and the event context of the primary Composition can always be retrieved if desired. Contributions A, B and C in the figure illustrate this case.</p>
+<p>For situations requiring an <code>Event_context</code> object to be recorded, it is worth clarifying which Compositions carry such objects. Consider the example shown in <a href="#event_context">Figure 16</a>. In this example, a Contribution is made to the EHR, consisting of one or more Compositions that were each created or modified due to some clinical activity. Within such a set, there will usually be one Composition relating directly to the event, such as the patient contact - this is the Composition containing the doctor&#8217;s observations, nurses' activities etc, during the visit, and is therefore the one which contains the <code>Event_context</code> instance. Other Compositions changed during the same event (e.g. updates to medication list, family history and so on) do not require an Event context, since they are part of the same Contribution, and the event context of the primary Composition can always be retrieved if desired. Contributions A, B and C in the figure illustrate this case.</p>
 </div>
 <div id="event_context" class="imageblock text-center text-center">
 <div class="content">
@@ -1603,7 +1603,7 @@ Persistent Compositions may optionally have an Event context. In openEHR release
 <div class="sect3">
 <h4 id="_time"><a class="anchor" href="#_time"></a>5.2.5. Time</h4>
 <div class="paragraph">
-<p>The times recorded in the Event context represent the time of an encounter or other activity undertaken by a health provider to/for/on behalf of the patient. The time is represented as a mandatory start time and optional end time. It is assumed that where there is a clinical session (i.e. an <code>EVENT_CONTEXT</code> object does exist), the start time is known or can be reasonably approximated. It is quite common that the end time of a consultation or encounter is not recorded, but rather inferred from e.g. average consult times, or the start time of the next consult for the same physician.</p>
+<p>The times recorded in the Event context represent the time of an encounter or other activity undertaken by a health provider to/for/on behalf of the patient. The time is represented as a mandatory start time and optional end time. It is assumed that where there is a clinical session (i.e. an <code>Event_context</code> object does exist), the start time is known or can be reasonably approximated. It is quite common that the end time of a consultation or encounter is not recorded, but rather inferred from e.g. average consult times, or the start time of the next consult for the same physician.</p>
 </div>
 <div class="paragraph">
 <p>Event context is used as described above even if the additions are made to the EHR long after the event took place, such as happens when a doctor writes his/her notes into the record system at night, after all patients have been seen. In such cases, the versioned Composition audit trail records the context of when the data were entered, as distinct from the context of when the clinical interaction took place.</p>
@@ -1612,7 +1612,7 @@ Persistent Compositions may optionally have an Event context. In openEHR release
 <div class="sect3">
 <h4 id="_participations"><a class="anchor" href="#_participations"></a>5.2.6. Participations</h4>
 <div class="paragraph">
-<p>Is part of the Event context, the participations attribute can be used to describe who participated, and how. Each participation object describes the "mode" of participation as well, such as direct presence, video-conference and so on. In many cases such information is of no interest, since the subject of any Entry is known (<code>ENTRY</code>.<code><em>subject</em></code>) and the clinician will be known (<code>COMPOSITION</code>.<code><em>composer</em></code>), and the mode of communication is assumed to be a personal encounter. The participations attribute is therefore used when it is desired to record further details of how the patient and or physician interacted (e.g. over the internet), and/or other participants, such as family, nurses, specialists etc.</p>
+<p>Is part of the Event context, the participations attribute can be used to describe who participated, and how. Each participation object describes the "mode" of participation as well, such as direct presence, video-conference and so on. In many cases such information is of no interest, since the subject of any Entry is known (<code>Entry</code>.<code><em>subject</em></code>) and the clinician will be known (<code>Composition</code>.<code><em>composer</em></code>), and the mode of communication is assumed to be a personal encounter. The participations attribute is therefore used when it is desired to record further details of how the patient and or physician interacted (e.g. over the internet), and/or other participants, such as family, nurses, specialists etc.</p>
 </div>
 <div class="paragraph">
 <p>There are no general rules about who is included as a participant. For example, while there will be a patient participation during a GP visit, there will be no such participation recorded when the clinical event is a tissue test in a laboratory. Conversely, a patient might record some observations and drug self-administration in the record, in which case the composer will be the patient, and there will be no clinician participation. Consequently, the use of participations will mostly be archetype-driven.</p>
@@ -1621,7 +1621,7 @@ Persistent Compositions may optionally have an Event context. In openEHR release
 <div class="sect3">
 <h4 id="_healthcare_facility_location_and_setting"><a class="anchor" href="#_healthcare_facility_location_and_setting"></a>5.2.7. Healthcare Facility, Location and Setting</h4>
 <div class="paragraph">
-<p>The <code><em>health_care_facility</em></code> (HCF) attribute is used to record the health care facility in whose care the event took place. This is the most specific identifiable (i.e. having a provider id within the health system) workgroup or care delivery unit within a care delivery enterprise which was involved in the care event. The identification of the HCF can be used to ensure medico-legal accountability. Often, the HCF is also where the encounter physically took place, but not in the case of patient home visits, internet contacts or emergency care; the HCF should not be thought of as a physical place, but as a care delivery management unit. The physical place of care can be separately recorded in <code>EVENT_CONTEXT</code>.<code><em>location</em></code>. The health_care_facility attribute is optional to allow for cases where the clinical event did not involve any care delivery enterprise, e.g. self-care at home by the patient, emergency revival by a non-professional (e.g. CPR by lifeguard on a beach), care by a professional acting in an unofficial capacity (doctor on a plane asked to aid a passenger in difficulty). In all other cases, it is mandatory. Archetypes are used to control this.</p>
+<p>The <code><em>health_care_facility</em></code> (HCF) attribute is used to record the health care facility in whose care the event took place. This is the most specific identifiable (i.e. having a provider id within the health system) workgroup or care delivery unit within a care delivery enterprise which was involved in the care event. The identification of the HCF can be used to ensure medico-legal accountability. Often, the HCF is also where the encounter physically took place, but not in the case of patient home visits, internet contacts or emergency care; the HCF should not be thought of as a physical place, but as a care delivery management unit. The physical place of care can be separately recorded in <code>Event_context</code>.<code><em>location</em></code>. The health_care_facility attribute is optional to allow for cases where the clinical event did not involve any care delivery enterprise, e.g. self-care at home by the patient, emergency revival by a non-professional (e.g. CPR by lifeguard on a beach), care by a professional acting in an unofficial capacity (doctor on a plane asked to aid a passenger in difficulty). In all other cases, it is mandatory. Archetypes are used to control this.</p>
 </div>
 <div class="paragraph">
 <p>Two other context attributes complete the predefined notion of event context in the model: <code><em>location</em></code> and <code><em>setting</em></code>. The location attribute records: the physical location where the care delivery took place, and should document a reasonably specific identifiable location. Examples include "bed 5, ward E", "home". This attribute is optional, since the location is not always known, particularly in legacy data.</p>
@@ -1658,7 +1658,7 @@ Persistent Compositions may optionally have an Event context. In openEHR release
 <p>it may contain one or more <code>SECTION</code> trees, each of which is a separately archetyped structure;</p>
 </li>
 <li>
-<p>it may contain one or more <code>ENTRYs</code> directly, with no intermediate <code>SECTIONs</code>;</p>
+<p>it may contain one or more <code>Entries</code> directly, with no intermediate <code>SECTIONs</code>;</p>
 </li>
 <li>
 <p>it may be any combination of the previous three possibilities.</p>
@@ -1715,7 +1715,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>language</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_code_class" target="_blank" rel="noopener">Terminology_code</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Mandatory indicator of the localised language in which this Composition is written. Coded from openEHR Code Set  <code>languages</code>. The language of an Entry if different from the Composition is indicated in <code>ENTRY.<em>language</em></code>.</p>
+<p>Mandatory indicator of the localised language in which this Composition is written. Coded from openEHR Code Set  <code>languages</code>. The language of an Entry if different from the Composition is indicated in <code>Entry.<em>language</em></code>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1990,7 +1990,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Represents a heading in a heading structure, or  section tree.  Created according to archetyped structures for typical headings such as SOAP,  physical examination, but also pathology result heading structures.  Should not be used instead of <code>ENTRY</code> hierarchical structures.</p>
+<p>Represents a heading in a heading structure, or  section tree.  Created according to archetyped structures for typical headings such as SOAP,  physical examination, but also pathology result heading structures.  Should not be used instead of <code>Entry</code> hierarchical structures.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2014,7 +2014,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 <p>more <code>SECTIONs</code>;</p>
 </li>
 <li>
-<p><code>ENTRYs</code>.</p>
+<p><code>Entrys</code>.</p>
 </li>
 </ul>
 </div></div></td>

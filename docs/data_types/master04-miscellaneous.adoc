@@ -27,7 +27,7 @@ The defining logical characteristic of RWIs is that they continue to identify th
 
 === Semantics
 
-The model defined in the `DV_IDENTIFIER` class allows the recording of three things as part of identifying an item of interest:
+The model defined in the `Dv_identifier` class allows the recording of three things as part of identifying an item of interest:
 
 * the identifier given to the item of interest (mandatory).
 * the issuing authority of the kind of id used (e.g. it might be the federal department of health) (optional);

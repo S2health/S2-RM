@@ -8,9 +8,9 @@ The following UML diagram shows the Observation class and related sub-structure.
 .Observation
 image::{uml_diagrams_uri}/GCM-entry-observation.svg[id=entry_observation, align="center"]
 
-== Semantics
+== Standard Observation
 
-Instances of the `OBSERVATION` class record the observation of any phenomenon or state of interest to do with the patient, including pathology results, blood pressure readings, the family history and social circumstances as told by the patient to the doctor, patient answers to physician questions during a physical examination, and responses to a psychological assessment questionnaire. Observations are distinguished from Actions in that Actions are interventions whereas Observations record only information relating to the situation of the patient, not what is done to him/her.
+Instances of the `Observation` class record the observation of any phenomenon or state of interest to do with the patient, including pathology results, blood pressure readings, the family history and social circumstances as told by the patient to the doctor, patient answers to physician questions during a physical examination, and responses to a psychological assessment questionnaire. Observations are distinguished from Actions in that Actions are interventions whereas Observations record only information relating to the situation of the patient, not what is done to him/her.
 
 The significant information of an Observation is expressed in terms of 'data', 'state' and 'protocol'. The first of these is recorded in the data attribute, defined as follows:
 
@@ -18,7 +18,7 @@ The significant information of an Observation is expressed in terms of 'data', '
 
 State information can be recorded in the state attribute of Observation, or within the state attribute of each Event in the Observation data attribute (see below and also Data Structures IM for more detailed explanations). The state attribute in Observation is defined as follows:
 
-* `_state_`: any particular information about the state of the subject of the Entry necessary to correctly interpret the data, which is not already known in the health record (i.e. facts such as the patient being female, pregnant, or currently undergoing chemotherapy). For example, exertion level (resting, post-marathon...), position (lying, standing), post-glucose challenge, and so on. The form of the `_state_` attribute is the same as that of the `_data_` attribute: a `HISTORY` of `EVENT` of `ITEM_STRUCTURE`.
+* `_state_`: any particular information about the state of the subject of the Entry necessary to correctly interpret the data, which is not already known in the health record (i.e. facts such as the patient being female, pregnant, or currently undergoing chemotherapy). For example, exertion level (resting, post-marathon...), position (lying, standing), post-glucose challenge, and so on. The form of the `_state_` attribute is the same as that of the `_data_` attribute: a `HISTORY` of `EVENT` of `Cluster`.
 
 The inherited protocol attribute is defined as follows:
 
@@ -26,22 +26,22 @@ The inherited protocol attribute is defined as follows:
 
 The detailed semantics of Observation data are described in the following subsections.
 
-== Timing in Observations
+=== Timing in Observations
 
 Many health information models express observation time as one or more attributes with names like 'observation_time', 'activity_time' and so on. The openEHR model departs from this by modelling historical time inside a History/Event structure defined in the `data_structures.history` package. In short, this package defines the `HISTORY` class with an origin attribute, and a series of `EVENT` instances each containing a time attribute. Instantaneous and interval events are distinguished via the `EVENT` subtypes `POINT_EVENT` and `INTERVAL_EVENT`; interval events have the width attribute is set to the duration of the interval.
 
-== Valid Contents of a History
+=== Valid Contents of a History
 
 One of the aims of the model of Observation described here is to represent in the same way single sample and multi-sample time-based data for which measurement protocol is invariant. It is not intended for measurements in "coarse" time taken by different people, different instruments, or with any other difference in data-gathering technique. In these cases, separate, usually single-sample histories are used, usually occurring in distinct container objects (e.g. distinct Compositions, in the EHR).
 
-Accordingly, in the general practice setting, the use of `HISTORY` will correspond to measurement series which occur during the clinical session (i.e. during a patient contact). In a hospital setting, nurses' observations might occur in 4-hourly intervals, and there is no well-defined clinical session - simply a series of `ENTRYs` during the time of the episode. Two approaches are possible here.
+Accordingly, in the general practice setting, the use of `HISTORY` will correspond to measurement series which occur during the clinical session (i.e. during a patient contact). In a hospital setting, nurses' observations might occur in 4-hourly intervals, and there is no well-defined clinical session - simply a series of `Entries` during the time of the episode. Two approaches are possible here.
 
-* If each Observation is to be committed to the EHR as soon as it is made, the result will be distinct `COMPOSITIONs` in time, each with its event_context corresponding to the period of the nurse's presence. Each Composition will contain one or more Observations, each containing in their data a History of one sample of the measured vital sign.
+* If each Observation is to be committed to the EHR as soon as it is made, the result will be distinct `Compositions` in time, each with its event_context corresponding to the period of the nurse's presence. Each Composition will contain one or more Observations, each containing in their data a History of one sample of the measured vital sign.
 * If Observations are not committed to the EHR immediately, but are stored elsewhere and only committed (say) at the end of each day, then the result will be a single Composition whose event_context corresponds to the total data gathering period, and which contains Observations whose data are multi-event Histories representing the multiple measurements made over the day.
 
 Whether time-based data remain outside the record until a series of desired length is gathered, or entered as it occurs is up to the design of applications and systems; the approach taken should be based on the desired availability of the data in the system in question. If for example, it must be visible in the EHR as soon as the appropriate Compositions are written, then it should be represented as Histories in each relevant Composition; if it need only be available at some much later point in time (e.g. because it is known that no-one but the treating clinician is interested in it), then it can be stored in another system until sufficient items have been gathered for committal to the EHR.
 
-== Clinical Semantics of Event Time
+=== Clinical Semantics of Event Time
 
 In most cases, the times recorded in a History (`HISTORY`.`_origin_` and `EVENT`.`_time_`, `_width_`) can be thought of as "the times when the observed phenomena were true". For example, if a pulse of 88bpm is recorded for 12/feb/2005 12:44:00, this is the time at which the heartrate (for which pulse is a surrogate) existed. In such cases, the sample time, and the measuring time are one and the same.
 
@@ -53,9 +53,9 @@ The key question is: what is the meaning of the `HISTORY`.`_origin_` and `EVENT`
 
 The meaning therefore of the `HISTORY`.`_origin_` and `EVENT`.`_time_` attributes in openEHR is always the time of sampling. Where delays between sample and measurement times exist and are significant, they are noted in the protocol section of the Observation; such times are modelled in the appropriate archetypes, and taken into account in results.
 
-== Two ways of Recording State
+=== Two ways of Recording State
 
-State information is optional, and is not needed if the data are meaningful on their own. If it is recorded, it can either be as a History of its own (i.e. using the `OBSERVATION`.`_state_` atttribute described above), or else as state values within the `EVENT` instances in the `OBSERVATION`.`_data_` History. Both methods are useful in different circumstances. A separate state history is more likely to be used in a correlation study such as a sports medicine study on heartrate with respect to specific types of exercise. In this method, the state information is a History of Events whose times and widths need not match those of the History in the data attribute. The state data under this approach generally express the condition of the subject in absolute terms, i.e. they are standalone statements about the subject's state at certain points in time, such as "walking on treadmill 10km/h, 10^o^ incline". 
+State information is optional, and is not needed if the data are meaningful on their own. If it is recorded, it can either be as a History of its own (i.e. using the `Observation`.`_state_` attribute described above), or else as state values within the `EVENT` instances in the `Observation._data_` History. Both methods are useful in different circumstances. A separate state history is more likely to be used in a correlation study such as a sports medicine study on heart-rate with respect to specific types of exercise. In this method, the state information is a History of Events whose times and widths need not match those of the History in the data attribute. The state data under this approach generally express the condition of the subject in absolute terms, i.e. they are standalone statements about the subject's state at certain points in time, such as "walking on treadmill 10km/h, 10^o^ incline".
 
 The other method will be used in most general medicine, e.g. for recording fasting and post glucose challenge states of a patient undergoing a glucose tolerance test. (See the Data Structures Information Model for more details). State values stored within the `_data_` History represent the situation in the subject at the time of the Event within the History and usually in relation to it, for example "post 8 hour fast". Recording the latter example in an independent state History would require an Event of 8 hours' duration called 'fast'. The latter would be technically still correct, but would be very unnatural to most clinicians. The figure below illustrates the two methods of recording state.
 
@@ -63,16 +63,15 @@ The other method will be used in most general medicine, e.g. for recording fasti
 .Alternative ways of recording state
 image::{diagrams_uri}/recording_state.png[id=recording_state, align="center", width=65%]
 
-
-== Class Descriptions
+=== Class Descriptions
 
 include::{uml_export_dir}/classes/{pkg}observation.adoc[]
 
-== Instance Structures
+=== Instance Structures
 
 The following subsections illustrate typical Entry instance structures. For guidance on how to best model particular clinical statements, see the archetype part of the {openehr_CKM}[openEHR Clinical Knowledge Manager repository^].
 
-=== Heart-rate Measurement Series
+==== Heart-rate Measurement Series
 
 The following figure illustrates three heart-rate measurements over 10 minutes.
 
@@ -80,7 +79,7 @@ The following figure illustrates three heart-rate measurements over 10 minutes.
 .Periodic series instance structure
 image::{diagrams_uri}/periodic_series.png[id=periodic_series, align="center", width=80%]
 
-=== Blood Pressure with Protocol
+==== Blood Pressure with Protocol
 
 The following figure illustrates a blood pressure observation with protocol.
 
@@ -88,7 +87,7 @@ The following figure illustrates a blood pressure observation with protocol.
 .Blood Pressure Measurement Observation
 image::{diagrams_uri}/BP_measurement.png[id=BP_measurement, align="center", width=70%]
 
-=== Glucose Tolerance Test
+==== Glucose Tolerance Test
 
 An oral glucose tolerance test takes the following form, although the number and timing of the blood sugar levels may be slightly different in practice:
 
@@ -103,3 +102,20 @@ OGTT is treated as a single clinical concept, and thus requires only one archety
 [.text-center]
 .OGTT instance structure
 image::{diagrams_uri}/OGTT_structure.png[id=OGTT_structure, align="center", width=80%]
+
+== Questionnaire Response
+
+TBD
+
+=== Class Descriptions
+
+include::{uml_export_dir}/classes/{pkg}questionnaire_response.adoc[]
+
+
+== Lab Result
+
+TBD
+
+=== Class Descriptions
+
+include::{uml_export_dir}/classes/{pkg}lab_result.adoc[]

@@ -409,7 +409,7 @@ lists, tables, trees, and history.</p>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>The abstract parent of <code>CLUSTER</code> and <code>ELEMENT</code> representation classes.</p>
+<p>The abstract parent of <code>Cluster</code> and <code>ELEMENT</code> representation classes.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -451,7 +451,7 @@ lists, tables, trees, and history.</p>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>items</strong>: <code>List&lt;<a href="#_item_class">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Ordered list of items - <code>CLUSTER</code> or <code>ELEMENT</code> objects - under this <code>CLUSTER</code>.</p>
+<p>Ordered list of items - <code>Cluster</code> or <code>ELEMENT</code> objects - under this <code>Cluster</code>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -585,7 +585,7 @@ a_path: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class
 <p>The model also supports the inclusion of 'summary' data, i.e. a textual or image item which summarises in some way the entire history.</p>
 </div>
 <div class="paragraph">
-<p>In formal terms, the model defines the constrained generic (otherwise known as 'template' or 'parameterised') types <code>HISTORY&lt;T&#8594;ITEM_STRUCTURE&gt;</code>, <code>EVENT&lt;T&#8594;ITEM_STRUCTURE&gt;</code>, <code>POINT_EVENT&lt;T&gt;</code>, and <code>INTERVAL_EVENT&lt;T&gt;</code> where the <code><em>type</em></code> parameter is constrained to the <code>ITEM_STRUCTURE</code> type, and defines the type of the data recorded in an instance of <code>HISTORY</code>. The effect is that repeated instances of spatially complex data can recur in time, corresponding to the way data are actually measured. An aperiodic series of <code>POINT_EVENT</code> instances would typically be used to represent manual measurements repeated in time. Periodic histories of <code>INTERVAL_EVENT</code> instances would typically be used to represent vital signs monitor output (which is usually delivered in averaged form potentially with additional minimum and maximum values).</p>
+<p>In formal terms, the model defines the constrained generic (otherwise known as 'template' or 'parameterised') types <code>HISTORY&lt;T&#8594;Cluster&gt;</code>, <code>EVENT&lt;T&#8594;Cluster&gt;</code>, <code>POINT_EVENT&lt;T&gt;</code>, and <code>INTERVAL_EVENT&lt;T&gt;</code> where the <code><em>type</em></code> parameter is constrained to the <code>Cluster</code> type, and defines the type of the data recorded in an instance of <code>HISTORY</code>. The effect is that repeated instances of spatially complex data can recur in time, corresponding to the way data are actually measured. An aperiodic series of <code>POINT_EVENT</code> instances would typically be used to represent manual measurements repeated in time. Periodic histories of <code>INTERVAL_EVENT</code> instances would typically be used to represent vital signs monitor output (which is usually delivered in averaged form potentially with additional minimum and maximum values).</p>
 </div>
 <div class="paragraph">
 <p>As with all other parts of the openEHR reference model, the <code>history</code> package is designed so that archetypes define the domain semantics of <code>HISTORY</code> instances. The <code>history</code> package is shown on the left of <a href="#data_structures_package">Figure 1</a>.</p>
@@ -599,7 +599,7 @@ a_path: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class
 <p>Firstly, the use of generic types forces the type of the data in each Event to be the same. A History of type <code>HISTORY&lt;ITEM_LIST&gt;</code> therefore constrains the type of the data at each Event (<code>EVENT.<em>item</em></code>) to be of type <code>ITEM_LIST</code> and nothing else.</p>
 </div>
 <div class="paragraph">
-<p>Secondly, the use of archetyping (typically within openEHR Observation archetypes) ensures the actual structure of the <code>ITEM_STRUCTURE</code> subtype is defined in the same way for every sample - e.g. a two-item list representing systolic and diastolic blood pressure.</p>
+<p>Secondly, the use of archetyping (typically within openEHR Observation archetypes) ensures the actual structure of the <code>Cluster</code> subtype is defined in the same way for every sample - e.g. a two-item list representing systolic and diastolic blood pressure.</p>
 </div>
 </div>
 <div class="sect3">
@@ -709,13 +709,13 @@ stored</th>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">'weight change'</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">+ 2kg</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DV_QUANTITY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Dv_quantity</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>openehr::147|change|</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">'weight loss'</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">(+)2kg</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DV_QUANTITY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Dv_quantity</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>openehr::521|decrease|</code></p></td>
 </tr>
 <tr>
@@ -754,13 +754,13 @@ stored</th>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">'weight change'</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">(+)3kg</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DV_QUANTITY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Dv_quantity</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>openehr::147|change|</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">'weight increase'</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">(+)3kg</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DV_QUANTITY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Dv_quantity</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>openehr::522|increase|</code></p></td>
 </tr>
 <tr>
@@ -799,7 +799,7 @@ event which accompanies more detailed historical data. Examples where this arise
 <p>Such data are accommodated within the model via the optional <code>HISTORY.<em>summary</em></code> attribute, which is
 itself a structure, archetypable separately from the structure of the main data. In the first example
 above, the summary data might consist of an <code>ITEM_SINGLE</code> object containing a textual report; in the
-second, an <code>ITEM_SINGLE</code> object containing a image within a <code>DV_MULTIMEDIA</code> instance.</p>
+second, an <code>ITEM_SINGLE</code> object containing a image within a <code>Dv_multimedia</code> instance.</p>
 </div>
 </div>
 <div class="sect3">
@@ -820,7 +820,7 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>DV_
 <p>A feature particular to a model of recording historical data for scientific and clinical use is the ability to record 'state'. In openEHR, 'state' is understood as time-based information about the whole entity from which the values recorded in the <code><em>data</em></code> attribute are recorded. The <code><em>state</em></code> attribute thus records data necessary for the correct interpretation of the primary values recorded in the <code><em>data</em></code> attribute. An example is where the primary datum is heart rate (values representing rate of the heart beating). Useful state data may include anything else from the owning entity (a human being) that affects the heart rate, such as the level of exertion of the subject (resting, after 3 minutes hard cycling etc). In clinical situations, the state data are often crucial to the safe use of the primary data, since the latter might be normal or abnormal depending on the patient state.</p>
 </div>
 <div class="paragraph">
-<p>In openEHR there are two ways of recording state. One is via the use of a separate <code>HISTORY</code> structure within the <code>OBSERVATION</code> class (see <code>ehr.composition.content.entry</code> package). The other is via the use of the state attribute of type <code>ITEM_STRUCTURE</code> defined in the class <code>EVENT</code> itself. Experience with openEHR archetypes and systems has shown that the latter method corresponds to the most common clinical need, which is to be able to record the state at the time of the event (the other method allows for the recording of independent state events). A simple example is the recording of 3 glucose levels during a glucose tolerance test. The state information for each event is, respectively (in a typical test):</p>
+<p>In openEHR there are two ways of recording state. One is via the use of a separate <code>HISTORY</code> structure within the <code>Observation</code> class (see <code>ehr.composition.content.entry</code> package). The other is via the use of the state attribute of type <code>Cluster</code> defined in the class <code>EVENT</code> itself. Experience with openEHR archetypes and systems has shown that the latter method corresponds to the most common clinical need, which is to be able to record the state at the time of the event (the other method allows for the recording of independent state events). A simple example is the recording of 3 glucose levels during a glucose tolerance test. The state information for each event is, respectively (in a typical test):</p>
 </div>
 <div class="ulist">
 <ul>

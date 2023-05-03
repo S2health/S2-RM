@@ -113,8 +113,8 @@
 <li><a href="#_language_translations">4.3.4. Language Translations</a></li>
 <li><a href="#_formatting_and_hyperlinking">4.3.5. Formatting and Hyperlinking</a>
 <ul class="sectlevel4">
-<li><a href="#_usage_in_dv_text_instances">4.3.5.1. Usage in DV_TEXT Instances</a></li>
-<li><a href="#_usage_in_dv_coded_text_instances">4.3.5.2. Usage in DV_CODED_TEXT Instances</a></li>
+<li><a href="#_usage_in_dv_text_instances">4.3.5.1. Usage in Dv_text Instances</a></li>
+<li><a href="#_usage_in_dv_coded_text_instances">4.3.5.2. Usage in Dv_coded_text Instances</a></li>
 </ul>
 </li>
 </ul>
@@ -627,7 +627,7 @@
 <div class="sect3">
 <h4 id="_semantics"><a class="anchor" href="#_semantics"></a>3.2.2. Semantics</h4>
 <div class="paragraph">
-<p>The model defined in the <code>DV_IDENTIFIER</code> class allows the recording of three things as part of identifying an item of interest:</p>
+<p>The model defined in the <code>Dv_identifier</code> class allows the recording of three things as part of identifying an item of interest:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -800,7 +800,7 @@
 <p>Regardless of what terminologies are (or are not) available to the clinician and/or the software, the primary requirement is that in all cases clinicians are able to record exactly what they want to say. This means that if they want to record something very general, such as "cold" or a very specific term such as "Ross River virus infection" they should be able to, whether or not the appropriate coded terms are available. However, the facility should be available to additionally code any such textual item, at the time or indeed at some later time, so as to satisfy reporting or other needs.</p>
 </li>
 <li>
-<p>It is assumed that any client of terminology, such as the EHR, uses a terminology service which provides a complete interface to the terminology. The design of the <code>DV_CODED_TEXT</code> type reflects this. Accordingly, there is no concept of "post-coordination" outside the terminology environment allowed by the data types described here: the only thing that is available from the terminology service is a key which refers to a lexical entity, which may be a single term or a code phrase, and which may be part of a reference terminology and/or linked to element(s) of underlying ontologies. It is also assumed that there is no direct access to any particular terminology; access to all terminologies (whether simple coded lexicons or large semantic networks) is via the same abstract interface.</p>
+<p>It is assumed that any client of terminology, such as the EHR, uses a terminology service which provides a complete interface to the terminology. The design of the <code>Dv_coded_text</code> type reflects this. Accordingly, there is no concept of "post-coordination" outside the terminology environment allowed by the data types described here: the only thing that is available from the terminology service is a key which refers to a lexical entity, which may be a single term or a code phrase, and which may be part of a reference terminology and/or linked to element(s) of underlying ontologies. It is also assumed that there is no direct access to any particular terminology; access to all terminologies (whether simple coded lexicons or large semantic networks) is via the same abstract interface.</p>
 </li>
 </ol>
 </div>
@@ -946,7 +946,7 @@ equivalents, classifiers, or something in between. The section below on Mappings
 <div class="sect2">
 <h3 id="_semantics_2"><a class="anchor" href="#_semantics_2"></a>4.3. Semantics</h3>
 <div class="paragraph">
-<p>All atomic text items are either instances of the type <code>DV_TEXT</code> or of <code>DV_CODED_TEXT</code>. The type <code>DV_TEXT</code> should be used wherever a coded or non-coded text item is allowed, while the type <code>DV_CODED_TEXT</code> should be used wherever a text item must be coded. The former allows the representation of text (<code><em>value</em></code> attribute) with optional formatting and hyperlinking (see <a href="#_formatting_and_hyperlinking">Section 4.3.5</a> below). The latter class <code>DV_CODED_TEXT</code> captures the association of two things:</p>
+<p>All atomic text items are either instances of the type <code>Dv_text</code> or of <code>Dv_coded_text</code>. The type <code>Dv_text</code> should be used wherever a coded or non-coded text item is allowed, while the type <code>Dv_coded_text</code> should be used wherever a text item must be coded. The former allows the representation of text (<code><em>value</em></code> attribute) with optional formatting and hyperlinking (see <a href="#_formatting_and_hyperlinking">Section 4.3.5</a> below). The latter class <code>Dv_coded_text</code> captures the association of two things:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -954,7 +954,7 @@ equivalents, classifiers, or something in between. The section below on Mappings
 <p>the code of a term known in the terminology service, recorded in the <code><em>defining_code</em></code> attribute of type <code>CODE_PHRASE</code>;</p>
 </li>
 <li>
-<p>the text rubric of the term, recorded in the <code><em>value</em></code> attribute (inherited from <code>DV_TEXT</code>).</p>
+<p>the text rubric of the term, recorded in the <code><em>value</em></code> attribute (inherited from <code>Dv_text</code>).</p>
 </li>
 </ul>
 </div>
@@ -962,7 +962,7 @@ equivalents, classifiers, or something in between. The section below on Mappings
 <p>The attribute <code>CODE_PHRASE.<em>code_string</em></code> records a term code or code expression which may be used as an argument to a retrieval function in the terminology service interface to obtain the definition of the term or expression.</p>
 </div>
 <div class="paragraph">
-<p>The model of <code>DV_CODED_TEXT</code> is designed to capture the <em>actual</em> term chosen by the user or software at runtime, i.e. preferred term or synonym (for terminologies supporting synonyms), or a post-coordination of underlying distinct terms if an expression was chosen as the term (such as an expression supported by SNOMED CT). A <code>DV_CODED_TEXT</code> instance is used if the final textual value chosen by the user is the exact term text (preferred or other) returned by the terminology service for the key (i.e. <code><em>code_string</em></code> value). If the user makes even the slightest modification during data entry, a mapping (see <a href="#_mappings">Section 4.3.3</a>) to a <code>DV_TEXT</code> should be used instead.</p>
+<p>The model of <code>Dv_coded_text</code> is designed to capture the <em>actual</em> term chosen by the user or software at runtime, i.e. preferred term or synonym (for terminologies supporting synonyms), or a post-coordination of underlying distinct terms if an expression was chosen as the term (such as an expression supported by SNOMED CT). A <code>Dv_coded_text</code> instance is used if the final textual value chosen by the user is the exact term text (preferred or other) returned by the terminology service for the key (i.e. <code><em>code_string</em></code> value). If the user makes even the slightest modification during data entry, a mapping (see <a href="#_mappings">Section 4.3.3</a>) to a <code>Dv_text</code> should be used instead.</p>
 </div>
 <div class="sect3">
 <h4 id="_qualification"><a class="anchor" href="#_qualification"></a>4.3.1. Qualification</h4>
@@ -1027,18 +1027,18 @@ values or ambiguities by arbitrarily association with other terms.</p>
 <div class="sect4">
 <h5 id="_representation_of_meaning_modifying_terms"><a class="anchor" href="#_representation_of_meaning_modifying_terms"></a>4.3.2.4. Representation of Meaning-Modifying Terms</h5>
 <div class="paragraph">
-<p>Rather than provide explicit features for representing modifier terms within <code>DV_CODED_TEXT</code>, the
+<p>Rather than provide explicit features for representing modifier terms within <code>Dv_coded_text</code>, the
 general principle underlying representation of all post-coordinations other than qualifications, is that
-a higher-level, archetyped structure such as an <code>ENTRY</code> (defined in the EHR RM), is a <em>minimal indivisible
+a higher-level, archetyped structure such as an <code>Entry</code> (defined in the EHR RM), is a <em>minimal indivisible
 unit of information</em>. Such higher-level entities can have internal structure, and it is possible (and
-desirable) to achieve the effect of combinations of terms through this structure. In the case of <code>ENTRY</code>,
+desirable) to achieve the effect of combinations of terms through this structure. In the case of <code>Entry</code>,
 it will be via structuring of <code>CLUSTER</code>/<code>ELEMENT</code> objects. The general rule is: to obtain the full meaning
-of any terms found in the record, all of the node names in any <code>ENTRY</code> (coded or not) must be considered
+of any terms found in the record, all of the node names in any <code>Entry</code> (coded or not) must be considered
 from the root to the relevant leaf. Conversely, the "final" meaning of any term in the record
 cannot be known in isolation from the rest of the terms in the structure.</p>
 </div>
 <div class="paragraph">
-<p>Accordingly, the concept "family history of coronary disease" is represented as an <code>ENTRY</code> whose root
+<p>Accordingly, the concept "family history of coronary disease" is represented as an <code>Entry</code> whose root
 is named (for example) "subject family history", and which includes further structure, which may be
 in greater of lesser detail; the coded term "coronary disease" would appear somewhere in this structure.
 The actual structure is completely defined by appropriate archetypes. Contrary to some perceptions,
@@ -1073,9 +1073,9 @@ must be described in some detail for the EHR to be of any real use. Almost inevi
 the use of negated terms. Since the actual information structure will be determined in advance by
 archetype designers, clinicians will almost never be in the situation of having to negate a term. However,
 if the need does arise, it should be dealt with by a negative or quantitative answer, i.e. a value
-rather than a name. For example, in any <code>ENTRY</code> describing current problems, the clinician may record
-the name/value pair "allergies: NONE". Here, "allergies" will be a <code>DV_CODED_TEXT</code>, and "NONE"
-will be either a <code>DV_CODED_TEXT</code> or a <code>DV_TEXT</code>; the two will be associated by a containing object,
+rather than a name. For example, in any <code>Entry</code> describing current problems, the clinician may record
+the name/value pair "allergies: NONE". Here, "allergies" will be a <code>Dv_coded_text</code>, and "NONE"
+will be either a <code>Dv_coded_text</code> or a <code>Dv_text</code>; the two will be associated by a containing object,
 such as an instance of the <code>ELEMENT</code> class from the EHR RM. There is no explicit model of negation
 in openEHR.</p>
 </div>
@@ -1149,7 +1149,7 @@ classification.</p>
 natural language processing is used to generate coded terms for existing free-text prose. The aim of
 such processing is to detect word phrases and associate them with a coded term of the same meaning,
 without obliterating the original text. In terms of the model described here, a <code>CODE_PHRASE</code> is associated
-with a <code>DV_TEXT</code> instance via the mappings attribute.</p>
+with a <code>Dv_text</code> instance via the mappings attribute.</p>
 </div>
 <div class="paragraph">
 <p>In all cases with equivalents, the value of the match attribute is '=', indicating that the mapping is a
@@ -1180,7 +1180,7 @@ cross-referenced. UMLS CUIs could turn out to be extremely useful for decision s
 <div class="paragraph">
 <p>The proper use of UMLS is that terms from particular terminologies are passed to a UMLS interface
 and a CUI + rubric received in response. However, the mapping approach described above could also
-be used to map UMLS CUIs to existing text or terms in an EHR; in this case, a <code>DV_CODED_TEXT</code> is
+be used to map UMLS CUIs to existing text or terms in an EHR; in this case, a <code>Dv_coded_text</code> is
 constructed for each UMLS "term", where the code is the CUI and the rubric is the text rendering of
 the CUI (guaranteed unique in UMLS). The same approach can be used for any other thesaurus
 which becomes available in the future.</p>
@@ -1195,10 +1195,10 @@ e.g. ICD or ICPC codes, the following approach is recommended:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>create a new <code>DV_TEXT</code> whose value is "(not available)"</p>
+<p>create a new <code>Dv_text</code> whose value is "(not available)"</p>
 </li>
 <li>
-<p>add a mapping to the <code>DV_TEXT</code>, with:</p>
+<p>add a mapping to the <code>Dv_text</code>, with:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1225,17 +1225,17 @@ e.g. ICD or ICPC codes, the following approach is recommended:</p>
 <div class="paragraph">
 <p>In most cases the natural language of a text object is known from the enclosing Entry (i.e. Observation)
 or other enclosing context. Where it is different (e.g. a German sentence within an English language
-diagnosis), or there is no enclosing context, the <code>DV_TEXT.<em>language</em></code> attribute can be set to
+diagnosis), or there is no enclosing context, the <code>Dv_text.<em>language</em></code> attribute can be set to
 indicate the language of the text item.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_formatting_and_hyperlinking"><a class="anchor" href="#_formatting_and_hyperlinking"></a>4.3.5. Formatting and Hyperlinking</h4>
 <div class="paragraph">
-<p>Formatted text is represented by <code>DV_TEXT</code> and <code>DV_CODED_TEXT</code> instances.</p>
+<p>Formatted text is represented by <code>Dv_text</code> and <code>Dv_coded_text</code> instances.</p>
 </div>
 <div class="paragraph">
-<p>Formatting of the text in the <code><em>value</em></code> field of <code>DV_TEXT</code> and <code>DV_CODED_TEXT</code> instances may be indicated via the optional <code><em>formatting</em></code> attribute. How this attribute is used has changed from initial versions of the openEHR Reference Model.</p>
+<p>Formatting of the text in the <code><em>value</em></code> field of <code>Dv_text</code> and <code>Dv_coded_text</code> instances may be indicated via the optional <code><em>formatting</em></code> attribute. How this attribute is used has changed from initial versions of the openEHR Reference Model.</p>
 </div>
 <div class="paragraph">
 <p>A common model of text processing is of a processing pipeline that consumes readable text containing markings, which is then rendered into HTML, PDF or some other rendering format, and then displayed by a tool such as a web browser that consumes the latter format. Historical approaches to marking text were known as 'markup', such as nroff, troff, Latek, and then more recently, numerous formats whose base syntax is XML. These formats all have the disadvantages of poor human readability in raw form, and being specific to particular rendering engines, and are starting to fall out of favour for uses involving human reading of the raw text. Another common approach to formatting text is to use the <em>output format</em>, usually HTML, to express e.g. fonts, bolding etc. This is also problematic for human readability, being complicated by the use of CSS classes in tags, which then need to be defined.</p>
@@ -1266,7 +1266,7 @@ indicate the language of the text item.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Related to the question of formatting, a second optional attribute, <code>DV_TEXT.<em>hyperlink</em></code> of type <code>DV_URI</code>, exists to specify a web link associated with the whole text represented by the <code>DV_TEXT</code> instance. Similarly to the case of formatting, the more modern markdown approach to using the <code><em>value</em></code> field is also more flexible with regards to links, since multiple instances of the latter may be used within a single text.</p>
+<p>Related to the question of formatting, a second optional attribute, <code>Dv_text.<em>hyperlink</em></code> of type <code>DV_URI</code>, exists to specify a web link associated with the whole text represented by the <code>Dv_text</code> instance. Similarly to the case of formatting, the more modern markdown approach to using the <code><em>value</em></code> field is also more flexible with regards to links, since multiple instances of the latter may be used within a single text.</p>
 </div>
 <div class="paragraph">
 <p>Not all CommonMark features are allowed in the <code><em>value</em></code> field, if it contains markdown. The following should not be used:</p>
@@ -1280,14 +1280,14 @@ indicate the language of the text item.</p>
 <p>raw HTML;</p>
 </li>
 <li>
-<p>images - these may be included in openEHR content via the <code>DV_MULTIMEDIA</code> types.</p>
+<p>images - these may be included in openEHR content via the <code>Dv_multimedia</code> types.</p>
 </li>
 </ul>
 </div>
 <div class="sect4">
-<h5 id="_usage_in_dv_text_instances"><a class="anchor" href="#_usage_in_dv_text_instances"></a>4.3.5.1. Usage in DV_TEXT Instances</h5>
+<h5 id="_usage_in_dv_text_instances"><a class="anchor" href="#_usage_in_dv_text_instances"></a>4.3.5.1. Usage in Dv_text Instances</h5>
 <div class="paragraph">
-<p>In a concrete instance of <code>DV_TEXT</code>, the following are the likely usages of the <code><em>value</em></code> and <code><em>formatting</em></code> attributes.</p>
+<p>In a concrete instance of <code>Dv_text</code>, the following are the likely usages of the <code><em>value</em></code> and <code><em>formatting</em></code> attributes.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1330,9 +1330,9 @@ indicate the language of the text item.</p>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_usage_in_dv_coded_text_instances"><a class="anchor" href="#_usage_in_dv_coded_text_instances"></a>4.3.5.2. Usage in DV_CODED_TEXT Instances</h5>
+<h5 id="_usage_in_dv_coded_text_instances"><a class="anchor" href="#_usage_in_dv_coded_text_instances"></a>4.3.5.2. Usage in Dv_coded_text Instances</h5>
 <div class="paragraph">
-<p>In a concrete instance of <code>DV_CODED_TEXT</code>, the following are the likely usages of the <code><em>value</em></code> and <code><em>formatting</em></code> attributes.</p>
+<p>In a concrete instance of <code>Dv_coded_text</code>, the following are the likely usages of the <code><em>value</em></code> and <code><em>formatting</em></code> attributes.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1455,7 +1455,7 @@ indicate the language of the text item.</p>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>language</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_code_class" target="_blank" rel="noopener">Terminology_code</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional indicator of the localised language in which the value is written. Coded from openEHR Code Set  languages . Only used when either the text object is in a different language from the enclosing <code>ENTRY</code>, or else the text object is being used outside of an <code>ENTRY</code> or other enclosing structure which indicates the language.</p>
+<p>Optional indicator of the localised language in which the value is written. Coded from openEHR Code Set  languages . Only used when either the text object is in a different language from the enclosing <code>Entry</code>, or else the text object is being used outside of an <code>Entry</code> or other enclosing structure which indicates the language.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1941,13 +1941,13 @@ the 'normal' range for a measured value. Examples of reference ranges:</p>
 <div class="sect3">
 <h4 id="_basic_semantics"><a class="anchor" href="#_basic_semantics"></a>5.3.1. Basic Semantics</h4>
 <div class="paragraph">
-<p>In order to make sense of the requirements in a systematic way, a proper typology for quantities is needed. The most basic characteristic of all values typically called 'quantities' is that they are ordered, meaning that the operator "&lt;" (less-than) is defined between any two values in the domain. An ancestor class for all quantities called <code>DV_ORDERED</code> is accordingly defined. This type is sub-typed into ordinals, scales and true quantities, represented by the classes <code>DV_ORDINAL</code>, <code>DV_SCALE</code> and <code>DV_QUANTIFIED</code> respectively.</p>
+<p>In order to make sense of the requirements in a systematic way, a proper typology for quantities is needed. The most basic characteristic of all values typically called 'quantities' is that they are ordered, meaning that the operator "&lt;" (less-than) is defined between any two values in the domain. An ancestor class for all quantities called <code>Dv_ordered</code> is accordingly defined. This type is sub-typed into ordinals, scales and true quantities, represented by the classes <code>Dv_ordinal</code>, <code>DV_SCALE</code> and <code>Dv_quantified</code> respectively.</p>
 </div>
 <div class="paragraph">
-<p><code>DV_ORDINAL</code> and <code>DV_SCALE</code> are used for scores and scales as described in the requirements above. <code>DV_ORDINAL</code> represents data values whose values are Integers, and which have symbolic or text names instead, such as "+", "++", "+++", or <code>"mild"</code>, <code>"medium"</code>, <code>"severe"</code>. Each symbol can be assigned any Integer value, providing a basis for computable comparison. Typical uses for <code>DV_ORDINAL</code> include representing values from the Apgar and Glasgow Coma Scales, e.g. <code>0｜heart rate absent｜</code>, <code>4｜withdraws from pain｜</code>. <code>DV_SCALE</code> is similar to <code>DV_ORDINAL</code>, and was introduced to support scales / scores containing Real values as well as Integers.</p>
+<p><code>Dv_ordinal</code> and <code>DV_SCALE</code> are used for scores and scales as described in the requirements above. <code>Dv_ordinal</code> represents data values whose values are Integers, and which have symbolic or text names instead, such as "+", "++", "+++", or <code>"mild"</code>, <code>"medium"</code>, <code>"severe"</code>. Each symbol can be assigned any Integer value, providing a basis for computable comparison. Typical uses for <code>Dv_ordinal</code> include representing values from the Apgar and Glasgow Coma Scales, e.g. <code>0｜heart rate absent｜</code>, <code>4｜withdraws from pain｜</code>. <code>DV_SCALE</code> is similar to <code>Dv_ordinal</code>, and was introduced to support scales / scores containing Real values as well as Integers.</p>
 </div>
 <div class="paragraph">
-<p>In contrast to <code>DV_ORDINAL</code> and <code>DV_SCALE</code>, instances of <code>DV_QUANTIFIED</code> and all its subtypes have precise numeric magnitudes. Accordingly, <code>DV_QUANTIFIED</code> introduces the properties <code><em>magnitude</em></code> and <code><em>magnitude_status</em></code>. The <code><em>magnitude</em></code> attribute is guaranteed to be available on any <code>DV_QUANTIFIED</code>, carrying the effective value, regardless of the particular subtype. The optional <code><em>magnitude_status</em></code> attribute can be used to provide a non-quantified indication of accuracy, and takes the following values:</p>
+<p>In contrast to <code>Dv_ordinal</code> and <code>DV_SCALE</code>, instances of <code>Dv_quantified</code> and all its subtypes have precise numeric magnitudes. Accordingly, <code>Dv_quantified</code> introduces the properties <code><em>magnitude</em></code> and <code><em>magnitude_status</em></code>. The <code><em>magnitude</em></code> attribute is guaranteed to be available on any <code>Dv_quantified</code>, carrying the effective value, regardless of the particular subtype. The optional <code><em>magnitude_status</em></code> attribute can be used to provide a non-quantified indication of accuracy, and takes the following values:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1975,23 +1975,23 @@ the 'normal' range for a measured value. Examples of reference ranges:</p>
 <p>If not present, the meaning is <code>"="</code>.</p>
 </div>
 <div class="paragraph">
-<p>Logically, an accuracy attribute should also be included in <code>DV_QUANTIFIED</code>, but as its modelling is different in the subtypes in a way that does not easily lend itself to a common ancestor, it is only included in the subtypes.</p>
+<p>Logically, an accuracy attribute should also be included in <code>Dv_quantified</code>, but as its modelling is different in the subtypes in a way that does not easily lend itself to a common ancestor, it is only included in the subtypes.</p>
 </div>
 <div class="paragraph">
-<p>The <code>DV_QUANTIFIED</code> class has two subtypes: <code>DV_AMOUNT</code> and <code>DV_ABSOLUTE_QUANTITY</code>. The former corresponds to relative 'amounts' of something, either a physical property (such as mass) or items (e.g. cigarettes). Mathematically, the <code>+</code> and <code>-</code> operators (as well as <code>*</code> and <code>/</code>) are defined in the same way as for the real numbers (or any other mathematical 'field'), with the semantics that adding two relative quantities measuring the same thing (i.e. with the same units) produces another relative quantity of the same kind; while the semantics of subtraction are that one relative quantity subtracted from another generates a third.</p>
+<p>The <code>Dv_quantified</code> class has two subtypes: <code>DV_AMOUNT</code> and <code>DV_ABSOLUTE_QUANTITY</code>. The former corresponds to relative 'amounts' of something, either a physical property (such as mass) or items (e.g. cigarettes). Mathematically, the <code>+</code> and <code>-</code> operators (as well as <code>*</code> and <code>/</code>) are defined in the same way as for the real numbers (or any other mathematical 'field'), with the semantics that adding two relative quantities measuring the same thing (i.e. with the same units) produces another relative quantity of the same kind; while the semantics of subtraction are that one relative quantity subtracted from another generates a third.</p>
 </div>
 <div class="paragraph">
-<p>The second subtype of <code>DV_QUANTIFIED</code>, <code>DV_ABSOLUTE_QUANTITY</code>, models quantities whose values are absolute along a line having a defined origin. The main example of absolute quantities are the temporal concepts date, time and date/time. These are distinguished from relative quantities in that the normal addition and subtraction operations don&#8217;t apply. Instead, the semantics of such operators are based on the idea of the difference between absolute values being a relative amount. For example, two dates can be subtracted, but the result is a duration, not another date. For this reason, the operations <code><em>add</em></code>, <code><em>subtract</em></code> and <code><em>diff</em></code> are defined rather than <code>+</code> or <code>-</code>. Date/time types, as well as the relative concept duration, are defined in <a href="#_date_time_package">[_date_time_package]</a>.</p>
+<p>The second subtype of <code>Dv_quantified</code>, <code>DV_ABSOLUTE_QUANTITY</code>, models quantities whose values are absolute along a line having a defined origin. The main example of absolute quantities are the temporal concepts date, time and date/time. These are distinguished from relative quantities in that the normal addition and subtraction operations don&#8217;t apply. Instead, the semantics of such operators are based on the idea of the difference between absolute values being a relative amount. For example, two dates can be subtracted, but the result is a duration, not another date. For this reason, the operations <code><em>add</em></code>, <code><em>subtract</em></code> and <code><em>diff</em></code> are defined rather than <code>+</code> or <code>-</code>. Date/time types, as well as the relative concept duration, are defined in <a href="#_date_time_package">[_date_time_package]</a>.</p>
 </div>
 <div class="paragraph">
-<p>Subtypes of <code>DV_AMOUNT</code> are <code>DV_PROPORTION</code>, <code>DV_QUANTITY</code>, <code>DV_COUNT</code>, and <code>DV_DURATION</code> (see date_time package). The type <code>DV_COUNT</code> has an integer magnitude and is used to record naturally countable things such as number of previous pregnancies, number of steps taken by a recovering stroke victim and so on. There are no units or precision in a <code>DV_COUNT</code>. Countable quantities can be used to create instances of <code>DV_QUANTITY</code>, such as during a statistical study which average tobacco
-consumption over a time period. Such a computation might cause the creation of <code>DV_QUANTITY</code> objects representing values like {magnitude = 5.85, units = '/ week'}</p>
+<p>Subtypes of <code>DV_AMOUNT</code> are <code>Dv_ratio</code>, <code>Dv_quantity</code>, <code>Dv_count</code>, and <code>Dv_duration</code> (see date_time package). The type <code>Dv_count</code> has an integer magnitude and is used to record naturally countable things such as number of previous pregnancies, number of steps taken by a recovering stroke victim and so on. There are no units or precision in a <code>Dv_count</code>. Countable quantities can be used to create instances of <code>Dv_quantity</code>, such as during a statistical study which average tobacco
+consumption over a time period. Such a computation might cause the creation of <code>Dv_quantity</code> objects representing values like {magnitude = 5.85, units = '/ week'}</p>
 </div>
 <div class="paragraph">
-<p><code>DV_QUANTITY</code> is used to represent amounts of measurable things, and has a real number magnitude, precision, units and accuracy. The <code><em>units</em></code> attribute contains the scientific unit in a parsable form defined by default by the <a href="http://unitsofmeasure.org/ucum.html" target="_blank" rel="noopener">Unified Code for Units of Measure (UCUM)</a> (case-sensitive form), or by another system or terminology specified in the <code><em>units_system</em></code> attribute. In some cases, such as metric units, the UCUM code and the display form are the same, e.g. 'kg'. However this is not the general case, and many common units have different display and code forms, e.g. degrees Celcius:  '°C' and 'Cel'. In general the unit display name should be looked up if it is not known in context that the code is directly displayable. The <code><em>units_display_name</em></code> attribute may be used if the displayable form of the units is required in the data, and/or terminology lookup is not available or desirable. Unit names may be language dependent, particularly older units.</p>
+<p><code>Dv_quantity</code> is used to represent amounts of measurable things, and has a real number magnitude, precision, units and accuracy. The <code><em>units</em></code> attribute contains the scientific unit in a parsable form defined by default by the <a href="http://unitsofmeasure.org/ucum.html" target="_blank" rel="noopener">Unified Code for Units of Measure (UCUM)</a> (case-sensitive form), or by another system or terminology specified in the <code><em>units_system</em></code> attribute. In some cases, such as metric units, the UCUM code and the display form are the same, e.g. 'kg'. However this is not the general case, and many common units have different display and code forms, e.g. degrees Celcius:  '°C' and 'Cel'. In general the unit display name should be looked up if it is not known in context that the code is directly displayable. The <code><em>units_display_name</em></code> attribute may be used if the displayable form of the units is required in the data, and/or terminology lookup is not available or desirable. Unit names may be language dependent, particularly older units.</p>
 </div>
 <div class="paragraph">
-<p>A valid units string always implies a measured <em>property</em>, such as force or pressure. If unit strings are compared in the application environment to determine if they measure the same property (e.g. <code>"bar"</code> and <code>"kPa"</code> are both units of 'pressure'), which enables the <code><em>is_strictly_comparable_to()</em></code> function defined on <code>DV_ORDERED</code> to be properly specified on <code>DV_QUANTITY</code>.</p>
+<p>A valid units string always implies a measured <em>property</em>, such as force or pressure. If unit strings are compared in the application environment to determine if they measure the same property (e.g. <code>"bar"</code> and <code>"kPa"</code> are both units of 'pressure'), which enables the <code><em>is_strictly_comparable_to()</em></code> function defined on <code>Dv_ordered</code> to be properly specified on <code>Dv_quantity</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2009,11 +2009,11 @@ while these semantics will allow comparison of e.g. two pressures recorded in <c
 <div class="sect3">
 <h4 id="_accuracy_and_uncertainty"><a class="anchor" href="#_accuracy_and_uncertainty"></a>5.3.2. Accuracy and Uncertainty</h4>
 <div class="paragraph">
-<p>Theoretically it might be argued that accuracy should not be included in a model for quantified values, because it is an artifact of a measuring process and/or device, not of a quantity itself. For example, a weight of "82 kg &#177;5%" can be represented in two parts. The "82 kg" is represented as a <code>DV_QUANTITY</code>, while the "&#177;5%" could be included in the protocol description of the weighing instrument, since this is where the error comes from. For practical purposes however, (in)accuracy in a measured quantity corresponds to a range of possible values. In realistic computing in health, it is quite likely that the accuracy will be required in computations on quantities, especially for statistical population queries in which measurement error must be disambiguated from true correlation.</p>
+<p>Theoretically it might be argued that accuracy should not be included in a model for quantified values, because it is an artifact of a measuring process and/or device, not of a quantity itself. For example, a weight of "82 kg &#177;5%" can be represented in two parts. The "82 kg" is represented as a <code>Dv_quantity</code>, while the "&#177;5%" could be included in the protocol description of the weighing instrument, since this is where the error comes from. For practical purposes however, (in)accuracy in a measured quantity corresponds to a range of possible values. In realistic computing in health, it is quite likely that the accuracy will be required in computations on quantities, especially for statistical population queries in which measurement error must be disambiguated from true correlation.</p>
 </div>
 <div class="paragraph">
-<p>Accuracy is therefore introduced as the abstract feature accuracy of the <code>DV_QUANTIFIED</code> class. It is defined concretely in the two descendants, <code>DV_AMOUNT</code>, where it is of type Real, and <code>DV_ABSOLUTE_QUANTITY</code>, where it is of a differential type defined by subtypes. A value of 0 in either case indicates 100% accuracy, i.e. no error in measurement. Where accuracy is not recorded in a quantity, it is represented by a special value. In <code>DV_AMOUNT</code>, a value of -1 for the accuracy attribute
-is used for this purpose, and the constant unknown_accuracy_value = -1 is provided within the class to give a symbolic name for the special value. In the <code>DV_ABSOLUTE_QUANTITY</code> class, <code><em>accuracy_unknown</em></code> is represented by a Void (i.e. null) value for the accuracy attribute. An abstract Boolean feature <code><em>accuracy_unknown</em></code> is defined in the parent class <code>DV_QUANTIFIED</code> to provide a logical test of accuracy being absent, and is implemented in the respective  descendants by concrete functions that check for the special values.</p>
+<p>Accuracy is therefore introduced as the abstract feature accuracy of the <code>Dv_quantified</code> class. It is defined concretely in the two descendants, <code>DV_AMOUNT</code>, where it is of type Real, and <code>DV_ABSOLUTE_QUANTITY</code>, where it is of a differential type defined by subtypes. A value of 0 in either case indicates 100% accuracy, i.e. no error in measurement. Where accuracy is not recorded in a quantity, it is represented by a special value. In <code>DV_AMOUNT</code>, a value of -1 for the accuracy attribute
+is used for this purpose, and the constant unknown_accuracy_value = -1 is provided within the class to give a symbolic name for the special value. In the <code>DV_ABSOLUTE_QUANTITY</code> class, <code><em>accuracy_unknown</em></code> is represented by a Void (i.e. null) value for the accuracy attribute. An abstract Boolean feature <code><em>accuracy_unknown</em></code> is defined in the parent class <code>Dv_quantified</code> to provide a logical test of accuracy being absent, and is implemented in the respective  descendants by concrete functions that check for the special values.</p>
 </div>
 <div class="paragraph">
 <p>In addition, the class <code>DV_AMOUNT</code>, provides a feature <code><em>accuracy_is_percent</em>: Boolean</code> to indicate if accuracy value is to be understood as a percentage, or an absolute value.</p>
@@ -2041,13 +2041,13 @@ is used for this purpose, and the constant unknown_accuracy_value = -1 is provid
 <div class="sect3">
 <h4 id="_quantity_ranges_2"><a class="anchor" href="#_quantity_ranges_2"></a>5.3.3. Quantity Ranges</h4>
 <div class="paragraph">
-<p>Ranges are modelled by the generic type <code>DV_INTERVAL&lt;T:DV_ORDERED&gt;</code> which enables a range of any of the other quantity types (except ratio) to be constructed. This allows any subtype of <code>DV_ORDERED</code> to occur as a range as well.</p>
+<p>Ranges are modelled by the generic type <code>Dv_interval&lt;T:Dv_ordered&gt;</code> which enables a range of any of the other quantity types (except ratio) to be constructed. This allows any subtype of <code>Dv_ordered</code> to occur as a range as well.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_proportions"><a class="anchor" href="#_proportions"></a>5.3.4. Proportions</h4>
 <div class="paragraph">
-<p>The <code>DV_PROPORTION</code> type is provided for representing true ratios, i.e. relative values, and consists of numerator and denominator Real values, and a magnitude function which is computed as the result of the numerator/denominator division. The type attribute is used to indicate the logical type of the proportion. Supported types include:</p>
+<p>The <code>Dv_ratio</code> type is provided for representing true ratios, i.e. relative values, and consists of numerator and denominator Real values, and a magnitude function which is computed as the result of the numerator/denominator division. The type attribute is used to indicate the logical type of the proportion. Supported types include:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2075,16 +2075,16 @@ is used for this purpose, and the constant unknown_accuracy_value = -1 is provid
 <div class="sect3">
 <h4 id="_normal_and_reference_ranges"><a class="anchor" href="#_normal_and_reference_ranges"></a>5.3.5. Normal and Reference Ranges</h4>
 <div class="paragraph">
-<p>Normal range for any of the quantity types (i.e. any instance of a subtype of <code>DV_ORDERED</code>) can be included via the attribute <code>DV_ORDERED</code>.<code><em>normal_range</em></code>, of type <code>REFERENCE_RANGE</code>. Other reference ranges (e.g. sub-critical, critical etc) can be included via the attribute <code>DV_ORDERED</code>.<code><em>other_reference_ranges</em></code>. The separation of normal and other reference range attributes is used because the former constitute the vast majority of ranges quoted for quantitative data.</p>
+<p>Normal range for any of the quantity types (i.e. any instance of a subtype of <code>Dv_ordered</code>) can be included via the attribute <code>Dv_ordered.<em>normal_range</em></code>, of type <code>REFERENCE_RANGE</code>. Other reference ranges (e.g. sub-critical, critical etc) can be included via the attribute <code>Dv_ordered.<em>other_reference_ranges</em></code>. The separation of normal and other reference range attributes is used because the former constitute the vast majority of ranges quoted for quantitative data.</p>
 </div>
 <div class="paragraph">
-<p>Normal status can be included via the attribute <code>DV_ORDERED</code>.<code><em>normal_status</em></code>, which takes the form of a <code>DV_ORDINAL</code>, whose symbol attribute is coded according to the openEHR terminology group "normal status", and takes values "HHH" (critically high), "HH" (abnormally high), "H" (borderline high)", "N" (normal), "L" &#8230;&#8203; "LLL".</p>
+<p>Normal status can be included via the attribute <code>Dv_ordered.<em>normal_status</em></code>, which takes the form of a <code>Dv_ordinal</code>, whose symbol attribute is coded according to the openEHR terminology group "normal status", and takes values "HHH" (critically high), "HH" (abnormally high), "H" (borderline high)", "N" (normal), "L" &#8230;&#8203; "LLL".</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_recording_time"><a class="anchor" href="#_recording_time"></a>5.3.6. Recording Time</h4>
 <div class="paragraph">
-<p>Time can be recorded in two ways. Absolute times in the social time domain, such as dates and time of day are recorded using the types in the date_time package. Fine-grained 'time', which is a duration rather than a time, is recorded using a <code>DV_QUANTITY</code> with units = 's' or another temporal unit ('h', 'ms', 'ns' etc).</p>
+<p>Time can be recorded in two ways. Absolute times in the social time domain, such as dates and time of day are recorded using the types in the date_time package. Fine-grained 'time', which is a duration rather than a time, is recorded using a <code>Dv_quantity</code> with units = 's' or another temporal unit ('h', 'ms', 'ns' etc).</p>
 </div>
 </div>
 </div>
@@ -3032,7 +3032,7 @@ be unsure about dates and durations. Requirements for partial date/times include
 </li>
 <li>
 <p>If not even the year is known, then the date is obviously extremely approximate and it would
-probably be unsafe to represent it computationally. However, if computatable representation
+probably be unsafe to represent it computationally. However, if computable representation
 was needed in this case, a date interval can be used. A pedantic example which breaks these
 rules is someone who claims to be born on "a Monday at the start of May in 1934" (i.e. day
 but not date unknown). Either the clinician determines what date the first Monday in May
@@ -3090,12 +3090,12 @@ various operations, particularly comparison.</p>
 the Date, Date/time and Time concepts, each of which measure time from a known origin. Date and
 Date/time measure calendrical time from the date <code>0001-01-01</code>, while Time measures clock time from
 midnight. Both Date/time and Time can include timezone information, ensuring that their instances
-are correctly situated on the same timeline. All absolute time types inherit from the <code>DV_TEMPORAL</code>
+are correctly situated on the same timeline. All absolute time types inherit from the <code>Dv_temporal</code>
 type, which provides the appropriate signature for the <code><em>diff()</em></code> function.</p>
 </div>
 <div class="paragraph">
 <p>The relative category contains only the Duration concept, which expresses elapsed time between two
-time points. The <code>DV_DURATION</code> class is used for expressing durations of clinical phenomena and differences
+time points. The <code>Dv_duration</code> class is used for expressing durations of clinical phenomena and differences
 between absolute times.</p>
 </div>
 <div class="paragraph">
@@ -3104,7 +3104,7 @@ between absolute times.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>a negative sign may be used before a Duration, for example '-P10D', meaning '10 days before [origin]', where the 'origin' is a timepoint understood as the origin for the duration;</p>
+<p>a negative sign may be used before a Duration, for example '-P10D', meaning '10 days before [origin]', where the 'origin' is a time-point understood as the origin for the duration;</p>
 </li>
 <li>
 <p>the  W' designator may be mixed with other designators.</p>
@@ -3112,7 +3112,7 @@ between absolute times.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The first exception allows the expression of negative durations, indicating an elapsed time prior to an origin point. An example from clinical medicine is the notion of 'adjusted age', whereby the true developmental age of a very premature newborn is computed with respect to the origin point of birth after a nominal gestation period (usually 9 months). A baby born at 6 months would therefore have an adjusted age of '-3 months', or '-P3M' in the format used by the <code>DV_DURATION</code> type. The use of the negative enables correctly computed developmental age comparisons of newborns, regardless of prematurity. Negation for ISO 8601 durations is also supported by <a href="https://www.w3.org/XML/Schema" target="_blank" rel="noopener">W3C XML-schema</a> and various programming languages.</p>
+<p>The first exception allows the expression of negative durations, indicating an elapsed time prior to an origin point. An example from clinical medicine is the notion of 'adjusted age', whereby the true developmental age of a very premature newborn is computed with respect to the origin point of birth after a nominal gestation period (usually 9 months). A baby born at 6 months would therefore have an adjusted age of '-3 months', or '-P3M' in the format used by the <code>Dv_duration</code> type. The use of the negative enables correctly computed developmental age comparisons of newborns, regardless of prematurity. Negation for ISO 8601 durations is also supported by <a href="https://www.w3.org/XML/Schema" target="_blank" rel="noopener">W3C XML-schema</a> and various programming languages.</p>
 </div>
 <div class="paragraph">
 <p>See the <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html#_time_types" target="_blank" rel="noopener">Time Types section in the openEHR Foundation Types specification</a> for conformance details.</p>
@@ -3133,7 +3133,7 @@ date/times is as follows.</p>
 <p>The modelling problem relates only to date/time quantities that need to be computable. For extremely imprecise date/times, if the clinician feels the need, she can record it as narrative text.</p>
 </li>
 <li>
-<p>For imprecise durations, an interval should be used, i.e. <code>DV_INTERVAL&lt;DV_DURATION&gt;</code>. In this way durations like '2 - 3 hrs' can be represented, and still be computable.</p>
+<p>For imprecise durations, an interval should be used, i.e. <code>Dv_interval&lt;Dv_duration&gt;</code>. In this way durations like '2 - 3 hrs' can be represented, and still be computable.</p>
 </li>
 </ul>
 </div>
@@ -3451,7 +3451,7 @@ system generates checksums to improve the quality of its internal data transmiss
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Any encapsulated data item may be in some particular language, even if it is an image or other graphic form such as a biosignal with axis markings in a particular language;</p>
+<p>Any encapsulated data item may be in some particular language, even if it is an image or other graphic form such as a bio-signal with axis markings in a particular language;</p>
 </li>
 <li>
 <p>The general structure of encapsulated content data items includes a block of bytes or characters representing the content, and various meta-data as appropriate, including:</p>
@@ -3481,16 +3481,16 @@ system generates checksums to improve the quality of its internal data transmiss
 </ol>
 </div>
 <div class="paragraph">
-<p>These observations lead naturally to an abstract <code>DV_ENCAPSULATED</code> class, with two subtypes,
-<code>DV_PARSABLE</code>, for all content which is syntactic in nature, and <code>DV_MULTIMEDIA</code> for everything else.
+<p>These observations lead naturally to an abstract <code>Dv_encapsulated</code> class, with two subtypes,
+<code>Dv_parsable</code>, for all content which is syntactic in nature, and <code>Dv_multimedia</code> for everything else.
 Note that it is possible to imagine parsable content items which are large, stored in compressed form,
 and are themselves a summary of another item elsewhere on the web; such items can for practical
-purposes be represented as instances of <code>DV_MULTIMEDIA</code>, rather than <code>DV_PARSABLE</code>. The vast
+purposes be represented as instances of <code>Dv_multimedia</code>, rather than <code>Dv_parsable</code>. The vast
 majority of parsable encapsulated data are expected to be short and stored in native textual form, e.g.
 fragments of XML or HTML.</p>
 </div>
 <div class="paragraph">
-<p>The formal model of the classes <code>DV_ENCAPSULATED</code> and <code>DV_MULTIMEDIA</code> are closely based on the
+<p>The formal model of the classes <code>Dv_encapsulated</code> and <code>Dv_multimedia</code> are closely based on the
 ED type from the HL7v3 data types specification.</p>
 </div>
 </div>
@@ -3515,27 +3515,27 @@ ED type from the HL7v3 data types specification.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">inline JSON</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DV_PARSABLE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Dv_parsable</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>value</em></code> = JSON string<br>
                                              <code><em>formalism</em> = "json"</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">inline JSON, minified<br>
  (white space removed)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DV_PARSABLE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Dv_parsable</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>value</em></code> = minified JSON string<br>
                                              <code><em>formalism</em> = "json"</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON document</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DV_MULTIMEDIA</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Dv_multimedia</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>uri</em></code> = URI at which document is located<br>
                                              <code><em>media_type</em> = "IANA::application/json"</code><br>
                                              <code><em>size</em></code> = Integer indicating number of bytes of target.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">inline JPG</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DV_MULTIMEDIA</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Dv_multimedia</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>data</em></code> = byte array carrying JPG<br>
                                              <code><em>media_type</em> = "IANA::image/jpeg"</code><br>
                                              <code><em>size</em></code> = Integer indicating number of bytes of <code><em>data</em></code>.</p></td>
@@ -3543,7 +3543,7 @@ ED type from the HL7v3 data types specification.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">inline JPG, Base64<br>
  encoded</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DV_MULTIMEDIA</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Dv_multimedia</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>data</em></code> = byte array carrying Base64 string of JPG<br>
                                              <code><em>media_type</em> = "IANA::image/jpeg;base64"</code><br>
                                              <code><em>size</em></code> = Integer indicating number of bytes of <code><em>data</em></code>.</p></td>
@@ -3551,7 +3551,7 @@ ED type from the HL7v3 data types specification.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">inline JPG with<br>
  SHA-2 hash</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DV_MULTIMEDIA</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Dv_multimedia</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>data</em></code> = byte array carrying JPG<br>
                                              <code><em>media_type</em> = "IANA::image/jpeg"</code><br>
                                              <code><em>integrity_check</em></code> = byte array containing SHA-2 hash<br>
@@ -4043,9 +4043,9 @@ Technology Specification (ITS) document for each target formalism should be cons
 <div class="sect2">
 <h3 id="_quantities_and_ordered_numeric"><a class="anchor" href="#_quantities_and_ordered_numeric"></a>9.2. Quantities and Ordered_numeric</h3>
 <div class="paragraph">
-<p>In the quantity package, the type <code>DV_QUANTIFIED</code> is shown having an abstract property of type
-Ordered_numeric. This is intended to indicate that the type <code>DV_QUANTIFIED</code> is distinguished by
-the magnitude property (compared to say <code>DV_ORDERED</code>, which describes ordered things without having
+<p>In the quantity package, the type <code>Dv_quantified</code> is shown having an abstract property of type
+Ordered_numeric. This is intended to indicate that the type <code>Dv_quantified</code> is distinguished by
+the magnitude property (compared to say <code>Dv_ordered</code>, which describes ordered things without having
 magnitudes). The type Ordered_numeric be mapped to various types in implementation technologies
 as follows:</p>
 </div>
@@ -4066,9 +4066,9 @@ as follows:</p>
 <p>All of these type systems currently suffer from not having a single type whose meaning is both
 "ordered" (having the function '&lt;') and "numeric" (having the functions '+', '-', '*', '/') but in practice
 it does not matter much. For type systems with no convenient supertype of the numeric concrete
-types <code>Real</code>, <code>Integer</code>, <code>Double</code>, the <code><em>magnitude</em></code> property can safely be left out of <code>DV_QUANTIFIED</code>;
-the only drawback is that code cannot call <code>DV_QUANTIFIED</code>.<code><em>magnitude</em></code> polymorphically, e.g. in a
-statistical application processing <code>DV_QUANTITY</code> and <code>DV_COUNT</code> objects.</p>
+types <code>Real</code>, <code>Integer</code>, <code>Double</code>, the <code><em>magnitude</em></code> property can safely be left out of <code>Dv_quantified</code>;
+the only drawback is that code cannot call <code>Dv_quantified</code>.<code><em>magnitude</em></code> polymorphically, e.g. in a
+statistical application processing <code>Dv_quantity</code> and <code>Dv_count</code> objects.</p>
 </div>
 </div>
 <div class="sect2">

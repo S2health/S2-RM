@@ -13,7 +13,7 @@ image::{uml_diagrams_uri}/GCM-data_types.text.svg[id=rm_data_types_text, align="
 The sections below describe the requirements of text data types. Two overriding principles should be noted at the outset with regard to text.
 
 . Regardless of what terminologies are (or are not) available to the clinician and/or the software, the primary requirement is that in all cases clinicians are able to record exactly what they want to say. This means that if they want to record something very general, such as "cold" or a very specific term such as "Ross River virus infection" they should be able to, whether or not the appropriate coded terms are available. However, the facility should be available to additionally code any such textual item, at the time or indeed at some later time, so as to satisfy reporting or other needs.
-. It is assumed that any client of terminology, such as the EHR, uses a terminology service which provides a complete interface to the terminology. The design of the `DV_CODED_TEXT` type reflects this. Accordingly, there is no concept of "post-coordination" outside the terminology environment allowed by the data types described here: the only thing that is available from the terminology service is a key which refers to a lexical entity, which may be a single term or a code phrase, and which may be part of a reference terminology and/or linked to element(s) of underlying ontologies. It is also assumed that there is no direct access to any particular terminology; access to all terminologies (whether simple coded lexicons or large semantic networks) is via the same abstract interface.
+. It is assumed that any client of terminology, such as the EHR, uses a terminology service which provides a complete interface to the terminology. The design of the `Dv_coded_text` type reflects this. Accordingly, there is no concept of "post-coordination" outside the terminology environment allowed by the data types described here: the only thing that is available from the terminology service is a key which refers to a lexical entity, which may be a single term or a code phrase, and which may be part of a reference terminology and/or linked to element(s) of underlying ontologies. It is also assumed that there is no direct access to any particular terminology; access to all terminologies (whether simple coded lexicons or large semantic networks) is via the same abstract interface.
 
 Terminology Ids are likely to be of various types.
 
@@ -99,14 +99,14 @@ Clinicians need the freedom to maximise clarity of any text they write, and ther
 
 == Semantics
 
-All atomic text items are either instances of the type `DV_TEXT` or of `DV_CODED_TEXT`. The type `DV_TEXT` should be used wherever a coded or non-coded text item is allowed, while the type `DV_CODED_TEXT` should be used wherever a text item must be coded. The former allows the representation of text (`_value_` attribute) with optional formatting and hyperlinking (see <<_formatting_and_hyperlinking>> below). The latter class `DV_CODED_TEXT` captures the association of two things:
+All atomic text items are either instances of the type `Dv_text` or of `Dv_coded_text`. The type `Dv_text` should be used wherever a coded or non-coded text item is allowed, while the type `Dv_coded_text` should be used wherever a text item must be coded. The former allows the representation of text (`_value_` attribute) with optional formatting and hyperlinking (see <<_formatting_and_hyperlinking>> below). The latter class `Dv_coded_text` captures the association of two things:
 
 * the code of a term known in the terminology service, recorded in the `_defining_code_` attribute of type `CODE_PHRASE`;
-* the text rubric of the term, recorded in the `_value_` attribute (inherited from `DV_TEXT`).
+* the text rubric of the term, recorded in the `_value_` attribute (inherited from `Dv_text`).
 
 The attribute `CODE_PHRASE._code_string_` records a term code or code expression which may be used as an argument to a retrieval function in the terminology service interface to obtain the definition of the term or expression.
 
-The model of `DV_CODED_TEXT` is designed to capture the _actual_ term chosen by the user or software at runtime, i.e. preferred term or synonym (for terminologies supporting synonyms), or a post-coordination of underlying distinct terms if an expression was chosen as the term (such as an expression supported by SNOMED CT). A `DV_CODED_TEXT` instance is used if the final textual value chosen by the user is the exact term text (preferred or other) returned by the terminology service for the key (i.e. `_code_string_` value). If the user makes even the slightest modification during data entry, a mapping (see <<Mappings>>) to a `DV_TEXT` should be used instead.
+The model of `Dv_coded_text` is designed to capture the _actual_ term chosen by the user or software at runtime, i.e. preferred term or synonym (for terminologies supporting synonyms), or a post-coordination of underlying distinct terms if an expression was chosen as the term (such as an expression supported by SNOMED CT). A `Dv_coded_text` instance is used if the final textual value chosen by the user is the exact term text (preferred or other) returned by the terminology service for the key (i.e. `_code_string_` value). If the user makes even the slightest modification during data entry, a mapping (see <<Mappings>>) to a `Dv_text` should be used instead.
 
 === Qualification
 
@@ -150,17 +150,17 @@ values or ambiguities by arbitrarily association with other terms.
 
 ==== Representation of Meaning-Modifying Terms
 
-Rather than provide explicit features for representing modifier terms within `DV_CODED_TEXT`, the
+Rather than provide explicit features for representing modifier terms within `Dv_coded_text`, the
 general principle underlying representation of all post-coordinations other than qualifications, is that
-a higher-level, archetyped structure such as an `ENTRY` (defined in the EHR RM), is a _minimal indivisible
+a higher-level, archetyped structure such as an `Entry` (defined in the EHR RM), is a _minimal indivisible
 unit of information_. Such higher-level entities can have internal structure, and it is possible (and
-desirable) to achieve the effect of combinations of terms through this structure. In the case of `ENTRY`,
+desirable) to achieve the effect of combinations of terms through this structure. In the case of `Entry`,
 it will be via structuring of `CLUSTER`/`ELEMENT` objects. The general rule is: to obtain the full meaning
-of any terms found in the record, all of the node names in any `ENTRY` (coded or not) must be considered
+of any terms found in the record, all of the node names in any `Entry` (coded or not) must be considered
 from the root to the relevant leaf. Conversely, the "final" meaning of any term in the record
 cannot be known in isolation from the rest of the terms in the structure.
 
-Accordingly, the concept "family history of coronary disease" is represented as an `ENTRY` whose root
+Accordingly, the concept "family history of coronary disease" is represented as an `Entry` whose root
 is named (for example) "subject family history", and which includes further structure, which may be
 in greater of lesser detail; the coded term "coronary disease" would appear somewhere in this structure.
 The actual structure is completely defined by appropriate archetypes. Contrary to some perceptions,
@@ -192,9 +192,9 @@ must be described in some detail for the EHR to be of any real use. Almost inevi
 the use of negated terms. Since the actual information structure will be determined in advance by
 archetype designers, clinicians will almost never be in the situation of having to negate a term. However,
 if the need does arise, it should be dealt with by a negative or quantitative answer, i.e. a value
-rather than a name. For example, in any `ENTRY` describing current problems, the clinician may record
-the name/value pair "allergies: NONE". Here, "allergies" will be a `DV_CODED_TEXT`, and "NONE"
-will be either a `DV_CODED_TEXT` or a `DV_TEXT`; the two will be associated by a containing object,
+rather than a name. For example, in any `Entry` describing current problems, the clinician may record
+the name/value pair "allergies: NONE". Here, "allergies" will be a `Dv_coded_text`, and "NONE"
+will be either a `Dv_coded_text` or a `Dv_text`; the two will be associated by a containing object,
 such as an instance of the `ELEMENT` class from the EHR RM. There is no explicit model of negation
 in openEHR.
 
@@ -256,7 +256,7 @@ A further situation in which text values - this time plain text - is mapped to e
 natural language processing is used to generate coded terms for existing free-text prose. The aim of
 such processing is to detect word phrases and associate them with a coded term of the same meaning,
 without obliterating the original text. In terms of the model described here, a `CODE_PHRASE` is associated
-with a `DV_TEXT` instance via the mappings attribute.
+with a `Dv_text` instance via the mappings attribute.
 
 In all cases with equivalents, the value of the match attribute is '=', indicating that the mapping is a
 synonym.
@@ -281,7 +281,7 @@ cross-referenced. UMLS CUIs could turn out to be extremely useful for decision s
 
 The proper use of UMLS is that terms from particular terminologies are passed to a UMLS interface
 and a CUI + rubric received in response. However, the mapping approach described above could also
-be used to map UMLS CUIs to existing text or terms in an EHR; in this case, a `DV_CODED_TEXT` is
+be used to map UMLS CUIs to existing text or terms in an EHR; in this case, a `Dv_coded_text` is
 constructed for each UMLS "term", where the code is the CUI and the rubric is the text rendering of
 the CUI (guaranteed unique in UMLS). The same approach can be used for any other thesaurus
 which becomes available in the future.
@@ -291,8 +291,8 @@ which becomes available in the future.
 In cases where legacy data has to be converted to openEHR-compliant data, and only codes are available,
 e.g. ICD or ICPC codes, the following approach is recommended:
 
-* create a new `DV_TEXT` whose value is "(not available)"
-* add a mapping to the `DV_TEXT`, with:
+* create a new `Dv_text` whose value is "(not available)"
+* add a mapping to the `Dv_text`, with:
 ** `_purpose_` = `"legacy conversion"`
 ** `_match_` = `"="`
 ** `_target_` = `CODE_PHRASE` object whose `_code_string_` and `_terminology_id_` are set to correspond to the available code in the legacy data.
@@ -303,14 +303,14 @@ This expresses the reality that no text was ever recorded in the legacy system; 
 
 In most cases the natural language of a text object is known from the enclosing Entry (i.e. Observation)
 or other enclosing context. Where it is different (e.g. a German sentence within an English language
-diagnosis), or there is no enclosing context, the `DV_TEXT._language_` attribute can be set to
+diagnosis), or there is no enclosing context, the `Dv_text._language_` attribute can be set to
 indicate the language of the text item.
 
 === Formatting and Hyperlinking
 
-Formatted text is represented by `DV_TEXT` and `DV_CODED_TEXT` instances.
+Formatted text is represented by `Dv_text` and `Dv_coded_text` instances.
 
-Formatting of the text in the `_value_` field of `DV_TEXT` and `DV_CODED_TEXT` instances may be indicated via the optional `_formatting_` attribute. How this attribute is used has changed from initial versions of the openEHR Reference Model.
+Formatting of the text in the `_value_` field of `Dv_text` and `Dv_coded_text` instances may be indicated via the optional `_formatting_` attribute. How this attribute is used has changed from initial versions of the openEHR Reference Model.
 
 A common model of text processing is of a processing pipeline that consumes readable text containing markings, which is then rendered into HTML, PDF or some other rendering format, and then displayed by a tool such as a web browser that consumes the latter format. Historical approaches to marking text were known as 'markup', such as nroff, troff, Latek, and then more recently, numerous formats whose base syntax is XML. These formats all have the disadvantages of poor human readability in raw form, and being specific to particular rendering engines, and are starting to fall out of favour for uses involving human reading of the raw text. Another common approach to formatting text is to use the _output format_, usually HTML, to express e.g. fonts, bolding etc. This is also problematic for human readability, being complicated by the use of CSS classes in tags, which then need to be defined.
 
@@ -324,17 +324,17 @@ The `_formatting_` attribute may contain one of the following values, with the a
 * `"plain_no_newlines"`: as for the plain case, but newlines are not allowed - the text is a simple 'atom';
 * (legacy - deprecated): for legacy purposes, it remains legal to use a string of the form `"name:value; name:value…"` , e.g. `"font-weight : bold; font-family : Arial; font-size : 12pt;"`.
 
-Related to the question of formatting, a second optional attribute, `DV_TEXT._hyperlink_` of type `DV_URI`, exists to specify a web link associated with the whole text represented by the `DV_TEXT` instance. Similarly to the case of formatting, the more modern markdown approach to using the `_value_` field is also more flexible with regards to links, since multiple instances of the latter may be used within a single text.
+Related to the question of formatting, a second optional attribute, `Dv_text._hyperlink_` of type `DV_URI`, exists to specify a web link associated with the whole text represented by the `Dv_text` instance. Similarly to the case of formatting, the more modern markdown approach to using the `_value_` field is also more flexible with regards to links, since multiple instances of the latter may be used within a single text.
 
 Not all CommonMark features are allowed in the `_value_` field, if it contains markdown. The following should not be used:
 
 * HTML 'blocks';
 * raw HTML;
-* images - these may be included in openEHR content via the `DV_MULTIMEDIA` types.
+* images - these may be included in openEHR content via the `Dv_multimedia` types.
 
-==== Usage in DV_TEXT Instances
+==== Usage in Dv_text Instances
 
-In a concrete instance of `DV_TEXT`, the following are the likely usages of the `_value_` and `_formatting_` attributes.
+In a concrete instance of `Dv_text`, the following are the likely usages of the `_value_` and `_formatting_` attributes.
 
 [cols="2,1,1", options="header"]
 |===
@@ -361,9 +361,9 @@ In a concrete instance of `DV_TEXT`, the following are the likely usages of the 
 
 |===
 
-==== Usage in DV_CODED_TEXT Instances
+==== Usage in Dv_coded_text Instances
 
-In a concrete instance of `DV_CODED_TEXT`, the following are the likely usages of the `_value_` and `_formatting_` attributes.
+In a concrete instance of `Dv_coded_text`, the following are the likely usages of the `_value_` and `_formatting_` attributes.
 
 [cols="2,1,1", options="header"]
 |===

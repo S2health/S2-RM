@@ -6,9 +6,9 @@ h|*Class*
 2+^h|*__Entry (abstract)__*
 
 h|*Description*
-2+a|The abstract parent of all `ENTRY` subtypes. An `ENTRY` is the root of a logical item of  hard  clinical information created in the  clinical statement  context, within a clinical session. There can be numerous such contexts in a clinical session. Observations and other Entry types only ever document information captured/created in the event documented by the enclosing Composition.
+2+a|The abstract parent of all `Entry` subtypes. An `Entry` is the root of a logical item of  hard  clinical information created in the  clinical statement  context, within a clinical session. There can be numerous such contexts in a clinical session. Observations and other Entry types only ever document information captured/created in the event documented by the enclosing Composition.
 
-An `ENTRY` is also the minimal unit of information any query should return, since a whole `ENTRY` (including subparts) records spatial structure, timing information, and contextual information, as well as the subject and generator of the information.
+An `Entry` is also the minimal unit of information any query should return, since a whole `Entry` (including subparts) records spatial structure, timing information, and contextual information, as well as the subject and generator of the information.
 
 h|*Inherit*
 2+|`link:/releases/GCM/{gcm_release}/ehr.html#_content_item_class[Content_item^]`
@@ -27,7 +27,7 @@ a|Name of character set in which text values in this Entry are encoded. Coded fr
 
 h|*0..1*
 |*other_participations*: `List<link:/releases/BASE/{base_release}/base_types.html#_participation_class[Participation^]>`
-a|Other participations at `ENTRY` level.
+a|Other participations at `Entry` level.
 
 h|*0..1*
 |*workflow_id*: `link:/releases/BASE/{base_release}/base_types.html#_object_ref_class[Object_ref^]`
@@ -35,7 +35,7 @@ a|Identifier of externally held workflow engine data for this workflow execution
 
 h|*1..1*
 |*subject*: `link:/releases/BASE/{base_release}/base_types.html#_party_proxy_class[Party_proxy^]`
-a|Id of human subject of this `ENTRY`, e.g.:
+a|Id of human subject of this `Entry`, e.g.:
 
 * organ donor
 * foetus
@@ -44,7 +44,7 @@ a|Id of human subject of this `ENTRY`, e.g.:
 
 h|*0..1*
 |*reporter*: `link:/releases/BASE/{base_release}/base_types.html#_party_proxy_class[Party_proxy^]`
-a|Optional identification of provider of the information in this `ENTRY`, which might be:
+a|Optional identification of provider of the information in this `Entry`, which might be:
 
 * the patient
 * a patient agent, e.g. parent, guardian
@@ -56,6 +56,10 @@ Generally only used when the recorder needs to make it explicit. Otherwise, Comp
 h|*0..1*
 |*comment*: `link:/releases/GCM/{gcm_release}/data_types.html#_dv_text_class[Dv_text^]`
 a|TODO: consider if needed to take comment field from CEM StatementBase
+
+h|*0..1*
+|*auth_actions*: `List<<<_authorization_class,Authorization>>>`
+a|Authorization actions made on this Entry.
 h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*

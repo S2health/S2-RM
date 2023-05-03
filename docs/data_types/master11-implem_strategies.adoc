@@ -6,9 +6,9 @@ technologies such as programming languages and XML. For specific guidelines, Imp
 Technology Specification (ITS) document for each target formalism should be consulted.
 
 == Quantities and Ordered_numeric
-In the quantity package, the type `DV_QUANTIFIED` is shown having an abstract property of type
-Ordered_numeric. This is intended to indicate that the type `DV_QUANTIFIED` is distinguished by
-the magnitude property (compared to say `DV_ORDERED`, which describes ordered things without having
+In the quantity package, the type `Dv_quantified` is shown having an abstract property of type
+Ordered_numeric. This is intended to indicate that the type `Dv_quantified` is distinguished by
+the magnitude property (compared to say `Dv_ordered`, which describes ordered things without having
 magnitudes). The type Ordered_numeric be mapped to various types in implementation technologies
 as follows:
 
@@ -19,9 +19,9 @@ as follows:
 All of these type systems currently suffer from not having a single type whose meaning is both
 "ordered" (having the function '<') and "numeric" (having the functions '+', '-', '*', '/') but in practice
 it does not matter much. For type systems with no convenient supertype of the numeric concrete
-types `Real`, `Integer`, `Double`, the `_magnitude_` property can safely be left out of `DV_QUANTIFIED`;
-the only drawback is that code cannot call `DV_QUANTIFIED`.`_magnitude_` polymorphically, e.g. in a
-statistical application processing `DV_QUANTITY` and `DV_COUNT` objects.
+types `Real`, `Integer`, `Double`, the `_magnitude_` property can safely be left out of `Dv_quantified`;
+the only drawback is that code cannot call `Dv_quantified`.`_magnitude_` polymorphically, e.g. in a
+statistical application processing `Dv_quantity` and `Dv_count` objects.
 
 == Unicode
 Unicode is supported in various ways in different languages. In Java, since JDK 1.1, unicode support

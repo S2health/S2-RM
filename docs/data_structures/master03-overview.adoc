@@ -30,7 +30,7 @@ Instantaneous events are representing using the type `POINT_EVENT`, for which th
 
 The model also supports the inclusion of 'summary' data, i.e. a textual or image item which summarises in some way the entire history.
 
-In formal terms, the model defines the constrained generic (otherwise known as 'template' or 'parameterised') types `HISTORY<T->ITEM_STRUCTURE>`, `EVENT<T->ITEM_STRUCTURE>`, `POINT_EVENT<T>`, and `INTERVAL_EVENT<T>` where the `_type_` parameter is constrained to the `ITEM_STRUCTURE` type, and defines the type of the data recorded in an instance of `HISTORY`. The effect is that repeated instances of spatially complex data can recur in time, corresponding to the way data are actually measured. An aperiodic series of `POINT_EVENT` instances would typically be used to represent manual measurements repeated in time. Periodic histories of `INTERVAL_EVENT` instances would typically be used to represent vital signs monitor output (which is usually delivered in averaged form potentially with additional minimum and maximum values).
+In formal terms, the model defines the constrained generic (otherwise known as 'template' or 'parameterised') types `HISTORY<T->Cluster>`, `EVENT<T->Cluster>`, `POINT_EVENT<T>`, and `INTERVAL_EVENT<T>` where the `_type_` parameter is constrained to the `Cluster` type, and defines the type of the data recorded in an instance of `HISTORY`. The effect is that repeated instances of spatially complex data can recur in time, corresponding to the way data are actually measured. An aperiodic series of `POINT_EVENT` instances would typically be used to represent manual measurements repeated in time. Periodic histories of `INTERVAL_EVENT` instances would typically be used to represent vital signs monitor output (which is usually delivered in averaged form potentially with additional minimum and maximum values).
 
 As with all other parts of the openEHR reference model, the `history` package is designed so that archetypes define the domain semantics of `HISTORY` instances. The `history` package is shown on the left of <<data_structures_package>>.
 
@@ -40,7 +40,7 @@ The intention of the History model is to represent time-based data for which eve
 
 Firstly, the use of generic types forces the type of the data in each Event to be the same. A History of type `HISTORY<ITEM_LIST>` therefore constrains the type of the data at each Event (`EVENT._item_`) to be of type `ITEM_LIST` and nothing else.
 
-Secondly, the use of archetyping (typically within openEHR Observation archetypes) ensures the actual structure of the `ITEM_STRUCTURE` subtype is defined in the same way for every sample - e.g. a two-item list representing systolic and diastolic blood pressure.
+Secondly, the use of archetyping (typically within openEHR Observation archetypes) ensures the actual structure of the `Cluster` subtype is defined in the same way for every sample - e.g. a two-item list representing systolic and diastolic blood pressure.
 
 === Timing
 
@@ -104,8 +104,8 @@ stored
 |Type
 |Math Function
 
-|'weight change'    |+ 2kg      |`DV_QUANTITY`  |`openehr::147\|change\|`
-|'weight loss'      |(+)2kg     |`DV_QUANTITY`  |`openehr::521\|decrease\|`
+|'weight change'    |+ 2kg      |`Dv_quantity`  |`openehr::147\|change\|`
+|'weight loss'      |(+)2kg     |`Dv_quantity`  |`openehr::521\|decrease\|`
 |'weight loss'      |True       |`Boolean`      |`openehr::521\|decrease\|`
 
 |===
@@ -122,8 +122,8 @@ stored
 |Type
 |Math Function
 
-|'weight change'    |(+)3kg     |`DV_QUANTITY`  |`openehr::147\|change\|`
-|'weight increase'  |(+)3kg     |`DV_QUANTITY`  |`openehr::522\|increase\|`
+|'weight change'    |(+)3kg     |`Dv_quantity`  |`openehr::147\|change\|`
+|'weight increase'  |(+)3kg     |`Dv_quantity`  |`openehr::522\|increase\|`
 |'weight gain'      |True       |`Boolean`      |`openehr::522\|increase\|`
 
 |===
@@ -143,7 +143,7 @@ event which accompanies more detailed historical data. Examples where this arise
 Such data are accommodated within the model via the optional `HISTORY._summary_` attribute, which is
 itself a structure, archetypable separately from the structure of the main data. In the first example
 above, the summary data might consist of an `ITEM_SINGLE` object containing a textual report; in the
-second, an `ITEM_SINGLE` object containing a image within a `DV_MULTIMEDIA` instance.
+second, an `ITEM_SINGLE` object containing a image within a `Dv_multimedia` instance.
 
 === Efficient Representation of Fine-grained Device Data
 
@@ -157,7 +157,7 @@ image::{diagrams_uri}/history_data_compression.svg[id=history_data_compression, 
 
 A feature particular to a model of recording historical data for scientific and clinical use is the ability to record 'state'. In openEHR, 'state' is understood as time-based information about the whole entity from which the values recorded in the `_data_` attribute are recorded. The `_state_` attribute thus records data necessary for the correct interpretation of the primary values recorded in the `_data_` attribute. An example is where the primary datum is heart rate (values representing rate of the heart beating). Useful state data may include anything else from the owning entity (a human being) that affects the heart rate, such as the level of exertion of the subject (resting, after 3 minutes hard cycling etc). In clinical situations, the state data are often crucial to the safe use of the primary data, since the latter might be normal or abnormal depending on the patient state.
 
-In openEHR there are two ways of recording state. One is via the use of a separate `HISTORY` structure within the `OBSERVATION` class (see `ehr.composition.content.entry` package). The other is via the use of the state attribute of type `ITEM_STRUCTURE` defined in the class `EVENT` itself. Experience with openEHR archetypes and systems has shown that the latter method corresponds to the most common clinical need, which is to be able to record the state at the time of the event (the other method allows for the recording of independent state events). A simple example is the recording of 3 glucose levels during a glucose tolerance test. The state information for each event is, respectively (in a typical test):
+In openEHR there are two ways of recording state. One is via the use of a separate `HISTORY` structure within the `Observation` class (see `ehr.composition.content.entry` package). The other is via the use of the state attribute of type `Cluster` defined in the class `EVENT` itself. Experience with openEHR archetypes and systems has shown that the latter method corresponds to the most common clinical need, which is to be able to record the state at the time of the event (the other method allows for the recording of independent state events). A simple example is the recording of 3 glucose levels during a glucose tolerance test. The state information for each event is, respectively (in a typical test):
 
 * 0-minute sample: 'post 8-hour fast;
 * 1-hour sample: 'post 75g oral glucose challenge';

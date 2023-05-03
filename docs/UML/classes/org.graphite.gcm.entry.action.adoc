@@ -9,7 +9,7 @@ h|*Description*
 2+a|Used to record a clinical action that has been performed, which may have been ad hoc, or due to the execution of an Activity in an Instruction workflow. Every Action corresponds to a careflow step of some kind or another.
 
 h|*Inherit*
-2+|`<<_care_entry_class,Care_entry>>`
+2+|`<<_care_act_entry_class,Care_act_entry>>`
 
 h|*Attributes*
 ^h|*Signature*
@@ -20,14 +20,28 @@ h|*1..1*
 a|Point in time at which this action completed. To indicate an unknown time, use a `DV_DATE_TIME` instance with `_value_` set to the time of creation (or some other known time before which the Action is known to have occurred, e.g. data accession timestamp from integration engine), and `_magnitude_status_` set to `<`.
 
 h|*1..1*
-|*ism_transition*: `<<_ism_transition_class,Ism_transition>>`
+|*state_transition*: `<<_state_transition_class,State_transition>>`
 a|Details of transition in the Instruction state machine caused by this Action.
-
-h|*0..1*
-|*instruction_details*: `<<_order_details_class,Order_details>>`
-a|Details of the Instruction that caused this Action to be performed, if there was one.
 
 h|*1..1*
 |*description*: `link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]`
 a|Description of the action that has been performed, in the form of an archetyped structure.
+
+h|*1..1*
+|*order_ref*: `link:/releases/BASE/{base_release}/base_types.html#_locatable_ref_class[Locatable_ref^]`
+a|Reference to causing Instruction.
+
+h|*1..1*
+|*activity_id*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
+a|Identifier of Activity within Instruction, in the form of its archetype path.
+
+TODO: consider whether we want separate activities on the same order.
+h|*Functions*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1 +
+(effected)*
+|*effective_time* (): `link:/releases/BASE/{base_release}/foundation_types.html#_interval_class[Interval^]<link:/releases/BASE/{base_release}/foundation_types.html#_date_time_class[Date_time^]>`
+a|Moment in subject's timeline for which the observation or result (which may only be completed later) is asserted. Defined in descendants.
 |===

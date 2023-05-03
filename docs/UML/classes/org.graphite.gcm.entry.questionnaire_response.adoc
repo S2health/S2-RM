@@ -9,33 +9,41 @@ h|*Description*
 2+a|A structured response to a Questionnaire,
 
 h|*Inherit*
-2+|`<<_care_entry_class,Care_entry>>`
+2+|`<<_care_act_entry_class,Care_act_entry>>`
 
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
+h|*1..1*
+|*last_update_time*: `link:/releases/BASE/{base_release}/foundation_types.html#_date_time_class[Date_time^]`
+a|Time at which most recent change was made. If complete, understood as completion time.
+
 h|*0..1*
-|*identifier*: `String`
+|*questionnaire_identifier*: `String`
 a|
 
 h|*0..1*
-|*version*: `String`
+|*questionnaire_version*: `String`
 a|Version of the questionnaire.
 
 h|*1..1*
-|*title*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
+|*questionnaire_title*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Title of the questionnaire.
 
-h|*1..1*
-|*time*: `link:/releases/BASE/{base_release}/foundation_types.html#_date_time_class[Date_time^]`
-a|Time completed.
-
 h|*0..1*
-|*completionStatus*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]`
+|*completion_status*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]`
 a|TODO see https://build.fhir.org/valueset-questionnaire-answers-status.html
 
 h|*0..1*
 |*data*: `link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]`
 a|
+h|*Functions*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1 +
+(effected)*
+|*effective_time* (): `link:/releases/BASE/{base_release}/foundation_types.html#_interval_class[Interval^]<link:/releases/BASE/{base_release}/foundation_types.html#_date_time_class[Date_time^]>`
+a|Result = `_last_update_time_`.
 |===

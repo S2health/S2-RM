@@ -1,9 +1,9 @@
-=== Ism_transition Class
+=== State_transition Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*Ism_transition*
+2+^h|*State_transition*
 
 h|*Description*
 2+a|Model of a transition in the Instruction State Machine, caused by a careflow step. The attributes document the careflow step as well as the ISM transition.

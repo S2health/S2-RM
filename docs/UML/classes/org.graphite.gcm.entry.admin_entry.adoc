@@ -23,4 +23,15 @@ h|*1..1*
 |*data*: `link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]`
 a|Content of the Admin Entry.
 The data of the Entry; modelled in archetypes.
+
+h|*1..1*
+|*time*: `link:/releases/BASE/{base_release}/foundation_types.html#_date_time_class[Date_time^]`
+a|Time at which administrative action took place.
+h|*Functions*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1*
+|*effective_time* (): `link:/releases/BASE/{base_release}/foundation_types.html#_interval_class[Interval^]<link:/releases/BASE/{base_release}/foundation_types.html#_date_time_class[Date_time^]>`
+a|Reult = `_time_`.
 |===
