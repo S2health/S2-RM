@@ -2,9 +2,11 @@
 
 == Overview
 
-Orders in openEHR specify actions to be performed in the future. They differ from information in the Proposal sub-category of Opinion in the ontology (i.e. instances of Evaluation in the class model) in that they are specified in sufficient detail to be directly enacted without further clinical decision-making related to the design of the Order, e.g they can be performed by the patient or a nurse. Any decisions that could be made during the performance of an Order are either constrained by the Order itself (e.g. dose range; suspend if adverse reaction) or else are assumed knowledge of the expected performer. For example, an Evaluation may say that "oral cortico-steroids are indicated at a peak flow of 200 l/m". A corresponding Order would indicate the actual drug, route, dose, frequency, and so on. The informed patient might be reasonably expected to be able to vary the dosage on his or her own within a dosage guideline explained by his/her GP.
+The `Order` class is used to represent any formal order, i.e. request to perform actions for the care of a subject. It specifies actions in sufficient detail such that a competent performer(s) may execute the order.
 
-In the ontology shown in <<CIR_ontology>>, Orders are further categorised as Investigation and Intervention. However, as for Evaluation, only a single class, `Order`, is used to model all types of the Order category, with archetypes defining the details of the Order. A second Entry subtype, `Action`, is used to model the information recorded due to the execution of an Order by some agent.
+Actions actually executed subsequent to an Order are represented by instances of the `Action` class.
+
+The following UML diagram illustrates the `Order` and `Action` classes.
 
 [.text-center]
 .Order and Action
@@ -12,41 +14,15 @@ image::{uml_diagrams_uri}/GCM-entry-order.svg[id=entry_order, align="center"]
 
 The following subsections describe Order and Action in some detail.
 
-== Requirements
+== Design Concept
 
-The Order and Action classes are designed to satisfy the following requirements:
-
-* All kinds of interventions, from simple medication orders to complex multi-drug courses should be representable using the same model;
-* Orders should always have a narrative expression, with an optional machine-processible expression in cases where automation will be used;
-* The freedom must exist to model any particular intervention in as much or little detail as required by circumstances;
-* Clinicians must be able to specify Order steps in their own terms, i.e. using terms like "prescribe", "dispense", "start administering", etc;
-* Orders representing diverse clinical workflows must be queryable in a standard way, so that it can be ascertained what Orders are 'active', 'completed' and so on for a patient;
-* It should be possible to provide a coherent view of the state of execution of an Order even if parts of it have been executed in different healthcare provider environments;
-* It must be possible to record ad hoc actions in the record, i.e. acts for which no Order was defined (at least in the EHR in question);
-* Orders must integrate with notification / alert services;
-* An interoperable expression of computable workflow definitions of Orders will be supported.
-
-== Design Principles
-
-The design approach is based on four principles. The first is that the _specification_ of an Order as one or more Activities is distinguished from the information representing actions performed as a result. This makes the model and resulting information instances clear to software designers and data users. It also enables workflow engines to determine which parts of the specification have already been executed, and allows for Actions actually performed to differ from those specified. The separation is realised in terms of the `Order` and `Action` classes and their helpers. Instances of the former specify an Order, while instances of the latter describe steps which have actually been performed.
-
-The second principle is the use of a standard Order state machine (ISM) defining standardised states and transitions for each Activity of an Order, no matter what its clinical meaning. The use of standardised states means that the execution state of any given Activity can be characterised in exactly the same way (e.g. 'planned', 'active', etc), and that it is therefore possible to query the EHR and find out all interventions of any kind in a particular state. The ISM is formally modelled in openEHR. The Order itself can also be considered to be in a state derived from the states of its Activities. An informal description of this aggregate state machine is given below. 
-
-The third principle is to provide a way of mapping steps in any care pathway process (i.e. healthcare business process) to states in the Order state machine. A care pathway process covers the entirety of steps required to effect an Order, for example prescribing, booking, dispensing, referring, suspension etc. Any such step when performed leaves the relevant Order in one of the states of the ISM.
-
-The fourth principle is to support the expression of the formal workflow definition for an Order, where full automation is required. It must be recognised that automation of most therapies and drug admnistration, as well as other interventions like biopsies is minimal today, and is likely to remain so for some time. This is for the simple reason that the cost of automating most tasks is prohibitive compared to human execution, particularly when Order activities can often be executed by healthcare professionals already present for other reasons (e.g. ward nurses). It also has to be said that serious research into the use of workflow automation in healthcare is only quite recent, and that so far, there are no standard models for clinical workflow. In the openEHR approach to modelling workflow, such uncertainty is dealt with in two ways. Firstly, formal workflow specification of an Order is an optional addition to the base model of Order and Action classes, and is not required to obtain a basic level of computability, including use of the ISM. Secondly, the formal expression of workflow is in the form of parsable syntax rather than objects. This is a generally appropriate design choice, since the safest and most convenient persistent form of of a complex formalism is the syntax form rather than the parsed fine-grained object form; this both optimises storage and allows for changes in the syntax over time.
+The `Order` and `Action` classes are slightly adjusted from the openEHR `INSTRUCTION` and `ACTION` Reference Model classes, and support the same requirements and design principles described by the {openehr_rm_ehr}#_instruction_and_action[openEHR model^].
 
 == Model Overview
 
-Order definitions are modelled in terms of the `Order` and `Activity` classes, with optional workflow attributes. These two classes carry the basic information relating to an Order, with all formal workflow definition expressed in parsable syntax in the `Order._wf_definition_` attribute. An `Order` instance includes the narrative description of the Order, and a list of `Activity` instances. It also includes all the attributes inherited from the `Care_entry` class, including subject, participations and so on.
+An `Order` instance includes the narrative description of the order, and a list of `Activity` instances. It also includes all the attributes inherited from the `Care_entry` class, including subject, participations and so on.
 
-Many Orders will have only one Activity, usually describing a medication to be administered and its timing. Some will have more than one drug or therapy, such as the typical 3 drug Losec-HP regime for treating ulcers, and multi-drug chemotherapy. The base Order model does not explicitly try to indicate the exact order, serial or parallel administration, or other dependencies, since the knowledge of how to administer the drugs is known by the relevant clinicians, and/or contained in published guidelines. However, the timing information in each Activity does indicate times, days and the usual specifications of "with meals" etc. The timing information is also sufficient to specify a three drug chemotherapy regime, by indicating which days each drug is administered on. It is only when the Order is to be automated by a workflow engine that the full structure of the Activity graph will be given. Activity instances may be completely absent from an Order, in which case only the narrative will be present. This will typically occur with imported legacy data which itself has no structured representation of medications.
-
-There are three possible levels of representation of an Order, as shown in the figure below. These are the minimal narrative-only level, a level with formal representation of Order activities by `Activity` instances, and a level where a formal workflow definition can also be used. It is expected that the vast majority of openEHR systems for the forseeable future will support only the minimal and basic levels.
-
-[.text-center]
-.Levels of Order representation
-image::{diagrams_uri}/order_representation.png[id=order_representation, align="center", width=60%]
+Most Orders will have only one Activity, describing a single kind of therapy or medication and its timing. Some will have more than one, usually variant forms of the original. Activity instances may be completely absent from an Order, in which case only the narrative will be present. This will typically occur with imported legacy data which itself has no structured representation of medications.
 
 The following figure illustrates the correspondence between Order and Activity structures, and Action objects that are created due to executing the Orders. Each Activity has a standard Order State Machine logically associated with it, indicated in blue. When any step in an Order Activity is executed within an ICT-supported environment, an `Action` instance describing what was done should be created and committed to the EHR. In some cases, ad hoc Actions are created even when there is no Order, such as by self-medicating patients and nurses reacting quickly to patient changes. For such Actions, there is always a notional Activity understood by the health professional.
 
@@ -56,23 +32,11 @@ image::{diagrams_uri}/actions_and_orders.png[id=actions_and_orders, align="cente
 
 All `Actions` include the inherited `Care_entry` attributes, along with the time of being performed, a description of what was performed, and an `State_transition` object indicating the state of the Activity (whether explicit in an Order or not). The current state of an Activity is thus found not in the `Activity` instance but in the most recent `Action` instance for that Activity.
 
-If the Action did correspond to an Order, it will also include an `Order_DETAILS` instance, which indicates which Activity of which Order was executed, including workflow execution details if relevant.
+If the Action did correspond to an Order, it will also include an `Order_tracking` instance, which indicates which Activity of which Order was executed, including workflow execution details if relevant.
 
 Under this scheme, the state of each intervention happening to the patient can be ascertained by querying, regardless of whether explicit Orders exist. 
 
 Note particularly that Actions are often performed in a different provider location, or the home, rather than the provider organisation responsible for the Order. Action objects for a given Order can thus easily appear in multiple health record systems.
-
-== Order Activity Timing
-
-Timing information may be minimal and simplistic, or highly specified. As a consequence, there is no one method of representation that suits all purposes. The simplest expression of timing information is as informal narrative, as found in a prescription for antibiotics, such as "take 3 times a day, for 7 days, with meals". This may be represented using a text value in `Order._narrative_`. 
-
-Formally computable representations can be expressed in two ways. The first is to use the `Activity._timing_` field, of type `Dv_parsable`, which enables the use of syntaxes such as the {iso_8601}[ISO 8601] 'R' syntax. For example, 5 repetitions of the period '10 days' starting on 01 march 2008 is `"R5/2008-03-01T13:00:00Z/P10D"`. However timing in clinical situations varies widely, and numerous other ways of expressing times are commonly required, ranging from simple frequencies, to complex patterns of time, association with events such as meals, menstrual period and so on. To accommodate such variant structures, which are generally beyond the capabilities of the ISO 8601 syntax, the `Activity._description_` attribute may be used to contain these timing structures.
-
-The three approaches are illustrated below.
-
-[.text-center]
-.Activity Timing
-image::{diagrams_uri}/activity_timing.svg[id=activity_timing, align="center", width=80%]
 
 == The Standard Order State Machine (ISM)
 
@@ -89,7 +53,7 @@ The approach chosen here to support such functionality is to define a standard O
 .openEHR standard Order State Machine
 image::{uml_diagrams_uri}/GCM-order_state_machine.svg[id=Order_state_machine, align="center"]
 
-This state machine is the result of long term experience with clinical workflows and act management systems. The states are as follows (Note: the SCHEDULED state was inspired by citenp:[Van_de_Velde_Degoulet2003], Fig 5.5).
+This state machine is the result of long term experience with clinical workflows and act management systems. The states are as follows.
 
 [horizontal]
 INITIAL:: initial state, prior to planning activity (default starting state for computable representation of state machine).
@@ -151,9 +115,9 @@ The following section provides details of how archetypes are used to represent s
 
 == Relationship to Archetypes
 
-Much of the semantics of particular Orders and Actions derive from archetypes. Currently, archetypes are used to define two groups of Order semantics. The first is the descriptions of activities that are defined in Orders (`Activity._description_`) and executed in Actions (`Action`.`_description_`). These descriptions are always of the same form for any given Order, and it is highly desirable to have the same archetype component for both. An example is where the description is of a medication, commonly consisting of a tree or list of ten or more elements describing the drug, its name, form, dose, route and so on. The same information structure is needed in the Order, where it defines what is to be administered, and in the Action, where it describes what has been administered. In any particular instance, there may be small differences in what was administered (e.g. dose or route are modified) even though the archetype model will be the same for both.
+Much of the semantics of particular Orders and Actions derive from archetypes. Currently, archetypes are used to define two groups of Order semantics. The first is the descriptions of activities that are defined in Orders (`Activity._description_`) and executed in Actions (`Action._description_`). These descriptions are always of the same form for any given Order, and it is highly desirable to have the same archetype component for both. An example is where the description is of a medication, commonly consisting of a tree or list of ten or more elements describing the drug, its name, form, dose, route and so on. The same information structure is needed in the Order, where it defines what is to be administered, and in the Action, where it describes what has been administered. In any particular instance, there may be small differences in what was administered (e.g. dose or route are modified) even though the archetype model will be the same for both.
 
-In terms of archetypes therefore, definition of say two `Activities` in an `Order` (see example illustrated below) will actually create separate archetypes of the Activity structures, each of which will be one of the subtypes of `Cluster` (since this is the type of `Activity._description_` and `Action._description_`). The archetypes will then be used by both the `Order` archetype and the `Action` archetype, via the archetype slot mechanism (i.e. the standard way of composing archetypes from other archetypes; see `use_archetype` statements in the figure below).
+In terms of archetypes therefore, definition of two `Activities` in an `Order` (see example illustrated below) will actually create separate archetypes of the Activity structures, each of which will be one of the subtypes of `Cluster` (since this is the type of `Activity._description_` and `Action._description_`). The archetypes will then be used by both the `Order` archetype and the `Action` archetype, via the archetype slot mechanism (i.e. the standard way of composing archetypes from other archetypes; see `use_archetype` statements in the figure below).
 
 [.text-center]
 .Order and Action Archetypes
@@ -162,7 +126,6 @@ image::{diagrams_uri}/order_and_action_archetypes.png[id=Order_and_action_archet
 The second category of archetypable semantics is the correspondence between steps in a healthcare business process and the standard Order state machine, as described above. This mapping is an archetype of the `_ism_transition_` attribute of an `Action` attribute, and therefore defines part of the `Action` archetype. <<Order_and_action_archetypes>> shows how logical archetype elements in the archetyped editor environment corresponds to the resulting archetypes.
 
 Consequently, the set of archetypes defining the clinical semantics of a specific kind of intervention will normally consists of archetypes of `Order`, `Action` and potentially component archetypes of the `Cluster` classes.
-
 
 == Class Descriptions
 
@@ -174,13 +137,15 @@ include::{uml_export_dir}/classes/{pkg}action.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}state_transition.adoc[]
 
-== Instance Structures
+include::{uml_export_dir}/classes/{pkg}order_execution_states.adoc[]
 
-The following subsections illustrate typical Entry instance structures. For guidance on how to best model particular clinical statements, see the archetype part of the {openehr_CKM}[openEHR Clinical Knowledge Manager repository^].
+include::{uml_export_dir}/classes/{pkg}order_execution_transitions.adoc[]
+
+== Instance Examples
 
 === Chained Medication Order
 
-Often, a medication order for one drug consists of segments in which one or more of the administration details of route, form, frequency, dose etc is changed. In hospitals, intravenous antibiotics and pain relief drugs may be followed by a tablet form of the same drug to be taken orally. Other examples are common in general practice, such as the following order:
+Often, a medication order for one drug consists of segments in which one or more of the administration details of route, form, frequency, dose etc. is changed. In hospitals, intravenous antibiotics and pain relief drugs may be followed by a tablet form of the same drug to be taken orally. Other examples are common in general practice, such as the following order:
 
 * trade name = Panafcortelone; generic name = Prednisolone; form = tablets; dose = 25mg; route = oral; freq = bd x 3 days; od x 2 days.
 

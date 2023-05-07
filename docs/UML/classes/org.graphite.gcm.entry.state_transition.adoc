@@ -15,17 +15,17 @@ h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
-h|*1..1*
-|*current_state*: `link:/releases/GCM/{gcm_release}/data_types.html#_dv_coded_text_class[Dv_coded_text^]`
-a|The ISM current state. Coded by openEHR terminology group Instruction states.
-
 h|*0..1*
-|*transition*: `link:/releases/GCM/{gcm_release}/data_types.html#_dv_coded_text_class[Dv_coded_text^]`
+|*transition*: `<<_order_execution_transitions_enumeration,Order_execution_transitions>>`
 a|The ISM transition which occurred to arrive in the current_state. Coded by openEHR terminology group  Instruction transitions.
 
 h|*0..1*
-|*careflow_step*: `link:/releases/GCM/{gcm_release}/data_types.html#_dv_coded_text_class[Dv_coded_text^]`
+|*careflow_step*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|The step in the careflow process which occurred as part of generating this action, e.g.  dispense ,  start_administration. This attribute represents the clinical  label for the activity, as  opposed to current_state which represents  the state machine (ISM)  computable form. Defined in archetype.
+
+h|*1..1*
+|*current_state*: `<<_order_execution_states_enumeration,Order_execution_states>>`
+a|The ISM current state. Coded by openEHR terminology group Instruction states.
 
 h|*0..1*
 |*reason*: `List<link:/releases/GCM/{gcm_release}/data_types.html#_dv_text_class[Dv_text^]>`

@@ -21,16 +21,12 @@ h|*1..1*
 |*language*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]`
 a|Mandatory indicator of the localised language in which this Entry is written. Coded from openEHR Code Set  languages .
 
-h|*1..1*
-|*encoding*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]`
-a|Name of character set in which text values in this Entry are encoded. Coded from openEHR Code Set  character sets.
-
 h|*0..1*
 |*other_participations*: `List<link:/releases/BASE/{base_release}/base_types.html#_participation_class[Participation^]>`
 a|Other participations at `Entry` level.
 
 h|*0..1*
-|*workflow_id*: `link:/releases/BASE/{base_release}/base_types.html#_object_ref_class[Object_ref^]`
+|*workflow_id*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
 a|Identifier of externally held workflow engine data for this workflow execution, for this subject of care.
 
 h|*1..1*
@@ -44,7 +40,7 @@ a|Id of human subject of this `Entry`, e.g.:
 
 h|*0..1*
 |*reporter*: `link:/releases/BASE/{base_release}/base_types.html#_party_proxy_class[Party_proxy^]`
-a|Optional identification of provider of the information in this `Entry`, which might be:
+a|Optional identification of reporter of the information in this `Entry`, which might be:
 
 * the patient
 * a patient agent, e.g. parent, guardian
@@ -58,8 +54,14 @@ h|*0..1*
 a|TODO: consider if needed to take comment field from CEM StatementBase
 
 h|*0..1*
-|*auth_actions*: `List<<<_authorization_class,Authorization>>>`
-a|Authorization actions made on this Entry.
+|*authorization_actions*: `List<link:/releases/BASE/{base_release}/base_types.html#_participation_class[Participation^]>`
+a|
+
+h|*0..1*
+|*lifecycle_state*: `<<_entry_lifecycle_states_enumeration,Entry_lifecycle_states>>`
+a|State within Entry lifecycle, if applicable. States defined by the Entry state machine.
+
+Void indicates that no lifcycle is required for this Entry, and that it is regarded as 'completed' when created.
 h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*

@@ -66,7 +66,6 @@ endif::[]
 
 include::master01-preface.adoc[leveloffset=+1]
 include::master02-overview.adoc[leveloffset=+1]
-include::master03-entry.adoc[leveloffset=+1]
 include::master04-observation.adoc[leveloffset=+1]
 include::master06-assertion.adoc[leveloffset=+1]
 include::master07-order_and_action.adoc[leveloffset=+1]

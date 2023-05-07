@@ -908,9 +908,9 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>Dv_
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>events</strong>: <code>List&lt;<a href="#_event_class">Event</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>events</strong>: <code><a href="#_event_class">Event</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The events in the series. This attribute is of a generic type whose parameter must be a descendant of <code>ITEM_SUTRUCTURE</code>.</p>
+<p>The events in the series.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -982,17 +982,17 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>Dv_
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>state</strong>: <code><a href="#_cluster_class">Cluster</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional state data for this event.</p>
-</div></div></td>
-</tr>
-<tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code><a href="#_cluster_class">Cluster</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The data of this event.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>state</strong>: <code><a href="#_cluster_class">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional state data for this event.</p>
 </div></div></td>
 </tr>
 <tr>

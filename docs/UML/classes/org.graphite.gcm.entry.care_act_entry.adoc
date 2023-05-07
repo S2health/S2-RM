@@ -6,9 +6,9 @@ h|*Class*
 2+^h|*__Care_act_entry (abstract)__*
 
 h|*Description*
-2+a|Record of a concrete act undertaken in the course of care of the subject. Characterised by an `_effective_time_` which is defined in descendants.
+2+a|Abstract parent of types representing concrete acts undertaken in the course of care of the subject. Characterised by an `_effective_time_` which is defined in descendants.
 
-Care acts are usually costed and billable.
+Care acts are usually costed and billable, and may be to do with the creation or execution of an order.
 
 h|*Inherit*
 2+|`<<_care_entry_class,Care_entry>>`
@@ -18,7 +18,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*order_tracking*: `link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]`
+|*order_tracking*: `<<_order_tracking_class,Order_tracking>>`
 a|Order tracking data.
 
 TODO: possibly hard-model requestor and filler ids.

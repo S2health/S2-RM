@@ -17,10 +17,6 @@ h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
-h|*0..1*
-|*order_id*: `List<link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]>`
-a|TODO - possibly need a full Cluster.
-
 h|*1..1*
 |*narrative*: `link:/releases/GCM/{gcm_release}/data_types.html#_dv_text_class[Dv_text^]`
 a|Mandatory human-readable version of what the Instruction is about.
