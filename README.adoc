@@ -2,3 +2,4 @@
 
 This repository contains the document and model sources (Asciidoctor and MagicDraw) for the Graphite Platform GCM specifications. 
 
+https://silver-carnival-698qmm3.pages.github.io/[Specifications^]
