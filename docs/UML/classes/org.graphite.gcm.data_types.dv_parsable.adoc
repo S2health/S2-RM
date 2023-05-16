@@ -15,24 +15,8 @@ h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
-h|*1..1*
-|*formalism*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
-a|Name of the formalism, e.g.  GLIF 1.0 ,  Proforma  etc.
-
-h|*1..1*
-|*value*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
-a|The string, which may validly be empty in some syntaxes.
-h|*Functions*
-^h|*Signature*
-^h|*Meaning*
-
-h|*1..1*
-|*size* (): `link:/releases/BASE/{base_release}/foundation_types.html#_integer_class[Integer^]`
-a|Size in bytes of value.
-
-h|*Invariants*
-2+a|__Formalism_valid__: `not formalism.is_empty`
-
-h|
-2+a|__Size_valid__: `size >= 0`
+h|*1..1 +
+(redefined)*
+|*value*: `link:/releases/BASE/{base_release}/foundation_types.html#_parsable_class[Parsable^]`
+a|
 |===

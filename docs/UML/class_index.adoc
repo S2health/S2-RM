@@ -3,15 +3,6 @@
 
 === Model org.graphite.gcm
 
-==== Package common
-
-[.xcode]
-* link:/releases/GCM/{gcm_release}/common.html#_folder_class[FOLDER^]
-[.xcode]
-* link:/releases/GCM/{gcm_release}/common.html#_item_tag_class[ITEM_TAG^]
-[.xcode]
-* link:/releases/GCM/{gcm_release}/common.html#_versioned_folder_class[VERSIONED_FOLDER^]
-
 ==== Package composition
 
 [.xcode]
@@ -65,8 +56,6 @@
 [.xcode]
 * link:/releases/GCM/{gcm_release}/data_types.html#_dv_identifier_class[Dv_identifier^]
 [.xcode]
-* link:/releases/GCM/{gcm_release}/data_types.html#_dv_measured_class[Dv_measured^]
-[.xcode]
 * link:/releases/GCM/{gcm_release}/data_types.html#_dv_multimedia_class[Dv_multimedia^]
 [.xcode]
 * link:/releases/GCM/{gcm_release}/data_types.html#_dv_ordered_class[Dv_ordered^]
@@ -95,6 +84,8 @@
 [.xcode]
 * link:/releases/GCM/{gcm_release}/data_types.html#_dv_uri_class[Dv_uri^]
 [.xcode]
+* link:/releases/GCM/{gcm_release}/data_types.html#_measured_class[Measured^]
+[.xcode]
 * link:/releases/GCM/{gcm_release}/data_types.html#_ratio_kind_enumeration[Ratio_kind^]
 [.xcode]
 * link:/releases/GCM/{gcm_release}/data_types.html#_reference_range_class[Reference_range^]
@@ -106,19 +97,25 @@
 ==== Package ehr
 
 [.xcode]
-* link:/releases/GCM/{gcm_release}/ehr.html#_access_control_settings_class[ACCESS_CONTROL_SETTINGS^]
+* link:/releases/GCM/{gcm_release}/ehr.html#_access_control_settings_class[Access_control_settings^]
 [.xcode]
-* link:/releases/GCM/{gcm_release}/ehr.html#_ehr_class[EHR^]
+* link:/releases/GCM/{gcm_release}/ehr.html#_ehr_class[Ehr^]
 [.xcode]
-* link:/releases/GCM/{gcm_release}/ehr.html#_ehr_access_class[EHR_ACCESS^]
+* link:/releases/GCM/{gcm_release}/ehr.html#_ehr_access_class[Ehr_access^]
 [.xcode]
-* link:/releases/GCM/{gcm_release}/ehr.html#_ehr_status_class[EHR_STATUS^]
+* link:/releases/GCM/{gcm_release}/ehr.html#_ehr_status_class[Ehr_status^]
 [.xcode]
-* link:/releases/GCM/{gcm_release}/ehr.html#_versioned_composition_class[VERSIONED_COMPOSITION^]
+* link:/releases/GCM/{gcm_release}/ehr.html#_folder_class[Folder^]
 [.xcode]
-* link:/releases/GCM/{gcm_release}/ehr.html#_versioned_ehr_access_class[VERSIONED_EHR_ACCESS^]
+* link:/releases/GCM/{gcm_release}/ehr.html#_item_tag_class[Item_tag^]
 [.xcode]
-* link:/releases/GCM/{gcm_release}/ehr.html#_versioned_ehr_status_class[VERSIONED_EHR_STATUS^]
+* link:/releases/GCM/{gcm_release}/ehr.html#_versioned_composition_class[Versioned_composition^]
+[.xcode]
+* link:/releases/GCM/{gcm_release}/ehr.html#_versioned_ehr_access_class[Versioned_ehr_access^]
+[.xcode]
+* link:/releases/GCM/{gcm_release}/ehr.html#_versioned_ehr_status_class[Versioned_ehr_status^]
+[.xcode]
+* link:/releases/GCM/{gcm_release}/ehr.html#_versioned_folder_class[Versioned_folder^]
 
 ==== Package entry
 

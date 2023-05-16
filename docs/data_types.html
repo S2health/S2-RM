@@ -59,11 +59,9 @@
 </li>
 <li><a href="#_real_world_identifiers">3.2. Real World Identifiers</a>
 <ul class="sectlevel3">
-<li><a href="#_requirements">3.2.1. Requirements</a></li>
-<li><a href="#_semantics">3.2.2. Semantics</a></li>
-<li><a href="#_class_descriptions_3">3.2.3. Class Descriptions</a>
+<li><a href="#_class_descriptions_3">3.2.1. Class Descriptions</a>
 <ul class="sectlevel4">
-<li><a href="#_dv_identifier_class">3.2.3.1. Dv_identifier Class</a></li>
+<li><a href="#_dv_identifier_class">3.2.1.1. Dv_identifier Class</a></li>
 </ul>
 </li>
 </ul>
@@ -82,7 +80,7 @@
 <li><a href="#_text_package">4. Text Package</a>
 <ul class="sectlevel2">
 <li><a href="#_overview_2">4.1. Overview</a></li>
-<li><a href="#_requirements_2">4.2. Requirements</a>
+<li><a href="#_requirements">4.2. Requirements</a>
 <ul class="sectlevel3">
 <li><a href="#_narrative_text">4.2.1. Narrative Text</a></li>
 <li><a href="#_terminological_entities">4.2.2. Terminological Entities</a></li>
@@ -90,7 +88,7 @@
 <li><a href="#_text_formatting">4.2.4. Text Formatting</a></li>
 </ul>
 </li>
-<li><a href="#_semantics_2">4.3. Semantics</a>
+<li><a href="#_semantics">4.3. Semantics</a>
 <ul class="sectlevel3">
 <li><a href="#_qualification">4.3.1. Qualification</a></li>
 <li><a href="#_meaning_modification">4.3.2. Meaning Modification</a>
@@ -132,7 +130,7 @@
 <li><a href="#_ordered_package_quantities">5. Ordered Package: Quantities</a>
 <ul class="sectlevel2">
 <li><a href="#_overview_3">5.1. Overview</a></li>
-<li><a href="#_requirements_3">5.2. Requirements</a>
+<li><a href="#_requirements_2">5.2. Requirements</a>
 <ul class="sectlevel3">
 <li><a href="#_scores_and_scales">5.2.1. Scores and Scales</a></li>
 <li><a href="#_countable_things">5.2.2. Countable Things</a></li>
@@ -160,7 +158,7 @@
 <li><a href="#_dv_count_class">5.4.4. Dv_count Class</a></li>
 <li><a href="#_dv_ratio_class">5.4.5. Dv_ratio Class</a></li>
 <li><a href="#_ratio_kind_enumeration">5.4.6. Ratio_kind Enumeration</a></li>
-<li><a href="#_dv_measured_class">5.4.7. Dv_measured Class</a></li>
+<li><a href="#_measured_class">5.4.7. Measured Class</a></li>
 <li><a href="#_reference_range_class">5.4.8. Reference_range Class</a></li>
 <li><a href="#_comparison_operator_enumeration">5.4.9. Comparison_operator Enumeration</a></li>
 <li><a href="#_dv_range_class">5.4.10. Dv_range Class</a></li>
@@ -191,7 +189,7 @@
 <ul class="sectlevel2">
 <li><a href="#_overview_5">7.1. Overview</a>
 <ul class="sectlevel3">
-<li><a href="#_requirements_4">7.1.1. Requirements</a></li>
+<li><a href="#_requirements_3">7.1.1. Requirements</a></li>
 <li><a href="#_design_2">7.1.2. Design</a></li>
 <li><a href="#_examples">7.1.3. Examples</a></li>
 </ul>
@@ -209,7 +207,7 @@
 <ul class="sectlevel2">
 <li><a href="#_overview_6">8.1. Overview</a>
 <ul class="sectlevel3">
-<li><a href="#_requirements_5">8.1.1. Requirements</a></li>
+<li><a href="#_requirements_4">8.1.1. Requirements</a></li>
 <li><a href="#_design_3">8.1.2. Design</a></li>
 </ul>
 </li>
@@ -580,66 +578,13 @@
 </div>
 <div class="sect2">
 <h3 id="_real_world_identifiers"><a class="anchor" href="#_real_world_identifiers"></a>3.2. Real World Identifiers</h3>
-<div class="sect3">
-<h4 id="_requirements"><a class="anchor" href="#_requirements"></a>3.2.1. Requirements</h4>
 <div class="paragraph">
-<p>Real world entities (RWEs) such as people, car engines, invoices, and appointments may all be assigned identifiers. In general, while some real world identifiers (RWIs) are 1:1 with their referent entities, none can be guaranteed so. Therefore, from a strict computational point of view, RWIs are not treated as reliable identifiers, but as <em>attributes</em> of their owning objects, in the same ways as names and addresses for example.</p>
-</div>
-<div class="paragraph">
-<p>Examples of RWE identifiers that are intended to be unique within the space of the issuing authority or organisation include:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>driver&#8217;s licence id</p>
-</li>
-<li>
-<p>social security number</p>
-</li>
-<li>
-<p>passport number</p>
-</li>
-<li>
-<p>prescription id</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The defining logical characteristic of RWIs is that they continue to identify the entities in question, regardless of how the latter change in time; for example a social security number does not change when someone changes his or her hair colour or address. In general it should be the case that if two RWIs are equal, they refer to the same RWE.</p>
-</div>
+<p>See the <a href="https://specifications.openehr.org/releases/BASE/latest/base_types.html#_identification_package" target="_blank" rel="noopener">Base Types specification</a> for a further discussion of RWEs and IEs, and the definition of IEs in openEHR.</p>
 </div>
 <div class="sect3">
-<h4 id="_semantics"><a class="anchor" href="#_semantics"></a>3.2.2. Semantics</h4>
-<div class="paragraph">
-<p>The model defined in the <code>Dv_identifier</code> class allows the recording of three things as part of identifying an item of interest:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>the identifier given to the item of interest (mandatory).</p>
-</li>
-<li>
-<p>the issuing authority of the kind of id used (e.g. it might be the federal department of health) (optional);</p>
-</li>
-<li>
-<p>the assigner of the id to the item being identified. This is usually the organisation which created the item being identified (optional);</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>In addition, a type of item being identified can also be recorded, such as 'driver&#8217;s licence' or 'Medicare card'. All fields are text fields, rather than coded, as no definitive vocabularies are available. However, some useful sources of terms exists, such as <a href="https://www.hl7.org/fhir/v2/0203/index.html" target="_blank" rel="noopener">HL7v2 Table 0203</a> for the <code>type</code> field. If using the latter, it is recommended to use the 'description', not the code.</p>
-</div>
-<div class="paragraph">
-<p>Only the <code>identifier</code> field is mandatory to allow for use cases in which the other fields cannot be populated. However it is strongly recommended to populate the <code>type</code> and <code>issuer</code> fields where possible. In many cases the <code>issuer</code> and <code>assigner</code> have the same value, however two fields allow for the situation in which a central issuer provides blocks of identifiers (typically on some kind of form or other paperwork) to other organisations who then assign them to individuals, as is often done with prescription identifiers.</p>
-</div>
-<div class="paragraph">
-<p>See the <a href="https://specifications.openehr.org/releases/BASE/latest/base_types.html#_identification_package" target="_blank" rel="noopener">Support Base Types specification</a> for a further discussion of RWEs and IEs, and the definition of IEs in openEHR.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_class_descriptions_3"><a class="anchor" href="#_class_descriptions_3"></a>3.2.3. Class Descriptions</h4>
+<h4 id="_class_descriptions_3"><a class="anchor" href="#_class_descriptions_3"></a>3.2.1. Class Descriptions</h4>
 <div class="sect4">
-<h5 id="_dv_identifier_class"><a class="anchor" href="#_dv_identifier_class"></a>3.2.3.1. Dv_identifier Class</h5>
+<h5 id="_dv_identifier_class"><a class="anchor" href="#_dv_identifier_class"></a>3.2.1.1. Dv_identifier Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -654,13 +599,7 @@
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Type for representing identifiers of real-world entities. Typical identifiers include drivers licence number, social security number, veterans affairs number, prescription id, order id, and so on.</p>
-</div>
-<div class="paragraph">
-<p><code>Dv_identifier</code> is used to represent any identifier of a real thing, issued by some authority or agency.</p>
-</div>
-<div class="paragraph">
-<p>Misuse: <code>Dv_identifier</code> is not used to express identifiers generated by the infrastructure to refer to information items; the types <code>Object_id</code> and `Object_ref`and subtypes are defined for this purpose.</p>
+<p>Data value wrapper type for <code>Rwe_id_ref</code>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -673,38 +612,9 @@
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>issuer</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional authority which issues the kind of id used in the id field of this object.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>assigner</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional organisation that assigned the id to the item being identified.</p>
-</div></div></td>
-</tr>
-<tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>id</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The identifier value. Often structured, according to the definition of the issuing authority&#8217;s rules.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>type</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional identifier type, such as  prescription , or  Social Security Number . One day a controlled vocabulary might be possible for this.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Id_valid</em>: <code>not id.is_empty</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/base_types.html#_rwe_id_ref_class" target="_blank" rel="noopener">Rwe_id_ref</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -714,7 +624,7 @@
 <div class="sect2">
 <h3 id="_timing"><a class="anchor" href="#_timing"></a>3.3. Timing</h3>
 <div class="paragraph">
-<p>TBD</p>
+<p>See the <a href="https://specifications.openehr.org/releases/BASE/latest/base_types.html#_timing" target="_blank" rel="noopener">Base Types specification</a> for a further discussion of RWEs and IEs, and the definition of IEs in openEHR.</p>
 </div>
 <div class="sect3">
 <h4 id="_class_descriptions_4"><a class="anchor" href="#_class_descriptions_4"></a>3.3.1. Class Descriptions</h4>
@@ -774,7 +684,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_requirements_2"><a class="anchor" href="#_requirements_2"></a>4.2. Requirements</h3>
+<h3 id="_requirements"><a class="anchor" href="#_requirements"></a>4.2. Requirements</h3>
 <div class="paragraph">
 <p>The sections below describe the requirements of text data types. Two overriding principles should be noted at the outset with regard to text.</p>
 </div>
@@ -928,7 +838,7 @@ equivalents, classifiers, or something in between. The section below on Mappings
 </div>
 </div>
 <div class="sect2">
-<h3 id="_semantics_2"><a class="anchor" href="#_semantics_2"></a>4.3. Semantics</h3>
+<h3 id="_semantics"><a class="anchor" href="#_semantics"></a>4.3. Semantics</h3>
 <div class="paragraph">
 <p>All atomic text items are either instances of the type <code>Dv_text</code> or of <code>Dv_coded_text</code>. The type <code>Dv_text</code> should be used wherever a coded or non-coded text item is allowed, while the type <code>Dv_coded_text</code> should be used wherever a text item must be coded. The former allows the representation of text (<code><em>value</em></code> attribute) with optional formatting and hyperlinking (see <a href="#_formatting_and_hyperlinking">Section 4.3.5</a> below). The latter class <code>Dv_coded_text</code> captures the association of two things:</p>
 </div>
@@ -1703,7 +1613,7 @@ c: <code><a href="/releases/BASE/latest/foundation_types.html#_character_class" 
 </div>
 </div>
 <div class="sect2">
-<h3 id="_requirements_3"><a class="anchor" href="#_requirements_3"></a>5.2. Requirements</h3>
+<h3 id="_requirements_2"><a class="anchor" href="#_requirements_2"></a>5.2. Requirements</h3>
 <div class="sect3">
 <h4 id="_scores_and_scales"><a class="anchor" href="#_scores_and_scales"></a>5.2.1. Scores and Scales</h4>
 <div class="paragraph">
@@ -1732,7 +1642,7 @@ c: <code><a href="/releases/BASE/latest/foundation_types.html#_character_class" 
 </ul>
 </div>
 <div class="paragraph">
-<p>A second requirement for score and scale values is that in many cases there is a need to associate numeric values values with the symbols, in order to facilitate ordered comparison, and also to enable longitudinal comparison across results of the same kind (e.g. pain, protein). The majority of scores and scales are limited to Integer values, but some use Real numbers interspersed with Integers e.g. the <a href="https://www.researchgate.net/publication/228089364_Proposing_a_standardized_method_for_evaluating_patient_report_of_the_intensity_of_dyspnea_during_exercise_testing_in_COPD">Borg CR 10 scale</a> for perceived exertion. In both cases, values may be negative, zero or positive.</p>
+<p>A second requirement for score and scale values is that in many cases there is a need to associate numeric values with the symbols, in order to facilitate ordered comparison, and also to enable longitudinal comparison across results of the same kind (e.g. pain, protein). The majority of scores and scales are limited to Integer values, but some use Real numbers interspersed with Integers e.g. the <a href="https://www.researchgate.net/publication/228089364_Proposing_a_standardized_method_for_evaluating_patient_report_of_the_intensity_of_dyspnea_during_exercise_testing_in_COPD">Borg CR 10 scale</a> for perceived exertion. In both cases, values may be negative, zero or positive.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2137,7 +2047,7 @@ other: <code><a href="#_dv_ordinal_class">Dv_ordinal</a>[1]</code><br>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>measured</strong>: <code><a href="#_dv_measured_class">Dv_measured</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>measured</strong>: <code><a href="#_measured_class">Measured</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
@@ -2602,7 +2512,7 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_dv_measured_class"><a class="anchor" href="#_dv_measured_class"></a>5.4.7. Dv_measured Class</h4>
+<h4 id="_measured_class"><a class="anchor" href="#_measured_class"></a>5.4.7. Measured Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2612,7 +2522,7 @@ factor: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" 
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Dv_measured&lt;V&gt;</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Measured&lt;V&gt;</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -3078,7 +2988,7 @@ structure is defined outside the EHR model, such as multimedia and parsable data
 <div class="title">Figure 6. gcm.data_types.encapsulated package</div>
 </div>
 <div class="sect3">
-<h4 id="_requirements_4"><a class="anchor" href="#_requirements_4"></a>7.1.1. Requirements</h4>
+<h4 id="_requirements_3"><a class="anchor" href="#_requirements_3"></a>7.1.1. Requirements</h4>
 <div class="paragraph">
 <p>There is a need to be able to include content in the EHR whose interior structure is not modelled in
 the EHR reference model, but instead documented by sufficient meta-data attributes for specific tools
@@ -3282,30 +3192,9 @@ ED type from the HL7v3 data types specification.</p>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>encoding</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_code_class" target="_blank" rel="noopener">Terminology_code</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Name of character encoding scheme in which this value is encoded. Coded from openEHR Code Set  character sets . Unicode is the default assumption in openEHR, with UTF-8 being the assumed encoding. This attribute allows for variations from these assumptions.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>language</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_code_class" target="_blank" rel="noopener">Terminology_code</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional indicator of the localised language in which the data is written, if relevant. Coded from openEHR Code Set <code>languages</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Language_valid</em>: <code>language /= Void implies code_set (Code_set_id_languages).has_code (language)</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Charset_valid</em>: <code>charset /= Void implies code_set (Code_set_id_character_sets).has_code (charset)</code></p>
-</div></div></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_encapsulated_class" target="_blank" rel="noopener">Encapsulated</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -3339,109 +3228,10 @@ ED type from the HL7v3 data types specification.</p>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>alternate_text</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Text to display in lieu of multimedia display/replay.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>uri</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_uri_class" target="_blank" rel="noopener">Uri</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>URI reference to electronic information stored outside the record as a file, database entry etc, if supplied as a reference.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code>List&lt;<a href="/releases/BASE/latest/foundation_types.html#_byte_class" target="_blank" rel="noopener">Byte</a>&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The actual data found at <code><em>uri</em></code>, if supplied inline, base64 encoded.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>media_type</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_code_class" target="_blank" rel="noopener">Terminology_code</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Data media type coded from openEHR code set  media types  (interface for the IANA MIME types code set).
-Example: image/jpeg; text/json.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>hash</strong>: <code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SHA-1 integrity checksum as a Base64 string.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>thumbnail</strong>: <code><a href="#_dv_multimedia_class">Dv_multimedia</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The thumbnail for this item, if one exists; mainly for graphics formats.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>size</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_integer_class" target="_blank" rel="noopener">Integer</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Original size in bytes of unencoded encapsulated data. I.e. coding in base64, hexadecimal etc. do not change the value of this attribute.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_external</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Computed from the value of the <code><em>uri</em></code> attribute: True if  the data is stored externally to the record, as indicated by <code><em>uri</em></code>. A copy may also be stored internally, in which case <code><em>is_expanded</em></code> is also true.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_inline</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Computed from the value of the data attribute. True if  the  data is stored  in  expanded  form, ie within the EHR itself.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Not_empty</em>: <code>is_inline or is_external</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Media_type_valid</em>: <code>media_type /= Void and then code_set (Code_set_id_media_types).has_code (media_type)</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Compression_algorithm_validity</em>: <code>compression_algorithm /= Void implies code_set (Code_set_id_compression_algorithms).has_code (compression_algorithm)</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Integrity_check_validity</em>: <code>integrity_check /= Void implies integrity_check_algorithm /= Void</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Integrity_check_algorithm_validity</em>: <code>integrity_check_algorithm /= Void implies code_set (Code_set_id_integrity_check_algorithms).has_code (integrity_check_algorithm)</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Size_valid</em>: <code>size &gt;= 0</code></p>
-</div></div></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(redefined)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_multimedia_class" target="_blank" rel="noopener">Multimedia</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -3475,42 +3265,10 @@ Example: image/jpeg; text/json.</p>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>formalism</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Name of the formalism, e.g.  GLIF 1.0 ,  Proforma  etc.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The string, which may validly be empty in some syntaxes.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>size</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_integer_class" target="_blank" rel="noopener">Integer</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Size in bytes of value.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Formalism_valid</em>: <code>not formalism.is_empty</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Size_valid</em>: <code>size &gt;= 0</code></p>
-</div></div></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(redefined)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_parsable_class" target="_blank" rel="noopener">Parsable</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -3540,7 +3298,7 @@ below.</p>
 <div class="title">Figure 7. gcm.data_types.uri package</div>
 </div>
 <div class="sect3">
-<h4 id="_requirements_5"><a class="anchor" href="#_requirements_5"></a>8.1.1. Requirements</h4>
+<h4 id="_requirements_4"><a class="anchor" href="#_requirements_4"></a>8.1.1. Requirements</h4>
 <div class="paragraph">
 <p>This package meets the requirement for a <code>DATA_VALUE</code> subtype which represents a W3C Uniform
 Resource Identifier (URI). A common example of where this might be used is to represent a reference

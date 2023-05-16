@@ -1,9 +1,9 @@
-=== EHR Class
+=== Ehr Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*EHR*
+2+^h|*Ehr*
 
 h|*Description*
 2+a|The EHR object is the root object and access point of an EHR for a subject of care.
@@ -13,11 +13,11 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*system_id*: `link:/releases/BASE/{base_release}/base_types.html#_internet_id_class[INTERNET_ID^]`
+|*system_id*: `link:/releases/BASE/{base_release}/base_types.html#_internet_id_class[Internet_id^]`
 a|The identifier of the logical EHR management system in which this EHR was created.
 
 h|*1..1*
-|*ehr_id*: `link:/releases/BASE/{base_release}/base_types.html#_uuid_class[UUID^]`
+|*ehr_id*: `link:/releases/BASE/{base_release}/base_types.html#_uuid_class[Uuid^]`
 a|The unique identifier of this EHR.
 
 NOTE: is is strongly recommended that a UUID always be used for this field.

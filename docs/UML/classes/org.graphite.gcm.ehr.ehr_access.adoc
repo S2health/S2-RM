@@ -1,9 +1,9 @@
-=== EHR_ACCESS Class
+=== Ehr_access Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*EHR_ACCESS*
+2+^h|*Ehr_access*
 
 h|*Description*
 2+a|EHR-wide access control object. All access decisions to data in the EHR must be made in accordance with the policies and rules in this object.
@@ -19,7 +19,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*settings*: `<<_access_control_settings_class,ACCESS_CONTROL_SETTINGS>>`
+|*settings*: `<<_access_control_settings_class,Access_control_settings>>`
 a|Access control settings for the EHR. Instance is a subtype of the type `ACCESS_CONTROL_SETTINGS`, allowing for the use of different access control schemes.
 h|*Functions*
 ^h|*Signature*

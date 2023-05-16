@@ -16,7 +16,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*measured*: `<<_dv_measured_class,Dv_measured>>`
+|*measured*: `<<_measured_class,Measured>>`
 a|
 
 h|*1..1 +

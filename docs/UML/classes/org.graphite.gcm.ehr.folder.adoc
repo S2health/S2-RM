@@ -1,9 +1,9 @@
-=== FOLDER Class
+=== Folder Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*FOLDER*
+2+^h|*Folder*
 
 h|*Description*
 2+a|The concept of a named folder.
@@ -23,7 +23,7 @@ h|*0..1*
 a|The list of references to other (usually) versioned objects logically in this folder.
 
 h|*0..1*
-|*folders*: `List<<<_folder_class,FOLDER>>>`
+|*folders*: `List<<<_folder_class,Folder>>>`
 a|Sub-folders of this `FOLDER`.
 
 h|*0..1*

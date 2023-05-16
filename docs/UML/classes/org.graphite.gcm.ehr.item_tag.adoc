@@ -1,9 +1,9 @@
-=== ITEM_TAG Class
+=== Item_tag Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*ITEM_TAG*
+2+^h|*Item_tag*
 
 h|*Description*
 2+a|A tag with optional value that is associated with a target information entity identified by a UID.

@@ -1,5 +1,0 @@
-:spec_title: Common Information Model
-:copyright_year: 2023
-:spec_status: TRIAL
-:keywords: common, canonical model, Graphite
-:description: Graphite Common Information Model specification

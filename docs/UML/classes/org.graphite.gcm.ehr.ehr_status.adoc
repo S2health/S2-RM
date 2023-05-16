@@ -1,9 +1,9 @@
-=== EHR_STATUS Class
+=== Ehr_status Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*EHR_STATUS*
+2+^h|*Ehr_status*
 
 h|*Description*
 2+a|Single object per EHR containing various EHR-wide status flags and settings, including whether this EHR can be queried, modified etc. This object is always modifiable, in order to change the status of the EHR as a whole.

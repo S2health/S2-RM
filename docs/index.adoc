@@ -47,9 +47,6 @@ h|Specification h|Description
 |link:entry.html[Entry^]
 |Information model of clinical statements (Entries).
 
-|link:common.html[Common^]
-|Information model containing common concepts.
-
 |link:data_structures.html[Data Structures^]
 |Information model of data structures, including time-series data.
 

@@ -39,22 +39,6 @@
             "keywords": "EHR, EMR, reference model, Graphite"
         },
         {
-            "id": "common",
-            "title": "Common Information Model",
-            "title_short": "Common",
-            "description": "Graphite Common Information Model specification",
-            "micro_summary": "Common semantic patterns and structures",
-            "summary": "Information model containing common concepts, including the archetype-enabling `LOCATABLE` class, party references.",
-            "classes": [
-                "LOCATABLE",
-                "PARTY_SELF",
-                "AUDIT_DETAILS"
-            ],
-            "copyright_year": "2023",
-            "spec_status": "TRIAL",
-            "keywords": "common, canonical model, Graphite"
-        },
-        {
             "id": "data_structures",
             "title": "Data Structures Information Model",
             "title_short": "Data Structures",

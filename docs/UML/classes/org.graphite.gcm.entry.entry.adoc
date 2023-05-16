@@ -55,7 +55,7 @@ a|TODO: consider if needed to take comment field from CEM StatementBase
 
 h|*0..1*
 |*authorization_actions*: `List<link:/releases/BASE/{base_release}/base_types.html#_participation_class[Participation^]>`
-a|
+a|TODO: the openEHR approach treats authorization as being performed on committed data item/document, which is probably more correct.
 
 h|*0..1*
 |*lifecycle_state*: `<<_entry_lifecycle_states_enumeration,Entry_lifecycle_states>>`

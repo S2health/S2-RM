@@ -1,15 +1,15 @@
-=== VERSIONED_COMPOSITION Class
+=== Versioned_composition Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*VERSIONED_COMPOSITION*
+2+^h|*Versioned_composition*
 
 h|*Description*
 2+a|Version-controlled composition abstraction, defined by inheriting `VERSIONED_OBJECT<COMPOSITION>`.
 
 h|*Inherit*
-2+|`link:/releases/BASE/{base_release}/change_control.html#_versionedobject_class[VersionedObject^]`
+2+|`link:/releases/BASE/{base_release}/change_control.html#_versioned_object_class[Versioned_object^]`
 
 h|*Functions*
 ^h|*Signature*
