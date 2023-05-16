@@ -68,12 +68,13 @@ include::master01-preface.adoc[leveloffset=+1]
 include::master02-background.adoc[leveloffset=+1]
 include::master03-ehr_information_model.adoc[leveloffset=+1]
 include::master04-ehr_package.adoc[leveloffset=+1]
+include::master05-folders.adoc[leveloffset=+1]
 
 ifdef::package_qualifiers[]
 :pkg: org.graphite.gcm.composition.
 endif::[]
 
-include::master05-composition_package.adoc[leveloffset=+1]
+include::master06-composition_package.adoc[leveloffset=+1]
 
 
 //

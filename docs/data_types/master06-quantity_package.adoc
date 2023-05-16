@@ -23,7 +23,7 @@ Similarly, even though the symbolic values for haemolysed blood in a urinalysis 
 * `"moderate"` (<80 cells/&#956;l)
 * `"large"` (>200 cells/&#956;l)
 
-A second requirement for score and scale values is that in many cases there is a need to associate numeric values values with the symbols, in order to facilitate ordered comparison, and also to enable longitudinal comparison across results of the same kind (e.g. pain, protein). The majority of scores and scales are limited to Integer values, but some use Real numbers interspersed with Integers e.g. the https://www.researchgate.net/publication/228089364_Proposing_a_standardized_method_for_evaluating_patient_report_of_the_intensity_of_dyspnea_during_exercise_testing_in_COPD[Borg CR 10 scale] for perceived exertion. In both cases, values may be negative, zero or positive.
+A second requirement for score and scale values is that in many cases there is a need to associate numeric values with the symbols, in order to facilitate ordered comparison, and also to enable longitudinal comparison across results of the same kind (e.g. pain, protein). The majority of scores and scales are limited to Integer values, but some use Real numbers interspersed with Integers e.g. the https://www.researchgate.net/publication/228089364_Proposing_a_standardized_method_for_evaluating_patient_report_of_the_intensity_of_dyspnea_during_exercise_testing_in_COPD[Borg CR 10 scale] for perceived exertion. In both cases, values may be negative, zero or positive.
 
 === Countable Things
 
@@ -166,7 +166,7 @@ include::{uml_export_dir}/classes/{pkg}dv_ratio.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}ratio_kind.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}dv_measured.adoc[]
+include::{uml_export_dir}/classes/{pkg}measured.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}reference_range.adoc[]
 
