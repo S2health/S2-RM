@@ -590,7 +590,7 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>comment</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_text_class" target="_blank" rel="noopener">Dv_text</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>comment</strong>: <code><a href="/releases/BASE/latest/data_types.html#_text_class" target="_blank" rel="noopener">Text</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>TODO: consider if needed to take comment field from CEM StatementBase</p>
 </div></div></td>
@@ -1450,6 +1450,28 @@ The data of the Entry; modelled in archetypes.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>certainty</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_code_class" target="_blank" rel="noopener">Terminology_code</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Time at which assertion, e.g. diagnosis was made. This is usually 'now' but may report a historical diagnosis or other assessment.</p>
+</div>
+<div class="paragraph">
+<p>TODO: do we need other meta-data for historical assertions?</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_time</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_interval_class">Interval<sup></a>&lt;<a href="/releases/BASE/latest/foundation_types.html#_date_time_class">Date_time</sup></a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Result = <code><em>time</em></code>.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1798,7 +1820,7 @@ EXPIRED
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>narrative</strong>: <code><a href="/releases/GCM/{gcm_release}/data_types.html#_dv_text_class" target="_blank" rel="noopener">Dv_text</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>narrative</strong>: <code><a href="/releases/BASE/latest/data_types.html#_text_class" target="_blank" rel="noopener">Text</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Mandatory human-readable version of what the Instruction is about.</p>
 </div></div></td>
@@ -1859,7 +1881,7 @@ EXPIRED
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>timing</strong>: <code><a href="/releases/BASE/latest/base_types.html#_timing_class" target="_blank" rel="noopener">Timing</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>timing</strong>: <code><a href="/releases/BASE/latest/data_types.html#_timing_class" target="_blank" rel="noopener">Timing</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Timing of the activity, in the form of a parsable string. If used, the preferred syntax is ISO8601 'R' format, but other formats may be used including HL7 GTS.</p>
 </div>
@@ -2032,7 +2054,7 @@ EXPIRED
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>reason</strong>: <code>List&lt;<a href="/releases/GCM/{gcm_release}/data_types.html#_dv_text_class" target="_blank" rel="noopener">Dv_text</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>reason</strong>: <code>List&lt;<a href="/releases/BASE/latest/data_types.html#_text_class" target="_blank" rel="noopener">Text</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional possibility of adding one or more reasons for this careflow step having been taken. Multiple reasons may occur in medication management for example.</p>
 </div></div></td>

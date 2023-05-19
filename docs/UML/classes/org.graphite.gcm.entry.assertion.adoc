@@ -24,4 +24,17 @@ a|The data of this evaluation, in the form of a spatial data structure.
 h|*0..1*
 |*certainty*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_code_class[Terminology_code^]`
 a|
+
+h|*1..1*
+|*time*: `link:/releases/BASE/{base_release}/foundation_types.html#_date_time_class[Date_time^]`
+a|Time at which assertion, e.g. diagnosis was made. This is usually 'now' but may report a historical diagnosis or other assessment.
+
+TODO: do we need other meta-data for historical assertions?
+h|*Functions*
+^h|*Signature*
+^h|*Meaning*
+
+h|*1..1*
+|*effective_time* (): `link:/releases/BASE/{base_release}/foundation_types.html#_interval_class[Interval^]<link:/releases/BASE/{base_release}/foundation_types.html#_date_time_class[Date_time^]>`
+a|Result = `_time_`.
 |===

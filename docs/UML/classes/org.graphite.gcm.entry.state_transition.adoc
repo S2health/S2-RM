@@ -28,7 +28,7 @@ h|*1..1*
 a|The ISM current state. Coded by openEHR terminology group Instruction states.
 
 h|*0..1*
-|*reason*: `List<link:/releases/GCM/{gcm_release}/data_types.html#_dv_text_class[Dv_text^]>`
+|*reason*: `List<link:/releases/BASE/{base_release}/data_types.html#_text_class[Text^]>`
 a|Optional possibility of adding one or more reasons for this careflow step having been taken. Multiple reasons may occur in medication management for example.
 
 h|*Invariants*

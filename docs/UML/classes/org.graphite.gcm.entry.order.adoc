@@ -18,7 +18,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*narrative*: `link:/releases/GCM/{gcm_release}/data_types.html#_dv_text_class[Dv_text^]`
+|*narrative*: `link:/releases/BASE/{base_release}/data_types.html#_text_class[Text^]`
 a|Mandatory human-readable version of what the Instruction is about.
 
 h|*0..1*

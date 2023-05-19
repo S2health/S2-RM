@@ -50,7 +50,7 @@ a|Optional identification of reporter of the information in this `Entry`, which 
 Generally only used when the recorder needs to make it explicit. Otherwise, Composition composer and other participants are assumed.
 
 h|*0..1*
-|*comment*: `link:/releases/GCM/{gcm_release}/data_types.html#_dv_text_class[Dv_text^]`
+|*comment*: `link:/releases/BASE/{base_release}/data_types.html#_text_class[Text^]`
 a|TODO: consider if needed to take comment field from CEM StatementBase
 
 h|*0..1*

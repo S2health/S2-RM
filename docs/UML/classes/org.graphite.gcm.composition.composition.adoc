@@ -27,7 +27,7 @@ h|*1..1*
 a|Name of territory in which this Composition was written. Coded from openEHR  countries  code set, which is an expression of the ISO 3166 standard.
 
 h|*1..1*
-|*category*: `link:/releases/GCM/{gcm_release}/data_types.html#_dv_coded_text_class[Dv_coded_text^]`
+|*category*: `link:/releases/BASE/{base_release}/data_types.html#_coded_text_class[Coded_text^]`
 a|Temporal category of this Composition, i.e.
 
 * `431&#124;persistent&#124;` - of potential life-time validity;
