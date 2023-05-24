@@ -17,7 +17,7 @@ h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
-h|*0..1*
+h|*1..1*
 |*specimen_time*: `link:/releases/BASE/{base_release}/foundation_types.html#_date_time_class[Date_time^]`
 a|Time of specimen taking. Also the clinically relevant and 'effective' time.
 

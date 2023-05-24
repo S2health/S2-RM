@@ -50,8 +50,6 @@ h|Specification h|Description
 |link:data_structures.html[Data Structures^]
 |Information model of data structures, including time-series data.
 
-|link:data_types.html[Data Types^]
-|Information model of data types, including quantities, date/times, plain and coded text, time specification, multimedia and URIs.
 
 |===
 

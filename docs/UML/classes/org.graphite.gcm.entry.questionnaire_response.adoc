@@ -17,7 +17,7 @@ h|*Attributes*
 
 h|*0..1*
 |*questionnaire_identifier*: `String`
-a|
+a|Formal identifier of the original questionnaire, if available.o
 
 h|*0..1*
 |*questionnaire_version*: `String`

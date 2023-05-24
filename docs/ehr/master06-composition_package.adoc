@@ -24,10 +24,10 @@ On the right-hand side of <<ehr_recording_model>>, the EHR recording environment
 
 The composer is the person who was primarily responsible for the content of the Composition. This is the identifier that should appear on the screen. It could be a junior doctor who did all the work, even if not legally responsible, or it could be a nurse, even if later attested by a more senior clinician; it will be the patient in the case of patient-entered data. It may or may not be the person who entered and committed the data. it may also be a software agent. This attribute is mandatory, since all content must be been created by some person or agent.
 
-Since in many cases Compositions will be composed and committed by the same person, it might seem that two identifiers `Composition`.`_composer_` and `VERSION`.`_audit_`.`_committer_` (which are both of type `Party_proxy`) will be identical. In fact, this will probably not be the case, because the kind of identifier to represent the composer will be a demographic identifier, e.g. "RN Jane Williams", "RN
+Since in many cases Compositions will be composed and committed by the same person, it might seem that two identifiers `Composition`.`_composer_` and `Version`.`_audit_`.`_committer_` (which are both of type `Party_proxy`) will be identical. In fact, this will probably not be the case, because the kind of identifier to represent the composer will be a demographic identifier, e.g. "RN Jane Williams", "RN
 12345678", whereas the identifier in the audit details will usually be a computer system user identifier, e.g. "jane.williams@westmead.health.au". This difference highlights the different purposes of these attributes: the first exists to identify the clinical agent who created the information, while the second exists to identify the logged-in user who committed it to the system.
 
-In the situation of patient-entered data, the special "self" `Party_proxy` instance (see Common IM generic package) is used for both `Composition`.`_composer_` and `VERSION`.`_audit_`.`_committer_`.
+In the situation of patient-entered data, the special "self" `Party_proxy` instance (see Common IM generic package) is used for both `Composition`.`_composer_` and `Version`.`_audit_`.`_committer_`.
 
 === Event Context
 
@@ -85,7 +85,7 @@ The setting attribute is used to document the "setting" of the care event. In cl
 The data in a Composition is stored in the `_content_` attribute. There are four kinds of data structuring possible in the content attribute:
 
 * it may be empty. Although for most situations, there should be content in a Compostion, there are at least two cases where an empty Composition makes sense:
-** the first is a Composition in 'draft' editing state (`VERSION._lifecycle_state_` = 'incomplete')
+** the first is a Composition in 'draft' editing state (`Version._lifecycle_state_` = 'incomplete')
 ** the second is for systems that are only interested in the fact of an event having taken place, but want no details, such as so-called clinical 'event summary' systems, which might record the fact of visits to the doctor, but contain no further information. This can be achieved using Compositions with event context, and no further content.
 * it may contain one or more `SECTIONs` which are defined in the archetype of the Composition;
 * it may contain one or more `SECTION` trees, each of which is a separately archetyped structure;

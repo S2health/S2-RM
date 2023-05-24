@@ -690,7 +690,7 @@
 <p>Compositions may be classified as <em>episodic</em> if they contain information relevant to an ongoing care situation spanning sigificant time, such as pregnancy and birth, major surgery and recovery etc. During a specific episode of care, Event Compositions will still be used to record normal clinical events, particularly routine observations. However, assessments, summaries and care plans specific to the condition being treated may be committed in Compositions with <code><em>category</em></code> set to <code>episodic</code> to indicate that they should be treated as having a persistent-like quality i.e updated as as single instance source-of-truth, but only maintained as such for a defined period or set of conditions and not for the entire life of the patient. An example is a Problem list that is maintained as a continuously updated single instance during a hospital admission but only for the duration of that admission. If the patient is re-admitted, a new instance of an Episodic Composition is then created and continually updated for that admission.</p>
 </div>
 <div class="paragraph">
-<p>Since episodic Compositions are typically regarded as no longer relevant once the episode of care is considered complete, it may be useful to mark them as such. This may be done for a Composition whose owning Version is in the lifecycle state <code>completed</code> by setting the owning <code>ORIGINAL_VERSION.<em>lifecycle_state</em></code> to the <code>inactive</code> state. If the owning Version is in the <code>incomplete</code> state, it may be <code>abandoned</code>. Version lifecycle transitions are described in detail in the <a href="https://specifications.openehr.org/releases/RM/latest/common.html#_version_lifecycle" target="_blank" rel="noopener">openEHR Common Information Model</a>.</p>
+<p>Since episodic Compositions are typically regarded as no longer relevant once the episode of care is considered complete, it may be useful to mark them as such. This may be done for a Composition whose owning Version is in the lifecycle state <code>completed</code> by setting the owning <code>Original_version.<em>lifecycle_state</em></code> to the <code>inactive</code> state. If the owning Version is in the <code>incomplete</code> state, it may be <code>abandoned</code>. Version lifecycle transitions are described in detail in the <a href="https://specifications.openehr.org/releases/RM/latest/common.html#_version_lifecycle" target="_blank" rel="noopener">openEHR Common Information Model</a>.</p>
 </div>
 </div>
 </div>
@@ -852,10 +852,10 @@
 <div class="sect3">
 <h4 id="_versioning_of_compositions"><a class="anchor" href="#_versioning_of_compositions"></a>4.3.1. Versioning of Compositions</h4>
 <div class="paragraph">
-<p>Versioning of Compositions is achieved with the <code>VERSIONED_OBJECT&lt;T&gt;</code> type from the <a href="https://specifications.openehr.org/releases/RM/latest/common.html#_change_control_package">Common IM <code>change_control package</code></a>, which in the <code>composition</code> package is explicitly bound to the <code>Composition</code> class, via the class <code>VERSIONED_Composition</code> which inherits from the type <code>VERSIONED&lt;Composition&gt;</code>.</p>
+<p>Versioning of Compositions is achieved with the <code>Versioned_object&lt;T&gt;</code> type from the <a href="https://specifications.openehr.org/releases/RM/latest/common.html#_change_control_package">Common IM <code>change_control package</code></a>, which in the <code>composition</code> package is explicitly bound to the <code>Composition</code> class, via the class <code>VERSIONED_Composition</code> which inherits from the type <code>VERSIONED&lt;Composition&gt;</code>.</p>
 </div>
 <div class="paragraph">
-<p>The effect of version control on Compositions is visualised in the figure below. The versions (each version being an <code>ORIGINAL_VERSION&lt;Composition&gt;</code>) shown here in a <code>VERSIONED_Composition</code> are the same versions shown along each vertical line in <a href="#ehr_contributions">Figure 8</a>, this time shown with their associated audit items. The set of versions are understood as a set of successive modifications of the same data in time.</p>
+<p>The effect of version control on Compositions is visualised in the figure below. The versions (each version being an <code>Original_version&lt;Composition&gt;</code>) shown here in a <code>VERSIONED_Composition</code> are the same versions shown along each vertical line in <a href="#ehr_contributions">Figure 8</a>, this time shown with their associated audit items. The set of versions are understood as a set of successive modifications of the same data in time.</p>
 </div>
 <div id="versioned_compositions" class="imageblock text-center text-center">
 <div class="content">
@@ -879,7 +879,7 @@
 Case 0
 </td>
 <td class="hdlist2">
-<p>information is authored locally, causing the creation of a new <code>ORIGINAL_VERSION&lt;Composition&gt;</code>. If this is the first version, a new <code>VERSIONED_Composition</code> will be created first.</p>
+<p>information is authored locally, causing the creation of a new <code>Original_version&lt;Composition&gt;</code>. If this is the first version, a new <code>VERSIONED_Composition</code> will be created first.</p>
 </td>
 </tr>
 <tr>
@@ -887,7 +887,7 @@ Case 0
 Case 1
 </td>
 <td class="hdlist2">
-<p>information is modified locally, such as for the correction of a wrongly entered datum in a composition. This causes the creation of a new <code>ORIGINAL_VERSION&lt;Composition&gt;</code> in an existing <code>VERSIONED_Composition</code>, in which the <code>AUDIT_DETAILS.<em>change_type</em></code> is set to <code>"correction"</code>.</p>
+<p>information is modified locally, such as for the correction of a wrongly entered datum in a composition. This causes the creation of a new <code>Original_version&lt;Composition&gt;</code> in an existing <code>VERSIONED_Composition</code>, in which the <code>AUDIT_DETAILS.<em>change_type</em></code> is set to <code>"correction"</code>.</p>
 </td>
 </tr>
 <tr>
@@ -895,7 +895,7 @@ Case 1
 Case 2
 </td>
 <td class="hdlist2">
-<p>information received from a feeder system, e.g. a test result, which will be converted and used to create a new <code>IMPORTED_VERSION&lt;Composition&gt;</code> and <code>ORIGINAL_VERSION&lt;Composition&gt;</code> pair. This kind of acquisition could be done automatically. If the receiver system needs to store a copy of the original feeder system audit details, it writes it into the <code>Composition.<em>feeder_audit</em></code>.</p>
+<p>information received from a feeder system, e.g. a test result, which will be converted and used to create a new <code>Imported_version&lt;Composition&gt;</code> and <code>Original_version&lt;Composition&gt;</code> pair. This kind of acquisition could be done automatically. If the receiver system needs to store a copy of the original feeder system audit details, it writes it into the <code>Composition.<em>feeder_audit</em></code>.</p>
 </td>
 </tr>
 <tr>
@@ -903,7 +903,7 @@ Case 2
 Case 3
 </td>
 <td class="hdlist2">
-<p>an <code>ORIGINAL_VERSION&lt;Composition&gt;</code> (such as a family history) received as part of an <code>EHR_EXTRACT</code> from another openEHR system, which will be used by a local author to manually create a new <code>Composition</code> that includes <em>some content chosen from the received item</em>. Consequently, the new version is a locally authored one (i.e. an <code>ORIGINAL_VERSION&lt;Composition&gt;</code>). If it is the first version, a <code>VERSIONED_Composition</code> is first created. The <code>AUDIT_DETAILS</code> documents the committal of this content, and the clinician may choose to record some details about it in the audit <code><em>description</em></code>.</p>
+<p>an <code>Original_version&lt;Composition&gt;</code> (such as a family history) received as part of an <code>EHR_EXTRACT</code> from another openEHR system, which will be used by a local author to manually create a new <code>Composition</code> that includes <em>some content chosen from the received item</em>. Consequently, the new version is a locally authored one (i.e. an <code>Original_version&lt;Composition&gt;</code>). If it is the first version, a <code>VERSIONED_Composition</code> is first created. The <code>AUDIT_DETAILS</code> documents the committal of this content, and the clinician may choose to record some details about it in the audit <code><em>description</em></code>.</p>
 </td>
 </tr>
 </table>
@@ -1505,7 +1505,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 <div class="sect2">
 <h3 id="_overview_3"><a class="anchor" href="#_overview_3"></a>5.1. Overview</h3>
 <div class="paragraph">
-<p>The Folder-related classes provide a simple abstraction of a versioned folder structure and are illustrated below. The <code>VERSIONED_FOLDER</code> class is the binding of <code>VERSIONED_OBJECT&lt;T&gt;</code> to the class <code>FOLDER</code>, i.e. it is a <code>VERSIONED_OBJECT&lt;FOLDER&gt;</code>. This means that <em>each of its versions is a Folder structure rather than a single Folder</em>. It provides a means of versioning <code>FOLDER</code> structures over time, which is useful in the EHR, Demographics service or anywhere else where Folders are used to group things. A <code>FOLDER</code> instance contains more <code>FOLDERs</code> and/or items, which are <em>references</em> to other (usually versioned) objects. A <code>FOLDER</code> structure is therefore like a directory containing references to objects. Since they are references, multiple references to the same object are possible, allowing the structure to be used to mutiply classify other objects. If it is used with <code>VERSIONED_Compositions</code> for example, the folders might be used to represent episodes and at the same time problem groups. Any individual Folder may contain meta-data in its <code><em>details</em></code> attribute (type <code>Cluster</code>), which may be archetyped in the same manner as similar attributes throughout the openEHR RM.</p>
+<p>The Folder-related classes provide a simple abstraction of a versioned folder structure and are illustrated below. The <code>VERSIONED_FOLDER</code> class is the binding of <code>Versioned_object&lt;T&gt;</code> to the class <code>FOLDER</code>, i.e. it is a <code>Versioned_object&lt;FOLDER&gt;</code>. This means that <em>each of its versions is a Folder structure rather than a single Folder</em>. It provides a means of versioning <code>FOLDER</code> structures over time, which is useful in the EHR, Demographics service or anywhere else where Folders are used to group things. A <code>FOLDER</code> instance contains more <code>FOLDERs</code> and/or items, which are <em>references</em> to other (usually versioned) objects. A <code>FOLDER</code> structure is therefore like a directory containing references to objects. Since they are references, multiple references to the same object are possible, allowing the structure to be used to mutiply classify other objects. If it is used with <code>VERSIONED_Compositions</code> for example, the folders might be used to represent episodes and at the same time problem groups. Any individual Folder may contain meta-data in its <code><em>details</em></code> attribute (type <code>Cluster</code>), which may be archetyped in the same manner as similar attributes throughout the openEHR RM.</p>
 </div>
 <div id="directory_package" class="imageblock text-center text-center">
 <div class="content">
@@ -1679,11 +1679,11 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 <p>The composer is the person who was primarily responsible for the content of the Composition. This is the identifier that should appear on the screen. It could be a junior doctor who did all the work, even if not legally responsible, or it could be a nurse, even if later attested by a more senior clinician; it will be the patient in the case of patient-entered data. It may or may not be the person who entered and committed the data. it may also be a software agent. This attribute is mandatory, since all content must be been created by some person or agent.</p>
 </div>
 <div class="paragraph">
-<p>Since in many cases Compositions will be composed and committed by the same person, it might seem that two identifiers <code>Composition</code>.<code><em>composer</em></code> and <code>VERSION</code>.<code><em>audit</em></code>.<code><em>committer</em></code> (which are both of type <code>Party_proxy</code>) will be identical. In fact, this will probably not be the case, because the kind of identifier to represent the composer will be a demographic identifier, e.g. "RN Jane Williams", "RN
+<p>Since in many cases Compositions will be composed and committed by the same person, it might seem that two identifiers <code>Composition</code>.<code><em>composer</em></code> and <code>Version</code>.<code><em>audit</em></code>.<code><em>committer</em></code> (which are both of type <code>Party_proxy</code>) will be identical. In fact, this will probably not be the case, because the kind of identifier to represent the composer will be a demographic identifier, e.g. "RN Jane Williams", "RN
 12345678", whereas the identifier in the audit details will usually be a computer system user identifier, e.g. "<a href="mailto:jane.williams@westmead.health.au">jane.williams@westmead.health.au</a>". This difference highlights the different purposes of these attributes: the first exists to identify the clinical agent who created the information, while the second exists to identify the logged-in user who committed it to the system.</p>
 </div>
 <div class="paragraph">
-<p>In the situation of patient-entered data, the special "self" <code>Party_proxy</code> instance (see Common IM generic package) is used for both <code>Composition</code>.<code><em>composer</em></code> and <code>VERSION</code>.<code><em>audit</em></code>.<code><em>committer</em></code>.</p>
+<p>In the situation of patient-entered data, the special "self" <code>Party_proxy</code> instance (see Common IM generic package) is used for both <code>Composition</code>.<code><em>composer</em></code> and <code>Version</code>.<code><em>audit</em></code>.<code><em>committer</em></code>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1800,7 +1800,7 @@ Persistent Compositions may optionally have an Event context. In openEHR release
 <div class="ulist">
 <ul>
 <li>
-<p>the first is a Composition in 'draft' editing state (<code>VERSION.<em>lifecycle_state</em></code> = 'incomplete')</p>
+<p>the first is a Composition in 'draft' editing state (<code>Version.<em>lifecycle_state</em></code> = 'incomplete')</p>
 </li>
 <li>
 <p>the second is for systems that are only interested in the fact of an event having taken place, but want no details, such as so-called clinical 'event summary' systems, which might record the fact of visits to the doctor, but contain no further information. This can be achieved using Compositions with event context, and no further content.</p>
