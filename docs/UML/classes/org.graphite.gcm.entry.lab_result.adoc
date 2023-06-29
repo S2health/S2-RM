@@ -22,15 +22,15 @@ h|*1..1*
 a|Time of specimen taking. Also the clinically relevant and 'effective' time.
 
 h|*0..1*
-|*specimen*: `link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]`
+|*specimen*: `List<link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]>`
 a|Specimen information.
 
 h|*0..1*
-|*interpretation*: `link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]`
+|*interpretation*: `List<link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]>`
 a|
 
 h|*0..1*
-|*laboratory*: `link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]`
+|*laboratory*: `List<link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]>`
 a|
 h|*Functions*
 ^h|*Signature*

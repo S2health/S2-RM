@@ -26,8 +26,8 @@ h|*0..1*
 a|Other participations at `Entry` level.
 
 h|*0..1*
-|*workflow_id*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
-a|Identifier of externally held workflow engine data for this workflow execution, for this subject of care.
+|*comment*: `link:/releases/BASE/{base_release}/data_types.html#_text_class[Text^]`
+a|TODO: consider if needed to take comment field from CEM StatementBase
 
 h|*1..1*
 |*subject*: `link:/releases/BASE/{base_release}/base_types.html#_party_proxy_class[Party_proxy^]`
@@ -50,8 +50,8 @@ a|Optional identification of reporter of the information in this `Entry`, which 
 Generally only used when the recorder needs to make it explicit. Otherwise, Composition composer and other participants are assumed.
 
 h|*0..1*
-|*comment*: `link:/releases/BASE/{base_release}/data_types.html#_text_class[Text^]`
-a|TODO: consider if needed to take comment field from CEM StatementBase
+|*workflow_id*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
+a|Identifier of externally held workflow engine data for this workflow execution, for this subject of care.
 
 h|*0..1*
 |*authorization_actions*: `List<link:/releases/BASE/{base_release}/base_types.html#_participation_class[Participation^]>`

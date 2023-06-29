@@ -16,8 +16,12 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*method*: `link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]`
-a|Description of the method (i.e. how) the information in this entry was arrived at. For Observations, this is a description of the method or instrument used. For Assertion, how the evaluation was arrived at. For Orders, how to execute. This may take the form of references to guidelines, including manually followed and executable; knowledge references such as a paper in Medline; clinical reasons within a larger care process.
+|*qualifiers*: `List<link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]>`
+a|Description of qualifying details that do not change the interpretation of the focal data. These typically include:
+
+* the general method (i.e. how) the information in this entry was arrived at. For Observations, this is a description of the method. For Assertion, how the evaluation was arrived at. For Orders, how to execute;
+* device used for measurement;
+*
 
 h|*0..1*
 |*guideline_id*: `link:/releases/BASE/{base_release}/foundation_types.html#_uri_class[Uri^]`
