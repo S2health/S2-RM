@@ -29,7 +29,7 @@ May be omitted if:
 TODO - review - current approach is via separate fields in CEMs.
 
 h|*1..1*
-|*description*: `link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]`
+|*description*: `List<link:/releases/GCM/{gcm_release}/data_structures.html#_item_class[Item^]>`
 a|Description of the activity, in the form of an archetyped structure.
 
 h|*Invariants*

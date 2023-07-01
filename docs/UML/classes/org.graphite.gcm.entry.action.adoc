@@ -36,7 +36,7 @@ h|*0..1*
 a|Duration of the action.
 
 h|*1..1*
-|*description*: `link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]`
+|*description*: `List<link:/releases/GCM/{gcm_release}/data_structures.html#_item_class[Item^]>`
 a|Description of the action that has been performed, in the form of an archetyped structure.
 h|*Functions*
 ^h|*Signature*

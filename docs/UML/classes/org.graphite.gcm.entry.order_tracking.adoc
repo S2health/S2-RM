@@ -27,6 +27,6 @@ h|*0..1*
 a|FIller identifier for the order.
 
 h|*0..1*
-|*details*: `link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]`
+|*details*: `List<link:/releases/GCM/{gcm_release}/data_structures.html#_item_class[Item^]>`
 a|
 |===

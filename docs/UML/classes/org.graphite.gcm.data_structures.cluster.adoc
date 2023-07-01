@@ -15,7 +15,7 @@ h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
-h|*1..1*
+h|*0..1*
 |*items*: `List<<<_item_class,Item>>>`
 a|Ordered list of items - `Cluster` or `ELEMENT` objects - under this `Cluster`.
 h|*Functions*

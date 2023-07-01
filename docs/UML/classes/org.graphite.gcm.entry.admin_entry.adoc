@@ -20,7 +20,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*data*: `link:/releases/GCM/{gcm_release}/data_structures.html#_cluster_class[Cluster^]`
+|*data*: `List<link:/releases/GCM/{gcm_release}/data_structures.html#_item_class[Item^]>`
 a|Content of the Admin Entry.
 The data of the Entry; modelled in archetypes.
 
