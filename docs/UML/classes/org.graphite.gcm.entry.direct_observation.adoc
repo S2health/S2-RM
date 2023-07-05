@@ -1,0 +1,16 @@
+=== Direct_observation Class
+
+[cols="^1,3,5"]
+|===
+h|*Class*
+2+^h|*Direct_observation*
+
+h|*Description*
+2+a|An observation made directly on the subject, by manual or instrumental means, such that phenomenon of interest is being directly measured. Results are consequently available in real time.
+
+Typical examples: vital signs, many physical examinations.
+
+h|*Inherit*
+2+|`<<_observation_single_class,Observation_single>>`
+
+|===

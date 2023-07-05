@@ -66,10 +66,9 @@
 <li><a href="#_state">3.2.8. State</a></li>
 <li><a href="#_class_descriptions_2">3.2.9. Class Descriptions</a>
 <ul class="sectlevel4">
-<li><a href="#_history_class">3.2.9.1. History Class</a></li>
-<li><a href="#_event_class">3.2.9.2. Event Class</a></li>
-<li><a href="#_pointevent_class">3.2.9.3. PointEvent Class</a></li>
-<li><a href="#_intervalevent_class">3.2.9.4. IntervalEvent Class</a></li>
+<li><a href="#_event_class">3.2.9.1. Event Class</a></li>
+<li><a href="#_point_event_class">3.2.9.2. Point_event Class</a></li>
+<li><a href="#_interval_event_class">3.2.9.3. Interval_event Class</a></li>
 </ul>
 </li>
 </ul>
@@ -851,106 +850,7 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>Dv_
 <div class="sect3">
 <h4 id="_class_descriptions_2"><a class="anchor" href="#_class_descriptions_2"></a>3.2.9. Class Descriptions</h4>
 <div class="sect4">
-<h5 id="_history_class"><a class="anchor" href="#_history_class"></a>3.2.9.1. History Class</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>History</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Root object of a linear history, i.e. time series structure. This is a generic class whose type parameter must be a descendant of <code>ITEM_STRUCTURE</code>, ensuring that each Event in the <code><em>events</em></code> of a given instance is of the same structural type, i.e. <code>ITEM_TREE</code>, <code>ITEM_LIST</code> etc.</p>
-</div>
-<div class="paragraph">
-<p>For a periodic series of events, period will be set, and the time of each Event in the History must correspond; i.e. the <code>EVENT.<em>offset</em></code> must be a multiple of period for each Event. Missing events in a period History are however allowed.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="/releases/BASE/latest/base_types.html#_locatable_class" target="_blank" rel="noopener">Locatable</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>origin</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Time origin of this event history. The first event is not necessarily at the origin point.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>period</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Period between samples in this segment if periodic.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>total_duration</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Duration of the entire History; either corresponds to the duration of all the events, and/or the duration represented by the summary, if it exists.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>summary</strong>: <code><a href="#_cluster_class">Cluster</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional summary data that aggregates, organizes, reduces and transforms the event series. This may be a text or image that presents a graphical presentation, or some data that assists with the interpretation of the data.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>events</strong>: <code><a href="#_event_class">Event</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The events in the series.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_periodic</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Indicates whether history is periodic.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Events_valid</em>: <code>(events /= Void and then not events.is_empty) or summary /= Void</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Periodic_validity</em>: <code>is_periodic xor period = Void</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Period_consistency</em>: <code>is_periodic implies events.for_all (e: EVENT &#124; e.offset. to_seconds.mod(period.to_seconds) = 0)</code></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_event_class"><a class="anchor" href="#_event_class"></a>3.2.9.2. Event Class</h5>
+<h5 id="_event_class"><a class="anchor" href="#_event_class"></a>3.2.9.1. Event Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -986,16 +886,9 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>Dv_
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code>List&lt;<a href="#_item_class">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>items</strong>: <code>List&lt;<a href="#_item_class">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The data of this event.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>state</strong>: <code>List&lt;<a href="#_item_class">Item</a>&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional state data for this event.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1022,7 +915,7 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>Dv_
 </table>
 </div>
 <div class="sect4">
-<h5 id="_pointevent_class"><a class="anchor" href="#_pointevent_class"></a>3.2.9.3. PointEvent Class</h5>
+<h5 id="_point_event_class"><a class="anchor" href="#_point_event_class"></a>3.2.9.2. Point_event Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1032,7 +925,7 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>Dv_
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>PointEvent</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Point_event</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -1048,7 +941,7 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>Dv_
 </table>
 </div>
 <div class="sect4">
-<h5 id="_intervalevent_class"><a class="anchor" href="#_intervalevent_class"></a>3.2.9.4. IntervalEvent Class</h5>
+<h5 id="_interval_event_class"><a class="anchor" href="#_interval_event_class"></a>3.2.9.3. Interval_event Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1058,7 +951,7 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>Dv_
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>IntervalEvent</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Interval_event</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>

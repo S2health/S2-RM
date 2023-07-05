@@ -1,9 +1,9 @@
-=== IntervalEvent Class
+=== Interval_event Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*IntervalEvent*
+2+^h|*Interval_event*
 
 h|*Description*
 2+a|Defines a single interval event in a series.
