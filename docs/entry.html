@@ -56,45 +56,40 @@
 <li><a href="#_observations">3. Observations</a>
 <ul class="sectlevel2">
 <li><a href="#_overview_2">3.1. Overview</a></li>
-<li><a href="#_single_sample_observations">3.2. Single-sample Observations</a>
+<li><a href="#_direct_observations">3.2. Direct Observations</a></li>
+<li><a href="#_indirect_observations">3.3. Indirect Observations</a>
 <ul class="sectlevel3">
-<li><a href="#_direct_observations">3.2.1. Direct Observations</a></li>
-<li><a href="#_indirect_observations">3.2.2. Indirect Observations</a>
-<ul class="sectlevel4">
-<li><a href="#_lab_result">3.2.2.1. Lab Result</a></li>
-<li><a href="#_interpreted_observations">3.2.2.2. Interpreted Observations</a></li>
+<li><a href="#_lab_result">3.3.1. Lab Result</a></li>
+<li><a href="#_interpreted_observations">3.3.2. Interpreted Observations</a></li>
 </ul>
 </li>
-<li><a href="#_scores">3.2.3. Scores</a></li>
-<li><a href="#_questionnaire_response">3.2.4. Questionnaire Response</a></li>
-<li><a href="#_class_descriptions_2">3.2.5. Class Descriptions</a>
-<ul class="sectlevel4">
-<li><a href="#_observation_single_class">3.2.5.1. Observation_single Class</a></li>
-<li><a href="#_direct_observation_class">3.2.5.2. Direct_observation Class</a></li>
-<li><a href="#_indirect_observation_class">3.2.5.3. Indirect_observation Class</a></li>
-<li><a href="#_interpreted_observation_class">3.2.5.4. Interpreted_observation Class</a></li>
-<li><a href="#_score_class">3.2.5.5. Score Class</a></li>
-<li><a href="#_questionnaire_response_class">3.2.5.6. Questionnaire_response Class</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#_time_series_observations">3.3. Time-series Observations</a>
+<li><a href="#_scores">3.4. Scores</a></li>
+<li><a href="#_questionnaire_response">3.5. Questionnaire Response</a>
 <ul class="sectlevel3">
-<li><a href="#_basic_semantics">3.3.1. Basic semantics</a></li>
-<li><a href="#_two_ways_of_recording_state">3.3.2. Two ways of Recording State</a></li>
-<li><a href="#_class_descriptions_3">3.3.3. Class Descriptions</a>
+<li><a href="#_class_descriptions_2">3.5.1. Class Descriptions</a>
 <ul class="sectlevel4">
-<li><a href="#_observation_series_class">3.3.3.1. Observation_series Class</a></li>
+<li><a href="#_observation_class">3.5.1.1. Observation Class</a></li>
+<li><a href="#_direct_observation_class">3.5.1.2. Direct_observation Class</a></li>
+<li><a href="#_indirect_observation_class">3.5.1.3. Indirect_observation Class</a></li>
+<li><a href="#_imaging_class">3.5.1.4. Imaging Class</a></li>
+<li><a href="#_lab_result_class">3.5.1.5. Lab_result Class</a></li>
+<li><a href="#_score_class">3.5.1.6. Score Class</a></li>
+<li><a href="#_questionnaire_response_class">3.5.1.7. Questionnaire_response Class</a></li>
 </ul>
 </li>
-<li><a href="#_instance_examples">3.3.4. Instance Examples</a>
-<ul class="sectlevel4">
-<li><a href="#_heart_rate_measurement_series">3.3.4.1. Heart-rate Measurement Series</a></li>
-<li><a href="#_blood_pressure_with_protocol">3.3.4.2. Blood Pressure with Protocol</a></li>
-<li><a href="#_glucose_tolerance_test">3.3.4.3. Glucose Tolerance Test</a></li>
 </ul>
 </li>
+<li><a href="#_time_series_data">3.6. Time-series Data</a>
+<ul class="sectlevel3">
+<li><a href="#_basic_semantics">3.6.1. Basic semantics</a></li>
+<li><a href="#_two_ways_of_recording_state">3.6.2. Two ways of Recording State</a></li>
+</ul>
+</li>
+<li><a href="#_instance_examples">3.7. Instance Examples</a>
+<ul class="sectlevel3">
+<li><a href="#_heart_rate_measurement_series">3.7.1. Heart-rate Measurement Series</a></li>
+<li><a href="#_blood_pressure_with_protocol">3.7.2. Blood Pressure with Protocol</a></li>
+<li><a href="#_glucose_tolerance_test">3.7.3. Glucose Tolerance Test</a></li>
 </ul>
 </li>
 </ul>
@@ -103,9 +98,9 @@
 <ul class="sectlevel2">
 <li><a href="#_overview_3">4.1. Overview</a></li>
 <li><a href="#_semantics">4.2. Semantics</a></li>
-<li><a href="#_class_descriptions_4">4.3. Class Descriptions</a>
+<li><a href="#_class_descriptions_3">4.3. Class Descriptions</a>
 <ul class="sectlevel3">
-<li><a href="#_assertion_class">4.3.1. Assertion Class</a></li>
+<li><a href="#_assessment_class">4.3.1. Assessment Class</a></li>
 </ul>
 </li>
 <li><a href="#_instance_examples_2">4.4. Instance Examples</a>
@@ -124,7 +119,7 @@
 <li><a href="#_order_aggregate_state">5.5. Order Aggregate State</a></li>
 <li><a href="#_careflow_process_to_state_machine_mapping">5.6. Careflow Process to State Machine Mapping</a></li>
 <li><a href="#_relationship_to_archetypes">5.7. Relationship to Archetypes</a></li>
-<li><a href="#_class_descriptions_5">5.8. Class Descriptions</a>
+<li><a href="#_class_descriptions_4">5.8. Class Descriptions</a>
 <ul class="sectlevel3">
 <li><a href="#_order_class">5.8.1. Order Class</a></li>
 <li><a href="#_activity_class">5.8.2. Activity Class</a></li>
@@ -341,16 +336,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>The <a href="https://specifications.openehr.org/releases/RM/latest/support.html" target="_blank" rel="noopener">openEHR Support Information Model</a>;</p>
+<p>The <a href="https://specifications.graphitehealth.io/releases/BASE/latest/data_types.html" target="_blank" rel="noopener">Graphite Data Types Model</a>;</p>
 </li>
 <li>
-<p>The <a href="https://specifications.openehr.org/releases/RM/latest/data_types.html" target="_blank" rel="noopener">openEHR Data Types Information Model</a>;</p>
+<p>The <a href="https://specifications.graphitehealth.io/releases/BASE/latest/base_types.html" target="_blank" rel="noopener">Graphite Base Types Model</a>;</p>
 </li>
 <li>
-<p>The <a href="https://specifications.openehr.org/releases/RM/latest/data_structures.html" target="_blank" rel="noopener">openEHR Data Structures Information Model</a>;</p>
-</li>
-<li>
-<p>The <a href="https://specifications.openehr.org/releases/RM/latest/common.html" target="_blank" rel="noopener">openEHR Common Information Model</a>.</p>
+<p>The <a href="https://specifications.graphitehealth.io/releases/GCM/latest/data_structures.html" target="_blank" rel="noopener">Graphite Data Structures Model</a>;</p>
 </li>
 </ul>
 </div>
@@ -358,7 +350,7 @@
 <div class="sect2">
 <h3 id="_status"><a class="anchor" href="#_status"></a>1.3. Status</h3>
 <div class="paragraph">
-<p>This specification is in the TRIAL state. The development version of this document can be found at <a href="https://specifications.openehr.org/releases/RM/latest/ehr.html" target="_blank" rel="noopener">https://specifications.openehr.org/releases/RM/latest/ehr.html</a>.</p>
+<p>This specification is in the TRIAL state. The development version of this document can be found at <a href="https://specifications.graphitehealth.io/releases/GCM/latest/entry.html" target="_blank" rel="noopener">https://specifications.graphitehealth.io/releases/GCM/latest/entry.html</a>.</p>
 </div>
 <div class="paragraph">
 <p>Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:</p>
@@ -521,7 +513,7 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="/releases/GCM/{gcm_release}/ehr.html#_content_item_class" target="_blank" rel="noopener">Content_item</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="/releases/GCM/latest/ehr.html#_content_item_class" target="_blank" rel="noopener">Content_item</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -530,9 +522,9 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>language</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_code_class" target="_blank" rel="noopener">Terminology_code</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Mandatory indicator of the localised language in which this Entry is written. Coded from openEHR Code Set  languages .</p>
+<p>Time at which administrative action took place.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -543,10 +535,10 @@
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>comment</strong>: <code><a href="/releases/BASE/latest/data_types.html#_text_class" target="_blank" rel="noopener">Text</a></code></p></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>language</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_code_class" target="_blank" rel="noopener">Terminology_code</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>TODO: consider if needed to take comment field from CEM StatementBase</p>
+<p>Mandatory indicator of the localised language in which this Entry is written. Coded from openEHR Code Set  languages .</p>
 </div></div></td>
 </tr>
 <tr>
@@ -600,9 +592,9 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>workflow_id</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>comment</strong>: <code><a href="/releases/BASE/latest/data_types.html#_text_class" target="_blank" rel="noopener">Text</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Identifier of externally held workflow engine data for this workflow execution, for this subject of care.</p>
+<p>TODO: consider if needed to take comment field from CEM StatementBase</p>
 </div></div></td>
 </tr>
 <tr>
@@ -620,6 +612,13 @@
 </div>
 <div class="paragraph">
 <p>Void indicates that no lifcycle is required for this Entry, and that it is regarded as 'completed' when created.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>workflow_id</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Identifier of externally held workflow engine data for this workflow execution, for this subject of care.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -744,7 +743,7 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>qualifiers</strong>: <code>List&lt;<a href="/releases/GCM/{gcm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>qualifiers</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Description of qualifying details that do not change the interpretation of the focal data. These typically include:</p>
 </div>
@@ -884,11 +883,13 @@
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>filler_order_id</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Order id generated by the filler organization.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>details</strong>: <code>List&lt;<a href="/releases/GCM/{gcm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>details</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
@@ -916,7 +917,7 @@
 <p>Used for administrative details of admission, episode, ward location, discharge, appointment (if not stored in a practice management or appointments system).</p>
 </div>
 <div class="paragraph">
-<p>Not to be used for any clinically significant information.</p>
+<p>The inherited <code><em>time</em></code> field records the time at which administrative action took place.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -930,17 +931,10 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code>List&lt;<a href="/releases/GCM/{gcm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Content of the Admin Entry.
 The data of the Entry; modelled in archetypes.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Time at which administrative action took place.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1002,44 +996,38 @@ The data of the Entry; modelled in archetypes.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_single_sample_observations"><a class="anchor" href="#_single_sample_observations"></a>3.2. Single-sample Observations</h3>
-<div class="paragraph">
-<p>Simple observations, represented by the <code>Observation</code> class and descendants, have a single result time to which all data relate. Two specific, common forms of Observation are defined, representing lab results and questionnaire responses.</p>
-</div>
-<div class="sect3">
-<h4 id="_direct_observations"><a class="anchor" href="#_direct_observations"></a>3.2.1. Direct Observations</h4>
+<h3 id="_direct_observations"><a class="anchor" href="#_direct_observations"></a>3.2. Direct Observations</h3>
 
 </div>
+<div class="sect2">
+<h3 id="_indirect_observations"><a class="anchor" href="#_indirect_observations"></a>3.3. Indirect Observations</h3>
 <div class="sect3">
-<h4 id="_indirect_observations"><a class="anchor" href="#_indirect_observations"></a>3.2.2. Indirect Observations</h4>
-<div class="sect4">
-<h5 id="_lab_result"><a class="anchor" href="#_lab_result"></a>3.2.2.1. Lab Result</h5>
+<h4 id="_lab_result"><a class="anchor" href="#_lab_result"></a>3.3.1. Lab Result</h4>
 <div class="paragraph">
 <p>Lab results are represented using <code>Observation</code>, but with the <code><em>result_time</em></code> property set. A lab observation is fundamentally different from an instantaneous observation, since it is made on a <em>specimen</em> that acts as a proxy for the subject.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_interpreted_observations"><a class="anchor" href="#_interpreted_observations"></a>3.2.2.2. Interpreted Observations</h5>
+<div class="sect3">
+<h4 id="_interpreted_observations"><a class="anchor" href="#_interpreted_observations"></a>3.3.2. Interpreted Observations</h4>
 
 </div>
 </div>
-<div class="sect3">
-<h4 id="_scores"><a class="anchor" href="#_scores"></a>3.2.3. Scores</h4>
+<div class="sect2">
+<h3 id="_scores"><a class="anchor" href="#_scores"></a>3.4. Scores</h3>
 
 </div>
-<div class="sect3">
-<h4 id="_questionnaire_response"><a class="anchor" href="#_questionnaire_response"></a>3.2.4. Questionnaire Response</h4>
+<div class="sect2">
+<h3 id="_questionnaire_response"><a class="anchor" href="#_questionnaire_response"></a>3.5. Questionnaire Response</h3>
 <div class="paragraph">
 <p>Another common kind of observational information is the response to a <em>questionnaire</em>, which is assumed to be a controlled document published by some provider authority or jurisdiction. This is represented by the <code>Questionnaire_response</code> class. This class does not attempt to represent any conditional or other logic relating fields together, or any other computational logic of the original questionnaire, which typically takes the form of an interactive UI form - it only represents the responses.</p>
 </div>
 <div class="paragraph">
 <p>The interior structure of a <code>Questionnaire_response</code> consists of <code>Clusters</code> and <code>Elements</code>, where the former are assumed to be named according to 'sections' in the original questionnaire.</p>
 </div>
-</div>
 <div class="sect3">
-<h4 id="_class_descriptions_2"><a class="anchor" href="#_class_descriptions_2"></a>3.2.5. Class Descriptions</h4>
+<h4 id="_class_descriptions_2"><a class="anchor" href="#_class_descriptions_2"></a>3.5.1. Class Descriptions</h4>
 <div class="sect4">
-<h5 id="_observation_single_class"><a class="anchor" href="#_observation_single_class"></a>3.2.5.1. Observation_single Class</h5>
+<h5 id="_observation_class"><a class="anchor" href="#_observation_class"></a>3.5.1.1. Observation Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1049,12 +1037,15 @@ The data of the Entry; modelled in archetypes.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Observation_single (abstract)</em></strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Observation (abstract)</em></strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
 <p>Observation consisting of one time-point, and optional patient state.</p>
+</div>
+<div class="paragraph">
+<p>The inherited <code><em>time</em></code> property records the time of original observation. For observations based on specimens  (tissue, excreta etc) or images taken from the patient, this is the time at which the specimen or image was taken.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1068,21 +1059,14 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Time of original observation. For any observations based on specimens taken from the patient (tissue, excreta etc), this is the time at which the specimen was taken.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code>List&lt;<a href="/releases/GCM/{gcm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Result.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>state</strong>: <code>List&lt;<a href="/releases/GCM/{gcm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>state</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Patient state at effective (clinically relevant) time.</p>
 </div></div></td>
@@ -1091,7 +1075,7 @@ The data of the Entry; modelled in archetypes.</p>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_direct_observation_class"><a class="anchor" href="#_direct_observation_class"></a>3.2.5.2. Direct_observation Class</h5>
+<h5 id="_direct_observation_class"><a class="anchor" href="#_direct_observation_class"></a>3.5.1.2. Direct_observation Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1109,18 +1093,44 @@ The data of the Entry; modelled in archetypes.</p>
 <p>An observation made directly on the subject, by manual or instrumental means, such that phenomenon of interest is being directly measured. Results are consequently available in real time.</p>
 </div>
 <div class="paragraph">
-<p>Typical examples: vital signs, many physical examinations.</p>
+<p>Typical examples: vital signs, physical examinations, signs and symptoms.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_observation_single_class">Observation_single</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_observation_class">Observation</a></code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>state_series</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_event_class" target="_blank" rel="noopener">Event</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional recording of the state of subject of this observation during the observation process, in the form of a separate history of values which may be of any complexity. State may also be recorded within the History of the data attribute.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data_series</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_event_class" target="_blank" rel="noopener">Event</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The data of this observation, in the form of a history of values which may be of any complexity.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>total_duration</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Duration of the entire History; either corresponds to the duration of all the events, and/or the duration represented by the summary, if it exists.</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_indirect_observation_class"><a class="anchor" href="#_indirect_observation_class"></a>3.2.5.3. Indirect_observation Class</h5>
+<h5 id="_indirect_observation_class"><a class="anchor" href="#_indirect_observation_class"></a>3.5.1.3. Indirect_observation Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1143,7 +1153,7 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_observation_single_class">Observation_single</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_observation_class">Observation</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -1164,7 +1174,7 @@ The data of the Entry; modelled in archetypes.</p>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_interpreted_observation_class"><a class="anchor" href="#_interpreted_observation_class"></a>3.2.5.4. Interpreted_observation Class</h5>
+<h5 id="_imaging_class"><a class="anchor" href="#_imaging_class"></a>3.5.1.4. Imaging Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1174,28 +1184,12 @@ The data of the Entry; modelled in archetypes.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Interpreted_observation</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Imaging</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Category of observation in which results are determined by an interpretation of raw data, which is captured by e.g.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>imaging</p>
-</li>
-<li>
-<p>EKG</p>
-</li>
-<li>
-<p>DNA analysis</p>
-</li>
-<li>
-<p>proteomic analysis</p>
-</li>
-</ul>
+<p>Category of observation in which results are determined by an interpretation of raw imaging or EKG data.</p>
 </div>
 <div class="paragraph">
 <p>The interpretation may be carried out by human, rule-based, generative AI or other means. The intial data capture is considered the 'observation time', i.e. <code>Observation_single.<em>time</em></code>.</p>
@@ -1212,7 +1206,36 @@ The data of the Entry; modelled in archetypes.</p>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_score_class"><a class="anchor" href="#_score_class"></a>3.2.5.5. Score Class</h5>
+<h5 id="_lab_result_class"><a class="anchor" href="#_lab_result_class"></a>3.5.1.5. Lab_result Class</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Lab_result</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Category of observation in which results are determined from a specimen taken from the subject, generally of tissue, excreta or other bodily material, and analyzed by a laboratory.</p>
+</div>
+<div class="paragraph">
+<p>The <code><em>result_time</em></code> property records when the result was available, while the <code><em>time</em></code> property records the sample time,</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_indirect_observation_class">Indirect_observation</a></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_score_class"><a class="anchor" href="#_score_class"></a>3.5.1.6. Score Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1231,17 +1254,20 @@ The data of the Entry; modelled in archetypes.</p>
 </div>
 <div class="paragraph">
 <p>Typical examples: Apgar, Barthel.</p>
+</div>
+<div class="paragraph">
+<p>TODO: how do we want to represent series of Apgar for one birth? Special links?</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_observation_single_class">Observation_single</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_observation_class">Observation</a></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_questionnaire_response_class"><a class="anchor" href="#_questionnaire_response_class"></a>3.2.5.6. Questionnaire_response Class</h5>
+<h5 id="_questionnaire_response_class"><a class="anchor" href="#_questionnaire_response_class"></a>3.5.1.7. Questionnaire_response Class</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1261,7 +1287,7 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_observation_single_class">Observation_single</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_observation_class">Observation</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -1315,9 +1341,9 @@ The data of the Entry; modelled in archetypes.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_time_series_observations"><a class="anchor" href="#_time_series_observations"></a>3.3. Time-series Observations</h3>
+<h3 id="_time_series_data"><a class="anchor" href="#_time_series_data"></a>3.6. Time-series Data</h3>
 <div class="sect3">
-<h4 id="_basic_semantics"><a class="anchor" href="#_basic_semantics"></a>3.3.1. Basic semantics</h4>
+<h4 id="_basic_semantics"><a class="anchor" href="#_basic_semantics"></a>3.6.1. Basic semantics</h4>
 <div class="paragraph">
 <p>Multi-sample observational data is modeled by the <code>Observation_series</code> class, which represents samples in historical time using the History/Event structure defined in the <code>data_structures</code> package. This package defines a <code>History</code> class with an <code><em>origin</em></code> attribute, and a series of <code>Event</code> instances each containing a <code><em>time</em></code> attribute. Instantaneous and interval events are represented via the <code>Event</code> subtypes <code>Point_event</code> and <code>Interval_event</code>.</p>
 </div>
@@ -1342,7 +1368,7 @@ The data of the Entry; modelled in archetypes.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_two_ways_of_recording_state"><a class="anchor" href="#_two_ways_of_recording_state"></a>3.3.2. Two ways of Recording State</h4>
+<h4 id="_two_ways_of_recording_state"><a class="anchor" href="#_two_ways_of_recording_state"></a>3.6.2. Two ways of Recording State</h4>
 <div class="paragraph">
 <p>State information is optional, and is not needed if the data are meaningful on their own. If it is recorded, it can either be as a History of its own (i.e. using the <code>Observation_series.<em>state</em></code> attribute described above), or else as state values within the <code>EVENT</code> instances in the <code>Observation_series.<em>data</em></code> History structure. Both methods are useful in different circumstances. A separate state history is more likely to be used in a correlation study such as a sports medicine study on heart-rate with respect to specific types of exercise. In this method, the state information is a History of Events whose times and widths need not match those of the History in the data attribute. The state data under this approach generally express the condition of the subject in absolute terms, i.e. they are standalone statements about the subject&#8217;s state at certain points in time, such as "walking on treadmill 10km/h, 10<sup>o</sup> incline".</p>
 </div>
@@ -1356,95 +1382,14 @@ The data of the Entry; modelled in archetypes.</p>
 <div class="title">Figure 4. Alternative ways of recording state</div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_class_descriptions_3"><a class="anchor" href="#_class_descriptions_3"></a>3.3.3. Class Descriptions</h4>
-<div class="sect4">
-<h5 id="_observation_series_class"><a class="anchor" href="#_observation_series_class"></a>3.3.3.1. Observation_series Class</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Observation_series</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Observation consisting (in general) of multiple samples in time. A 'sample' consists of any number of data points whose values are recorded at each time point.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_care_act_entry_class">Care_act_entry</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code><a href="/releases/GCM/{gcm_release}/data_structures.html#_event_class" target="_blank" rel="noopener">Event</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The data of this observation, in the form of a history of values which may be of any complexity.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>state</strong>: <code><a href="/releases/GCM/{gcm_release}/data_structures.html#_event_class" target="_blank" rel="noopener">Event</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional recording of the state of subject of this observation during the observation process, in the form of a separate history of values which may be of any complexity. State may also be recorded within the History of the data attribute.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>origin</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Time origin of this event history. The first event is not necessarily at the origin point.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>period</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Period between samples in this segment if periodic.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>total_duration</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Duration of the entire History; either corresponds to the duration of all the events, and/or the duration represented by the summary, if it exists.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
-(effected)</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>effective_time</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_interval_class">Interval<sup></a>&lt;<a href="/releases/BASE/latest/foundation_types.html#_date_time_class">Date_time</sup></a>&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Result = <code><em>data.origin</em></code>.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_instance_examples"><a class="anchor" href="#_instance_examples"></a>3.3.4. Instance Examples</h4>
+<div class="sect2">
+<h3 id="_instance_examples"><a class="anchor" href="#_instance_examples"></a>3.7. Instance Examples</h3>
 <div class="paragraph">
 <p>The following subsections illustrate typical Entry instance structures. For guidance on how to best model particular clinical statements, see the archetype part of the <a href="https://www.openehr.org/ckm" target="_blank" rel="noopener">openEHR Clinical Knowledge Manager repository</a>.</p>
 </div>
-<div class="sect4">
-<h5 id="_heart_rate_measurement_series"><a class="anchor" href="#_heart_rate_measurement_series"></a>3.3.4.1. Heart-rate Measurement Series</h5>
+<div class="sect3">
+<h4 id="_heart_rate_measurement_series"><a class="anchor" href="#_heart_rate_measurement_series"></a>3.7.1. Heart-rate Measurement Series</h4>
 <div class="paragraph">
 <p>The following figure illustrates three heart-rate measurements over 10 minutes.</p>
 </div>
@@ -1455,8 +1400,8 @@ The data of the Entry; modelled in archetypes.</p>
 <div class="title">Figure 5. Periodic series instance structure</div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_blood_pressure_with_protocol"><a class="anchor" href="#_blood_pressure_with_protocol"></a>3.3.4.2. Blood Pressure with Protocol</h5>
+<div class="sect3">
+<h4 id="_blood_pressure_with_protocol"><a class="anchor" href="#_blood_pressure_with_protocol"></a>3.7.2. Blood Pressure with Protocol</h4>
 <div class="paragraph">
 <p>The following figure illustrates a blood pressure observation with method.</p>
 </div>
@@ -1467,8 +1412,8 @@ The data of the Entry; modelled in archetypes.</p>
 <div class="title">Figure 6. Blood Pressure Measurement Observation</div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_glucose_tolerance_test"><a class="anchor" href="#_glucose_tolerance_test"></a>3.3.4.3. Glucose Tolerance Test</h5>
+<div class="sect3">
+<h4 id="_glucose_tolerance_test"><a class="anchor" href="#_glucose_tolerance_test"></a>3.7.3. Glucose Tolerance Test</h4>
 <div class="paragraph">
 <p>An oral glucose tolerance test takes the following form, although the number and timing of the blood sugar levels may be slightly different in practice:</p>
 </div>
@@ -1499,7 +1444,6 @@ The data of the Entry; modelled in archetypes.</p>
 <img src="entry/diagrams/OGTT_structure.png" alt="OGTT structure" width="80%">
 </div>
 <div class="title">Figure 7. OGTT instance structure</div>
-</div>
 </div>
 </div>
 </div>
@@ -1552,9 +1496,9 @@ The data of the Entry; modelled in archetypes.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_descriptions_4"><a class="anchor" href="#_class_descriptions_4"></a>4.3. Class Descriptions</h3>
+<h3 id="_class_descriptions_3"><a class="anchor" href="#_class_descriptions_3"></a>4.3. Class Descriptions</h3>
 <div class="sect3">
-<h4 id="_assertion_class"><a class="anchor" href="#_assertion_class"></a>4.3.1. Assertion Class</h4>
+<h4 id="_assessment_class"><a class="anchor" href="#_assessment_class"></a>4.3.1. Assessment Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1564,15 +1508,18 @@ The data of the Entry; modelled in archetypes.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Assertion</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Assessment</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Entry type for an assertion, i.e. a truth claim about the subject. Used for  diagnoses, differential diagnoses, hypotheses, risk assessments, goals and plans.</p>
+<p>Entry type for an assessment or conclusion about the patient. Used for diagnoses, differential diagnoses, hypotheses, risk assessments, goals and plans.</p>
 </div>
 <div class="paragraph">
-<p>GRAPHITE: Corresponds to many/most? CEMs for Dx and other assessments, e.g. 'elevated heart rate'. Assertions state what category the subject is in, rather than reporting specific characteristics and values.</p>
+<p>The inherited <code><em>time</em></code> field carries the time at which assertion, e.g. diagnosis was made. This is usually 'now' but may report a historical diagnosis or other assessment.</p>
+</div>
+<div class="paragraph">
+<p>TODO: do we need other meta-data for historical assertions?</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1586,17 +1533,7 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Time at which assertion, e.g. diagnosis was made. This is usually 'now' but may report a historical diagnosis or other assessment.</p>
-</div>
-<div class="paragraph">
-<p>TODO: do we need other meta-data for historical assertions?</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code>List&lt;<a href="/releases/GCM/{gcm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The data of this evaluation, in the form of a spatial data structure.</p>
 </div></div></td>
@@ -1604,7 +1541,22 @@ The data of the Entry; modelled in archetypes.</p>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>certainty</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_code_class" target="_blank" rel="noopener">Terminology_code</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>TODO:</p>
+</div>
+<div class="paragraph">
+<p>need to handle differential Dx, evidence strength</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>probability</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_real_class" target="_blank" rel="noopener">Real</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Stated probability, reflecting professional opinion of provider.</p>
+</div>
+<div class="paragraph">
+<p>TODO: Potentially should be two attributes: stated_probability and statistical_probability, i.e. generated e.g. by evidence-based CDS calculation, statistical population analysis.</p>
+</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
@@ -1932,7 +1884,7 @@ EXPIRED
 </div>
 </div>
 <div class="sect2">
-<h3 id="_class_descriptions_5"><a class="anchor" href="#_class_descriptions_5"></a>5.8. Class Descriptions</h3>
+<h3 id="_class_descriptions_4"><a class="anchor" href="#_class_descriptions_4"></a>5.8. Class Descriptions</h3>
 <div class="sect3">
 <h4 id="_order_class"><a class="anchor" href="#_order_class"></a>5.8.1. Order Class</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -1952,7 +1904,10 @@ EXPIRED
 <p>Used to specify actions to be performed in the future. Used for any actionable statement such as medication, therapeutic orders, monitoring, recall and review. Sufficient details must be provided for the specification to be directly executable by the intended performer.</p>
 </div>
 <div class="paragraph">
-<p>Not to be used for plan items which are only specified in general terms.</p>
+<p>The inherited <code><em>time</em></code> field records the point in time at which the order was made (in the real world).</p>
+</div>
+<div class="paragraph">
+<p>Not to be used for planned activities which are only specified in general terms.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2050,7 +2005,7 @@ EXPIRED
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code>List&lt;<a href="/releases/GCM/{gcm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Description of the activity, in the form of an archetyped structure.</p>
 </div></div></td>
@@ -2083,6 +2038,9 @@ EXPIRED
 <p>Used to record a clinical action that has been performed, which may have been ad hoc, or due to an Order.</p>
 </div>
 <div class="paragraph">
+<p>The inherited <code><em>time</em></code> field records the point in time at which this action completed, or the best estimate.</p>
+</div>
+<div class="paragraph">
 <p>An Action may be clinically fine-grained, e.g. 'clean wound' or summarize a whole procedure e.g. 'intubate patient'.</p>
 </div></div></td>
 </tr>
@@ -2094,13 +2052,6 @@ EXPIRED
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Point in time at which this action completed. To indicate an unknown time, use a <code>DV_DATE_TIME</code> instance with <code><em>value</em></code> set to the time of creation (or some other known time before which the Action is known to have occurred, e.g. data accession timestamp from integration engine), and <code><em>magnitude_status</em></code> set to <code>&lt;</code>.</p>
-</div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
@@ -2128,9 +2079,17 @@ EXPIRED
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code>List&lt;<a href="/releases/GCM/{gcm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Description of the action that has been performed, in the form of an archetyped structure.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1<br>
+(redefined)</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Point in time at which this action completed, or best estimate.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2485,7 +2444,7 @@ has_code_for_group_id (Group_id_instruction_transitions, transition.defining_cod
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-05-05 06:10:49 -0600
+Last updated 2023-07-19 16:46:35 -0600
 </div>
 </div>
 </body>

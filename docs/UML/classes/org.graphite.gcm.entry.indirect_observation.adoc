@@ -11,7 +11,7 @@ h|*Description*
 The `_result_time_` property records when the result was available, while the inherited `_time_` property records the sample time,
 
 h|*Inherit*
-2+|`<<_observation_single_class,Observation_single>>`
+2+|`<<_observation_class,Observation>>`
 
 h|*Attributes*
 ^h|*Signature*

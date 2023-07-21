@@ -8,7 +8,9 @@ h|*Class*
 h|*Description*
 2+a|Used to specify actions to be performed in the future. Used for any actionable statement such as medication, therapeutic orders, monitoring, recall and review. Sufficient details must be provided for the specification to be directly executable by the intended performer.
 
-Not to be used for plan items which are only specified in general terms.
+The inherited `_time_` field records the point in time at which the order was made (in the real world).
+
+Not to be used for planned activities which are only specified in general terms.
 
 h|*Inherit*
 2+|`<<_care_act_entry_class,Care_act_entry>>`

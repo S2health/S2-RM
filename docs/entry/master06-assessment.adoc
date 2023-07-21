@@ -24,7 +24,7 @@ The design of the `Assertion` class is very simple. In addition to the attribute
 
 == Class Descriptions
 
-include::{uml_export_dir}/classes/{pkg}assertion.adoc[]
+include::{uml_export_dir}/classes/{pkg}assessment.adoc[]
 
 == Instance Examples
 

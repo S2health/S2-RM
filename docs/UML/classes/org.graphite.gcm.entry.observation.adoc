@@ -1,12 +1,14 @@
-=== Observation_single Class
+=== Observation Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*__Observation_single (abstract)__*
+2+^h|*__Observation (abstract)__*
 
 h|*Description*
 2+a|Observation consisting of one time-point, and optional patient state.
+
+The inherited `_time_` property records the time of original observation. For observations based on specimens  (tissue, excreta etc) or images taken from the patient, this is the time at which the specimen or image was taken.
 
 h|*Inherit*
 2+|`<<_care_act_entry_class,Care_act_entry>>`
@@ -14,10 +16,6 @@ h|*Inherit*
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
-
-h|*1..1*
-|*time*: `link:/releases/BASE/{base_release}/foundation_types.html#_date_time_class[Date_time^]`
-a|Time of original observation. For any observations based on specimens taken from the patient (tissue, excreta etc), this is the time at which the specimen was taken.
 
 h|*1..1*
 |*data*: `List<link:/releases/GCM/{gcm_release}/data_structures.html#_item_class[Item^]>`

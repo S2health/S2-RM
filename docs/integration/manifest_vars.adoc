@@ -1,0 +1,5 @@
+:spec_title: Integration Information Model
+:copyright_year: 2003
+:spec_status: TRIAL
+:keywords: EHR, integration, Graphite
+:description: Graphite Integration Information Model specification

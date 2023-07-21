@@ -2,7 +2,7 @@
 
 == Purpose
 
-This document describes the Graphite Entry Model, part of the Graphite Canonical Model.
+This document describes the architecture of the Graphite Integration Model, designed for use in legacy and other integration situations.
 
 The intended audience includes:
 
@@ -16,15 +16,9 @@ Prerequisite documents for reading this document include:
 
 * The {openehr_overview}[openEHR Architecture Overview^].
 
-Related documents include:
-
-* The {graphite_base_data_types}[Graphite Data Types Model^];
-* The {graphite_base_base_types}[Graphite Base Types Model^];
-* The {graphite_gcm_data_structures}[Graphite Data Structures Model^];
-
 == Status
 
-This specification is in the {spec_status} state. The development version of this document can be found at {graphite_gcm_latest_entry}[{graphite_gcm_latest_entry}^].
+This specification is in the Stable state. The development version of this document can be found at {graphite_gcm_latest_integration}[{graphite_gcm_latest_integration}^].
 
 Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:
 [.tbd]
@@ -40,5 +34,5 @@ To see changes made due to previously reported issues, see the {component_histor
 
 == Conformance
 
-Conformance of a data or software artifact to a Graphite specification is determined by a formal test of that artifact against the relevant openEHR Implementation Technology Specification(s) (ITSs), such as an IDL interface or an XML-schema. Since ITSs are formal derivations from underlying models, ITS conformance indicates model conformance.
+Conformance of a data or software artifact to an openEHR specification is determined by a formal test of that artifact against the relevant openEHR Implementation Technology Specification(s) (ITSs), such as an IDL interface or an XML-schema. Since ITSs are formal derivations from underlying models, ITS conformance indicates model conformance.
 

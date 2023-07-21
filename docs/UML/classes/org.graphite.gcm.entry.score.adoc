@@ -10,7 +10,9 @@ h|*Description*
 
 Typical examples: Apgar, Barthel.
 
+TODO: how do we want to represent series of Apgar for one birth? Special links?
+
 h|*Inherit*
-2+|`<<_observation_single_class,Observation_single>>`
+2+|`<<_observation_class,Observation>>`
 
 |===

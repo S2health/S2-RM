@@ -8,6 +8,8 @@ h|*Class*
 h|*Description*
 2+a|Used to record a clinical action that has been performed, which may have been ad hoc, or due to an Order.
 
+The inherited `_time_` field records the point in time at which this action completed, or the best estimate.
+
 An Action may be clinically fine-grained, e.g. 'clean wound' or summarize a whole procedure e.g. 'intubate patient'.
 
 h|*Inherit*
@@ -16,10 +18,6 @@ h|*Inherit*
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
-
-h|*1..1*
-|*time*: `link:/releases/BASE/{base_release}/foundation_types.html#_date_time_class[Date_time^]`
-a|Point in time at which this action completed. To indicate an unknown time, use a `DV_DATE_TIME` instance with `_value_` set to the time of creation (or some other known time before which the Action is known to have occurred, e.g. data accession timestamp from integration engine), and `_magnitude_status_` set to `<`.
 
 h|*0..1*
 |*state_transition*: `<<_state_transition_class,State_transition>>`
@@ -38,6 +36,11 @@ a|Duration of the action.
 h|*1..1*
 |*description*: `List<link:/releases/GCM/{gcm_release}/data_structures.html#_item_class[Item^]>`
 a|Description of the action that has been performed, in the form of an archetyped structure.
+
+h|*1..1 +
+(redefined)*
+|*time*: `link:/releases/BASE/{base_release}/foundation_types.html#_date_time_class[Date_time^]`
+a|Point in time at which this action completed, or best estimate.
 h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*

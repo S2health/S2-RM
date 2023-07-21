@@ -1263,6 +1263,9 @@ is is strongly recommended that a UUID always be used for this field.
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
 <p>EHR-wide access control object. All access decisions to data in the EHR must be made in accordance with the policies and rules in this object.</p>
 </div>
+<div class="paragraph">
+<p>TODO: repurpose and rename for consent?</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1432,7 +1435,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>other_details</strong>: <code><a href="/releases/GCM/{gcm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>other_details</strong>: <code><a href="/releases/GCM/latest/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Any other details of the EHR summary object, in the form of an archetyped <code>ITEM_STRUCTURE</code>.</p>
 </div></div></td>
@@ -1624,7 +1627,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>details</strong>: <code><a href="/releases/GCM/{gcm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>details</strong>: <code><a href="/releases/GCM/latest/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Archetypable meta-data for <code>FOLDER</code>.</p>
 </div></div></td>
@@ -1995,7 +1998,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="/releases/BASE/latest/base_types.html#_pathable_class" target="_blank" rel="noopener">Pathable</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="/releases/BASE/latest/base_types.html#_locatable_class" target="_blank" rel="noopener">Locatable</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -2028,7 +2031,7 @@ For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>other_context</strong>: <code><a href="/releases/GCM/{gcm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>other_context</strong>: <code><a href="/releases/GCM/latest/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Other optional context which will be archetyped.</p>
 </div></div></td>

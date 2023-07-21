@@ -57,27 +57,6 @@
             "keywords": "EHR, data structures, reference model, Graphite"
         },
         {
-            "id": "data_types",
-            "title": "Data Types Model",
-            "title_short": "Data Types",
-            "description": "Graphite Data Types Model",
-            "summary": "Information model of data types, including quantities, date/times, plain and coded text, time specification, multimedia and URIs.",
-            "classes": [
-                "DV_BOOLEAN",
-                "DV_TEXT",
-                "DV_CODED_TEXT",
-                "DV_URI",
-                "DV_QUANTITY",
-                "DV_DATE",
-                "DV_TIME",
-                "DV_MULTIMEDIA",
-                "DV_IDENTIFIER"
-            ],
-            "copyright_year": "2023",
-            "spec_status": "TRIAL",
-            "keywords": "EHR, clinical, data types, Graphite"
-        },
-        {
             "id": "integration",
             "title": "Integration Information Model",
             "title_short": "Integration",

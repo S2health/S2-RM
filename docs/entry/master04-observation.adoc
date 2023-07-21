@@ -20,17 +20,24 @@ The following UML diagram illustrates the classes representing various kinds of 
 .Observation
 image::{uml_diagrams_uri}/GCM-entry-observation.svg[id=entry_observation, align="center"]
 
-== Simple Observations
 
-Simple observations, represented by the `Observation` class and descendants, have a single result time to which all data relate. Two specific, common forms of Observation are defined, representing lab results and questionnaire responses.
+== Direct Observations
+
+== Indirect Observations
 
 === Lab Result
 
-The `Lab_result` class is a form of `Observation` that assumes that any 'lab result' is an observational process carried out on a _specimen_, i.e. a tissue or other kind of sample taken from the subject. It therefore enables specimen time as well as (archetypable) specimen-related details to be recorded. Specimen time is important since it is the 'clinically relevant time' of the result, indicating the point in time for the patient to which the result values relate. `Lab_result` also provides archetypable attributes for recording laboratory information and interpretation.
+Lab results are represented using `Observation`, but with the `_result_time_` property set. A lab observation is fundamentally different from an instantaneous observation, since it is made on a _specimen_ that acts as a proxy for the subject.
 
-=== Questionnaire Response
+=== Interpreted Observations
 
-Another common kind of observational information is `Questionnaire_response`, which is understood as a structured set of responses to a _questionnaire_. which is assumed to be a controlled document published by some provider authority or jurisdiction. The `Questionnaire_response` class does not attempt to represent any conditional or other logic relating fields together, or any other computational logic of the original questionnaire, which typically takes the form of an interactive UI form - it only represents the responses.
+
+== Scores
+
+
+== Questionnaire Response
+
+Another common kind of observational information is the response to a _questionnaire_, which is assumed to be a controlled document published by some provider authority or jurisdiction. This is represented by the `Questionnaire_response` class. This class does not attempt to represent any conditional or other logic relating fields together, or any other computational logic of the original questionnaire, which typically takes the form of an interactive UI form - it only represents the responses.
 
 The interior structure of a `Questionnaire_response` consists of `Clusters` and `Elements`, where the former are assumed to be named according to 'sections' in the original questionnaire.
 
@@ -38,11 +45,19 @@ The interior structure of a `Questionnaire_response` consists of `Clusters` and 
 
 include::{uml_export_dir}/classes/{pkg}observation.adoc[leveloffset=+1]
 
-include::{uml_export_dir}/classes/{pkg}questionnaire_response.adoc[leveloffset=+1]
+include::{uml_export_dir}/classes/{pkg}direct_observation.adoc[leveloffset=+1]
+
+include::{uml_export_dir}/classes/{pkg}indirect_observation.adoc[leveloffset=+1]
+
+include::{uml_export_dir}/classes/{pkg}imaging.adoc[leveloffset=+1]
 
 include::{uml_export_dir}/classes/{pkg}lab_result.adoc[leveloffset=+1]
 
-== Time-series Observations
+include::{uml_export_dir}/classes/{pkg}score.adoc[leveloffset=+1]
+
+include::{uml_export_dir}/classes/{pkg}questionnaire_response.adoc[leveloffset=+1]
+
+== Time-series Data
 
 === Basic semantics
 
@@ -67,15 +82,12 @@ The other method will be used in most general medicine, e.g. for recording fasti
 .Alternative ways of recording state
 image::{diagrams_uri}/recording_state.png[id=recording_state, align="center", width=65%]
 
-=== Class Descriptions
 
-include::{uml_export_dir}/classes/{pkg}observation_series.adoc[leveloffset=+1]
-
-=== Instance Examples
+== Instance Examples
 
 The following subsections illustrate typical Entry instance structures. For guidance on how to best model particular clinical statements, see the archetype part of the {openehr_CKM}[openEHR Clinical Knowledge Manager repository^].
 
-==== Heart-rate Measurement Series
+=== Heart-rate Measurement Series
 
 The following figure illustrates three heart-rate measurements over 10 minutes.
 
@@ -83,7 +95,7 @@ The following figure illustrates three heart-rate measurements over 10 minutes.
 .Periodic series instance structure
 image::{diagrams_uri}/periodic_series.png[id=periodic_series, align="center", width=80%]
 
-==== Blood Pressure with Protocol
+=== Blood Pressure with Protocol
 
 The following figure illustrates a blood pressure observation with method.
 
@@ -91,7 +103,7 @@ The following figure illustrates a blood pressure observation with method.
 .Blood Pressure Measurement Observation
 image::{diagrams_uri}/BP_measurement.png[id=BP_measurement, align="center", width=70%]
 
-==== Glucose Tolerance Test
+=== Glucose Tolerance Test
 
 An oral glucose tolerance test takes the following form, although the number and timing of the blood sugar levels may be slightly different in practice:
 

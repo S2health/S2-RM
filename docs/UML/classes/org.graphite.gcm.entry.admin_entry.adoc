@@ -10,7 +10,7 @@ h|*Description*
 
 Used for administrative details of admission, episode, ward location, discharge, appointment (if not stored in a practice management or appointments system).
 
-Not to be used for any clinically significant information.
+The inherited `_time_` field records the time at which administrative action took place.
 
 h|*Inherit*
 2+|`<<_entry_class,Entry>>`
@@ -23,10 +23,6 @@ h|*1..1*
 |*data*: `List<link:/releases/GCM/{gcm_release}/data_structures.html#_item_class[Item^]>`
 a|Content of the Admin Entry.
 The data of the Entry; modelled in archetypes.
-
-h|*1..1*
-|*time*: `link:/releases/BASE/{base_release}/foundation_types.html#_date_time_class[Date_time^]`
-a|Time at which administrative action took place.
 h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*

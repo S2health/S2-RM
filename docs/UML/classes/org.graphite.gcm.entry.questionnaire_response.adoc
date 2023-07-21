@@ -9,7 +9,7 @@ h|*Description*
 2+a|A structured response to a Questionnaire, The inherited attribute `_result_time_` is understood as the most recent modification time. If `_completion_status_` is `completed`, it is understood as completion time.
 
 h|*Inherit*
-2+|`<<_observation_single_class,Observation_single>>`
+2+|`<<_observation_class,Observation>>`
 
 h|*Attributes*
 ^h|*Signature*
