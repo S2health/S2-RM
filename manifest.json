@@ -1,7 +1,7 @@
 {
-    "id": "GCM",
-    "title": "Canonical Model",
-    "description": "Graphite Canonical Model Component",
+    "id": "GRM",
+    "title": "Reference Model",
+    "description": "Graphite Reference Model Component",
     "keywords": "reference model, Graphite",
     "specifications": [
         {
@@ -92,9 +92,9 @@
     ],
     "expressions": [
         {
-            "id": "Graphite_UML-GCM.mdzip",
+            "id": "Graphite_UML-GRM.mdzip",
             "type": "uml",
-            "title": "GCM UML",
+            "title": "GRM UML",
             "description": "UML file for MagicDraw 19 for RM model. Contains UML 2.5 standard XMI file."
         },
         {

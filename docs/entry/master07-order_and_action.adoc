@@ -10,7 +10,7 @@ The following UML diagram illustrates the `Order` and `Action` classes.
 
 [.text-center]
 .Order and Action
-image::{uml_diagrams_uri}/GCM-entry-order.svg[id=entry_order, align="center"]
+image::{uml_diagrams_uri}/GRM-entry-order.svg[id=entry_order, align="center"]
 
 The following subsections describe Order and Action in some detail.
 
@@ -51,7 +51,7 @@ The approach chosen here to support such functionality is to define a standard O
 
 [.text-center]
 .openEHR standard Order State Machine
-image::{uml_diagrams_uri}/GCM-order_state_machine.svg[id=Order_state_machine, align="center"]
+image::{uml_diagrams_uri}/GRM-order_state_machine.svg[id=Order_state_machine, align="center"]
 
 This state machine is the result of long term experience with clinical workflows and act management systems. The states are as follows.
 

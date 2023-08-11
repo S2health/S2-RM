@@ -57,12 +57,7 @@
 <ul class="sectlevel2">
 <li><a href="#_overview_2">3.1. Overview</a></li>
 <li><a href="#_direct_observations">3.2. Direct Observations</a></li>
-<li><a href="#_indirect_observations">3.3. Indirect Observations</a>
-<ul class="sectlevel3">
-<li><a href="#_lab_result">3.3.1. Lab Result</a></li>
-<li><a href="#_interpreted_observations">3.3.2. Interpreted Observations</a></li>
-</ul>
-</li>
+<li><a href="#_indirect_observations">3.3. Indirect Observations</a></li>
 <li><a href="#_scores">3.4. Scores</a></li>
 <li><a href="#_questionnaire_response">3.5. Questionnaire Response</a>
 <ul class="sectlevel3">
@@ -168,7 +163,7 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: GCM latest</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: GRM latest</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong>: TRIAL</p></td>
 </tr>
 <tr>
@@ -200,7 +195,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Support</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Issues: <a href="https://specifications.graphitehealth.io/components/GCM/open_issues" target="_blank" rel="noopener">Report an Issue</a><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issues: <a href="https://specifications.graphitehealth.io/components/GRM/open_issues" target="_blank" rel="noopener">Report an Issue</a><br>
  Web: <a href="https://specifications.graphitehealth.io" target="_blank" rel="noopener">specifications.GraphiteHealth.io</a></p></td>
 </tr>
 </tbody>
@@ -365,10 +360,10 @@
 <p>Feedback may be provided on the <a href="https://discourse.openehr.org/c/specifications/rm" target="_blank" rel="noopener">Graphite specifications forum</a>.</p>
 </div>
 <div class="paragraph">
-<p>Issues may be raised on the <a href="https://specifications.graphitehealth.io/components/GCM/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
+<p>Issues may be raised on the <a href="https://specifications.graphitehealth.io/components/GRM/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
 </div>
 <div class="paragraph">
-<p>To see changes made due to previously reported issues, see the <a href="https://specifications.graphitehealth.io/components/GCM/history" target="_blank" rel="noopener">GCM component Change Request tracker</a>.</p>
+<p>To see changes made due to previously reported issues, see the <a href="https://specifications.graphitehealth.io/components/GRM/history" target="_blank" rel="noopener">GRM component Change Request tracker</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -387,7 +382,7 @@
 </div>
 <div id="entry_taxonomy" class="imageblock text-center text-center">
 <div class="content">
-<img src="UML/diagrams/GCM-entry-taxonomy.svg" alt="GCM entry taxonomy">
+<img src="UML/diagrams/GRM-entry-taxonomy.svg" alt="GRM entry taxonomy">
 </div>
 <div class="title">Figure 1. gcm.entry package</div>
 </div>
@@ -442,7 +437,7 @@
 </div>
 <div id="Entry_state_machine" class="imageblock text-center text-center">
 <div class="content">
-<img src="UML/diagrams/GCM-Entry_state_machine.svg" alt="GCM Entry state machine">
+<img src="UML/diagrams/GRM-Entry_state_machine.svg" alt="GRM Entry state machine">
 </div>
 <div class="title">Figure 2. Entry state machine</div>
 </div>
@@ -475,10 +470,10 @@
 <div class="sect2">
 <h3 id="_care_entry"><a class="anchor" href="#_care_entry"></a>2.3. Care_entry</h3>
 <div class="paragraph">
-<p>The <code>Care_entry</code> class is an abstract precursor of classes that express information of any clinical activity in the patient care process. It includes two attributes particular to all clinical entries, namely <code><em>protocol</em></code> and <code><em>guideline_id</em></code>. These attributes enable the 'how' and 'why' aspects of any clinical recording to be expressed. Protocol is often recorded for Observations, e.g. staining method in microscopy, and Instructions, e.g. Bruce protocol for ECG test.</p>
+<p>The <code>Care_entry</code> class is an abstract precursor of classes that express information of any clinical activity in the patient care process. It includes two attributes particular to all clinical entries, namely <code><em>qualifiers</em></code> and <code><em>guideline_ids</em></code>. These attributes enable the 'how' and 'why' aspects of any clinical recording to be expressed. The <code><em>qualifiers</em></code> property is used to record <em>method_</em> recorded for Observations, e.g. staining method in microscopy, and Instructions, e.g. Bruce protocol for ECG test.</p>
 </div>
 <div class="paragraph">
-<p>TODO: review guideline_id</p>
+<p>TODO: review guideline_ids</p>
 </div>
 </div>
 <div class="sect2">
@@ -513,7 +508,7 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="/releases/GCM/latest/ehr.html#_content_item_class" target="_blank" rel="noopener">Content_item</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="/releases/GRM/{grm_release}/ehr.html#_content_item_class" target="_blank" rel="noopener">Content_item</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -743,7 +738,7 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>qualifiers</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>qualifiers</strong>: <code>List&lt;<a href="/releases/GRM/{grm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Description of qualifying details that do not change the interpretation of the focal data. These typically include:</p>
 </div>
@@ -889,7 +884,7 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>details</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>details</strong>: <code>List&lt;<a href="/releases/GRM/{grm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
@@ -931,7 +926,7 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code>List&lt;<a href="/releases/GRM/{grm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Content of the Admin Entry.
 The data of the Entry; modelled in archetypes.</p>
@@ -961,13 +956,19 @@ The data of the Entry; modelled in archetypes.</p>
 <div class="sect2">
 <h3 id="_overview_2"><a class="anchor" href="#_overview_2"></a>3.1. Overview</h3>
 <div class="paragraph">
-<p>A number of types are used to record observations of any phenomenon or state of interest to do with the patient, including pathology results, vital signs, family history and social circumstances as recounted by the patient to the doctor, patient answers to physician questions during a physical examination, and responses to questionnaires.</p>
+<p>A number of types are used to record observations of any phenomenon or state of interest to do with the patient, including lab results, vital signs, family history, patient responses during a physical examination, and questionnaire response.</p>
 </div>
 <div class="paragraph">
-<p>Observations are divided into <em>simple observations</em> represented by the <code>Observation</code> class and descendants, and <em>time-series observations</em>, represented by <code>Observation_series</code>. A simple observation consists of one time-point only, to which all relevant data is related; this may be thought of as the <em>result time</em>. Time-series observations in general have multiple samples, although particular instances may have only one.</p>
+<p>The following UML diagram illustrates the classes representing various kinds of Observation.</p>
+</div>
+<div id="entry_observation" class="imageblock text-center text-center">
+<div class="content">
+<img src="UML/diagrams/GRM-entry-observation.svg" alt="GRM entry observation">
+</div>
+<div class="title">Figure 3. Observation</div>
 </div>
 <div class="paragraph">
-<p>The common information of all observations is expressed in the 'data',  <code><em>state</em></code> and 'method' attributes, as follows:</p>
+<p>Observations are formally modelled by the <code>Observation</code> class and its descendants. The <code>Observation</code> class provides the following properties common to all varieties of Observation:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -975,46 +976,34 @@ The data of the Entry; modelled in archetypes.</p>
 <p><code><em>data</em></code>: the focal data being recorded;</p>
 </li>
 <li>
-<p><code><em>state</em></code>: any particular information about the state of the subject of the Entry necessary to correctly interpret the data, which is not already known in the health record (i.e. facts such as the patient being female, pregnant, or currently undergoing chemotherapy). For example, exertion level (resting, post-marathon&#8230;&#8203;), position (lying, standing), post-glucose challenge, and so on. The form of the <code><em>state</em></code> attribute is the same as that of the <code><em>data</em></code> attribute: a <code>HISTORY</code> of <code>EVENT</code> of <code>Cluster</code>.</p>
-</li>
-<li>
-<p><code><em>method</em></code>: details of how the observation was carried out, which might include a particular clinical method (e.g. Bruce protocol for treadmill exercise ECG) and/or information about instruments other observational methods. This information can always be safely omitted from the user interface, i.e. has no bearing on the interpretation of the data.</p>
+<p><code><em>state</em></code>: any particular information about the state of the subject necessary to correctly interpret the data, which is not already known in the health record (i.e. facts such as the patient being female, pregnant, or currently undergoing chemotherapy). For example, exertion level (resting, post-marathon&#8230;&#8203;), position (lying, standing), post-glucose challenge, and so on.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The detailed semantics of Observation data are described in the following subsections.</p>
+<p>Both the <code><em>data</em></code> and <code><em>state</em></code> properties are of type <code>List&lt;Item&gt;</code>.</p>
 </div>
 <div class="paragraph">
-<p>The following UML diagram illustrates the classes representing various kinds of observation.</p>
-</div>
-<div id="entry_observation" class="imageblock text-center text-center">
-<div class="content">
-<img src="UML/diagrams/GCM-entry-observation.svg" alt="GCM entry observation">
-</div>
-<div class="title">Figure 3. Observation</div>
+<p>Observations are further differentiated on <em>modality</em> of interaction with the subject used to obtain the intended data. The detailed semantics of Observation data are described in the following subsections.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_direct_observations"><a class="anchor" href="#_direct_observations"></a>3.2. Direct Observations</h3>
-
+<div class="paragraph">
+<p>Direct observations, represented by the <code>Direct_observation</code> class, are those for which the focal datum is directly provided by the observational activity. Examples include manual physical examination, e.g. palpation, auscultation, evaluation of skin color etc; machine observations such as heart-rate, oxygen and blood pressure. Note that some machines do not directly measure the reported data but compute it instead from related measurables. For example mean arterial pressure is usually machine-calculated from measured diastolic and systolic blood pressures. Such devices are treated for practical purposes as if they directly measure the target datum.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_indirect_observations"><a class="anchor" href="#_indirect_observations"></a>3.3. Indirect Observations</h3>
-<div class="sect3">
-<h4 id="_lab_result"><a class="anchor" href="#_lab_result"></a>3.3.1. Lab Result</h4>
 <div class="paragraph">
-<p>Lab results are represented using <code>Observation</code>, but with the <code><em>result_time</em></code> property set. A lab observation is fundamentally different from an instantaneous observation, since it is made on a <em>specimen</em> that acts as a proxy for the subject.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_interpreted_observations"><a class="anchor" href="#_interpreted_observations"></a>3.3.2. Interpreted Observations</h4>
-
+<p>Indirect observations are those obtained by some process that produces an artefact that can subsequently be analyzed to provide the focal data item. Examples include lab test results, imaging and genetic testing. In general, the analysis process takes some time. They are represented by the <code>Indirect_observation</code> class, which includes the property <code><em>result_time</em></code>, used to capture the time the result became available. The clinically relevant time is corresppnds to the time of sampling, imagingin etc, and is captured in the inherited <code><em>time</em></code> property.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_scores"><a class="anchor" href="#_scores"></a>3.4. Scores</h3>
-
+<div class="paragraph">
+<p>Scores are a kind of Observation</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_questionnaire_response"><a class="anchor" href="#_questionnaire_response"></a>3.5. Questionnaire Response</h3>
@@ -1059,14 +1048,14 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code>List&lt;<a href="/releases/GRM/{grm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Result.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>state</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>state</strong>: <code>List&lt;<a href="/releases/GRM/{grm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Patient state at effective (clinically relevant) time.</p>
 </div></div></td>
@@ -1107,14 +1096,14 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>state_series</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_event_class" target="_blank" rel="noopener">Event</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>state_series</strong>: <code>List&lt;<a href="/releases/GRM/{grm_release}/data_structures.html#_event_class" target="_blank" rel="noopener">Event</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional recording of the state of subject of this observation during the observation process, in the form of a separate history of values which may be of any complexity. State may also be recorded within the History of the data attribute.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data_series</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_event_class" target="_blank" rel="noopener">Event</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data_series</strong>: <code>List&lt;<a href="/releases/GRM/{grm_release}/data_structures.html#_event_class" target="_blank" rel="noopener">Event</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The data of this observation, in the form of a history of values which may be of any complexity.</p>
 </div></div></td>
@@ -1124,6 +1113,13 @@ The data of the Entry; modelled in archetypes.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>total_duration</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Duration of the entire History; either corresponds to the duration of all the events, and/or the duration represented by the summary, if it exists.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>sample_function</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Mathematical function of the data of this event, e.g.  maximum, mean etc. Coded using <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml">openEHR vocabulary <code>event math function</code></a>. Default value <code>640&#124;actual&#124;</code>, meaning 'actual value'.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1462,7 +1458,7 @@ The data of the Entry; modelled in archetypes.</p>
 </div>
 <div id="entry_assertion" class="imageblock text-center text-center">
 <div class="content">
-<img src="UML/diagrams/GCM-entry-assertion.svg" alt="GCM entry assertion">
+<img src="UML/diagrams/GRM-entry-assertion.svg" alt="GRM entry assertion">
 </div>
 <div class="title">Figure 8. Assertion</div>
 </div>
@@ -1533,7 +1529,7 @@ The data of the Entry; modelled in archetypes.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code>List&lt;<a href="/releases/GRM/{grm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The data of this evaluation, in the form of a spatial data structure.</p>
 </div></div></td>
@@ -1607,7 +1603,7 @@ The data of the Entry; modelled in archetypes.</p>
 </div>
 <div id="entry_order" class="imageblock text-center text-center">
 <div class="content">
-<img src="UML/diagrams/GCM-entry-order.svg" alt="GCM entry order">
+<img src="UML/diagrams/GRM-entry-order.svg" alt="GRM entry order">
 </div>
 <div class="title">Figure 10. Order and Action</div>
 </div>
@@ -1677,7 +1673,7 @@ The data of the Entry; modelled in archetypes.</p>
 </div>
 <div id="Order_state_machine" class="imageblock text-center text-center">
 <div class="content">
-<img src="UML/diagrams/GCM-order_state_machine.svg" alt="GCM order state machine">
+<img src="UML/diagrams/GRM-order_state_machine.svg" alt="GRM order state machine">
 </div>
 <div class="title">Figure 12. openEHR standard Order State Machine</div>
 </div>
@@ -2005,7 +2001,7 @@ EXPIRED
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code>List&lt;<a href="/releases/GRM/{grm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Description of the activity, in the form of an archetyped structure.</p>
 </div></div></td>
@@ -2079,7 +2075,7 @@ EXPIRED
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code>List&lt;<a href="/releases/GCM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code>List&lt;<a href="/releases/GRM/{grm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Description of the action that has been performed, in the form of an archetyped structure.</p>
 </div></div></td>
@@ -2444,7 +2440,7 @@ has_code_for_group_id (Group_id_instruction_transitions, transition.defining_cod
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-07-19 16:46:35 -0600
+Last updated 2023-08-07 13:00:21 -0600
 </div>
 </div>
 </body>

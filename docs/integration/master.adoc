@@ -46,7 +46,7 @@ Special thanks to David Ingram, Emeritus Professor of Health Informatics at UCL,
 :sectnums:
 
 ifdef::package_qualifiers[]
-:pkg: org.graphite.gcm.integration.
+:pkg: org.graphite.grm.integration.
 endif::[]
 
 include::master01-preface.adoc[leveloffset=+1]

@@ -5,7 +5,7 @@ The `rm.data_structures` package contains classes representing structures for re
 
 [.text-center]
 .rm.data_structures Package
-image::{uml_diagrams_uri}/GCM-data_structures.svg[id=data_structures_package, align="center"]
+image::{uml_diagrams_uri}/GRM-data_structures.svg[id=data_structures_package, align="center"]
 
 == Representation Classes
 

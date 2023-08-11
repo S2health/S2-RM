@@ -4,7 +4,7 @@ The Entry model is defined by the `gcm.entry` package, shown in the UML diagram 
 
 [.text-center]
 .gcm.entry package
-image::{uml_diagrams_uri}/GCM-entry-taxonomy.svg[id=entry_taxonomy, align="center"]
+image::{uml_diagrams_uri}/GRM-entry-taxonomy.svg[id=entry_taxonomy, align="center"]
 
 The descendants of `Entry` are based on the taxonomy described in cite:[Beale_Heard2007], and are described in the section below.
 
@@ -30,7 +30,7 @@ The `_authorization_actions_` attribute is used to record any authorization acti
 
 [.text-center]
 .Entry state machine
-image::{uml_diagrams_uri}/GCM-Entry_state_machine.svg[id=Entry_state_machine, align="center"]
+image::{uml_diagrams_uri}/GRM-Entry_state_machine.svg[id=Entry_state_machine, align="center"]
 
 The following sections describe Entry sub-types.
 
@@ -46,9 +46,9 @@ The data of Admin_entry is a single Cluster and is structured by archetyping.
 
 == Care_entry
 
-The `Care_entry` class is an abstract precursor of classes that express information of any clinical activity in the patient care process. It includes two attributes particular to all clinical entries, namely `_protocol_` and `_guideline_id_`. These attributes enable the 'how' and 'why' aspects of any clinical recording to be expressed. Protocol is often recorded for Observations, e.g. staining method in microscopy, and Instructions, e.g. Bruce protocol for ECG test.
+The `Care_entry` class is an abstract precursor of classes that express information of any clinical activity in the patient care process. It includes two attributes particular to all clinical entries, namely `_qualifiers_` and `_guideline_ids_`. These attributes enable the 'how' and 'why' aspects of any clinical recording to be expressed. The `_qualifiers_` property is used to record _method__ recorded for Observations, e.g. staining method in microscopy, and Instructions, e.g. Bruce protocol for ECG test.
 
-TODO: review guideline_id
+TODO: review guideline_ids
 
 == Care_act_entry
 

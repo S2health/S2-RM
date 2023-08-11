@@ -8,7 +8,7 @@ The following UML diagram shows the `Assertion` class and related sub-structure.
 
 [.text-center]
 .Assertion
-image::{uml_diagrams_uri}/GCM-entry-assertion.svg[id=entry_assertion, align="center"]
+image::{uml_diagrams_uri}/GRM-entry-assertion.svg[id=entry_assertion, align="center"]
 
 == Semantics
 

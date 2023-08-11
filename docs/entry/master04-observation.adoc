@@ -2,38 +2,34 @@
 
 == Overview
 
-A number of types are used to record observations of any phenomenon or state of interest to do with the patient, including pathology results, vital signs, family history and social circumstances as recounted by the patient to the doctor, patient answers to physician questions during a physical examination, and responses to questionnaires.
+A number of types are used to record observations of any phenomenon or state of interest to do with the patient, including lab results, vital signs, family history, patient responses during a physical examination, and questionnaire response.
 
-Observations are divided into _simple observations_ represented by the `Observation` class and descendants, and _time-series observations_, represented by `Observation_series`. A simple observation consists of one time-point only, to which all relevant data is related; this may be thought of as the _result time_. Time-series observations in general have multiple samples, although particular instances may have only one.
-
-The common information of all observations is expressed in the 'data',  `_state_` and 'method' attributes, as follows:
-
-* `_data_`: the focal data being recorded;
-* `_state_`: any particular information about the state of the subject of the Entry necessary to correctly interpret the data, which is not already known in the health record (i.e. facts such as the patient being female, pregnant, or currently undergoing chemotherapy). For example, exertion level (resting, post-marathon...), position (lying, standing), post-glucose challenge, and so on. The form of the `_state_` attribute is the same as that of the `_data_` attribute: a `HISTORY` of `EVENT` of `Cluster`.
-* `_method_`: details of how the observation was carried out, which might include a particular clinical method (e.g. Bruce protocol for treadmill exercise ECG) and/or information about instruments other observational methods. This information can always be safely omitted from the user interface, i.e. has no bearing on the interpretation of the data.
-
-The detailed semantics of Observation data are described in the following subsections.
-
-The following UML diagram illustrates the classes representing various kinds of observation.
+The following UML diagram illustrates the classes representing various kinds of Observation.
 
 [.text-center]
 .Observation
-image::{uml_diagrams_uri}/GCM-entry-observation.svg[id=entry_observation, align="center"]
+image::{uml_diagrams_uri}/GRM-entry-observation.svg[id=entry_observation, align="center"]
 
+Observations are formally modelled by the `Observation` class and its descendants. The `Observation` class provides the following properties common to all varieties of Observation:
+
+* `_data_`: the focal data being recorded;
+* `_state_`: any particular information about the state of the subject necessary to correctly interpret the data, which is not already known in the health record (i.e. facts such as the patient being female, pregnant, or currently undergoing chemotherapy). For example, exertion level (resting, post-marathon...), position (lying, standing), post-glucose challenge, and so on.
+
+Both the `_data_` and `_state_` properties are of type `List<Item>`.
+
+Observations are further differentiated on _modality_ of interaction with the subject used to obtain the intended data. The detailed semantics of Observation data are described in the following subsections.
 
 == Direct Observations
 
+Direct observations, represented by the `Direct_observation` class, are those for which the focal datum is directly provided by the observational activity. Examples include manual physical examination, e.g. palpation, auscultation, evaluation of skin color etc; machine observations such as heart-rate, oxygen and blood pressure. Note that some machines do not directly measure the reported data but compute it instead from related measurables. For example mean arterial pressure is usually machine-calculated from measured diastolic and systolic blood pressures. Such devices are treated for practical purposes as if they directly measure the target datum.
+
 == Indirect Observations
 
-=== Lab Result
-
-Lab results are represented using `Observation`, but with the `_result_time_` property set. A lab observation is fundamentally different from an instantaneous observation, since it is made on a _specimen_ that acts as a proxy for the subject.
-
-=== Interpreted Observations
-
+Indirect observations are those obtained by some process that produces an artefact that can subsequently be analyzed to provide the focal data item. Examples include lab test results, imaging and genetic testing. In general, the analysis process takes some time. They are represented by the `Indirect_observation` class, which includes the property `_result_time_`, used to capture the time the result became available. The clinically relevant time is corresppnds to the time of sampling, imagingin etc, and is captured in the inherited `_time_` property.
 
 == Scores
 
+Scores are a kind of Observation
 
 == Questionnaire Response
 

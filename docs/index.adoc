@@ -4,7 +4,7 @@
 include::{ref_dir}/docs/boilerplate/basic_style_settings.adoc[]
 
 :keywords: reference model, openehr, graphite
-:description: Graphite Canonical Model
+:description: Graphite Reference Model
 
 include::{ref_dir}/docs/boilerplate/global_vars.adoc[]
 
@@ -17,7 +17,7 @@ image::{openehr_logo}["openEHR logo",align="center"]
 //image::openehr_block_diagram.svg["openEHR components",align="center",width="60%"]
 
 :numbered!:
-= Graphite Canonical Model - {rm_release}
+= Graphite Reference Model - {rm_release}
 
 // Use the following version for 'latest'
 ifeval::["{rm_release}" == "latest"]
@@ -62,7 +62,7 @@ h|Specification h|Description
 |===
 |Resource |Description
 
-|link:/UML/Graphite_UML-GCM.mdzip[Graphite_UML-GCM.mdzip]
+|link:/UML/Graphite_UML-GRM.mdzip[Graphite_UML-GRM.mdzip]
 |UML file for MagicDraw 19 for RM model. Contains UML 2.5 standard XMI file.
 
 |===
