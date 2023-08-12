@@ -1,9 +1,9 @@
-=== VERSIONED_RESOURCE_USE Class
+=== Versioned_resource_use Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*VERSIONED_RESOURCE_USE*
+2+^h|*Versioned_resource_use*
 
 h|*Description*
 2+a|Static type formed by binding generic parameter of `VERSIONED_OBJECT<T>` to `ENTITY`.

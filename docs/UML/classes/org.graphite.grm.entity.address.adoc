@@ -1,9 +1,9 @@
-=== ADDRESS Class
+=== Address Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*ADDRESS*
+2+^h|*Address*
 
 h|*Description*
 2+a|Address of contact, which may be electronic or geographic.

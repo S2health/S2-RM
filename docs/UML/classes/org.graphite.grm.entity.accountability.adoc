@@ -1,9 +1,9 @@
-=== ACCOUNTABILITY Class
+=== Accountability Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*ACCOUNTABILITY*
+2+^h|*Accountability*
 
 h|*Description*
 2+a|Representation of an accountability that an Actor (typically Organisation) defines, that may be satisfied by another Actor via one or more capabilities.

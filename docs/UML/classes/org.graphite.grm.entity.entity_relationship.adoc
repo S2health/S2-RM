@@ -1,9 +1,9 @@
-=== ENTITY_RELATIONSHIP Class
+=== Entity_relationship Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*__ENTITY_RELATIONSHIP (abstract)__*
+2+^h|*__Entity_relationship (abstract)__*
 
 h|*Description*
 2+a|

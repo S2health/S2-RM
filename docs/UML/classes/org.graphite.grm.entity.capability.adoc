@@ -1,9 +1,9 @@
-=== CAPABILITY Class
+=== Capability Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*CAPABILITY*
+2+^h|*Capability*
 
 h|*Description*
 2+a|Capability of an Agent, such as  GP, vascular surgeon. Capability is based on credentials, normally professional certifications.

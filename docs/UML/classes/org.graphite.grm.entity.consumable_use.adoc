@@ -1,9 +1,9 @@
-=== CONSUMABLE_USE Class
+=== Consumable_use Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*CONSUMABLE_USE*
+2+^h|*Consumable_use*
 
 h|*Description*
 2+a|Details of single use and potentially disposal of a consumable artefact.
@@ -11,7 +11,7 @@ h|*Description*
 TODO: possibly need to distinguish between strictly consumable things like medication, food, and disposable things like catheters?
 
 h|*Inherit*
-2+|`<<_resource_use_class,RESOURCE_USE>>`
+2+|`<<_resource_use_class,Resource_use>>`
 
 h|*Attributes*
 ^h|*Signature*

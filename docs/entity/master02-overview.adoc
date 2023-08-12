@@ -8,7 +8,7 @@ The following UML diagram illustrates the primary taxonomy of the Entity model, 
 
 [.text-center]
 .rm.entity taxonomy
-image::{uml_diagrams_uri}/RM-entity-taxonomy.svg[id=rm_entity_taxonomy, align="center"]
+image::{uml_diagrams_uri}/GRM-entity-taxonomy.svg[id=rm_entity_taxonomy, align="center"]
 
 == Ontological Basis
 
@@ -22,18 +22,18 @@ BFO and related ontologies such as the {ro}[Relation Ontology^] define many poss
 
 Accordingly, the model shown in this specification includes _indicative conceptual relationships_ between classes (i.e. standing for universals), as a guide to the concrete relationships that may be instantiated at the instance level. These conceptual relations are shown in brown, and have names of the form `'r_xxx'`.
 
-These conceptual relations are intended to be concretely represented using instances of the `ENTITY`, `ENTITY_RELATIONSHIP` and `RELATIONSHIP_GROUP` classes described in the following section.
+These conceptual relations are intended to be concretely represented using instances of the `Entity`, `Entity_relationship` and `Relationship_group` classes described in the following section.
 
 == Archetyping
 
-The model is designed to be used with archetypes, hence the generic nature of all classes. Every class containing an attribute of the form `_details_:Cluster` is a completely archetypable structure. As a result, archetypes can be defined for concepts such as particular kinds of `PERSON`, `DEVICE` etc., and for many subordinate structures, such as Party identities and addresses.
+The model is designed to be used with archetypes, hence the generic nature of all classes. Every class containing an attribute of the form `_details_:Cluster` is a completely archetypable structure. As a result, archetypes can be defined for concepts such as particular kinds of `Person`, `Device` etc., and for many subordinate structures, such as Party identities and addresses.
 
 [.tbc]
 To Be Continued
 
 == Identification
 
-Technical identifiers of Entity instances are represented  via the `_uid_` attribute (type `OBJECT_VERSION_ID`) of the containing `Version`. These identifiers are used in all cross-references between Entities.
+Technical identifiers of Entity instances are represented  via the `_uid_` attribute (type `Object_version_id`) of the containing `Version`. These identifiers are used in all cross-references between Entities.
 
 [.tbc]
 To Be Continued

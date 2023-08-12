@@ -1,9 +1,9 @@
-=== VERSIONED_MATERIAL_ENTITY Class
+=== Versioned_material_entity Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*VERSIONED_MATERIAL_ENTITY*
+2+^h|*Versioned_material_entity*
 
 h|*Description*
 2+a|Static type formed by binding generic parameter of `VERSIONED_OBJECT<T>` to `ENTITY`.

@@ -1,9 +1,9 @@
-=== VERSIONED_PARTY Class
+=== Versioned_party Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*VERSIONED_PARTY*
+2+^h|*Versioned_party*
 
 h|*Description*
 2+a|Static type formed by binding generic parameter of `VERSIONED_OBJECT<T>` to `ENTITY`.

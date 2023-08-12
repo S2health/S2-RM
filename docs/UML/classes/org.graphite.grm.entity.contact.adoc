@@ -1,9 +1,9 @@
-=== CONTACT Class
+=== Contact Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*CONTACT*
+2+^h|*Contact*
 
 h|*Description*
 2+a|Description of a means of contact of a Party. Actual structure is archetyped.
@@ -16,7 +16,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*1..1*
-|*addresses*: `List<<<_address_class,ADDRESS>>>`
+|*addresses*: `List<<<_address_class,Address>>>`
 a|A set of address alternatives for this contact purpose and time validity combination.
 
 h|*0..1*

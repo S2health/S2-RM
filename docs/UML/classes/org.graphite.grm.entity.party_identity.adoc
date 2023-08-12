@@ -1,9 +1,9 @@
-=== PARTY_IDENTITY Class
+=== Party_identity Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*PARTY_IDENTITY*
+2+^h|*Party_identity*
 
 h|*Description*
 2+a|An identity  of a Social entity, such as a person name or company name, and which is used by the party to identify itself. Actual structure is archetyped.

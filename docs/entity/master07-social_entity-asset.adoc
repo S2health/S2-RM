@@ -6,7 +6,7 @@ xxx
 
 [.text-center]
 .rm.entity.social_entity.asset package
-image::{uml_diagrams_uri}/RM-entity.social_entity.asset.svg[id=rm_social_entity_asset, align="center"]
+image::{uml_diagrams_uri}/GRM-entity.social_entity.asset.svg[id=rm_social_entity_asset, align="center"]
 
 
 == Class Definitions

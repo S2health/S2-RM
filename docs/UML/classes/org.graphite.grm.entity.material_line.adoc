@@ -1,14 +1,14 @@
-=== MATERIAL_LINE Class
+=== Material_line Class
 
 [cols="^1,3,5"]
 |===
 h|*Class*
-2+^h|*MATERIAL_LINE*
+2+^h|*Material_line*
 
 h|*Description*
 2+a|Equivalent to `BFO: 1-D Continuant fiat boundary'.
 
 h|*Inherit*
-2+|`<<_material_location_class,MATERIAL_LOCATION>>`
+2+|`<<_material_location_class,Material_location>>`
 
 |===

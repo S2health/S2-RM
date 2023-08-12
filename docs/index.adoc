@@ -53,6 +53,8 @@ h|Specification h|Description
 |link:data_structures.html[Data Structures^]
 |Information model of data structures, including time-series data.
 
+|link:entity.html[Entities^]
+|Information model of Entities, including resources and demographics.
 
 |===
 
