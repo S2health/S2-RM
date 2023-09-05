@@ -32,6 +32,6 @@ h|*0..1*
 a|Valid time interval for this relationship.
 
 h|*0..1*
-|*description*: `link:/releases/GRM/{grm_release}/data_structures.html#_cluster_class[Cluster^]`
+|*description*: `List<link:/releases/GRM/{grm_release}/data_structures.html#_item_class[Item^]>`
 a|Archetypable generic description for this relationship.
 |===

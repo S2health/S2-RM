@@ -11,11 +11,4 @@ h|*Description*
 h|*Inherit*
 2+|`<<_physical_entity_class,Physical_entity>>`
 
-h|*Attributes*
-^h|*Signature*
-^h|*Meaning*
-
-h|*0..1*
-|*r_contains*: `List<<<_materially_dependent_entity_class,Materially_dependent_entity>>>`
-a|
 |===

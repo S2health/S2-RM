@@ -31,7 +31,7 @@ h|*1..1*
 a|True if the EHR, other than the `EHR_STATUS` object, is allowed to be written to. The `EHR_STATUS` object itself can always be written to.
 
 h|*0..1*
-|*other_details*: `link:/releases/GRM/{grm_release}/data_structures.html#_cluster_class[Cluster^]`
+|*other_details*: `List<link:/releases/GRM/{grm_release}/data_structures.html#_item_class[Item^]>`
 a|Any other details of the EHR summary object, in the form of an archetyped `ITEM_STRUCTURE`.
 
 h|*Invariants*

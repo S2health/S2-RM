@@ -84,9 +84,9 @@
 <li><a href="#_artefact_class">4.4.12. Artefact Class</a></li>
 <li><a href="#_substance_class">4.4.13. Substance Class</a></li>
 <li><a href="#_material_location_class">4.4.14. Material_location Class</a></li>
-<li><a href="#_material_point_class">4.4.15. Material_point Class</a></li>
-<li><a href="#_material_line_class">4.4.16. Material_line Class</a></li>
-<li><a href="#_material_surface_class">4.4.17. Material_surface Class</a></li>
+<li><a href="#_fiat_point_class">4.4.15. Fiat_point Class</a></li>
+<li><a href="#_fiat_line_class">4.4.16. Fiat_line Class</a></li>
+<li><a href="#_fiat_surface_class">4.4.17. Fiat_surface Class</a></li>
 </ul>
 </li>
 <li><a href="#_instance_examples">4.5. Instance Examples</a>
@@ -614,7 +614,7 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code><a href="/releases/GRM/{grm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code>List&lt;<a href="/releases/GRM/{grm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Archetypable generic description for this entity.</p>
 </div></div></td>
@@ -702,7 +702,7 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code><a href="/releases/GRM/{grm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code>List&lt;<a href="/releases/GRM/{grm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Archetypable generic description for this relationship.</p>
 </div></div></td>
@@ -771,7 +771,7 @@
 <div class="sect2">
 <h3 id="_overview_3"><a class="anchor" href="#_overview_3"></a>4.2. Overview</h3>
 <div class="paragraph">
-<p>Following BFO, openEHR Physical entities are understood as entities existing within 3-dimensional space. They include material objects of any kind (Material_entity); spaces and spatial extents, and processes, including events etc.</p>
+<p>Following BFO, openEHR Physical entities are understood as entities existing within 3-dimensional space. They include material objects of any kind (<code>Material_entity</code>); spaces and spatial extents; and processes, including events.</p>
 </div>
 <div id="rm_physical_entity" class="imageblock text-center text-center">
 <div class="content">
@@ -879,6 +879,11 @@
 <p>Excludes contained spaces, sites etc.</p>
 </div></div></td>
 </tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>r_contains</strong>: <code>List&lt;<a href="#_materially_dependent_entity_class">Materially_dependent_entity</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -904,16 +909,6 @@
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_physical_entity_class">Physical_entity</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>r_contains</strong>: <code>List&lt;<a href="#_materially_dependent_entity_class">Materially_dependent_entity</a>&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -997,7 +992,7 @@
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Space (abstract)</em></strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Space</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -1019,11 +1014,6 @@
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>r_located_in</strong>: <code><a href="#_material_entity_class">Material_entity</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1<br>
@@ -1057,7 +1047,7 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_space_class">Space</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_fiat_line_class">Fiat_line</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -1320,7 +1310,7 @@
 </table>
 </div>
 <div class="sect3">
-<h4 id="_material_point_class"><a class="anchor" href="#_material_point_class"></a>4.4.15. Material_point Class</h4>
+<h4 id="_fiat_point_class"><a class="anchor" href="#_fiat_point_class"></a>4.4.15. Fiat_point Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1330,7 +1320,7 @@
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Material_point</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Fiat_point</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
@@ -1346,7 +1336,7 @@
 </table>
 </div>
 <div class="sect3">
-<h4 id="_material_line_class"><a class="anchor" href="#_material_line_class"></a>4.4.16. Material_line Class</h4>
+<h4 id="_fiat_line_class"><a class="anchor" href="#_fiat_line_class"></a>4.4.16. Fiat_line Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1356,11 +1346,14 @@
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Material_line</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Fiat_line</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>A closed linear boundary.</p>
+</div>
+<div class="paragraph">
 <p>Equivalent to `BFO: 1-D Continuant fiat boundary'.</p>
 </div></div></td>
 </tr>
@@ -1372,7 +1365,7 @@
 </table>
 </div>
 <div class="sect3">
-<h4 id="_material_surface_class"><a class="anchor" href="#_material_surface_class"></a>4.4.17. Material_surface Class</h4>
+<h4 id="_fiat_surface_class"><a class="anchor" href="#_fiat_surface_class"></a>4.4.17. Fiat_surface Class</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1382,11 +1375,14 @@
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Material_surface</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Fiat_surface</strong></p></th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>A closed volume boundary.</p>
+</div>
+<div class="paragraph">
 <p>Equivalent to `BFO: 2-D Continuant fiat boundary'.</p>
 </div></div></td>
 </tr>
@@ -1809,7 +1805,7 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code><a href="/releases/GRM/{grm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code>List&lt;<a href="/releases/GRM/{grm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The value of the identity. This will usually take the form of a small structure of strings.</p>
 </div></div></td>
@@ -1928,7 +1924,7 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code><a href="/releases/GRM/{grm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code>List&lt;<a href="/releases/GRM/{grm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Archetypable structured address.</p>
 </div></div></td>
@@ -1984,7 +1980,7 @@
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>credentials</strong>: <code><a href="/releases/GRM/{grm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>credentials</strong>: <code>List&lt;<a href="/releases/GRM/{grm_release}/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The qualifications of the performer of the role for this capability. This might include professional qualifications and official identifications such as provider numbers etc.</p>
 </div></div></td>
@@ -2622,14 +2618,14 @@ care organisation.</p>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>cost_data</strong>: <code><a href="/releases/GRM/{grm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>cost_data</strong>: <code>@@</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Cost data for this resource use.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code><a href="/releases/GRM/{grm_release}/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>description</strong>: <code>@@</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Detailed description of this resource utilisation.</p>
 </div></div></td>

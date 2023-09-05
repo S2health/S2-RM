@@ -20,4 +20,8 @@ h|*0..1*
 a|Material part-of relation from an object to other material objects that are materially connected, e.g. apartment 3-9 within the apartment block 'Mirabeau' at 32 Av. Bento Loyola, Casamarela, Recife.
 
 Excludes contained spaces, sites etc.
+
+h|*0..1*
+|*r_contains*: `List<<<_materially_dependent_entity_class,Materially_dependent_entity>>>`
+a|
 |===

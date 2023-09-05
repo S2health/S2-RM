@@ -24,11 +24,11 @@ h|*0..1*
 a|Duration of resource use.
 
 h|*0..1*
-|*cost_data*: `link:/releases/GRM/{grm_release}/data_structures.html#_cluster_class[Cluster^]`
+|*cost_data*: `@@`
 a|Cost data for this resource use.
 
 h|*0..1*
-|*description*: `link:/releases/GRM/{grm_release}/data_structures.html#_cluster_class[Cluster^]`
+|*description*: `@@`
 a|Detailed description of this resource utilisation.
 
 h|*0..1*

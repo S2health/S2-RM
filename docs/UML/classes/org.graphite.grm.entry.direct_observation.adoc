@@ -30,6 +30,6 @@ h|*0..1*
 a|Duration of the entire History; either corresponds to the duration of all the events, and/or the duration represented by the summary, if it exists.
 
 h|*1..1*
-|*sample_function*: `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
+|*sample_function*: `link:/releases/BASE/{base_release}/base_types.html#_sample_function_kind_enumeration[Sample_function_kind^]`
 a|Mathematical function of the data of this event, e.g.  maximum, mean etc. Coded using https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml[openEHR vocabulary `event math function`]. Default value `640&#124;actual&#124;`, meaning 'actual value'.
 |===

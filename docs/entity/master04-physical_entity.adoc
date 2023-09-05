@@ -7,7 +7,7 @@
 
 == Overview
 
-Following BFO, openEHR Physical entities are understood as entities existing within 3-dimensional space. They include material objects of any kind (Material_entity); spaces and spatial extents, and processes, including events etc.
+Following BFO, openEHR Physical entities are understood as entities existing within 3-dimensional space. They include material objects of any kind (`Material_entity`); spaces and spatial extents; and processes, including events.
 
 [.text-center]
 .rm.entity.physical_entity package
@@ -63,11 +63,11 @@ include::{uml_export_dir}/classes/{pkg}substance.adoc[]
 
 include::{uml_export_dir}/classes/{pkg}material_location.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}material_point.adoc[]
+include::{uml_export_dir}/classes/{pkg}fiat_point.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}material_line.adoc[]
+include::{uml_export_dir}/classes/{pkg}fiat_line.adoc[]
 
-include::{uml_export_dir}/classes/{pkg}material_surface.adoc[]
+include::{uml_export_dir}/classes/{pkg}fiat_surface.adoc[]
 
 == Instance Examples
 

@@ -6,7 +6,7 @@ h|*Class*
 2+^h|*Event_context*
 
 h|*Description*
-2+a|Documents the context information of a healthcare event involving the subject of care and the health system. The context information recorded here are independent of the attributes recorded in the version audit, which document the  system interaction  context, i.e. the context of a user interacting with the health record system. Healthcare events include patient contacts, and any other business activity, such as pathology investigations which take place on behalf of the patient.
+2+a|Documents the context information of a healthcare event involving the subject of care and the health system. The context information recorded here is independent of the attributes recorded in the version audit, which document the  system interaction context, i.e. the context of a user interacting with the health record system. Healthcare events include patient contacts, and any other business activity, such as pathology investigations which take place on behalf of the patient.
 
 h|*Inherit*
 2+|`link:/releases/BASE/{base_release}/base_types.html#_locatable_class[Locatable^]`
@@ -30,14 +30,14 @@ a|The setting in which the clinical session took place. Coded using the openEHR 
 TODO: rarely used in Archetypes - needed in CEMs?
 
 h|*0..1*
-|*other_context*: `link:/releases/GRM/{grm_release}/data_structures.html#_cluster_class[Cluster^]`
-a|Other optional context which will be archetyped.
-
-h|*0..1*
 |*location*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
 a|The actual location where the session occurred, e.g. 'microbiology lab 2', 'home', 'ward A3'  and so on.
 
 TODO: possibly rename? This only refers to a room.
+
+h|*0..1*
+|*other_context*: `List<link:/releases/GRM/{grm_release}/data_structures.html#_item_class[Item^]>`
+a|Other optional context which will be archetyped.
 
 h|*0..1*
 |*health_care_facility*: `link:/releases/BASE/{base_release}/base_types.html#_party_identified_class[Party_identified^]`
