@@ -1,5 +1,5 @@
-= Graphite Platform Specification - GRM component
+= S2 Specification - RM component
 
-This repository contains the document and model sources (Asciidoctor and MagicDraw) for the Graphite Platform GRM specifications. 
+This repository contains the document and model sources (Asciidoctor and MagicDraw) for the S2 Reference Model specifications. 
 
 https://silver-carnival-698qmm3.pages.github.io/[Specifications^]
