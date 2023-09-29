@@ -7,7 +7,7 @@ The `common.tags` package defines the structure and semantics of a _tag_ constru
 
 [.text-center]
 .common.tags Package
-image::{uml_diagrams_uri}/GRM-common.tags.svg[id=tags_package, align="center"]
+image::{uml_diagrams_uri}/RM-common.tags.svg[id=tags_package, align="center"]
 
 == Semantics
 

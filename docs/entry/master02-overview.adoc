@@ -4,7 +4,7 @@ The Entry model is defined by the `gcm.entry` package, shown in the UML diagram 
 
 [.text-center]
 .gcm.entry package
-image::{uml_diagrams_uri}/GRM-entry-taxonomy.svg[id=entry_taxonomy, align="center"]
+image::{uml_diagrams_uri}/RM-entry-taxonomy.svg[id=entry_taxonomy, align="center"]
 
 The descendants of `Entry` are based on the taxonomy described in cite:[Beale_Heard2007], and are described in the section below.
 
@@ -30,7 +30,7 @@ The `_authorization_actions_` attribute is used to record any authorization acti
 
 [.text-center]
 .Entry state machine
-image::{uml_diagrams_uri}/GRM-Entry_state_machine.svg[id=Entry_state_machine, align="center"]
+image::{uml_diagrams_uri}/RM-Entry_state_machine.svg[id=Entry_state_machine, align="center"]
 
 The following sections describe Entry sub-types.
 

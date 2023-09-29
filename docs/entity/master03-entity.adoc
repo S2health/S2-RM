@@ -15,7 +15,7 @@ The following UML diagram illustrates the upper Entity model.
 
 [.text-center]
 .rm.entity
-image::{uml_diagrams_uri}/GRM-entity.svg[id=rm_entity_upper, align="center"]
+image::{uml_diagrams_uri}/RM-entity.svg[id=rm_entity_upper, align="center"]
 
 == Semantics
 

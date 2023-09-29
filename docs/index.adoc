@@ -3,8 +3,8 @@
 //
 include::{ref_dir}/docs/boilerplate/basic_style_settings.adoc[]
 
-:keywords: reference model, openehr, graphite
-:description: Graphite Reference Model
+:keywords: reference model, openehr, s2
+:description: S2 Reference Model
 
 include::{ref_dir}/docs/boilerplate/global_vars.adoc[]
 
@@ -17,7 +17,7 @@ image::{openehr_logo}["openEHR logo",align="center"]
 //image::openehr_block_diagram.svg["openEHR components",align="center",width="60%"]
 
 :numbered!:
-= Graphite Reference Model - {rm_release}
+= S2 Reference Model - {rm_release}
 
 // Use the following version for 'latest'
 ifeval::["{rm_release}" == "latest"]
@@ -42,7 +42,7 @@ h|Specification h|Description
 
 //|link:/releases/RM/{rm_release}/ehr.html[EHR IM]
 |link:ehr.html[EHR^]
-|The information model of the Graphite EHR.
+|The information model of the S2 EHR.
 
 |link:entry.html[Entry^]
 |Information model of clinical statements (Entries).
@@ -64,7 +64,7 @@ h|Specification h|Description
 |===
 |Resource |Description
 
-|link:/UML/Graphite_UML-GRM.mdzip[Graphite_UML-GRM.mdzip]
+|link:/UML/S2_UML-RM.mdzip[S2_UML-RM.mdzip]
 |UML file for MagicDraw 19 for RM model. Contains UML 2.5 standard XMI file.
 
 |===

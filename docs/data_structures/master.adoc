@@ -60,7 +60,7 @@ The work reported in this paper has been funded in part by the following organis
 :sectnums:
 
 ifdef::package_qualifiers[]
-:pkg: org.graphite.grm.data_structures.
+:pkg: org.s2.grm.data_structures.
 endif::[]
 
 include::master01-preface.adoc[leveloffset=+1]

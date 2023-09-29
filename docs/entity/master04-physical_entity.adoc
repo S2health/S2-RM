@@ -11,7 +11,7 @@ Following BFO, openEHR Physical entities are understood as entities existing wit
 
 [.text-center]
 .rm.entity.physical_entity package
-image::{uml_diagrams_uri}/GRM-entity.physical_entity.svg[id=rm_physical_entity, align="center"]
+image::{uml_diagrams_uri}/RM-entity.physical_entity.svg[id=rm_physical_entity, align="center"]
 
 == Semantics
 

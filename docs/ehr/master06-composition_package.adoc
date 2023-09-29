@@ -6,7 +6,7 @@ The Composition is the primary 'data container' in the openEHR EHR and is the ro
 
 [.text-center]
 .rm.composition package
-image::{uml_diagrams_uri}/GRM-composition.svg[id=rm_composition, align="center"]
+image::{uml_diagrams_uri}/RM-composition.svg[id=rm_composition, align="center"]
 
 == Composition Context
 

@@ -8,7 +8,7 @@ The following UML diagram illustrates the `party` package.
 
 [.text-center]
 .rm.entity.social_entity.party package
-image::{uml_diagrams_uri}/GRM-entity.social_entity.party.svg[id=rm_social_entity_party, align="center"]
+image::{uml_diagrams_uri}/RM-entity.social_entity.party.svg[id=rm_social_entity_party, align="center"]
 
 Parties may generally have identities (i.e. names of various kinds), contact information, legal status and relationships, with the specific kinds of these  being dependent upon the kind of Party.
 

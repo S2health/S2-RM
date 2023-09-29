@@ -8,7 +8,7 @@ The following illustrates the `entity.resource` package.
 
 [.text-center]
 .rm.entity.resource package
-image::{uml_diagrams_uri}/GRM-entity.resource.svg[id=rm_entity_resource, align="center"]
+image::{uml_diagrams_uri}/RM-entity.resource.svg[id=rm_entity_resource, align="center"]
 
 == Class Definitions
 

@@ -6,7 +6,7 @@ xxx
 
 [.text-center]
 .rm.entity.registry package
-image::{uml_diagrams_uri}/GRM-entity.registry.svg[id=rm_entity_registry, align="center"]
+image::{uml_diagrams_uri}/RM-entity.registry.svg[id=rm_entity_registry, align="center"]
 
 == Class Definitions
 

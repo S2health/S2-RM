@@ -6,7 +6,7 @@ The Folder-related classes provide a simple abstraction of a versioned folder st
 
 [.text-center]
 .common.directory Package
-image::{uml_diagrams_uri}/GRM-ehr.directory.svg[id=directory_package, align="center"]
+image::{uml_diagrams_uri}/RM-ehr.directory.svg[id=directory_package, align="center"]
 
 `FOLDER` structures inside the `VERSIONED_FOLDER` are archetypable structures, and `FOLDER` archetypes can be created in the same fashion as say `SECTION` archetypes for the EHR.
 

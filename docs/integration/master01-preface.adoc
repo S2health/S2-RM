@@ -2,7 +2,7 @@
 
 == Purpose
 
-This document describes the architecture of the Graphite Integration Model, designed for use in legacy and other integration situations.
+This document describes the architecture of the S2 Integration Model, designed for use in legacy and other integration situations.
 
 The intended audience includes:
 
@@ -18,7 +18,7 @@ Prerequisite documents for reading this document include:
 
 == Status
 
-This specification is in the Stable state. The development version of this document can be found at {graphite_gcm_latest_integration}[{graphite_gcm_latest_integration}^].
+This specification is in the Stable state. The development version of this document can be found at {s2_rm_latest_integration}[{s2_rm_latest_integration}^].
 
 Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:
 [.tbd]
@@ -26,7 +26,7 @@ Known omissions or questions are indicated in the text with a 'to be determined'
 
 == Feedback
 
-Feedback may be provided on the {openehr_rm_forum}[Graphite specifications forum^].
+Feedback may be provided on the {openehr_rm_forum}[S2 specifications forum^].
 
 Issues may be raised on the {component_prs}[specifications Problem Report tracker^].
 

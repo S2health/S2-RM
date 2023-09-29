@@ -8,7 +8,7 @@ The following UML diagram illustrates the classes representing various kinds of 
 
 [.text-center]
 .Observation
-image::{uml_diagrams_uri}/GRM-entry-observation.svg[id=entry_observation, align="center"]
+image::{uml_diagrams_uri}/RM-entry-observation.svg[id=entry_observation, align="center"]
 
 Observations are formally modelled by the `Observation` class and its descendants. The `Observation` class provides the following properties common to all varieties of Observation:
 
@@ -25,7 +25,7 @@ Direct observations, represented by the `Direct_observation` class, are those fo
 
 == Indirect Observations
 
-Indirect observations are those obtained by some process that produces an artefact that can subsequently be analyzed to provide the focal data item. Examples include lab test results, imaging and genetic testing. In general, the analysis process takes some time. They are represented by the `Indirect_observation` class, which includes the property `_result_time_`, used to capture the time the result became available. The clinically relevant time is corresppnds to the time of sampling, imagingin etc, and is captured in the inherited `_time_` property.
+Indirect observations are those obtained by some process that produces an artefact that can subsequently be analyzed to provide the focal data item. Examples include lab test results, imaging and genetic testing. In general, the analysis process takes some time. They are represented by the `Indirect_observation` class, which includes the property `_result_time_`, used to capture the time the result became available. The clinically relevant time is corresponds to the time of sampling, imaging etc, and is captured in the inherited `_time_` property.
 
 == Scores
 

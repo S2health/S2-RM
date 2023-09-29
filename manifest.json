@@ -1,31 +1,31 @@
 {
     "id": "GRM",
     "title": "Reference Model",
-    "description": "Graphite Reference Model Component",
-    "keywords": "reference model, Graphite",
+    "description": "S2 Reference Model Component",
+    "keywords": "reference model, S2",
     "specifications": [
         {
             "id": "ehr",
             "title": "EHR Model",
             "title_short": "EHR",
-            "description": "Graphite EHR Information Model specification",
+            "description": "S2 EHR Information Model specification",
             "micro_summary": "Top-level health record model",
-            "summary": "The information model of the Graphite EHR.",
+            "summary": "The information model of the S2 EHR.",
             "classes": [
                 "COMPOSITION",
                 "SECTION"
             ],
             "copyright_year": "2023",
             "spec_status": "TRIAL",
-            "keywords": "EHR, EMR, reference model, Graphite"
+            "keywords": "EHR, EMR, reference model, S2"
         },
         {
             "id": "entry",
             "title": "Entry Model",
             "title_short": "Entry",
-            "description": "Graphite Entry Model",
+            "description": "S2 Entry Model",
             "micro_summary": "Model of clinical statements",
-            "summary": "The information model of clinical statements in the Graphite Canonical Model.",
+            "summary": "The information model of clinical statements in the S2 Canonical Model.",
             "classes": [
                 "ENTRY",
                 "OBSERVATION",
@@ -36,13 +36,13 @@
             ],
             "copyright_year": "2023",
             "spec_status": "TRIAL",
-            "keywords": "EHR, EMR, reference model, Graphite"
+            "keywords": "EHR, EMR, reference model, S2"
         },
         {
             "id": "data_structures",
             "title": "Data Structures Information Model",
             "title_short": "Data Structures",
-            "description": "Graphite Data Structures Information Model specification",
+            "description": "S2 Data Structures Information Model specification",
             "micro_summary": "Common data structures",
             "summary": "Information model of data structures, including a powerful model of time-series data.",
             "classes": [
@@ -54,13 +54,13 @@
             ],
             "copyright_year": "2023",
             "spec_status": "TRIAL",
-            "keywords": "EHR, data structures, reference model, Graphite"
+            "keywords": "EHR, data structures, reference model, S2"
         },
         {
             "id": "integration",
             "title": "Integration Information Model",
             "title_short": "Integration",
-            "description": "Graphite Integration Information Model specification",
+            "description": "S2 Integration Information Model specification",
             "micro_summary": "Model of free-form external system data",
             "summary": "Information model for representing legacy data is a free-form Entry type for implementing integration solutions.",
             "classes": [
@@ -68,15 +68,15 @@
             ],
             "copyright_year": "2003",
             "spec_status": "TRIAL",
-            "keywords": "EHR, integration, Graphite"
+            "keywords": "EHR, integration, S2"
         },
         {
             "id": "entity",
             "title": "Entity Information Model",
             "title_short": "Entity",
-            "description": "Graphite Entity Information Model specification",
+            "description": "S2 Entity Information Model specification",
             "micro_summary": "Top-level entity info model",
-            "summary": "The Graphite Entity information model.",
+            "summary": "The S2 Entity information model.",
             "classes": [
                 "PHYSICAL_ENTITY",
                 "SOCIAL_ENTITY",
@@ -87,18 +87,18 @@
             ],
             "copyright_year": "2022",
             "spec_status": "DEVELOPMENT",
-            "keywords": "Entity, demographics, reference model, Graphite"
+            "keywords": "Entity, demographics, reference model, S2"
         }
     ],
     "expressions": [
         {
-            "id": "Graphite_UML-GRM.mdzip",
+            "id": "S2_UML-GRM.mdzip",
             "type": "uml",
             "title": "GRM UML",
             "description": "UML file for MagicDraw 19 for RM model. Contains UML 2.5 standard XMI file."
         },
         {
-            "id": "Graphite_UML-BASE.mdzip",
+            "id": "S2_UML-BASE.mdzip",
             "dependency": {
                 "component": "BASE",
                 "release": "latest"

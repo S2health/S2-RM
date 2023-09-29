@@ -21,7 +21,7 @@ The `ehr` package is illustrated in <<rm_ehr>> below. The classes have a more or
 
 [.text-center]
 .rm.ehr package
-image::{uml_diagrams_uri}/GRM-ehr.svg[id=rm_ehr, align="center"]
+image::{uml_diagrams_uri}/RM-ehr.svg[id=rm_ehr, align="center"]
 
 == The Parts of the EHR
 

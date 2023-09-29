@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
-<meta name="description" content="Graphite Data Structures Information Model specification">
-<meta name="keywords" content="EHR, data structures, reference model, Graphite">
+<meta name="description" content="S2 Data Structures Information Model specification">
+<meta name="keywords" content="EHR, data structures, reference model, S2">
 <title>Data Structures Information Model</title>
 <link rel="stylesheet" href="https://specifications.openehr.org/styles/openehr.css">
 </head>
@@ -45,13 +45,7 @@
 <ul class="sectlevel2">
 <li><a href="#_representation_classes">3.1. Representation Classes</a>
 <ul class="sectlevel3">
-<li><a href="#_class_descriptions">3.1.1. Class Descriptions</a>
-<ul class="sectlevel4">
-<li><a href="#_item_class">3.1.1.1. Item Class</a></li>
-<li><a href="#_cluster_class">3.1.1.2. Cluster Class</a></li>
-<li><a href="#_element_class">3.1.1.3. Element Class</a></li>
-</ul>
-</li>
+<li><a href="#_class_descriptions">3.1.1. Class Descriptions</a></li>
 </ul>
 </li>
 <li><a href="#_history_classes">3.2. History Classes</a>
@@ -64,13 +58,7 @@
 <li><a href="#_summary_event_data">3.2.6. Summary Event Data</a></li>
 <li><a href="#_efficient_representation_of_fine_grained_device_data">3.2.7. Efficient Representation of Fine-grained Device Data</a></li>
 <li><a href="#_state">3.2.8. State</a></li>
-<li><a href="#_class_descriptions_2">3.2.9. Class Descriptions</a>
-<ul class="sectlevel4">
-<li><a href="#_event_class">3.2.9.1. Event Class</a></li>
-<li><a href="#_point_event_class">3.2.9.2. Point_event Class</a></li>
-<li><a href="#_interval_event_class">3.2.9.3. Interval_event Class</a></li>
-</ul>
-</li>
+<li><a href="#_class_descriptions_2">3.2.9. Class Descriptions</a></li>
 </ul>
 </li>
 <li><a href="#_history_instance_structures">3.3. History Instance Structures</a>
@@ -92,7 +80,7 @@
 <div class="sectionbody">
 <div class="imageblock text-center">
 <div class="content">
-<img src="https://uploads-ssl.webflow.com/63570cd7d4eda80d654ccf14/64027a592d749e7df28c6248_primary-graphite.svg" alt="openEHR logo">
+<img src="https://uploads-ssl.webflow.com/63570cd7d4eda80d654ccf14/64027a592d749e7df28c6248_primary-s2.svg" alt="openEHR logo">
 </div>
 </div>
 </div>
@@ -107,12 +95,12 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="http://graphitehealth.io" target="_blank" rel="noopener">Graphite Platform Community</a></th>
+<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="http://s2health.io" target="_blank" rel="noopener">S2 Foundation</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: GRM latest</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: RM latest</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong>: TRIAL</p></td>
 </tr>
 <tr>
@@ -120,7 +108,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date</strong>: <a href="#latest_issue_date">[latest_issue_date]</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: EHR, data structures, reference model, Graphite</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: EHR, data structures, reference model, S2</p></td>
 </tr>
 </tbody>
 </table>
@@ -131,12 +119,12 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2">&#169; 2023 - 2023 Graphite Platform Publishing</th>
+<th class="tableblock halign-center valign-top" colspan="2">&#169; 2023 - 2023 S2 Foundation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="http://graphitehealth.io" target="_blank" rel="noopener">Graphite Platforms</a> is an independent, non-profit foundation.</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="http://s2health.io" target="_blank" rel="noopener">S2 Foundation</a> is an independent, non-profit foundation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Licence</strong></p></td>
@@ -144,8 +132,8 @@
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Support</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Issues: <a href="https://specifications.graphitehealth.io/components/GRM/open_issues" target="_blank" rel="noopener">Report an Issue</a><br>
- Web: <a href="https://specifications.graphitehealth.io" target="_blank" rel="noopener">specifications.GraphiteHealth.io</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issues: <a href="https://specifications.s2health.io/components/RM/open_issues" target="_blank" rel="noopener">Report an Issue</a><br>
+ Web: <a href="https://specifications.s2health.io" target="_blank" rel="noopener">specifications.S2.io</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -303,10 +291,10 @@ lists, tables, trees, and history.</p>
 <p>Feedback may be provided on the <a href="https://discourse.openehr.org/c/specifications/rm" target="_blank" rel="noopener">openEHR RM specifications forum</a>.</p>
 </div>
 <div class="paragraph">
-<p>Issues may be raised on the <a href="https://specifications.graphitehealth.io/components/GRM/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
+<p>Issues may be raised on the <a href="https://specifications.s2health.io/components/RM/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
 </div>
 <div class="paragraph">
-<p>To see changes made due to previously reported issues, see the <a href="https://specifications.graphitehealth.io/components/GRM/history" target="_blank" rel="noopener">GRM component Change Request tracker</a>.</p>
+<p>To see changes made due to previously reported issues, see the <a href="https://specifications.s2health.io/components/RM/history" target="_blank" rel="noopener">RM component Change Request tracker</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -381,7 +369,7 @@ lists, tables, trees, and history.</p>
 </div>
 <div id="data_structures_package" class="imageblock text-center text-center">
 <div class="content">
-<img src="UML/diagrams/GRM-data_structures.svg" alt="GRM data structures">
+<img src="UML/diagrams/RM-data_structures.svg" alt="RM data structures">
 </div>
 <div class="title">Figure 1. rm.data_structures Package</div>
 </div>
@@ -392,175 +380,14 @@ lists, tables, trees, and history.</p>
 </div>
 <div class="sect3">
 <h4 id="_class_descriptions"><a class="anchor" href="#_class_descriptions"></a>3.1.1. Class Descriptions</h4>
-<div class="sect4">
-<h5 id="_item_class"><a class="anchor" href="#_item_class"></a>3.1.1.1. Item Class</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Item (abstract)</em></strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>The abstract parent of <code>Cluster</code> and <code>ELEMENT</code> representation classes.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="/releases/BASE/latest/base_types.html#_locatable_class" target="_blank" rel="noopener">Locatable</a></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_cluster_class"><a class="anchor" href="#_cluster_class"></a>3.1.1.2. Cluster Class</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Cluster</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_item_class">Item</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>items</strong>: <code>List&lt;<a href="#_item_class">Item</a>&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>has_element_path</strong> (<br>
-a_path: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a>[1]</code><br>
-): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>element_at_path</strong> (<br>
-a_path: <code><a href="/releases/BASE/latest/foundation_types.html#_string_class" target="_blank" rel="noopener">String</a>[1]</code><br>
-): <code><a href="#_element_class">Element</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_element_class"><a class="anchor" href="#_element_class"></a>3.1.1.3. Element Class</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Element</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>The leaf variant of <code>ITEM</code>, to which a <code>DATA_VALUE</code> instance is attached.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_item_class">Item</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>null_flavour</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Flavour of null value, e.g. <code>253&#124;unknown&#124;</code>, <code>271&#124;no information&#124;</code>, <code>272&#124;masked&#124;</code>, and <code>273&#124;not applicable&#124;</code>.</p>
+<div class="paragraph">
+<p>Unresolved directive in master03-overview.adoc - include::../UML/classes/org.s2.grm.data_structures.item.adoc[leveloffset=+1]</p>
 </div>
 <div class="paragraph">
-<p>TODO: correct to Graphite codes</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>value</strong>: <code><a href="/releases/BASE/latest/data_types.html#_data_value_class" target="_blank" rel="noopener">Data_value</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Property representing leaf value object of <code>ELEMENT</code>. In real data, any concrete subtype of <code>DATA_VALUE</code> can be used.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>null_reason</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_terminology_term_class" target="_blank" rel="noopener">Terminology_term</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional specific reason for null value; if set, <code><em>null_flavour</em></code> must be set. Null reason may apply only to a minority of clinical data, commonly needed in reporting contexts.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_null</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_boolean_class" target="_blank" rel="noopener">Boolean</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>True if value logically not known, e.g. if indeterminate, not asked etc.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Inv_is_null_valid</em>: <code>is_null() = (value = Void)</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Inv_null_flavour_indicated</em>: <code>is_null() xor null_flavour = Void</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Inv_null_flavour_valid</em>: <code>is_null implies terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_null_flavour, null_flavour.defining_code)</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Inv_null_reason_valid</em>: <code>null_reason /= Void implies is_null()</code></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
+<p>Unresolved directive in master03-overview.adoc - include::../UML/classes/org.s2.grm.data_structures.cluster.adoc[leveloffset=+1]</p>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in master03-overview.adoc - include::../UML/classes/org.s2.grm.data_structures.element.adoc[leveloffset=+1]</p>
 </div>
 </div>
 </div>
@@ -841,172 +668,14 @@ second, an <code>ITEM_SINGLE</code> object containing a image within a <code>Dv_
 </div>
 <div class="sect3">
 <h4 id="_class_descriptions_2"><a class="anchor" href="#_class_descriptions_2"></a>3.2.9. Class Descriptions</h4>
-<div class="sect4">
-<h5 id="_event_class"><a class="anchor" href="#_event_class"></a>3.2.9.1. Event Class</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Event (abstract)</em></strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Defines the abstract notion of a single event in a series. This class is generic, allowing types to be generated which are locked to particular spatial types, such as <code>EVENT&lt;ITEM_LIST&gt;</code>. Subtypes express point or intveral data.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="/releases/BASE/latest/base_types.html#_locatable_class" target="_blank" rel="noopener">Locatable</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Time of this event. If the width is non-zero, it is the time point of the trailing edge of the event.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>items</strong>: <code>List&lt;<a href="#_item_class">Item</a>&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The data of this event.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>offset</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code><br>
-<br>
-<em>Post_condition</em>: <code>Result = time.diff(parent.origin)</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Offset of this event from origin, computed as time.diff(parent.origin).</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Offset_validity1</em>: <code>offset /= Void and then offset = time.diff (parent.origin)</code></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in master03-overview.adoc - include::../UML/classes/org.s2.grm.data_structures.event.adoc[leveloffset=+1]</p>
 </div>
-<div class="sect4">
-<h5 id="_point_event_class"><a class="anchor" href="#_point_event_class"></a>3.2.9.2. Point_event Class</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Point_event</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Defines a single point event in a series.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_event_class">Event</a></code></p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in master03-overview.adoc - include::../UML/classes/org.s2.grm.data_structures.point_event.adoc[leveloffset=+1]</p>
 </div>
-<div class="sect4">
-<h5 id="_interval_event_class"><a class="anchor" href="#_interval_event_class"></a>3.2.9.3. Interval_event Class</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 33.3333%;">
-<col style="width: 55.5556%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Interval_event</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Defines a single interval event in a series.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_event_class">Event</a></code></p></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>width</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_duration_class" target="_blank" rel="noopener">Duration</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Duration of the time interval during which the values recorded under <code>data</code> are true and, if set, the values recorded under <code>state</code> are true. Void if an instantaneous event.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>sample_count</strong>: <code><a href="/releases/BASE/latest/foundation_types.html#_integer_class" target="_blank" rel="noopener">Integer</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Optional count of original samples to which this event corresponds.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>sample_function</strong>: <code><a href="/releases/BASE/latest/base_types.html#_sample_function_kind_enumeration" target="_blank" rel="noopener">Sample_function_kind</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Mathematical function of the data of this event, e.g.  maximum, mean etc. Coded using <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml">openEHR vocabulary <code>event math function</code></a>. Default value <code>640&#124;actual&#124;</code>, meaning 'actual value'.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>interval_start_time</strong> (): <code><a href="/releases/BASE/latest/foundation_types.html#_date_time_class" target="_blank" rel="noopener">Date_time</a></code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Start time of the interval of this event.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Math_function_validity</em>: <code>terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_event_math_function, math_function.defining_code)</code></p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"></th>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Interval_start_time_valid</em>: <code>interval_start_time = time - width</code></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in master03-overview.adoc - include::../UML/classes/org.s2.grm.data_structures.interval_event.adoc[leveloffset=+1]</p>
 </div>
 </div>
 </div>
@@ -1050,7 +719,7 @@ which in this case is simply the time of measurement (the origin).</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-08-10 18:43:48 -0600
+Last updated 2023-09-28 16:32:38 -0600
 </div>
 </div>
 </body>

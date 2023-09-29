@@ -2,7 +2,7 @@
 
 == Purpose
 
-This document describes the Graphite Entry Model, part of the Graphite Canonical Model.
+This document describes the S2 Entry Model, part of the S2 Canonical Model.
 
 The intended audience includes:
 
@@ -18,13 +18,13 @@ Prerequisite documents for reading this document include:
 
 Related documents include:
 
-* The {graphite_base_data_types}[Graphite Data Types Model^];
-* The {graphite_base_base_types}[Graphite Base Types Model^];
-* The {graphite_gcm_data_structures}[Graphite Data Structures Model^];
+* The {S2base_data_types}[S2 Data Types Model^];
+* The {S2base_base_types}[S2 Base Types Model^];
+* The {s2_rm_data_structures}[S2 Data Structures Model^];
 
 == Status
 
-This specification is in the {spec_status} state. The development version of this document can be found at {graphite_gcm_latest_entry}[{graphite_gcm_latest_entry}^].
+This specification is in the {spec_status} state. The development version of this document can be found at {s2_rm_latest_entry}[{s2_rm_latest_entry}^].
 
 Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:
 [.tbd]
@@ -32,7 +32,7 @@ Known omissions or questions are indicated in the text with a 'to be determined'
 
 == Feedback
 
-Feedback may be provided on the {openehr_rm_forum}[Graphite specifications forum^].
+Feedback may be provided on the {openehr_rm_forum}[S2 specifications forum^].
 
 Issues may be raised on the {component_prs}[specifications Problem Report tracker^].
 
@@ -40,5 +40,5 @@ To see changes made due to previously reported issues, see the {component_histor
 
 == Conformance
 
-Conformance of a data or software artifact to a Graphite specification is determined by a formal test of that artifact against the relevant openEHR Implementation Technology Specification(s) (ITSs), such as an IDL interface or an XML-schema. Since ITSs are formal derivations from underlying models, ITS conformance indicates model conformance.
+Conformance of a data or software artifact to a S2 specification is determined by a formal test of that artifact against the relevant openEHR Implementation Technology Specification(s) (ITSs), such as an IDL interface or an XML-schema. Since ITSs are formal derivations from underlying models, ITS conformance indicates model conformance.
 
