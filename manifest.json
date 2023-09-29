@@ -1,5 +1,5 @@
 {
-    "id": "GRM",
+    "id": "S2",
     "title": "Reference Model",
     "description": "S2 Reference Model Component",
     "keywords": "reference model, S2",
@@ -92,9 +92,9 @@
     ],
     "expressions": [
         {
-            "id": "S2_UML-GRM.mdzip",
+            "id": "S2_UML-S2.mdzip",
             "type": "uml",
-            "title": "GRM UML",
+            "title": "S2 UML",
             "description": "UML file for MagicDraw 19 for RM model. Contains UML 2.5 standard XMI file."
         },
         {

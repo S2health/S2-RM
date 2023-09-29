@@ -9,7 +9,7 @@ h|*Description*
 2+a|Description of a means of contact of a Party. Actual structure is archetyped.
 
 h|*Inherit*
-2+|`link:/releases/BASE/{base_release}/base_types.html#_locatable_class[Locatable^]`
+2+|`Locatable`
 
 h|*Attributes*
 ^h|*Signature*
@@ -20,14 +20,14 @@ h|*1..1*
 a|A set of address alternatives for this contact purpose and time validity combination.
 
 h|*0..1*
-|*time_validity*: `link:/releases/BASE/{base_release}/foundation_types.html#_interval_class[Interval^]<link:/releases/BASE/{base_release}/foundation_types.html#_date_class[Date^]>`
+|*time_validity*: `Interval<Date>`
 a|Valid time interval for this contact descriptor.
 h|*Functions*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*1..1*
-|*purpose* (): `link:/releases/BASE/{base_release}/foundation_types.html#_coded_term_class[Coded_term^]`
+|*purpose* (): `Coded_term`
 a|Purpose for which this contact is used, e.g. mail,  daytime phone, etc. Taken from value of inherited `_name_` attribute.
 
 h|*Invariants*

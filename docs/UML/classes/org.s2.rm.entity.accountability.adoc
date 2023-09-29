@@ -9,7 +9,7 @@ h|*Description*
 2+a|Representation of an accountability that an Actor (typically Organisation) defines, that may be satisfied by another Actor via one or more capabilities.
 
 h|*Inherit*
-2+|`link:/releases/BASE/{base_release}/base_types.html#_locatable_class[Locatable^]`
+2+|`Locatable`
 
 h|*Attributes*
 ^h|*Signature*

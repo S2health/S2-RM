@@ -61,7 +61,7 @@ The work reported in this paper has been funded in part by the following organis
 :sectnums:
 
 ifdef::package_qualifiers[]
-:pkg: org.s2.grm.ehr.
+:pkg: org.s2.rm.ehr.
 endif::[]
 
 include::master01-preface.adoc[leveloffset=+1]
@@ -71,7 +71,7 @@ include::master04-ehr_package.adoc[leveloffset=+1]
 include::master05-folders.adoc[leveloffset=+1]
 
 ifdef::package_qualifiers[]
-:pkg: org.s2.grm.composition.
+:pkg: org.s2.rm.composition.
 endif::[]
 
 include::master06-composition_package.adoc[leveloffset=+1]

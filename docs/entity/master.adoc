@@ -56,7 +56,7 @@ The work reported in this paper has been funded in part by the following organis
 :sectnums:
 
 ifdef::package_qualifiers[]
-:pkg: org.s2.grm.entity.
+:pkg: org.s2.rm.entity.
 endif::[]
 
 include::master01-preface.adoc[leveloffset=+1]

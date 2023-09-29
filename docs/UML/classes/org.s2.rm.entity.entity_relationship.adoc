@@ -9,26 +9,26 @@ h|*Description*
 2+a|
 
 h|*Inherit*
-2+|`link:/releases/BASE/{base_release}/base_types.html#_locatable_class[Locatable^]`
+2+|`Locatable`
 
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*1..1*
-|*source*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
+|*source*: `String`
 a|Source of relationship, may be understood as 'owner' of relationship.
 
 h|*1..1*
-|*type*: `link:/releases/BASE/{base_release}/foundation_types.html#_coded_term_class[Coded_term^]`
+|*type*: `Coded_term`
 a|Type of relationship, such as  employment,  authority,  health provider.
 
 h|*1..1*
-|*target*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
+|*target*: `String`
 a|Target of relationship.
 
 h|*0..1*
-|*time_validity*: `link:/releases/BASE/{base_release}/foundation_types.html#_interval_class[Interval^]<link:/releases/BASE/{base_release}/foundation_types.html#_date_class[Date^]>`
+|*time_validity*: `Interval<Date>`
 a|Valid time interval for this relationship.
 
 h|*0..1*

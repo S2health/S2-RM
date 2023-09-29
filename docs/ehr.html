@@ -79,7 +79,17 @@
 <li><a href="#_ehr_active_status">4.5. EHR Active Status</a></li>
 <li><a href="#_time_in_the_ehr">4.6. Time in the EHR</a></li>
 <li><a href="#_historical_views_of_the_record">4.7. Historical Views of the Record</a></li>
-<li><a href="#_class_descriptions">4.8. Class Descriptions</a></li>
+<li><a href="#_class_descriptions">4.8. Class Descriptions</a>
+<ul class="sectlevel3">
+<li><a href="#_ehr_class">4.8.1. Ehr Class</a></li>
+<li><a href="#_versioned_ehr_access_class">4.8.2. Versioned_ehr_access Class</a></li>
+<li><a href="#_ehr_access_class">4.8.3. Ehr_access Class</a></li>
+<li><a href="#_access_control_settings_class">4.8.4. Access_control_settings Class</a></li>
+<li><a href="#_versioned_ehr_status_class">4.8.5. Versioned_ehr_status Class</a></li>
+<li><a href="#_ehr_status_class">4.8.6. Ehr_status Class</a></li>
+<li><a href="#_versioned_composition_class">4.8.7. Versioned_composition Class</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_folders_2">5. Folders</a>
@@ -89,7 +99,12 @@
 <li><a href="#_paths">5.1.1. Paths</a></li>
 </ul>
 </li>
-<li><a href="#_class_descriptions_2">5.2. Class Descriptions</a></li>
+<li><a href="#_class_descriptions_2">5.2. Class Descriptions</a>
+<ul class="sectlevel3">
+<li><a href="#_versioned_folder_class">5.2.1. Versioned_folder Class</a></li>
+<li><a href="#_folder_class">5.2.2. Folder Class</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_composition_package">6. Composition Package</a>
@@ -108,12 +123,22 @@
 </li>
 <li><a href="#_composition_content">6.3. Composition Content</a>
 <ul class="sectlevel3">
-<li><a href="#_class_descriptions_3">6.3.1. Class Descriptions</a></li>
+<li><a href="#_class_descriptions_3">6.3.1. Class Descriptions</a>
+<ul class="sectlevel4">
+<li><a href="#_composition_class">6.3.1.1. Composition Class</a></li>
+<li><a href="#_event_context_class">6.3.1.2. Event_context Class</a></li>
+<li><a href="#_content_item_class">6.3.1.3. Content_item Class</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_sections">6.4. Sections</a>
 <ul class="sectlevel3">
-<li><a href="#_class_descriptions_4">6.4.1. Class Descriptions</a></li>
+<li><a href="#_class_descriptions_4">6.4.1. Class Descriptions</a>
+<ul class="sectlevel4">
+<li><a href="#_section_class">6.4.1.1. Section Class</a></li>
+</ul>
+</li>
 <li><a href="#_instance_structures">6.4.2. Instance Structures</a>
 <ul class="sectlevel4">
 <li><a href="#_problemsoap_headings">6.4.2.1. Problem/SOAP Headings</a></li>
@@ -1043,26 +1068,450 @@ is is strongly recommended that a UUID always be used for the <code><em>ehr_id</
 </div>
 <div class="sect2">
 <h3 id="_class_descriptions"><a class="anchor" href="#_class_descriptions"></a>4.8. Class Descriptions</h3>
-<div class="paragraph">
-<p>Unresolved directive in master04-ehr_package.adoc - include::../UML/classes/org.s2.grm.ehr.ehr.adoc[]</p>
+<div class="sect3">
+<h4 id="_ehr_class"><a class="anchor" href="#_ehr_class"></a>4.8.1. Ehr Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Ehr</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>The EHR object is the root object and access point of an EHR for a subject of care.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ehr_id</strong>: <code>Uuid</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The unique identifier of this EHR.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+is is strongly recommended that a UUID always be used for this field.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>system_id</strong>: <code>Internet_id</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The identifier of the logical EHR management system in which this EHR was created.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>contributions</strong>: <code>List&lt;Object_ref&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>List of contributions causing changes to this EHR. Each contribution contains a list of versions, which may include references to any number of <code>VERSION</code> instances, i.e. items of type <code>VERSIONED_COMPOSITION</code> and <code>VERSIONED_FOLDER</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ehr_status</strong>: <code>Object_ref</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Reference to <code>EHR_STATUS</code> object for this EHR.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ehr_access</strong>: <code>Object_ref</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Reference to <code>EHR_ACCESS</code> object for this EHR.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>state</strong>: <code>List&lt;Object_ref&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Master list of all Versioned Composition references in this EHR.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>directory</strong>: <code>Object_ref</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional directory structure for this EHR. If present, this is a reference to the first member of <code><em>folders</em></code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>time_created</strong>: <code>Date_time</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Time of creation of the EHR.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>folders</strong>: <code>List&lt;Object_ref&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional additional Folder structures for this EHR. If set, the <code><em>directory</em></code> attribute refers to the first member.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tags</strong>: <code>List&lt;Object_ref&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional list of tags associated with this EHR. Tag <code><em>target</em></code> values can only be within the same EHR.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>events</strong>: <code>List&lt;Object_ref&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Master list of all Versioned Composition references in this EHR.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>plans</strong>: <code>List&lt;Object_ref&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Master list of all Versioned Composition references in this EHR.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Contributions_valid</em>: <code>for_all c in contributions &#124; c.type.is_equal("CONTRIBUTION")</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Ehr_access_valid</em>: <code>ehr_access.type.is_equal ("VERSIONED_EHR_ACCESS")</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Ehr_status_valid</em>: <code>ehr_status.type.is_equal("VERSIONED_EHR_STATUS")</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Compositions_valid</em>: <code>for_all c in compositions &#124; c.type.is_equal ("VERSIONED_COMPOSITION")</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Directory_valid</em>: <code>directory /= Void implies directory.type.is_equal ("VERSIONED_FOLDER")</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Folders_valid</em>: <code>folders /= Void implies for_all f in folders &#124; f.type.is_equal("VERSIONED_FOLDER")</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Directory_in_folders</em>: <code>folders /= Void implies folders.item(1) = directory</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_versioned_ehr_access_class"><a class="anchor" href="#_versioned_ehr_access_class"></a>4.8.2. Versioned_ehr_access Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Versioned_ehr_access</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Version container for <code>EHR_ACCESS</code> instance.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code>Versioned_object</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_ehr_access_class"><a class="anchor" href="#_ehr_access_class"></a>4.8.3. Ehr_access Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Ehr_access</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>EHR-wide access control object. All access decisions to data in the EHR must be made in accordance with the policies and rules in this object.</p>
 </div>
 <div class="paragraph">
-<p>Unresolved directive in master04-ehr_package.adoc - include::../UML/classes/org.s2.grm.ehr.versioned_ehr_access.adoc[]</p>
+<p>TODO: repurpose and rename for consent?</p>
 </div>
-<div class="paragraph">
-<p>Unresolved directive in master04-ehr_package.adoc - include::../UML/classes/org.s2.grm.ehr.ehr_access.adoc[]</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+It is strongly recommended that the inherited attribute <code><em>uid</em></code> be populated in <code>EHR_ACCESS</code> objects, using the UID copied from the <code><em>object_id()</em></code> of the <code><em>uid</em></code> field of the enclosing <code>VERSION</code> object.<br>
+For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3-F303D2F4F34B::uk.nhs.ehr1::2</code> would be copied to the <code><em>uid</em></code> field of the <code>EHR_ACCESS</code> object.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code>Locatable</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>settings</strong>: <code><a href="#_access_control_settings_class">Access_control_settings</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Access control settings for the EHR. Instance is a subtype of the type <code>ACCESS_CONTROL_SETTINGS</code>, allowing for the use of different access control schemes.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>scheme</strong> (): <code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The name of the access control scheme in use; corresponds to the concrete instance of the settings attribute.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Scheme_valid</em>: <code>not scheme.is_empty</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Is_archetype_root</em>: <code>is_archetype_root</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="paragraph">
-<p>Unresolved directive in master04-ehr_package.adoc - include::../UML/classes/org.s2.grm.ehr.access_control_settings.adoc[]</p>
+<div class="sect3">
+<h4 id="_access_control_settings_class"><a class="anchor" href="#_access_control_settings_class"></a>4.8.4. Access_control_settings Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Access_control_settings (abstract)</em></strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Access Control Settings for the EHR and components. Intended to support multiple access control schemes. Currently implementation dependent.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="paragraph">
-<p>Unresolved directive in master04-ehr_package.adoc - include::../UML/classes/org.s2.grm.ehr.versioned_ehr_status.adoc[]</p>
+<div class="sect3">
+<h4 id="_versioned_ehr_status_class"><a class="anchor" href="#_versioned_ehr_status_class"></a>4.8.5. Versioned_ehr_status Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Versioned_ehr_status</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Version container for <code>EHR_STATUS</code> instance.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code>Versioned_object</code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="paragraph">
-<p>Unresolved directive in master04-ehr_package.adoc - include::../UML/classes/org.s2.grm.ehr.ehr_status.adoc[]</p>
+<div class="sect3">
+<h4 id="_ehr_status_class"><a class="anchor" href="#_ehr_status_class"></a>4.8.6. Ehr_status Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Ehr_status</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Single object per EHR containing various EHR-wide status flags and settings, including whether this EHR can be queried, modified etc. This object is always modifiable, in order to change the status of the EHR as a whole.</p>
 </div>
-<div class="paragraph">
-<p>Unresolved directive in master04-ehr_package.adoc - include::../UML/classes/org.s2.grm.ehr.versioned_composition.adoc[]</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+It is strongly recommended that the inherited attribute <code><em>uid</em></code> be populated in <code>EHR_STATUS</code> objects, using the UID copied from the <code><em>object_id()</em></code> of the <code><em>uid</em></code> field of the enclosing <code>VERSION</code> object.<br>
+For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3-F303D2F4F34B::uk.nhs.ehr1::2</code>  would be copied to the <code><em>uid</em></code> field of the <code>EHR_STATUS</code> object.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code>Locatable</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>subject</strong>: <code>Party_self</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The subject of this EHR. The <code><em>external_ref</em></code> attribute can be used to contain a direct reference to the subject in a demographic or identity service. Alternatively, the association between patients and their records may be done elsewhere for security reasons.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_queryable</strong>: <code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>True if this EHR should be included in population queries, i.e. if this EHR is considered active in the population.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_modifiable</strong>: <code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>True if the EHR, other than the <code>EHR_STATUS</code> object, is allowed to be written to. The <code>EHR_STATUS</code> object itself can always be written to.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>other_details</strong>: <code>List&lt;<a href="/releases/RM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Any other details of the EHR summary object, in the form of an archetyped <code>ITEM_STRUCTURE</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Is_archetype_root</em>: <code>is_archetype_root</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_versioned_composition_class"><a class="anchor" href="#_versioned_composition_class"></a>4.8.7. Versioned_composition Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Versioned_composition</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Version-controlled composition abstraction, defined by inheriting <code>VERSIONED_OBJECT&lt;COMPOSITION&gt;</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code>Versioned_object</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_persistent</strong> (): <code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Indicates whether this composition set is persistent; derived from first version.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Archetype_node_id_valid</em>: <code>for_all v in all_versions &#124; v.archetype_node_id.is_equal (all_versions.first.archetype_node_id)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Persistent_validity</em>: <code>for_all v in all_versions &#124; v.is_persistent = all_versions.first.data.is_persistent</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -1109,11 +1558,102 @@ is is strongly recommended that a UUID always be used for the <code><em>ehr_id</
 </div>
 <div class="sect2">
 <h3 id="_class_descriptions_2"><a class="anchor" href="#_class_descriptions_2"></a>5.2. Class Descriptions</h3>
-<div class="paragraph">
-<p>Unresolved directive in master05-folders.adoc - include::../UML/classes/org.s2.grm.ehr.versioned_folder.adoc[]</p>
+<div class="sect3">
+<h4 id="_versioned_folder_class"><a class="anchor" href="#_versioned_folder_class"></a>5.2.1. Versioned_folder Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Versioned_folder</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>A version-controlled hierarchy of <code>FOLDERs</code> giving the effect of a directory.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code>Versioned_object</code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="paragraph">
-<p>Unresolved directive in master05-folders.adoc - include::../UML/classes/org.s2.grm.ehr.folder.adoc[]</p>
+<div class="sect3">
+<h4 id="_folder_class"><a class="anchor" href="#_folder_class"></a>5.2.2. Folder Class</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Folder</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>The concept of a named folder.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+It is strongly recommended that the inherited attribute <code><em>uid</em></code> be populated in <em>top-level</em> (i.e. tree-root) <code>FOLDER</code> objects, using the UID copied from the <code><em>object_id()</em></code> of the <code><em>uid</em></code> field of the enclosing <code>VERSION</code> object.<br>
+For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3-F303D2F4F34B::uk.nhs.ehr1::2</code>  would be copied to the <code><em>uid</em></code> field of the top <code>FOLDER</code> object.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code>Locatable</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>items</strong>: <code>List&lt;Object_ref&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The list of references to other (usually) versioned objects logically in this folder.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>folders</strong>: <code>List&lt;<a href="#_folder_class">Folder</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Sub-folders of this <code>FOLDER</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>details</strong>: <code><a href="/releases/RM/latest/data_structures.html#_cluster_class" target="_blank" rel="noopener">Cluster</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Archetypable meta-data for <code>FOLDER</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Folders_valid</em>: <code>not folders.is_empty</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -1304,14 +1844,282 @@ Persistent Compositions may optionally have an Event context. In openEHR release
 </div>
 <div class="sect3">
 <h4 id="_class_descriptions_3"><a class="anchor" href="#_class_descriptions_3"></a>6.3.1. Class Descriptions</h4>
-<div class="paragraph">
-<p>Unresolved directive in master06-composition_package.adoc - include::../UML/classes/org.s2.grm.composition.composition.adoc[leveloffset=+1]</p>
+<div class="sect4">
+<h5 id="_composition_class"><a class="anchor" href="#_composition_class"></a>6.3.1.1. Composition Class</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Composition</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Content of one version in a <code>VERSIONED_COMPOSITION</code>. A Composition is considered the unit of modification of the record, the unit of transmission in record Extracts, and the unit of attestation by authorising clinicians. In this latter sense, it may be considered equivalent to a signed document.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+It is strongly recommended that the inherited attribute <code><em>uid</em></code> be populated in Compositions, using the UID copied from the <code><em>object_id()</em></code> of the <code><em>uid</em></code> field of the enclosing <code>VERSION</code> object.<br>
+For example, the <code>ORIGINAL_VERSION.uid</code> <code>87284370-2D4B-4e3d-A3F3-F303D2F4F34B::uk.nhs.ehr1::2</code> would be copied to the <code><em>uid</em></code> field of the Composition.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code>Locatable</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>language</strong>: <code>Terminology_code</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Mandatory indicator of the localised language in which this Composition is written. Coded from openEHR Code Set  <code>languages</code>. The language of an Entry if different from the Composition is indicated in <code>Entry.<em>language</em></code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>territory</strong>: <code>Terminology_code</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Name of territory in which this Composition was written. Coded from openEHR  countries  code set, which is an expression of the ISO 3166 standard.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>category</strong>: <code>Coded_text</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Temporal category of this Composition, i.e.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>431&#124;persistent&#124;</code> - of potential life-time validity;</p>
+</li>
+<li>
+<p><code>451&#124;episodic&#124;</code> - valid over the life of a care episode;</p>
+</li>
+<li>
+<p><code>433&#124;event&#124;</code> - valid at the time of recording (long-term validity requires subsequent clinical assessment).</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Unresolved directive in master06-composition_package.adoc - include::../UML/classes/org.s2.grm.composition.event_context.adoc[leveloffset=+1]</p>
+<p>or any other code defined in the openEHR terminology group 'category'.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>context</strong>: <code><a href="#_event_context_class">Event_context</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The clinical session context of this Composition, i.e. the contextual attributes of the clinical session.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>composer</strong>: <code>Party_proxy</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The person primarily responsible for the content of the Composition (but not necessarily its committal into the EHR system). This is the identifier which should appear on the screen. It may or may not be the person who entered the data. When it is the patient, the special self  instance of <code>PARTY_PROXY</code> will be used.</p>
 </div>
 <div class="paragraph">
-<p>Unresolved directive in master06-composition_package.adoc - include::../UML/classes/org.s2.grm.composition.content_item.adoc[leveloffset=+1]</p>
+<p>TODO: could be renamed to more clearly indicate 'person responsible for the content', usually the legally responsible clinician.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>content</strong>: <code>List&lt;<a href="#_content_item_class">Content_item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The content of this Composition.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Functions</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is_persistent</strong> (): <code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>True if category is <code>431&#124;persistent&#124;</code>, False otherwise. Useful for finding Compositions in an EHR which are guaranteed to be of interest to most users.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Category_validity</em>: <code>terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_composition_category, category.defining_code)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Territory_valid</em>: <code>code_set(Code_set_id_countries).has_code(territory)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Language_valid</em>: <code>code_set(Code_set_id_languages).has_code(language)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Content_valid</em>: <code>content /= Void implies not content.is_empty</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Is_archetype_root</em>: <code>is_archetype_root</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_event_context_class"><a class="anchor" href="#_event_context_class"></a>6.3.1.2. Event_context Class</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Event_context</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Documents the context information of a healthcare event involving the subject of care and the health system. The context information recorded here is independent of the attributes recorded in the version audit, which document the  system interaction context, i.e. the context of a user interacting with the health record system. Healthcare events include patient contacts, and any other business activity, such as pathology investigations which take place on behalf of the patient.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code>Locatable</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>start_time</strong>: <code>Date_time</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Start time of the clinical session or other kind of event during which a provider performs a service of any kind for the patient.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>end_time</strong>: <code>Date_time</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional end time of the clinical session.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>setting</strong>: <code>Coded_term</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The setting in which the clinical session took place. Coded using the openEHR Terminology,  setting  group.</p>
+</div>
+<div class="paragraph">
+<p>TODO: rarely used in Archetypes - needed in CEMs?</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>location</strong>: <code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The actual location where the session occurred, e.g. 'microbiology lab 2', 'home', 'ward A3'  and so on.</p>
+</div>
+<div class="paragraph">
+<p>TODO: possibly rename? This only refers to a room.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>other_context</strong>: <code>List&lt;<a href="/releases/RM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Other optional context which will be archetyped.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>health_care_facility</strong>: <code>Party_identified</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The health care facility under whose care the event took place. This is the most specific workgroup or delivery unit within a care delivery enterprise that has an official identifier in the health system, and can be used to ensure medico-legal accountability.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>participations</strong>: <code>List&lt;Participation&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Parties involved in the healthcare event. These would normally include the physician(s) and often the patient (but not the latter if the clinical session is a pathology test for example).</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Setting_valid</em>: <code>Terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_setting, setting.defining_code)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Participations_validity</em>: <code>participations /= Void implies not participations.is_empty</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>location_valid</em>: <code>location /= Void implies not location.is_empty</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_content_item_class"><a class="anchor" href="#_content_item_class"></a>6.3.1.3. Content_item Class</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong><em>Content_item (abstract)</em></strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Abstract ancestor of all concrete content types.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code>Locatable</code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -1340,8 +2148,59 @@ Persistent Compositions may optionally have an Event context. In openEHR release
 </div>
 <div class="sect3">
 <h4 id="_class_descriptions_4"><a class="anchor" href="#_class_descriptions_4"></a>6.4.1. Class Descriptions</h4>
-<div class="paragraph">
-<p>Unresolved directive in master06-composition_package.adoc - include::../UML/classes/org.s2.grm.composition.section.adoc[leveloffset=+1]</p>
+<div class="sect4">
+<h5 id="_section_class"><a class="anchor" href="#_section_class"></a>6.4.1.1. Section Class</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Class</strong></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Section</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Description</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Represents a heading in a heading structure, or  section tree.  Created according to archetyped structures for typical headings such as SOAP,  physical examination, but also pathology result heading structures.  Should not be used instead of <code>Entry</code> hierarchical structures.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="#_content_item_class">Content_item</a></code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Signature</strong></p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Meaning</strong></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>0..1</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>items</strong>: <code>List&lt;<a href="#_content_item_class">Content_item</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Ordered list of content items under this section, which may include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>more <code>SECTIONs</code>;</p>
+</li>
+<li>
+<p><code>Entrys</code>.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Invariants</strong></p></th>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Items_valid</em>: <code>items /= Void implies not items.is_empty</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -1391,7 +2250,7 @@ Persistent Compositions may optionally have an Event context. In openEHR release
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-28 16:32:38 -0600
+Last updated 2023-09-28 19:52:01 -0600
 </div>
 </div>
 </body>

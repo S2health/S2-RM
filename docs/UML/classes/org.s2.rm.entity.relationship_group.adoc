@@ -17,6 +17,6 @@ h|*0..1*
 a|Individual relationships within this group (type).
 
 h|*1..1*
-|*type*: `link:/releases/BASE/{base_release}/foundation_types.html#_coded_term_class[Coded_term^]`
+|*type*: `Coded_term`
 a|
 |===

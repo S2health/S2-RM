@@ -9,18 +9,18 @@ h|*Description*
 2+a|Record of the utilisation of some Entity, in the role of a specific kind of Resource. Archetypes provide models of kinds of use.
 
 h|*Inherit*
-2+|`link:/releases/BASE/{base_release}/base_types.html#_locatable_class[Locatable^]`
+2+|`Locatable`
 
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*1..1*
-|*start_time*: `link:/releases/BASE/{base_release}/foundation_types.html#_date_time_class[Date_time^]`
+|*start_time*: `Date_time`
 a|Time at which resource use commenced.
 
 h|*0..1*
-|*duration*: `link:/releases/BASE/{base_release}/foundation_types.html#_duration_class[Duration^]`
+|*duration*: `Duration`
 a|Duration of resource use.
 
 h|*0..1*
