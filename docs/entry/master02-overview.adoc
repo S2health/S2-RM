@@ -4,7 +4,7 @@ The Entry model is defined by the `gcm.entry` package, shown in the UML diagram 
 
 [.text-center]
 .gcm.entry package
-image::{uml_diagrams_uri}/RM-entry-taxonomy.svg[id=entry_taxonomy, align="center"]
+image::{uml_diagrams_uri}/RM-2.1-entry-taxonomy.svg[id=entry_taxonomy, align="center"]
 
 The descendants of `Entry` are based on the taxonomy described in cite:[Beale_Heard2007], and are described in the section below.
 

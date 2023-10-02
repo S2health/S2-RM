@@ -21,12 +21,12 @@ a|The Accountability type defining the scope of this relationship; typically a j
 
 h|*1..1 +
 (redefined)*
-|*source*: `String`
+|*source*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
 a|Source of relationship, may be understood as 'owner' of relationship.
 
 h|*1..1 +
 (redefined)*
-|*target*: `String`
+|*target*: `link:/releases/BASE/{base_release}/foundation_types.html#_string_class[String^]`
 a|Target of relationship.
 
 h|*Invariants*

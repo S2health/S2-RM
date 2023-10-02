@@ -9,6 +9,6 @@ h|*Description*
 2+a|Abstract ancestor of Resource classes.
 
 h|*Inherit*
-2+|`Locatable`
+2+|`link:/releases/BASE/{base_release}/base_types.html#_locatable_class[Locatable^]`
 
 |===

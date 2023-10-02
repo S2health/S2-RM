@@ -18,7 +18,7 @@ h|*Attributes*
 ^h|*Meaning*
 
 h|*0..1*
-|*languages*: `List<Coded_term>`
+|*languages*: `List<link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]>`
 a|Languages which can be used to communicate with this actor, in preferred order of use (if known, else order irrelevant).
 
 h|*0..1*

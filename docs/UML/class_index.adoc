@@ -159,7 +159,7 @@
 [.xcode]
 * link:/releases/RM/{rm_release}/entity.html#_versioned_entity_class[Versioned_entity^]
 [.xcode]
-* link:/releases/RM/{rm_release}/entity.html#_versioned_material_entity_class[Versioned_material_entity^]
+* link:/releases/RM/{rm_release}/entity.html#_versioned_facility_class[Versioned_facility^]
 [.xcode]
 * link:/releases/RM/{rm_release}/entity.html#_versioned_party_class[Versioned_party^]
 [.xcode]

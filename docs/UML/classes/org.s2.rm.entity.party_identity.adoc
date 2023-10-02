@@ -9,7 +9,7 @@ h|*Description*
 2+a|An identity  of a Social entity, such as a person name or company name, and which is used by the party to identify itself. Actual structure is archetyped.
 
 h|*Inherit*
-2+|`Locatable`
+2+|`link:/releases/BASE/{base_release}/base_types.html#_locatable_class[Locatable^]`
 
 h|*Attributes*
 ^h|*Signature*
@@ -23,7 +23,7 @@ h|*Functions*
 ^h|*Meaning*
 
 h|*1..1*
-|*purpose* (): `Coded_term`
+|*purpose* (): `link:/releases/BASE/{base_release}/foundation_types.html#_terminology_term_class[Terminology_term^]`
 a|Purpose of identity, e.g. legal ,  stage name,  nickname,  tribal name,  trading name. Taken from value of inherited `_name_` attribute.
 
 h|*Invariants*
