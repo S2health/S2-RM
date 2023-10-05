@@ -41,20 +41,9 @@ endif::[]
 h|Specification h|Description
 
 //|link:/releases/RM/{rm_release}/ehr.html[EHR IM]
-|link:ehr.html[EHR^]
-|The information model of the S2 EHR.
-
-|link:entry.html[Entry^]
-|Information model of clinical statements (Entries).
 
 |link:integration.html[Integration^]
 |Information model of generic entry for integration use.
-
-|link:data_structures.html[Data Structures^]
-|Information model of data structures, including time-series data.
-
-|link:entity.html[Entities^]
-|Information model of Entities, including resources and demographics.
 
 |===
 
