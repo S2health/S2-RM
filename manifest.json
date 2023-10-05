@@ -5,56 +5,15 @@
     "keywords": "reference model, S2",
     "specifications": [
         {
-            "id": "ehr",
-            "title": "EHR Model",
-            "title_short": "EHR",
-            "description": "S2 EHR Information Model specification",
-            "micro_summary": "Top-level health record model",
-            "summary": "The information model of the S2 EHR.",
-            "classes": [
-                "COMPOSITION",
-                "SECTION"
-            ],
-            "copyright_year": "2023",
-            "spec_status": "TRIAL",
-            "keywords": "EHR, EMR, reference model, S2"
-        },
-        {
-            "id": "entry",
-            "title": "Entry Model",
-            "title_short": "Entry",
-            "description": "S2 Entry Model",
-            "micro_summary": "Model of clinical statements",
-            "summary": "The information model of clinical statements in the S2 Canonical Model.",
-            "classes": [
-                "ENTRY",
-                "OBSERVATION",
-                "ASSERTION",
-                "ORDER",
-                "ACTION",
-                "ADMIN_ENTRY"
-            ],
-            "copyright_year": "2023",
-            "spec_status": "TRIAL",
-            "keywords": "EHR, EMR, reference model, S2"
-        },
-        {
-            "id": "data_structures",
-            "title": "Data Structures Information Model",
-            "title_short": "Data Structures",
-            "description": "S2 Data Structures Information Model specification",
-            "micro_summary": "Common data structures",
-            "summary": "Information model of data structures, including a powerful model of time-series data.",
-            "classes": [
-                "HISTORY",
-                "EVENT",
-                "ITEM_TREE",
-                "CLUSTER",
-                "ELEMENT"
-            ],
-            "copyright_year": "2023",
-            "spec_status": "TRIAL",
-            "keywords": "EHR, data structures, reference model, S2"
+            "id": "architecture_overview",
+            "title": "Architecture Overview",
+            "title_short": "Architecture Overview",
+            "description": "openEHR Architecture Overview",
+            "summary": "\"Read me first\" document for the overall architecture. Provides a summary of the reference, archetype and service models, and describes global semantics.",
+            "micro_summary": "Global description of openEHR design principles and architecture",
+            "copyright_year": "2003",
+            "spec_status": "STABLE",
+            "keywords": "EHR, openehr, s2, architecture"
         },
         {
             "id": "integration",
@@ -69,25 +28,6 @@
             "copyright_year": "2003",
             "spec_status": "TRIAL",
             "keywords": "EHR, integration, S2"
-        },
-        {
-            "id": "entity",
-            "title": "Entity Information Model",
-            "title_short": "Entity",
-            "description": "S2 Entity Information Model specification",
-            "micro_summary": "Top-level entity info model",
-            "summary": "The S2 Entity information model.",
-            "classes": [
-                "PHYSICAL_ENTITY",
-                "SOCIAL_ENTITY",
-                "RESOURCE",
-                "REGISTRY",
-                "PARTY",
-                "ASSET"
-            ],
-            "copyright_year": "2022",
-            "spec_status": "DEVELOPMENT",
-            "keywords": "Entity, demographics, reference model, S2"
         }
     ],
     "expressions": [

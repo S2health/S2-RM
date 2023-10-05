@@ -1,0 +1,5 @@
+:spec_title: Architecture Overview
+:copyright_year: 2003
+:spec_status: STABLE
+:keywords: EHR, openehr, s2, architecture
+:description: openEHR Architecture Overview

@@ -57,7 +57,7 @@
 <div class="sectionbody">
 <div class="imageblock text-center">
 <div class="content">
-<img src="https://uploads-ssl.webflow.com/63570cd7d4eda80d654ccf14/64027a592d749e7df28c6248_primary-s2.svg" alt="openEHR logo">
+<img src="http://s2health.io/logo.png" alt="S2 logo">
 </div>
 </div>
 </div>
@@ -262,7 +262,7 @@ and non-standardised legacy models; only the reusability of the solution differs
 <div class="paragraph">
 <p>Another important category of externally sourced data addressed by the Integration package
 described here is data expressed in a form of a <a href="https://www.iso.org/standard/40784.html" target="_blank" rel="noopener">ISO 13606 Extract</a>. Part 1 of ISO 13606 defines a
-information model which is nearly identical to that of openEHR at the <code>Composition</code> and <code>SECTION</code>
+information model which is nearly identical to that of openEHR at the <code>Composition</code> and <code>Section</code>
 levels. The ISO 13606 <code>Entry</code> class is a generic structure with a minimum of contextual metadata,
 and can easily be mapped to the openEHR Entry type described in this specification.</p>
 </div>
@@ -304,7 +304,7 @@ model, and b) obey 'designed' clinical archetypes.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>a class <code>Generic_entry</code>, which is a sibling of <code>SECTION</code> and <code>Entry</code>, and contains completely generic, archetypable structures;</p>
+<p>a class <code>Generic_entry</code>, which is a sibling of <code>Section</code> and <code>Entry</code>, and contains completely generic, archetypable structures;</p>
 </li>
 <li>
 <p>'integration' archetypes, i.e. archetypes defined against the <code>Generic_entry</code> class;</p>
@@ -395,7 +395,7 @@ intermediate form for further conversion into ISO 13606 EHR Extracts.</p>
 <div class="title">Figure 2. Data Integration using openEHR</div>
 </div>
 <div class="paragraph">
-<p>Firstly, data are converted from their original syntactic format into openEHR <code>Composition</code>/<code>SECTION</code>/
+<p>Firstly, data are converted from their original syntactic format into openEHR <code>Composition</code>/<code>Section</code>/
 <code>Generic_entry</code> structures, shown in the openEHR integration switch. Most of the data will
 appear in the <code>Generic_entry</code> part, controlled by an integration archetype designed to mimic the
 incoming structure (such as an HL7v2 lab message) as closely as possible; <code>FEEDER_AUDIT</code> structures
@@ -434,7 +434,7 @@ some of these are dealt with in the Common IM document sections on Feeder system
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Inherit</strong></p></th>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="/releases/RM/latest/ehr.html#_content_item_class" target="_blank" rel="noopener">Content_item</a></code></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><code><a href="/releases/CARE/{care_release}/Content_item.html#_content_item_class" target="_blank" rel="noopener">Content_item</a></code></p></td>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>Attributes</strong></p></th>
@@ -443,7 +443,7 @@ some of these are dealt with in the Common IM document sections on Feeder system
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top"><p class="tableblock"><strong>1..1</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code><a href="/releases/RM/latest/data_structures.html#_item_class" target="_blank" rel="noopener">Item</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong>: <code><a href="/releases/BASE/latest/patterns.html#_item_class" target="_blank" rel="noopener">Item</a></code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The data from the source message or record. May be recorded in any structural openEHR representation.</p>
 </div></div></td>
@@ -457,7 +457,7 @@ some of these are dealt with in the Common IM document sections on Feeder system
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-28 19:52:01 -0600
+Last updated 2023-10-04 21:17:27 -0600
 </div>
 </div>
 </body>

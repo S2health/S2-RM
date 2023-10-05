@@ -20,7 +20,7 @@ and non-standardised legacy models; only the reusability of the solution differs
 
 Another important category of externally sourced data addressed by the Integration package
 described here is data expressed in a form of a {iso_13606}[ISO 13606 Extract^]. Part 1 of ISO 13606 defines a
-information model which is nearly identical to that of openEHR at the `Composition` and `SECTION`
+information model which is nearly identical to that of openEHR at the `Composition` and `Section`
 levels. The ISO 13606 `Entry` class is a generic structure with a minimum of contextual metadata,
 and can easily be mapped to the openEHR Entry type described in this specification.
 
@@ -54,7 +54,7 @@ model, and b) obey 'designed' clinical archetypes.
 
 The additional elements of the openEHR architecture which make this transformation possible are:
 
-* a class `Generic_entry`, which is a sibling of `SECTION` and `Entry`, and contains completely generic, archetypable structures;
+* a class `Generic_entry`, which is a sibling of `Section` and `Entry`, and contains completely generic, archetypable structures;
 * 'integration' archetypes, i.e. archetypes defined against the `Generic_entry` class;
 * semantic transformation rules from openEHR data based on `Generic_entry` and integration archetypes to data based on the subtypes of `Entry`, and designed archetypes.
 
@@ -123,7 +123,7 @@ The integration archetype-based strategy for importing data into an openEHR syst
 .Data Integration using openEHR
 image::{diagrams_uri}/integration_environment.png[id=integration_environment, align="center", width=80%]
 
-Firstly, data are converted from their original syntactic format into openEHR `Composition`/`SECTION`/
+Firstly, data are converted from their original syntactic format into openEHR `Composition`/`Section`/
 `Generic_entry` structures, shown in the openEHR integration switch. Most of the data will
 appear in the `Generic_entry` part, controlled by an integration archetype designed to mimic the
 incoming structure (such as an HL7v2 lab message) as closely as possible; `FEEDER_AUDIT` structures

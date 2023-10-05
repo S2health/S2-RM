@@ -1,5 +1,0 @@
-:spec_title: Data Structures Information Model
-:copyright_year: 2023
-:spec_status: TRIAL
-:keywords: EHR, data structures, reference model, S2
-:description: S2 Data Structures Information Model specification
