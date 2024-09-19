@@ -68,7 +68,7 @@
 <li><a href="#_base_component_base">5.3. Base Component (BASE)</a>
 <ul class="sectlevel3">
 <li><a href="#_foundation_types">5.3.1. Foundation Types</a></li>
-<li><a href="#_base_types">5.3.2. Base Types</a></li>
+<li><a href="#_model_support">5.3.2. Base Types</a></li>
 <li><a href="#_resource_model">5.3.3. Resource Model</a></li>
 </ul>
 </li>
@@ -1309,9 +1309,9 @@ In RM Release 1.0.3 and earlier releases, the contents of the <code>base</code> 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_base_types"><a class="anchor" href="#_base_types"></a>5.3.2. Base Types</h4>
+<h4 id="_model_support"><a class="anchor" href="#_model_support"></a>5.3.2. Base Types</h4>
 <div class="paragraph">
-<p>The <a href="https://specifications.openehr.org/releases/BASE/latest/base_types.html" target="_blank" rel="noopener">Base Types specification</a> defines generic openEHR types used in other openEHR components. It is comprised of the <code>definitions</code>, <code>identification</code>, <code>terminology</code> and  <code>measurement</code> sub-packages. The semantics defined in these packages allow all other models to use identifiers and to have access to knowledge services like terminology and other reference data.</p>
+<p>The <a href="https://specifications.openehr.org/releases/BASE/latest/model_support.html" target="_blank" rel="noopener">Base Types specification</a> defines generic openEHR types used in other openEHR components. It is comprised of the <code>definitions</code>, <code>identification</code>, <code>terminology</code> and  <code>measurement</code> sub-packages. The semantics defined in these packages allow all other models to use identifiers and to have access to knowledge services like terminology and other reference data.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2842,7 +2842,7 @@ au.gov.health.rdh.ehr1                  -- id of creating system
 </div>
 </div>
 <div class="paragraph">
-<p>This 3-part tuple is known as a <em>version locator</em> and is defined by the class <code>OBJECT_VERSION_ID</code> in the <a href="https://specifications.openehr.org/releases/BASE/latest/base_types.html#_identification_package" target="_blank" rel="noopener"><code>identification</code> package section of the Base Types specification</a>. The openEHR version identification scheme is described in detail in the <a href="https://specifications.openehr.org/releases/RM/latest/common.html#_change_control_package" target="_blank" rel="noopener"><code>change_control</code> package section of the Common IM</a>.</p>
+<p>This 3-part tuple is known as a <em>version locator</em> and is defined by the class <code>OBJECT_VERSION_ID</code> in the <a href="https://specifications.openehr.org/releases/BASE/latest/model_support.html#_identification_package" target="_blank" rel="noopener"><code>identification</code> package section of the Base Types specification</a>. The openEHR version identification scheme is described in detail in the <a href="https://specifications.openehr.org/releases/RM/latest/common.html#_change_control_package" target="_blank" rel="noopener"><code>change_control</code> package section of the Common IM</a>.</p>
 </div>
 <div class="paragraph">
 <p>The contained top-level content item (i.e. a <code>Composition</code> etc.) also has a <code><em>uid</em></code> attribute (inherited from <code>Locatable</code>), and it is strongly recommended that this be populated with a copy of the <code>OBJECT_VERSION_ID</code> from the containing <code>Version&lt;X&gt;</code> object. This facilitates identifying versions from a naked content object e.g. returned in a query.</p>
@@ -2855,7 +2855,7 @@ au.gov.health.rdh.ehr1                  -- id of creating system
 </div>
 <div class="paragraph">
 <p>To refer to an interior data node from outside a top-level structure, a combination of a  version locator
-and a path is required. This is formalised by the <code>Locatable_REF</code> class, also in the <a href="https://specifications.openehr.org/releases/BASE/latest/base_types.html#_identification_package" target="_blank" rel="noopener"><code>identification</code>
+and a path is required. This is formalised by the <code>Locatable_REF</code> class, also in the <a href="https://specifications.openehr.org/releases/BASE/latest/model_support.html#_identification_package" target="_blank" rel="noopener"><code>identification</code>
 package section of the Base Types specification</a>. A Universal Resource Identifier (URI) form can also be used,
 defined by the <a href="https://specifications.openehr.org/releases/RM/latest/data_types.html#_uri_package" target="_blank" rel="noopener">data type <code>DV_EHR_URI</code></a>. This type provides a single string expression
 in the scheme-space <code>ehr:</code> which can be used to refer to an interior data node from anywhere. (It can

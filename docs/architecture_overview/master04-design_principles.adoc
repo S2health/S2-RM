@@ -114,3 +114,17 @@ Technological:: concerned with the detail of the components from which the distr
 
 The openEHR specifications accordingly include an information viewpoint - the openEHR Reference Model - and a computational viewpoint - the openEHR Service Model. The Engineering viewpoint corresponds to the {openehr_its_component}[openEHR Implementation Technology Specifications (ITS)^], while the Technological viewpoint corresponds to the technologies and components used in an actual deployment. An important aspect of the division into viewpoints is that there is generally not a 1:1 relationship between model specifications in each viewpoint. For example, there might be a concept of 'health mandate' (see {iso_13940}[ISO 13940, Continuity of Care concepts]) in the enterprise viewpoint. In the information viewpoint, this might have become a model containing many classes. In the computational viewpoint, the information structures defined in the information viewpoint are likely to recur in multiple services, and there may or may not be a
 'health mandate' service. The granularity of services defined in the computational viewpoint corresponds most strongly to divisions of function in an enterprise or region, while the granularity of components in the information view points corresponds to the granularity of mental concepts in the problem space, the latter almost always being more fine-grained.
+
+== Ontological Information Architecture
+
+S2 adopts an ontological approach information architecture, which results in two categories of information entity in its model universe:
+
+* 'digital twins' of ontic (real world) entities;
+* epistemic information objects resulting from observation, inference, issuing or orders and other information-generating interactions with the real world.
+
+One consequence of this approach is that elements in S2 domain models are all marked with a code that indicates what the element is about.
+
+** independent entities, such as a person or organ;
+** dependent entities such as a quality, e.g. blood pressure;
+** relational entities, such as a patient's participation in a physiotherapy programme;
+** other informational entities, e.g. previous utterances of the patient;

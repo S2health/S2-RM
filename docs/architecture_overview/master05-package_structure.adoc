@@ -60,7 +60,7 @@ Other foundation types include basic structures (`Array<T>`, `Hash<K,V>` etc), t
 
 === Base Types
 
-The {openehr_base_types}[Base Types specification^] defines generic openEHR types used in other openEHR components. It is comprised of the `definitions`, `identification`, `terminology` and  `measurement` sub-packages. The semantics defined in these packages allow all other models to use identifiers and to have access to knowledge services like terminology and other reference data.
+The {openehr_model_support}[Base Types specification^] defines generic openEHR types used in other openEHR components. It is comprised of the `definitions`, `identification`, `terminology` and  `measurement` sub-packages. The semantics defined in these packages allow all other models to use identifiers and to have access to knowledge services like terminology and other reference data.
 
 === Resource Model
 
