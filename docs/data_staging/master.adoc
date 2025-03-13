@@ -46,11 +46,11 @@ Special thanks to David Ingram, Emeritus Professor of Health Informatics at UCL,
 :sectnums:
 
 ifdef::package_qualifiers[]
-:pkg: org.s2.rm.integration.
+:pkg: org.s2.rm.integration.data_staging.
 endif::[]
 
 include::master01-preface.adoc[leveloffset=+1]
-include::master02-integration_package.adoc[leveloffset=+1]
+include::master02-data_staging_package.adoc[leveloffset=+1]
 
 //
 // --------------------------------------------- REFERENCES -----------------------------------------------

@@ -1,4 +1,4 @@
-= Integration Package
+= Data_staging Package
 
 == Requirements
 
@@ -58,14 +58,14 @@ The additional elements of the openEHR architecture which make this transformati
 * 'integration' archetypes, i.e. archetypes defined against the `Generic_entry` class;
 * semantic transformation rules from openEHR data based on `Generic_entry` and integration archetypes to data based on the subtypes of `Entry`, and designed archetypes.
 
-The figure below illustrates the `rm.integration` package, which contains a single class
+The figure below illustrates the `rm.intg.data_staging` package, which contains a single class
 `Generic_entry`. Unlike other classes in the openEHR reference model, `Generic_entry` contains
 no hard-wired attributes at all, only one generic attribute, `_data_`. No assumptions at all are made about
 the actual shape of such data.
 
 [.text-center]
-.rm.integration Package
-image::{uml_diagrams_uri}/RM-integration.svg[id=integration_package, align="center"]
+.rm.intg.data_staging Package
+image::{uml_diagrams_uri}/RM-data_staging.svg[id=data_staging_package, align="center"]
 
 === Semantics of Generic_entry
 
@@ -74,11 +74,11 @@ A number of useful consequences follow from this modelling approach. Firstly, in
 `_archetype_node_id_`, and are thus archetypable in the same way as all other classes in the openEHR
 reference model. The `Locatable` attribute feeder_audit is also inherited, and may be used to mark
 every node of data with relevant meta-data from the source system record or message. Secondly, as a
-subtype of `CONTENT_ITEM`, `Generic_entry` is a valid value for `Composition`.`_content_`. This is a
+subtype of `Content_item`, `Generic_entry` is a valid value for `Composition`.`_content_`. This is a
 completely desirable situation, since the same rules apply to `Generic_entry` as to other content:
 instances can only be committed to the record as part of a `Composition` instance. `Generic_entry`
 data are thus audit-trailed and versioned in the normal way. Thirdly, `Generic_entry` instances can
-occur within a hierarchy of `SECTIONs`, which is useful for data sources which have headings or section
+occur within a hierarchy of `Sections`, which is useful for data sources which have headings or section
 equivalents (this is quite common in hospital information systems containing physician notes).
 Lastly, in common with all other openEHR data, design-time paths can be constructed for archetypes
 of `Generic_entry`, while runtime paths can be extracted from data based on such archetypes. These
@@ -94,7 +94,7 @@ which obey the same minor version of HL7v2 (e.g. 2.3.1) and supposedly implement
 type (e.g. "complete blood picture") but which differ in actual structure and content.
 The consequence of this situation is that `Generic_entry` data cannot in general be safely used for
 clinical computation (e.g. decision support), and will not in general even support reliable clinical querying.
-In other words, a repository of `GENERIC_Entries` (within appropriate `Composition` structures)
+In other words, a repository of `Generic_entries` (within appropriate `Composition` structures)
 does not constitute a reliable or interoperable health record - it can only be considered a
 standardised health information data store whose primary purpose is as the input to or output of
 semantic conversion processes, or for other auditing or non-clinical data management purposes.
@@ -126,7 +126,7 @@ image::{diagrams_uri}/integration_environment.png[id=integration_environment, al
 Firstly, data are converted from their original syntactic format into openEHR `Composition`/`Section`/
 `Generic_entry` structures, shown in the openEHR integration switch. Most of the data will
 appear in the `Generic_entry` part, controlled by an integration archetype designed to mimic the
-incoming structure (such as an HL7v2 lab message) as closely as possible; `FEEDER_AUDIT` structures
+incoming structure (such as an HL7v2 lab message) as closely as possible; `Feeder_audit` structures
 are used to contain integration meta-data. The result of this step is data that are expressed in the
 openEHR type system (i.e. as instances of the openEHR reference model), and are immediately amenable
 to processing with normal openEHR software.

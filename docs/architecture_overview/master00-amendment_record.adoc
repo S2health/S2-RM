@@ -1,8 +1,8 @@
-= Amendment Record
+= Revision History
 
 [cols="1,6,2,2", options="header"]
 |===
-|Issue|Details|Raiser, Implementer|Completed
+|Issue|Details|Resolution|Completed
 
 4+^h|*BASE Release 1.2.0*
 

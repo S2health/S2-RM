@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.16">
-<meta name="description" content="openEHR Architecture Overview">
-<meta name="keywords" content="EHR, openehr, s2, architecture">
+<meta name="generator" content="Asciidoctor 2.0.20">
+<meta name="description" content="S2 Architecture Overview">
+<meta name="keywords" content="s2, architecture">
 <title>Architecture Overview</title>
-<link rel="stylesheet" href="https://specifications.openehr.org/styles/openehr.css">
-<link rel="stylesheet" href="https://specifications.openehr.org/styles/pygments-default.css">
+<link rel="stylesheet" href="https://platform.s2health.org/css/s2.css">
+<link rel="stylesheet" href="https://platform.s2health.org/css/pygments-default.css">
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
@@ -18,7 +18,7 @@
 <ul class="sectlevel0">
 <li><a href="#_architecture_overview">Architecture Overview</a>
 <ul class="sectlevel1">
-<li><a href="#_amendment_record">Amendment Record</a></li>
+<li><a href="#_revision_history">Revision History</a></li>
 <li><a href="#_acknowledgements">Acknowledgements</a>
 <ul class="sectlevel2">
 <li><a href="#_trademarks">Trademarks</a></li>
@@ -59,6 +59,7 @@
 </li>
 <li><a href="#_separation_of_responsibilities">4.2. Separation of Responsibilities</a></li>
 <li><a href="#_separation_of_viewpoints">4.3. Separation of Viewpoints</a></li>
+<li><a href="#_ontological_information_architecture">4.4. Ontological Information Architecture</a></li>
 </ul>
 </li>
 <li><a href="#_openehr_specification_structure">5. openEHR Specification Structure</a>
@@ -68,7 +69,7 @@
 <li><a href="#_base_component_base">5.3. Base Component (BASE)</a>
 <ul class="sectlevel3">
 <li><a href="#_foundation_types">5.3.1. Foundation Types</a></li>
-<li><a href="#_model_support">5.3.2. Base Types</a></li>
+<li><a href="#_base_types">5.3.2. Base Types</a></li>
 <li><a href="#_resource_model">5.3.3. Resource Model</a></li>
 </ul>
 </li>
@@ -314,7 +315,7 @@
 <div class="sectionbody">
 <div class="imageblock text-center">
 <div class="content">
-<img src="https://studious-adventure-evrqgo5.pages.github.io/resources/logos/S2-logo.svg" alt="S2 logo">
+<img src="http://s2health.org/resources/logos/s2logo.svg" alt="S2 logo">
 </div>
 </div>
 </div>
@@ -329,20 +330,20 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="http://s2health.io" target="_blank" rel="noopener">S2 Foundation</a></th>
+<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="http://www.s2health.org" target="_blank" rel="noopener">S2 Health</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: S2-RM latest</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong>: STABLE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: S2-RM dev</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong>: DEVELOPMENT</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Revision</strong>: <a href="#latest_issue">[latest_issue]</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date</strong>: <a href="#latest_issue_date">[latest_issue_date]</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: EHR, openehr, s2, architecture</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: s2, architecture</p></td>
 </tr>
 </tbody>
 </table>
@@ -353,28 +354,28 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="2">&#169; 2003 - 2023 S2 Foundation</th>
+<th class="tableblock halign-center valign-top" colspan="2">&#169; 2003 - 2025 S2 Health</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="http://s2health.io" target="_blank" rel="noopener">S2 Foundation</a> is an independent, non-profit foundation.</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="http://www.s2health.org" target="_blank" rel="noopener">S2 Health</a> is an independent, non-profit foundation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Licence</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="https://specifications.openehr.org/images/cc-by-nd-88x31.png" alt="image"></span> Creative Commons Attribution-NoDerivs 3.0 Unported. <a href="https://creativecommons.org/licenses/by-nd/3.0/" class="bare">https://creativecommons.org/licenses/by-nd/3.0/</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="https://specifications.openehr.org/images/cc-by-nd-88x31.png" alt="image"></span> Creative Commons Attribution-NoDerivs 4.0 Unported. <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="bare">https://creativecommons.org/licenses/by-nd/4.0/</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Support</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Issues: <a href="https://specifications.s2health.io/components/S2-RM/open_issues" target="_blank" rel="noopener">Report an Issue</a><br>
- Web: <a href="https://specifications.s2health.io" target="_blank" rel="noopener">specifications.S2.io</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issues: <a href="https://github.com/S2health/S2-RM/issues?q=is%3Aissue%20state%3Aopen%20label%3Adocumentation%20label%3Aenhancement%20label%3Aerror" target="_blank" rel="noopener">Report an Issue</a><br>
+ Web: <a href="https://platform.s2health.org" target="_blank" rel="noopener">https://platform.s2health.org</a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_amendment_record"><a class="anchor" href="#_amendment_record"></a>Amendment Record</h2>
+<h2 id="_revision_history"><a class="anchor" href="#_revision_history"></a>Revision History</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -387,7 +388,7 @@
 <tr>
 <th class="tableblock halign-left valign-top">Issue</th>
 <th class="tableblock halign-left valign-top">Details</th>
-<th class="tableblock halign-left valign-top">Raiser, Implementer</th>
+<th class="tableblock halign-left valign-top">Resolution</th>
 <th class="tableblock halign-left valign-top">Completed</th>
 </tr>
 </thead>
@@ -397,14 +398,14 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>1.2.3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECPUB-7" target="_blank" rel="noopener">SPECPUB-7</a>: Convert citations to bibtex form;<br>
- <a href="https://specifications.openehr.org/tickets/SPECBASE-24" target="_blank" rel="noopener">SPECBASE-24</a>: Improve specifications block diagram and related explanations in sections 2 and 5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPECPUB-7" target="_blank" rel="noopener">SPECPUB-7</a>: Convert citations to bibtex form;<br>
+ <a href="https://github.com/S2health/S2-RM/SPECBASE-24" target="_blank" rel="noopener">SPECBASE-24</a>: Improve specifications block diagram and related explanations in sections 2 and 5.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>18 Jan 2020</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-88" target="_blank" rel="noopener">SPECRM-88</a>. Improve documentation relating to use of <code><em>uid</em></code> in versioning and <code>Locatable</code> descendants in <code>change_control</code> package (addresses <a href="https://specifications.openehr.org/tickets/SPECPR-322" target="_blank" rel="noopener">SPECPR-322</a>).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPECRM-88" target="_blank" rel="noopener">SPECRM-88</a>. Improve documentation relating to use of <code><em>uid</em></code> in versioning and <code>Locatable</code> descendants in <code>change_control</code> package (addresses <a href="https://github.com/S2health/S2-RM/SPECPR-322" target="_blank" rel="noopener">SPECPR-322</a>).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P Pazos,<br>
  M Polajnar,<br>
  T Beale</p></td>
@@ -415,32 +416,32 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2.2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECBASE-21" target="_blank" rel="noopener">SPECBASE-21</a>. Update Architecture Overview with new LANG component, and improved explanation of ITS. Improve package structure description. Replace some diagrams.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPECBASE-21" target="_blank" rel="noopener">SPECBASE-21</a>. Update Architecture Overview with new LANG component, and improved explanation of ITS. Improve package structure description. Replace some diagrams.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">26 Nov 2018</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-80" target="_blank" rel="noopener">SPECRM-80</a>. Improve description of <code><em>system_id</em></code> field in <code>EHR</code>, <code>Audit_details</code> and <code>FEEDER_AUDIT_DETAILS</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPECRM-80" target="_blank" rel="noopener">SPECRM-80</a>. Improve description of <code><em>system_id</em></code> field in <code>EHR</code>, <code>Audit_details</code> and <code>FEEDER_AUDIT_DETAILS</code>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">H Frankel,<br>
  T Beale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-78" target="_blank" rel="noopener">SPECRM-78</a>: Improve documentation on 'plain text' EHR URIs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPECRM-78" target="_blank" rel="noopener">SPECRM-78</a>: Improve documentation on 'plain text' EHR URIs.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">H Frankel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">22 Nov 2018</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECBASE-18" target="_blank" rel="noopener">SPECBASE-18</a>. Update text in Common IM to latest openPGP specification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPECBASE-18" target="_blank" rel="noopener">SPECBASE-18</a>. Update text in Common IM to latest openPGP specification.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P Pazos</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">17 May 2018</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECBASE-16" target="_blank" rel="noopener">SPECBASE-16</a>. Update Architecture Overview with current high-level elements.
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPECBASE-16" target="_blank" rel="noopener">SPECBASE-16</a>. Update Architecture Overview with current high-level elements.
  Section 5.3.4: Added text indicating BMM usage and alternatives.
  Section 11.2.4.2: Added JSON format version of example.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">E Sundvall,
@@ -449,9 +450,9 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECBASE-15" target="_blank" rel="noopener">SPECBASE-15</a>. Add Foundation Types specification to BASE;<br>
- <a href="https://specifications.openehr.org/tickets/SPECBASE-7" target="_blank" rel="noopener">SPECBASE-7</a>. Add Base Types specification to BASE.<br>
- <a href="https://specifications.openehr.org/tickets/SPECBASE-16" target="_blank" rel="noopener">SPECBASE-16</a>. Update Architecture Overview with current high-level elements.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPECBASE-15" target="_blank" rel="noopener">SPECBASE-15</a>. Add Foundation Types specification to BASE;<br>
+ <a href="https://github.com/S2health/S2-RM/SPECBASE-7" target="_blank" rel="noopener">SPECBASE-7</a>. Add Base Types specification to BASE.<br>
+ <a href="https://github.com/S2health/S2-RM/SPECBASE-16" target="_blank" rel="noopener">SPECBASE-16</a>. Update Architecture Overview with current high-level elements.<br>
  Section 2: Updated overview diagram and description to be based on 'components' as per current specifications program;<br>
  Section 5: Updated package diagrams to exported diags from BASE, RM, AM, SM UML components;<br>
  Section 7.4.1: small updates to statements to make them more current; fixed some references to ISO standards.</p></td>
@@ -463,7 +464,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-33" target="_blank" rel="noopener">SPECRM-33</a>. Clarify specification of DV_EHR_URI scheme. (solves <a href="https://specifications.openehr.org/tickets/SPECPR-48" target="_blank" rel="noopener">SPECPR-48</a>, <a href="https://specifications.openehr.org/tickets/SPECPR-50" target="_blank" rel="noopener">SPECPR-50</a>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPECRM-33" target="_blank" rel="noopener">SPECRM-33</a>. Clarify specification of DV_EHR_URI scheme. (solves <a href="https://github.com/S2health/S2-RM/SPECPR-48" target="_blank" rel="noopener">SPECPR-48</a>, <a href="https://github.com/S2health/S2-RM/SPECPR-50" target="_blank" rel="noopener">SPECPR-50</a>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">H Frankel,<br>
  E Sundvall,<br>
  B Lah,<br>
@@ -472,21 +473,21 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-27" target="_blank" rel="noopener">SPECRM-27</a>. Relax unique name rule in <code>Locatable</code>: change text of sections 11.2.2 and 11.2.4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPECRM-27" target="_blank" rel="noopener">SPECRM-27</a>. Relax unique name rule in <code>Locatable</code>: change text of sections 11.2.2 and 11.2.4.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">H Frankel,<br>
  T Beale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-25" target="_blank" rel="noopener">SPECRM-25</a>. Corrections to Architecture Overview specification: text in section 9.2.2 about <code>Locatable_REF</code> referred to wrong specification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPECRM-25" target="_blank" rel="noopener">SPECRM-25</a>. Corrections to Architecture Overview specification: text in section 9.2.2 about <code>Locatable_REF</code> referred to wrong specification.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECRM-28" target="_blank" rel="noopener">SPECRM-28</a>. Corrections to EHR and Common IM documentation.<br>
- <a href="https://specifications.openehr.org/tickets/SPECPR-2" target="_blank" rel="noopener">SPECPR-2</a>. Changes to Architecture Overview section 5.2.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPECRM-28" target="_blank" rel="noopener">SPECRM-28</a>. Corrections to EHR and Common IM documentation.<br>
+ <a href="https://github.com/S2health/S2-RM/SPECPR-2" target="_blank" rel="noopener">SPECPR-2</a>. Changes to Architecture Overview section 5.2.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R Erens</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -495,7 +496,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-249" target="_blank" rel="noopener">SPEC-249</a>. Paths and locators minor errors in Architecture Overview and Common IM. Typos corrected in sections 9.2.2 and 11.3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPEC-249" target="_blank" rel="noopener">SPEC-249</a>. Paths and locators minor errors in Architecture Overview and Common IM. Typos corrected in sections 9.2.2 and 11.3.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C Ma,<br>
  T Beale<br>
  R Chen</p></td>
@@ -503,7 +504,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-257" target="_blank" rel="noopener">SPEC-257</a>: Correct minor typos and clarify text. Section 9.2.1 para 1 line 2: with -&#8594; within.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPEC-257" target="_blank" rel="noopener">SPEC-257</a>: Correct minor typos and clarify text. Section 9.2.1 para 1 line 2: with -&#8594; within.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C Ma,<br>
  R Chen,<br>
  T Cook</p></td>
@@ -511,7 +512,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-284" target="_blank" rel="noopener">SPEC-284</a>: Correct inconsistencies in naming of <code><em>term_definitions</em></code>, <code><em>constraint_definitions</em></code>, <code><em>term_bindings</em></code>, <code><em>constraint_bindings</em></code> attributes in XML-schema and specifications.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPEC-284" target="_blank" rel="noopener">SPEC-284</a>: Correct inconsistencies in naming of <code><em>term_definitions</em></code>, <code><em>constraint_definitions</em></code>, <code><em>term_bindings</em></code>, <code><em>constraint_bindings</em></code> attributes in XML-schema and specifications.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A Torrisi</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -520,19 +521,19 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-200" target="_blank" rel="noopener">SPEC-200</a>: Correct package names in RM diagram.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPEC-200" target="_blank" rel="noopener">SPEC-200</a>: Correct package names in RM diagram.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">D Lloyd</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">12 Apr 2007</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-130" target="_blank" rel="noopener">SPEC-130</a>: Correct security details in <code>Locatable</code> and <code>Archetyped</code> classes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPEC-130" target="_blank" rel="noopener">SPEC-130</a>: Correct security details in <code>Locatable</code> and <code>Archetyped</code> classes.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPEC-203" target="_blank" rel="noopener">SPEC-203</a>: Release 1.0 explanatory text improvements.  Improved path explanation. Slight re-ordering of main headings.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/S2health/S2-RM/SPEC-203" target="_blank" rel="noopener">SPEC-203</a>: Release 1.0 explanatory text improvements.  Improved path explanation. Slight re-ordering of main headings.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T Beale<br>
  G Grieve<br>
  T Shannon<br>
@@ -569,9 +570,9 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Initial Writing - content taken from Roadmap document.<br>
- <a href="https://specifications.openehr.org/tickets/SPEC-147" target="_blank" rel="noopener">SPEC-147</a>. Make <code>DIRECTORY</code> Re-usable<br>
- <a href="https://specifications.openehr.org/tickets/SPEC-167" target="_blank" rel="noopener">SPEC-167</a>. Move AOM description package to <code>resource</code> package in Common IM.<br>
- <a href="https://specifications.openehr.org/tickets/SPEC-185" target="_blank" rel="noopener">SPEC-185</a>. Improved EVENT model.</p></td>
+ <a href="https://github.com/S2health/S2-RM/SPEC-147" target="_blank" rel="noopener">SPEC-147</a>. Make <code>DIRECTORY</code> Re-usable<br>
+ <a href="https://github.com/S2health/S2-RM/SPEC-167" target="_blank" rel="noopener">SPEC-167</a>. Move AOM description package to <code>resource</code> package in Common IM.<br>
+ <a href="https://github.com/S2health/S2-RM/SPEC-185" target="_blank" rel="noopener">SPEC-185</a>. Improved EVENT model.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">29 Jan 2006</p></td>
 </tr>
@@ -650,7 +651,7 @@
 <div class="sect2">
 <h3 id="_status"><a class="anchor" href="#_status"></a>1.2. Status</h3>
 <div class="paragraph">
-<p>This specification is in the STABLE state. The development version of this document can be found at <a href="https://specifications.s2health.io/releases/RM/latest/architecture_overview.html" target="_blank" rel="noopener">https://specifications.s2health.io/releases/RM/latest/architecture_overview.html</a>.</p>
+<p>This specification is in the DEVELOPMENT state. The development version of this document can be found at <a href="https://platform.s2health.org/releases/RM/latest/docs/architecture_overview.html" target="_blank" rel="noopener">https://platform.s2health.org/releases/RM/latest/docs/architecture_overview.html</a>.</p>
 </div>
 <div class="paragraph">
 <p>Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:</p>
@@ -665,10 +666,10 @@
 <p>Feedback may be provided on the <a href="https://discourse.openehr.org/c/specifications" target="_blank" rel="noopener">technical mailing list</a>.</p>
 </div>
 <div class="paragraph">
-<p>Issues may be raised on the <a href="https://specifications.s2health.io/components/S2-RM/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
+<p>Issues may be raised on the <a href="https://github.com/S2health/S2-RM/issues?q=is%3Aissue%20state%3Aopen%20label%3Adocumentation%20label%3Aenhancement%20label%3Aerror" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
 </div>
 <div class="paragraph">
-<p>To see changes made due to previously reported issues, see the <a href="https://specifications.s2health.io/components/S2-RM/history" target="_blank" rel="noopener">S2-RM component Change Request tracker</a>.</p>
+<p>To see changes made due to previously reported issues, see the <a href="https://github.com/S2health/S2-RM/milestones?state=closed" target="_blank" rel="noopener">S2-RM component Change Request tracker</a>.</p>
 </div>
 </div>
 </div>
@@ -713,13 +714,13 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Some of these specifications (e.g. Antlr grammars) are directly usable in software development. Most of the abstract specifications have concrete expressions in formalisms such as JSON, XML schema, openEHR BMM and REST APIs enabling their direct use in development. These are known as Implementation Technology Specifications (ITSs; also known as 'Platform-Specific Models' or PSMs), and are collected in the <a href="https://specifications.openehr.org/releases/ITS/latest/index" target="_blank" rel="noopener">ITS component</a> shown on the right. They also constitute openEHR&#8217;s <em>interoperability specifications</em>.</p>
+<p>Some of these specifications (e.g. Antlr grammars) are directly usable in software development. Most of the abstract specifications have concrete expressions in formalisms such as JSON, XML schema, openEHR BMM and REST APIs enabling their direct use in development. These are known as Implementation Technology Specifications (ITSs; also known as 'Platform-Specific Models' or PSMs), and are collected in the <a href="https://specifications.openehr.org/releases/ITS/dev/index" target="_blank" rel="noopener">ITS component</a> shown on the right. They also constitute openEHR&#8217;s <em>interoperability specifications</em>.</p>
 </div>
 <div class="paragraph">
 <p>As implementation technologies change over time, the ITS specifications will be replaced, while the main group of abstract specifications will generally only change in response to real-world requirements other than information technology.</p>
 </div>
 <div class="paragraph">
-<p>The <a href="https://specifications.openehr.org/releases/CNF/latest/index" target="_blank" rel="noopener">CNF component</a> at the top defines <em>conformance criteria</em>, and is primarily based on ITS artefacts such as REST APIs, XSDs, but also upon AQL queries, archetypes and some other abstract artefacts. It includes a formal definition of the notional openEHR Platform and how to test it in a standard way. This is used as the basis for openEHR product certification and also for procurement tender specification.</p>
+<p>The <a href="https://specifications.openehr.org/releases/CNF/{cnf_release}/index" target="_blank" rel="noopener">CNF component</a> at the top defines <em>conformance criteria</em>, and is primarily based on ITS artefacts such as REST APIs, XSDs, but also upon AQL queries, archetypes and some other abstract artefacts. It includes a formal definition of the notional openEHR Platform and how to test it in a standard way. This is used as the basis for openEHR product certification and also for procurement tender specification.</p>
 </div>
 <div class="paragraph">
 <p>The specifications published by openEHR constitute the <em>primary reference for all openEHR semantics</em>. The presentation style is deliberately intended to be clear and semantically close to the <em>ideas</em> being communicated. Accordingly, the specifications do not follow any particular programming language or idiom, but instead use  various formalisms and illustrations appropriate to each topic.</p>
@@ -919,7 +920,7 @@ summarised as:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>One comprehensive statement of EHR requirements covering many of the above is the <a href="https://www.iso.org/standard/52823.html">ISO 18308, ISO Technical Report 18308</a> for which an <a href="https://specifications.openehr.org/releases/1.0.2/architecture/requirements/iso18308_conformance.pdf" target="_blank" rel="noopener">openEHR profile has been created</a>. The requirements summarised above are described in more detail in the <a href="https://specifications.openehr.org/releases/RM/latest/ehr.html" target="_blank" rel="noopener">openEHR EHR Information Model specification</a>.</p>
+<p>One comprehensive statement of EHR requirements covering many of the above is the <a href="https://www.iso.org/standard/52823.html">ISO 18308, ISO Technical Report 18308</a> for which an {openehr_18308}[openEHR profile has been created^]. The requirements summarised above are described in more detail in the <a href="https://specifications.openehr.org/releases/RM/dev/ehr.html" target="_blank" rel="noopener">openEHR EHR Information Model specification</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1021,7 +1022,7 @@ systems.</p>
 <div class="sect3">
 <h4 id="_multi_level_modelling_and_archetypes"><a class="anchor" href="#_multi_level_modelling_and_archetypes"></a>4.1.1. Multi-level Modelling and Archetypes</h4>
 <div class="paragraph">
-<p>One of the key paradigms on which openEHR is based is known as <em>multi-level modelling</em>, originally described in <a href="#Beale2002">Beale (2002)</a> as 'two-level modelling'. Under the multi-level approach, there are three levels of models required for a system:</p>
+<p>One of the key paradigms on which openEHR is based is known as <em>multi-level modelling</em>, originally described in <span class="citation"><a href="#Beale2002">Beale (2002)</a></span> as 'two-level modelling'. Under the multi-level approach, there are three levels of models required for a system:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1029,10 +1030,10 @@ systems.</p>
 <p><em>reference model (RM)</em>: a stable reference information model constitutes the first level of modelling;</p>
 </li>
 <li>
-<p><em>re-usable content element definitions</em>: formal definitions of clinical content data points and groups, in the form of <a href="https://specifications.openehr.org/releases/AM/latest/index" target="_blank" rel="noopener"><em>archetypes</em></a>;</p>
+<p><em>re-usable content element definitions</em>: formal definitions of clinical content data points and groups, in the form of <a href="https://specifications.openehr.org/releases/AM/dev/index" target="_blank" rel="noopener"><em>archetypes</em></a>;</p>
 </li>
 <li>
-<p><em>context-specific data set definitions</em>: formal definitions of use-case specific data sets used for forms, documents, messages etc, created by combining required elements of relevant archetypes into openEHR <a href="https://specifications.openehr.org/releases/AM/latest/Overview.html#_templates" target="_blank" rel="noopener"><em>templates</em></a>.</p>
+<p><em>context-specific data set definitions</em>: formal definitions of use-case specific data sets used for forms, documents, messages etc, created by combining required elements of relevant archetypes into openEHR <a href="https://specifications.openehr.org/releases/AM/dev/Overview.html#_templates" target="_blank" rel="noopener"><em>templates</em></a>.</p>
 </li>
 </ul>
 </div>
@@ -1052,7 +1053,7 @@ systems.</p>
 <div class="title">Figure 5. Archetype Meta-architecture</div>
 </div>
 <div class="paragraph">
-<p>In this figure, 'data' as we know it in normal information systems (shown on the bottom left) conforms in the usual way to an object model (top left). Systems engineered in the 'classic' way (i.e. all domain semantics are encoded somewhere in the software or database) are limited to this kind of architecture. With the use of multi-level modelling, runtime data now conform semantically to archetypes as well as concretely to the reference model. All archetypes are expressed in a generic <a href="https://specifications.openehr.org/releases/AM/latest/ADL2.html">Archetype Definition Language (ADL)</a>, which is the basis of <a href="https://www.iso.org/standard/62305.html">ISO standard 13606-2</a>.</p>
+<p>In this figure, 'data' as we know it in normal information systems (shown on the bottom left) conforms in the usual way to an object model (top left). Systems engineered in the 'classic' way (i.e. all domain semantics are encoded somewhere in the software or database) are limited to this kind of architecture. With the use of multi-level modelling, runtime data now conform semantically to archetypes as well as concretely to the reference model. All archetypes are expressed in a generic <a href="https://specifications.openehr.org/releases/AM/dev/ADL2.html">Archetype Definition Language (ADL)</a>, which is the basis of <a href="https://www.iso.org/standard/62305.html">ISO standard 13606-2</a>.</p>
 </div>
 <div class="paragraph">
 <p>The details of how archetypes and templates work in openEHR are described in the <a href="#_archetypes_and_templates">Section 10</a>.</p>
@@ -1077,7 +1078,7 @@ systems.</p>
 <div class="sect2">
 <h3 id="_separation_of_responsibilities"><a class="anchor" href="#_separation_of_responsibilities"></a>4.2. Separation of Responsibilities</h3>
 <div class="paragraph">
-<p>A second design paradigm used in openEHR is that of separation of responsibilities within the computing environment. Complex domains are only tractable if the functionality is first partitioned into broad areas of interest, i.e. into a 'system of systems' (<a href="#Maier2000">Maier&#44; 2000</a>). This principle has been understood in computer science for a long time under the rubrics 'low coupling', 'encapsulation' and 'componentisation', and was the driver for the explosion of object-oriented languages, libraries and frameworks.</p>
+<p>A second design paradigm used in openEHR is that of separation of responsibilities within the computing environment. Complex domains are only tractable if the functionality is first partitioned into broad areas of interest, i.e. into a 'system of systems' <span class="citation">(<a href="#Maier2000">Maier&#44; 2000</a>)</span>. This principle has been understood in computer science for a long time under the rubrics 'low coupling', 'encapsulation' and 'componentisation', and was the driver for the explosion of object-oriented languages, libraries and frameworks.</p>
 </div>
 <div class="paragraph">
 <p>When applied to larger systems, such as that needed to run a hospital or regional health network, the modern form of the paradigm is Services Oriented Architecture (SOA), whereby the components of the system are coarse-grained services. In this approach, each area of functionality is formally modelled and implemented as a self-standing service with a defined interface.</p>
@@ -1180,8 +1181,43 @@ Technological
 </table>
 </div>
 <div class="paragraph">
-<p>The openEHR specifications accordingly include an information viewpoint - the openEHR Reference Model - and a computational viewpoint - the openEHR Service Model. The Engineering viewpoint corresponds to the <a href="https://specifications.openehr.org/releases/ITS/latest/index" target="_blank" rel="noopener">openEHR Implementation Technology Specifications (ITS)</a>, while the Technological viewpoint corresponds to the technologies and components used in an actual deployment. An important aspect of the division into viewpoints is that there is generally not a 1:1 relationship between model specifications in each viewpoint. For example, there might be a concept of 'health mandate' (see <a href="https://www.iso.org/standard/58102.html">ISO 13940, Continuity of Care concepts</a>) in the enterprise viewpoint. In the information viewpoint, this might have become a model containing many classes. In the computational viewpoint, the information structures defined in the information viewpoint are likely to recur in multiple services, and there may or may not be a
+<p>The openEHR specifications accordingly include an information viewpoint - the openEHR Reference Model - and a computational viewpoint - the openEHR Service Model. The Engineering viewpoint corresponds to the <a href="https://specifications.openehr.org/releases/ITS/dev/index" target="_blank" rel="noopener">openEHR Implementation Technology Specifications (ITS)</a>, while the Technological viewpoint corresponds to the technologies and components used in an actual deployment. An important aspect of the division into viewpoints is that there is generally not a 1:1 relationship between model specifications in each viewpoint. For example, there might be a concept of 'health mandate' (see <a href="https://www.iso.org/standard/58102.html">ISO 13940, Continuity of Care concepts</a>) in the enterprise viewpoint. In the information viewpoint, this might have become a model containing many classes. In the computational viewpoint, the information structures defined in the information viewpoint are likely to recur in multiple services, and there may or may not be a
 'health mandate' service. The granularity of services defined in the computational viewpoint corresponds most strongly to divisions of function in an enterprise or region, while the granularity of components in the information view points corresponds to the granularity of mental concepts in the problem space, the latter almost always being more fine-grained.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ontological_information_architecture"><a class="anchor" href="#_ontological_information_architecture"></a>4.4. Ontological Information Architecture</h3>
+<div class="paragraph">
+<p>S2 adopts an ontological approach information architecture, which results in two categories of information entity in its model universe:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>'digital twins' of ontic (real world) entities;</p>
+</li>
+<li>
+<p>epistemic information objects resulting from observation, inference, issuing or orders and other information-generating interactions with the real world.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>One consequence of this approach is that elements in S2 domain models are all marked with a code that indicates what the element is about.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>independent entities, such as a person or organ;</p>
+</li>
+<li>
+<p>dependent entities such as a quality, e.g. blood pressure;</p>
+</li>
+<li>
+<p>relational entities, such as a patient&#8217;s participation in a physiotherapy programme;</p>
+</li>
+<li>
+<p>other informational entities, e.g. previous utterances of the patient;</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1302,16 +1338,16 @@ In RM Release 1.0.3 and earlier releases, the contents of the <code>base</code> 
 <div class="sect3">
 <h4 id="_foundation_types"><a class="anchor" href="#_foundation_types"></a>5.3.1. Foundation Types</h4>
 <div class="paragraph">
-<p>The <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html" target="_blank" rel="noopener">Foundation Types specification</a> provides a guide for integrating openEHR models proper into the type systems of implementation technologies. It is specified by the <code>foundations_types</code> package. This contains the special package <code>primitive_types</code>, which describes inbuilt types <em>assumed</em> by openEHR in external type systems. This provides a basis for determining mappings from openEHR to programming languages. For example such as <code>String.<em>is_empty</em></code> in openEHR might be mapped to <code>String.<em>empty()</em></code> in a programming environment.</p>
+<p>The {openehr_foundation_types}[Foundation Types specification^] provides a guide for integrating openEHR models proper into the type systems of implementation technologies. It is specified by the <code>foundations_types</code> package. This contains the special package <code>primitive_types</code>, which describes inbuilt types <em>assumed</em> by openEHR in external type systems. This provides a basis for determining mappings from openEHR to programming languages. For example such as <code>String.<em>is_empty</em></code> in openEHR might be mapped to <code>String.<em>empty()</em></code> in a programming environment.</p>
 </div>
 <div class="paragraph">
 <p>Other foundation types include basic structures (<code>Array&lt;T&gt;</code>, <code>Hash&lt;K,V&gt;</code> etc), time types, and various types enabling functional concepts (principally lambda expressions) to be expressed in the openEHR specifications.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_model_support"><a class="anchor" href="#_model_support"></a>5.3.2. Base Types</h4>
+<h4 id="_base_types"><a class="anchor" href="#_base_types"></a>5.3.2. Base Types</h4>
 <div class="paragraph">
-<p>The <a href="https://specifications.openehr.org/releases/BASE/latest/model_support.html" target="_blank" rel="noopener">Base Types specification</a> defines generic openEHR types used in other openEHR components. It is comprised of the <code>definitions</code>, <code>identification</code>, <code>terminology</code> and  <code>measurement</code> sub-packages. The semantics defined in these packages allow all other models to use identifiers and to have access to knowledge services like terminology and other reference data.</p>
+<p>The {openehr_model_support}[Base Types specification^] defines generic openEHR types used in other openEHR components. It is comprised of the <code>definitions</code>, <code>identification</code>, <code>terminology</code> and  <code>measurement</code> sub-packages. The semantics defined in these packages allow all other models to use identifiers and to have access to knowledge services like terminology and other reference data.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1382,7 +1418,7 @@ Until BASE Release 1.1.0, the contents of the LANG component resided in the BASE
 <div class="sect3">
 <h4 id="_basic_meta_model_bmm"><a class="anchor" href="#_basic_meta_model_bmm"></a>5.4.1. Basic Meta-Model (BMM)</h4>
 <div class="paragraph">
-<p>The <a href="https://specifications.openehr.org/releases/LANG/latest/bmm.html" target="_blank" rel="noopener">BMM specification</a> defines a generic meta-model, suitable for formally expressing object-oriented models, including those of openEHR (RM etc). It is roughly an equivalent of UML&#8217;s XMI, but fixes various problems with the latter around generic (template) types, while being significantly less complex and fragile. BMM models can be expressed in the <a href="https://specifications.openehr.org/releases/LANG/latest/odin.html" target="_blank" rel="noopener">ODIN syntax</a> or any other regular object syntax (JSON etc), and conveniently edited by hand. BMM files are used within tools such as the <a href="https://www.openehr.org/downloads/ADLworkbench" target="_blank" rel="noopener">openEHR ADL Workbench</a> and some openEHR tooling software.</p>
+<p>The <a href="https://specifications.openehr.org/releases/LANG/dev/bmm.html" target="_blank" rel="noopener">BMM specification</a> defines a generic meta-model, suitable for formally expressing object-oriented models, including those of openEHR (RM etc). It is roughly an equivalent of UML&#8217;s XMI, but fixes various problems with the latter around generic (template) types, while being significantly less complex and fragile. BMM models can be expressed in the <a href="https://specifications.openehr.org/releases/LANG/dev/odin.html" target="_blank" rel="noopener">ODIN syntax</a> or any other regular object syntax (JSON etc), and conveniently edited by hand. BMM files are used within tools such as the <a href="https://www.openehr.org/downloads/ADLworkbench" target="_blank" rel="noopener">openEHR ADL Workbench</a> and some openEHR tooling software.</p>
 </div>
 <div class="paragraph">
 <p>The BMM is primarily intended to reduce complexity for tools that consume reference model definitions, but is not the only way to implement such tools. Similar tools can be based directly on the openEHR published UML models, as long as typing, template types and qualified attributes are properly handled. Another alternative means of working with models is via software library implementations of the relevant models (openEHR Reference Model etc).</p>
@@ -1394,7 +1430,7 @@ Until BASE Release 1.1.0, the contents of the LANG component resided in the BASE
 <div class="sect3">
 <h4 id="_object_data_instance_notation_odin"><a class="anchor" href="#_object_data_instance_notation_odin"></a>5.4.2. Object Data Instance Notation (ODIN)</h4>
 <div class="paragraph">
-<p>The <a href="https://specifications.openehr.org/releases/LANG/latest/odin.html" target="_blank" rel="noopener">ODIN syntax</a> is used to implement faithful machine serialisation and deserialisation of in-memory object graphs, and is a rough equivalent of JSON, YAML and some kinds of XML. It provides more leaf types than any of these, and also supports in-built typing (required to properly represent dynamic binding of polymorphic attributes) and Xpath-like paths.</p>
+<p>The <a href="https://specifications.openehr.org/releases/LANG/dev/odin.html" target="_blank" rel="noopener">ODIN syntax</a> is used to implement faithful machine serialisation and deserialisation of in-memory object graphs, and is a rough equivalent of JSON, YAML and some kinds of XML. It provides more leaf types than any of these, and also supports in-built typing (required to properly represent dynamic binding of polymorphic attributes) and Xpath-like paths.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1433,7 +1469,7 @@ Until BASE Release 1.1.0, the contents of the LANG component resided in the BASE
 </div>
 <div id="rm_packages" class="imageblock text-center text-center">
 <div class="content">
-<img src="https://specifications.openehr.org/releases/RM/latest/UML/diagrams/RM-packages.svg" alt="RM packages">
+<img src="https://specifications.openehr.org/releases/RM/dev/UML/diagrams/RM-packages.svg" alt="RM packages">
 </div>
 <div class="title">Figure 13. Structure of <code>org.openehr.rm</code> package</div>
 </div>
@@ -1642,7 +1678,7 @@ a flexible way of including the arbitrary demographic attributes allowed in the 
 </div>
 <div id="aom_2_packages" class="imageblock text-center text-center">
 <div class="content">
-<img src="https://specifications.openehr.org/releases/AM/latest/UML/diagrams/AM-packages.svg" alt="AM packages">
+<img src="https://specifications.openehr.org/releases/AM/dev/UML/diagrams/AM-packages.svg" alt="AM packages">
 </div>
 <div class="title">Figure 15. Structure of the ADL 2 version <code>org.openehr.am</code> package</div>
 </div>
@@ -1651,12 +1687,12 @@ a flexible way of including the arbitrary demographic attributes allowed in the 
 </div>
 <div id="aom_14_packages" class="imageblock text-center text-center">
 <div class="content">
-<img src="https://specifications.openehr.org/releases/AM/latest/UML/AOM1.4/diagrams/AM-packages.svg" alt="AM packages">
+<img src="https://specifications.openehr.org/releases/AM/dev/UML/AOM1.4/diagrams/AM-packages.svg" alt="AM packages">
 </div>
 <div class="title">Figure 16. Structure of the ADL 1.4 <code>org.openehr.am</code> package</div>
 </div>
 <div class="paragraph">
-<p>Another key specification is the Archetype Identification specification, which defines semantics for archetype identifiers, versioning and life-cycle. The formal specifications may be found on the <a href="https://specifications.openehr.org/releases/AM/latest/index">Archetype Model index page</a>.</p>
+<p>Another key specification is the Archetype Identification specification, which defines semantics for archetype identifiers, versioning and life-cycle. The formal specifications may be found on the <a href="https://specifications.openehr.org/releases/AM/dev/index">Archetype Model index page</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1666,7 +1702,7 @@ a flexible way of including the arbitrary demographic attributes allowed in the 
 </div>
 <div id="service_packages" class="imageblock text-center text-center">
 <div class="content">
-<img src="https://specifications.openehr.org/releases/SM/latest/UML/diagrams/SM-platform-packages.svg" alt="SM platform packages" width="50%">
+<img src="https://specifications.openehr.org/releases/SM/dev/UML/diagrams/SM-platform-packages.svg" alt="SM platform packages" width="50%">
 </div>
 <div class="title">Figure 17. Structure of the <code>org.openehr.sm</code> package</div>
 </div>
@@ -1728,7 +1764,7 @@ based knowledge services in the environment, which along with services for acces
 <div class="sect3">
 <h4 id="_system_identity"><a class="anchor" href="#_system_identity"></a>6.1.1. System Identity</h4>
 <div class="paragraph">
-<p>Within the openEHR architecture, a <code><em>system_id</em></code> attribute is recorded both within each patient EHR (<a href="https://specifications.openehr.org/releases/RM/latest/ehr.html#_ehr_class" target="_blank" rel="noopener"><code>EHR</code> class</a>), and also within the audit created with each commit of data to an EHR (<a href="https://specifications.openehr.org/releases/RM/latest/common.html#_audit_details_class" target="_blank" rel="noopener"><code>Audit_details</code> class</a>). It is also used in feeder system audits that record the origin of imported data (<a href="https://specifications.openehr.org/releases/RM/latest/common.html#_feeder_audit_details_class" target="_blank" rel="noopener"><code>FEEDER_AUDIT_DETAILS</code> class</a>). This identifier identifies the logical EHR system as described above, and may be of any form. Common forms include the reverse domain name and plain and structured string identifiers.</p>
+<p>Within the openEHR architecture, a <code><em>system_id</em></code> attribute is recorded both within each patient EHR (<a href="https://specifications.openehr.org/releases/RM/dev/ehr.html#_ehr_class" target="_blank" rel="noopener"><code>EHR</code> class</a>), and also within the audit created with each commit of data to an EHR (<a href="https://specifications.openehr.org/releases/RM/dev/common.html#_audit_details_class" target="_blank" rel="noopener"><code>Audit_details</code> class</a>). It is also used in feeder system audits that record the origin of imported data (<a href="https://specifications.openehr.org/releases/RM/dev/common.html#_feeder_audit_details_class" target="_blank" rel="noopener"><code>FEEDER_AUDIT_DETAILS</code> class</a>). This identifier identifies the logical EHR system as described above, and may be of any form. Common forms include the reverse domain name and plain and structured string identifiers.</p>
 </div>
 <div class="paragraph">
 <p>The system identifier is <em>not assumed to be directly processable</em>, but may instead be used as a key, for example in a service maintaining location information.</p>
@@ -1836,7 +1872,7 @@ of the openEHR EHR is shown below.</p>
 </div>
 <div id="high_level_ehr_structure" class="imageblock text-center text-center">
 <div class="content">
-<img src="https://specifications.openehr.org/releases/RM/latest/ehr/diagrams/high_level_ehr_structure.svg" alt="high level ehr structure">
+<img src="https://specifications.openehr.org/releases/RM/dev/ehr/diagrams/high_level_ehr_structure.svg" alt="high level ehr structure">
 </div>
 <div class="title">Figure 20. High-level Structure of the openEHR EHR</div>
 </div>
@@ -1897,16 +1933,16 @@ Entries make up the vast majority of archetypes defined for the EHR.</p>
 </div>
 <div id="entry_model_simple" class="imageblock text-center text-center">
 <div class="content">
-<img src="https://specifications.openehr.org/releases/RM/latest/UML/diagrams/RM-composition.entry-simple.svg" alt="RM composition.entry simple" width="60%">
+<img src="https://specifications.openehr.org/releases/RM/dev/UML/diagrams/RM-composition.entry-simple.svg" alt="RM composition.entry simple" width="60%">
 </div>
 <div class="title">Figure 22. The openEHR Entry model (in EHR IM)</div>
 </div>
 <div class="paragraph">
-<p>The choice of these types is based on the clinical problem-solving process, described in <a href="#Beale_Heard2007">Beale &amp; Heard (2007)</a> shown below.</p>
+<p>The choice of these types is based on the clinical problem-solving process, described in <span class="citation"><a href="#Beale_Heard2007">Beale &amp; Heard (2007)</a></span> shown below.</p>
 </div>
 <div id="clinical_investigator_process" class="imageblock text-center text-center">
 <div class="content">
-<img src="https://specifications.openehr.org/releases/RM/latest/docs/ehr/diagrams/clinical_investigator_recording_process.svg" alt="clinical investigator recording process" width="65%">
+<img src="https://specifications.openehr.org/releases/RM/dev/docs/ehr/diagrams/clinical_investigator_recording_process.svg" alt="clinical investigator recording process" width="65%">
 </div>
 <div class="title">Figure 23. Relationship of information types to the investigation process</div>
 </div>
@@ -1921,12 +1957,12 @@ actions (instructions) for next steps, which may be further investigation, or ma
 designed to resolve the problem, and finally, executing the instructions (actions).</p>
 </div>
 <div class="paragraph">
-<p>This process model is a synthesis of Lawrence Weed&#8217;s 'problem-oriented' method of EHR recording, and later related efforts, including the model of <a href="#Rector1994">Rector Nowlan &amp; Kay (1991)</a>, and the 'hypothetico-deductive' model of reasoning (see e.g. <a href="#Elstein1978">Elstein Shulman &amp; Sprafka (1978)</a>). However hypothesis-making and testing is not the only successful process used by clinical professionals - evidence shows that many (particularly those older and more experienced) rely on pattern recognition and direct retrieval of plans used previously with similar patients or prototype models. The investigator process model used in openEHR is compatible with both cognitive approaches, since it does not say how opinions are formed, nor imply any specific number or size of iterations to bring the process to a conclusion, nor even require all steps to be present while iterating (e.g. GPs often prescribe without making a firm diagnosis). Consequently, the openEHR Entry model does not impose a process model, it only provides the possible types of information that might occur.</p>
+<p>This process model is a synthesis of Lawrence Weed&#8217;s 'problem-oriented' method of EHR recording, and later related efforts, including the model of <span class="citation"><a href="#Rector1994">Rector Nowlan &amp; Kay (1991)</a></span>, and the 'hypothetico-deductive' model of reasoning (see e.g. <span class="citation"><a href="#Elstein1978">Elstein Shulman &amp; Sprafka (1978)</a></span>). However hypothesis-making and testing is not the only successful process used by clinical professionals - evidence shows that many (particularly those older and more experienced) rely on pattern recognition and direct retrieval of plans used previously with similar patients or prototype models. The investigator process model used in openEHR is compatible with both cognitive approaches, since it does not say how opinions are formed, nor imply any specific number or size of iterations to bring the process to a conclusion, nor even require all steps to be present while iterating (e.g. GPs often prescribe without making a firm diagnosis). Consequently, the openEHR Entry model does not impose a process model, it only provides the possible types of information that might occur.</p>
 </div>
 <div class="sect4">
 <h5 id="_ontology_of_entry_types"><a class="anchor" href="#_ontology_of_entry_types"></a>6.4.1.1. Ontology of Entry Types</h5>
 <div class="paragraph">
-<p>In the clinical world practitioners do not think in terms of only five kinds of data corresponding to the subtypes of Entry described above. There are many subtypes of each of these types, of which some are shown in the figure below, reproduced from <a href="#Beale_Heard2007">Beale &amp; Heard (2007)</a>.</p>
+<p>In the clinical world practitioners do not think in terms of only five kinds of data corresponding to the subtypes of Entry described above. There are many subtypes of each of these types, of which some are shown in the figure below, reproduced from <span class="citation"><a href="#Beale_Heard2007">Beale &amp; Heard (2007)</a></span>.</p>
 </div>
 <div id="CIR_ontology" class="imageblock text-center text-center">
 <div class="content">
@@ -2005,7 +2041,7 @@ environment.</p>
 </div>
 <div id="instruction_state_machine" class="imageblock text-center text-center">
 <div class="content">
-<img src="https://specifications.openehr.org/releases/RM/latest/UML/diagrams/RM-InstructionStateMachine.svg" alt="RM InstructionStateMachine">
+<img src="https://specifications.openehr.org/releases/RM/dev/UML/diagrams/RM-InstructionStateMachine.svg" alt="RM InstructionStateMachine">
 </div>
 <div class="title">Figure 25. openEHR standard Instruction State Machine</div>
 </div>
@@ -2021,11 +2057,11 @@ modelled using archetyping of generic data attributes. The following figure show
 of times with respect to the observation process, and the corresponding attributes within the
 openEHR reference model. Note that under different scenarios, such as GP consultation, radiology
 reporting and others, the temporal relationships may be quite different than those shown in the figure.
-Time is described in detail in the <a href="https://specifications.openehr.org/releases/RM/latest/ehr.html#_time_in_the_ehr">EHR Information Model</a>.</p>
+Time is described in detail in the <a href="https://specifications.openehr.org/releases/RM/dev/ehr.html#_time_in_the_ehr">EHR Information Model</a>.</p>
 </div>
 <div id="time_in_the_ehr" class="imageblock text-center text-center">
 <div class="content">
-<img src="https://specifications.openehr.org/releases/RM/latest/ehr/diagrams/time_in_the_ehr.svg" alt="time in the ehr" width="70%">
+<img src="https://specifications.openehr.org/releases/RM/dev/ehr/diagrams/time_in_the_ehr.svg" alt="time in the ehr" width="70%">
 </div>
 <div class="title">Figure 26. Time in the EHR</div>
 </div>
@@ -2200,7 +2236,7 @@ by the patient):</p>
 <p>A key principle with respect to the design of mechanisms supporting security, confidentiality and
 integrity has to be kept in mind: the likelihood of any given mode of targeted inappropriate access is
 proportional to the perceived value of the information and inversely proportional to the cost of access.
-To paraphrase Ross Anderson’s BMA paper (<a href="#Anderson1996">Anderson &amp; Anderson&#44; 1996</a>) on health data security, for a given access, the perpetrator
+To paraphrase Ross Anderson’s BMA paper <span class="citation">(<a href="#Anderson1996">Anderson &amp; Anderson&#44; 1996</a>)</span> on health data security, for a given access, the perpetrator
 will try to find the simplest, cheapest and quickest method, which is more likely to be bribery or
 burglary than James Bond-inspired technology. openEHR makes use of this principle by providing
 some relatively simple mechanisms that are cheap to implement but can make misuse quite difficult,
@@ -2842,7 +2878,7 @@ au.gov.health.rdh.ehr1                  -- id of creating system
 </div>
 </div>
 <div class="paragraph">
-<p>This 3-part tuple is known as a <em>version locator</em> and is defined by the class <code>OBJECT_VERSION_ID</code> in the <a href="https://specifications.openehr.org/releases/BASE/latest/model_support.html#_identification_package" target="_blank" rel="noopener"><code>identification</code> package section of the Base Types specification</a>. The openEHR version identification scheme is described in detail in the <a href="https://specifications.openehr.org/releases/RM/latest/common.html#_change_control_package" target="_blank" rel="noopener"><code>change_control</code> package section of the Common IM</a>.</p>
+<p>This 3-part tuple is known as a <em>version locator</em> and is defined by the class <code>OBJECT_VERSION_ID</code> in the {openehr_model_support}#_identification_package[<code>identification</code> package section of the Base Types specification^]. The openEHR version identification scheme is described in detail in the <a href="https://specifications.openehr.org/releases/RM/dev/common.html#_change_control_package" target="_blank" rel="noopener"><code>change_control</code> package section of the Common IM</a>.</p>
 </div>
 <div class="paragraph">
 <p>The contained top-level content item (i.e. a <code>Composition</code> etc.) also has a <code><em>uid</em></code> attribute (inherited from <code>Locatable</code>), and it is strongly recommended that this be populated with a copy of the <code>OBJECT_VERSION_ID</code> from the containing <code>Version&lt;X&gt;</code> object. This facilitates identifying versions from a naked content object e.g. returned in a query.</p>
@@ -2855,9 +2891,9 @@ au.gov.health.rdh.ehr1                  -- id of creating system
 </div>
 <div class="paragraph">
 <p>To refer to an interior data node from outside a top-level structure, a combination of a  version locator
-and a path is required. This is formalised by the <code>Locatable_REF</code> class, also in the <a href="https://specifications.openehr.org/releases/BASE/latest/model_support.html#_identification_package" target="_blank" rel="noopener"><code>identification</code>
-package section of the Base Types specification</a>. A Universal Resource Identifier (URI) form can also be used,
-defined by the <a href="https://specifications.openehr.org/releases/RM/latest/data_types.html#_uri_package" target="_blank" rel="noopener">data type <code>DV_EHR_URI</code></a>. This type provides a single string expression
+and a path is required. This is formalised by the <code>Locatable_REF</code> class, also in the {openehr_model_support}#_identification_package[<code>identification</code>
+package section of the Base Types specification^]. A Universal Resource Identifier (URI) form can also be used,
+defined by the <a href="https://specifications.openehr.org/releases/RM/dev/data_types.html#_uri_package" target="_blank" rel="noopener">data type <code>DV_EHR_URI</code></a>. This type provides a single string expression
 in the scheme-space <code>ehr:</code> which can be used to refer to an interior data node from anywhere. (It can
 also be used to represent queries; see below). Any <code>Locatable_REF</code> can be converted to a
 <code>DV_EHR_URI</code>, although not all <code>DV_EHR_URIs</code> are <code>Locatable_REFs</code>.</p>
@@ -2908,7 +2944,7 @@ instances that are considered to conform to the subject of the archetype, e.g. '
 archetype can thus be thought of as being similar to a LEGO&#174; instruction sheet (e.g. for a tractor) that
 defines the configuration of LEGO&#174; bricks making up a tractor. Archetypes are flexible; one archetype
 includes many variations, in the same way that a LEGO&#174; instruction might include a number of
-options for the same basic object. Mathematically, an archetype is equivalent to a query in F-logic <a href="#Kifer_Lausen_Wu2000">Kifer Lausen &amp; Wu (2000)</a>.</p>
+options for the same basic object. Mathematically, an archetype is equivalent to a query in F-logic <span class="citation"><a href="#Kifer_Lausen_Wu2000">Kifer Lausen &amp; Wu (2000)</a></span>.</p>
 </div>
 <div class="paragraph">
 <p>In terms of scope, archetypes are general-purpose, re-usable, and composable. For data capture and
@@ -3234,11 +3270,11 @@ and XPath style paths extracted from archetypes. The following is an example AQL
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="sql"><span></span><span class="tok-k">SELECT</span> <span class="tok-n">o</span><span class="tok-o">/</span><span class="tok-p">[</span><span class="tok-n">at0000</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-k">data</span><span class="tok-p">[</span><span class="tok-n">at0001</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-n">events</span><span class="tok-p">[</span><span class="tok-n">at0002</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-k">data</span><span class="tok-p">[</span><span class="tok-n">at0003</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-n">item</span><span class="tok-p">[</span><span class="tok-mi">0004</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-n">value</span>
-<span class="tok-k">FROM</span> <span class="tok-n">EHR</span> <span class="tok-p">[</span><span class="tok-n">uid</span><span class="tok-o">=@</span><span class="tok-n">ehrUid</span><span class="tok-p">]</span>
-<span class="tok-k">CONTAINS</span> <span class="tok-n">Composition</span> <span class="tok-k">c</span> <span class="tok-p">[</span><span class="tok-n">openEHR</span><span class="tok-o">-</span><span class="tok-n">EHR</span><span class="tok-o">-</span><span class="tok-n">Composition</span><span class="tok-p">.</span><span class="tok-n">report</span><span class="tok-p">.</span><span class="tok-n">v1</span><span class="tok-p">]</span>
-<span class="tok-k">CONTAINS</span> <span class="tok-n">Observation</span> <span class="tok-n">o</span><span class="tok-p">[</span><span class="tok-n">openEHR</span><span class="tok-o">-</span><span class="tok-n">EHR</span><span class="tok-o">-</span><span class="tok-n">Observation</span><span class="tok-p">.</span><span class="tok-n">body_mass_index</span><span class="tok-p">.</span><span class="tok-n">v1</span><span class="tok-p">]</span>
-<span class="tok-k">WHERE</span> <span class="tok-n">o</span><span class="tok-o">/</span><span class="tok-p">[</span><span class="tok-n">at0000</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-k">data</span><span class="tok-p">[</span><span class="tok-n">at0001</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-n">events</span><span class="tok-p">[</span><span class="tok-n">at0002</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-k">data</span><span class="tok-p">[</span><span class="tok-n">at0003</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-n">item</span><span class="tok-p">[</span><span class="tok-mi">0004</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-n">value</span> <span class="tok-o">&gt;</span> <span class="tok-mi">30</span></code></pre>
+<pre class="pygments highlight"><code data-lang="sql"><span></span><span class="tok-k">SELECT</span><span class="tok-w"> </span><span class="tok-n">o</span><span class="tok-o">/</span><span class="tok-p">[</span><span class="tok-n">at0000</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-k">data</span><span class="tok-p">[</span><span class="tok-n">at0001</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-n">events</span><span class="tok-p">[</span><span class="tok-n">at0002</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-k">data</span><span class="tok-p">[</span><span class="tok-n">at0003</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-n">item</span><span class="tok-p">[</span><span class="tok-mi">0004</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-n">value</span>
+<span class="tok-k">FROM</span><span class="tok-w"> </span><span class="tok-n">EHR</span><span class="tok-w"> </span><span class="tok-p">[</span><span class="tok-n">uid</span><span class="tok-o">=@</span><span class="tok-n">ehrUid</span><span class="tok-p">]</span>
+<span class="tok-k">CONTAINS</span><span class="tok-w"> </span><span class="tok-n">Composition</span><span class="tok-w"> </span><span class="tok-k">c</span><span class="tok-w"> </span><span class="tok-p">[</span><span class="tok-n">openEHR</span><span class="tok-o">-</span><span class="tok-n">EHR</span><span class="tok-o">-</span><span class="tok-n">Composition</span><span class="tok-p">.</span><span class="tok-n">report</span><span class="tok-p">.</span><span class="tok-n">v1</span><span class="tok-p">]</span>
+<span class="tok-k">CONTAINS</span><span class="tok-w"> </span><span class="tok-n">Observation</span><span class="tok-w"> </span><span class="tok-n">o</span><span class="tok-p">[</span><span class="tok-n">openEHR</span><span class="tok-o">-</span><span class="tok-n">EHR</span><span class="tok-o">-</span><span class="tok-n">Observation</span><span class="tok-p">.</span><span class="tok-n">body_mass_index</span><span class="tok-p">.</span><span class="tok-n">v1</span><span class="tok-p">]</span>
+<span class="tok-k">WHERE</span><span class="tok-w"> </span><span class="tok-n">o</span><span class="tok-o">/</span><span class="tok-p">[</span><span class="tok-n">at0000</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-k">data</span><span class="tok-p">[</span><span class="tok-n">at0001</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-n">events</span><span class="tok-p">[</span><span class="tok-n">at0002</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-k">data</span><span class="tok-p">[</span><span class="tok-n">at0003</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-n">item</span><span class="tok-p">[</span><span class="tok-mi">0004</span><span class="tok-p">]</span><span class="tok-o">/</span><span class="tok-n">value</span><span class="tok-w"> </span><span class="tok-o">&gt;</span><span class="tok-w"> </span><span class="tok-mi">30</span></code></pre>
 </div>
 </div>
 </div>
@@ -3492,45 +3528,45 @@ to construct a unique path to an item in real data. This can be done by using at
 <div class="sect4">
 <h5 id="_using_a_name_based_predicate"><a class="anchor" href="#_using_a_name_based_predicate"></a>11.2.4.2. Using a Name-based Predicate</h5>
 <div class="paragraph">
-<p>If the <code>Locatable.<em>name</em></code> value in certain data is known to be reliably populated with unique values across immediate siblings, the <code>name/value</code> term may be used as described above to form a uniquely identifying predicate for a node. Consider as an example the following <code>Observation</code> archetype (expressed in <a href="https://specifications.openehr.org/releases/LANG/latest/odin.html" target="_blank" rel="noopener">ODIN syntax</a>):</p>
+<p>If the <code>Locatable.<em>name</em></code> value in certain data is known to be reliably populated with unique values across immediate siblings, the <code>name/value</code> term may be used as described above to form a uniquely identifying predicate for a node. Consider as an example the following <code>Observation</code> archetype (expressed in <a href="https://specifications.openehr.org/releases/LANG/dev/odin.html" target="_blank" rel="noopener">ODIN syntax</a>):</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="cadl"><span></span><span class="tok-nc">Observation</span><span class="tok-p">[</span><span class="tok-nd">at0000</span><span class="tok-p">]</span> <span class="tok-o">matches </span><span class="tok-p">{</span>                               <span class="tok-c">-- blood pressure measurement</span>
-    <span class="tok-nc">data</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-        <span class="tok-nc">HISTORY</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-            <span class="tok-nc">events</span> <span class="tok-p">{</span><span class="tok-m">1..*</span><span class="tok-p">}</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-                <span class="tok-nc">EVENT</span><span class="tok-p">[</span><span class="tok-nd">at0006</span><span class="tok-p">]</span> <span class="tok-p">{</span><span class="tok-m">0..1</span><span class="tok-p">}</span> <span class="tok-o">matches </span><span class="tok-p">{</span>              <span class="tok-c">-- any event</span>
-                    <span class="tok-nc">name</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-                        <span class="tok-nc">Dv_text</span> <span class="tok-o">matches </span><span class="tok-p">{...}</span>
-                    <span class="tok-p">}</span>
-                    <span class="tok-nc">data</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-                        <span class="tok-nc">ITEM_LIST</span><span class="tok-p">[</span><span class="tok-nd">at0003</span><span class="tok-p">]</span> <span class="tok-o">matches </span><span class="tok-p">{</span>         <span class="tok-c">-- systemic arterial BP</span>
-                            <span class="tok-nc">count</span> <span class="tok-o">matches </span><span class="tok-p">{|&gt;=</span><span class="tok-mi">2</span><span class="tok-p">|}</span>
-                            <span class="tok-nc">items</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-                                <span class="tok-nc">ELEMENT</span><span class="tok-p">[</span><span class="tok-nd">at0004</span><span class="tok-p">]</span> <span class="tok-o">matches </span><span class="tok-p">{</span>   <span class="tok-c">-- systolic BP</span>
-                                    <span class="tok-nc">name</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-                                        <span class="tok-nc">Dv_text</span> <span class="tok-o">matches </span><span class="tok-p">{...}</span>
-                                    <span class="tok-p">}</span>
-                                    <span class="tok-nc">value</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-                                        <span class="tok-nc">magnitude</span> <span class="tok-o">matches </span><span class="tok-p">{...}</span>
-                                    <span class="tok-p">}</span>
-                                <span class="tok-p">}</span>
-                                <span class="tok-nc">ELEMENT</span><span class="tok-p">[</span><span class="tok-nd">at0005</span><span class="tok-p">]</span> <span class="tok-o">matches </span><span class="tok-p">{</span>   <span class="tok-c">-- diastolic BP</span>
-                                    <span class="tok-nc">name</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-                                        <span class="tok-nc">Dv_text</span> <span class="tok-o">matches </span><span class="tok-p">{...}</span>
-                                    <span class="tok-p">}</span>
-                                    <span class="tok-nc">value</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-                                        <span class="tok-nc">magnitude</span> <span class="tok-o">matches </span><span class="tok-p">{...}</span>
-                                    <span class="tok-p">}</span>
-                                <span class="tok-p">}</span>
-                            <span class="tok-p">}</span>
-                        <span class="tok-p">}</span>
-                    <span class="tok-p">}</span>
-                <span class="tok-p">}</span>
-            <span class="tok-p">}</span>
-        <span class="tok-p">}</span>
-    <span class="tok-p">}</span>
+<pre class="pygments highlight"><code data-lang="cadl"><span></span><span class="tok-nc">Observation</span><span class="tok-p">[</span><span class="tok-nd">at0000</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-w">                               </span><span class="tok-c">-- blood pressure measurement</span>
+<span class="tok-w">    </span><span class="tok-nc">data</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">        </span><span class="tok-nc">HISTORY</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">            </span><span class="tok-nc">events</span><span class="tok-w"> </span><span class="tok-p">{</span><span class="tok-m">1..*</span><span class="tok-p">}</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">                </span><span class="tok-nc">EVENT</span><span class="tok-p">[</span><span class="tok-nd">at0006</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-p">{</span><span class="tok-m">0..1</span><span class="tok-p">}</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-w">              </span><span class="tok-c">-- any event</span>
+<span class="tok-w">                    </span><span class="tok-nc">name</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">                        </span><span class="tok-nc">Dv_text</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{...}</span>
+<span class="tok-w">                    </span><span class="tok-p">}</span>
+<span class="tok-w">                    </span><span class="tok-nc">data</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">                        </span><span class="tok-nc">ITEM_LIST</span><span class="tok-p">[</span><span class="tok-nd">at0003</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-w">         </span><span class="tok-c">-- systemic arterial BP</span>
+<span class="tok-w">                            </span><span class="tok-nc">count</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{|&gt;=</span><span class="tok-mi">2</span><span class="tok-p">|}</span>
+<span class="tok-w">                            </span><span class="tok-nc">items</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">                                </span><span class="tok-nc">ELEMENT</span><span class="tok-p">[</span><span class="tok-nd">at0004</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-w">   </span><span class="tok-c">-- systolic BP</span>
+<span class="tok-w">                                    </span><span class="tok-nc">name</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">                                        </span><span class="tok-nc">Dv_text</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{...}</span>
+<span class="tok-w">                                    </span><span class="tok-p">}</span>
+<span class="tok-w">                                    </span><span class="tok-nc">value</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">                                        </span><span class="tok-nc">magnitude</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{...}</span>
+<span class="tok-w">                                    </span><span class="tok-p">}</span>
+<span class="tok-w">                                </span><span class="tok-p">}</span>
+<span class="tok-w">                                </span><span class="tok-nc">ELEMENT</span><span class="tok-p">[</span><span class="tok-nd">at0005</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-w">   </span><span class="tok-c">-- diastolic BP</span>
+<span class="tok-w">                                    </span><span class="tok-nc">name</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">                                        </span><span class="tok-nc">Dv_text</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{...}</span>
+<span class="tok-w">                                    </span><span class="tok-p">}</span>
+<span class="tok-w">                                    </span><span class="tok-nc">value</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">                                        </span><span class="tok-nc">magnitude</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{...}</span>
+<span class="tok-w">                                    </span><span class="tok-p">}</span>
+<span class="tok-w">                                </span><span class="tok-p">}</span>
+<span class="tok-w">                            </span><span class="tok-p">}</span>
+<span class="tok-w">                        </span><span class="tok-p">}</span>
+<span class="tok-w">                    </span><span class="tok-p">}</span>
+<span class="tok-w">                </span><span class="tok-p">}</span>
+<span class="tok-w">            </span><span class="tok-p">}</span>
+<span class="tok-w">        </span><span class="tok-p">}</span>
+<span class="tok-w">    </span><span class="tok-p">}</span>
 <span class="tok-p">}</span></code></pre>
 </div>
 </div>
@@ -3546,59 +3582,59 @@ to construct a unique path to an item in real data. This can be done by using at
 <p>The codes <code>[atnnnn]</code> at each node of the archetype become the <code><em>archetype_node_id</em></code> found in each node in the data.</p>
 </div>
 <div class="paragraph">
-<p>Now consider an <code>Observation</code> instance (expressed here in <a href="https://specifications.openehr.org/releases/LANG/latest/odin.html" target="_blank" rel="noopener">ODIN syntax</a>), in which a history of two blood pressures has been recorded using this archetype:</p>
+<p>Now consider an <code>Observation</code> instance (expressed here in <a href="https://specifications.openehr.org/releases/LANG/dev/odin.html" target="_blank" rel="noopener">ODIN syntax</a>), in which a history of two blood pressures has been recorded using this archetype:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="odin"><span></span><span class="tok-p">&lt;</span>                                                       <span class="tok-c">-- Observation - blood pressure measurement</span>
-    <span class="tok-nc">archetype_node_id</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;openEHR-EHR-Observation.blood_pressure.v1&quot;</span><span class="tok-p">&gt;</span>
-    <span class="tok-nc">name</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-nc">value</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;BP measurement&quot;</span><span class="tok-p">&gt;&gt;</span>
-    <span class="tok-nc">data</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>                                            <span class="tok-c">-- HISTORY</span>
-        <span class="tok-nc">archetype_node_id</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;at0001&quot;</span><span class="tok-p">&gt;</span>
-        <span class="tok-nc">origin</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-ld">2005-12-03T09:22:00</span><span class="tok-p">&gt;</span>
-        <span class="tok-nc">events</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>                                      <span class="tok-c">-- List &lt;EVENT&gt;</span>
-            <span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>                                     <span class="tok-c">-- EVENT</span>
-                <span class="tok-nc">archetype_node_id</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;at0006&quot;</span><span class="tok-p">&gt;</span>
-                <span class="tok-nc">name</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-nc">value</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;sitting&quot;</span><span class="tok-p">&gt;&gt;</span>
-                <span class="tok-nc">time</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-ld">2005-12-03T09:22:00</span><span class="tok-p">&gt;</span>
-                <span class="tok-nc">data</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>                                <span class="tok-c">-- ITEM_LIST</span>
-                    <span class="tok-nc">archetype_node_id</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;at0003&quot;</span><span class="tok-p">&gt;</span>
-                    <span class="tok-nc">items</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>                           <span class="tok-c">-- List&lt;ELEMENT&gt;</span>
-                        <span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>
-                            <span class="tok-nc">name</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-nc">value</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;systolic&quot;</span><span class="tok-p">&gt;&gt;</span>
-                            <span class="tok-nc">archetype_node_id</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;at0004&quot;</span><span class="tok-p">&gt;</span>
-                            <span class="tok-nc">value</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-nc">magnitude</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-mf">120.0</span><span class="tok-p">&gt;</span> <span class="tok-p">...&gt;</span>
-                        <span class="tok-p">&gt;</span>
-                        <span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>
-                            <span class="tok-nc">name</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-nc">value</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;diastolic&quot;</span><span class="tok-p">&gt;&gt;</span>
-                            <span class="tok-nc">archetype_node_id</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;at0005&quot;</span><span class="tok-p">&gt;</span>
-                            <span class="tok-nc">value</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-nc">magnitude</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-mf">80.0</span><span class="tok-p">&gt;</span> <span class="tok-p">...&gt;</span>
-                        <span class="tok-p">&gt;</span>
-                    <span class="tok-p">&gt;</span>
-                <span class="tok-p">&gt;</span>
-            <span class="tok-p">&gt;</span>
-            <span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>                                     <span class="tok-c">-- EVENT</span>
-                <span class="tok-nc">archetype_node_id</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;at0006&quot;</span><span class="tok-p">&gt;</span>
-                <span class="tok-nc">name</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-nc">value</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;standing&quot;</span><span class="tok-p">&gt;&gt;</span>
-                <span class="tok-nc">time</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-ld">2005-12-03T09:27:00</span><span class="tok-p">&gt;</span>
-                <span class="tok-nc">data</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>                                <span class="tok-c">-- ITEM_LIST</span>
-                    <span class="tok-nc">archetype_node_id</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;at0003&quot;</span><span class="tok-p">&gt;</span>
-                    <span class="tok-nc">items</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>                           <span class="tok-c">-- List&lt;ELEMENT&gt;</span>
-                        <span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>
-                            <span class="tok-nc">name</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-nc">value</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;systolic&quot;</span><span class="tok-p">&gt;&gt;</span>
-                            <span class="tok-nc">archetype_node_id</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;at0004&quot;</span><span class="tok-p">&gt;</span>
-                            <span class="tok-nc">value</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-nc">magnitude</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-mf">105.0</span><span class="tok-p">&gt;</span> <span class="tok-p">...&gt;</span>
-                        <span class="tok-p">&gt;</span>
-                        <span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>
-                            <span class="tok-nc">name</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-nc">value</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;diastolic&quot;</span><span class="tok-p">&gt;&gt;</span>
-                            <span class="tok-nc">archetype_node_id</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;at0005&quot;</span><span class="tok-p">&gt;</span>
-                            <span class="tok-nc">value</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-nc">magnitude</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-mf">70.0</span><span class="tok-p">&gt;</span> <span class="tok-p">...&gt;</span>
-                        <span class="tok-p">&gt;</span>
-                    <span class="tok-p">&gt;</span>
-                <span class="tok-p">&gt;</span>
-            <span class="tok-p">&gt;</span>
-        <span class="tok-p">&gt;</span>
-    <span class="tok-p">&gt;</span>
+<pre class="pygments highlight"><code data-lang="odin"><span></span><span class="tok-p">&lt;</span><span class="tok-w">                                                       </span><span class="tok-c">-- Observation - blood pressure measurement</span>
+<span class="tok-w">    </span><span class="tok-nc">archetype_node_id</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;openEHR-EHR-Observation.blood_pressure.v1&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">    </span><span class="tok-nc">name</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-nc">value</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;BP measurement&quot;</span><span class="tok-p">&gt;&gt;</span>
+<span class="tok-w">    </span><span class="tok-nc">data</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-w">                                            </span><span class="tok-c">-- HISTORY</span>
+<span class="tok-w">        </span><span class="tok-nc">archetype_node_id</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;at0001&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">        </span><span class="tok-nc">origin</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-ld">2005-12-03T09:22:00</span><span class="tok-p">&gt;</span>
+<span class="tok-w">        </span><span class="tok-nc">events</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-w">                                      </span><span class="tok-c">-- List &lt;EVENT&gt;</span>
+<span class="tok-w">            </span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-w">                                     </span><span class="tok-c">-- EVENT</span>
+<span class="tok-w">                </span><span class="tok-nc">archetype_node_id</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;at0006&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                </span><span class="tok-nc">name</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-nc">value</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;sitting&quot;</span><span class="tok-p">&gt;&gt;</span>
+<span class="tok-w">                </span><span class="tok-nc">time</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-ld">2005-12-03T09:22:00</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                </span><span class="tok-nc">data</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-w">                                </span><span class="tok-c">-- ITEM_LIST</span>
+<span class="tok-w">                    </span><span class="tok-nc">archetype_node_id</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;at0003&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                    </span><span class="tok-nc">items</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-w">                           </span><span class="tok-c">-- List&lt;ELEMENT&gt;</span>
+<span class="tok-w">                        </span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span>
+<span class="tok-w">                            </span><span class="tok-nc">name</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-nc">value</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;systolic&quot;</span><span class="tok-p">&gt;&gt;</span>
+<span class="tok-w">                            </span><span class="tok-nc">archetype_node_id</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;at0004&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                            </span><span class="tok-nc">value</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-nc">magnitude</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-mf">120.0</span><span class="tok-p">&gt;</span><span class="tok-w"> </span><span class="tok-p">...&gt;</span>
+<span class="tok-w">                        </span><span class="tok-p">&gt;</span>
+<span class="tok-w">                        </span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span>
+<span class="tok-w">                            </span><span class="tok-nc">name</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-nc">value</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;diastolic&quot;</span><span class="tok-p">&gt;&gt;</span>
+<span class="tok-w">                            </span><span class="tok-nc">archetype_node_id</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;at0005&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                            </span><span class="tok-nc">value</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-nc">magnitude</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-mf">80.0</span><span class="tok-p">&gt;</span><span class="tok-w"> </span><span class="tok-p">...&gt;</span>
+<span class="tok-w">                        </span><span class="tok-p">&gt;</span>
+<span class="tok-w">                    </span><span class="tok-p">&gt;</span>
+<span class="tok-w">                </span><span class="tok-p">&gt;</span>
+<span class="tok-w">            </span><span class="tok-p">&gt;</span>
+<span class="tok-w">            </span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-w">                                     </span><span class="tok-c">-- EVENT</span>
+<span class="tok-w">                </span><span class="tok-nc">archetype_node_id</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;at0006&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                </span><span class="tok-nc">name</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-nc">value</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;standing&quot;</span><span class="tok-p">&gt;&gt;</span>
+<span class="tok-w">                </span><span class="tok-nc">time</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-ld">2005-12-03T09:27:00</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                </span><span class="tok-nc">data</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-w">                                </span><span class="tok-c">-- ITEM_LIST</span>
+<span class="tok-w">                    </span><span class="tok-nc">archetype_node_id</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;at0003&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                    </span><span class="tok-nc">items</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-w">                           </span><span class="tok-c">-- List&lt;ELEMENT&gt;</span>
+<span class="tok-w">                        </span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span>
+<span class="tok-w">                            </span><span class="tok-nc">name</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-nc">value</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;systolic&quot;</span><span class="tok-p">&gt;&gt;</span>
+<span class="tok-w">                            </span><span class="tok-nc">archetype_node_id</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;at0004&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                            </span><span class="tok-nc">value</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-nc">magnitude</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-mf">105.0</span><span class="tok-p">&gt;</span><span class="tok-w"> </span><span class="tok-p">...&gt;</span>
+<span class="tok-w">                        </span><span class="tok-p">&gt;</span>
+<span class="tok-w">                        </span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span>
+<span class="tok-w">                            </span><span class="tok-nc">name</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-nc">value</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;diastolic&quot;</span><span class="tok-p">&gt;&gt;</span>
+<span class="tok-w">                            </span><span class="tok-nc">archetype_node_id</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;at0005&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                            </span><span class="tok-nc">value</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-nc">magnitude</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-mf">70.0</span><span class="tok-p">&gt;</span><span class="tok-w"> </span><span class="tok-p">...&gt;</span>
+<span class="tok-w">                        </span><span class="tok-p">&gt;</span>
+<span class="tok-w">                    </span><span class="tok-p">&gt;</span>
+<span class="tok-w">                </span><span class="tok-p">&gt;</span>
+<span class="tok-w">            </span><span class="tok-p">&gt;</span>
+<span class="tok-w">        </span><span class="tok-p">&gt;</span>
+<span class="tok-w">    </span><span class="tok-p">&gt;</span>
 <span class="tok-p">&gt;</span></code></pre>
 </div>
 </div>
@@ -3608,81 +3644,81 @@ to construct a unique path to an item in real data. This can be done by using at
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="json"><span></span><span class="tok-p">{</span>
-    <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Observation&quot;</span><span class="tok-p">,</span>
-    <span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;openEHR-EHR-Observation.blood_pressure.v1&quot;</span><span class="tok-p">,</span>
-    <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
-        <span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;BP measurement&quot;</span>
-    <span class="tok-p">},</span>
-    <span class="tok-nt">&quot;data&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
-        <span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;at0001&quot;</span><span class="tok-p">,</span>
-        <span class="tok-nt">&quot;origin&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;2005-12-03T09:22:00&quot;</span><span class="tok-p">,</span>
-        <span class="tok-nt">&quot;events&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
-            <span class="tok-p">{</span>
-                <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;POINT_EVENT&quot;</span><span class="tok-p">,</span>
-                <span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;at0006&quot;</span><span class="tok-p">,</span>
-                <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
-                    <span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;sitting&quot;</span>
-                <span class="tok-p">},</span>
-                <span class="tok-nt">&quot;time&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;2005-12-03T09:22:00&quot;</span><span class="tok-p">,</span>
-                <span class="tok-nt">&quot;data&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
-                    <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;ITEM_LIST&quot;</span><span class="tok-p">,</span>
-                    <span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;at0003&quot;</span><span class="tok-p">,</span>
-                    <span class="tok-nt">&quot;items&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
-                        <span class="tok-p">{</span>
-                            <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
-                                <span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;systolic&quot;</span>
-                            <span class="tok-p">},</span>
-                            <span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;at0004&quot;</span><span class="tok-p">,</span>
-                            <span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
-                                <span class="tok-nt">&quot;magnitude&quot;</span><span class="tok-p">:</span> <span class="tok-mf">120.0</span>
-                            <span class="tok-p">}</span>
-                        <span class="tok-p">},</span>
-                        <span class="tok-p">{</span>
-                            <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
-                                <span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;diastolic&quot;</span>
-                            <span class="tok-p">},</span>
-                            <span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;at0005&quot;</span><span class="tok-p">,</span>
-                            <span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
-                                <span class="tok-nt">&quot;magnitude&quot;</span><span class="tok-p">:</span> <span class="tok-mf">80.0</span>
-                            <span class="tok-p">}</span>
-                        <span class="tok-p">}</span>
-                    <span class="tok-p">]</span>
-                <span class="tok-p">}</span>
-            <span class="tok-p">},</span>
-            <span class="tok-p">{</span>
-                <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;POINT_EVENT&quot;</span><span class="tok-p">,</span>
-                <span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;at0006&quot;</span><span class="tok-p">,</span>
-                <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
-                    <span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;standing&quot;</span>
-                <span class="tok-p">},</span>
-                <span class="tok-nt">&quot;time&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;2005-12-03T09:27:00&quot;</span><span class="tok-p">,</span>
-                <span class="tok-nt">&quot;data&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
-                    <span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;ITEM_LIST&quot;</span><span class="tok-p">,</span>
-                    <span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;at0003&quot;</span><span class="tok-p">,</span>
-                    <span class="tok-nt">&quot;items&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
-                        <span class="tok-p">{</span>
-                            <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
-                                <span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;systolic&quot;</span>
-                            <span class="tok-p">},</span>
-                            <span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;at0004&quot;</span><span class="tok-p">,</span>
-                            <span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
-                                <span class="tok-nt">&quot;magnitude&quot;</span><span class="tok-p">:</span> <span class="tok-mf">105.0</span>
-                            <span class="tok-p">}</span>
-                        <span class="tok-p">},</span>
-                        <span class="tok-p">{</span>
-                            <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
-                                <span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;diastolic&quot;</span>
-                            <span class="tok-p">},</span>
-                            <span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;at0005&quot;</span><span class="tok-p">,</span>
-                            <span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
-                                <span class="tok-nt">&quot;magnitude&quot;</span><span class="tok-p">:</span> <span class="tok-mf">70.0</span>
-                            <span class="tok-p">}</span>
-                        <span class="tok-p">}</span>
-                    <span class="tok-p">]</span>
-                <span class="tok-p">}</span>
-            <span class="tok-p">}</span>
-        <span class="tok-p">]</span>
-    <span class="tok-p">}</span>
+<span class="tok-w">    </span><span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;Observation&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">    </span><span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;openEHR-EHR-Observation.blood_pressure.v1&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">    </span><span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">        </span><span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;BP measurement&quot;</span>
+<span class="tok-w">    </span><span class="tok-p">},</span>
+<span class="tok-w">    </span><span class="tok-nt">&quot;data&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">        </span><span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;at0001&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">        </span><span class="tok-nt">&quot;origin&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;2005-12-03T09:22:00&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">        </span><span class="tok-nt">&quot;events&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">[</span>
+<span class="tok-w">            </span><span class="tok-p">{</span>
+<span class="tok-w">                </span><span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;POINT_EVENT&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">                </span><span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;at0006&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">                </span><span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">                    </span><span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;sitting&quot;</span>
+<span class="tok-w">                </span><span class="tok-p">},</span>
+<span class="tok-w">                </span><span class="tok-nt">&quot;time&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;2005-12-03T09:22:00&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">                </span><span class="tok-nt">&quot;data&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">                    </span><span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;ITEM_LIST&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">                    </span><span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;at0003&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">                    </span><span class="tok-nt">&quot;items&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">[</span>
+<span class="tok-w">                        </span><span class="tok-p">{</span>
+<span class="tok-w">                            </span><span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">                                </span><span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;systolic&quot;</span>
+<span class="tok-w">                            </span><span class="tok-p">},</span>
+<span class="tok-w">                            </span><span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;at0004&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">                            </span><span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">                                </span><span class="tok-nt">&quot;magnitude&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-mf">120.0</span>
+<span class="tok-w">                            </span><span class="tok-p">}</span>
+<span class="tok-w">                        </span><span class="tok-p">},</span>
+<span class="tok-w">                        </span><span class="tok-p">{</span>
+<span class="tok-w">                            </span><span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">                                </span><span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;diastolic&quot;</span>
+<span class="tok-w">                            </span><span class="tok-p">},</span>
+<span class="tok-w">                            </span><span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;at0005&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">                            </span><span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">                                </span><span class="tok-nt">&quot;magnitude&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-mf">80.0</span>
+<span class="tok-w">                            </span><span class="tok-p">}</span>
+<span class="tok-w">                        </span><span class="tok-p">}</span>
+<span class="tok-w">                    </span><span class="tok-p">]</span>
+<span class="tok-w">                </span><span class="tok-p">}</span>
+<span class="tok-w">            </span><span class="tok-p">},</span>
+<span class="tok-w">            </span><span class="tok-p">{</span>
+<span class="tok-w">                </span><span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;POINT_EVENT&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">                </span><span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;at0006&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">                </span><span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">                    </span><span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;standing&quot;</span>
+<span class="tok-w">                </span><span class="tok-p">},</span>
+<span class="tok-w">                </span><span class="tok-nt">&quot;time&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;2005-12-03T09:27:00&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">                </span><span class="tok-nt">&quot;data&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">                    </span><span class="tok-nt">&quot;_type&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;ITEM_LIST&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">                    </span><span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;at0003&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">                    </span><span class="tok-nt">&quot;items&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">[</span>
+<span class="tok-w">                        </span><span class="tok-p">{</span>
+<span class="tok-w">                            </span><span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">                                </span><span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;systolic&quot;</span>
+<span class="tok-w">                            </span><span class="tok-p">},</span>
+<span class="tok-w">                            </span><span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;at0004&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">                            </span><span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">                                </span><span class="tok-nt">&quot;magnitude&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-mf">105.0</span>
+<span class="tok-w">                            </span><span class="tok-p">}</span>
+<span class="tok-w">                        </span><span class="tok-p">},</span>
+<span class="tok-w">                        </span><span class="tok-p">{</span>
+<span class="tok-w">                            </span><span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">                                </span><span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;diastolic&quot;</span>
+<span class="tok-w">                            </span><span class="tok-p">},</span>
+<span class="tok-w">                            </span><span class="tok-nt">&quot;archetype_node_id&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-s2">&quot;at0005&quot;</span><span class="tok-p">,</span>
+<span class="tok-w">                            </span><span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">                                </span><span class="tok-nt">&quot;magnitude&quot;</span><span class="tok-p">:</span><span class="tok-w"> </span><span class="tok-mf">70.0</span>
+<span class="tok-w">                            </span><span class="tok-p">}</span>
+<span class="tok-w">                        </span><span class="tok-p">}</span>
+<span class="tok-w">                    </span><span class="tok-p">]</span>
+<span class="tok-w">                </span><span class="tok-p">}</span>
+<span class="tok-w">            </span><span class="tok-p">}</span>
+<span class="tok-w">        </span><span class="tok-p">]</span>
+<span class="tok-w">    </span><span class="tok-p">}</span>
 <span class="tok-p">}</span></code></pre>
 </div>
 </div>
@@ -3785,7 +3821,7 @@ ehr:/ehr_id/top_level_structure_locator/path_inside_top_level_structure
 </div>
 </div>
 <div class="paragraph">
-<p>The possible values for <code>top_level_structure_locator</code> come from attribute names of the class <code>EHR</code>, visible in the <a href="https://specifications.openehr.org/releases/RM/latest/ehr.html#_ehr_package" target="_blank" rel="noopener">ehr package</a>, namely <code><em>compositions</em></code>, <code><em>directory</em></code> etc.</p>
+<p>The possible values for <code>top_level_structure_locator</code> come from attribute names of the class <code>EHR</code>, visible in the <a href="https://specifications.openehr.org/releases/RM/dev/ehr.html#_ehr_package" target="_blank" rel="noopener">ehr package</a>, namely <code><em>compositions</em></code>, <code><em>directory</em></code> etc.</p>
 </div>
 <div class="paragraph">
 <p>In this way, any object in any openEHR EHR is addressable via a URI. Within <code>ehr</code> space, URL-style references to particular servers, hosts etc. are not used, due to not being reliable in the long term. Instead, logical identifiers for EHRs and/or subjects are used, ensuring that URIs remain correct for the lifetime of the resources to which they refer. The openEHR data type <code>DV_EHR_URI</code> is designed to carry URIs of this form, enabling URIs to be constructed for use within <code>LINKs</code> and elsewhere in the openEHR EHR.</p>
@@ -3922,7 +3958,7 @@ using meaningless codes and rubrics. These attributes are always of type <code>D
 itself is contained within the defining_code attribute.</p>
 </div>
 <div class="paragraph">
-<p>The openEHR terminology is described in the <a href="https://specifications.openehr.org/releases/TERM/latest/SupportTerminology.html" target="_blank" rel="noopener">openEHR Terminology specification</a>, with computable
+<p>The openEHR terminology is described in the <a href="https://specifications.openehr.org/releases/TERM/dev/SupportTerminology.html" target="_blank" rel="noopener">openEHR Terminology specification</a>, with computable
 expressions available at the <a href="https://github.com/openEHR/specifications-TERM" target="_blank" rel="noopener">openEHR terminology Git repository</a>.</p>
 </div>
 </div>
@@ -3978,40 +4014,40 @@ path is simply the alternating pattern of reference model attribute names and no
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="cadl"><span></span><span class="tok-nc">Observation</span><span class="tok-p">[</span><span class="tok-nd">at0000</span><span class="tok-p">]</span> <span class="tok-o">matches </span><span class="tok-p">{</span> <span class="tok-c">-- Apgar score</span>
-    <span class="tok-nc">data</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-        <span class="tok-nc">HISTORY</span><span class="tok-p">[</span><span class="tok-nd">at0002</span><span class="tok-p">]</span> <span class="tok-o">matches </span><span class="tok-p">{</span> <span class="tok-c">-- history</span>
-            <span class="tok-nc">events</span> <span class="tok-kt">cardinality </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-m">1..*; unordered</span><span class="tok-p">}</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-                <span class="tok-nc">POINT_EVENT</span><span class="tok-p">[</span><span class="tok-nd">at0003</span><span class="tok-p">]</span> <span class="tok-kt">occurrences </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-m">0..1</span><span class="tok-p">}</span> <span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-c">-- 1 minute</span>
-                    <span class="tok-nc">offset</span> <span class="tok-o">matches </span><span class="tok-p">{|</span><span class="tok-ld">PT1M</span><span class="tok-p">|}</span>
-                    <span class="tok-nc">data</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-                        <span class="tok-nc">ITEM_LIST</span><span class="tok-p">[</span><span class="tok-nd">at0001</span><span class="tok-p">]</span> <span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-c">-- structure</span>
-                            <span class="tok-nc">items</span> <span class="tok-kt">cardinality </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-m">0..1; ordered</span><span class="tok-p">}</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-                                <span class="tok-nc">ELEMENT</span><span class="tok-p">[</span><span class="tok-nd">at0005</span><span class="tok-p">]</span> <span class="tok-kt">occurrences </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-m">0..1</span><span class="tok-p">}</span> <span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-c">-- Heart r</span>
-                                    <span class="tok-nc">value</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-                                        <span class="tok-nc">ORDINAL</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-                                            <span class="tok-nc">value</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-                                                <span class="tok-m">0</span><span class="tok-p">|</span><span class="tok-nd">[local::at0006]</span><span class="tok-p">,</span> <span class="tok-c">-- No heart beat</span>
-                                                <span class="tok-m">1</span><span class="tok-p">|</span><span class="tok-nd">[local::at0007]</span><span class="tok-p">,</span> <span class="tok-c">-- Less than 100 bpm</span>
-                                                <span class="tok-m">2</span><span class="tok-p">|</span><span class="tok-nd">[local::at0008]</span> <span class="tok-c">-- Greater than 100 bpm</span>
-                                            <span class="tok-p">}</span>
-                                        <span class="tok-p">}</span>
-                                    <span class="tok-p">}</span>
-                                <span class="tok-p">}</span>
-                            <span class="tok-p">}</span>
-                        <span class="tok-p">}</span>
-                    <span class="tok-p">}</span>
-                <span class="tok-p">}</span>
-                <span class="tok-nc">POINT_EVENT</span><span class="tok-p">[</span><span class="tok-nd">at0026</span><span class="tok-p">]</span> <span class="tok-kt">occurrences </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-m">0..1</span><span class="tok-p">}</span> <span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-c">-- 2 minute</span>
-                    <span class="tok-nc">offset</span> <span class="tok-o">matches </span><span class="tok-p">{|</span><span class="tok-ld">PT2M</span><span class="tok-p">|}</span>
-                    <span class="tok-nc">data</span> <span class="tok-o">matches </span><span class="tok-p">{</span>
-                        <span class="tok-kt">use_node </span><span class="tok-nc">ITEM_LIST</span> <span class="tok-p">/</span><span class="tok-nc">data</span><span class="tok-p">[</span><span class="tok-nd">at0002</span><span class="tok-p">]/</span><span class="tok-nc">events</span><span class="tok-p">[</span><span class="tok-nd">at0003</span><span class="tok-p">]/</span><span class="tok-nc">data</span><span class="tok-p">[</span><span class="tok-nd">at0001</span><span class="tok-p">]</span>
+<pre class="pygments highlight"><code data-lang="cadl"><span></span><span class="tok-nc">Observation</span><span class="tok-p">[</span><span class="tok-nd">at0000</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-w"> </span><span class="tok-c">-- Apgar score</span>
+<span class="tok-w">    </span><span class="tok-nc">data</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">        </span><span class="tok-nc">HISTORY</span><span class="tok-p">[</span><span class="tok-nd">at0002</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-w"> </span><span class="tok-c">-- history</span>
+<span class="tok-w">            </span><span class="tok-nc">events</span><span class="tok-w"> </span><span class="tok-kt">cardinality </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-m">1..*; unordered</span><span class="tok-p">}</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">                </span><span class="tok-nc">POINT_EVENT</span><span class="tok-p">[</span><span class="tok-nd">at0003</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-kt">occurrences </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-m">0..1</span><span class="tok-p">}</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-c">-- 1 minute</span>
+<span class="tok-w">                    </span><span class="tok-nc">offset</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{|</span><span class="tok-ld">PT1M</span><span class="tok-p">|}</span>
+<span class="tok-w">                    </span><span class="tok-nc">data</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">                        </span><span class="tok-nc">ITEM_LIST</span><span class="tok-p">[</span><span class="tok-nd">at0001</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-c">-- structure</span>
+<span class="tok-w">                            </span><span class="tok-nc">items</span><span class="tok-w"> </span><span class="tok-kt">cardinality </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-m">0..1; ordered</span><span class="tok-p">}</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">                                </span><span class="tok-nc">ELEMENT</span><span class="tok-p">[</span><span class="tok-nd">at0005</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-kt">occurrences </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-m">0..1</span><span class="tok-p">}</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-c">-- Heart r</span>
+<span class="tok-w">                                    </span><span class="tok-nc">value</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">                                        </span><span class="tok-nc">ORDINAL</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">                                            </span><span class="tok-nc">value</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">                                                </span><span class="tok-m">0</span><span class="tok-p">|</span><span class="tok-nd">[local::at0006]</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-c">-- No heart beat</span>
+<span class="tok-w">                                                </span><span class="tok-m">1</span><span class="tok-p">|</span><span class="tok-nd">[local::at0007]</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-c">-- Less than 100 bpm</span>
+<span class="tok-w">                                                </span><span class="tok-m">2</span><span class="tok-p">|</span><span class="tok-nd">[local::at0008]</span><span class="tok-w"> </span><span class="tok-c">-- Greater than 100 bpm</span>
+<span class="tok-w">                                            </span><span class="tok-p">}</span>
+<span class="tok-w">                                        </span><span class="tok-p">}</span>
+<span class="tok-w">                                    </span><span class="tok-p">}</span>
+<span class="tok-w">                                </span><span class="tok-p">}</span>
+<span class="tok-w">                            </span><span class="tok-p">}</span>
+<span class="tok-w">                        </span><span class="tok-p">}</span>
+<span class="tok-w">                    </span><span class="tok-p">}</span>
+<span class="tok-w">                </span><span class="tok-p">}</span>
+<span class="tok-w">                </span><span class="tok-nc">POINT_EVENT</span><span class="tok-p">[</span><span class="tok-nd">at0026</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-kt">occurrences </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-m">0..1</span><span class="tok-p">}</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span><span class="tok-c">-- 2 minute</span>
+<span class="tok-w">                    </span><span class="tok-nc">offset</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{|</span><span class="tok-ld">PT2M</span><span class="tok-p">|}</span>
+<span class="tok-w">                    </span><span class="tok-nc">data</span><span class="tok-w"> </span><span class="tok-o">matches </span><span class="tok-p">{</span>
+<span class="tok-w">                        </span><span class="tok-kt">use_node </span><span class="tok-nc">ITEM_LIST</span><span class="tok-w"> </span><span class="tok-p">/</span><span class="tok-nc">data</span><span class="tok-p">[</span><span class="tok-nd">at0002</span><span class="tok-p">]/</span><span class="tok-nc">events</span><span class="tok-p">[</span><span class="tok-nd">at0003</span><span class="tok-p">]/</span><span class="tok-nc">data</span><span class="tok-p">[</span><span class="tok-nd">at0001</span><span class="tok-p">]</span>
 <span class="tok-p">                        ...</span>
-                    <span class="tok-p">}</span>
-                <span class="tok-p">}</span>
-            <span class="tok-p">}</span>
-        <span class="tok-p">}</span>
-    <span class="tok-p">}</span>
+<span class="tok-w">                    </span><span class="tok-p">}</span>
+<span class="tok-w">                </span><span class="tok-p">}</span>
+<span class="tok-w">            </span><span class="tok-p">}</span>
+<span class="tok-w">        </span><span class="tok-p">}</span>
+<span class="tok-w">    </span><span class="tok-p">}</span>
 <span class="tok-p">}</span>
 <span class="tok-p">...</span></code></pre>
 </div>
@@ -4025,50 +4061,50 @@ showing these terms is shown below.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="odin"><span></span><span class="tok-nc">ontology</span>
-    <span class="tok-nc">primary_language</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;en&quot;</span><span class="tok-p">&gt;</span>
-    <span class="tok-nc">languages_available</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;en&quot;</span><span class="tok-p">,</span> <span class="tok-s">&quot;en-us&quot;</span><span class="tok-p">&gt;</span>
-    <span class="tok-nc">terminologies_available</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;LNC205&quot;</span><span class="tok-p">,</span> <span class="tok-p">...&gt;</span>
-    <span class="tok-nc">term_definitions</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>
-        <span class="tok-p">[</span><span class="tok-s">&quot;en&quot;</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>
-            <span class="tok-nc">items</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>
-                <span class="tok-p">[</span><span class="tok-s">&quot;at0000&quot;</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>
-                    <span class="tok-nc">description</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;Clinical score derived from assessment of</span>
+<span class="tok-w">    </span><span class="tok-nc">primary_language</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;en&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">    </span><span class="tok-nc">languages_available</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;en&quot;</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-s">&quot;en-us&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">    </span><span class="tok-nc">terminologies_available</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;LNC205&quot;</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-p">...&gt;</span>
+<span class="tok-w">    </span><span class="tok-nc">term_definitions</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span>
+<span class="tok-w">        </span><span class="tok-p">[</span><span class="tok-s">&quot;en&quot;</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span>
+<span class="tok-w">            </span><span class="tok-nc">items</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span>
+<span class="tok-w">                </span><span class="tok-p">[</span><span class="tok-s">&quot;at0000&quot;</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span>
+<span class="tok-w">                    </span><span class="tok-nc">description</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;Clinical score derived from assessment of</span>
 <span class="tok-s">                        breathing, colour, muscle tone, heart rate and reflex</span>
 <span class="tok-s">                        response usually taken at 1, 5 and 10 minutes after birth&quot;</span><span class="tok-p">&gt;</span>
-                    <span class="tok-nc">text</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;Apgar score&quot;</span><span class="tok-p">&gt;</span>
-                <span class="tok-p">&gt;</span>
-                <span class="tok-p">[</span><span class="tok-s">&quot;at0003&quot;</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>
-                    <span class="tok-nc">description</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;Apgar score at one minute&quot;</span><span class="tok-p">&gt;</span>
-                    <span class="tok-nc">text</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;1 minute&quot;</span><span class="tok-p">&gt;</span>
-                <span class="tok-p">&gt;</span>
-                <span class="tok-p">[</span><span class="tok-s">&quot;at0006&quot;</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>
-                    <span class="tok-nc">description</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;No heart beat is present (palpation at base of</span>
+<span class="tok-w">                    </span><span class="tok-nc">text</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;Apgar score&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                </span><span class="tok-p">&gt;</span>
+<span class="tok-w">                </span><span class="tok-p">[</span><span class="tok-s">&quot;at0003&quot;</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span>
+<span class="tok-w">                    </span><span class="tok-nc">description</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;Apgar score at one minute&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                    </span><span class="tok-nc">text</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;1 minute&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                </span><span class="tok-p">&gt;</span>
+<span class="tok-w">                </span><span class="tok-p">[</span><span class="tok-s">&quot;at0006&quot;</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span>
+<span class="tok-w">                    </span><span class="tok-nc">description</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;No heart beat is present (palpation at base of</span>
 <span class="tok-s">                        umbilical cord)&quot;</span><span class="tok-p">&gt;</span>
-                        <span class="tok-nc">text</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;No heart beat&quot;</span><span class="tok-p">&gt;</span>
-                <span class="tok-p">&gt;</span>
-                <span class="tok-p">[</span><span class="tok-s">&quot;at0007&quot;</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>
-                    <span class="tok-nc">description</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;Heart rate of less than 100 beats per minute&quot;</span><span class="tok-p">&gt;</span>
-                    <span class="tok-nc">text</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;Less than 100 beats per minute&quot;</span><span class="tok-p">&gt;</span>
-                <span class="tok-p">&gt;</span>
-                <span class="tok-p">[</span><span class="tok-s">&quot;at0008&quot;</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>
-                    <span class="tok-nc">description</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;Heart rate of greater than or equal to 100</span>
+<span class="tok-w">                        </span><span class="tok-nc">text</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;No heart beat&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                </span><span class="tok-p">&gt;</span>
+<span class="tok-w">                </span><span class="tok-p">[</span><span class="tok-s">&quot;at0007&quot;</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span>
+<span class="tok-w">                    </span><span class="tok-nc">description</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;Heart rate of less than 100 beats per minute&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                    </span><span class="tok-nc">text</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;Less than 100 beats per minute&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                </span><span class="tok-p">&gt;</span>
+<span class="tok-w">                </span><span class="tok-p">[</span><span class="tok-s">&quot;at0008&quot;</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span>
+<span class="tok-w">                    </span><span class="tok-nc">description</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;Heart rate of greater than or equal to 100</span>
 <span class="tok-s">                        beats per minute&quot;</span><span class="tok-p">&gt;</span>
-                    <span class="tok-nc">text</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;Greater than 100 beats per minute&quot;</span><span class="tok-p">&gt;</span>
-                <span class="tok-p">&gt;</span>
-                <span class="tok-p">[</span><span class="tok-s">&quot;at0026&quot;</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>
-                    <span class="tok-nc">description</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;Apgar score 2 minutes after birth&quot;</span><span class="tok-p">&gt;</span>
-                    <span class="tok-nc">text</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span><span class="tok-s">&quot;2 minute&quot;</span><span class="tok-p">&gt;</span>
-                <span class="tok-p">&gt;</span>
-            <span class="tok-p">&gt;</span>
-        <span class="tok-p">&gt;</span>
-    <span class="tok-p">&gt;</span>
-    <span class="tok-nc">term_bindings</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>
-        <span class="tok-p">[</span><span class="tok-s">&quot;LNC205&quot;</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>
-            <span class="tok-nc">items</span> <span class="tok-o">=</span> <span class="tok-p">&lt;</span>
-            <span class="tok-p">[</span><span class="tok-s">&quot;/data[at0002]/events[at0003]/data/items[at0025]&quot;</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">&lt;[</span><span class="tok-nd">LNC205</span><span class="tok-p">::</span><span class="tok-nd">9272-6</span><span class="tok-p">]&gt;</span> <span class="tok-c">-- 1 minute total</span>
-            <span class="tok-p">[</span><span class="tok-s">&quot;/data[at0002]/events[at0026]/data/items[at0025]&quot;</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">&lt;[</span><span class="tok-nd">LNC205</span><span class="tok-p">::</span><span class="tok-nd">9271-8</span><span class="tok-p">]&gt;</span> <span class="tok-c">-- 2 minute total</span>
-        <span class="tok-p">&gt;</span>
-    <span class="tok-p">&gt;</span></code></pre>
+<span class="tok-w">                    </span><span class="tok-nc">text</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;Greater than 100 beats per minute&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                </span><span class="tok-p">&gt;</span>
+<span class="tok-w">                </span><span class="tok-p">[</span><span class="tok-s">&quot;at0026&quot;</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span>
+<span class="tok-w">                    </span><span class="tok-nc">description</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;Apgar score 2 minutes after birth&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                    </span><span class="tok-nc">text</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span><span class="tok-s">&quot;2 minute&quot;</span><span class="tok-p">&gt;</span>
+<span class="tok-w">                </span><span class="tok-p">&gt;</span>
+<span class="tok-w">            </span><span class="tok-p">&gt;</span>
+<span class="tok-w">        </span><span class="tok-p">&gt;</span>
+<span class="tok-w">    </span><span class="tok-p">&gt;</span>
+<span class="tok-w">    </span><span class="tok-nc">term_bindings</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span>
+<span class="tok-w">        </span><span class="tok-p">[</span><span class="tok-s">&quot;LNC205&quot;</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span>
+<span class="tok-w">            </span><span class="tok-nc">items</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;</span>
+<span class="tok-w">            </span><span class="tok-p">[</span><span class="tok-s">&quot;/data[at0002]/events[at0003]/data/items[at0025]&quot;</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;[</span><span class="tok-nd">LNC205</span><span class="tok-p">::</span><span class="tok-nd">9272-6</span><span class="tok-p">]&gt;</span><span class="tok-w"> </span><span class="tok-c">-- 1 minute total</span>
+<span class="tok-w">            </span><span class="tok-p">[</span><span class="tok-s">&quot;/data[at0002]/events[at0026]/data/items[at0025]&quot;</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">&lt;[</span><span class="tok-nd">LNC205</span><span class="tok-p">::</span><span class="tok-nd">9271-8</span><span class="tok-p">]&gt;</span><span class="tok-w"> </span><span class="tok-c">-- 2 minute total</span>
+<span class="tok-w">        </span><span class="tok-p">&gt;</span>
+<span class="tok-w">    </span><span class="tok-p">&gt;</span></code></pre>
 </div>
 </div>
 </div>

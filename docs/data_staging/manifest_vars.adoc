@@ -1,0 +1,5 @@
+:spec_title: Data Staging Model
+:copyright_year: 2023
+:spec_status: DEVELOPMENT
+:keywords: EHR, integration, S2
+:description: S2 Data Staging Information Model specification

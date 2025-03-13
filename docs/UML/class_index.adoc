@@ -1,9 +1,9 @@
 
 == Component RM
 
-=== Model org.s2.rm
+=== Model org.s2.rm.integration
 
-==== Package integration
+==== Package data_staging
 
 [.xcode]
-* link:/releases/RM/{rm_release}/integration.html#_generic_entry_class[Generic_entry^]
+* link:/releases/S2-RM/{rm_release}/docs/data_staging.html#_generic_entry_class[Generic_entry^]

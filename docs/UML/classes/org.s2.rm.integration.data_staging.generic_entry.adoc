@@ -9,13 +9,13 @@ h|*Description*
 2+a|This class is used to create intermediate representations of data from sources not otherwise conforming to openEHR classes, such as HL7 messages, relational databases and so on.
 
 h|*Inherit*
-2+|`link:/releases/CARE/{care_release}/Content_item.html#_content_item_class[Content_item^]`
+2+|`link:/releases/S2-CARE/{care_release}/docs/ehr.html#_content_item_class[Content_item^]`
 
 h|*Attributes*
 ^h|*Signature*
 ^h|*Meaning*
 
 h|*1..1*
-|*data*: `link:/releases/BASE/{base_release}/patterns.html#_item_class[Item^]`
+|*data*: `link:/releases/S2-BASE/{base_release}/docs/patterns.html#_node_class[Node^]`
 a|The data from the source message or record. May be recorded in any structural openEHR representation.
 |===
